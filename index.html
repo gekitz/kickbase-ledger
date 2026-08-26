@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Kickbase">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#EFF2EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1311" media="(prefers-color-scheme: dark)">
+<title>Kickbase Decision Ledger</title>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#EFF2EE; --surface:#FBFCFA; --sunk:#E5EAE4;
+  --ink:#151B17; --ink-2:#3B453E; --muted:#68736B;
+  --line:#D3DAD3; --line-2:#BFC8C0;
+  --accent:#0D6B51; --accent-soft:#DCEBE3;
+  --ok:#1D7440; --ok-soft:#DDEEE1;
+  --warn:#8E5A05; --warn-soft:#F5E8CE;
+  --crit:#9C2A21; --crit-soft:#F4DED9;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0F1311; --surface:#171D19; --sunk:#131816;
+  --ink:#E7ECE7; --ink-2:#C2CBC3; --muted:#8D988F;
+  --line:#28302B; --line-2:#39423B;
+  --accent:#4FC79E; --accent-soft:#16302A;
+  --ok:#5DC183; --ok-soft:#14291B;
+  --warn:#D9A64A; --warn-soft:#2E2413;
+  --crit:#E08578; --crit-soft:#301A17;
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;
+  padding:max(28px,env(safe-area-inset-top)) 20px calc(64px + env(safe-area-inset-bottom));
+  display:flex;flex-direction:column;gap:30px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted)}
+h1{font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:clamp(27px,6vw,42px);
+  line-height:1.08;margin:6px 0 0;letter-spacing:-.012em;text-wrap:balance}
+h2{font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:21px;margin:0;letter-spacing:-.008em}
+h3{font-size:14px;font-weight:600;margin:0}
+p{margin:0}
+.masthead{border-bottom:1px solid var(--line-2);padding-bottom:20px}
+.stamp{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);
+  margin-top:12px;display:flex;flex-wrap:wrap;gap:5px 16px}
+/* staleness */
+#stale{display:none;border-radius:3px;padding:12px 15px;font-size:13.5px;
+  border:1px solid var(--line);background:var(--sunk);color:var(--ink-2)}
+#stale.on{display:block;background:var(--crit-soft);border-color:var(--crit);color:var(--crit);font-weight:500}
+#stale.warm{display:block;background:var(--warn-soft);border-color:var(--warn);color:var(--warn)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.tile{background:var(--surface);padding:13px 15px 14px;display:flex;flex-direction:column;gap:4px}
+.tile .k{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--muted)}
+.tile .v{font-family:"IBM Plex Mono",monospace;font-size:20px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.tile .n{font-size:12px;color:var(--muted);line-height:1.35}
+.tile.good .v{color:var(--ok)} .tile.hot .v{color:var(--crit)}
+.tiles .tile:last-child:nth-child(odd){grid-column:1/-1}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--ok);
+  border-radius:3px;padding:20px 22px;display:flex;flex-direction:column;gap:11px}
+.verdict.act{border-left-color:var(--crit)}
+.verdict .head{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap}
+.verdict h2{font-size:24px}
+.verdict p{color:var(--ink-2)}
+.pill{display:inline-flex;align-items:center;padding:3px 9px;border-radius:2px;
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;white-space:nowrap;background:var(--sunk);color:var(--muted)}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.pill.crit{background:var(--crit-soft);color:var(--crit)}
+.pill.acc{background:var(--accent-soft);color:var(--accent)}
+section{display:flex;flex-direction:column;gap:14px}
+.shead{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+  flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:8px}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:3px;background:var(--surface);
+  -webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:660px;font-size:13.5px}
+th{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 13px;
+  border-bottom:1px solid var(--line-2);white-space:nowrap;background:var(--sunk)}
+td{padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+td.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+td.nm{font-weight:500;white-space:nowrap}
+td.note{color:var(--ink-2);font-size:13px;min-width:220px}
+tr.flag td.nm{color:var(--warn)}
+.pos{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:13px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:3px;
+  padding:15px 17px;display:flex;flex-direction:column;gap:8px}
+.card.block{border-left:3px solid var(--crit)}
+.card.hold{border-left:3px solid var(--accent)}
+.card .top{display:flex;align-items:baseline;justify-content:space-between;gap:9px;flex-wrap:wrap}
+.card p{font-size:13px;color:var(--ink-2)}
+.card .fig{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.rows{background:var(--surface);border:1px solid var(--line);border-radius:3px;
+  padding:18px 20px;display:flex;flex-direction:column;gap:12px}
+.rows .r{display:flex;gap:13px;align-items:flex-start}
+.rows .mk{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);
+  letter-spacing:.08em;padding-top:3px;min-width:66px;white-space:nowrap;text-transform:uppercase}
+.rows p{font-size:13.5px;color:var(--ink-2)}
+footer{border-top:1px solid var(--line);padding-top:16px;color:var(--muted);
+  font-size:12.5px;display:flex;flex-direction:column;gap:5px}
+code{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-2)}
+#err{display:none;padding:20px;border:1px solid var(--crit);background:var(--crit-soft);
+  color:var(--crit);border-radius:3px}
+@media (max-width:560px){.wrap{padding-left:15px;padding-right:15px;gap:24px}.verdict{padding:16px 17px}}
+</style>
+</head>
+<body>
+<div class="wrap" id="root">
+  <header class="masthead">
+    <div class="eyebrow" id="eyebrow">loading…</div>
+    <h1>Kickbase Decision Ledger</h1>
+    <div class="stamp" id="stamp"></div>
+  </header>
+  <div id="stale"></div>
+  <div id="err"></div>
+  <div id="body"></div>
+</div>
+<script>
+const N = n => n == null ? "—" : n.toLocaleString("de-DE");
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const M = n => n == null ? "—" : (n/1e6).toFixed(1).replace(".", ",") + " M";
+
+function parseRun(s){ // "2026-08-26T10:45Z"
+  const m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})Z$/.exec(s || "");
+  return m ? Date.UTC(+m[1], +m[2]-1, +m[3], +m[4], +m[5]) : null;
+}
+function ago(ms){
+  const h = Math.floor(ms/3.6e6), m = Math.round((ms%3.6e6)/6e4);
+  return h ? `${h}h ${m}m ago` : `${m}m ago`;
+}
+function countdown(iso){
+  const t = parseRun(iso); if (t == null) return "—";
+  const d = t - Date.now();
+  if (d <= 0) return "locked";
+  const h = Math.floor(d/3.6e6), m = Math.floor((d%3.6e6)/6e4);
+  return h >= 24 ? `${Math.floor(h/24)}d ${h%24}h` : `${h}h ${m}m`;
+}
+
+function staleness(d){
+  const el = document.getElementById("stale");
+  const t = parseRun(d.run);
+  if (t == null) { el.className = "on"; el.textContent = "This page has no readable run timestamp — treat every figure below as unverified."; return; }
+  const age = Date.now() - t;
+  const H = 3.6e6;
+  if (age > 3*H){
+    el.className = "on";
+    el.textContent = `Stale — last updated ${ago(age)}. The briefing runs every two hours, so this page has missed at least one. Do not trade off these figures until it refreshes.`;
+  } else if (age > 2.2*H){
+    el.className = "warm";
+    el.textContent = `Last updated ${ago(age)} — a refresh is overdue by a few minutes.`;
+  } else {
+    el.className = "";
+  }
+}
+
+function tiles(d){
+  const pen = d.penalty_open;
+  return `<div class="tiles">
+    <div class="tile ${d.cash < 1e6 ? "hot" : ""}"><span class="k">Cash</span><span class="v">${N(d.cash)}</span><span class="n">Peaks ~${N(d.cash_ceiling_before_md1)} before MD${d.matchday.number}</span></div>
+    <div class="tile ${d.counts.total >= 11 ? "good" : "hot"}"><span class="k">Squad</span><span class="v">${d.counts.total} / 11</span><span class="n">${d.counts.gk} GK · ${d.counts.def} DEF · ${d.counts.mid} MID · ${d.counts.att} ATT</span></div>
+    <div class="tile ${pen ? "hot" : "good"}"><span class="k">Lineup placed</span><span class="v">${d.placed} / 11</span><span class="n">${pen ? "−100 penalty is LIVE" : (d.formations.legal.join(", ") + ", complete")}</span></div>
+    <div class="tile"><span class="k">Squad value</span><span class="v">${M(d.squad_value)}</span><span class="n">${d.surplus ? "Surplus: " + esc(d.surplus) : "No sale is legal at eleven"}</span></div>
+    <div class="tile"><span class="k">MD${d.matchday.number} locks in</span><span class="v">${countdown(d.matchday.locks)}</span><span class="n">${esc(d.matchday.locks)}</span></div>
+  </div>`;
+}
+
+function verdict(v, pen){
+  const act = v.action !== "none";
+  return `<div class="verdict ${act ? "act" : ""}">
+    <div class="head"><h2>${esc(act ? v.headline_short || "Action needed" : "No action needed")}</h2>
+      <span class="pill ${pen ? "crit" : "ok"}">${pen ? "−100 penalty live" : "−100 penalty closed"}</span>
+      ${act ? "" : '<span class="pill">quiet run</span>'}</div>
+    <p><strong>${esc(v.headline)}</strong></p>
+    <p>${esc(v.detail)}</p></div>`;
+}
+
+function squadTable(rows){
+  const tr = r => `<tr class="${r.state === "flag" ? "flag" : ""}">
+    <td class="nm">${esc(r.name)}</td><td class="pos">${esc(r.pos)}</td><td>${esc(r.club)}</td>
+    <td class="num">${N(r.mv)}</td><td class="num">${r.ap ?? "—"}</td>
+    <td class="note">${esc(r.note)} ${r.tag ? `<span class="pill ${r.state === "flag" ? "warn" : "acc"}">${esc(r.tag)}</span>` : `<span class="pill ok">clear</span>`}</td></tr>`;
+  return `<section><div class="shead"><h2>The squad he can field</h2>
+    <span class="eyebrow">averages are last-season figures until MD1 is played</span></div>
+    <div class="scroll"><table><thead><tr><th>Player</th><th>Pos</th><th>Club</th>
+    <th style="text-align:right">Market value</th><th style="text-align:right">ap</th>
+    <th>Starter status per news</th></tr></thead><tbody>${rows.map(tr).join("")}</tbody></table></div></section>`;
+}
+
+function callCards(title, eyebrow, items, cls, extra){
+  if (!items || !items.length) return "";
+  const card = c => `<div class="card ${cls}"><div class="top"><h3>${esc(c.name)}</h3>
+    ${c.rank ? `<span class="pill acc">${c.rank === 1 ? "first" : "second"} call</span>` :
+      c.status ? `<span class="pill ${c.status === "sold" ? "crit" : "warn"}">${esc(c.status)}</span>` :
+      c.tag ? `<span class="pill warn">${esc(c.tag)}</span>` :
+      `<span class="pill crit">rejected</span>`}</div>
+    ${(c.pos || c.ask || c.premium_pct != null) ? `<p class="fig">${[c.pos, c.club].filter(Boolean).map(esc).join(" · ")}${c.ask ? ` · ask ${N(c.ask)} vs mv ${N(c.mv)}` : ""}${c.premium_pct != null ? ` = +${String(c.premium_pct).replace(".", ",")}%` : ""}</p>` : ""}
+    <p>${esc(c.why)}</p>
+    ${c.trigger ? `<p class="fig">${esc(c.trigger)}</p>` : ""}
+    ${c.reversal ? `<p class="fig">Reversal: ${esc(c.reversal)}</p>` : ""}</div>`;
+  return `<section><div class="shead"><h2>${esc(title)}</h2><span class="eyebrow">${esc(eyebrow)}</span></div>
+    ${extra || ""}<div class="cards">${items.map(card).join("")}</div></section>`;
+}
+
+function rowsBlock(title, eyebrow, items){
+  return `<section><div class="shead"><h2>${esc(title)}</h2><span class="eyebrow">${esc(eyebrow)}</span></div>
+    <div class="rows">${items.map(i => `<div class="r"><span class="mk">${esc(i.k)}</span><p>${esc(i.v)}</p></div>`).join("")}</div></section>`;
+}
+
+function render(d){
+  document.getElementById("eyebrow").textContent =
+    `${d.league} · manager ${d.manager} · optimizing for points`;
+  const t = parseRun(d.run);
+  document.getElementById("stamp").innerHTML = [
+    `Run ${esc(d.run)}`,
+    t != null ? ago(Date.now() - t) : "",
+    `${d.matchday.played} matchdays played`,
+    `${d.board.listings} listings on the board`
+  ].filter(Boolean).map(s => `<span>${s}</span>`).join("");
+  staleness(d);
+
+  const sellNote = d.sell.recommendation === "none"
+    ? `<div class="rows"><div class="r"><span class="mk">verdict</span><p><strong>Nothing should be sold.</strong> ${esc(d.sell.reason)}</p></div></div>` : "";
+  const buyNote = d.buy.recommendation === "none"
+    ? `<div class="rows"><div class="r"><span class="mk">verdict</span><p><strong>Nothing is worth buying.</strong> ${esc(d.buy.reason)}</p></div></div>` : "";
+
+  document.getElementById("body").innerHTML = [
+    tiles(d),
+    verdict(d.verdict, d.penalty_open),
+    squadTable(d.squad),
+    callCards("Sell", "ranked by merit", d.sell.standing, "block", sellNote),
+    callCards("Buy — standing calls", "waiting on cash", d.buy.standing, "hold", buyNote),
+    callCards("Rejected this run", "logged so no later run re-derives them", d.buy.killed_this_run, "block"),
+    rowsBlock("Why the board can't be reached", "settled arithmetic", d.arithmetic),
+    callCards("Do not re-recommend", "binding — reversal conditions stated", d.blocked, "block"),
+    rowsBlock("Fitness sweep", `check ${d.fitness.sweep} · one fetch`, [
+      { k: d.fitness.all_clear ? "all clear" : "flagged", v: d.fitness.all_clear
+        ? "None of the eleven appears on the league injured, suspended or out-of-squad list. No squad player is newly flagged."
+        : "NEWLY FLAGGED: " + d.fitness.newly_flagged.join(", ") },
+      { k: "caveat", v: d.fitness.caveat },
+      { k: "why", v: d.fitness.why_it_matters }
+    ]),
+    `<footer><p>Source of truth: <code>${esc(d.ledger_doc)}</code> in Google Drive. Read-only — no offer, sale or lineup change is ever placed automatically.</p>
+     <p>This page is data-driven: the layout is fixed in the repo, and each run overwrites <code>data/briefing.json</code> only.</p></footer>`
+  ].join("");
+}
+
+fetch("data/briefing.json?t=" + Date.now())
+  .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+  .then(render)
+  .catch(e => {
+    const el = document.getElementById("err");
+    el.style.display = "block";
+    el.textContent = "Could not load data/briefing.json (" + e.message + "). The page is fine; the data file is missing or unreadable.";
+  });
+</script>
+</body>
+</html>
