@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-08-31T12:48:29Z",
+ "run": "2026-08-31T14:53Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 100941,
   "floor": -50463510,
   "spending_power": 50564451,
-  "hours_to_lock": 101.57,
-  "exposure": "No leverage is open right now; the balance is positive. If both live bids land the balance goes sharply negative, but there is ample time before the lock and the unwind is funded - the mandatory Suzuki sale paired with any one of the three designated funding legs clears zero. The rule that overrides everything stands: a negative balance at matchday start scores zero for the entire matchday, so the unwind must complete before the lock. The sequencing is safe because the Maluze auction resolves roughly six hours before the transfer deadline and several days before the lock, so the decision point arrives with full information. Buying is never capacity-capped, only selling is, which is why a cheap body can always be added late if the squad needs restoring.",
+  "hours_to_lock": 99.6,
+  "exposure": "No leveraged position is open right now and the balance is safely positive. The recommended purchase does open a small negative balance from the moment the auction settles overnight until Sylla is sold — that is deliberate and it must be closed the same morning, not left to drift. The Sylla proceeds clear it many times over and restore a healthy positive balance with days to spare before the lock. The larger exposure to watch is the combined weight of both live bids landing together; that remains covered, but only because the forced MVP sale is large enough to absorb it.",
   "must_restore_by": "2026-09-04T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF, 4 MID)"
   ]
  },
- "binding_gap": "The binding gap is not a position, it is squad size. At exactly eleven players with a forced sale pending, the risk that matters is dropping below a fieldable eleven. If Sylla leaves the league before the window shuts, he is removed from the game and the squad falls to ten, which cannot fill any formation and costs the full penalty for the matchday - far more than his points are worth. The fix is cheap and known: add one cheap outfield body, never a second keeper, since only one keeper can be fielded and a two-keeper squad at this size cannot fill any legal formation at all. No need to chase a specific listing - sub-million outfield players refresh on the board constantly.",
+ "binding_gap": "The binding constraint is not money and not points — it is the squad-size floor. Spending is capped well below the cash position by the value floor, but neither bites here. What bites is that a squad at the minimum permits no sales at all, and Georg has two sales he must make on separate clocks: one forced by the MVP rule before the lock, one forced by a transfer window that shuts tomorrow evening. Each sale requires a purchase to precede it. One cheap body unlocks the urgent one; the pending blind auction unlocks the mandatory one.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 50564451,
@@ -51,73 +51,196 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 34,
+  "listings": 33,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 2
  },
- "squad": [],
+ "squad": [
+  {
+   "name": "Suzuki",
+   "pos": "MID",
+   "club": "5",
+   "mv": 14697581,
+   "ap": 395,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Nusa",
+   "pos": "MID",
+   "club": "43",
+   "mv": 26183029,
+   "ap": 227,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Gregoritsch",
+   "pos": "ATT",
+   "club": "13",
+   "mv": 10967340,
+   "ap": 190,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Guirassy",
+   "pos": "ATT",
+   "club": "3",
+   "mv": 30111965,
+   "ap": 181,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Matsima",
+   "pos": "DEF",
+   "club": "13",
+   "mv": 13396122,
+   "ap": 138,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Baumann",
+   "pos": "GK",
+   "club": "14",
+   "mv": 17811538,
+   "ap": 129,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Minjae",
+   "pos": "DEF",
+   "club": "2",
+   "mv": 11268262,
+   "ap": 110,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Bernardo",
+   "pos": "DEF",
+   "club": "14",
+   "mv": 6547852,
+   "ap": 61,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Sambi Lokonga",
+   "pos": "MID",
+   "club": "6",
+   "mv": 10634700,
+   "ap": 44,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Widmer",
+   "pos": "DEF",
+   "club": "18",
+   "mv": 2103809,
+   "ap": 29,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Sylla",
+   "pos": "ATT",
+   "club": "8",
+   "mv": 9096588,
+   "ap": 21,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  }
+ ],
  "verdict": {
   "action": "act",
-  "headline": "No action needed.",
-  "headline_short": "No action needed.",
-  "detail": "No action needed. This is a genuinely quiet run: nothing settled in the league since the previous run, the squad came back clean on a full fitness sweep, and the only board change is one new manager ask that fails on value. The standing plan is unchanged - hold both live bids and decide at the Maluze resolution tomorrow around midday, which lands comfortably before both the transfer deadline and the matchday lock. Do not chase anything tonight."
+  "headline": "Two things changed since the last run and both point the same way: act tonight rather than wait for tomorrow's auction.",
+  "headline_short": "Two things changed since the last run and both point the same way: act",
+  "detail": "Two things changed since the last run and both point the same way: act tonight rather than wait for tomorrow's auction. Sylla now has a dated deadline-day exit story — Club Brugge intends to bid, Schalke has cut its asking price and is only deciding whether letting him go makes sporting sense — and Bernardo has picked up a Kickbase injury flag from the Cologne match. The trap is that the squad sits at exactly the minimum size, so the sale allowance is currently nil: Georg cannot sell Sylla today even though Sylla is the player he most needs to be rid of before the window shuts. The previous run closed the cheap-body purchase on the reasoning that nothing needed doing tonight. That reasoning was sound on the MVP clock alone but did not know about Sylla, so it is reversed here. Buy one cheap outfield body now, sell Sylla the moment it lands, and the mandatory MVP sale still has days of slack behind it. Both existing bids stand unchanged."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Ranking unchanged. Suzuki is mandatory under the league's MVP rule and must go before the lock - the sale is blocked until a buy lands, and it must be paired with a second sale to clear zero. Sylla and Lokonga remain the funding legs; note that Suzuki paired with any one of Sylla, Lokonga or Bernardo clears zero, with the Lokonga pairing the strongest, so no single sale is load-bearing. Widmer stays the lowest priority and is worth keeping as the twelfth body if only one buy lands. Bernardo stays demoted to third leg, needed only if a third buy forces a third sale, and if so sold early because his value is falling daily. Do not pair Suzuki with Widmer - that pairing leaves the balance negative at the lock.",
+  "reason": "Sylla is promoted from a funding leg that could wait to the first sale to execute, with a hard deadline. He is the worst scorer in the squad, his value is decaying fastest of the outfield sales, and a move abroad can complete after the German window shuts because the Belgian window runs longer. Dump him back to the market rather than listing him — a manager ask would clear for slightly more but takes days he does not have. Bernardo moves up behind him and now overtakes the Mainz-bound midfielder as the next sale: the injury flag turns what was a purely financial call into a selection one as well, and his value is bleeding roughly twice as fast. The benched Mainz full-back stays the lowest-priority sale and is worth more as the twelfth body if only one purchase lands.",
   "standing": [
    {
-    "name": "Sylla",
-    "pos": "",
-    "club": null,
-    "mv": null,
-    "ap": null,
-    "why": "Funding leg 1. Worst scorer at 21. Only if a bid lands.",
+    "name": "Suzuki",
+    "pos": "MID",
+    "club": "5",
+    "mv": 14697581,
+    "ap": 395,
+    "why": "MANDATORY, NOT A VALUE JUDGEMENT. **LEAGUE HOUSE RULE: this league plays the MVP rule** - Georg told us 31.08.2026 that the matchday MVP must be sold, and Suzuki topped MD1 with ap 395 (hat-trick 29/48/55 v Werder, scfreiburg.com 30.08.2026). Every future run must treat this rule as standing: whoever tops a matchday has to go, however good he is. Suzuki is the best player in the squad and on pure points we would never sell him - the rule overrides. TWO CONSEQUENCES that change everything: (1) the sale consumes one unit of sale allowance, and allowance equals buys made, so with 0 buys landed he CANNOT sell Suzuki at all - the obligation is BLOCKED until Maluze or Eggestein lands. (2) If only Eggestein lands, the single permitted sale must be Suzuki and that still leaves -1.507.287 = NEGATIVE at the lock = ZERO points for all of MD2. Only the both-offers-land branch is safe: Suzuki + Sylla -> +6.389.301 and squad 1GK/5DEF/3MID/2ATT = 5-3-2, or Suzuki + Bernardo -> +3.840.565 and 4-3-3. Do NOT pair with Widmer (-603.478). Prefer LISTING him to the league over dumping to Kickbase: manager asks here clear at +3,06% to +4,35%, worth roughly 450k-640k more than mv, though a buyer is not guaranteed. Do NOT reinvest the proceeds on this board - Eggestein ap 124 is the best MID available and is already bid; the next best is Koemuer ap 44 (benched) and Aouchiche ap 40. There is no replacement for ap 395 here. Hold the cash for a better board.",
     "tag": "sell"
    },
    {
     "name": "Sambi Lokonga",
-    "pos": "",
-    "club": null,
-    "mv": null,
-    "ap": null,
+    "pos": "MID",
+    "club": "6",
+    "mv": 10634700,
+    "ap": 44,
     "why": "Funding leg 2. 44 pts off 10,63M. Quality not availability.",
     "tag": "sell"
    },
    {
-    "name": "Widmer",
-    "pos": "",
-    "club": null,
-    "mv": null,
-    "ap": null,
-    "why": "Confirmed benched: did not start MD1, on 73' for Caci in Mainz 0:0 Paderborn 29.08.2026; both 2026/27 appearances as substitute, da Costa in the back three. ap 29, mv falling. Only 2,10M so low priority - keep him as the 12th body if only one buy lands.",
+    "name": "Sylla",
+    "pos": "ATT",
+    "club": "8",
+    "mv": 9096588,
+    "ap": 21,
+    "why": "Replaces SELL-syl (closed) - PROMOTED from \"funding leg 1, only if a bid lands\" to the FIRST sale to execute, with a hard deadline. NEW: fussballeuropa 31.08.2026 08:45Z - Club Brugge intends to bid before the deadline, Schalke has cut the ask to a EUR 4M minimum and is only deciding whether letting him go now makes sporting sense; CEO Tillmann: a sale \"is currently included in our budget figures\". Corroborated by schalketotal 24.08/26.08/27.08 (Schalke needs the transfer millions, price lowered). German window shuts 01.09 18:00Z; the Belgian window runs ~4 days longer, so an exit can complete after the German deadline - the risk does not end at 18:00Z. He is the worst scorer in the squad at ap 21, mv 9.096.588 with sdmvt -670.248 (~670k/day of decay), and he was always the designated sale. Sale allowance is ZERO until a buy lands (squad exactly 11) - see BUY B3z76og on Nguefack, which exists to unlock this. Dump to Kickbase at mv rather than list: a manager ask clears +3,06% to +4,35% (~280k-400k more) but takes days he does not have, and Keidel just proved the manager route works only when someone wants the player. Sell the moment the allowance exists.",
     "tag": "sell"
    },
    {
     "name": "Bernardo",
-    "pos": "",
-    "club": null,
-    "mv": null,
-    "ap": null,
-    "why": "Replaces S2kausk (closed) with corrected reasoning - the previous call overstated the evidence. PARTIAL WALK-BACK: the \"hooked at 53 for his direct competitor Hranac\" premise is NOT corroborated. Robin Hranac's Ligainsider profile carries no dated news at all since before August 2026, so the substitution cannot be read as a positional demotion; Ligainsider's Hoffenheim page instead has Prass injured and lists Gendrey as the other left-side option, and Bernardo was declared available again on 28.08.2026 after being held out 22.08 as \"leicht angeschlagen\", then started MD1. No MD2 left-back call exists anywhere dated - no club has published an XI. So the real and only solid case for selling is financial, not selection: mv 6.547.852 with sdmvt -1.013.483, i.e. falling ~1M/day, and he is the 4th-worst scorer at ap 61. DEMOTED to third funding leg behind Lokonga and Sylla and explicitly NOT needed if those two land - the Lokonga+Sylla pair alone clears the hole at +2,33M. Sell him only if a third buy forces a third sale, and if so sell EARLY: every day of delay costs ~1M of proceeds.",
+    "pos": "DEF",
+    "club": "14",
+    "mv": 6547852,
+    "ap": 61,
+    "why": "Replaces Sydvapy (closed) and REVERSES its partial walk-back. Sydvapy said \"the hooked-at-53 premise is NOT corroborated\" and demoted this to a purely financial call. It IS corroborated, by Kickbase itself: get_player 1954 now returns st=2, stl=[2], stxt \"Stricken - does not come through KOE (A) unscathed\", status timestamp 2026-08-31T10:44:32Z. He picked up a knock in the MD1 game at Koeln - that is why he came off at 53 (Ligainsider confirms exactly 1 appearance / 53 minutes in 2026/27), and it was an injury hook, not a Hranac demotion. No club statement yet: Ligainsider's Bernardo profile still ends at 28.08.2026 \"Bernardo meldet sich fuer Koeln zurueck\" and he is NOT on the Verletzte-und-Gesperrte table, so treat this as doubtful, not ruled out. NOTE THE DATE TRAP that caught an earlier run: the \"Bernardo faellt verletzungsbedingt aus\" item (Ligainsider 408617 / the TSG tweet naming a Bayern away XI) is 08.02.2026, LAST SEASON - Hoffenheim's MD2 opponent is Dortmund on 2026-09-05T13:30Z, not Bayern. Effect on the plan: the case is no longer only financial. He is now a doubtful starter carrying ap 61 in a fielded XI that cannot be reshuffled at 11 players, and mv 6.547.852 with sdmvt -1.013.483 keeps bleeding ~1M/day. He OVERTAKES Sambi Lokonga (ap 44, fit, starter, mv falling only 190k/day) as the sale to make once Sylla and Suzuki are done: selling Bernardo and keeping Lokonga puts ap 44 into the XI in place of a flagged ap 61 and stops the faster bleed. Sell EARLY if sold at all.",
     "tag": "sell"
    },
    {
-    "name": "Suzuki",
-    "pos": "",
-    "club": null,
-    "mv": null,
-    "ap": null,
-    "why": "MANDATORY, NOT A VALUE JUDGEMENT. **LEAGUE HOUSE RULE: this league plays the MVP rule** - Georg told us 31.08.2026 that the matchday MVP must be sold, and Suzuki topped MD1 with ap 395 (hat-trick 29/48/55 v Werder, scfreiburg.com 30.08.2026). Every future run must treat this rule as standing: whoever tops a matchday has to go, however good he is. Suzuki is the best player in the squad and on pure points we would never sell him - the rule overrides. TWO CONSEQUENCES that change everything: (1) the sale consumes one unit of sale allowance, and allowance equals buys made, so with 0 buys landed he CANNOT sell Suzuki at all - the obligation is BLOCKED until Maluze or Eggestein lands. (2) If only Eggestein lands, the single permitted sale must be Suzuki and that still leaves -1.507.287 = NEGATIVE at the lock = ZERO points for all of MD2. Only the both-offers-land branch is safe: Suzuki + Sylla -> +6.389.301 and squad 1GK/5DEF/3MID/2ATT = 5-3-2, or Suzuki + Bernardo -> +3.840.565 and 4-3-3. Do NOT pair with Widmer (-603.478). Prefer LISTING him to the league over dumping to Kickbase: manager asks here clear at +3,06% to +4,35%, worth roughly 450k-640k more than mv, though a buyer is not guaranteed. Do NOT reinvest the proceeds on this board - Eggestein ap 124 is the best MID available and is already bid; the next best is Koemuer ap 44 (benched) and Aouchiche ap 40. There is no replacement for ap 395 here. Hold the cash for a better board.",
+    "name": "Widmer",
+    "pos": "DEF",
+    "club": "18",
+    "mv": 2103809,
+    "ap": 29,
+    "why": "Confirmed benched: did not start MD1, on 73' for Caci in Mainz 0:0 Paderborn 29.08.2026; both 2026/27 appearances as substitute, da Costa in the back three. ap 29, mv falling. Only 2,10M so low priority - keep him as the 12th body if only one buy lands.",
     "tag": "sell"
    }
   ]
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Nothing new clears the bar, and the two live bids should simply be held rather than raised. Keidel, newly listed by David, is the only board change and deserves a note because his premium is genuinely fair - it sits on the measured manager-ask clearing median, the best-priced ask on this board. He is an Elversberg central midfielder whose coach publicly backed him a few days before matchday one, no injury flag. He is avoided anyway because he is dominated outright by Vagnoman, who is listed at exactly market value with no premium for more points and was avoided this same day on capacity grounds, and because in the only legal formation Keidel would merely displace Bernardo for a handful of points. Every other listing remains on the avoid list for the reasons already recorded. The binding constraint is capacity, not price: nothing should be bought that forces a third sale.",
+  "reason": "One purchase, and it is not a points play — it is capacity. The Gladbach teenager listed at the bottom of the board made his Bundesliga debut off the bench at the weekend, is fit and carries no status flag. He exists to lift the squad above the size floor so Sylla can be sold, and he should never be fielded ahead of anyone. Because it is a blind Kickbase auction rather than a manager ask, bid against the high cluster, not the median — that is precisely how the two contested listings earlier this week were lost. The absolute cost of overbidding on a player this cheap is small enough to be worth paying. Every other cheap body on the board costs more for the same or fewer points, and the two cheapest of all carry fitness flags. Nothing else on the board is worth buying: the manager asks are clustered far above the rate at which manager asks actually clear here, and the Elversberg defender who was fairly priced this morning has already gone to another manager at his ask.",
   "standing": [
+   {
+    "name": "Nguefack",
+    "pos": "MID",
+    "club": "15",
+    "ask": 900000,
+    "mv": 714900,
+    "premium_pct": 25.89,
+    "listing": "Kickbase listing",
+    "why": "REVERSAL of the 12:48Z decision to close BUY Bkmihvw (\"nothing needs doing tonight\"). That was correct on the Suzuki MVP clock alone - it did not know about Sylla. NEW DATED FACT: fussballeuropa 31.08.2026 08:45Z - Club Brugge intends to bid for Moussa Sylla before the window shuts, Schalke has cut the asking price to a EUR 4M minimum and is only weighing whether it makes sporting sense; CEO Tillmann says a sale \"is included in our budget figures\". German window shuts 01.09 18:00Z, the Belgian window stays open ~4 more days, so an exit can complete AFTER the German deadline. Sylla is squad, ap 21, mv 9.096.588 falling 670k/day, and is funding leg 1. THE TRAP: squad is exactly 11, so sale allowance is ZERO until a buy lands. Georg physically cannot sell Sylla today. The earliest allowance is the Maluze auction at 2026-09-01T11:52Z - and only if it lands. Buying one cheap outfield body creates the allowance now instead of hoping. It was ALREADY the required fix in branches (b), (c) and (d) of the standing plan (3 of 4 branches); the Sylla story just removes the slack that justified deferring it. VERIFIED: Ligainsider 29.08.2026 18:57 - Gladbach Bundesliga debut v Leipzig, on at 64 for Stoeger, ~26 min, promoted to the senior squad in early August, fit, no status flag (st=0). ap 17 - he is a BODY for unwind capacity, not a points play, and must not be fielded over anyone. Kickbase blind auction at mv 714.900: bid the HIGH cluster, 900.000 = +25,9% over mv, absolute overpay risk ~185k. Sequence: bid now -> lands 02:11Z (balance -799k, briefly leveraged) -> SELL Sylla immediately -> +8,3M and squad back to 11 -> Maluze at 11:52Z restores allowance for the mandatory Suzuki sale. Every step stays positive from the Sylla sale onward and the leverage is unwound ~90h before the lock.",
+    "rank": 1,
+    "trigger": "2026-09-01T02:11Z"
+   },
    {
     "name": "Maluze",
     "pos": "DEF",
@@ -127,7 +250,7 @@
     "premium_pct": 29.48,
     "listing": "Kickbase listing",
     "why": "Replaces closed BUY-mal to record the bid Georg ACTUALLY placed: 1.200.000, not the 1.000.000 in the old call. That is +29,48% over mv 926.799, above the highest premium ever measured in this league (+20,96% Campbell), which is the right way to bid a blind Kickbase auction on a cheap player - the absolute cost of overpaying is ~270k. VERIFIED 31.08: fit, debut start 95 of 96 min with 1 assist and a 1,5 rating alongside Robin Koch in the 3:3 at Union Berlin 29.08.2026, replaced Otavio in the XI (hessenschau ticker 29.08.26 14:57), named a match winner 30.08.26, contract extended to 2031 on 29.08.26. Best points-per-euro on the board by a wide margin: ap 184 at 0,93M mv. Displaces Widmer ap 29 from the fielded XI. Note MD2 XI unverifiable - no club has published one as of 31.08 - and no dated item confirming Collins out could be found, though Kickbase carries Collins st=4 \"after back problems - in rehabilitation training\". HOLD the bid, do not raise.",
-    "rank": 1,
+    "rank": 2,
     "trigger": "2026-09-01T11:51Z"
    },
    {
@@ -139,19 +262,19 @@
     "premium_pct": 0,
     "listing": "manager ask",
     "why": "Ebnoutalib fallback now live (lost to David 14.836.953). Manager ask 17.200.000 = +5,48% but UNSOLD 7 days since 24.08 - offer at mv instead, not the ask. Ligainsider 27.08.2026 projects him starting Freiburg midfield alongside Engelhardt. ap 124 replaces Lokonga 44. OPTIONAL third leg only: needs a third sale to unwind by the lock.",
-    "rank": 2,
+    "rank": 3,
     "trigger": "2026-09-04T18:30Z"
    }
   ],
   "killed_this_run": [
    {
-    "name": "Keidel",
-    "pos": "DEF",
+    "name": "Krattenmacher",
+    "pos": "MID",
     "club": "77",
-    "ask": 8000000,
-    "mv": 7751993,
-    "premium_pct": 3.2,
-    "why": "NEW manager ask from David, listed 31.08 11:42Z - the only board change since the 10:44Z run. SV Elversberg (tid 77 = Elversberg, a promoted club), Kickbase lists him DEF, ap 66. Ask 8.000.000 vs mv 7.751.993 = +3,20%, which is genuinely FAIR - it sits right on the measured manager-ask clearing median (+3,06%) and is the best-priced manager ask on the board. So this is a value/capacity avoid, not a premium avoid. VERIFIED: Ligainsider 27.08.2026 (article 417024) - coach Vincent Wagner calls him \"a center player... basically a central midfielder\", says he has \"done extraordinarily well from day one\" and \"worked out a small advantage\" in the No. 6 competition after Schmahl's absence. No injury noted, no status flag (st=0). But that piece PREDATES MD1 (Elversberg v Leverkusen) and confirms no starter status; ap 66 implies he did play. AVOIDED because (1) he is dominated by an option we already avoided: Vagnoman ap 73 at exactly mv 6.923.777 with ZERO premium is more points for less money, and was avoided on capacity grounds this same day; (2) Georg fields 4 DEF in his only legal formation and Keidel ap 66 would merely displace Bernardo ap 61 for about +5 ap at 8,0M - the worst kind of upgrade; even in a 5-DEF shape he only displaces Widmer ap 29; (3) above all he would consume unwind capacity that does not exist - Maluze and Eggestein offers are already live and the MVP-forced Suzuki sale must be paired against them. Reversal only if the ask drops well below mv AND a dated Elversberg XI confirms him starting."
+    "ask": 1813735,
+    "mv": 1813735,
+    "premium_pct": 0,
+    "why": "Cheap-body alternative, rejected on price alone. Elversberg MID, Kickbase listing at exactly mv 1.813.735, ap 13, st=0, expires 2026-09-02T04:49Z. Nguefack does the identical job - create one unit of unwind capacity - at mv 714.900 with a HIGHER ap (17). Paying 2,5x for a body that scores less is pure waste. Same verdict for the other cheap outfield bodies on this board: Skov (2717, Union, mv 1.246.163, NO points history at all), Vogt (14890, Hoffenheim ATT, mv 1.340.299, no history, expires 31.08 15:48Z), Quetant (14923, Werder ATT, mv 1.804.251, no history), Gendrey (9598, Hoffenheim DEF, mv 2.564.595, no history), Guether (13629, Union, mv 3.128.633, no history), Pimpong (14920, Frankfurt ATT, mv 2.893.555, ap 6). Konoplia (7774) and Awortwie-Grant (8984) are cheaper still but both carry st=1 - excluded. Reversal only if Nguefack is lost at auction AND no sub-1M outfield body is on the board."
    },
    {
     "name": "Florian Mueller",
@@ -257,11 +380,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip clears its cost this run. There are currently no manager asks priced below market value anywhere on the board, so the flip mechanism is simply absent - there is nothing to buy under value and resell. The instant-flip pairs rivals are running are worth fractions of a percent and several involve players who are unavailable; that is motion, not points, and not worth copying. With the squad at the bare minimum, any flip would also risk reducing the fielded eleven, which rules the tactic out regardless.",
+  "reason": "No flip clears its cost this run. There is not a single manager ask below market value on the board, so the mechanism that funds a flip is simply absent. Rivals are still churning unavailable players for fractions of a percent on the daily value tick; that is motion, not points, and it is not worth copying — especially not with the squad at the size floor, where any flip would cut into the fielded eleven.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Full squad sweep came back clean - not one of the eleven is injured or suspended, and Ligainsider's league-wide injured and suspended table lists none of them. Every player except Widmer started matchday one and is expected to start again; Widmer remains a confirmed bench option, which was already known. The one live watch is Sylla: dated reports late last week have Schalke cutting his asking price and needing the revenue, with no concrete buyer yet emerged. Two stale traps were hit and discarded this run - a Sylla deadline-day story that turns out to concern a collapsed winter move, and pre-season articles on Keidel. Nothing dated suggests any other squad player may leave.",
+  "sweep": "Bernardo is the change. Kickbase flagged him this morning with a knock picked up in the Cologne game, which finally explains why he came off midway through the first half — it was an injury substitution, not the positional demotion an earlier run had inferred and then walked back. No club statement has followed yet and he is not on the league-wide injury table, so treat him as doubtful rather than ruled out. Beware the date trap here: the widely-linked report of Bernardo missing a Bayern away fixture is from February and belongs to last season, and Hoffenheim's next opponent is Dortmund, not Bayern. Everyone else in the squad is clean. Both pending purchases check out — the Freiburg midfielder started and was rated in the weekend win with no injury listing against him, and the Frankfurt defender's debut and contract extension were confirmed at the weekend.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -330,7 +453,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=13, -0,62% to +20,96%"
+   "v": "n=14, -0,62% to +20,96%"
   }
  ]
 }
