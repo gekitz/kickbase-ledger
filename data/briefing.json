@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-01T02:56Z",
+ "run": "2026-09-01T04:54Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -8,14 +8,14 @@
   "locks": "2026-09-04T18:30:00Z",
   "played": 1
  },
- "cash": 20527522,
+ "cash": 20577522,
  "squad_value": 138781576,
  "leverage": {
-  "balance": 20527522,
-  "floor": -52572002,
-  "spending_power": 73099524,
-  "hours_to_lock": 87.56,
-  "exposure": "No leverage exists and none can open. Every recommended action, taken together with both live bids, still leaves the balance comfortably positive, so the zero-score-on-negative-balance rule is not in play. The lock is nearly four days out, which is the one piece of slack in this position.",
+  "balance": 20577522,
+  "floor": -52588502,
+  "spending_power": 73166024,
+  "hours_to_lock": 85.59,
+  "exposure": "No leverage, in any branch. Every live bid plus the one being recommended still totals comfortably less than the cash on hand, so a negative balance cannot open at matchday start and the zero-score risk is not in play. The spending floor is nowhere near binding either; cash is the constraint that matters, and it clears. The exposure that does matter is structural rather than financial: at ten players the hundred-point penalty is live right now, and a single defender landing this morning ends it. The second-order risk is the one worth watching — if the transfer completes and the squad loses a forward involuntarily after the window has shut, the remaining shape fills no formation, which is the same penalty arriving by a different door. The body being bought today covers both doors.",
   "must_restore_by": "2026-09-04T18:30:00Z"
  },
  "counts": {
@@ -42,10 +42,10 @@
    "5-4-1 (needs 5 DEF, 4 MID)"
   ]
  },
- "binding_gap": "The squad is a body short of legal, and the shape is the reason it is awkward rather than simple. Kickbase caps defenders at five, and with only two midfielders the sole legal shape is 5-2-3, which needs three attackers. That has one useful consequence: a single defender landing is enough to fix the penalty outright, because five defenders, two midfielders and three attackers is exactly a legal eleven. Both live bids are defenders, so either one landing closes the gap. Only if BOTH auctions fail does the penalty stand, and that is the whole job of the Krattenmacher body.",
+ "binding_gap": "The binding gap is one outfield body, and specifically a midfielder or a forward rather than another defender. The eleven caps defenders at five, so a sixth and seventh defender add depth but cannot widen the shape; with only two midfielders on the books, every legal formation runs through the same narrow configuration. That is why the buy this run is a midfielder despite two defender auctions already being live, and why the goalkeepers that keep appearing at floor prices — four of them in the last two days — must keep being refused however cheap they look.",
  "surplus": "",
  "run_kind": "scheduled",
- "cash_ceiling_before_md1": 73099524,
+ "cash_ceiling_before_md1": 73166024,
  "daily_bonus": null,
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
@@ -53,18 +53,18 @@
   "listings": 29,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 1
  },
  "squad": [],
  "verdict": {
   "action": "act",
-  "headline": "Two reversals this run, both forced by the same event: the Nguefack auction was lost overnight to PhiL95 at a record clearing premium.",
-  "headline_short": "Two reversals this run, both forced by the same event: the Nguefack au",
-  "detail": "Two reversals this run, both forced by the same event: the Nguefack auction was lost overnight to PhiL95 at a record clearing premium. That kills the plan the last run left behind, because its named fallback body was Skov - and Skov turns out to be injured with no minutes at all this season. So the cheap-body leg is rebuilt from scratch, and the record premium itself changes how the live bids should be priced. Nothing here opens a negative position, and nothing here is a sale."
+  "headline": "Deadline day.",
+  "headline_short": "Deadline day.",
+  "detail": "Deadline day. A dated story published this morning has Club Brugge making a concrete approach for Sylla before the German window shuts at 18:00Z, and that turns a slow squad-building run into a timed one. The exposure is not that Georg loses a good player — Sylla scores almost nothing — it is that if Kickbase deletes him from the squad the shape collapses into a formation that cannot be filled, and the -100 arrives without Georg touching anything. The whole plan today is to buy one cheap outfield body that resolves BEFORE the deadline, so the Sylla sale becomes legal and the deletion risk is insured at the same time. Everything else holds."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "No sale is possible this run and none should be attempted - the squad is below the floor for it. The sale ladder, once a sale becomes legal, has been corrected in an important way: at twelve players the one available sale must be a DEFENDER, because selling the spare defender leaves a legal shape while selling Sylla leaves one that fills nothing at all. Widmer is the first sale on that basis - he sits outside the eleven either way, so losing him costs nothing in points while stopping a fast bleed on a small asset. Bernardo goes instead of him only if that injury flag is still live near the lock, in which case selling him banks far more, stops a much faster bleed, and removes a probable zero from the eleven. Selling Sylla is a different problem: it needs a third midfielder or fourth attacker first, and the German window shuts this evening. Only one body on the board resolves in time to make that sale legal today.",
+  "reason": "Sylla is the sale, and it is a race against the window rather than a value judgement. He starts, he is fit, and he contributes twenty-one points to the best eleven — losing him costs almost nothing on the pitch. What makes it urgent is the shape: a squad that loses him involuntarily, after the window, cannot field a legal eleven. But the sale is gated, and the gate must not be forced. At twelve players in the current shape, selling him leaves a side that fills no formation at all, which would be self-inflicted. The sale only becomes legal once a third midfielder has landed. If that body is lost at auction, the right answer is to let the risk ride into the Belgian window rather than sell into an illegal shape. Widmer remains the designated funding sale afterwards — benched, bleeding value daily, and outside the best eleven either way, so selling him costs nothing in points. Bernardo would take his place in that queue only if the Kickbase fitness flag on him is still showing near the lock; the dated club and injury sources currently say he is fit, so the flag reads as the hook he suffered rather than a knock.",
   "standing": [
    {
     "name": "Sambi Lokonga",
@@ -101,39 +101,45 @@
     "ap": null,
     "why": "Replaces Sydvapy (closed) and REVERSES its partial walk-back. Sydvapy said \"the hooked-at-53 premise is NOT corroborated\" and demoted this to a purely financial call. It IS corroborated, by Kickbase itself: get_player 1954 now returns st=2, stl=[2], stxt \"Stricken - does not come through KOE (A) unscathed\", status timestamp 2026-08-31T10:44:32Z. He picked up a knock in the MD1 game at Koeln - that is why he came off at 53 (Ligainsider confirms exactly 1 appearance / 53 minutes in 2026/27), and it was an injury hook, not a Hranac demotion. No club statement yet: Ligainsider's Bernardo profile still ends at 28.08.2026 \"Bernardo meldet sich fuer Koeln zurueck\" and he is NOT on the Verletzte-und-Gesperrte table, so treat this as doubtful, not ruled out. NOTE THE DATE TRAP that caught an earlier run: the \"Bernardo faellt verletzungsbedingt aus\" item (Ligainsider 408617 / the TSG tweet naming a Bayern away XI) is 08.02.2026, LAST SEASON - Hoffenheim's MD2 opponent is Dortmund on 2026-09-05T13:30Z, not Bayern. Effect on the plan: the case is no longer only financial. He is now a doubtful starter carrying ap 61 in a fielded XI that cannot be reshuffled at 11 players, and mv 6.547.852 with sdmvt -1.013.483 keeps bleeding ~1M/day. He OVERTAKES Sambi Lokonga (ap 44, fit, starter, mv falling only 190k/day) as the sale to make once Sylla and Suzuki are done: selling Bernardo and keeping Lokonga puts ap 44 into the XI in place of a flagged ap 61 and stops the faster bleed. Sell EARLY if sold at all.",
     "tag": "sell"
+   },
+   {
+    "name": "Sylla",
+    "pos": "",
+    "club": null,
+    "mv": null,
+    "ap": null,
+    "why": "CONDITIONAL SELL - execute ONLY once the squad is 12+ AND the post-sale shape still fills a formation. Moussa Sylla, Schalke ATT, mv 9.225.516, ap 21, mv falling (sd -198.163). NEWS IS LIVE AND DATED TODAY: recklinghaeuser-zeitung.de \"Deadline Day 2026: Schalke-04-Transfergeruechte um Moussa Sylla\", published 2026-09-01, reports (via Africafoot) that CLUB BRUEGGE intends a concrete Deadline-Day approach and is ready to submit an offer if Schalke approve; Schalke are weighing it because they urgently need transfer income, and Bruegge are selling Champions League football. Window shuts 20:00 CET = 2026-09-01T18:00Z. DATE TRAP CLEARED THIS RUN: the Sky Sport headline \"Moussa Sylla verlaesst Schalke 04\" is 25.01.2026 and concerns the collapsed NEW YORK CITY FC move (7M incl. bonuses) - LAST SEASON, same family as the ruhrnachrichten and sportschau items already logged. It does NOT corroborate Bruegge. The recklinghaeuser piece dated 01.09.2026 is the only current source. FITNESS: fit, not on Ligainsider Verletzte-und-Gesperrte, started MD1 (ap 21). THE COST OF SELLING IS 21 ap AND NOTHING ELSE: at 13 = 1/6/3/3 the best XI is 5-2-3 for 1442 ap with Sylla; after the sale, 12 = 1/6/3/2 fields 5-3-2 for 1421 ap. Twenty-one points to bank 9.225.516 and retire a deletion risk. THE DELETION RISK IS THE REAL POINT: if the move completes, Kickbase removes him and compensates at mv, dropping a 12-man squad to 11 = 1GK/6DEF/2MID/2ATT, which fills NO formation because DEF caps at 5 - that is a -100 on MD2 arriving without Georg touching anything. SHAPE GATE, do not skip it: at 12 = 1/6/2/3 selling Sylla is ILLEGAL. Only after Amoako (B3rkra9) lands does 13 = 1/6/3/3 make the sale legal at 1/6/3/2 = 5-3-2. If Amoako is lost at ~10:45Z the sale simply cannot happen today and the risk rides into the Belgian window - accept that rather than selling into an illegal shape. SEQUENCE: 09:23Z ter Horst resolves, ~10:45Z Amoako, 11:52Z Maluze, then recount and sell before 18:00Z.",
+    "tag": "sell"
    }
   ]
  },
  "buy": {
   "recommendation": "act",
-  "reason": "The top move is to raise the Maluze bid, and it contradicts the last run's explicit instruction not to raise anything. That instruction was correct against the premium band as it stood yesterday and is wrong against the band as measured now: the Nguefack clearing overnight was almost double the previous record, and both record premiums are cheap contested Kickbase listings - exactly what Maluze is. The standing bid looked bold yesterday and now sits in losing territory. He is worth pressing on because his points-per-euro is the best on the board by an order of magnitude, and because the verification is as clean as it gets: a twenty-year-old who started the opener and signed a new contract the same day is not about to be dropped. Hold ter Horst where he is - his bid already sits at the top of the mid-price band, and the record premiums come from sub-three-million listings where a huge percentage is small money; they do not transfer to a player of his price. Behind those two, Krattenmacher is the eleventh-man insurance and deliberately resolves after both auctions, so the decision can be sized against the actual squad count rather than guessed now. Amoako sits behind him as a narrow, conditional alternative and only for one reason - he is the only fit outfield body that resolves before the German deadline this evening, so he is the only route to selling Sylla today. That trade is roughly break-even on expectation: real premium and a small points cost in the fielded eleven, against protecting a speculative departure. It is a judgement call on how much the Brugge story is believed, not an automatic buy. Ljubicic was re-examined and stays avoided: verified fit and a full-match starter, but the price per point is poor and taking him would crowd out the Maluze raise, which is the better euro.",
+  "reason": "One buy, and it reverses a call this ledger made yesterday — Amoako, previously avoided as an overpriced cheap body, is now the recommendation. The reversal is on timing, not on value, and the earlier reasoning was never wrong about the value. He is the only fit outfield player on the board whose auction resolves before the transfer deadline. Everything else available before then is either a goalkeeper, which is structurally useless because only one can ever be fielded, or injured, or costs several million more for points that never reach the eleven — the second midfield slot is already occupied, so the expensive midfielders on the board add literally nothing to the best side. He is a bench body with no starts, and that is stated plainly rather than dressed up; what is being bought is a legal shape, not a scorer. He is not the trap that caught two other clean-looking listings this week, because he has actually been named in matchday squads, which means a fitness flag would have shown if there were one. The bid is deliberately set deep into the premium band measured for cheap contested listings, because bidding the middle of that band is precisely how the last three of these were lost. The purchase is robust whichever way the two defender auctions fall: it either unlocks the sale or, in the worst branch, ends the penalty outright on its own.",
   "standing": [
    {
-    "name": "Krattenmacher",
+    "name": "Amoako",
     "pos": "MID",
-    "club": "77",
-    "ask": 2900000,
-    "mv": 1715870,
-    "premium_pct": 69.01,
+    "club": "6",
+    "ask": 3400000,
+    "mv": 1953327,
+    "premium_pct": 74.06,
     "listing": "Kickbase listing",
-    "why": "REVERSES closed AVOID Ai0sb42, whose own reversal condition is now MET: \"only if Nguefack is lost at auction AND no sub-1M outfield body is on the board\". Nguefack was lost at 02:11:44Z (PhiL95, 2.612.333, +135,52%), and there is no sub-1M outfield body left - the cheapest is Skov at 1.104.430 and he is injured (see Anfkjt9). Ai0sb42 rejected him purely because Nguefack did the same job cheaper; that comparison no longer exists. WHAT HE IS: the 11th-man insurance against the -100 penalty, nothing more. Elversberg MID (tid 77), Kickbase listing at exactly mv 1.715.870, st=0, ap 13, expires ~2026-09-02T04:49Z - the longest runway of any fit outfield body, and crucially it resolves AFTER both live defender auctions, so Georg can size it against the actual squad count. VERIFIED, dated: Ligainsider - FIT, no injury or suspension flag; 24.07.2026 \"Krattenmacher zurueck im Teamtraining\" after a minor July knock; signed from Bayern 12.06.2026 through 2030. Honest limit: 1 appearance, 0 starts, 32 of 194 minutes, a bench option - he is a body, not a scorer, and he does not enter the best XI. WHY HE IS STILL THE PICK OVER THE OTHER BODIES: cheapest fit outfield player on the board with a POSITIVE ap; Amoako 1.953.327 has ap 0 and 0 starts, Nadir 2.424.073 has ap MINUS 11, Elfadli 2.288.995 is a sixth defender in a squad that already caps out at 5, Skov and Sauer are injured. Bid 2.900.000 = +68,97% over mv: deliberately inside the cheap-listing high cluster now measured at +72,17% (Vogt) and +135,52% (Nguefack), because 1,2M of premium is trivial against a 100-point penalty. CONDITIONAL: only needed if the squad is below 12 after the ter Horst and Maluze auctions resolve, or if the Sylla sale is to be unlocked later in the window. AFFORDABILITY: 9.700.000 + 3.600.000 + 2.900.000 = 16.200.000 against cash 20.527.522, leaving +4.327.522. No leverage.",
+    "why": "REVERSES AVOID Abr9zxv (now closed) - the briefing says so plainly. THE REASON IS TIMING, NOT VALUE. Kofi Amoako, HAMBURGER SV central midfielder (tid 6), Kickbase listing at exactly mv 1.953.327, st=0, no points history, expires between ~10:00Z and ~10:45Z today (exs is rounded; the 02:45Z run read 10:04Z, this run reads 10:45Z - so treat 10:00Z as the deadline and bid well before 09:30Z). VERIFIED, dated: Ligainsider profile - FIT, no injury or suspension flag, and he does NOT appear on Ligainsider Verletzte-und-Gesperrte. Honest limit: 0 starts, 2 matchday squads (96 min BL + 95 min Pokal available), a bench body, not a scorer, and he does not enter the best XI. Crucially he is NOT the Skov/Sauer st=0 trap - those two carry a clean flag only because they have never been in a matchday squad to be flagged; Amoako HAS been in two, so the clean flag is real. WHY HE IS WORTH 3,4M FOR ap 0: he is the ONLY fit outfield body on the board resolving before the German deadline 2026-09-01T18:00Z. Everything else pre-deadline is a keeper (Wisbereit 15:38Z, Raab 17:34Z - structurally unfieldable), injured (Skov 11:10Z, Wojcik 15:22Z st=2), or costs 1,7M-3,9M more for XI points that do not materialise (Ljubicic 6,22M at 08:51Z, Koemuer 5,14M bench at 10:34Z, Goto 3,93M at 09:05Z - all three add ZERO to the best XI because Lokonga ap 44 already occupies the second MID slot). Krattenmacher resolves 2026-09-02T04:49Z, AFTER the deadline, so he cannot do this job. WHAT HE BUYS, in two parts: (1) he makes the Sylla sale legal before the window shuts - at 12 = 1GK/6DEF/2MID/3ATT selling Sylla gives 1/6/2/2 which fills NOTHING because DEF caps at 5, whereas with Amoako at 13 = 1/6/3/3 selling Sylla gives 1/6/3/2 = 5-3-2 legal; (2) he insures against Kickbase DELETING Sylla from the squad if the Bruegge move completes - a forced 12 to 11 = 1/6/2/2 is an unfillable formation and a -100 on MD2. ROBUST IN ALL FOUR BRANCHES, which matters because he resolves ~10:45Z, BEFORE Maluze at 11:52Z, so this is a count-blind buy: both defenders land = 13, Sylla sellable; one lands = 12, Sylla sellable; neither lands = 11 = 1/4/3/3 which fills 4-3-3 and kills the -100 outright. PRICE: 3.400.000 = +74,05% over mv, deliberately in the cheap-listing high cluster (Vogt cleared +72,17%, Nguefack +135,52%) and above both of their absolute clearings (2,31M and 2,61M). Bidding the median is exactly how Ebnoutalib, Campbell and Nguefack were lost. Going to 4.000.000 (+104,8%) is defensible and still leaves no leverage. AFFORDABILITY: 9.700.000 + 3.600.000 + 2.000.000 + 3.400.000 = 18.700.000 against cash 20.577.522, leaving +1.877.522. NO LEVERAGE in any branch.",
     "rank": 1,
-    "trigger": "2026-09-02T04:49:00Z"
-   },
-   {
-    "name": "Maluze",
-    "pos": "DEF",
-    "club": "4",
-    "ask": 3600000,
-    "mv": 1425004,
-    "premium_pct": 152.63,
-    "listing": "Kickbase listing",
-    "why": "RAISE the live bid from 2.000.000 to 3.600.000 before the auction resolves ~2026-09-01T11:52Z. This CONTRADICTS closed H5smjvu, which said \"do NOT raise any of them, every one already sits above the high cluster\". That was true against the band as measured yesterday; it is not true against the band as measured this run. THE NEW DATAPOINT: Nguefack (16564) cleared to PhiL95 at 02:11:44Z today for 2.612.333 against mv 1.109.172 = +135,52%, nearly double the previous record (Vogt +72,17%) and more than six times the old high cluster. Both record premiums are cheap contested Kickbase listings, which is exactly what Maluze is. Georg's standing 2.000.000 is only +40,35% over mv 1.425.004 - it looked bold yesterday and is now squarely in losing territory. WHY HIM AND NOT A CHEAPER BODY: ap 194 at mv 1.425.004 is the best points-per-euro on the entire board by an order of magnitude (ter Horst 68k/pt, Ljubicic 184k/pt, Maluze 7k/pt at mv). VERIFIED, dated: Ligainsider - fit, no flag, STARTED MD1 at Union 95 of 96 minutes with an assist; sge4ever \"Bundesliga-Auftakt an der Alten Foersterei: Maluze und Atubolu starten\"; Ligainsider 29.08.2026 \"SGE-Talent Maluze: Neuer Vertrag zum Bundesliga-Debuet\"; kicker \"Starke Vorbereitung belohnt: Frankfurt bindet Maluze langfristig - Bundesliga-Startelf winkt\". A 20-year-old who just signed a new contract on the day he started is not about to be dropped. AFFORDABILITY: 9.700.000 (ter Horst) + 3.600.000 = 13.300.000 against cash 20.527.522, leaving +7.227.522. NO LEVERAGE, and none can open. Mechanically this is remove_offer then place_offer - Georg executes.",
-    "rank": 2,
-    "trigger": "2026-09-01T11:52:00Z"
+    "trigger": "2026-09-01T10:00:00Z"
    }
   ],
   "killed_this_run": [
+   {
+    "name": "Bouanani",
+    "pos": "MID",
+    "club": "9",
+    "ask": 3469174,
+    "mv": 3469174,
+    "premium_pct": 0,
+    "why": "NEW Kickbase listing 2026-09-01T03:54:24Z, the freshest thing on the board this run. Badredine Bouanani, VfB STUTTGART midfielder (tid 9), mv 3.469.174 listed at exactly mv, st=0, NO points history (ph hp:false), mv FALLING (mvt 2, tfh -158.187), expires ~2026-09-02T21:20Z. Did not feature in MD1, the 1:5 at Bayern. REJECTED ON PRICE AND TIMING, not on fitness: he resolves AFTER the German deadline 2026-09-01T18:00Z, so he cannot unlock the Sylla sale, which is the only job a body is being bought for today. As post-deadline insurance he is simply the expensive version of Krattenmacher - 3.469.174 against 1.715.870 for the same zero contribution to the best XI, and Krattenmacher already has a live bid. Note Stuttgart play the MD2 opener on 2026-09-04T18:30Z, which is the lock itself. ALSO COVERS KINZIG (11666): NEW Kickbase listing 2026-09-01T02:53:23Z, Maximilian Kinzig, MAINZ goalkeeper (tid 18), mv 500.000 at the floor, no points history, expires ~2026-09-02T08:26Z. This is the FOURTH floor-or-cheap keeper to appear in 48h alongside Florian Mueller (1910), Wisbereit (13671) and Raab (3419), and it is refused for the identical structural reason: only 1 GK can be fielded, so a squad carrying 2 keepers has one body that can never enter the XI, and at 11 players that leaves 9 outfield and NO legal formation. Baumann (ap 129) is the incumbent and is not being displaced. A cheap body must be OUTFIELD - that is Amoako (B3rkra9) today and Krattenmacher (Hzpbubd) after the deadline. ALSO RE-COVERS the survivors of closed Ad99q7o, all still listed and all still AVOID on no-points-history: Leszczynski (15181, Gladbach DEF, mv 5.669.493), Yamamoto (15196, Freiburg MID, mv 3.897.092) and Goto (14048, Freiburg ATT, mv 3.932.433, ap 11). REVERSAL for Bouanani: only a dated Stuttgart item naming him in the MD2 starting XI AND ask &lt;= mv. No reversal for Kinzig - a second keeper is never correct at this squad size."
+   },
    {
     "name": "Sauer",
     "pos": "MID",
@@ -180,15 +186,6 @@
     "why": "Replaces closed Avcqpnd, which named the wrong club - see the club-id corrections at the end, they matter more than this call does. RAAB: new Kickbase listing 31.08 22:18:37Z, the freshest thing on the board this run. UNION BERLIN goalkeeper (tid 40), mv 5.345.826 listed at exactly mv, st=0, ap 9, expires ~2026-09-01T17:34Z. Third keeper to appear at or near a cheap price in 24h alongside Florian Mueller (1910, A99hepd) and Wisbereit (13671, A0p4kqx), and rejected on the same structural ground plus a price one. STRUCTURAL: only 1 GK can be fielded, so a second keeper is a body that can never enter the XI - Baumann (ap 129) is the incumbent and is not being displaced. PRICE: 5,35M for ap 9 is dreadful points-per-euro even ignoring the structure; Nguefack does the body job at mv 1.109.172 with ap 17 and a bid already live. ALSO COVERS NADIR (15478): Kickbase listing 31.08 21:12:32Z, HAMBURG midfielder (tid 6, NOT Mainz), mv 2.424.073 at exactly mv, st=0, ap MINUS 11, expires 2026-09-02T09:34Z - a negative scorer at more than double Nguefack's price. REVERSAL: none for Raab while Baumann is in the squad; Nadir only if every sub-1,5M outfield body is gone AND the squad is still under 11 inside 24h of the lock. CLUB-ID CORRECTIONS - earlier entries in this ledger carry wrong clubs and a future run will repeat them. The mapping confirmed from get_player this run: tid 4 = Frankfurt, tid 6 = HAMBURG, tid 8 = Schalke, tid 13 = AUGSBURG, tid 14 = Hoffenheim, tid 15 = Gladbach, tid 18 = Mainz, tid 29 = Paderborn, tid 40 = UNION BERLIN, tid 77 = Elversberg. Therefore: Amoako (7394) is HAMBURG, not Mainz as Abr9zxv says. Aseko (7417) is FRANKFURT, not Augsburg as Abr9zxv says. Wisbereit (13671) is AUGSBURG, not Frankfurt as A0p4kqx says - so the \"Zaetta/Santos is Frankfurt number one\" reasoning in that entry is beside the point, though the structural second-keeper verdict stands unchanged. Krattenmacher (8252) is Elversberg, correct as logged. None of these corrections flips a verdict; all four remain AVOID."
    },
    {
-    "name": "Amoako",
-    "pos": "MID",
-    "club": "6",
-    "ask": 1953327,
-    "mv": 1953327,
-    "premium_pct": 0,
-    "why": "NEW Kickbase listing 31.08 20:04:20Z, the freshest thing on the board this run. Mainz MID, mv 1.953.327 at exactly mv, st=0, expires ~2026-09-01T10:04Z. NO points history at all this season. Rejected on price alone as a cheap-body candidate: Nguefack (16564) does the identical job - create the 11th slot - at mv 1.109.172 WITH an ap of 17, and Skov (2717) sits at mv 1.104.430. Paying 76% more for a body with zero recorded minutes is waste. Also covers Aseko (7417), the other new listing this run: Augsburg MID, Kickbase listing 31.08 18:57:12Z at mv 4.862.484, no points history - same verdict, four times Nguefack's price for nothing measurable. REVERSAL: only if Nguefack, Skov and every sub-1,5M outfield body are gone from the board AND the squad is still under 11 inside 24h of the lock."
-   },
-   {
     "name": "Wisbereit",
     "pos": "GK",
     "club": "13",
@@ -196,15 +193,6 @@
     "mv": 500000,
     "premium_pct": 0,
     "why": "NEW Kickbase listing 31.08 17:52:10Z. Frankfurt GK, mv 500.000 (floor), no points history, st=0. This is the SECOND floor-priced keeper on the board alongside Florian Mueller (1910, A99hepd) and it will tempt a future run exactly the same way: cheapest body available, creates unwind capacity. DO NOT TAKE IT, for the same structural reason - only 1 GK can be fielded, so a squad of 11 carrying 2 keepers has just 9 outfield players and fills NO legal formation. Zaetta/Santos is Frankfurt's number one anyway, so Wisbereit scores nothing. If a cheap body is ever needed it must be an OUTFIELD body (Nguefack 16564 at mv 714.900, ap 17, bid already live). REVERSAL: none - a second keeper is never correct at this squad size."
-   },
-   {
-    "name": "Vogt",
-    "pos": "ATT",
-    "club": "14",
-    "ask": 2500000,
-    "mv": 1625348,
-    "premium_pct": 53.81,
-    "why": "Hoffenheim ATT, no points history at all. PhiL95 won him from the Kickbase board at 15:49:44Z today for 2.307.600 against mv 1.340.299 - a clearing premium of +72,17%, now the highest ever measured in this league and logged as such - then INSTANTLY relisted him at 2.500.000 = +86,53% over mv. That is a rival trying to recover an overpay, not a price. Also covers the other new no-history board entries this run, all AVOID: Leszczynski (15181, Gladbach DEF, mv 6.068.893), Yamamoto (15196, Freiburg MID, mv 4.041.706) and Goto (14048, Freiburg ATT, mv 4.047.696, ap 11). Note the Vogt clearing is a real and useful datapoint in the other direction: cheap contested Kickbase listings can clear far above the +20,96% band, which supports bidding the HIGH cluster on low-absolute-cost auctions. REVERSAL: none while the ask sits above mv."
    },
    {
     "name": "Florian Mueller",
@@ -241,17 +229,26 @@
     "mv": 24330194,
     "premium_pct": 5.54,
     "why": "David's ask, listed 29.08. Hoffenheim MID, ap 62, ask 25.678.911 vs mv 24.455.775 = +5,00% - the premium is fair for a manager ask, but the price is not. 25,7M for ap 62 is the second-worst points-per-euro on the board after Diks; Suzuki already delivers ap 395 for 14,7M. Would also eat half the spending power and make the unwind unmanageable."
+   },
+   {
+    "name": "Rots",
+    "pos": "DEF",
+    "club": "14",
+    "ask": 11111111,
+    "mv": 9020858,
+    "premium_pct": 23.17,
+    "why": "NEW manager ask from reafix listed 31.08 08:05Z. Hoffenheim DEF, ap MINUS 14, ask 11.111.111 vs mv 9.059.199 = +22,65% - above the highest premium ever measured in this league (+20,96%) for a negative scorer. Nothing to discuss."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip clears its cost this run - the mechanism is absent, not merely unattractive: there are currently no manager asks below market value anywhere on the board. Separately, rivals ran another cluster of same-minute round trips and cheap board buys overnight, including at least one player confirmed to be out for weeks. That is motion on the daily market-value tick, not points, and it is not a model to copy while a squad slot is the scarce thing.",
+  "reason": "No flip clears its cost this run. There are no manager asks sitting below market value, so the mechanism the value trade depends on is simply absent. The rivals continue to trade injured and unavailable players against each other for fractions of a percent on the daily tick, and one of them this morning demonstrated exactly why that is not a model worth copying: a body bought yesterday at a record premium was dumped back to Kickbase at flat market value overnight for a substantial loss, in under fifteen hours. The lesson worth keeping is that these premiums are winnable but never recoverable on resale — so they should only ever be paid for a body that is genuinely needed, which is the case being made for today's buy and was not the case for his.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Bernardo still carries the Kickbase injury flag picked up in the Cologne match, and the important thing about it is that he is currently the fifth-best defender, so he would be fielded - and an injured man in the eleven scores nothing. Watch that flag rather than his average. Both live bid targets verified clean and dated: ter Horst fit, started both competitive matches, ninety-nine percent of available minutes, latest item 21.08.2026; Maluze fit, started matchday one at Union for ninety-five minutes with an assist, and signed a new contract on 29.08.2026, the day he debuted. Two board listings failed verification outright and are logged as avoids: Skov has zero minutes this season and missed Union's season opener on 21.08.2026, and Sauer has been out roughly a month and sits on Ligainsider's injured table with a training backlog. Both showed a clean status flag on the Kickbase listing, which is precisely the trap - Kickbase cannot flag a man who has not been in a matchday squad. Krattenmacher verified fit, but honestly: a bench option, one substitute appearance, no starts. He is a body, not a scorer. Three date traps were caught and logged on Sylla searches, all from the winter New York saga and all last season; none of them contradicts the live Club Brugge story, which is still the only current source and still only a rumoured bid.",
+  "sweep": "A squad-wide sweep of the injury and suspension table returns nothing: no player in the squad, and none of the three players Georg is bidding on, appears on it. Bernardo still carries a fitness flag inside Kickbase, but the dated club sources say he returned to the squad before the last matchday and started it, so the flag most likely reflects being substituted early rather than an injury — worth re-checking closer to the lock, since he is the fifth defender and would actually be fielded. Two date traps were cleared this run, both of which a future run will meet again. The widely-circulated headline announcing that Sylla is leaving Schalke is from January and concerns a completely different, collapsed move to a club in the United States; it does not corroborate the current story. And the club statement listing him as injured for a fixture against Bayern belongs to last season's calendar, not this one.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -310,7 +307,7 @@
  "arithmetic": [
   {
    "k": "Balance",
-   "v": "20.527.522"
+   "v": "20.577.522"
   },
   {
    "k": "Squad value",
@@ -318,11 +315,11 @@
   },
   {
    "k": "33% floor",
-   "v": "-0,33 x (138.781.576 + 20.527.522) = -52.572.002"
+   "v": "-0,33 x (138.781.576 + 20.577.522) = -52.588.502"
   },
   {
    "k": "Spending power",
-   "v": "20.527.522 + 52.572.002 = 73.099.524 — NOT 20.527.522"
+   "v": "20.577.522 + 52.588.502 = 73.166.024 — NOT 20.577.522"
   },
   {
    "k": "Clearing premium band (measured)",
