@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-02T08:49Z",
+ "run": "2026-09-02T10:44:45Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 16937522,
   "floor": -51775183,
   "spending_power": 68712705,
-  "hours_to_lock": 57.67,
-  "exposure": "No leveraged position, and none would be opened if both bids clear - that is the point of sizing them against cash rather than against spending power. Spending power is far larger than cash here and is irrelevant: it is capped by the floor, not by what is safe to commit before a lock. The negative-balance rule is untouched and must stay that way; it outranks every other consideration between now and the lock.",
+  "hours_to_lock": 55.62,
+  "exposure": "No leveraged position is open and the recommended move does not open one — the raise stays inside cash with room to spare. This is the constraint that decides the run twice: it is why only one bid is placed rather than two, and why the fallback is a fallback and not a parallel bid. Spending power looks generous because the floor sits far below zero, but it is irrelevant here — a negative balance at matchday start scores zero for the entire matchday, so cash is the binding constraint, not the floor. The lock is comfortably distant, so the timing pressure this run comes from the listing's expiry, not the matchday.",
   "must_restore_by": "2026-09-04T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 4 MID)"
   ]
  },
- "binding_gap": "Third attacker, unchanged for five runs. Defence caps at five in every Kickbase formation, so the sixth and seventh defenders on the board cannot improve the fielded eleven no matter how good their averages look; a third attacker does, because it pushes a zero-scorer out of the XI. Gomis is the buy that fixes it and the bid is already in.",
+ "binding_gap": "The third attacker. Carrying only two is what leaves a single legal formation and forces a player with no points history into the fielded eleven. Landing Gomis makes the squad twelve, unlocks two better shapes, benches the empty slot and is worth the largest single-move fielded gain on the board. Nothing else available fills it: the alternatives are cameo returns, a non-fit flag, or a price four times the cash on hand.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 68712705,
@@ -51,38 +51,38 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 24,
+  "listings": 20,
   "cheapest": 1826152,
   "cheapest_slot_filling": 6800000,
-  "expiring_within_2h": 5
+  "expiring_within_2h": 2
  },
  "squad": [],
  "verdict": {
   "action": "act",
-  "headline": "No action needed.",
-  "headline_short": "No action needed.",
-  "detail": "No action needed. Both live bids are still yours alone and nothing on the board is affordable beside them. Georg executed the Amaimouni-to-Scheller swap yesterday morning, so this run is pure waiting: Scheller resolves late morning, Tidiam Gomis mid-afternoon, and in both cases Georg is the only bidder listed. Do not place a third bid and do not raise either one - the headroom left after the two commitments is a rounding error, and any raise would open a negative balance, which scores zero for the entire matchday. The one genuinely new thing on the board is a defender who looks like the best points-per-euro asset available and is not one; see fitness."
+  "headline": "The Scheller leg is lost.",
+  "headline_short": "The Scheller leg is lost.",
+  "detail": "The Scheller leg is lost. JakobDohr took him off the Kickbase board in the final minutes at the highest clearing premium ever measured in the correctly-priced band, beating Georg's bid comfortably. One action follows, and it is timed: raise the live Gomis bid before 14:00Z. Two things make it necessary. The Scheller loss frees the cash that capped the original bid at a hair of headroom, and Gomis's market value has drifted upward intraday, which silently eroded the bid's premium until it now sits BELOW every datapoint in the high cluster. Georg is under-bidding the best asset on the board for the second consecutive run, and that is the same error every miss in the calibration table records. Gomis is still the largest single fielded-points gain available and there is nothing else here worth buying. No sale is legal."
  },
  "sell": {
   "recommendation": "none",
-  "reason": "No sale is legal at eleven players - selling anyone drops the squad below a fillable formation and hands over a hundred-point penalty by Georg's own hand. The two designated funding sales stay queued in this order and no other: Widmer first, because with Scheller landed he is the odd man out of the back line and the sale costs zero fielded points; Bernardo second, and only if his non-fit flag is still standing near the lock. Both wait on at least one bid clearing. Lokonga remains a hold, not a sale, despite being the worst points-per-euro in the squad - selling him on top of Sylla leaves nine outfield players and fills no legal formation.",
+  "reason": "Nothing. This overrides the standing sell queue and the reason is arithmetic, not judgement: at eleven players, selling anyone at all drops the squad below a fieldable eleven and takes the matchday penalty. It also corrects the previous plan, which had Widmer queued as a free funding sale — that was true only in the branch where Scheller landed and Widmer became a benched sixth defender. With Scheller lost, the best shape fields all five defenders, so selling Widmer would now cost real fielded points, and selling Bernardo would cost more. Neither sale is needed: the raise leaves cash in hand with no leverage and nothing on the board to spend it on. Hold both to the lock unless a squad player is newly flagged.",
   "standing": []
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Nothing to add. The two live bids account for effectively all available cash, and every remaining asset on the board is either unaffordable, in a position already covered, carrying a non-fit flag, or returning cameo-level points. Onyeka stays the named fallback if both bids are lost - he is fit, a confirmed matchday-one starter and the best points-per-euro left after Scheller and Gomis - but he is out of reach while the two bids stand. Three new listings assessed and rejected this run: an Augsburg defender with the headline average and a hamstring question, a Mainz attacker in the right position at roughly six times the cost per point of Gomis, and a Hamburg midfielder on negative points.",
+  "reason": "One bid, raised, not added to. Gomis is a third attacker, which is the binding gap, and he is the only listing on the board that both fills it and carries a real points return — the other attackers offer cameo-level returns, a big name with no scoring appearance at four times the available cash, or a non-fit flag. Fitness re-verified this run against the league-wide injury table and his club profile: fit, a confirmed starter, two starts and three assists, and not on his club's injury list. The two stale items that surface on his name are both from last season's pre-season and the date trap is unchanged. The bid is benchmarked against the HIGH cluster and never the median, because this is a Kickbase listing rather than a manager ask, and the newest datapoint in that cluster is also its top. The margin is sized for two risks at once: a late rival, and further upward drift in his market value before he resolves. Onyeka is the named fallback and only the fallback — he is a midfielder, so he buys fewer fielded points than Gomis on the same money, and the two are mutually exclusive because bidding winning premiums on both would open a leveraged position. Kuhn and Diaby are new listings this run and both rejected: no scoring appearance between them, wrong position or unaffordable.",
   "standing": [
    {
-    "name": "Tjark Scheller",
-    "pos": "DEF",
-    "club": "29",
-    "ask": 7500000,
-    "mv": 6832981,
-    "premium_pct": 9.76,
+    "name": "Tidiam Gomis",
+    "pos": "ATT",
+    "club": "43",
+    "ask": 10400000,
+    "mv": 7418952,
+    "premium_pct": 40.18,
     "listing": "Kickbase listing",
-    "why": "REPLACES B8lgqff (closed, price stale at 7.477.522). GEORG HAS EXECUTED THE SWAP - this call now records the LIVE bid, not a recommendation. Verified from list_market at 2026-09-02T04:45Z: player 7320 carries ofc=1 with ofs=[{Georg Kitz, uop 7.500.000}], and player 12294 AMAIMOUNI now carries ofc=0 with NO offers - the Amaimouni offer was removed as the swap required. Nothing further is asked of Georg on this leg; it resolves ~10:38Z (exs 21147 from 04:45Z) with NO scheduled run in the 09:22Z-10:38Z window, so it will be reported settled by the 10:45Z run at the earliest. THE BID: 7.500.000 against mv 6.832.981 = +9,76% (the previous recommendation of 7.477.522 was +9,43%; the extra 22.478 is affordable because a 60.000 matchday bonus landed at 2026-09-02T04:05:40Z, lifting cash from 16.877.522 to 16.937.522). AFFORDABILITY CONFIRMED, and this is the number that matters: 9.400.000 (Gomis) + 7.500.000 (Scheller) = 16.900.000 against cash 16.937.522, leaving 37.522 if BOTH clear. NO leveraged position, so the negative-balance-scores-zero rule is untouched. DO NOT place any third bid - there is 37.522 of headroom and nothing on this board costs that. STILL SOLE BIDDER: ofc=1 and the only entry in ofs is Georg, 6.3h after listing. The Gosens datapoint from 02:29:48Z (single bidder, cleared at EXACTLY mv, premium -0,00001%) says an unopposed Kickbase listing clears at its own price, so at +9,76% this bid wins unless a rival appears. FITNESS RE-VERIFIED THIS RUN, 2026-09-02T04:5xZ: Ligainsider Verletzte-und-Gesperrte lists Paderborn as Michel, Klaas, Gayret, Awortwie-Grant, Eickel - Scheller and ter Horst both clear. st=0 on the listing, ap 133, mvt 1 rising. THE CASE, unchanged: DEF ap 133 at 6.832.981 mv = 51,4k per point, the best points-per-euro on the board; with Gomis landed the squad is 13 = 1GK/6DEF/3MID/3ATT and the best XI 5-2-3 is 1536 ap, +104 on the 1432 that Gomis alone delivers. WHAT THE NEXT RUN MUST CHECK: ofc on 7320. If it goes to 2+, the bid is cash-capped and cannot be raised - report it as at risk, do not recommend a raise, because a raise above 7.537.522 opens leverage.",
+    "why": "RAISE THE LIVE GOMIS BID FROM 9.400.000 TO 10.400.000. Bj0cr1a stays OPEN (it records the live 9.400.000 bid and must resolve to feed the calibration table); this call records the raise. TWO THINGS CHANGED AT 10:38:34Z AND THEY BOTH POINT THE SAME WAY. (1) SCHELLER WAS LOST. JakobDohr bought 7320 off the Kickbase board at 8.888.888 against mv 6.832.981 = +30,09%, beating Georg's 7.500.000 (+9,76%) by 1.388.888. The rival appeared after TWELVE HOURS of ofc=1 with Georg the sole bidder, which kills the inference B6i4qsx was built on: ofc=1 at any point before expiry is worth NOTHING as evidence of being unopposed, and the \"two consecutive sub-mv clearings\" reading from the 08:45Z run (Gosens -0,00001%, Mueller -0,07%) was the wrong lesson from a quiet six hours. +30,09% is now the HIGHEST measured clearing premium in the correctly-priced band and it is also the FRESHEST. (2) THE SCHELLER LOSS FREES THE CASH THAT CAPPED THE GOMIS BID. The 9.400.000 figure was set with 7.500.000 simultaneously committed to Scheller, leaving 37.522 of headroom and an explicit instruction not to raise because a raise would open leverage. That constraint is GONE: cash is 16.937.522 and nothing else is committed. WHY 9.400.000 IS NOW A LOSING BID, and this is the mechanism a future run must watch for: the bid was set at 04:45Z against mv 7.014.962 = +34,00%, deliberately ~6 points above the then-high cluster. Gomis's mv has since risen INTRADAY to 7.418.952 (+403.990) despite mvud being 2026-09-02T20:00:00Z - market values in this data move between the nominal daily ticks. The bid did not change but the premium silently eroded to +26,70%, which is now BELOW every datapoint in the high cluster: Scheller +30,09%, ter Horst +27,61%, Ljubicic +27,34%, Vagnoman +27,26%. Georg is sitting under the whole cluster on the best asset on the board. THE NEW NUMBER: 10.400.000 against mv 7.418.952 = +40,18%. That is ~10 percentage points clear of the +30,09% record, and the margin is sized for the erosion risk as well as the rival risk - if mv drifts up another ~400k to ~7,82M by resolution, 10.400.000 is still +33,0%, i.e. still above the record. Benchmarked against the HIGH cluster, never the median: median is now +2,75% and is pure manager-ask noise. DO NOT read the Maluze +308,77% record as licence to bid higher here - that premium was enormous only because Maluze's mv had not caught up with his ap; Gomis's mv already prices him as a 7,4M player. AFFORDABILITY: 10.400.000 against cash 16.937.522 leaves 6.537.522 and opens NO leveraged position, so the negative-balance-scores-zero rule is untouched. This is the ONLY bid to place - do not add a second, see the Onyeka arithmetic in the WATCH. WHY HE IS STILL WORTH IT: ap 176, the largest single fielded gain available. Squad is 11 = 1GK/5DEF/3MID/2ATT with 5-3-2 the ONLY legal shape, which forces Amoako (no points history at all) into the fielded eleven. Gomis is a THIRD ATTACKER: with him the squad is 12 = 1/5/3/3, 5-2-3 becomes legal, Amoako is benched and the fielded total goes 1256 -> 1432 ap. PLUS 176 for one purchase. At 10.400.000 that is 59,1k per point, still the best on the board (Onyeka 60,1k, Castello Jr. 102k, Atubolu 91k, Koenigsdoerffer 302k). FITNESS RE-VERIFIED THIS RUN 2026-09-02T10:5xZ: Ligainsider Verletzte-und-Gesperrte gives Leipzig as Gebel (ACL, 10 months), Baumgartner (3 months) and Ouedraogo (4 weeks) - Gomis is NOT on it. Ligainsider profile /tidiam-gomis_36962/ marks him FIT, 2026/27: 2 appearances, 1 BL start, 1 DFB-Pokal start, 3 assists, 128 minutes. Demichelis 21.08.2026 \"Gomis startet gegen Trier\". The \"angeschlagen raus\" note on the profile is dated 08.10.2025 and the RB tweet about the Innenband is 19.08.2025 - both LAST SEASON, date trap unchanged. st=0, stl empty, mvt 1 rising. MD2: Leipzig away at Werder Bremen 2026-09-05T13:30Z, inside the window. MECHANICS: Kickbase has no raise-in-place, so Georg removes the 9.400.000 offer and places 10.400.000 on the same listing. Do this WELL BEFORE the ~16:45Z expiry - Kickbase is pay-your-bid, so bidding early costs nothing and the Scheller rival arrived at the death. Deadline set to 14:00Z to leave slack ahead of the 14:45Z run. UNWIND CEILING: one buy permits exactly one sale, and no sale is needed - see the master plan. RISK STATED HONESTLY: pay-your-bid, so if nobody else bids, 2.981.048 over mv is wasted cash. Accepted - there is nothing else on this board worth buying, and losing ap 176 for a second consecutive run costs far more than cash Georg has no use for before the lock.",
     "rank": 1,
-    "trigger": "2026-09-02T10:38:00Z"
+    "trigger": "2026-09-02T14:00:00Z"
    },
    {
     "name": "Tidiam Gomis",
@@ -98,6 +98,24 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "Moussa Diaby",
+    "pos": "ATT",
+    "club": "7",
+    "ask": 26612497,
+    "mv": 26612497,
+    "premium_pct": 0,
+    "why": "NEW KICKBASE LISTING 2026-09-02T09:26:29Z and THE BIGGEST NAME ON THE BOARD, logged so no future run re-derives the rejection. Moussa Diaby, BAYER LEVERKUSEN attacker (tid 7 = Leverkusen, same club as Eichhorn), mv 26.612.497 listed at EXACTLY mv, st=0, isn=true, mvt 2 FALLING, exs 124500 = expires ~2026-09-03T20:01Z. He IS the right position - a third attacker is Georg's binding gap - and that is the only thing in his favour. REJECTED ON TWO HARD COUNTS, neither close. (1) UNAFFORDABLE BY A FACTOR OF FOUR. Cash is 16.937.522, which is 9.674.975 BELOW his mv before any premium at all; a winning bid at the measured high cluster (+30,09% Scheller) would be ~34.600.000. Spending power is 68.712.705 and is IRRELEVANT here - the 33% floor permits the spend but a NEGATIVE balance at matchday start scores ZERO for the entire matchday, so cash is the binding constraint, and buying him would open a leveraged position of at least 17,7M with 55,7h to the lock. Not a candidate at any premium. (2) NO ap FIELD AT ALL, so no scoring appearance on MD1 and no points history to underwrite the outlay. mvt 2 with isn=true says the market is marking him DOWN while carrying a news flag. FOR A FUTURE RUN: even if cash were available, 26,6M for zero measured points is the worst points-per-euro proposition on this board, against Gomis at 59,1k/pt and Onyeka at 60,1k/pt. Do not let the name reopen this."
+   },
+   {
+    "name": "Nicolas Kuhn",
+    "pos": "MID",
+    "club": "15",
+    "ask": 7016497,
+    "mv": 7016497,
+    "premium_pct": 0,
+    "why": "NEW KICKBASE LISTING, the freshest on the board: 2026-09-02T10:27:27Z, seventeen minutes before this run. Nicolas Kuhn, M'GLADBACH midfielder (tid 15 = Borussia Moenchengladbach, confirmed via get_player on Scally tn \"M'gladbach\" - same club as Herold, and a correction worth keeping: earlier ledger entries treated tid 15 loosely), mv 7.016.497 listed at EXACTLY mv, st=0, mvt 1 rising, isn=true, exs 169618 = expires ~2026-09-04T09:34Z. That is 47 HOURS of runway, by a wide margin the longest on the board. AVOIDED ON THREE COUNTS, no news check needed to settle it. (1) NO ap FIELD AT ALL on the market row, which on this endpoint means no scoring appearance this season - he did not register points on MD1. An established 7M midfielder with zero points from matchday one is the exact \"cheap market value next to no return\" shape that means the market knows something, and there is no points history to underwrite any bid. (2) WRONG POSITION. Georg's binding gap is a THIRD ATTACKER; he already carries three midfielders (Nusa 226, Lokonga 44, Amoako 0) and only two attackers, which is why 5-3-2 is the only legal shape. A fourth midfielder buys at most Amoako's bench slot, and unlike Onyeka (ap 139) Kuhn brings no measured points to put in it. (3) UNAFFORDABLE ALONGSIDE THE MOVE THAT MATTERS. With 10.400.000 committed to the Gomis raise, cash 16.937.522 leaves 6.537.522, which is 478.975 below Kuhn's mv - and no Kickbase board listing in this league has ever cleared below mv. NOTE THE RUNWAY TRAP FOR A FUTURE RUN: 47h means he is still on the board at the MD2 lock (2026-09-04T18:30Z is after his ~09:34Z expiry, so he actually resolves ~9h BEFORE the lock), and a long runway has repeatedly been the ONLY thing recommending a listing in this ledger (Elfadli, Martel). Long exposure is a reason to bid HIGHER if you want him, never a reason to want him."
+   },
    {
     "name": "Ransford Koenigsdoerffer",
     "pos": "ATT",
@@ -144,15 +162,6 @@
     "why": "THE ONLY NEW LISTING THIS RUN AND THE BEST PLAYER ON THE BOARD THAT GEORG CANNOT HAVE - log the arithmetic so no future run re-derives it. Francis Onyeka, SV 07 ELVERSBERG midfielder (tid 77 = Elversberg, confirmed from get_player tn - same club as Krattenmacher; note Elversberg is a promoted side, so tid 77 is NOT a legacy Bundesliga id). NEW Kickbase listing 2026-09-02T02:50:40Z at EXACTLY mv 8.356.668, st=0, stl empty, ofc=0, ap 139, mvt 1 RISING (tfhmvt +371.539), exs 52309 from 04:45Z = expires ~2026-09-02T19:17Z (14.5h runway). FITNESS AND STARTER STATUS: CONFIRMED CLEAN, which is exactly what makes him a trap. Ligainsider profile (slug /francis-onyeka_36948/) marks him FIT: 2026/27 = 2 appearances, 1 START, 98 minutes, 2 goals, 1 assist. get_player gives sec=3999 = 66,7 minutes on MD1, Elversberg 3:2 Union Berlin 29.08.2026 - a real start taken off late, NOT the cameo-minutes trap that sank Keitel (642 sec). He is NOT on Ligainsider Verletzte-und-Gesperrte fetched 2026-09-02T04:5xZ (Elversberg is Seifert and Zimmerschied only). Latest dated item 15.06.2026 \"Offiziell: Onyeka auf Leihbasis nach Elversberg\" - a season loan from Leverkusen, so no deadline-day exit risk. MD2 is Gladbach v Elversberg 2026-09-05T13:30Z, inside the window. VALUE IS REAL: 8.356.668 / ap 139 = 60,1k PER POINT, third-best on this board behind Scheller (51,4k) and Tidiam Gomis (53,4k at his bid) and far ahead of everything else offered. REJECTED PURELY ON AFFORDABILITY, and the maths closes every branch. (1) HE IS UNAFFORDABLE AT ANY WINNING PRICE. Cash is 16.937.522 with 9.400.000 committed to Gomis, so the absolute ceiling on a second bid is 7.537.522 - that is 819.146 BELOW his mv of 8.356.668. A Kickbase board listing has never cleared below mv in this league (measured minimum is -0,78%), so a sub-mv bid is not a long shot, it is a guaranteed loss. He cannot be bought without going negative, and a negative balance at the 2026-09-04T18:30Z lock scores ZERO for the entire matchday. (2) DROPPING SCHELLER FOR HIM IS STRICTLY WORSE ANYWAY, even ignoring (1). With Gomis landed the squad is 12 = 1/5/3/3 fielding 1432 in 5-2-3. Adding SCHELLER (DEF 133) gives 13 = 1/6/3/3, best XI 5-2-3 = 129 + (143+138+133+110+62=586) + (226+44=270) + (195+180+176=551) = 1536, gain +104. Adding ONYEKA (MID 139) gives 13 = 1/5/4/3, best XI 4-3-3 = 129 + (143+138+110+62=453) + (226+139+44=409) + 551 = 1542, gain +110. That is SIX fielded points more, for at least 856.668 more cash AND the loss of a live unopposed bid that is 6,3h from resolving. Six points is not worth re-opening a settled auction. (3) DROPPING GOMIS FOR HIM IS WORSE STILL: Gomis is +176 fielded ap for 9.400.000; Onyeka without Gomis gives squad 12 = 1/5/4/2, best XI 5-3-2 = 129 + 482 + (226+139+44=409) + 375 = 1395, only +139. Gomis wins on points AND is the cheaper mistake to keep. REVERSAL: only if BOTH the Gomis and Scheller bids are lost - which would restore cash to 16.937.522 - AND he is still listed at or near mv AND a dated Elversberg item confirms he starts MD2. That branch resolves after 16:45Z, by which time only ~2,5h of his runway remains, so a future run must have the bid ready rather than re-deriving the case. If he is relisted later in the season the 60,1k/pt case stands and should be re-verified from scratch."
    },
    {
-    "name": "Mitchell Weiser",
-    "pos": "DEF",
-    "club": "10",
-    "ask": 5333399,
-    "mv": 4627776,
-    "premium_pct": 15.25,
-    "why": "MANAGER ASK by David at 5.333.399 against mv 4.627.776 = +15,24%, and it has sat unsold on the board since 2026-09-01T06:58:59Z. Werder Bremen DEF (tid 10). NO ap FIELD AT ALL in list_market, which for this endpoint means no scoring appearance - he did not register points on MD1, so there is no points history to justify the premium and no evidence he starts. Two separate reasons to avoid: (a) a +15,24% manager ask belongs in the LOW cluster by the measured band (manager-to-manager clears at +3,06% and +4,35%), so the ask is roughly four times the going rate for its own market and an unsold multi-day listing is an invitation to offer at mv, not to pay the ask; (b) Georg is a DEF-heavy side already (5 DEF of 11) and the recommended Scheller buy takes it to 6, so a seventh defender with no points cannot enter the fielded XI at any squad size. Cash is fully committed to Gomis and Scheller in any case. REVERSAL: only if a dated source confirms he is starting for Werder AND the ask drops to mv or below AND cash is free after the current two bids resolve."
-   },
-   {
     "name": "Atubolu",
     "pos": "GK",
     "club": "4",
@@ -196,26 +205,17 @@
     "mv": 2121966,
     "premium_pct": 5.01,
     "why": "Yannik Keitel, FC AUGSBURG midfielder (tid 13 = AUGSBURG, not Frankfurt - the os field on the market row is the MD2 OPPONENT, not the club; Matsima and Gregoritsch are the other tid 13 players and they show os SGE because Augsburg host Frankfurt on 06.09). NEW Kickbase listing 2026-09-01T16:08:23Z at exactly mv 2.228.340, st=0, ap 23, mvt 2 FALLING (tfhmvt -124.246), exs 134739 = expires ~2026-09-03T08:04Z - the longest runway on the board, which is the only thing recommending him. THIS IS THE CAMEO-MINUTES TRAP IN REVERSE, AND THE NUMBERS EXPOSE IT WITHOUT NEEDING NEWS: sec = 642, i.e. TEN AND A HALF MINUTES on MD1 (Augsburg 3:0 Schalke, 30.08.2026). ap 23 off 642 seconds looks like 97k per point, superficially close to the Amaimouni buy at 93k/pt, but it is 23 points banked in eleven minutes of garbage time and there is no reason to expect it to repeat over 90. Contrast Amaimouni: 87 minutes, 11,7 km, 2 starts from 2. A late substitute scores nothing when the fielding decision is made. NOT a fitness rejection - he does not appear on Ligainsider Verletzte-und-Gesperrte 2026-09-01. SHAPE: he would be a THIRTEENTH body, and the squad does not need one. Once the Gomis bid clears the squad is 12 = 1/5/3/3, which is robust to any single deletion (11 = 1/5/3/2 fills 5-3-2, 1/4/3/3 fills 4-3-3, 1/5/2/3 fills 5-2-3), so the -100 insurance is already bought. And 2.228.340 is 30% of the 7.477.522 headroom that the Amaimouni bid needs. REVERSAL: only if the Amaimouni bid is lost AND Georg is short of a third fit midfielder inside 24h of the lock AND a dated Augsburg item puts Keitel in the starting XI - his long runway to 2026-09-03T08:04Z makes him the last-resort filler, nothing more."
-   },
-   {
-    "name": "Castello Jr. (Lukeba)",
-    "pos": "DEF",
-    "club": "43",
-    "ask": 20089389,
-    "mv": 20334691,
-    "premium_pct": -1.21,
-    "why": "THE BIGGEST TEMPTATION THIS BOARD HAS PRODUCED, AND IT IS UNAFFORDABLE - log the arithmetic so no future run re-derives it. Castello Lukeba (listed as \"Castello Jr.\"), RB LEIPZIG defender (tid 43), NEW Kickbase listing 2026-09-01T15:01:04Z at EXACTLY mv 20.089.389, st=0, ap 199, mvt 1 RISING, exs 160548 from 16:46Z = expires ~2026-09-03T13:22Z (44.6h, the longest runway on the board). FITNESS AND STARTER STATUS: CONFIRMED CLEAN, which is what makes him dangerous. Ligainsider profile 2026-09-01 marks him FIT, 2026/27 = 2 appearances, 2 STARTS, 193 of 195 minutes (99% usage). Not on Ligainsider Verletzte-und-Gesperrte 2026-09-01 (Leipzig's list is Gebel/ACL, Baumgartner, Ouedraogo). Latest dated item 26.08.2026 \"RB Leipzig rueckt bei Lukeba von Verkaufsplaenen ab\" - the club has REVERSED its plan to sell him, so he is not a deadline-day exit risk either. DATE TRAP CLEARED: bundesliga.com \"RB Leipzig's Castello Lukeba faces spell on sidelines\" and \"RB-Aufstellung gegen Gladbach: So ersetzt Werner Castello Lukeba\" are LAST SEASON - his own profile carries \"02.05.2026 Lukeba gibt Comeback auf dem Platz\" and \"30.04.2026 Lukeba wieder beim Team\", so the injury story is spring 2026 and is dead. VALUE IS GENUINELY GOOD: 20.089.389 / ap 199 = 101k PER POINT at exactly mv, the second-best points-per-euro on this board after Tidiam Gomis (53,4k/pt) and better than everything Georg was offered all day (Vagnoman 112k/pt, Engelhardt 169k/pt, Ulrich 193k/pt, Aebischer 226k/pt, Deman 430k/pt). REJECTED PURELY ON AFFORDABILITY, and the maths closes every branch: cash is 16.877.522, so his ASK ALONE is 3.211.867 MORE than Georg has, before any premium. A Kickbase board listing on an ap-199 asset will not clear at mv - the measured high cluster is +27% and that puts the real clearing price near 25,5M. NO SALE CAN FUND HIM: the squad is 11 with exactly one legal formation (5-3-2), so every sale takes it to 10 and fills NO formation = a self-inflicted -100. BRANCH IF GOMIS LANDS 02.09 16:45Z: cash falls to 7.477.522 and squad is 12; selling Lokonga (10.275.305) brings cash to 17.752.827 - STILL under the bare ask; adding a Widmer sale (2.001.428) reaches 19.754.255 and STILL falls short while leaving the squad at 10 before the buy. BRANCH IF GOMIS IS LOST: cash stays 16.877.522, squad stays 11, no sale is legal - still short. So he is out of reach in every branch without going NEGATIVE, and a negative balance at the 2026-09-04T18:30Z lock scores ZERO for the entire matchday. THE LEVERAGED PATH, priced honestly so it is never re-explored: Gomis lands, bid ~22M on Lukeba resolving 03.09 13:22Z, then sell BOTH Lokonga and Bernardo (16.987.670) before the lock to get back to +2,47M, ending 11 = 1/5/2/3 with an XI of 1525 ap against the 1432 ap the Gomis plan already delivers. That is +93 ap for ~5M of net cash, one contested 20M auction, and a ~29h window in which a missed sale means ZERO points on the whole matchday. The prompt's own rule settles it - unwind risk outranks every other consideration - and Georg executes by hand between briefings, so a plan needing two timed sales he may not see is not a plan. NOT WORTH IT. REVERSAL: only if his ask is at or below Georg's then-current CASH with the squad already legal at 12+ after the buy - i.e. never at this price. If he is relisted later in the season after Georg's cash has rebuilt, re-verify fitness from scratch; the 101k/pt case is real and would stand."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip clears its cost this run. The ledger measures zero manager asks below market value, so the mechanism is simply absent, and the cash headroom would not fund one anyway. Rivals ran three more same-minute round trips overnight, two of them buying fractionally below market value and selling back at it - that is motion on the daily tick, not points, and it is not a model to copy.",
+  "reason": "No flip clears its cost this run. There are no manager asks below market value at all, so the mechanism is absent; the only manager ask on the board is a same-day relist at a markup well above the low cluster where manager asks actually clear. Two more rival micro-flips settled since the last run, both on players who cannot score — one with a negative points return, one openly flagged out with a metabolic disorder — for fractions of a percent on the market-value tick. That is motion, not points, and it is not a model to copy. With eleven players any flip would also reduce the fielded eleven, which settles it twice over.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Squad sweep clean for the sixth run running, checked against Ligainsider's injured-and-suspended table this morning. Bayern and Hoffenheim have no entries at all; Augsburg lists only Mounie; Dortmund's list does not include Guirassy; Leipzig's is Gebel, Baumgartner and Ouedraogo, so both Nusa and Gomis clear; Mainz clears Widmer; Hamburg clears Lokonga and Amoako; Paderborn clears both ter Horst and Scheller. Every squad player carries a clean status flag except Bernardo, whose flag is unchanged from previous runs. THE ONE NEW FITNESS ITEM, and it is a trap worth naming: the Augsburg defender listed this morning has the best points-per-euro on the board on paper and Kickbase has flagged him not fit today. Dated reporting from the day after matchday one has him coming off in the final minute of his Augsburg debut with left hamstring trouble and the diagnosis still pending. Ligainsider's table has not caught up and his profile icon still reads fit, so the table and Kickbase disagree - and Kickbase's flag is the fresher of the two. An undiagnosed hamstring three days from the lock is exactly what a big season average conceals.",
+  "sweep": "Squad sweep clean for the sixth consecutive run. The league-wide injury and suspension table was fetched this run and checked club by club against every squad player: Bayern and Hoffenheim carry no entries at all, and the named absentees at Augsburg, Dortmund, Leipzig, Mainz, Hamburg and Paderborn do not include anyone Georg owns. Every squad player carries a clean status flag except Bernardo, whose flag is unchanged. On the board, three listings picked up or confirmed non-fit flags since the last run — all of them already on the avoid list.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -290,7 +290,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=51, -0,78% to +308,77%"
+   "v": "n=56, -0,78% to +308,77%"
   }
  ]
 }
