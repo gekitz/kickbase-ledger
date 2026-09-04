@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-04T20:54Z",
+ "run": "2026-09-04T22:58Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 11343624,
   "floor": -51315434,
   "spending_power": 62659058,
-  "hours_to_lock": 165.6,
-  "exposure": "No leverage, and none is being recommended. The balance is positive, the recommended bid stays inside available cash, and it cannot drive the balance below zero even if it wins. This matters because a negative balance at the start of a matchday scores nothing for the entire matchday, and it is the reason the leveraged version of this buy was rejected even though it was affordable — it would have bought no extra chance of winning the player.",
+  "hours_to_lock": 163.53,
+  "exposure": "No leveraged position is open and none should be opened. The balance is positive, the live offer is capped at available cash rather than at spending power, and if it wins the balance stays positive with room to spare. This matters more than usual because a negative balance at the start of a matchday scores nothing for the entire matchday. The temptation to bid on both candidates at once must be resisted on arithmetic, not taste: buying both would need far more than cash, and the only sales available afterwards without dropping under the legal squad minimum are the two lowest-value bodies, which together do not come close to covering the shortfall. That would leave an unwindable negative position running into the lock. The sequential fallback exists precisely so that the second attempt costs nothing in exposure. The lock is nearly a week away, so there is no deadline pressure of any kind and no reason to manufacture urgency out of a quiet board.",
   "must_restore_by": "2026-09-11T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "A third attacker. The squad is one body above the penalty threshold and short in exactly one position, which is why only 4-4-2 is legal and why a player with no points is compulsory in the eleven. Adding an attacker fixes the shape and the points problem in the same move, which is why it outranks every other use of the cash.",
+ "binding_gap": "The binding constraint is squad size, not money. At the minimum legal size only one formation can be filled and the weakest possible body is forced into the eleven, so the gap that matters is the third attacker who legalises a better shape and pushes him out. That is exactly what the live offer addresses, and it is why a cheaper or higher-scoring player at a position already covered would be worth less. Nothing should be sold until that gap is closed, because selling first would drop the squad under the legal minimum and cost more than any purchase could return.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 62659058,
@@ -51,16 +51,16 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 22,
+  "listings": 23,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 2
  },
  "squad": [
   {
    "name": "Nusa",
    "pos": "MID",
-   "club": "Leipzig",
+   "club": "43",
    "mv": 26748553,
    "ap": 226,
    "state": "clear",
@@ -70,7 +70,7 @@
   {
    "name": "Gregoritsch",
    "pos": "ATT",
-   "club": "Augsburg",
+   "club": "13",
    "mv": 11982021,
    "ap": 195,
    "state": "clear",
@@ -80,7 +80,7 @@
   {
    "name": "Guirassy",
    "pos": "ATT",
-   "club": "Dortmund",
+   "club": "3",
    "mv": 30542681,
    "ap": 180,
    "state": "clear",
@@ -90,7 +90,7 @@
   {
    "name": "ter Horst",
    "pos": "DEF",
-   "club": "Paderborn",
+   "club": "29",
    "mv": 8797749,
    "ap": 143,
    "state": "clear",
@@ -100,7 +100,7 @@
   {
    "name": "Onyeka",
    "pos": "MID",
-   "club": "Elversberg",
+   "club": "77",
    "mv": 9286468,
    "ap": 139,
    "state": "clear",
@@ -110,7 +110,7 @@
   {
    "name": "Matsima",
    "pos": "DEF",
-   "club": "Augsburg",
+   "club": "13",
    "mv": 14268347,
    "ap": 138,
    "state": "clear",
@@ -120,7 +120,7 @@
   {
    "name": "Baumann",
    "pos": "GK",
-   "club": "Hoffenheim",
+   "club": "14",
    "mv": 17257467,
    "ap": 129,
    "state": "clear",
@@ -130,7 +130,7 @@
   {
    "name": "Minjae",
    "pos": "DEF",
-   "club": "Bayern",
+   "club": "2",
    "mv": 12120859,
    "ap": 110,
    "state": "clear",
@@ -140,7 +140,7 @@
   {
    "name": "Sambi Lokonga",
    "pos": "MID",
-   "club": "HSV",
+   "club": "6",
    "mv": 9731816,
    "ap": 44,
    "state": "clear",
@@ -150,7 +150,7 @@
   {
    "name": "Widmer",
    "pos": "DEF",
-   "club": "Mainz",
+   "club": "18",
    "mv": 1852587,
    "ap": 29,
    "state": "clear",
@@ -160,9 +160,9 @@
   {
    "name": "Amoako",
    "pos": "MID",
-   "club": "HSV",
+   "club": "6",
    "mv": 1569143,
-   "ap": null,
+   "ap": 0,
    "state": "clear",
    "note": "",
    "tag": "keep"
@@ -170,37 +170,67 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Raise the Conté offer to the full cash ceiling before it resolves around midday Saturday, and do nothing else.",
-  "headline_short": "Raise the Conté offer to the full cash ceiling before it resolves arou",
-  "detail": "Raise the Conté offer to the full cash ceiling before it resolves around midday Saturday, and do nothing else. This corrects the last briefing on a point of fact: it told you Hoffenheim–BVB was being played that evening and that this run would decide with Conté's result in hand. That match had not been played. It kicks off Saturday afternoon, and the listing resolves shortly before kickoff — so no result was ever going to arrive, and waiting buys no information at all. The bid has to be set on the pre-match evidence, which is all there will ever be."
+  "headline": "No action needed tonight.",
+  "headline_short": "No action needed tonight.",
+  "detail": "No action needed tonight. The raised offer on Bambase Conte is live at the full cash ceiling exactly as the last run recommended, it is the largest single points gain available anywhere on the board, and it cannot be improved without opening a leveraged position that buys no additional win probability against the measured clearing distribution. Everything else on the market this run is either unaffordable while that offer is committed, or worse per point than what Georg already fields. The one genuinely new thing is a clean sequential fallback: if Conte loses, the Rohr listing resolves about half a day later, which frees the same cash to make a second attempt with no overlap and no leverage. Hold, let Conte resolve, and act on the fallback only if it is needed."
  },
  "sell": {
   "recommendation": "none",
-  "reason": "Nothing to sell, and nothing that can be sold. At the eleven-player floor every sale is a penalty, so the question does not arise until a buy lands first. Once Conté is in, Amoako becomes sellable without costing a single fielded point — he leaves the eleven the moment a third attacker legalises 4-3-3. The standing advice still says keep him anyway: at twelve players he is the only injury cover in the squad, and the cash he would raise buys nothing better.",
+  "reason": "No sale is recommended and none should be made. At the current squad size any sale at all drops the eleven below the legal minimum and triggers the under-eleven penalty, which dwarfs every value consideration on the table. That applies to the bench-warming midfielder in particular: he has been designated a funding sale in older ledger entries and that designation is now actively dangerous, because it was written when the squad was one player larger. He is the injury cover and the eleventh body, and he stays. The same logic protects the low-scoring midfielder whose points-per-euro is the worst in the squad; he is a sale candidate on quality alone, but only once a replacement has actually landed, never before.",
   "standing": []
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Conté is the whole briefing. He is the best points-per-euro on the board, he is a confirmed starter, and he is the single largest points gain available — a third attacker legalises 4-3-3, which pushes Amoako's zero out of the eleven. The argument this run is about price, not merit. The existing offer sits in the dead space between the two things that actually happen in this league: uncontested listings clear at roughly market value, contested ones clear far above it. A bid in the middle beats nobody serious and overpays if nobody turns up. The fix is to move up to the full cash ceiling, which clears most of the contested outcomes ever measured here. The reason to stop exactly there, and not to borrow against a later sale: the leveraged ceiling would clear precisely the same set of measured outcomes, because there is a wide empty gap in the record just above the cash ceiling. Leverage buys no extra chance of winning him, while opening a negative balance and forcing the Amoako sale that strips the squad's only injury cover. Cash needs no sale, cannot go negative, and ends the week at twelve players with cover. The honest cost: if nobody else bids, the extra is simply burned, because you pay your own bid here. That is insurance on the only large points gain on the board, bought with cash that has no better use before matchday 3. Everything else on the board was checked and rejected — the big names are all far worse per point than players already owned, and the cheap ones are cheap because their clubs are not playing them.",
+  "reason": "Conte remains the buy and the offer is already placed correctly, so there is nothing to do but let it resolve. He is the best efficiency on the board, he is a confirmed starter on a source published today, and the gain comes from the formation he unlocks rather than just the points he brings. Do not raise him further; the extra money would have to be leveraged, and there is no measured clearing between the current bid and the no-points-lost leveraged ceiling, so it would buy insurance against nothing. The Elversberg defender Rohr is the fallback and only the fallback. His listing resolves roughly half a day after Conte's, so the outcome will be known and the cash either spent or free before a decision is needed. Bid him only if Conte loses, and if so, bid the cash ceiling rather than the asking price, because an early absence of rival offers is a snapshot and not a forecast, and this ledger has already lost one player by trusting it. His match is played before his listing expires, so check his return first. Everything else was rejected: the Frankfurt full-back on a manager ask is a confirmed starter but costs several times more per marginal point than either candidate and would have to displace the Conte offer to be funded; the floor-priced Elversberg goalkeeper looks like the classic mispricing and is not one; and the expensive big names on the board remain worse per point than almost everyone Georg already owns.",
   "standing": [
+   {
+    "name": "Maximilian Rohr",
+    "pos": "DEF",
+    "club": "77",
+    "ask": 11343624,
+    "mv": 9726134,
+    "premium_pct": 16.63,
+    "listing": "Kickbase listing",
+    "why": "CONDITIONAL FALLBACK - BID ONLY IF THE CONTE OFFER LOSES. DO NOT BID WHILE THE CONTE OFFER IS LIVE. THE TIMING IS THE WHOLE POINT AND IT IS CLEAN: Conte (3204) resolves ~2026-09-05T12:51Z (exs 50780 read at 22:45Z); Rohr resolves ~2026-09-06T00:57Z (exs 94352). That is a TWELVE-HOUR GAP in which the outcome of the Conte bid is known and the cash is either spent or free. So this needs NO leverage, NO sale and NO overlap risk - it is a strictly sequential second attempt at the same money, and it is the answer to the Makengo problem (H5om1wi), where losing the only pre-lock resolver left Georg with cash and nothing to spend it on. THE POINTS CASE: Kickbase listing, prc exactly mv 9.726.134, ofc 0, st 0, stl [], DEF tid 77 = Elversberg (tn first-party). ap 87 off 5039 sec (84 min) in the 3:2 MD1 win over Leverkusen, one yellow, cv 8.900.000 and mv RISING (mvt 1, tfhmvt +74.619). Buying him takes the squad to 12 = 1GK/5DEF/4MID/2ATT, best legal shape 5-3-2, and he enters the eleven: 129 + (Matsima 138, ter Horst 143, Minjae 110, ROHR 87, Widmer 29 = 507) + (Nusa 226, Onyeka 139, Lokonga 44 = 409) + (Gregoritsch 195, Guirassy 180 = 375) = 1420 against 1333 doing nothing = +87. Efficiency 9.726.134 / 87 = 111,8k per point, mid-pack in the squad - better than Minjae 110,2k is not true, but better than Nusa 118,4k, Baumann 133,8k, Guirassy 169,7k and Lokonga 221,2k, and far better than every big-name listing on the board (Koch 184k, Kimmich 198k, Kosugi 351k marginal). FITNESS VERIFIED THIS RUN ON A DATED SOURCE: bundesliga.com voraussichtliche Aufstellungen Spieltag 2, published 04.09.2026, starts him at Gladbach 05.09 13:30Z - \"Kristof - Gyamerah, Pinckert, ROHR, Guenther...\" - and Elversberg's absentees on that sheet are only Seifert (Syndesmosebandriss) and Zimmerschied (Rueckenprobleme). Absent from ligainsider verletzte-und-gesperrte. WHAT TO BID, AND WHY NOT MERELY mv: per H5om1wi, ofc 0 is a SNAPSHOT AND NOT A FORECAST - Makengo was ofc 1 with Georg alone at 08:45Z and was contested to +60,76% by 16:32Z, eight hours later. Rohr resolves ~26h out, which is more than enough time for a late rival, and a Kickbase listing is HIGHEST-BID-WINS, so raising genuinely buys win probability here (unlike a manager ask). Bid the full cash ceiling 11.343.624 = +16,63% over mv. That is inside the measured contested band and costs at most 1.617.490 over mv if nobody comes - the same insurance trade that B5fsu5e took on Conte, on the same idle cash, for a +87 instead of a +106. ABORT CONDITIONS, ANY ONE OF WHICH KILLS IT: (1) the Conte offer WINS at ~12:51Z - then cash is gone, the squad is 12 with 4-3-3 at 1439, and buying Rohr on top would need ~9,7M of leverage against a realisable unwind of only Amoako 1.569.143 + Widmer 1.852.587 = 3.421.730, leaving an unwindable negative balance that scores ZERO for all of MD3; (2) a source dated 05.09.2026 or later drops him from the Elversberg eleven; (3) his MD2 at Gladbach ends in an injury or a red card - note he kicks off 05.09 13:30Z and the listing resolves ~00:57Z on 06.09, so unlike Conte his match IS visible before the bid must land. Use that: check his MD2 return before bidding.",
+    "rank": 1,
+    "trigger": "2026-09-06T00:57:00Z"
+   },
    {
     "name": "Bambase Conte",
     "pos": "ATT",
-    "club": "Hoffenheim",
+    "club": "14",
     "ask": 11343624,
     "mv": 9292405,
     "premium_pct": 22.07,
     "listing": "Kickbase listing",
     "why": "RAISE the live offer from 10.400.000 to 11.343.624 = the FULL CASH ceiling, +22,08% over mv 9.292.405. Replaces closed Bduul6s (price revision only; its points case and fitness case both stand). THE POINTS CASE, UNCHANGED AND RE-VERIFIED: squad is 11 = 1GK/4DEF/4MID/2ATT, only 4-4-2 is legal, so Amoako ap 0 is compulsory in the XI. Conte makes it 12 = 1/4/4/3, legalises 4-3-3, and Amoako drops out: 1333 -> 1439 = +106, the largest single action available. He is also the best efficiency on the board at 9.292.405/106 = 87,7k per point (Rohr 111,8k is the next real candidate). FITNESS RE-VERIFIED THIS RUN on a dated source: Sports Mole preview 04.09.2026 01:36Z starts him in the Hoffenheim XI (Baumann; Coufal, Hajdari, Kabak, Bernardo; Avdullahu, Burger; Wimmer, CONTE, Daghim; Lemperle), TSG absentees only Asllani (knee) and Prass (muscle); Ligainsider verletzte-und-gesperrte lists ZERO Hoffenheim players; Kickbase st 0, stl []. WHY RAISE, AND WHY EXACTLY TO CASH. Georg's +11,92% sits in the bimodal dead space - uncontested listings clear at ~0% (measured 8 for 8), contested ones at +9% to +61%, so it beats only 1 of the 9 measured contested clearings while overpaying 1,1M if nobody comes. At +22,08% it beats 6 of 9. THE DECISIVE ARITHMETIC AGAINST LEVERAGE: the no-points-lost leveraged ceiling (cash + Amoako 1.569.143 = 12.912.767 = +38,97%) beats the SAME 6 of 9, because the next measured clearing above +20,96% is +48,28%. Leverage therefore buys ZERO additional win probability against the measured distribution while opening a negative balance and forcing the Amoako sale that removes the squad's only injury cover. Take the cash ceiling: no sale, balance stays positive, squad ends at 12 with cover. HONEST COST: if the listing stays uncontested he pays 2.051.219 over mv rather than 1.107.595 - an extra 943.624 burned for insurance on the only +106 on the board, against idle cash with no better use before MD3. Even at the full bid he is 107,0k per point, still better than Minjae, Nusa, Baumann, Guirassy and Lokonga.",
-    "rank": 1,
+    "rank": 2,
     "trigger": "2026-09-05T12:52:00Z"
    }
   ],
   "killed_this_run": [
    {
+    "name": "Keita Kosugi",
+    "pos": "DEF",
+    "club": "4",
+    "ask": 12300000,
+    "mv": 10830765,
+    "premium_pct": 13.57,
+    "why": "CLOSES OUT THE STANDING KOSUGI PLAN THAT Hmkgi49 SENT FORWARD FOR RE-PRICING. PhiL95 has RELISTED him, dt 2026-09-04T21:22:05Z, at prc 12.300.000 against mv 10.830.765 = +13,57%. That is a REPRICE DOWNWARD from the 12.676.617 / +15,20% Hmkgi49 recorded, so the ask is moving our way - and he is still a no. The only manager ask on the board this run, so H8t606f(A) and Hlovt4t's seller's-choice mechanic both apply and neither rescues him. FITNESS AND SELECTION ARE FINE AND THAT IS NOT THE OBJECTION: bundesliga.com voraussichtliche Aufstellungen Spieltag 2, 04.09.2026, starts him for Frankfurt v Augsburg 06.09 15:30Z - \"Atubolu - Baum, Koch, Brassier, KOSUGI - Amaimouni, Chaibi, Onyedika, Uzun - Ebnoutalib, Burkardt\" - corroborated by a Yahoo Sports preview 04.09.2026 15:40Z whose Frankfurt injury list is only Doan, Knauff and Collins. st 0, mvt 2. He is a confirmed starting Bundesliga full-back. REJECTED ON MARGINAL POINTS PER EURO, WHICH IS THE ONLY NUMBER THAT MATTERS FOR A FIFTH DEFENDER. His ap is 64. Buying him takes the squad to 12 = 1GK/5DEF/4MID/2ATT whose best legal shape is 5-3-2, and he enters the eleven ahead of WIDMER 29 - so the real purchase is +35 FIELDED POINTS FOR 12.300.000 = 351k PER MARGINAL POINT. Set that against what is already on the table: Conte 3204 is +106 for 11.343.500 (107k per marginal point at the full bid) and Rohr 3284 is +87 for ~9.726.134 (112k). Kosugi is more than three times worse than both, on a mandate that optimises points. THE HEADLINE ap 64 IS NOT THE PURCHASE - the 35-point gap over the man he displaces is, and this is the same distinction that correctly killed Robin Koch (Aha9xcq, +103 for 24,2M) one run ago. HE IS ALSO NOT AFFORDABLE THIS RUN WITHOUT WRECKING THE PLAN: cash is 11.343.624 and 11.343.500 of it is already committed to the live Conte offer, so he needs the Conte bid pulled or a sale on top, and pulling a +106 to fund a +35 is self-evidently wrong. REVERSAL CONDITION: he becomes interesting only if (a) the ask falls under roughly 4M, i.e. near 110k per MARGINAL point over whoever he would actually displace, recomputed at that time rather than reused from here, AND (b) Georg has cash with no better claim on it, AND (c) he still projects as a Frankfurt starter on a source dated then. A further cut in PhiL95's ask is NOT by itself a reversal - the gap to close is roughly 8M, not 400k."
+   },
+   {
+    "name": "Frank Lehmann",
+    "pos": "GK",
+    "club": "77",
+    "ask": 500000,
+    "mv": 500000,
+    "premium_pct": 0,
+    "why": "THE 500.000 TEST FROM H0y7uvf, RUN PROPERLY, AND THE ANSWER IS NO. New Kickbase listing 2026-09-04T20:38:53Z at prc exactly mv 500.000, cv 500.000, mvt 0, tfhmvt 0, ofc 0, st 0, exs 100580 resolving ~2026-09-06T02:41Z. GK, tid 77 = Elversberg (tn confirmed first-party via get_player, per H2potta). Added to Kickbase 2026-09-02T06:59:58Z, i.e. a fresh entry at the floor value - EXACTLY the Mikey Moore / Brassier shape that H0y7uvf says can tick 10-12M in one day, and exactly the Kinzig shape that goes nowhere. H0y7uvf's operative rule is JUDGE THE MAN, NEVER THE NUMBER, so this run judged the man. HE IS THE THIRD-CHOICE KEEPER AND A PART-TIME YOUTH COACH. Evidence, all dated 31.08.2026 or later or first-party: (1) ph reads [{hp:false},{hp:false}] - ZERO minutes in MD1 and none scheduled MD2. Elversberg's MD1 was a 3:2 home win over Leverkusen 29.08.2026 and he did not play a second of it. (2) bundesliga.com voraussichtliche Aufstellungen Spieltag 2, published 04.09.2026, starts NICOLAS KRISTOF (#20) in goal for the Gladbach away game 05.09 13:30Z - \"Kristof - Gyamerah, Pinckert, Rohr, Guenther...\" - and Elversberg's absentee list on that same sheet is only \"Seifert (Syndesmosebandriss), Zimmerschied (Rueckenprobleme)\". No keeper is hurt. Kristof also started MD1 per the Sky Sports lineup graphic. (3) fussballdaten.de's current squad has FOUR keepers - Kristof (#20, 26), Etringer (#12), Lehmann (#1, ~37), Boss (#28, 32). Lehmann's #1 is seniority, not status: he has been at the club since 2017, has ~48 appearances for the RESERVE side, and holds a dual role as reserve-team keeper AND goalkeeping coach in the Nachwuchsleistungszentrum. He is not a new signing and there is no path to the gloves. SO THE SQUAD NUMBER IS THE TRAP HERE, the way the price was the trap in H0y7uvf. A shirt 1 next to a 500.000 valuation reads like a mispricing and is not one; Kickbase has him at the floor because the floor is his true valuation, same as Kinzig (11666). DO NOT SPEND A BID TESTING THIS. REVERSAL CONDITION: a dated source 31.08.2026 or later reporting that KRISTOF is injured, suspended or dropped AND a source naming Lehmann in the Elversberg starting eleven. His price falling, his price rising, or his shirt number are NOT reversal conditions. Note for the next run: he is also the wrong shape for this squad regardless - Georg already has Baumann (129) and a second keeper cannot be fielded in any formation."
+   },
+   {
     "name": "Robin Koch",
     "pos": "DEF",
-    "club": "Frankfurt",
+    "club": "4",
     "ask": 24285098,
     "mv": 24236898,
     "premium_pct": 0.2,
@@ -209,7 +239,7 @@
    {
     "name": "Woo-Yeong Jeong",
     "pos": "MID",
-    "club": "Union Berlin",
+    "club": "40",
     "ask": 5367590,
     "mv": 5325371,
     "premium_pct": 0.79,
@@ -218,7 +248,7 @@
    {
     "name": "Linton Maina",
     "pos": "ATT",
-    "club": "Koeln",
+    "club": "28",
     "ask": 7335505,
     "mv": 7402097,
     "premium_pct": -0.9,
@@ -227,7 +257,7 @@
    {
     "name": "Joshua Kimmich",
     "pos": "MID",
-    "club": "Bayern",
+    "club": "2",
     "ask": 59870453,
     "mv": 59871080,
     "premium_pct": 0,
@@ -238,11 +268,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip this run. There are no manager listings on the board at all, so the mechanism that would fund a value trade is simply absent. The rivals' constant same-day round trips have now been measured across dozens of pairs and the best margin any of them has ever achieved is under one percent, because they buy and sell at market value on both sides and pocket nothing but the intraday drift. That is motion, not points, and it is not worth copying.",
+  "reason": "No flip clears its cost this run. There are no manager asks priced below market value anywhere on the board, so the mechanism a flip depends on is simply absent, and the instant round-trips rival managers keep making have been measured repeatedly at margins under one percent, which is noise rather than an edge. There is however one real value signal worth recording rather than acting on. Matchday two has begun, and the Stuttgart defender on the board posted a very large score in the opening fixture, which finished after the daily market-value update had already run. His price therefore does not yet contain that performance and mvt still reads as falling. He is unaffordable and poor value on points regardless, so this is not a recommendation to buy him; it is a free and unusually clean measurement of how much a big matchday actually moves a market value, which underpins every sell-into-strength argument in the ledger and has never been measured here. The next run should record his value immediately after the next daily update.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean sweep — no squad player is injured, suspended, or newly benched. All eleven carry no status flag in Kickbase, and none of them appears on the league-wide injured-and-suspended table, checked club by club. Conté himself is confirmed fit and starting on a source dated today, his club lists only two absentees and he is not among them, and the injury table shows no Hoffenheim players at all. Two selection questions remain genuinely open — one attacker and one defender whose places in their club sides are disputed between sources — but in both cases the deciding press conference falls after the matchday-2 side was already locked, so there is nothing to act on and neither is an injury concern.",
+  "sweep": "A full squad-wide sweep came back clean. Every squad player carries a zero status flag with an empty status list first-party, and the league-wide injured and suspended table plus the matchday absentee lists name none of them. Both buy candidates were verified as starters on sources published today. The Augsburg striker false alarm from the previous run stays refuted and is now better supported: two independent current sources still start him, and the coach press conference the last run predicted would arrive too late has in fact taken place, though its content was not extractable as text. The Bayern centre-back question is selection rather than fitness and remains genuinely open, with the freshest matchday-two source preferring his rival; there is no injury, nothing notifiable, and no action available, but his club's lineup must be re-checked from scratch before the next matchday rather than carried forward. One measurement correction was logged this run that changes how the whole board must be read: the average-points field is a per-appearance mean and not a season total, and now that the opening fixture of the matchday has been played, some clubs carry two-match means while the rest still carry one-match means, so cross-player comparisons are no longer like for like.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
