@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-05T14:59Z",
+ "run": "2026-09-05T17:00Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 1002767,
   "floor": -50451628,
   "spending_power": 51454395,
-  "hours_to_lock": 147.5,
-  "exposure": "No leveraged position is open. The negative balance created by the Conte purchase was closed by the Amoako sale, and the arithmetic reconciles exactly against the prior run's figure. The balance is positive and there are almost six days to the matchday 3 lock, so there is no unwind deadline pressure of any kind. The standing danger is the reverse: because the safe ceiling now depends on a single sale, and because a negative balance at matchday start scores zero for the whole matchday, any buy above the ceiling would re-open leverage that the one permitted sale cannot close. That is precisely why the only attractive target on the board was declined.",
+  "hours_to_lock": 145.5,
+  "exposure": "The recommended purchase opens a leveraged position deliberately, and it must be unwound. The bid exceeds available cash, so accepting it puts the balance well into the negative until the funding sale completes. That is safe here only because the next matchday does not lock for the better part of six days, which is an unusually large amount of slack by this ledger's standards — but a negative balance at matchday start scores zero for the entire matchday, so the sale is not optional and must not be forgotten if the auction settles overnight. Both permitted unwind routes were checked and both end positive. If the auction is lost, the offer is refunded and nothing needs doing.",
   "must_restore_by": "2026-09-11T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF, 4 MID)"
   ]
  },
- "binding_gap": "The binding constraint is squad size, not money and not any single position. At exactly eleven players there is one legal formation, no bench, and no cover: if any single player picks up a knock or a suspension before the matchday 3 lock, he cannot be replaced without a buy, and the buy must land before any sale or the missing-player penalty applies. That is the exposure to watch over the next six days. The weakest fielded slots are the two designated sales — the right-back who is not starting and the midfielder whose average is far below the rest of the eleven — and upgrading either requires a buy that lands first and still leaves the balance non-negative at the lock. Only one candidate on the board would genuinely improve the eleven, and he is priced just out of reach.",
+ "binding_gap": "The binding constraint is no longer cash and never really was: it is that a squad of exactly eleven cannot sell anybody without conceding the missing-player penalty, so every purchase must be paired with a sale that happens after it, not before. Within that, the weak slot is the fourth defender, who is the lowest-scoring outfielder in the fielded eleven and has not started a league game all season. Rohr replaces him in the scoring shape while the sale comes out of midfield, which is why this trade improves the eleven at roughly zero net cash.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 51454395,
@@ -51,18 +51,18 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 28,
+  "listings": 30,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 1
  },
  "squad": [
   {
-   "name": "Nusa",
-   "pos": "MID",
-   "club": "43",
-   "mv": 26748553,
-   "ap": 226,
+   "name": "Guirassy",
+   "pos": "ATT",
+   "club": "3",
+   "mv": 30542681,
+   "ap": 213,
    "state": "clear",
    "note": "",
    "tag": "keep"
@@ -78,31 +78,11 @@
    "tag": "keep"
   },
   {
-   "name": "Guirassy",
-   "pos": "ATT",
-   "club": "3",
-   "mv": 30542681,
-   "ap": 180,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "ter Horst",
-   "pos": "DEF",
-   "club": "29",
-   "mv": 8797749,
-   "ap": 143,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Onyeka",
+   "name": "Nusa",
    "pos": "MID",
-   "club": "77",
-   "mv": 9286468,
-   "ap": 139,
+   "club": "43",
+   "mv": 26748553,
+   "ap": 146,
    "state": "clear",
    "note": "",
    "tag": "keep"
@@ -118,16 +98,6 @@
    "tag": "keep"
   },
   {
-   "name": "Baumann",
-   "pos": "GK",
-   "club": "14",
-   "mv": 17257467,
-   "ap": 129,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
    "name": "Minjae",
    "pos": "DEF",
    "club": "2",
@@ -138,11 +108,41 @@
    "tag": "keep"
   },
   {
+   "name": "Onyeka",
+   "pos": "MID",
+   "club": "77",
+   "mv": 9286468,
+   "ap": 108,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Baumann",
+   "pos": "GK",
+   "club": "14",
+   "mv": 17257467,
+   "ap": 104,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "ter Horst",
+   "pos": "DEF",
+   "club": "29",
+   "mv": 8797749,
+   "ap": 92,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
    "name": "Conté",
    "pos": "ATT",
    "club": "14",
    "mv": 9292405,
-   "ap": 106,
+   "ap": 47,
    "state": "clear",
    "note": "",
    "tag": "keep"
@@ -170,14 +170,23 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "No action needed, and for once that is a clean answer rather than a quiet market.",
-  "headline_short": "No action needed, and for once that is a clean answer rather than a qu",
-  "detail": "No action needed, and for once that is a clean answer rather than a quiet market. The Conte-for-Amoako cycle completed while you were away: Amoako sold to Kickbase at exactly mv, the negative balance is gone, and the books reconcile to the cent. That leaves the squad sitting exactly on the eleven-man floor with one legal formation and no bench at all. There is nothing to buy that clears both the points test and the money test, and there is nothing you can safely sell — so the right move is to leave it alone until matchday 2 finishes."
+  "headline": "This run reverses a standing AVOID and hands Georg the first clean points upgrade in several runs.",
+  "headline_short": "This run reverses a standing AVOID and hands Georg the first clean poi",
+  "detail": "This run reverses a standing AVOID and hands Georg the first clean points upgrade in several runs. Maximilian Rohr, the Elversberg centre-back, was rejected last run as unaffordable. That rejection rested on an arithmetic error, not on his merits: it assumed a defender bought must be unwound by selling a defender, and therefore priced Georg's reach off his cheapest defender rather than off his most valuable expendable player. The unwind does not have to be same-position — the only requirement is that the remaining eleven fills some legal formation, and both a midfield sale and an attacking sale leave one. Corrected, Rohr sits comfortably inside reach. Recommended action: bid on Rohr now, and sell the funding leg only once he has actually landed. Bid first, sell after — selling first and then losing the auction would leave the squad a man short."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "No sale is recommended, and there is a hard reason beyond the eleven-man floor. Matchday 2 is not finished. Five of the eleven have yet to play their locked fixture, and both of the only two sellable bodies — Lokonga and Widmer — are among them, with Lokonga in his club's probable XI. Selling either before those matches kick off forfeits live points from an eleven that is already locked. Widmer remains the standing designated sale on merit: dated club sources confirm he has made no starts this season and sits behind three others at right back. Lokonga stays a quality-based sale candidate, not an availability one — he is fit and starting. Neither should move before matchday 2 completes.",
+  "reason": "The funding sale is the Hamburg midfielder, and it is conditional on the purchase completing first. On points he and the benched attacker are a coin flip, so the tiebreak is the money: the midfielder's value is bleeding by roughly a million a day and he is the worst points-per-euro asset in the squad, while the attacker's value is climbing just as fast. Sell the decaying asset, keep the appreciating one. The one thing that could force a switch is the formation: the midfield sale leaves a five-two-three shape, and if that is not selectable in the app, sell the attacker instead — the bid was deliberately sized so that either route still ends with a positive balance. Check the shape in the app before clicking, not after.",
   "standing": [
+   {
+    "name": "Sambi Lokonga",
+    "pos": "MID",
+    "club": "6",
+    "mv": 9731816,
+    "ap": 44,
+    "why": "THE UNWIND LEG OF BUY Bsmq4uu - CONDITIONAL, AND THE CONDITION IS NOT OPTIONAL. Sell him ONLY once Rohr has actually landed (check get_squad, per H5om1wi do not trust the calibration table's [executed] flag). At 11 players a sale is a -100 penalty; at 12 it is free. If the Rohr auction is lost, CLOSE THIS CALL AND KEEP HIM - this supersedes nothing about his standing block, which already says exactly that. WHY HIM AND NOT CONTE, the only other candidate: on points they are a coin flip (Lokonga ap 44 v Conte ap 47, so Conte is fractionally better and the Lokonga route is worth +3 fielded points because it keeps Widmer 29 in a 5-2-3 rather than dropping Conte 47 from a 5-3-2 - 1283 v 1280). The tiebreak is the money. Lokonga is BLEEDING: mvt 2, sdmvt -1.125.317, i.e. roughly -1,1M a day, and he is the worst points-per-euro in the squad at 9.731.816 / 44 = 221k per point. Conte is RISING hard: mvt 1, sdmvt +1.284.273, tfhmvt +93.437. Sell the decaying asset and keep the appreciating one. SELECTION CUTS THE OTHER WAY AND IS DELIBERATELY OVERRIDDEN: Lokonga is a confirmed HSV starter (no news dated 04.09.2026 or later; note the hsv.de \"Verletzungsupdate zu Sambi Lokonga\" ankle-ligament story is 09.02.2026 = LAST SEASON and was correctly discarded again this run), while Conte was BENCHED by Hoffenheim v Dortmund on 05.09.2026 (sport.de liveticker; rotated for Lemperle and Rots). That argues for selling Conte instead. It is outweighed by the mv trajectories: Conte benched but appreciating is still the better asset to hold, and a start is not points. FORMATION DEPENDENCY, THE ONE THING THAT COULD FORCE THE SWITCH: this route leaves 1GK/5DEF/2MID/3ATT and needs 5-2-3 to be selectable. If the app does not offer 5-2-3, sell CONTE instead (9.292.405, leaves 1/5/3/2 = 5-3-2, definitely legal, 1280 fielded, and the bid was sized so that route also stays positive at +45.172). Verify the shape in-app before clicking; do not discover it after the sale. Instant-sale to Kickbase pays exactly mv, measured 8 for 8.",
+    "tag": "sell"
+   },
    {
     "name": "Amoako",
     "pos": "",
@@ -190,18 +199,40 @@
   ]
  },
  "buy": {
-  "recommendation": "none",
-  "reason": "Nothing to buy. The board threw up its most tempting shape of the week and it still fails. Cole Campbell has been relisted by a rival, and he is the genuine article: dated sources confirm he is fit, has started every game, played the large majority of available minutes, and his scoring average is a real full-match figure rather than a cameo artifact. Against Lokonga he would be the single largest points upgrade available anywhere on the board. He fails purely on arithmetic — the ask sits above the safe ceiling, and buying at it would leave the balance negative at the matchday lock, which scores zero for the entire matchday. Two buys and two sales do not rescue it either, because the second body would have to cost less than the league's minimum price. He is logged as a watch with a price trigger, not chased. Van den Bosch is the other one worth recording: honestly priced in the low cluster and a real upgrade on the weakest defensive slot, but a defender can only be unwound against Widmer, and that lever is far too small. Everything else on the board is either unaffordable by a wide margin, carries a high-cluster premium on a manager ask, or has no points record at all. Skarke deserves a specific note: his eye-catching average was independently confirmed today to be one goal in a single substitute cameo, with no starts all season — the reverse trap in its purest form.",
-  "standing": [],
-  "killed_this_run": [
+  "recommendation": "act",
+  "reason": "Rohr is the only buy this run and the case is unusually clean. He has started both games at a hundred percent of his club's available minutes, the one injury scare against him was explicitly cleared as exhaustion rather than a knock on a dated source, he is absent from his club's injured-and-suspended table, and his contract runs long enough that there is no exit risk. His scoring average roughly doubled on the strength of a big away performance, which is the second data point an earlier run asked to wait for. Everything else on the board fails before price matters: the three manager asks posted within half a minute of each other are all priced at contest premiums on a seller's-choice instrument, and two of the three score below the man they would displace. The one genuinely tempting attacker has not started a game all season and gets his average off substitute cameos. The named internationals remain out of reach and should simply be logged rather than re-priced each run. One caution on the bid: market values tick tonight and Rohr just posted a big away score, so his listing price will probably rise — re-check that the offer still clears it after the tick.",
+  "standing": [
    {
     "name": "Maximilian Rohr",
     "pos": "DEF",
     "club": "77",
-    "ask": 9726134,
+    "ask": 10250000,
     "mv": 9726134,
+    "premium_pct": 5.39,
+    "listing": "Kickbase listing",
+    "why": "REVERSES AVOID Abhbatn, WHICH WAS WRONG ON ITS ARITHMETIC, NOT ON ITS FACTS. Abhbatn (and A06b88u before it) rejected every DEF on the ground that \"a DEF unwinds only against Widmer, ceiling 2.855.354\". THAT IS FALSE AND IT HAS BEEN SILENTLY KILLING EVERY DEFENDER ON THE BOARD FOR SEVERAL RUNS. Buying a DEF takes the squad to 12 = 1GK/5DEF/3MID/3ATT, and the unwind does NOT have to be a defender - selling a MID leaves 1/5/2/3 (5-2-3) and selling an ATT leaves 1/5/3/2 (5-3-2), both legal shapes. The true post-buy unwind ceiling is therefore cash 1.002.767 + Lokonga 9.731.816 = 10.734.583, or + Conte 9.292.405 = 10.295.172 on the formation-safe route - not 2.855.354. Rohr at mv 9.726.134 fits inside BOTH. THE SECOND DATA POINT Hyu2vg2 ASKED FOR HAS NOW LANDED: he reads p 202 / ap 101 (was ap 87 off one match), i.e. ~115 points in MD2. NEWS VERIFIED THIS RUN, all dated: Yahoo Sports and Eurosport confirmed lineups 05.09.2026 start him at CB away at Gladbach (Elversberg won 4:3 from two down - ZDFheute, sportschau, sport.de liveticker, all 05.09.2026); fussballdaten.de 26/27 gives him 2/2 starts, 100% start rate, 95,6% of available minutes; ligainsider 31.08.2026 \"Rohr nur erschoepft: Keine Verletzung bei Auswechslung\" explicitly clears the MD1 substitution as exhaustion not injury; he is absent from Elversberg's ligainsider Verletzte-und-Gesperrte table (05.09), which lists only Seifert and Zimmerschied; contract extended to summer 2028 (sv07elversberg.de), so no exit risk. st 0. THE POINTS CASE: ap 101 at 9.726.134 = 96,3k per fielded point, better than every outfielder Georg owns except Gregoritsch 61,4k, ter Horst 95,6k and Onyeka 86,0k, and far better than the man he funds himself by replacing. Fielded eleven goes 1226 -> 1283 on the Lokonga unwind (+57) or 1280 on the Conte unwind (+54). PRICE AND SEQUENCING: bid 10.250.000 = +5,39% over mv, deliberately set so that EITHER unwind route still leaves a positive balance (Lokonga +484.583, Conte +45.172). BID FIRST, SELL AFTER - do not sell to raise the cash, because a lost auction would leave the squad at 10. The offer opens a leveraged position of about -9,25M which is unwound the moment he lands; MD3 does not lock until 2026-09-11T18:30Z, 145h away, so there is ample slack, but the sale must not be forgotten. LATE-CONTEST RISK PER H5om1wi: ofc 0 now but the listing resolves ~00:57Z, roughly eight hours out, which is exactly the Makengo window - rivals arrive after the last run that looks at it. 10.250.000 is the affordability ceiling, not a judgement that +5,39% is enough; it is the most that can be bid without stranding a negative balance. CAUTION FOR THE NEXT RUN: market values tick at 2026-09-05T20:00Z and Rohr just posted ~115 away points with mvt 1, so his mv and therefore prc will probably RISE tonight - re-check that the offer still clears the listing price after the tick and re-price against the new ceiling.",
+    "rank": 1,
+    "trigger": "2026-09-06T00:57:00Z"
+   }
+  ],
+  "killed_this_run": [
+   {
+    "name": "Volte_28's three-listing dump: Diks (11010) 19.508.888, Vidović (3081) 10.500.008, Ljubicic (10106) 7.500.088",
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
+    "premium_pct": null,
+    "why": "THREE MANAGER ASKS POSTED WITHIN 32 SECONDS (16:12:11Z, 16:12:25Z, 16:12:43Z) AND ALL THREE ARE HIGH-CLUSTER PRICED. Logged as one call because the pattern is the point: Volte_28 is clearing a shelf, not pricing individually, and the trailing digits (…008, …088, …888) are round-number padding rather than valuation. Diks DEF tid 15 Gladbach, mv 17.082.422, ask 19.508.888 = +14,20%, ap 41 (p 82, two matches), mvt 2 falling. Vidović MID tid 29 Paderborn, mv 8.343.313, ask 10.500.008 = +25,85%, ap 38. Ljubicic ATT tid 40 Union Berlin, mv 5.667.942, ask 7.500.088 = +32,32%, ap 7. EVERY ONE FAILS ON POINTS BEFORE PRICE EVEN MATTERS: Diks 41 and Vidović 38 are both BELOW Lokonga's 44, which is the worst fielded outfielder a buy could displace, so they are downgrades at any price; Ljubicic's 7 is barely distinguishable from nothing. AND THE PREMIUMS ARE WRONG FOR THE INSTRUMENT: the measured MANAGER-ask low cluster is +0,50% to +6,47% (H8t606f(A)), with sellers demonstrably taking 3-7% UNDER their own ask within hours. +14%, +26% and +32% are Kickbase-contest pricing applied to a seller's-choice instrument where a high bid does not even guarantee the player (Hlovt4t). This is the same overpricing PhiL95 tried with Itakura +15,58% and Ulrich +16,87% - and note Itakura went UNSOLD and was dumped back to Kickbase at exactly mv 12.112.833 at 15:23:34Z today, which is the market's answer to that pricing. Diks is additionally beyond the 10.734.583 unwind ceiling. REVERSAL: none as a group; if any is relisted near or below mv, re-price him individually on marginal points over the man he would displace."
+   },
+   {
+    "name": "Ermedin Demirović",
+    "pos": "ATT",
+    "club": "9",
+    "ask": 15807834,
+    "mv": 15807834,
     "premium_pct": 0,
-    "why": "CLOSES THE OPEN ROHR QUESTION Hyu2vg2(D) left for a second data point. Kickbase listing, DEF, tid 77 Elversberg, prc exactly mv 9.726.134, ofc 0, st 0, mvt 1, exs 36750 resolving ~2026-09-06T00:57Z. Georg never placed an offer. Elversberg's MD2 is now FINISHED (lost 1:3 at M'gladbach, first-party via get_player 3232/15202 mdst 8), so the promised second data point exists but ap still reads 87 because MD2 is not scored yet - the repricing Hyu2vg2 wanted to wait for has not landed and the listing dies before it does. Moot regardless: a DEF unwinds only against Widmer, ceiling 2.855.354 against a 9,73M ask. No."
+    "why": "NEW KICKBASE LISTING 2026-09-05T16:29:19Z (feed t:3), ATT, tid 9 Stuttgart, prc exactly mv 15.807.834, ofc 0, st 0, mvt 2 FALLING, exs 166175 resolving ~2026-09-07T14:45Z. p 161 ap 81 - and per Hxog6lc Stuttgart is one of the two clubs already carrying a TWO-match mean, so 81 is better founded than most numbers on this board. REJECTED ON SELECTION FIRST, MONEY SECOND. (1) HE IS NOT A STARTER: ligainsider's 26/27 profile gives him 0 STARTS, 2 substitute appearances, 46 of 197 minutes = 23%. He came off the bench and scored in the 4:1 v Koeln on 04.09.2026, which is exactly the cameo-average shape that Hxog6lc and the Skarke case (A3i8zvo) warn about - the ap is real points but it is impact-sub points, not a starter's floor. (2) AFFORDABILITY: the post-buy unwind ceiling this run is 10.734.583 (see BUY Bsmq4uu for the corrected arithmetic), and 15.807.834 is half again beyond it. (3) MARGINAL POINTS: as an ATT he would displace Conte 47, so the real purchase is +34 for 15,8M = 465k per marginal point, worse than Kosugi's 351k. NOTE THE ONE THING THAT IS NOT AN OBJECTION: he is fit, he committed to VfB in late August and rejected a Galatasaray move, so there is no availability or exit case against him. REVERSAL: only on a dated VfB XI, 06.09.2026 or later, that STARTS him, AND the ask inside whatever the unwind ceiling is at that time."
    },
    {
     "name": "Zeno Van den Bosch",
@@ -229,15 +260,6 @@
     "mv": 8128686,
     "premium_pct": 16.87,
     "why": "New MANAGER ask from PhiL95, dt 2026-09-05T13:11:58Z, prc 9.500.000 v mv 8.128.686 = +16,87%. MID, tid 29 Paderborn. THE CLEANEST NO ON THE BOARD: ap 44 is EXACTLY Lokonga's ap 44, and Lokonga is the only body a MID buy could be unwound against. Paying 9,50M and +16,87% to swap a 44 for a 44 is a pure loss of 9,5M in spending power for zero expected points. High-cluster premium on a manager ask, same pattern as Itakura."
-   },
-   {
-    "name": "Ko Itakura",
-    "pos": "DEF",
-    "club": "15",
-    "ask": 14000000,
-    "mv": 12112833,
-    "premium_pct": 15.58,
-    "why": "New MANAGER ask from PhiL95, dt 2026-09-05T13:12:08Z, prc 14.000.000 v mv 12.112.833 = +15,58%. DEF, tid 15 M'gladbach. Rejected twice over: ap 34 beats only Widmer 29 in the current back four, so it is a depth body not an upgrade; and a DEF buy can only be unwound by selling Widmer, ceiling 2.855.354, so 14,00M is five times what is safe. Note the premium: +15,58% is HIGH-cluster pricing on a manager ask, where the measured low cluster is +0,50% to +6,47% - PhiL95 is asking Kickbase-contest money in a manager-ask setting. No."
    },
    {
     "name": "Jonathan Burkardt",
@@ -285,15 +307,6 @@
     "why": "A TEXTBOOK CAMEO-AVERAGE TRAP, AND THE CLEANEST EXAMPLE THIS LEDGER HAS RECORDED. New Kickbase listing 2026-09-05T11:56:39Z (feed t:3), MID, tid 40 = 1. FC UNION BERLIN (CLUB MAP v6/v7 - NOT Wolfsburg, who were relegated in May 2026), prc exactly mv 4.893.856, ofc 0, st 0, mvt 1, exs 63521 resolving ~2026-09-06T05:35Z. THE ap 140 IS THE WHOLE PITCH AND IT IS FAKE. Per Hxog6lc, ap = points / APPEARANCES, and Ligainsider's current 26/27 page gives Skarke 0 starts, 1 substitute appearance, 35 minutes, 1 goal, and an 82% bench rate. So ap 140 is one goal in a 35-minute cameo divided by one appearance. This is precisely the reverse trap named in the standing doctrine: a high average off a few cameo minutes. He is not in Union's probable XI at Leverkusen today (05.09.2026) and has started nothing all season. UNAFFORDABLE ANYWAY, WHICH MAKES IT MOOT: after the Conte settlement the balance is -566.376 and the Amoako unwind (SELL Srfl49m) leaves ~1,00M against a squad of 11, at which point a further sale triggers -100. The usable ceiling is ~1,00M against a 4,89M ask. No manager ask below mv anywhere on the board this run, so there is no flip angle either."
    },
    {
-    "name": "Wouter Burger",
-    "pos": "MID",
-    "club": "14",
-    "ask": 22500000,
-    "mv": 22387191,
-    "premium_pct": 0.5,
-    "why": "New MANAGER ask from David, dt 2026-09-05T08:54:26Z, prc 22.500.000 v mv 22.387.191 = +0,50% - a low-cluster ask, priced honestly, and still a no. MID, tid 14 Hoffenheim. TWO REASONS: (1) unaffordable on the same arithmetic as Upamecano A4wixii - usable ceiling ~21,17M against a 22,50M ask; (2) ap 63 is poor for the money and his place is actively in doubt - Ligainsider's last-minute update 04.09.2026 19:20 lists Hoffenheim considering benching \"captain Burger\" from midfield, though the club page Stand 04.09 13:42 still starts him CM. Georg already covers MID with Nusa 226, Onyeka 139 and Lokonga 44; paying 22,5M to add a 63 is the opposite of a points upgrade. No manager ask below mv anywhere on the board this run, so there is no flip angle either."
-   },
-   {
     "name": "Dayot Upamecano",
     "pos": "DEF",
     "club": "2",
@@ -301,17 +314,26 @@
     "mv": 33400230,
     "premium_pct": 0,
     "why": "THE BEST PLAYER ON THE BOARD BY POINTS AND STILL A NO, ON AFFORDABILITY. New Kickbase listing 2026-09-05T09:48:48Z (feed t:3), DEF, tid 2 Bayern, prc exactly mv 33.400.230, ofc 0, st 0, mvt 1, exs 111215 resolving ~2026-09-06T16:48Z. ap 272 is the highest defensive average on the board and he is a CONFIRMED starter: Ligainsider Bayern page Stand 04.09.2026 16:51 has him CB, and Ligainsider's last-minute update 04.09 19:20 names him among the confirmed/likely starters. WHY NO: the usable ceiling is cash 11.433.624 plus the ONE sale a 12-man squad permits. The largest sale that does not gut the eleven is Lokonga 9.731.816, giving ~21,17M against a 33,40M ask - short by more than 12M. Reaching him needs TWO of Minjae/Lokonga/Matsima sold, which costs more fielded ap than his 272 adds, or a leveraged position of ~22M that must be unwound before MD3 locks 2026-09-11T18:30Z. NOTE FOR A LATER RUN: he is the player who threatens Minjae's place (see WATCH Wwoz54b) - if Minjae's selection risk ever hardens, Upamecano is the natural replacement, but only from a much larger cash base."
+   },
+   {
+    "name": "Finn Porath",
+    "pos": "MID",
+    "club": "8",
+    "ask": 2119571,
+    "mv": 2119571,
+    "premium_pct": 0,
+    "why": "The only new listing since the last run and the answer is no. New Kickbase listing 2026-09-05T08:42:45Z, MID, tid 8 = SCHALKE, prc exactly mv 2.119.571, ofc 0, st 0, exs 121608 resolving ~2026-09-06T18:30Z. NO POINTS HISTORY AT ALL - the listing returns no p and no ap, i.e. no Kickbase-scored minutes in 26/27 - and mvt 2, a FALLING market value, which is the market saying the same thing. He would be a cheap 12th body, not an upgrade: the binding constraint is that the twelfth man must OUTSCORE AMOAKO'S ZERO by enough to matter, and a player with no record is not evidence of that. He is also unaffordable in practice while the Conte offer is live - a pending offer reserves the cash, leaving 90.124 free at the old price and a negative balance at the new one, so nothing else can be bought before 12:51Z regardless of merit. Not news-checked: he failed on first-party data before a sweep was warranted. REVERSAL: only if he posts a real matchday score AND a dated Schalke XI starts him AND the ask is at or below mv AND the Conte/Rohr sequence has already resolved."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip clears its cost this run. There is not a single manager ask below market value anywhere on the board, so the flip mechanism is simply absent. The instant-flip activity among rivals continues and remains worthless motion: one manager bought and resold the same player within an hour for a rounding error, and another is reselling a player he bought this morning at a markup approaching a fifth of market value. The one striking data point is a rival paying a very large premium for a low-value body — worth recording in the premium band, not worth copying.",
+  "reason": "No flip this run. There is not a single manager ask below market value anywhere on the board, so the mechanism a flip needs is absent. The measured record in this league is unambiguous: rivals are buying and selling at market value on both sides and harvesting nothing but the intraday drift between two clicks, with the best margin ever recorded here under one percent. That is motion, not points, and it is not worth a transaction. Georg's cash is fully committed to the Rohr trade in any case.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "The squad sweep is clean and dated. Every player returns no injury or suspension flag, none appears in the league's current injured-and-suspended table, and dated club sources place nine of the eleven in their current starting elevens. Two negatives, neither of them new and neither actionable. Widmer is confirmed a backup rather than a fringe starter — no starts, a handful of substitute minutes, behind three others in his position. Minjae's selection risk has tipped from genuinely split to leaning benched: two dated sources now leave him out of his club's eleven against one that starts him. He is fit, not suspended, and named to his club's Champions League squad, so there is no exit risk — it is a selection call. Crucially, nothing can be done about it: he is in the locked matchday 2 eleven, and at the eleven-man floor he cannot be sold. Tonight's kickoff settles it first-hand, which is a better basis for the next run than another projection.",
+  "sweep": "One squad player has dated selection news: the attacker signed this morning was left out of his club's starting eleven the same afternoon, rotated for two others. He is not injured — this is a rotation call, and the day before it his club press was positive about him — but a second consecutive omission would change his standing from hold to sell. Nobody else in the squad carries a new injury, suspension or ban. Two date traps were caught and discarded again: the prominent ankle-ligament story on the Hamburg midfielder is from February and belongs to last season, and the injury items on the Union winger are from January. One exit signal worth tracking rather than acting on: an English club was reported at the start of the month to be interested in Georg's second-best-scoring defender. Three squad members had not yet kicked off their second game when this run closed, so their numbers are incomplete.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
