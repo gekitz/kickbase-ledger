@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-06T12:45:00Z",
+ "run": "2026-09-06T14:53Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 1102767,
   "floor": -50894717,
   "spending_power": 51997484,
-  "hours_to_lock": 125.58,
-  "exposure": "None. The balance is positive, no offers are outstanding, and no leveraged position is open. There is nothing to unwind before the lock, which is comfortably far off. This is the safest position the ledger has recorded in some time, and the correct response to it is patience rather than activity.",
+  "hours_to_lock": 123.61,
+  "exposure": "No leveraged position is open and none is proposed. The balance is positive, no offer is pending, and there is no unwind deadline to manage. The lock is still days away, so nothing on the board expiring in the next few hours needs a decision.",
   "must_restore_by": "2026-09-11T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF, 4 MID)"
   ]
  },
- "binding_gap": "The binding constraint is not a hole in the formation; it is the unwind ceiling. Buying takes the squad to twelve and permits exactly one sale, so the usable budget is cash plus the largest single sale that leaves a legal eleven without costing more points than the purchase adds. That ceiling is set by the midfielder Georg would sell, and it is what every candidate on the board fails against. The weakest man in the eleven is the reserve full-back, but selling him frees almost nothing, so he cannot fund his own replacement — which is why the bar a new signing must clear is the midfielder's average, not the full-back's. Reaching for a larger unwind never works: every player big enough to sell outscores anything the money would buy.",
+ "binding_gap": "The binding constraint is not a position, it is liquidity. Georg is fully invested with a squad at the legal floor, so every purchase must be funded by the single sale that a twelfth body permits, and the sale has to be a player he can spare. The best unwind lever is the midfielder who has just been flagged injured, which is the awkward part: an injured man's market value falls, so the funding leg shrinks a little every day he stays out. If the back problem persists into the coming matchday, selling him stops being a funding decision and becomes an upgrade in its own right, because a player who does not play scores nothing.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 51997484,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 29,
+  "listings": 27,
   "cheapest": 1312758,
   "cheapest_slot_filling": 1986258,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 0
  },
  "squad": [
   {
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "No action needed.",
-  "headline_short": "No action needed.",
-  "detail": "No action needed. The squad is whole, legal at 4-3-3, the balance is positive and no leveraged position is open, so nothing is at risk before the MD3 lock. The board offers nothing worth buying: every listing Georg could actually afford has no scoring record at all, and every player with a real average is priced far beyond what one permitted sale can fund. Sit still. The next genuine opportunity is a quality defender appearing on the overnight Kickbase board, not anything currently listed."
+  "headline": "No action.",
+  "headline_short": "No action.",
+  "detail": "No action. The board holds nothing Georg can both afford and profit from, and at eleven players he cannot legally sell anyone. The run's real content is medical, not commercial: two of the eleven are flagged out of today's matchday, confirmed by dated sources. Nothing to execute now; the decision point is the MD3 team news later in the week."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Nothing should be sold. At eleven players any sale drops the squad under the legal minimum and triggers the missing-player penalty at the lock, so every sale has to be paired with a purchase that lands first. Widmer remains the designated funding lever the moment the squad reaches twelve, and Lokonga remains the natural unwind leg for any purchase large enough to need one — but both are inert while the squad sits at eleven. The conditional Lokonga sale attached to the lost Rohr auction stays closed and must not be revived.",
+  "reason": "Nothing to sell. At the legal minimum, any sale costs the squad more in penalty than the proceeds could buy back. The standing designations are unchanged and remain inert: the weakest defender is still the nominated funding sale once a purchase makes the squad legal at twelve, and the midfielder remains the largest unwind that leaves a legal shape. Neither may be sold on its own.",
   "standing": [
    {
     "name": "Sambi Lokonga",
@@ -218,7 +218,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Nothing clears the bar. The affordable end of the board is entirely made up of players with no scoring minutes this season — a backup keeper, a veteran full-back with no minutes, two flagged midfielders, and a young defender whose rising price reflects promise rather than points — plus three manager asks whose averages sit below the weakest midfielder Georg already fields. Everything with a genuine average is out of reach: the Bayern and Stuttgart defenders, the Dortmund and Cologne attackers, the two marquee names. Kosugi has slipped further out of contention, because his asking price has held while his market value fell, so the premium widened and he now sits outside what a single unwind can fund. The Gladbach defender is the one listing a future run might be tempted by; he is cheap, young and rising, and he has never scored a Kickbase point.",
+  "reason": "Nothing affordable clears the bar, and this was checked position by position rather than asserted. Against a defensive buy, the ceiling is cash plus the smallest unwind, and nothing on the board inside it has scored a single point this season. Against a midfield buy, the ceiling is cash plus the injured midfielder, and the only candidate inside it is priced far above market value on a seller's-choice listing while averaging less than the man he would replace. Against an attacking buy, the ceiling is cash plus the weakest striker, and nothing inside it has a positive average. The standout on merit is the new Leverkusen striker, who carries the best points-per-euro of any large asset this ledger has measured, a genuine two-match average, a rising valuation and no injury listing. Every route to funding him was worked through, including the multi-leg buy-and-sell chains, and each one either finishes the week with a negative balance, which scores nothing for the whole matchday, or costs more fielded points than it buys. He is the right player and the balance sheet is the only objection; that case is logged in full so a liquid future run does not have to rebuild it. Everything else new is either the zero-average class or a big name priced beyond reach.",
   "standing": [
    {
     "name": "Maximilian Rohr",
@@ -247,21 +247,48 @@
   ],
   "killed_this_run": [
    {
-    "name": "Deniz Undav",
+    "name": "Albert Frank Millgramm",
     "pos": "ATT",
-    "club": "9",
-    "ask": 40937897,
-    "mv": 40937897,
+    "club": "29",
+    "ask": 3184712,
+    "mv": 3184712,
     "premium_pct": 0,
+    "why": "ZERO-ap CLASS, and the only listing this run not already covered by an existing call. New Kickbase board listing 2026-09-06T12:07:30Z (feed t:3), ATT, tid 29 = PADERBORN, prc exactly mv 3.184.712, ofc 0, st 0, mvt 2 FALLING, exs 125179 resolving ~2026-09-07T22:53Z. list_market returns NO p and NO ap at all - no Kickbase-scored minutes in 26/27 - so the standing test from Atq95vh/Atracig disposes of him without argument: a twelfth body only pays if its ap beats the man it would displace, and as an ATT he would displace Conte 47. A zero does not beat a 47. He is also from the same Paderborn squad as Duric (Atracig) and ter Horst, and shares Duric's profile exactly: cheap, falling, no minutes. NOT NEWS-CHECKED - he fails on first-party point data before a sweep is warranted. HOUSEKEEPING RECORDED HERE BECAUSE IT MATTERS MORE THAN THE PLAYER. (1) DUPLICATE CALLS: this run independently filed AVOIDs on Laimer (A101aiq) and Chiarodia (A64vqoi) that duplicated Azxy962/Amtqs1l and Adbjyh2 from the concurrent 12:45Z run; both of this run's duplicates have been CLOSED and the earlier entries are authoritative. A run should re-read kb_context after appending, before adding calls, precisely to catch this. (2) CLUB-ID CONFLICT, UNRESOLVED, FLAGGED FOR A FUTURE RUN: tid 15 is recorded in this ledger as GLADBACH (Diks in A8pgzkd, Chiarodia in Adbjyh2) and as 1. FSV MAINZ 05 (Leopold in Ar3orum/Ane0ovz). Both cannot be right. Adbjyh2 did actual dated news work - ligainsider's Gladbach page for the 05.09.2026 Elversberg match, probable XI Nicolas / Scally, Itakura, Diks, Ullrich / Sander, Bolin, Nguefack / Honorat, Kleindienst, Mohya - which places BOTH Diks and Chiarodia's club at Gladbach, so tid 15 = GLADBACH is the better-evidenced reading and the Leopold entries' \"Mainz\" is the suspect one. Treat tid 15 as Gladbach until a dated source says otherwise, and note this run separately verified Mainz's own XI (ligainsider Mainz page, 06.09.2026 14:33: Schwolow, Posch, Gruber, Potulski, Caci, Lee, Kaishu, Amiri, Mwene, Becker, Tietz) and neither Leopold nor Chiarodia appears in it. The tid mapping is worth getting right because it drives the same-club redundancy test that killed Laimer and Brown."
+   },
+   {
+    "name": "Keita Kosugi",
+    "pos": "DEF",
+    "club": "4",
+    "ask": 12300000,
+    "mv": 10549536,
+    "premium_pct": 16.59,
+    "why": "RE-LOGGED WITH TODAY'S FIGURES BECAUSE THE PREMIUM HAS GROWN WHILE HE SAT UNSOLD, WHICH IS THE POINT. PhiL95 manager ask, dt 2026-09-04T21:22:05Z, so he has now been on the board roughly 41 HOURS WITHOUT CLEARING. DEF, tid 4 = FRANKFURT, prc 12.300.000 against mv 10.549.536 = +16,59%, and note the premium is WIDENING rather than narrowing because his mv is falling (mvt 2) while the ask stays fixed - a seller who has not moved his price in 41 hours on a depreciating asset is not going to be argued down by a bid near mv. ap 64 on p 64, a ONE-APPEARANCE mean, which under the standing regression (Upamecano 272->239, Olise 249->187, Diaz 215->172, El Mala's 143 still unrebased) should be expected to fall rather than hold. TWO KILLS. (1) WRONG INSTRUMENT, WRONG CLUSTER: the measured MANAGER-ask low cluster is +0,50% to +6,47%, and a manager ask is seller's choice, so a high bid does not even guarantee the player (Hlovt4t). +16,59% is contested-Kickbase pricing applied to an instrument where it buys nothing - the identical error PhiL95 made with Itakura +15,58%, which went UNSOLD and was dumped back to Kickbase at exactly mv. The ledger's own standing advice applies verbatim: an ask that has gone unsold for days is an invitation to offer at mv, not to meet the ask. (2) MARGINAL POINTS: he would displace Widmer 29, so the real purchase is +35 fielded points for 12.300.000 = 351k PER MARGINAL POINT against the ~110k standard. THE WIDMER CAVEAT, STATED SO IT IS NOT MISREAD AS A REVERSAL: Widmer is flagged st 2 with a Kniereizung (WATCH Wahxyon), so if he is still out at the MD3 lock the displaced man scores 0 and the marginal figure improves to 192k per point. That is better and still not good, and it does not touch affordability - the DEF ceiling is cash 1.102.767 + the Widmer unwind 1.897.252 = 3.000.019, and 12,30M is four times that. REVERSAL: the ask AT OR BELOW mv, a re-based ap over two or more appearances that still clears the marginal-points test against whoever he would displace at that time, AND an affordable ceiling. A trim that leaves him above mv is not a reversal."
+   },
+   {
+    "name": "Patrik Schick",
+    "pos": "ATT",
+    "club": "7",
+    "ask": 29783535,
+    "mv": 29783535,
+    "premium_pct": 0,
+    "why": "THE BEST POINTS-PER-EURO LARGE ASSET THIS LEDGER HAS EVER MEASURED, AND STILL A NO ON AFFORDABILITY - log the merit in full so a liquid future run does not re-derive it. New Kickbase board listing 2026-09-06T14:16:34Z (feed t:3), eighteen minutes before this run read the market. ATT, tid 7 = BAYER LEVERKUSEN, prc exactly mv 29.783.535, ofc 0, st 0, mvt 1 RISING, exs 161963 resolving ~2026-09-08T11:16Z, i.e. 45h - the longest runway on the board. THE MERIT, WHICH IS REAL: p 402 over TWO appearances = ap 201, a genuinely founded mean and not a cameo or a one-match figure awaiting the standing regression. 29.783.535 / 201 = 148k PER FIELDED POINT. That is the second-best ratio ever logged here, behind only Upamecano's 140k and far ahead of Olise 348k, Beier 344k, Brown 431k and Kane 710k. He would displace Conte 47, so the marginal purchase is +154 FIELDED POINTS - the largest single-slot upgrade available anywhere on this market - at 193k per marginal point. Fitness: ligainsider's league-wide Verletzte-und-Gesperrte table read this run gives Leverkusen's absentees as Culbreath, Eichhorn, Doue and Tella; Schick is NOT among them, and st 0 with a RISING market value agrees. No dated XI was obtained (the ligainsider club-page slug 404s and kicker blocks fetching), so the starter case rests on the injury table plus two scoring appearances out of two. WHY THE ANSWER IS STILL NO, IN ONE PARAGRAPH: cash is 1.102.767 and the squad is ELEVEN, so a buy takes it to 12 and permits exactly ONE sale. Buying an ATT gives 1GK/4DEF/3MID/4ATT and the only unwind that restores a legal 4-3-3 without gutting the attack is Conte at mv 9.456.481 - ceiling 10.559.248 against a 29.783.535 ask, short by 19.224.287. THE LARGER UNWINDS WERE CHECKED AND ALL LOSE POINTS: sell Guirassy (30.623.276, ap 213) and the trade is 213 out for 201 in = MINUS 12 fielded points to spend 29,8M; sell Gregoritsch (12.164.007, ap 195) and it is minus 195 for plus 201 but leaves the balance at -18,5M into the lock. THE MULTI-LEG ROUTES WERE ALSO CHECKED AND ALL FAIL: buy Schick + a cheap MID, sell Conte + Lokonga = -9,45M at the lock; buy Schick + Boss, sell Conte + Baumann = -4,13M AND minus 104 points for selling the only real keeper; the only three-for-three that clears zero nets +6 points for enormous churn. A NEGATIVE BALANCE AT THE LOCK SCORES ZERO FOR THE ENTIRE MATCHDAY, so every route either goes negative or costs more points than it buys. NOTE FOR PRICING IF HE IS EVER REACHABLE: this is a Kickbase listing, so per Arwjz45 an UNCONTESTED one clears near mv in the quiet window while a CONTESTED one lands in the high cluster (+16,71% / +20,96%, and Skarke cleared +27,74% this very run). Budget ~35M, not 29,8M, if anyone else is watching. REVERSAL: only if a sale has already banked cash such that the ceiling reaches roughly 30M with the eleven intact - which in practice means Georg has 13+ players or has sold Guirassy for something better first - AND a dated Leverkusen XI starts him at that time. He is the right player; the balance sheet is the objection."
+   },
+   {
+    "name": "Deniz Undav",
+    "pos": "",
+    "club": null,
+    "ask": 40937897,
+    "mv": null,
+    "premium_pct": null,
     "why": "RE-LOGGED ONLY BECAUSE Abba6ye EXPIRED WHILE HE IS STILL ON THE BOARD - the answer is unchanged and this should be the last time he is priced. Kickbase board listing, ATT, tid 9 VfB Stuttgart, prc exactly mv 40.937.897, ofc 0, st 0, mvt 2 FALLING, exs 1871 resolving ~2026-09-06T13:16Z, i.e. about half an hour from this run. THE CEILING: 40.937.897 against 10.559.248 for an ATT (Hj8ommz), short by a factor of 3,9. THE POINTS CASE IS THE WORST ON THE BOARD IN ABSOLUTE TERMS: p 53 ap 27 - Stuttgart have played both matchdays so that is a genuine two-match mean, not a one-match figure awaiting regression - which is BELOW every attacker Georg fields (Guirassy 213, Gregoritsch 195, Conte 47) and below every outfielder in the squad except Widmer 29. At 40.937.897 for ap 27 he is 1,52M PER FIELDED POINT, the worst ratio this ledger has ever recorded, and as an ATT displacing Conte 47 the marginal purchase is NEGATIVE - he would make the eleven worse and cost 40,9M to do it. His mv has also fallen 41.645.122 -> 40.937.897 since the last run, mvt 2, and unlike Kane (Ahslpze) that drift has an obvious cause in a 27-point average on a 41M valuation. DO NOT RE-PRICE HIM AGAIN: a famous name attached to the second-worst average on the board is the same trap as Emre Can (Asg9coe), Chandler (A65ah3o) and Lehmann (Aja4ex9), and this ledger has now logged it four times. REVERSAL: none realistic. He would need a re-based ap above 47 to be a marginal upgrade at all, and an ask near 110k per marginal point over Conte - about 5,2M at any plausible average. Being Deniz Undav is not a reversal condition."
    },
    {
     "name": "Florian Neuhaus",
-    "pos": "MID",
-    "club": "15",
+    "pos": "",
+    "club": null,
     "ask": 3700000,
-    "mv": 2576552,
-    "premium_pct": 43.6,
+    "mv": null,
+    "premium_pct": null,
     "why": "DAVID HAS MARKED HIM UP AGAIN - THIRD PRICE, SAME ZERO PLAYER. A8yrzkf is closed and this replaces it. The ask has gone 2.600.000 -> 2.900.000 -> 3.700.000 against mv 2.576.552, i.e. from roughly +0,9% to +12,6% to +43,61%. THAT IS NOW THE HIGHEST MANAGER-ASK PREMIUM THIS LEDGER HAS EVER MEASURED, and it is being asked for a player with NO p AND NO ap AT ALL - no Kickbase-scored minutes in 26/27. MID, tid 15 Borussia Moenchengladbach (see the tid-15 correction in A2g9mk4 - it is Gladbach, not Mainz), mvt 1, dt 2026-09-05T13:41:49Z. THE STANDING ZERO-ap TEST FROM Atq95vh/Atracig DISPOSES OF HIM BEFORE PRICE IS DISCUSSED: a body only pays if its ap beats the man it displaces, and a MID buy displaces Lokonga 44. Zero cannot beat 44; the trade is -44 fielded points for 3,7M spent. THE PRICING PATTERN IS THE THING WORTH KEEPING, because it is now documented three times over: David's habit is to relist same-day at a markup regardless of the asset (Neuhaus 2,60 -> 2,90 -> 3,70M; Kimmich 59.877.200 -> 59.900.000; Jung; and Rohr, bought at 11.536.566 at 00:58Z today and expected back above that price). He is monetising spreads, not selling value, and the measured evidence in Hyjldyt says his own entries came off Kickbase listings at or below mv - Klostermann at -1,27%, Moerstedt at -0,13%. Never pay a David markup; wait for the same class of player on the overnight board. REVERSAL: a real positive matchday return on the board AND an ask at or below mv 2.576.552. A markup on a zero is not a price signal and further reprices are not reversals - stop re-logging him individually unless the ask goes below mv."
    },
    {
@@ -326,44 +353,17 @@
     "mv": 3671638,
     "premium_pct": 0,
     "why": "THE ONLY AFFORDABLE BODY ON THE BOARD WITH ANY UPSIDE STORY, AND HE IS STILL A NO - checked properly so a future run does not have to. New Kickbase listing 2026-09-06T09:56:25Z at mv 3.671.638, Gladbach DEF, st 0. He is affordable ONLY against the Lokonga sale (budget 10.873.909) and would then take the squad to 1GK/5DEF/2MID/3ATT = 5-2-3, surrendering Lokonga's 44 fielded points for a player with ZERO. DATED EVIDENCE, ligainsider player profile fetched 06.09.2026: no appearances and 0 minutes in 26/27; muscle injury sustained late July 2026; news items 20.08.2026 \"Chiarodia zurueck im Teamtraining\", 27.08.2026 \"Chiarodia muss nach Verletzung Rueckstand aufholen\", 05.09.2026 \"Chiarodia kehrt in den Spieltagskader zurueck\" - i.e. back in the squad, not in the team. Corroborated by ligainsider's Gladbach page (match 05.09.2026 v Elversberg): probable XI is Nicolas - Scally, Itakura, Diks, Ullrich - Sander, Bolin, Nguefack - Honorat, Kleindienst, Mohya, and Chiarodia is NOT in it. His st 0 is therefore a clean flag on a player who is fit but sixth-choice, exactly the reverse of the usual trap. REVERSAL: only if a dated Gladbach XI actually starts him AND he has real minutes on the board. Being cheap is not a reason."
-   },
-   {
-    "name": "Konrad Laimer",
-    "pos": "DEF",
-    "club": "2",
-    "ask": 32043426,
-    "mv": 32043426,
-    "premium_pct": 0,
-    "why": "New Kickbase listing 2026-09-06T08:46:15Z at exactly mv 32.043.426, expiry ~2026-09-07T22:18Z. Bayern, DEF, ap 119, st 0, not on ligainsider's Verletzte-und-Gesperrte list. Unaffordable on the one-sale unwind ceiling (see HOLD H1etxaf): needs a 30,9M single sale, which only Guirassy 30.623.276 approaches and even that falls short. And the marginal test fails anyway - he would displace Minjae 110 for +9 fielded points at 269k per point of raw average. Note for calibration: this is a Kickbase listing at mv, which per the Koch/Chabot overnight clears is the CHEAP entry channel, so if it goes uncontested it will clear near +0%. That is worth watching as evidence about the channel, not as a reason to bid."
-   },
-   {
-    "name": "Jeff Chabot",
-    "pos": "",
-    "club": null,
-    "ask": 23900000,
-    "mv": null,
-    "premium_pct": null,
-    "why": "Unaffordable and, unlike Koch, not even good value. PhiL95 manager ask 23.900.000 against mv 22.706.821 = +5,25%, on ap 94 = 254k per point of raw average before any marginal-points adjustment. He would displace ter Horst 92 in the eleven, i.e. the real purchase is +2 FIELDED POINTS for 23.900.000. That is the worst marginal trade on the board by a wide margin and it fails even if Georg were liquid. Same unwind problem as Koch: cash 1.102.767, one-sale ceiling, largest legal single sale 14.399.505 (Matsima), leaves him ~8,4M negative into the MD3 lock. PhiL95 bought him off a Kickbase listing at 2026-09-06T00:43:07Z for 22.707.000 = +0,00% over mv and relisted at +5,25% seven hours later - he is monetising a spread, not selling a bargain. No news check performed and none needed; the marginal-points test kills him before fitness matters."
-   },
-   {
-    "name": "Robin Koch",
-    "pos": "",
-    "club": null,
-    "ask": 24900000,
-    "mv": null,
-    "premium_pct": null,
-    "why": "REJECTED ON AFFORDABILITY, NOT ON MERIT - record the distinction so a future run does not waste a news cycle on him. THE MERIT IS GENUINE: ap 132, st 0, and ligainsider's Eintracht Frankfurt page dated 04.09.2026 puts him in the voraussichtliche Aufstellung for Frankfurt v Augsburg 06.09 15:30Z; Frankfurt's only absentees are Ngankam, Knauff and Collins. He would be the best defender in Georg's squad, ahead of Matsima 138? no - just behind, and comfortably ahead of Minjae 110, ter Horst 92 and Widmer 29. THE ARITHMETIC KILLS HIM: ask 24.900.000 against mv 24.261.761 = +2,63%, a cheap manager ask by the measured low cluster, but cash is 1.102.767, so the buy opens a -23.797.233 position and the unwind ceiling permits exactly ONE sale. The largest sale that leaves a legal eleven and does not sell Nusa or Guirassy is Baumann 17.077.848 - which leaves no goalkeeper - and the largest legal one is Matsima 14.399.505, still 9,4M short. He cannot be unwound before the MD3 lock 2026-09-11T18:30:00Z, and a negative balance at the lock scores ZERO for the whole matchday. PROVENANCE WORTH KEEPING: PhiL95 bought him from a Kickbase listing at 2026-09-06T01:03:02Z for 24.352.999 = +0,38% over mv, then relisted him at 07:13:23Z at +2,63%. He did the identical thing with Chabot (bought 00:43:07Z at 22.707.000 = +0,00%, relisted 07:13:45Z at +5,25%). THIS IS THE MOST IMPORTANT MARKET READ OF THE RUN: uncontested Kickbase listings on quality defenders cleared at ~mv overnight, which contradicts the standing assumption that Kickbase listings always clear in the high cluster. The high cluster is CONTESTED listings. When Georg next has liquidity, the cheap entry is a Kickbase listing in the quiet overnight window, not a manager ask at any premium."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip clears its cost this run. There are no manager asks priced below market value anywhere on the board, so the mechanism that makes a flip profitable is simply absent. Rivals were busy overnight buying and dumping low-value bodies back to Kickbase for fractions of a percent, one of them inside twenty seconds; that is churn on the daily valuation tick, not points, and it is not worth copying on a mandate that optimises for points.",
+  "reason": "No flip clears its cost this run. There are no manager asks below market value at all, so the mechanism that would fund a flip is simply absent. What the feed does show is instructive rather than tempting: rivals spent the morning churning bodies for fractions of a percent, including one midfielder bought and sold back inside twenty seconds for a rounding error, and a striker bought overnight and returned at dawn. That is motion, not points, and it is not a model to copy. The one genuine signal in the overnight clears is the channel: several quality players changed hands on uncontested Kickbase listings at or even slightly below market value, while the single contested listing went well above it. When Georg next has liquidity, the cheap entry is a quiet Kickbase listing, not a manager ask at any premium.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player is newly injured or suspended. Matsima and Gregoritsch are both confirmed in Augsburg's probable eleven at Frankfurt on two independent current-dated sources. Widmer carries a Kickbase status flag but does not appear on Mainz's injury list; he is simply out of the projected eleven with the established right-back ahead of him, which is a selection problem already on the record rather than a new injury. No current information was found either way on Lokonga's selection for Hamburg today. One caution recorded for future runs: an Augsburg club article naming a starting eleven for this same fixture is dated late April and belongs to last season — it was discarded.",
+  "sweep": "Two squad players newly flagged unavailable, both corroborated by sources dated today. Sambi Lokonga is out of the Hamburg fixture with back problems per baykusen.de, published today; no return date is given. Kickbase's own status flag agrees. A second same-day preview on nurdieraute.de puts him in its probable eleven, but that is a pre-team-news projection and the explicit absence report plus the status flag override it. Silvan Widmer is listed severely doubtful with a knee irritation on Ligainsider's Mainz club page, last updated today, and is not in the probable eleven; Mainz also lose their first-choice keeper to a shoulder problem. Worth recording as an instrument lesson: Ligainsider's league-wide injury table named neither of them. That table is the fast sweep, not the last word, and squad-player checks must go to the club page. Neither absence can be acted on for this matchday, since the eleven cannot be reshuffled and an unavailable player simply scores nothing.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -456,7 +456,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=129, -1,27% to +308,77%"
+   "v": "n=131, -1,27% to +308,77%"
   }
  ]
 }
