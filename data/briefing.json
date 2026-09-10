@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-10T02:53Z",
+ "run": "2026-09-10T04:57Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 333904,
   "floor": -51824976,
   "spending_power": 52158880,
-  "hours_to_lock": 39.61,
-  "exposure": "No leverage is open right now. The recommended move opens one deliberately and briefly: the buy resolves in the small hours and leaves the balance negative until the Conte sale settles. That is acceptable only because there is more than a day and a half before the lock and the sale is a single instant-sale click. The hard rule governs the size of the raise - the bid must stay under the level at which the Conte proceeds can no longer bring the balance back to zero, and that ceiling is recorded on the call. A negative balance at matchday start scores zero for the entire matchday, which outranks every other consideration here.",
+  "hours_to_lock": 37.54,
+  "exposure": "No leveraged position is open right now — the balance is positive and the spending floor is nowhere near binding. The purchase will open one deliberately, and it closes the same day the sale settles, comfortably ahead of the lock. The rule that governs everything here: a negative balance when the matchday starts scores zero for the entire matchday, so the sale is not optional once the buy lands. Sized against the current sale value, the bid has a hard survivable ceiling and the recommended number sits well inside it.",
   "must_restore_by": "2026-09-11T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF, 4 MID)"
   ]
  },
- "binding_gap": "The binding gap is the fourth defender, not the attack. He is in the fielded eleven but does not start for his club, and his market value is falling faster than anyone else in the squad. He cannot be replaced this run: the squad is at exactly eleven, one buy permits exactly one sale, and that single slot is committed to funding the striker upgrade. Selling him without a replacement landing first would drop the squad below eleven and break the formation at the same time. He is the first job for the next window, once the current cycle settles.",
+ "binding_gap": "The weakest fielded slot is the attacking one Conté occupies, and the Mokwa trade closes it for a net cash gain rather than a cost. The next-weakest is the fourth defender, whose return is by some distance the lowest in the eleven — but that gap cannot be closed this cycle. The one genuinely large defensive upgrade on the board would need more than twice what a single legal sale can raise, and a two-sale structure would take the squad below eleven. That slot waits for after the lock.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 52158880,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 29,
+  "listings": 30,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "One decision this run, and it changes a standing instruction: the live Mokwa bid is too low and should be raised before it resolves early this morning.",
-  "headline_short": "One decision this run, and it changes a standing instruction: the live",
-  "detail": "One decision this run, and it changes a standing instruction: the live Mokwa bid is too low and should be raised before it resolves early this morning. The bid sits below every contested Kickbase clearing this ledger has ever measured, and below the level at which our own Banks bid was lost. Merit is not the question - Mokwa is Elversberg's lone striker, started both matchdays, scored in both. The question is only whether the bid is inside the winning band, and it is not. Raise it, and if it lands, sell Conte immediately."
+  "headline": "One action, and it has an alarm clock on it: the live offer on David Mokwa still sits at the original amount — the raise recommended two runs ago was never placed — and the auction",
+  "headline_short": "One action, and it has an alarm clock on it: the live offer on David M",
+  "detail": "One action, and it has an alarm clock on it: the live offer on David Mokwa still sits at the original amount — the raise recommended two runs ago was never placed — and the auction resolves inside the next two hours. Raise it, then sell Conté the moment it lands. Everything else on the board is an avoid, and the squad is otherwise as good as it can be made before the lock."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Conte is the sale, and only as the second leg of the Mokwa structure - buy first, then sell, never the reverse. He is the lowest-scoring outfield player in the eleven and the only sale that returns a legal formation after an attacker is bought; selling the weak defender instead would leave a shape Kickbase does not permit. He is fit, with a clear medical record and a dated note from earlier this month that he is pushing for more minutes - but he is a rotation player, one start in three appearances, and that is the case against him. If the Mokwa auction is lost, do not sell him: the squad is at exactly eleven and dropping to ten triggers the hundred-point penalty.",
+  "reason": "Conté only, and strictly after the Mokwa purchase settles — buy first, then sell. He is the lowest-scoring outfielder in the forced eleven and the only sale that keeps the formation legal once an attacker arrives: selling the defender instead would leave a shape the game will not accept. This is not a fitness call. A dated sweep this run has him fit, in his club's projected XI and under a contract extended in the summer; he is sold because he is a rotation player whose per-matchday return is a fraction of the man replacing him. If the auction is lost, the sale must not happen.",
   "standing": [
    {
     "name": "Bambase Conté",
@@ -213,12 +213,21 @@
     "ap": 47,
     "why": "CONDITIONAL ON THE MOKWA BUY LANDING FIRST (RAISE, ~06:27Z). Order is not optional: buy first, then sell. If the Mokwa auction is LOST the sale must NOT happen - the squad is at exactly eleven and selling him drops it to ten for the -100 penalty. If it LANDS, sell Conté immediately by instant-sale to Kickbase at mv 10.237.444; the balance is negative (-9.166.096 at a 9.500.000 clear) until that sale settles, and a negative balance at the 2026-09-11T18:30Z lock scores ZERO for the entire matchday. WHY HIM AND NOT ANOTHER: he is the lowest-scoring outfield player in the eleven at ap 47 (p -12 then 106), and he is the only sale that preserves a legal formation - buying an ATT makes it 1GK/4DEF/3MID/4ATT, and selling the ATT returns 4-3-3, whereas selling Sirch would leave 3-3-4, which is not a legal Kickbase formation. NEWS 10.09.2026: he is FIT - Ligainsider's Hoffenheim profile shows the Krankenakte clear, contract extended July 2026, and a dated item 04.09.2026 \"Conté empfiehlt sich für weitere Einsätze\". But he is NOT a nailed starter: 3 appearances in 26/27, only ONE of them a start, two off the bench. Selling a fit rotation forward at ap 47 to fund a nailed lone striker at ap 149 is the trade.",
     "tag": "sell"
+   },
+   {
+    "name": "Bambasé Conté",
+    "pos": "ATT",
+    "club": "14",
+    "mv": 10237444,
+    "ap": 47,
+    "why": "CONDITIONAL ON THE MOKWA BUY LANDING FIRST at ~2026-09-10T06:27Z — order is buy, then sell, and if the auction is LOST the sale must NOT happen (squad is at exactly eleven; selling drops it to ten for the -100 penalty). Re-recommended at mv 10.237.444 via instant-sale to Kickbase. He is the lowest-scoring outfielder in the fielded eleven at ap 47 (p -12 then 106) and the ONLY sale that preserves a legal formation once an ATT is bought: Mokwa makes it 1GK/4DEF/3MID/4ATT and selling the ATT returns 4-3-3, whereas selling Sirch would leave 3-3-4, which is illegal. NEWS RE-VERIFIED 10.09.2026 by an independent sweep and it is UNCHANGED: he is FIT — ligainsider's Hoffenheim page has him in the projected XI v Stuttgart (12.09 15:30, page dated 07.09 17:03), Krankenakte clear, contract extended 14.07.2026, and TSG's only absentee is Alexander Prass. He is NOT being sold on fitness. He is being sold because he is a ROTATION player — 3 appearances in 26/27, only ONE a start (96 min), two off the bench (55 min combined), avg rating 4.25, and the latest dated item (04.09.2026 \"Conté empfiehlt sich für weitere Einsätze\") is the framing of a man pushing for minutes rather than owning the shirt. ap 47 against Mokwa's 149 is +102 fielded points for the same slot at a net cash GAIN. Note his mv is rising (mvt 1, sdmvt +1.306.480), so the 20:00Z tick can only improve the proceeds — but the auction resolves at 06:27Z, before it, so size the bid against 10.237.444.",
+    "tag": "sell"
    }
   ]
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Mokwa, raised. This is a Kickbase board listing, so the high cluster is the benchmark and the median is a trap - manager asks clear low, contested board listings clear far higher, and the standing bid is beneath all of them. The offer count currently reads as uncontested, but the ledger already records a listing read as uncontested that cleared at the highest premium ever measured here, so that reading carries no weight. Merit was re-verified from a match report rather than a projection: he started as the lone striker and scored. Nothing else on the board earns a bid. The best defender available would be a genuine upgrade on merit but is far outside capacity, and the rest of the board is the usual mix of zero-scoring cheap bodies, flagged-unfit listings, and expensive players who would not enter the eleven.",
+  "reason": "Mokwa, and nothing else. He started and scored in his club's matchday-two win, he is absent from the league-wide injury and suspension table, and no source dated today or later rules him out — the one projection that benches him is the same graphic this ledger has already caught omitting him while starting a defender with almost no minutes. The case for raising the bid rather than leaving it is new and specific: a club-mate of directly comparable class cleared a board listing at roughly sixteen percent over market value two nights ago, which is above where the current bid sits. Treat market value as the most likely clearing price, not the ceiling — the listing shows only the offers placed so far, and the one player this ledger lost from an apparently uncontested position was sniped late. The rest of the board is ranked out: every new listing this run loses the marginal-points test against a man already owned, and the manager asks continue to carry markups many times what asks in this league actually clear at.",
   "standing": [
    {
     "name": "David Mokwa",
@@ -228,7 +237,7 @@
     "mv": 7251481,
     "premium_pct": 31.01,
     "listing": "Kickbase listing",
-    "why": "RAISE THE LIVE BID FROM 8.300.000 TO 9.500.000 BEFORE ~06:27Z. This CHANGES the standing instruction (the previous run's raise to 8.300.000). Reason: 8.300.000 against mv 7.251.481 is +14,46%, which sits BELOW EVERY measured contested Kickbase clearing in this league - Ebnoutalib +16,71%, Neuer +17,34%, Campbell +20,96%, Ogbus +24,70%, Banks +30,43%, Makengo +60,76%. Our own Banks bid at +15,01% LOST to +30,43% on exactly this error, and the calibration table shows it. This is a Kickbase board listing (no u field), so the HIGH cluster is the benchmark, never the +0,29% median. ofc reads 1 (our offer only) but HOLD H5om1wi is explicit that early ofc does not predict the contest at expiry - Makengo was read uncontested and cleared +60,76%. 9.500.000 = +31,01% over mv, just clear of the highest non-outlier measured clearing. MERIT IS NOT IN DOUBT AND WAS RE-VERIFIED FROM A MATCH REPORT, NOT A PROJECTION: Kickbase has him st 5 (started) on BOTH matchdays - MD1 29.08 v Leverkusen 77 min, 148 pts, goal+assist; MD2 05.09 at Mönchengladbach 89 min, 150 pts, goal. news.de's MD2 report (05.09.2026) lists the Elversberg XI with Mokwa (42) as the LONE STRIKER and credits him the 31st-minute equaliser. ap 149. He would displace Conté ap 47 = +102 ap per matchday for the rest of the season. AFFORDABILITY: cash 333.904, one buy permits exactly one sale, and the Conté unwind at mv 10.237.444 gives a HARD CEILING of 10.571.348 (333.904 - X + 10.237.444 >= 0). 9.500.000 leaves +1.071.348 of slack. DO NOT exceed 10.571.348 - a negative balance at the 2026-09-11T18:30Z lock scores ZERO for the whole matchday.",
+    "why": "RE-AFFIRMS the 10.09 02:45Z raise, which GEORG HAS NOT YET ACTED ON — list_market this run shows uop still 8.300.000, ofc 1, ofs = Georg alone, exs 6093 resolving ~2026-09-10T06:27Z. This is now URGENT, under 2h. mv has moved to 7.251.481, so the standing 8.300.000 bid is +14,46% over mv. NEW EVIDENCE THIS RUN THAT MAKES THE RAISE STRONGER, NOT WEAKER: Lukas Petkov (2928), an Elversberg MID of directly comparable class (ap 162), cleared a Kickbase board listing at 13.938.825 against mv 12.017.397 = +15,99% at 2026-09-09T20:42Z — 32 hours ago. Our current bid at +14,46% would have LOST that auction. Two more contested board clearings this window sit in the same region: Stark 4.664.423 vs mv 4.064.423 = +14,76%, Schwolow 3.500.999 vs mv 3.194.528 = +9,59%; the low end is Poreba +5,57% and Führich +0,00%. So the uncontested-clears-at-mv doctrine (H8t606f B) is a CENTRAL TENDENCY, not a guarantee, and ofc 1 is a snapshot — Makengo was ofc 1 with Georg alone and cleared at +60,76% after a late arrival. 9.500.000 = +31,02%, above every measured contested clearing in this league except the Makengo outlier. AFFORDABILITY IS CLEAN AT THIS NUMBER: 333.904 - 9.500.000 = -9.166.096, then the Conté sale at mv 10.237.444 returns +1.071.348, positive well before the 2026-09-11T18:30Z lock. Hard survivable ceiling is 10.571.348; do not exceed it. NEWS RE-VERIFIED THIS RUN AND IT IS BETTER THAN THE LEDGER HAD IT: Mokwa STARTED AND SCORED in the 29th minute of Elversberg's 4-3 win at Gladbach on 05.09.2026 (bundesliga.com MD2 report); he is absent from ligainsider's league-wide Verletzte-und-Gesperrte table (Elversberg's only absentees are Seifert and Zimmerschied); no item dated 10.09.2026 or later rules him out. The 07.09 ligainsider graphic that benches him is contradicted by his own club's match report, which is exactly the broken-instrument finding the ledger already recorded. On merit he is +102 fielded ap over Conté for a NET CASH GAIN of 737.444 once the sale settles.",
     "rank": 1,
     "trigger": "2026-09-10T06:27:00Z"
    },
@@ -240,8 +249,20 @@
     "mv": 7251481,
     "premium_pct": 31.01,
     "listing": "Kickbase listing",
-    "why": "RAISE the standing live offer from 8.300.000 to 9.500.000 on the Kickbase listing (9995, ATT, SV 07 Elversberg, tid 77), resolving 2026-09-10T06:27:47Z. This CONTINUES the 09.09 16:45Z RAISE Rur0r2f, which was never acted on — list_market at 00:46Z still shows uop 8.300.000 with ofs carrying only Georg Kitz, so the raise did not happen and the offer is unchanged. THE FITNESS DOUBT IS NOW DEAD AND MUST NOT BE RE-RAISED. Three independent current sources: bundesliga.com player page — 2 apps, 2 goals, featured 05.09.2026 v Gladbach, 19,1 km covered, NO injury note; ligainsider match report 05.09.2026 (elversberg-gewinnt-in-gladbach-417705) — he STARTED at Gladbach, SCORED the opener on 30', off on 87' in the 4:3 comeback; Kickbase st 0, ap 149, p 298, g 2. THE STALE ITEM IS DATED AT LAST: ligainsider \"Mokwa verpasst Elversberg-Test leicht angeschlagen\" (article 415496) 404s on fetch and was dated this run by bracketing its article id against neighbours that do open — id 415181 = 17.07.2026 (Viktoria Köln Testspiel report) and id 416555 = \"Mokwa steht für Pokalspiel in Duisburg bereit\" (mid-August DFB-Pokal). 415496 therefore falls in LATE JULY 2026, preseason, and the \"Test\" in the headline is a friendly. It is superseded twice over. Add it to the known date traps. PRICE LEG, BENCHMARKED AGAINST THE RIGHT BAND: this is a KICKBASE listing (exs present, no u), so the HIGH cluster applies, never the median. Measured contested-Kickbase clearings: Ebnoutalib +16,71%, Rohr +16,96%, Campbell +20,96%, Banks +30,43%, Makengo +60,76%. mv 7.251.481, so the standing 8.300.000 is only +14,46% — BELOW EVERY MEMBER OF THAT CLUSTER, i.e. exactly the level at which Makengo, Banks and Rohr were all lost. 9.500.000 = +31,01%, which clears the Banks number that beat us. UNWIND CEILING: cash 333.904 + Conté mv 10.237.444 = 10.571.348 hard maximum, so 9.500.000 leaves 1.071.348 of buffer and 10.571.348 is the absolute cap. WHY THE MONEY IS NOT THE POINT: the surplus is dead weight before the 11.09 18:30Z lock — nothing affordable on this board at 1-2M is worth owning — while Mokwa is +102 fielded points (149 in for Conté's 47 out) this matchday and every matchday after. CALIBRATED FALLBACK, stated because HOLD Hon9326 records that the Conte raise bought nothing: ofc read at T-6min IS reliable (Hon9326) while an early read is not (H5om1wi). If Georg is awake near 06:20Z he can read ofc first and only raise if a second bidder has appeared. If he is not, raise now — 1,2M of dead cash against a 20% chance of losing 102 points is the right side of that trade.",
+    "why": "RAISE THE LIVE BID FROM 8.300.000 TO 9.500.000 BEFORE ~06:27Z. This CHANGES the standing instruction (the previous run's raise to 8.300.000). Reason: 8.300.000 against mv 7.251.481 is +14,46%, which sits BELOW EVERY measured contested Kickbase clearing in this league - Ebnoutalib +16,71%, Neuer +17,34%, Campbell +20,96%, Ogbus +24,70%, Banks +30,43%, Makengo +60,76%. Our own Banks bid at +15,01% LOST to +30,43% on exactly this error, and the calibration table shows it. This is a Kickbase board listing (no u field), so the HIGH cluster is the benchmark, never the +0,29% median. ofc reads 1 (our offer only) but HOLD H5om1wi is explicit that early ofc does not predict the contest at expiry - Makengo was read uncontested and cleared +60,76%. 9.500.000 = +31,01% over mv, just clear of the highest non-outlier measured clearing. MERIT IS NOT IN DOUBT AND WAS RE-VERIFIED FROM A MATCH REPORT, NOT A PROJECTION: Kickbase has him st 5 (started) on BOTH matchdays - MD1 29.08 v Leverkusen 77 min, 148 pts, goal+assist; MD2 05.09 at Mönchengladbach 89 min, 150 pts, goal. news.de's MD2 report (05.09.2026) lists the Elversberg XI with Mokwa (42) as the LONE STRIKER and credits him the 31st-minute equaliser. ap 149. He would displace Conté ap 47 = +102 ap per matchday for the rest of the season. AFFORDABILITY: cash 333.904, one buy permits exactly one sale, and the Conté unwind at mv 10.237.444 gives a HARD CEILING of 10.571.348 (333.904 - X + 10.237.444 >= 0). 9.500.000 leaves +1.071.348 of slack. DO NOT exceed 10.571.348 - a negative balance at the 2026-09-11T18:30Z lock scores ZERO for the whole matchday.",
     "rank": 2,
+    "trigger": "2026-09-10T06:27:00Z"
+   },
+   {
+    "name": "David Mokwa",
+    "pos": "ATT",
+    "club": "77",
+    "ask": 9500000,
+    "mv": 7251481,
+    "premium_pct": 31.01,
+    "listing": "Kickbase listing",
+    "why": "RAISE the standing live offer from 8.300.000 to 9.500.000 on the Kickbase listing (9995, ATT, SV 07 Elversberg, tid 77), resolving 2026-09-10T06:27:47Z. This CONTINUES the 09.09 16:45Z RAISE Rur0r2f, which was never acted on — list_market at 00:46Z still shows uop 8.300.000 with ofs carrying only Georg Kitz, so the raise did not happen and the offer is unchanged. THE FITNESS DOUBT IS NOW DEAD AND MUST NOT BE RE-RAISED. Three independent current sources: bundesliga.com player page — 2 apps, 2 goals, featured 05.09.2026 v Gladbach, 19,1 km covered, NO injury note; ligainsider match report 05.09.2026 (elversberg-gewinnt-in-gladbach-417705) — he STARTED at Gladbach, SCORED the opener on 30', off on 87' in the 4:3 comeback; Kickbase st 0, ap 149, p 298, g 2. THE STALE ITEM IS DATED AT LAST: ligainsider \"Mokwa verpasst Elversberg-Test leicht angeschlagen\" (article 415496) 404s on fetch and was dated this run by bracketing its article id against neighbours that do open — id 415181 = 17.07.2026 (Viktoria Köln Testspiel report) and id 416555 = \"Mokwa steht für Pokalspiel in Duisburg bereit\" (mid-August DFB-Pokal). 415496 therefore falls in LATE JULY 2026, preseason, and the \"Test\" in the headline is a friendly. It is superseded twice over. Add it to the known date traps. PRICE LEG, BENCHMARKED AGAINST THE RIGHT BAND: this is a KICKBASE listing (exs present, no u), so the HIGH cluster applies, never the median. Measured contested-Kickbase clearings: Ebnoutalib +16,71%, Rohr +16,96%, Campbell +20,96%, Banks +30,43%, Makengo +60,76%. mv 7.251.481, so the standing 8.300.000 is only +14,46% — BELOW EVERY MEMBER OF THAT CLUSTER, i.e. exactly the level at which Makengo, Banks and Rohr were all lost. 9.500.000 = +31,01%, which clears the Banks number that beat us. UNWIND CEILING: cash 333.904 + Conté mv 10.237.444 = 10.571.348 hard maximum, so 9.500.000 leaves 1.071.348 of buffer and 10.571.348 is the absolute cap. WHY THE MONEY IS NOT THE POINT: the surplus is dead weight before the 11.09 18:30Z lock — nothing affordable on this board at 1-2M is worth owning — while Mokwa is +102 fielded points (149 in for Conté's 47 out) this matchday and every matchday after. CALIBRATED FALLBACK, stated because HOLD Hon9326 records that the Conte raise bought nothing: ofc read at T-6min IS reliable (Hon9326) while an early read is not (H5om1wi). If Georg is awake near 06:20Z he can read ofc first and only raise if a second bidder has appeared. If he is not, raise now — 1,2M of dead cash against a 20% chance of losing 102 points is the right side of that trade.",
+    "rank": 3,
     "trigger": "2026-09-10T06:27:47Z"
    },
    {
@@ -253,7 +274,7 @@
     "premium_pct": 31.01,
     "listing": "Kickbase listing",
     "why": "STILL UNEXECUTED. Live Georg offer sits at 8.300.000 (+14,46% over mv 7.251.481), unchanged since the 09.09 16:45Z RAISE. That premium is squarely in the LOSING band: Banks lost at +15,01%, Makengo lost at +13,03%. New datapoint this run: Petkov cleared to Linguini07 at 13.938.825 vs mv 12.017.397 = +15,99% on an uncontested-looking Kickbase listing. 9.500.000 = +31,01%, above every measured contested Kickbase clear except Makengo/Nguefack/Maluze. Hard ceiling 10.571.348 (cash 333.904 + Conte mv 10.237.444) so 9,5M leaves 1.071.348 of unwind headroom. News verified this run: bundesliga.com has Mokwa 2 apps/2 goals, last played 05.09.2026; MD2 preview 04.09.2026 lists only Seifert and Zimmerschied out at Elversberg; ligainsider verletzt/gesperrt table does not list him. The only injury item that exists is a PRESEASON friendly (\"Test\"/Trainingslager) note. Resolves ~06:26Z while Georg is asleep - this is the last practical window.",
-    "rank": 3,
+    "rank": 4,
     "trigger": "2026-09-10T06:26:00Z"
    },
    {
@@ -265,11 +286,47 @@
     "premium_pct": 31.01,
     "listing": "Kickbase listing",
     "why": "RAISE THE LIVE OFFER FROM 8.300.000 TO 9.500.000, AND THIS RUN FORMALLY CLOSES AVOID Ar95t3l WHOSE STRICT REVERSAL CONDITION IS STILL UNMET - said plainly because it is a reversal. Ar95t3l required \"an Elversberg XI dated 09.09.2026 or later that actually starts him\". No such XI exists: ligainsider's Elversberg page is STILL timestamped 07.09.2026 18:51, unchanged since Ar95t3l read it, and still omits him. I am overriding that condition on one specific ground, not on impatience: the source that generates the condition contradicts itself. THE SELF-CONTRADICTION, IN FIGURES. Ligainsider's own Mokwa player page reports 2 Bundesliga starts out of 2 matchdays, 195 league minutes, 2 goals, 0 assists, and no injury item newer than preseason (Erkaeltung 15.08.2026, angeschlagen 27.07.2026, \"bereit\" 20.08.2026 - all stale by the date-trap rule). Kickbase agrees independently: st 0, smc 2, ismc 2, smdc 2, ph hp TRUE for both matchdays at 150 and 148, tp 298, ap 149, g 2, sec 9981. He is not in Elversberg's verletzt/gesperrt table (only Seifert and Zimmerschied are). Meanwhile the same probable-XI graphic that benches a 2-of-2 starter with 2 goals STARTS Luca Sirch, who has ap 18 on 35 points and whom this ledger already caught the graphic mis-listing. A projection that inverts its own club's usage data on two players at once is a broken instrument, not dated selection evidence. Ar95t3l itself recorded the honest case for reversing (fit, not injured, 84% of minutes, \"a rotation forward omitted from one projection, not a benching\") and declined only because the condition was literal. This run judges the condition unmeetable-by-construction while that page stays frozen, and MD3 kicks off 2026-09-13T15:30Z. WHY RAISE RATHER THAN HOLD AT 8.300.000. 8.300.000 over mv 6.847.645 is +21,21%, the very top of the old +17-21% band - but this run measured a NEW contested board clear that beats it: Hansen to Borussia Rumpelfuss at 14:15:02Z, 7.300.000 against mv 5.944.803 = +22,80%. Our own calibration table is two losses deep from exactly this error: Banks bid +15,01% cleared +30,43%, Makengo bid +13,03% cleared +60,76%, both lost on the advice to hold. 9.500.000 = +38,73% clears every measured board clear in this league except the Makengo outlier. THE COST IS ZERO IN POINTS TERMS: the unwind self-funds. 333.904 - 9.500.000 = -9.166.096, then Conte at mv 10.096.062 (mvt 1 rising, sdmvt +1.454.448, and tonight's 20:00Z update should lift it further) returns +929.966, eleven bodies, 4-3-3 legal. Ceiling before the balance breaks is about 10.430.000, so 9.500.000 keeps a real margin. POINTS: Mokwa ap 149 replaces Conte ap 47 in the fielded eleven, +102, XI ap 1342 to 1444, at 46k per point against Conte's 215k. Listing is a Kickbase board listing at exactly mv, ofc 1 with only Georg in ofs - uncontested as a snapshot, which after Makengo is explicitly NOT a forecast.",
-    "rank": 4,
+    "rank": 5,
     "trigger": "2026-09-10T06:26:00Z"
    }
   ],
   "killed_this_run": [
+   {
+    "name": "Marius Funk",
+    "pos": "GK",
+    "club": "9",
+    "ask": 1676887,
+    "mv": 1676887,
+    "premium_pct": 0,
+    "why": "THE ELEVENTH BACKUP KEEPER THIS LEDGER HAS HAD TO REJECT — do not re-derive this. Kickbase board listing 2026-09-09T00:41:56Z, GK, tid 9 VfB Stuttgart, prc exactly mv 1.676.887, mvt 2 FALLING, ofc 0, st 0, NO p and NO ap — no Kickbase-scored minutes in 26/27. exs 22740 resolving ~2026-09-10T11:04Z. Fails the standing zero-ap test on its own, and for a keeper it fails twice: only ONE keeper is ever fielded and that slot is owned by Neuer (ap 121), so a second keeper enters no legal formation and his marginal points are ZERO at 1.676.887 exactly as at 50.000.000. He would also consume the single unwind slot that the Conté/Mokwa structure needs. RUNNING TALLY: Zieler, Lehmann, Siebeking, Tim Boss, Kolke, Schubert, Labrovic, Ulreich, Zingerle, Batz and now Funk — ELEVEN rejections, one reason. Note Stuttgart's Seimen is also absent, which is why their backup keepers keep appearing on this board; that is not a reason either. REVERSAL: none while a starting keeper is owned. There is no price at which a backup keeper is a points buy."
+   },
+   {
+    "name": "Jan Thielmann",
+    "pos": "MID",
+    "club": "28",
+    "ask": 6170435,
+    "mv": 6170435,
+    "premium_pct": 0,
+    "why": "ap 50 AGAINST A SQUAD FLOOR OF 108 — the marginal-points test fails by 58 before money is discussed. Newest thing on the board: Kickbase listing 2026-09-10T04:11:35Z (feed t:3), 34 minutes before this run read the market. MID, tid 28, prc exactly mv 6.170.435, ofc 0, st 0, mvt 2 FALLING, exs 96159 resolving ~2026-09-11T07:04Z. p 99 ap 50 over two matchdays — a real two-match mean, so the merit is logged honestly and it is simply not enough: Onyeka, the man he would displace, is ap 108. The falling market value is the market agreeing. CAPACITY kills it independently — squad at exactly eleven, the one unwind slot is committed to the Conté/Mokwa structure. REVERSAL: a re-based ap clearing the weakest midfielder owned at that time, plus spare capacity."
+   },
+   {
+    "name": "Satoshi Tanaka",
+    "pos": "MID",
+    "club": "8",
+    "ask": 6715102,
+    "mv": 6715102,
+    "premium_pct": 0,
+    "why": "DIES ON RANK AGAINST A MAN ALREADY IN THE SQUAD, AND ON A ONE-MATCHDAY MEAN. New Kickbase board listing 2026-09-10T03:01:49Z (feed t:3), one of three things posted since the previous run. MID, tid 8, prc exactly mv 6.715.102 so there is no premium objection, ofc 0, st 0, mvt 1 rising, exs 98633 resolving ~2026-09-11T08:25Z. p 94 ap 94 — note p equals ap, so this is a SINGLE scored matchday, the one-appearance-mean shape this ledger has watched regress repeatedly (Upamecano 272->239, Olise 249->187, Diaz 215->172), not a two-match average. He would have to displace Onyeka (ap 108) to enter the eleven and he is 14 ap short before any regression. CAPACITY kills it independently: the squad is at exactly eleven, one buy permits one sale, and that slot is committed to Conté/Mokwa. NOT NEWS-CHECKED and deliberately so — a body that loses the marginal-points test on first-party data does not warrant a sweep. REVERSAL: a re-based ap over two or more matchdays clearing whoever he would displace at that time, plus genuine spare capacity."
+   },
+   {
+    "name": "Chris Führich (JakobDohr manager ask)",
+    "pos": "MID",
+    "club": "9",
+    "ask": 22000000,
+    "mv": 20842470,
+    "premium_pct": 5.55,
+    "why": "A SAME-NIGHT FLIP MARKUP, MEASURED END TO END, ON A MAN WHO WOULD NOT ENTER THE ELEVEN. JakobDohr bought him off the Kickbase board at 2026-09-10T00:40:38Z for 20.842.478 against mv 20.842.470 = +0,00% — another uncontested-clears-at-mv data point — and relisted him as a manager ask at 22.000.000 at 04:02:07Z, 3h21m later, = +5,55% over mv. That premium is modest by David's standards but it is still above the measured manager-ask clearing band (+3,06%, +4,35%), and it is the second clean buy-at-mv-then-mark-up round trip the ledger has caught (see Ogbus). ON MERIT HE DIES ANYWAY: MID, tid 9 VfB Stuttgart, ap 96 on p 96 — a ONE-matchday mean, not two — and the weakest midfielder owned is Onyeka at ap 108. Buying him REMOVES 12 fielded points. CAPACITY kills it a third time: the squad is at exactly eleven, one buy permits exactly one sale, and that single unwind slot is committed to the Conté leg of the Mokwa structure. REVERSAL: an ask at or below mv, a re-based ap clearing whoever he would displace at that time, and genuine spare capacity."
+   },
    {
     "name": "Samuele Inácio",
     "pos": "MID",
@@ -341,53 +398,17 @@
     "mv": 5831212,
     "premium_pct": 20.04,
     "why": "Replaces Ankmq7k, which was closed because DAVID RAISED THE ASK: 6.500.000 -> 7.000.000 while mv rose 4.848.852 -> 5.831.212. New premium +20,04% over mv. Still roughly five times the measured manager-ask clearing band (+3,06%, +4,35%), which is the right benchmark because a manager ask is seller's choice, not highest-bid-wins; the high cluster belongs to contested Kickbase listings and gives this ask no licence. The mv rise has narrowed the markup from +34,05% to +20,04%, so record that honestly — the ask is less absurd than it was, and it is still an avoid. SHAPE LEG IS DECISIVE AND UNCHANGED: he is a MID (tid 5) on ap 60, and the weakest midfielder owned is Onyeka on 108. Buying him would REMOVE 48 fielded points, not add any. There is also no capacity: the unwind ceiling for a single-buy structure is 10.571.348 and it is entirely committed to Mokwa, who is worth +102."
-   },
-   {
-    "name": "Assan Ouédraogo",
-    "pos": "MID",
-    "club": "43",
-    "ask": 9544322,
-    "mv": 9544322,
-    "premium_pct": 0,
-    "why": "NOT FIT, and the cheap price is why. Leipzig MID, Kickbase listing 09.09 17:11:43Z at mv 9.544.322, no ap on the board. bundesliga.com's MD2 preview (dated 04.09.2026) lists him among Leipzig's absences with a shoulder capsule injury (Schulterkapselverletzung). st reads 0 on the listing, which is exactly the trap - the Kickbase status flag is not tracking this one, so the dated source governs. Also would not beat Wolf (200), Nusa (146) or Onyeka (108) into the midfield three even if fit."
-   },
-   {
-    "name": "Gideon Mensah",
-    "pos": "DEF",
-    "club": "28",
-    "ask": 9808915,
-    "mv": 9808915,
-    "premium_pct": 0,
-    "why": "The only genuinely new thing on the board this run - Kickbase listing 2026-09-09T21:30:46Z, 45 min before this run. Köln DEF, mv=prc 9.808.915, st 0, ap 63. Dies twice. On merit: ap 63 is below ter Horst (91), Minjae (110) and Matsima (157), so he does not enter the four. On capacity: the squad is at exactly eleven, so exactly ONE sale is available, and that single unwind slot is already committed to funding Mokwa. Buying Mensah instead would cost 9,81M for +45 ap over Sirch against Mokwa's +102 for a similar net outlay. Not a fitness rejection - he is fit and not in ligainsider's verletzt/gesperrt table."
-   },
-   {
-    "name": "Aleksandar Pavlović",
-    "pos": "MID",
-    "club": "2",
-    "ask": 33683034,
-    "mv": 33683034,
-    "premium_pct": 0,
-    "why": "HIGHEST ap ON THE BOARD (213) AND NOW A SELECTION AVOID, NOT MERELY AN AFFORDABILITY ONE — this is the new ground, so record it. Kickbase board listing 2026-09-09T14:52:32Z at exactly mv 33.683.034 (+0,00%), st 0, mvt 1 rising, exs 87301 = expires ~2026-09-10T21:00Z, ap 213 on p 426 over two matchdays. NEWS THIS RUN: Ligainsider's Bayern probable XI, stamped 08.09.2026 22:16, puts KIMMICH, LAIMER and SAIBARI in midfield and lists Pavlović only as a midfield OPTION — he is NOT in the XI for Elversberg away (13.09, MD3). Bayern's only noted absence is Gnabry, so this is rotation, not injury: his profile carries a green Fit flag and he started 2 of 2 matchdays (158 min, 82%, 1 goal), substituted off in both. A 33,7M midfielder who may start on the bench is the exact trap this ledger keeps logging in reverse — a big two-match ap that the club's own projected XI contradicts. AFFORDABILITY ALSO KILLS IT INDEPENDENTLY: contested Kickbase listings clear in the measured +16% to +30% band, so winning him costs ~39-44M against spending power 52.158.880; the only single sale that funds it is Guirassy (mv 31.065.365, ap 206) and trading 206 for 213 is +7 fielded points for a 40M swing. Dies twice over."
-   },
-   {
-    "name": "Marc Guiu (PhiL95 manager ask)",
-    "pos": "ATT",
-    "club": "43",
-    "ask": 11500000,
-    "mv": 9093965,
-    "premium_pct": 26.46,
-    "why": "A NEGATIVE ap BEHIND A 21% MARKUP - the worst merit-to-price ratio on the board. PhiL95 manager ask posted 2026-09-09T08:08:04Z. ATT, tid 43 HSV, mv 9.462.843, ask 11.500.000 = +21,53% over mv, when manager asks in this league clear at +2,89% to +4,35%. p -13 and ap -13: he has cost points, not scored them. mvt 2 FALLING corroborates. He would be competing with Guirassy ap 206, Gregoritsch ap 138 and the incoming Mokwa ap 149 - he does not enter the eleven at any price. REVERSAL: none foreseeable. Do not revisit on the strength of the name."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip clears its cost this run. There are no manager asks below market value anywhere on the board, so the flip mechanism is simply absent - there is nothing to buy under value and resell. Rivals are still churning unavailable players for fractions of a percent on the daily tick; that is motion, not points, and it is not worth copying. The single unwind slot is committed to the Conte leg in any case, so a flip could not be funded without breaking the eleven.",
+  "reason": "No flip clears its cost this run. There is not a single manager ask below market value on the board, so the mechanism a value trade needs is simply absent. What rivals are doing instead is visible and worthless: another same-day round trip settled overnight on a defender who has played no minutes this season and is flagged as only partially back in team training, earning a fraction of a percent on the intraday tick. That is motion, not points, and it is not a model to copy.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Every squad player reads clean - no status flag, no entry on any current absence list. The one thing worth flagging is not an injury but a selection problem: the cheap defender bought as a body to keep the eleven legal is not an Elversberg starter. The match report for the most recent matchday names him among the substitutes, and his scoring line is consistent with cameo minutes rather than a starting place. On the buy side, the only dated source that appeared to rule Mokwa out was a projection page that also had the substitute in the starting eleven - the exact inverse of the actual lineup. That page has been logged as unreliable for this club; the match report and the started flag win.",
+  "sweep": "No squad player is newly injured or suspended — every one of the eleven is clear of the league-wide injury and suspension table. Two carry dated bench projections for this matchday, though: the squad's most expensive midfielder and its highest-scoring attacker are both projected to start on the bench by sources dated yesterday. Neither is an injury, both clubs list them as fit, and no action is possible or advisable — at eleven players they are fielded regardless, selling either would drop the squad below the legal floor, and these projections have already been wrong about this exact squad. Re-check on the pre-match press days. Two club attributions in this ledger were also wrong and are corrected: the field previously read as a player's club is in fact his matchday opponent, which had two squad members filed under the wrong side.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -516,7 +537,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=195, -1,49% to +308,77%"
+   "v": "n=197, -1,49% to +308,77%"
   }
  ]
 }
