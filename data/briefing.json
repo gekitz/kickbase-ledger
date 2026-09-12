@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-12T00:54Z",
+ "run": "2026-09-12T02:56Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -8,28 +8,30 @@
   "locks": "2026-09-18T18:30:00Z",
   "played": 3
  },
- "cash": 2593396,
- "squad_value": 154153184,
+ "cash": -12906604,
+ "squad_value": 166944298,
  "leverage": {
-  "balance": 2593396,
-  "floor": -51726371,
-  "spending_power": 54319767,
-  "hours_to_lock": 161.59,
-  "exposure": "This is the item that outranks everything else on the page. If the auction clears as expected, the balance goes sharply negative and stays there for most of the week. A negative balance at the matchday-four lock scores zero for the entire matchday, so the unwind is mandatory, not advisory. The sale that repairs it cannot happen until Sunday afternoon without forfeiting locked points, which leaves a window of a few days between the Sunday fixture and the Friday lock in which the sale must actually be executed. The headroom once it completes is very thin, under half a percent of the debit, so nothing further may be bought in the meantime and a fall in the funding player's value before the sale would eat the margin outright. If that happens, the fallback is to sell the weakest defender as well and buy a sub-million replacement in the same session to stay at the minimum squad size, never to drop below it and take the penalty. If the auction is lost instead, none of this applies: no leverage opens, the sale is void, and the position is unchanged.",
+  "balance": -12906604,
+  "floor": -50832439,
+  "spending_power": 37925835,
+  "hours_to_lock": 159.56,
+  "exposure": "A leveraged position is open and it is the only thing on this page that can cost a whole matchday. The deadline that matters is the MD4 lock: the balance must be non-negative by then, and selling Minjae on Sunday clears it with five days to spare. The headroom after that sale is thin — under half a percent — so there is one guard to run: after tonight's market-value update, check that Minjae's value has not slipped below what is owed. If it has, sell Minjae and Sirch together and buy a cheap board body in the same session so the squad returns to eleven with a positive balance. Do not simply drop to ten. There is also an unmeasured assumption underneath all of this, and it deserves to be named rather than buried: the trade was made on the doctrine that the balance check happens at matchday start, so leverage opened after the lock leaves the live matchday untouched. That matches the published rule but this ledger has never actually observed it. Saturday tests it for free — several players in the locked eleven play while the balance is negative. If they score normally the doctrine is confirmed and post-lock leverage becomes a repeatable tool. If they score nothing, the assumption is wrong, and the response is to sell Minjae immediately rather than wait for Sunday. Read Saturday's result before Sunday afternoon.",
   "must_restore_by": "2026-09-18T18:30:00Z"
  },
  "counts": {
   "gk": 1,
-  "def": 4,
+  "def": 5,
   "mid": 4,
   "att": 2,
-  "total": 11
+  "total": 12
  },
  "placed": 11,
  "penalty_open": false,
  "formations": {
   "legal": [
-   "4-4-2"
+   "4-4-2",
+   "5-3-2",
+   "5-4-1"
   ],
   "blocked": [
    "3-4-3 (needs 3 ATT)",
@@ -38,15 +40,13 @@
    "4-2-4 (needs 4 ATT)",
    "4-3-3 (needs 3 ATT)",
    "4-5-1 (needs 5 MID)",
-   "5-2-3 (needs 5 DEF, 3 ATT)",
-   "5-3-2 (needs 5 DEF)",
-   "5-4-1 (needs 5 DEF)"
+   "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "There is no formation hole and no points gap binding tonight. The binding constraint is capacity, not shape: the squad sits at the bare minimum, so every purchase forces a matching sale, and that single rule is what rules out the board's highest-scoring listing and what caps the bid already in flight. The weakest fielded slot remains a defender contributing almost nothing, and the purchase in flight displaces the equivalent slot rather than that player himself; upgrading the remaining weak slot is the next available gain, but it cannot be attempted until the leverage is unwound.",
+ "binding_gap": "The weakest link in the fielded eleven is the fourth defender. Sirch sits far below every other body in the back line and will be exposed the moment Minjae is sold, because he is what replaces him. That is the gap worth fixing, and it is the obvious target for the first purchase once the position unwinds. It cannot be fixed now — fixing it requires money the squad does not have until Sunday and a twelfth body it cannot carry until the debit clears. Note this is a genuine gap and not a formation hole: the eleven is fillable in three formations, so nothing is broken, it is simply carrying one slot that scores close to nothing.",
  "surplus": "",
  "run_kind": "scheduled",
- "cash_ceiling_before_md1": 54319767,
+ "cash_ceiling_before_md1": 37925835,
  "daily_bonus": null,
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
@@ -54,7 +54,7 @@
   "listings": 21,
   "cheapest": 688072,
   "cheapest_slot_filling": 1851974,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 0
  },
  "squad": [
   {
@@ -73,6 +73,16 @@
    "club": "13",
    "mv": 9554049,
    "ap": 200,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Gruber",
+   "pos": "DEF",
+   "club": "18",
+   "mv": 12791114,
+   "ap": 159,
    "state": "clear",
    "note": "",
    "tag": "keep"
@@ -170,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "No action needed tonight, and that is the finding rather than a shrug.",
-  "headline_short": "No action needed tonight, and that is the finding rather than a shrug.",
-  "detail": "No action needed tonight, and that is the finding rather than a shrug. The Gruber bid is already placed, correctly sized, and resolves within the hour without Georg touching anything. The one thing this run genuinely changes is certainty: the previous run inherited a claim that Georg had not acted, and direct observation of the listing shows his offer sitting on it with the auction about to resolve. So the leverage is real and arriving, not hypothetical. Everything that needs a human happens later in the week, not tonight. The case for letting the bid clear untouched, rather than trimming it: the premium looks rich against two board listings that cleared essentially at market value tonight, but the cash a lower bid would save cannot be converted into points, because the squad sits at the bare minimum and every purchase forces a matching sale. Saved money that cannot buy anything is worth less than a defender who lifts the fielded eleven every remaining matchday."
+  "headline": "Gruber landed.",
+  "headline_short": "Gruber landed.",
+  "detail": "Gruber landed. The bid cleared uncontested at 01:57Z and the balance went negative with it — this is now a leveraged position with one designated exit, and the exit is timed rather than urgent. Sell Minjae Kim on Sunday, immediately after Bayern finish at Elversberg. Do nothing else: not a buy, not a flip, not a lineup change before then. The MD4 lock is a week away, so there is room to do this properly, and the whole run comes down to holding one asset two more days and then selling it."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "One sale, and its timing is the whole point. The funding leg is a fit, unflagged, starting Bayern centre-back, carried no status flag and absent from the injury sweep. He is being sold on arithmetic alone: he is the only asset large enough to cover the debit the purchase opens. The two cheaper defenders do not cover it even together, and everything else that does cover it costs far more points than it frees. Do not sell him before Sunday afternoon. He is in the locked matchday-three eleven and Bayern have not yet played; selling before kickoff throws away that return for nothing. His value is also still rising, so waiting improves the proceeds as well as preserving the points. The window opens at full time on Sunday and closes at the matchday-four lock on Friday evening.",
+  "reason": "Minjae Kim, and only Minjae Kim. He is the designated unwind and every alternative was checked and is worse: selling Neuer leaves the squad with no goalkeeper and no legal formation at all; selling Nusa leaves three midfielders, forces 5-3-2 and costs more fielded points than it saves; ter Horst and Sirch together do not raise enough to clear the debit and take the squad to ten. TIMING IS THE WHOLE CALL. His MD3 fixture at Elversberg is Sunday 13.09 at 15:30Z and has not been played, and he holds a place in the locked MD3 eleven, so selling before kickoff throws that return away. Ligainsider's Bayern page, updated 10.09 at 23:22, has him in the probable XI at centre-back next to Upamecano; he is fit and does not appear on the injured-and-suspended table. Sell from roughly 17:30Z Sunday once the match is over, via instant-sale to Kickbase, any time up to the MD4 lock. One honest caveat the earlier notes glossed: his season is a single start, then zero minutes in MD2 as an unused substitute, and Ligainsider puts his share of available minutes at well under half. He is a projected starter, not a nailed one, so his MD3 return is an expectation rather than a certainty — it just is not a reason to sell early, because selling early guarantees nothing where waiting risks nothing.",
   "standing": [
    {
     "name": "Minjae Kim (conditional unwind leg for Gruber)",
@@ -326,20 +336,8 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Nothing new to buy, and nothing should be bought until the unwind completes. The purchase already in flight is the best-verified body on the board: confirmed at centre-back in the probable eleven on a source updated hours before this run, corroborated by a second outlet, no status flag, near-total minutes played, and absent from his club's casualty list. He replaces the weakest kind of slot in the back line and is the cheapest marginal point the ledger has ever priced. The board's most tempting listing was refused, and refused on capacity rather than merit: it carries the highest scoring average anywhere in this ledger, above every attacker in the squad, but buying it would force two sales the squad-size rule does not permit and would guarantee a negative balance at the lock. That is logged explicitly so a future run does not re-derive it as a bargain from the spending-power figure, which is leverage headroom and not purchasing capacity.",
+  "reason": "Nothing. Not one player, at any price. The spending-power figure on this page is a mirage and it is the single most dangerous number here: it reflects the squad-value floor, which is nowhere near binding, while the constraint that actually binds is the unwind ceiling, and that ceiling is currently zero. The squad holds exactly one asset capable of covering the debit. Spend anything further and there is no second asset to sell without dropping the eleven below a fillable formation or taking the balance into the MD4 lock still negative, which scores nothing for the entire matchday. The board itself gives no reason to argue: every listing is a Kickbase listing priced at exactly market value, so there is no discount anywhere, and three new bodies appeared since the last run — Michel carrying a status flag and no scored minutes, Schmahl with no scored minutes at all, Sticker with an average far below even the weakest defender in the squad. All three are logged as avoided so no later run re-derives them. Buying resumes after Minjae is sold, the balance is positive and the squad is no longer at exactly eleven.",
   "standing": [
-   {
-    "name": "Fabio Gruber (Mainz) — bid at the Minjae-backed ceiling",
-    "pos": "DEF",
-    "club": "18",
-    "ask": 15500000,
-    "mv": 12791114,
-    "premium_pct": 21.18,
-    "listing": "Kickbase listing",
-    "why": "REPLACES B26yoe7, WHICH WAS WRITTEN BEFORE THE LOCK AND IS NOW SUPERSEDED ON THE ONE FACT THAT MATTERED. The 2026-09-11T18:30Z MD3 lock has PASSED with the balance POSITIVE at 2.593.396, eleven players placed and a legal 4-4-2 — MD3 is banked and untouchable. That removes the entire pre-lock funding constraint: the next zero-points deadline is the MD4 lock 2026-09-18T18:30Z, SEVEN DAYS away, so leverage opened tonight has a week to unwind instead of hours. GEORG HAS NOT ACTED: list_market shows Gruber ofc 0 at 18:44Z, i.e. no offer was ever placed, and the listing resolves ~2026-09-12T01:54Z. MERIT, VERIFIED THIS RUN AND NOT INHERITED: DEF, tid 18 Mainz, prc exactly mv 12.607.302 so there is NO premium objection in the listing itself, st 0, ofc 0, mvt 1 RISING. ap 159 on p 317 is a genuine two-start mean, and ligainsider's Mainz page LAST UPDATED 11.09.2026 17:37 — under two hours before this run — puts him at centre-back in the probable XI for Mainz v Eintracht Frankfurt, Sat 12.09 15:30 (Zentner; Posch, GRUBER, Potulski, Caci; Amiri, Sano, Lee, Mwene; Becker, Tietz). His ligainsider profile gives 3 apps, 2 Bundesliga starts, 279 of 282 minutes = 99% participation, status Fit, and he is absent from Mainz's Ausfall list (Kohr, Widmer, Nebel, Silas, Martel). This is the best-verified body on the board. THE POINTS ARITHMETIC: buying him makes the squad 12 (1GK/5DEF/4MID/2ATT) and benches Sirch ap 18. After the Minjae unwind the MD4 back four is Gruber 159, Matsima 157, ter Horst 91, Sirch 18 and the fielded XI goes 1389 -> 1438, i.e. +49 fielded points for a NET cash outlay of bid minus Minjae mv = 2.586.810 at this bid = 53k per marginal point. Compare Tanaka at 174k and Quansah at 326k: this is the cheapest marginal point the ledger has priced. WHY 15.500.000 AND NOT MORE: the squad is at exactly ELEVEN, so one buy permits exactly ONE sale, and the largest sellable value is Minjae at mv 12.913.190. 2.593.396 + 12.913.190 = 15.506.586 is the hard ceiling at which the position still unwinds to non-negative before the MD4 lock. Bidding above it means a NEGATIVE balance at the MD4 lock = ZERO for the whole matchday (~1.438 points), which outranks every other consideration. WHY NOT LESS: this is +22,95% over mv, at the top of today's MEASURED board-clearing cluster (Inácio +11,63%, Mensah +12,62%, Machida +19,81%, Ouédraogo +22,95%) and below the losing band that cost us Mokwa (+41,39%) and Makengo (+60,76%). Four consecutive auctions were lost by bidding a band computed from older, cheaper clears; do not repeat it. Gruber has sat uncontested at ofc 0 for fifteen hours, but the Makengo lesson is that ofc is a snapshot, not a forecast, and ap 159 at mv is the best value on this board — rivals will see it. FALLBACK IF MINJAE'S mv FALLS (comunio benches him at Elversberg, so a weak MD3 is possible): after selling Minjae, if the balance is still slightly negative, sell Sirch 2.520.878 AND buy a sub-1M board body in the same session — that returns the squad to eleven with a positive balance and costs no -100 penalty. Do NOT simply drop to ten.",
-    "rank": 1,
-    "trigger": "2026-09-12T01:54:00Z"
-   },
    {
     "name": "Satoshi Tanaka (raise the standing 8.200.000 bid)",
     "pos": "",
@@ -349,7 +347,7 @@
     "premium_pct": null,
     "listing": "Kickbase listing",
     "why": "NEWS-CONFIRMED STARTER TONIGHT AND THE ONLY PRE-LOCK BUY THAT IMPROVES THE ELEVEN. Schalke MID, tid 8, Kickbase board listing 2026-09-10T03:01:49Z at prc exactly mv 7.025.555, exs 5053 resolving ~2026-09-11T08:10Z. Georg's standing offer is 8.200.000 = +16,72% over mv, ofc 1 with only his own offer registered so far. TWO dated sources start him for MD3 tonight at Union Berlin (kickoff 18:30Z, which is also the lock): comunio.de Union-Schalke preview published 10.09.2026 names the XI \"Karius - T. Becker, Katic, Kurucay - Dina Ebimbe (Karaman), El-Faouzi, TANAKA, Gosens - Ljubicic, Aouchiche - Sylla (Hwang)\"; schalketotal.de 08.09.2026 reports his first Schalke start against Bayern with 13,2 km covered and Muslic quoted in praise, and says he starts again on Friday because Ron Schallenberg is suspended (red card). Note the caveat honestly: the start is enabled by a suspension, so it is guaranteed for MD3 and not beyond. CORRECTION FOR FUTURE RUNS: Kickbase ph shows MD2 hp:false, which is WRONG - Ligainsider records 2 appearances (1 start, 1 sub) and the ap 94 comes from the Bayern start, not a phantom MD1. WHY RAISE: +16,72% sits at the very bottom edge of the measured contested-Kickbase cluster (Ebnoutalib +16,71%, Rohr +16,96%, Campbell +20,96%, Mokwa +41,38%, Makengo +60,76%), and that bottom edge is exactly where this ledger has lost five auctions in a row. 8.900.000 = +26,68% sits mid-cluster. AFFORDABILITY IS NOT THE CONSTRAINT: spending power ~52,7M against the 33% floor, and the funding sale (Conté at mv 10.259.492) more than covers it - net cash after buy and sale is POSITIVE at ~1.893.396, so the swap adds points AND cash. The raise is optional; the structure works unchanged at 8.200.000.",
-    "rank": 2,
+    "rank": 1,
     "trigger": "2026-09-11T08:10:00Z"
    },
    {
@@ -361,7 +359,7 @@
     "premium_pct": null,
     "listing": "Kickbase listing",
     "why": "THE BID HAS GONE STALE UNDERNEATH ITSELF — this is a mechanical kill, not a judgement call. Georg's standing offer reads uop 6.960.000 (ofs: Georg Kitz, ofc 1) on Kickbase board listing 12297, posted 2026-09-10T03:01:49Z. When it was placed it sat at/above the then-current mv. The 2026-09-10T20:00Z daily market-value tick lifted mv to 7.025.555, so the bid is now 65.555 BELOW mv = -0,93%. exs 19418 at read time resolves the auction ~2026-09-11T08:10Z, BEFORE the next mv tick (mvud 2026-09-11T20:00:00Z), so the mv he must clear is 7.025.555 and it will not move in his favour first. A bid below mv on a Kickbase board listing does not win. CALIBRATION SAYS GO HIGHER THAN mv, NOT TO mv: contested Kickbase listings in this league clear at +16,71% (Ebnoutalib) and +20,96% (Campbell), and Mokwa cleared at +41,38% against our +31,01% bid — we have now lost three contested boards by benchmarking too low. Recommend 8.200.000 = +16,72% over mv, the measured floor of the contested cluster; 8.500.000 (+20,99%) is the top of that cluster if he wants it firmly. NEWS VERIFIED, AND IT IS THE STRONGEST ON THE BOARD: club correction — Tanaka is FC SCHALKE 04, not Freiburg (signing confirmed 10.06.2026). Ligainsider has him in the predicted XI at Union Berlin (updated 07.09.2026 19:01); 'Tanaka erhält Startelfgarantie gegen Bayern' (03.09.2026); 'Muslic feiert Schalkes Dauerläufer' (06.09.2026) after an 'Beeindruckendes Startelf-Debüt' vs Bayern on MD2 (08.09.2026). Fit, green status, not on Schalke's Ausfallliste. His direct rival Schallenberg is SUSPENDED for MD3, which secures the spot further. TIMING IS THE WHOLE POINT: Schalke play at Union Berlin 2026-09-11 20:30 local = the MD3 opener, and the auction resolves ~08:10Z, ten hours before the 18:30Z lock — so unlike Quansah he is an asset THIS matchday. MARGINAL POINTS: ap 94 displaces Conté ap 47 in the eleven = +47 expected at 8,2M = 174k per marginal point, against the 4,1M per marginal point that killed Gadou. HARD RIDER: winning at 8.200.000 takes the balance to -7.766.096 and a NEGATIVE BALANCE AT MATCHDAY START SCORES ZERO FOR THE ENTIRE MATCHDAY — the Conté sale (SELL, same run) is not optional and must complete before 18:30Z.",
-    "rank": 3,
+    "rank": 2,
     "trigger": "2026-09-11T08:10:00Z"
    },
    {
@@ -373,7 +371,7 @@
     "premium_pct": null,
     "listing": "Kickbase listing",
     "why": "THE PREVIOUS RAISE WAS NEVER EXECUTED — list_market this run shows the live offer still at 6.960.000 (uop 6960000, ofc 1, ours the only bid), i.e. -0,93% UNDER mv 7.025.555 on a Kickbase board listing. Rgw26ut set 9.200.000 and that price was right; it simply was not acted on, so this re-issues it. exs 26683s from 2026-09-11T00:45Z resolves ~08:10Z. NEWS VERIFIED AND STRONG: Schalke 04 (promoted), fit, not on the club Verletzte/Gesperrte list (ligainsider club page 07.09.2026). His ap 94 is ONE FULL 90-MINUTE START, not a cameo — MD2 05.09.2026 vs Bayern (0:0), Startelf debut, 13,2 km run, most in the team, Muslic \"über sich hinausgewachsen\" (schalketotal 08.09.2026); he did not play MD1 at all. Starts again MD3 away at Union Berlin 11.09.2026 20:30 CEST because Schallenberg is STILL red-card suspended: ligainsider voraussichtliche Aufstellung 07.09.2026 lists him, schalketotal 08.09.2026 \"wird wohl auch gegen Union von Beginn an spielen\", Yahoo preview 11.09.2026 same. His match IS the MD3 opener, kicking off at the lock. PRICE DOCTRINE: Kickbase listing, so benchmark the HIGH cluster (+16,71% Ebnoutalib, +20,96% Campbell, +41,38% Mokwa), never the +0,29% median. 9.200.000 = +30,95% over mv, above the high cluster and below the Mokwa clearing we lost at +41,38% having bid +31,01%. FUNDABLE: safe envelope is cash 433.904 + Conté mv 10.259.492 = 10.693.396, so 9.200.000 leaves 1.493.396 POSITIVE after the paired sale. Points effect: squad goes 1/4/4/2, best legal shape 4-4-2 = 1389 ap vs the current 4-3-3 1342, so +47 on paper and more in expectation because Conté is projected to bench. CONDITION: pair it with SELL Conté, and sell FIRST — see that call.",
-    "rank": 4,
+    "rank": 3,
     "trigger": "2026-09-11T08:10:00Z"
    },
    {
@@ -385,7 +383,7 @@
     "premium_pct": null,
     "listing": "Kickbase listing",
     "why": "SUPERSEDES Rmxohpf (8.400.000), WHICH WAS BUILT ON A BACKWARDS READING OF THE MATCHDAY ARRAY. THE CORRECTION MATTERS FOR EVERY FUTURE RUN: the compact `ph` array returned by get_squad / get_lineup / get_player is ordered MOST RECENT FIRST (descending), not ascending. Proved this run with get_player_performance on three players. Tanaka: get_player ph reads [{hp:true,p:94},{hp:false}] but the performance endpoint shows day 1 = st 4, mp 0', DID NOT PLAY and day 2 = st 5, mp 96', p 94. Conté: ph [-12, 106] is actually MD1 106 (start, 97') and MD2 -12 (SUBSTITUTE, 23', st 3). Minjae: ph [false, 110] is actually MD1 110 (start, 85') and MD2 DID NOT PLAY (st 4, 0'). Several previous entries in this ledger read these arrays the wrong way round; treat any inherited \"MD1 vs MD2\" claim as suspect and re-derive from get_player_performance.\nWHAT THAT DOES TO THE CASE: it inverts it in Tanaka's favour. The prior entry described him as having \"missed MD1\" and warned the +47 was a denominator effect. The truth is he missed the OPENER and then scored 94 on a 96-minute start in the MOST RECENT matchday — Schalke 0:0 Bayern, 05.09.2026, a clean sheet against the champions. He is the improving body and Conté is the fading one: Conté started MD1 for 106 and was DROPPED to the bench for MD2, coming on for 23 minutes to score -12. That is the opposite of the trajectory the ledger recorded.\nNEWS, DATED AND CONFIRMING: ligainsider's Schalke page (last update 07.09.2026 19:01, re-read 10.09.2026) puts Tanaka in the probable XI away at Union Berlin, Fri 11.09 20:30 — 4-2-3-1, Karaman / El-Faouzi / Tanaka in midfield. His ligainsider profile carries status FIT with no Krankenakte entry. Two dated items support the selection: 03.09.2026 \"Tanaka erhält Startelfgarantie gegen Bayern\" and 06.09.2026 \"Muslic feiert Tanaka als Schalkes Dauerläufer\" (13,2 km against Bayern). schalketotal 08.09.2026 explains WHY he holds the shirt: Ron Schallenberg was sent off against Augsburg and is still SUSPENDED for MD3, which ligainsider's Schalke absence table confirms. Kickbase agrees on fitness: st 0, stl empty. Schalke's other absentees (Heekeren ACL, Højlund achilles, three squad omissions) do not touch this position.\nWHY THE BID MUST MOVE, AND URGENTLY: the standing offer is 6.960.000 against mv 7.025.555 — it is 0,93% BELOW market value. That is the weakest position on the board and it loses to literally any rival who shows up. mv is also climbing fast (cv 6.000.000 -> mv 7.025.555, tfhmvt +310.453), so the gap widens on its own. ofs shows only Georg at 22:45Z, but the Makengo entry in this ledger is the standing proof that ofc is a snapshot and not a forecast — that rival arrived inside eight hours of an identical reading, and this auction has roughly nine and a half.\nPRICING, BENCHMARKED AGAINST THE RIGHT CLUSTER. This is a KICKBASE board listing (no `u`), i.e. highest-bid-wins, so the contested-Kickbase high cluster governs, not the manager-ask band. Every contested loss on record: Rohr +16,96%, Banks +30,43%, Mokwa +41,39%, Makengo +60,76%. 9.200.000 is +30,95% over mv — it clears Rohr and Banks outright and sits below Mokwa. COUNTER-EVIDENCE LOGGED HONESTLY: three of the four board clears in the six hours before this run went at or a hair BELOW mv — Pavlović 33.705.999 vs mv 33.724.150 (-0,05%), Okon-Engstler 4.295.000 vs 4.298.626 (-0,08%), Sakar 2.490.000 vs 2.491.474 (-0,06%) — and only Ginter went positive at +10,17% (29.635.965 vs mv 26.900.565). But read what those were: Pavlović and Ginter are 27-34M tickets almost nobody in this league can fund, and Sakar and Okon-Engstler were bought and instant-sold within fifteen minutes by JakobDohr for four-figure margins, i.e. flipper traffic, not managers who wanted the player. Tanaka is neither — a 7M body with a starting guarantee and a suspended competitor is exactly the mid-price attractive profile that has been contested every single time.\nAFFORDABILITY IS NOT BINDING AND THE HEADROOM IS REAL. This is a SWAP, not a purchase: pay 9.200.000, sell Conté back to Kickbase at mv 10.259.492, net +1.059.492 CASH and +47 fielded ap. The instant-sale price is frozen until the next market-value update at 2026-09-11T20:00Z, which is AFTER the lock, so the unwind cannot drift. Balance after both legs: 433.904 - 9.200.000 + 10.259.492 = +1.493.396. The hard ceiling with the same unwind is 433.904 + 10.259.492 = 10.693.396 (+52,21% over mv), so there is 1.493.396 of further room if Georg wants to push — the marginal cost of bidding higher is buffer, never points, because the sale pays for it.\nTHE ONE REAL RISK, STATED PLAINLY: if the bid wins at 08:10Z the balance sits at -8.766.096 until Conté is sold, and a negative balance at matchday start scores ZERO for all of MD3. The window is 08:10Z to 18:30Z — 10h20m, or 10:10 to 20:30 Vienna. That is a full working day and one tap, unlike the Mensah structure this ledger refused over a 3h55m window. Order matters: BUY FIRST, SELL AFTER. If the auction is lost the squad is untouched at eleven with a positive balance and nothing to do; selling Conté first would leave ten bodies and the -100 penalty if the buy then failed.\nHONEST CAVEAT: ap 94 is a ONE-APPEARANCE mean and will be re-based after Friday, exactly as Upamecano 272->239, Olise 249->187 and Diaz 215->172 were. Ligainsider also puts his all-competition participation at only 110 of 285 minutes (39%). He is bought as the man holding a suspended player's shirt with the coach publicly behind him, not as a proven 94-per-week midfielder.",
-    "rank": 5,
+    "rank": 4,
     "trigger": "2026-09-11T08:10:00Z"
    },
    {
@@ -397,7 +395,7 @@
     "premium_pct": null,
     "listing": "Kickbase listing",
     "why": "TWO THINGS AT ONCE — a ledger repair and a price correction. (1) LEDGER GAP, said out loud: BUY B1chve4 is no longer in the open-call list, yet list_market this run shows Tanaka with ofc 1 and ofs carrying Georg Kitz at uop 6.960.000, st 0 — the offer is LIVE and untracked. No future run would have reconciled it. This call re-establishes tracking; reconcile THIS id. (2) THE BID IS UNDER-PRICED BY OUR OWN MEASURED EVIDENCE. Kickbase board listing 2026-09-10T03:01:49Z, MID, tid 8 Schalke, prc exactly mv 6.715.102, st 0, mvt 1 rising, exs 48256 resolving ~2026-09-11T08:09Z. Our standing 6.960.000 is +3,65% over mv. That is the MANAGER-ASK band (+3,06% / +4,35% / +5,71%), and this is NOT a manager ask — it is a contested Kickbase board listing, where the doctrine says benchmark against the HIGH cluster: Ebnoutalib +16,71%, Campbell +20,96%, Rohr +16,96%, Mokwa +41,38%, Makengo +60,76%. Bidding near the low band is precisely how Mokwa was lost (we bid +31,01%, winner paid +41,38%) and how Ebnoutalib and Campbell were lost before him. 8.400.000 = +25,09%, above the measured high cluster and below the Mokwa-class tail. MERIT: ap 94 on p 94 from ONE Kickbase-scored matchday, and the cameo-minutes trap does NOT apply — NEWS CONFIRMS the opposite. schalketotal.de 08.09.2026: Startelf debut against Bayern replacing the suspended Ron Schallenberg, 13,2 km covered (out-ran El-Faouzi), coach Muslic praise, and \"expected to retain his starting position against Union Berlin on Friday, as Schallenberg remains suspended\". ligainsider profile: fit, no injury, \"Startelfgarantie\" 03.09.2026, \"Schalkes Dauerlaeufer\" 06.09.2026. Schalke-Union is the FRIDAY opener, i.e. the very first MD3 fixture, so he scores from minute one. He displaces Conte ap 47 for +47 per matchday. AFFORDABILITY: 8.400.000 leaves the balance -7.966.096 from ~08:09Z, cleared to +2.271.348 by the Conte sale (SELL below) inside the 10,3h window before the 18:30Z lock. HARD CEILING if Georg wants to be more aggressive: 10.671.348 (+58,92%) is the highest bid the Conte sale still unwinds to exactly zero — anything above that leaves a negative balance at the lock and scores ZERO for all of MD3.",
-    "rank": 6,
+    "rank": 5,
     "trigger": "2026-09-11T08:05:00Z"
    },
    {
@@ -409,7 +407,7 @@
     "premium_pct": null,
     "listing": "Kickbase listing",
     "why": "THE LIVE OFFER IS PRICED BELOW THE STANDING CALL AND MUST BE RAISED. Observed this run: the Kickbase board listing (12297, MID, tid 8 Schalke, prc = mv 6.715.102, exs 55476 -> resolves 2026-09-11T08:09Z) carries ofc 1 and ofs shows exactly one offer, ours: uop 6.715.102 = mv = +0,00% premium. The standing call B1chve4 was 9.600.000 (+42,96% over mv); the executed bid is 2.884.898 BELOW it. NEWS IS GOOD AND DATED: ligainsider's Schalke projection, updated 07.09.2026 19:01, STARTS Tanaka in midfield away at Union Berlin on 11.09.2026 20:30 (= the 18:30Z MD3 lock itself); Muslic called him the team's workhorse on 06.09.2026; profile shows Fit, no medical entries; Schalke's only absences are Schallenberg (red-card ban), Heekeren (ACL, 6+ months) and Hojlund (achilles). st 0. ap 94 on one Kickbase-scored appearance (94 on MD1, no MD2 credit) - a single-match sample, but a 94-point full match, not a cameo. MERIT: he is the ONLY affordable buy on the board that raises the fielded eleven. In 4-4-2 he replaces Conte in the XI: 121+(157+110+91+18)+(146+200+108+94)+(206+138) = 1.389 ap against the current 4-3-3 total of 1.342 = +47 ap. AFFORDABILITY: cash is only 433.904, so a single buy funded by the Conte sale has a hard non-negative-at-lock ceiling of 433.904 + 10.237.444 = 10.671.348; 9.600.000 leaves 1.071.348 of margin. PRICING DOCTRINE, CORRECTED BY THIS RUN'S OWN DATA: the stored rule said benchmark Kickbase listings against the high cluster, but today's seven board clears were Saibari -0,06%, Hoffmeier -0,08%, Zingerle -0,65%, Funk -0,41%, Arrhov -0,65%, Uzun +4,10% and Hubers +101,94% - i.e. UNCONTESTED board listings clear at or just below mv, and only CONTESTED ones (Ebnoutalib +16,71%, Campbell +20,96%, Mokwa +41,38%) go high. Rival offers on a board listing are invisible, so contest cannot be ruled out. The decisive argument for bidding high anyway is that the money has no alternative use: nothing else on the board is both affordable and an upgrade, unspent budget scores zero this matchday, and losing this auction costs the whole +47.",
-    "rank": 7,
+    "rank": 6,
     "trigger": "2026-09-11T08:09:00Z"
    },
    {
@@ -421,7 +419,7 @@
     "premium_pct": null,
     "listing": "Kickbase listing",
     "why": "RE-AFFIRMS the 10.09 02:45Z raise, which GEORG HAS NOT YET ACTED ON — list_market this run shows uop still 8.300.000, ofc 1, ofs = Georg alone, exs 6093 resolving ~2026-09-10T06:27Z. This is now URGENT, under 2h. mv has moved to 7.251.481, so the standing 8.300.000 bid is +14,46% over mv. NEW EVIDENCE THIS RUN THAT MAKES THE RAISE STRONGER, NOT WEAKER: Lukas Petkov (2928), an Elversberg MID of directly comparable class (ap 162), cleared a Kickbase board listing at 13.938.825 against mv 12.017.397 = +15,99% at 2026-09-09T20:42Z — 32 hours ago. Our current bid at +14,46% would have LOST that auction. Two more contested board clearings this window sit in the same region: Stark 4.664.423 vs mv 4.064.423 = +14,76%, Schwolow 3.500.999 vs mv 3.194.528 = +9,59%; the low end is Poreba +5,57% and Führich +0,00%. So the uncontested-clears-at-mv doctrine (H8t606f B) is a CENTRAL TENDENCY, not a guarantee, and ofc 1 is a snapshot — Makengo was ofc 1 with Georg alone and cleared at +60,76% after a late arrival. 9.500.000 = +31,02%, above every measured contested clearing in this league except the Makengo outlier. AFFORDABILITY IS CLEAN AT THIS NUMBER: 333.904 - 9.500.000 = -9.166.096, then the Conté sale at mv 10.237.444 returns +1.071.348, positive well before the 2026-09-11T18:30Z lock. Hard survivable ceiling is 10.571.348; do not exceed it. NEWS RE-VERIFIED THIS RUN AND IT IS BETTER THAN THE LEDGER HAD IT: Mokwa STARTED AND SCORED in the 29th minute of Elversberg's 4-3 win at Gladbach on 05.09.2026 (bundesliga.com MD2 report); he is absent from ligainsider's league-wide Verletzte-und-Gesperrte table (Elversberg's only absentees are Seifert and Zimmerschied); no item dated 10.09.2026 or later rules him out. The 07.09 ligainsider graphic that benches him is contradicted by his own club's match report, which is exactly the broken-instrument finding the ledger already recorded. On merit he is +102 fielded ap over Conté for a NET CASH GAIN of 737.444 once the sale settles.",
-    "rank": 8,
+    "rank": 7,
     "trigger": "2026-09-10T06:27:00Z"
    },
    {
@@ -433,7 +431,7 @@
     "premium_pct": null,
     "listing": "Kickbase listing",
     "why": "RAISE the standing live offer from 8.300.000 to 9.500.000 on the Kickbase listing (9995, ATT, SV 07 Elversberg, tid 77), resolving 2026-09-10T06:27:47Z. This CONTINUES the 09.09 16:45Z RAISE Rur0r2f, which was never acted on — list_market at 00:46Z still shows uop 8.300.000 with ofs carrying only Georg Kitz, so the raise did not happen and the offer is unchanged. THE FITNESS DOUBT IS NOW DEAD AND MUST NOT BE RE-RAISED. Three independent current sources: bundesliga.com player page — 2 apps, 2 goals, featured 05.09.2026 v Gladbach, 19,1 km covered, NO injury note; ligainsider match report 05.09.2026 (elversberg-gewinnt-in-gladbach-417705) — he STARTED at Gladbach, SCORED the opener on 30', off on 87' in the 4:3 comeback; Kickbase st 0, ap 149, p 298, g 2. THE STALE ITEM IS DATED AT LAST: ligainsider \"Mokwa verpasst Elversberg-Test leicht angeschlagen\" (article 415496) 404s on fetch and was dated this run by bracketing its article id against neighbours that do open — id 415181 = 17.07.2026 (Viktoria Köln Testspiel report) and id 416555 = \"Mokwa steht für Pokalspiel in Duisburg bereit\" (mid-August DFB-Pokal). 415496 therefore falls in LATE JULY 2026, preseason, and the \"Test\" in the headline is a friendly. It is superseded twice over. Add it to the known date traps. PRICE LEG, BENCHMARKED AGAINST THE RIGHT BAND: this is a KICKBASE listing (exs present, no u), so the HIGH cluster applies, never the median. Measured contested-Kickbase clearings: Ebnoutalib +16,71%, Rohr +16,96%, Campbell +20,96%, Banks +30,43%, Makengo +60,76%. mv 7.251.481, so the standing 8.300.000 is only +14,46% — BELOW EVERY MEMBER OF THAT CLUSTER, i.e. exactly the level at which Makengo, Banks and Rohr were all lost. 9.500.000 = +31,01%, which clears the Banks number that beat us. UNWIND CEILING: cash 333.904 + Conté mv 10.237.444 = 10.571.348 hard maximum, so 9.500.000 leaves 1.071.348 of buffer and 10.571.348 is the absolute cap. WHY THE MONEY IS NOT THE POINT: the surplus is dead weight before the 11.09 18:30Z lock — nothing affordable on this board at 1-2M is worth owning — while Mokwa is +102 fielded points (149 in for Conté's 47 out) this matchday and every matchday after. CALIBRATED FALLBACK, stated because HOLD Hon9326 records that the Conte raise bought nothing: ofc read at T-6min IS reliable (Hon9326) while an early read is not (H5om1wi). If Georg is awake near 06:20Z he can read ofc first and only raise if a second bidder has appeared. If he is not, raise now — 1,2M of dead cash against a 20% chance of losing 102 points is the right side of that trade.",
-    "rank": 9,
+    "rank": 8,
     "trigger": "2026-09-10T06:27:47Z"
    },
    {
@@ -445,11 +443,38 @@
     "premium_pct": null,
     "listing": "Kickbase listing",
     "why": "STILL UNEXECUTED. Live Georg offer sits at 8.300.000 (+14,46% over mv 7.251.481), unchanged since the 09.09 16:45Z RAISE. That premium is squarely in the LOSING band: Banks lost at +15,01%, Makengo lost at +13,03%. New datapoint this run: Petkov cleared to Linguini07 at 13.938.825 vs mv 12.017.397 = +15,99% on an uncontested-looking Kickbase listing. 9.500.000 = +31,01%, above every measured contested Kickbase clear except Makengo/Nguefack/Maluze. Hard ceiling 10.571.348 (cash 333.904 + Conte mv 10.237.444) so 9,5M leaves 1.071.348 of unwind headroom. News verified this run: bundesliga.com has Mokwa 2 apps/2 goals, last played 05.09.2026; MD2 preview 04.09.2026 lists only Seifert and Zimmerschied out at Elversberg; ligainsider verletzt/gesperrt table does not list him. The only injury item that exists is a PRESEASON friendly (\"Test\"/Trainingslager) note. Resolves ~06:26Z while Georg is asleep - this is the last practical window.",
-    "rank": 10,
+    "rank": 9,
     "trigger": "2026-09-10T06:26:00Z"
    }
   ],
   "killed_this_run": [
+   {
+    "name": "Jonah Sticker (Hoffenheim)",
+    "pos": "DEF",
+    "club": "29",
+    "ask": 2776477,
+    "mv": 2776477,
+    "premium_pct": 0,
+    "why": "ap 8 AGAINST A DEFENCE THAT NOW STARTS AT 159 — the marginal-points test fails by the widest margin on the board. Kickbase board listing 2026-09-12T00:03:04Z (feed t:3), DEF, tid 29 Hoffenheim, prc exactly mv 2.776.477 (+0,00%, no premium objection), ofc 0, st 0, mvt 2 FALLING, exs 122018 resolving ~2026-09-13T12:38Z. p 15 on ap 8 is two appearances of near-nothing. THE ARITHMETIC: after the Minjae unwind the back four is Gruber 159, Matsima 157, ter Horst 91, Sirch 18, so Sticker at ap 8 does not even displace Sirch, the worst body in the squad — he is a bench purchase at 2,8 million. Note this listing was posted 00:03:04Z, BEFORE the previous run at 00:45:16Z, yet carries no AVOID: the 25-row display cap was biting and it fell off the visible list. Logged now so it is not re-derived a third time. AND THE OVERRIDING ONE: balance NEGATIVE at -12.906.604 until Sunday."
+   },
+   {
+    "name": "Frederik Schmahl (Elversberg)",
+    "pos": "MID",
+    "club": "77",
+    "ask": 2028948,
+    "mv": 2028948,
+    "premium_pct": 0,
+    "why": "ZERO-ap CLASS — the standing test, applied and done. Kickbase board listing 2026-09-12T01:11:49Z (feed t:3), MID, tid 77 Elversberg, prc exactly mv 2.028.948 (+0,00%, no premium objection), ofc 0, st 0, mvt 2 FALLING, exs 60023 resolving ~2026-09-12T19:25Z. NO p AND NO ap: no Kickbase-scored minutes in 26/27, which kills him on the zero-ap test before money is discussed. THE MARGINAL-POINTS TEST: the fielded midfield floor is Tanaka at ap 96, so an unproven body must be argued past 96 points a matchday and there is nothing in the record to argue with. mvt 2 means the market is marking him down while he sits. AND THE OVERRIDING ONE: the balance is NEGATIVE at -12.906.604 until the Minjae unwind completes Sunday — no buy is affordable this run. Logged so no future run re-derives him."
+   },
+   {
+    "name": "Sven Michel (Hoffenheim)",
+    "pos": "ATT",
+    "club": "29",
+    "ask": 2031625,
+    "mv": 2031625,
+    "premium_pct": 0,
+    "why": "THE NEWEST THING ON THE BOARD AND THE STATUS FLAG IS ALREADY SET — st 4. Kickbase board listing 2026-09-12T02:21:36Z (feed t:3), posted 23 minutes before this run read the market, the only listing to appear since the previous run. ATT, tid 29 Hoffenheim, prc exactly mv 2.031.625 (+0,00%, so no premium objection), ofc 0, mvt 1 rising, exs 57310 resolving ~2026-09-12T18:40Z. TWO INDEPENDENT KILLS. (1) st 4 is a non-zero status flag: not fit, whatever else the record says, and the standing rule is that a non-zero st ends the discussion. (2) NO p AND NO ap: zero Kickbase-scored minutes in 26/27, the standing zero-ap refusal. (3) And a third, structural: the squad carries exactly 2 ATT (Guirassy 206, Gregoritsch 138), which is precisely what 4-4-2 consumes, so a third attacker is a bench body at best — he cannot enter the fielded eleven at any ap, let alone none. (4) AND THE OVERRIDING ONE THIS RUN: the balance is NEGATIVE at -12.906.604 after the Gruber purchase settled 01:57:33Z. No buy of any kind is affordable or wise until that unwinds. Logged so no future run re-derives him."
+   },
    {
     "name": "Waldemar Anton (Stuttgart)",
     "pos": "DEF",
@@ -530,44 +555,17 @@
     "mv": 1897257,
     "premium_pct": 3.72,
     "why": "ZERO-ap CLASS AND RESOLVES AFTER THE LOCK. New Kickbase board listing 2026-09-11T15:26:13Z (feed t:3), ATT, tid 18 Mainz, prc exactly mv 1.967.765 (+0,00%), mvt 2 FALLING, st 0, ofc 0, exs 44693 resolving ~2026-09-12T03:50Z, after the 2026-09-11T18:30Z lock. MERIT KILL: NO p and NO ap at all in 26/27 — no Kickbase-scored minutes this season — so the standing zero-ap doctrine settles it before price is discussed. The attack he would have to enter is Guirassy 206 and Gregoritsch 138; a blank record cannot be shown to beat either, and at exactly eleven players a body with no record is a FIELDED ZERO, not depth. mvt 2 FALLING is the market agreeing that he is cheap because he does not play, which is the pattern this ledger has now rejected more than a dozen times. Not news-checked, deliberately: the zero-ap and post-lock tests both settle it independently. REVERSAL: real minutes and a positive matchday return, plus a dated Mainz XI starting him."
-   },
-   {
-    "name": "Otto Ruoppi (Mainz) — newest thing on the board",
-    "pos": "MID",
-    "club": "18",
-    "ask": 1300342,
-    "mv": 1264334,
-    "premium_pct": 2.85,
-    "why": "FAILS THE MIDFIELD FLOOR BY 75 AND RESOLVES AFTER THE LOCK. Kickbase board listing 2026-09-11T16:31:35Z (feed t:3), four minutes before this run read the market — the newest listing available. MID, tid 18 Mainz, prc exactly mv 1.300.342 (+0,00%), mvt 2 FALLING, st 0, ofc 0, exs 84615 resolving ~2026-09-12T16:02Z, roughly 21,5 hours AFTER the 2026-09-11T18:30Z lock, so no MD3 contribution is possible. MERIT KILL: ap 19 on p 38 over two matchdays, against a squad midfield of Wolf 200, Nusa 146, Onyeka 108 and Tanaka 94. He fails the marginal-points test against the weakest of them by 75 and clears only Sirch 18 in the whole eleven, by a single point. FUNDING: at 1.300.342 he is one of the few listings cash 2.593.396 actually covers, and that is precisely the trap the ledger keeps recording — at exactly eleven players there is no bench, so a cheap low-ap body would have to be FIELDED, and a fielded 19 is worth less than the unwind slot it consumes. Not news-checked, deliberately: the zero-merit and post-lock tests both settle it and a sweep would add nothing. REVERSAL: a re-based ap clearing 94 after real starts, plus a dated Mainz XI starting him."
-   },
-   {
-    "name": "Tom Bischof (Bayern)",
-    "pos": "MID",
-    "club": "2",
-    "ask": 17150759,
-    "mv": 17005588,
-    "premium_pct": 0.85,
-    "why": "FAILS THE MIDFIELD FLOOR AND THE FUNDING CEILING TOGETHER. New Kickbase board listing 2026-09-11T07:47:49Z, MID, tid 2 Bayern, prc exactly mv 17.150.759 (+0,00%), mvt 2 FALLING, st 0, ofc 0, exs 115529 resolving ~2026-09-13T00:44Z, after the MD3 lock. MERIT KILL: ap 44 on p 88 over two matchdays, against a squad midfield of Wolf 200, Nusa 146, Onyeka 108 and Tanaka 94. He does not displace ANY of the four — the marginal-points test fails by 50 against the weakest of them — so 17,15M buys a fielded downgrade. FUNDING KILL, independent: the ceiling is cash 2.593.396 plus the single largest permitted sale, Minjae at mv 12.913.190, = 15.506.586, and the ask exceeds it. mvt 2 FALLING is the market pricing a Bayern squad player who is not yet a fixture, and the ledger's standing doctrine is that a falling value beside a thin average is confirmation, not a discount. REVERSAL: a re-based ap that actually clears 94 after real starts, plus genuine spare capacity. A Bayern shirt is not a reversal."
-   },
-   {
-    "name": "Jonathan Tah (Bayern)",
-    "pos": "DEF",
-    "club": "2",
-    "ask": 31005752,
-    "mv": 30624820,
-    "premium_pct": 1.24,
-    "why": "DIES ON AFFORDABILITY BY A WIDE MARGIN, AND GRUBER DOMINATES HIM ON VALUE ANYWAY. New Kickbase board listing 2026-09-11T10:59:58Z, DEF, tid 2 Bayern, prc exactly mv 31.005.752 (+0,00%, no premium objection), mvt 2 FALLING, st 0, ofc 0, exs 131138 resolving ~2026-09-13T05:11Z — after the MD3 lock, so no MD3 contribution is possible. FUNDING KILL: one buy permits exactly one sale, and the largest sellable value in the squad is Minjae at mv 12.913.190, so the absolute ceiling is cash 2.593.396 + 12.913.190 = 15.506.586. The ask is TWICE that. Spending power reads 54.395.938 but that is the 33% floor, not cash, and buying at 31.005.752 would open a balance of -28.412.356 that one permitted sale cannot close — the exact leveraged trap this ledger spent four runs unwinding. VALUE KILL, stated so it is not re-derived if he is ever affordable: ap 134 for 31.005.752 is 231.386 per ap point, against Gruber at ap 159 for 12.607.302 = 79.291 per ap point. Gruber scores MORE and costs 18,4M LESS. Tah is not the best defender on this board; he is merely the most expensive. mvt 2 falling corroborates that the market agrees. REVERSAL: only if the squad genuinely holds 30M+ of spare capacity after a sale AND no better ap-per-euro defender is listed at the same time. Being a famous name is not a reversal."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip clears its cost this run. Every listing on the board is a Kickbase listing priced at market value; there is not a single manager ask, so the mechanism a flip depends on is simply absent. Worth recording for calibration: two board listings settled tonight essentially at market value while two others settled well above it, one of them steeply. Uncontested listings are clearing far cheaper than the contested cluster the bidding rule was built from, which is a real signal for sizing future bids, though not one that changes tonight's already-placed offer.",
+  "reason": "No flip clears its cost this run. The mechanism is simply absent: there is not a single manager ask below market value on the board, so there is no spread to capture, and every listing sitting at exactly market value means any purchase pays full price for a hoped-for daily tick. The lock is far enough away that the window is open on time alone — it is the opportunity that does not exist, not the clock. And it would be wrong regardless while the balance is negative: a flip ties up money that is already owed. The instant-flip churn visible from rival managers remains what it has been measured to be, motion rather than points.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player is newly injured, suspended, benched or flagged. Every single one carries a clear status with an empty flag list, and the squad-wide sweep turned up nothing against any of them. One apparent alarm was checked and dismissed: a midfielder showed status codes unlike the rest of the squad and appeared at first read not to have featured in a completed fixture. Reading the appearance history in the correct order shows the opposite, that he played that fixture and scored well; the codes simply reflect a finished match rather than a problem. The incoming defender was verified independently and is starting. Two casualties at his club were confirmed as long-term absentees who do not threaten his place, and his club's first-choice goalkeeper is carrying a doubt that does not touch the back line.",
+  "sweep": "No squad player is newly injured, suspended or flagged — every one carries a clean status with an empty flag list, and the league's injured-and-suspended table lists no Bayern absentee at all. The one correction to make is to the record rather than to anyone's health: Minjae has been described in earlier notes as a starting Bayern centre-back, and that was too strong. He started the opening matchday, then did not leave the bench on the second. Fit, projected to start Sunday, but not automatic. Gruber, by contrast, verified cleanly on every axis — fit, high participation, and in his club's probable XI when the case for him was built.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -673,30 +671,30 @@
   {
    "name": "Minjae Kim",
    "status": "6668",
-   "why": "RE-RECOMMENDED FOR SALE 2026-09-12T00:45Z (SELL Sloesc6) — SUPERSEDES THE 22:55Z ENTRY ON THE ONE FACT THAT WAS UNCERTAIN. That entry inherited a previous run's claim that Georg had not acted on Gruber. DIRECT OBSERVATION THIS RUN SETTLES IT: market listing 10122 carries ofc 1 and ofs = [{u 3667000, unm \"Georg Kitz\", uop 15.500.000, st 0}]. The bid IS placed and resolves at ~2026-09-12T01:56:37Z (exs 4281 read at 00:45:16Z). So the leverage is real and arriving, not hypothetical. He remains a sale of a FIT, UNFLAGGED, STARTING Bayern centre-back (st 0, stl empty) purely because mv 12.967.452 is the only asset covering the 12.906.604 debit, leaving +60.848 of headroom — 0,47%. THE SALE MUST WAIT FOR SUNDAY: his mdsum shows MD3 = Elversberg (77) v Bayern (2), 2026-09-13T15:30:00Z, mdst 0 NOT STARTED, and he is in the locked MD3 eleven; selling before kickoff forfeits that return. Window: Sunday ~17:30Z to the MD4 lock 2026-09-18T18:30:00Z. Waiting also raises the proceeds (mvt 1, sdmvt +846.593). Do not re-buy him with the proceeds of his own sale.",
-   "reversal": "THIS BLOCK CARRIES NO FORCE UNLESS GRUBER ACTUALLY LANDS. If the auction is LOST at ~2026-09-12T01:56:37Z the sale MUST NOT happen and this entry restricts nothing — Minjae stays, the squad stays at eleven, the balance stays +2.593.396, and a future run judges him on ordinary merits with no leverage to unwind. If Gruber lands and Minjae is duly sold, he becomes re-buyable only if ALL of: (1) the squad is no longer at exactly eleven, so a purchase does not force a matching sale; (2) an ask AT OR BELOW mv, because he is sold at exactly mv and paying a premium to undo our own sale is churn; (3) a dated Bayern XI at that time still starting him; and (4) a non-negative balance with genuine spare capacity after the buy. Being a Bayern starter is NOT a reversal — that was already true when he was sold."
+   "why": "CONDITION SATISFIED — GRUBER LANDED, SO THE SALE IS NOW LIVE AND UNCONDITIONAL. This supersedes the 2026-09-12T00:45Z entry, whose whole force was suspended on an auction that had not yet resolved. IT RESOLVED: Georg bought Gruber (10122) from the board at 2026-09-12T01:57:33Z for 15.500.000 (feed t:15, t:1), call Bf0m9i5 is now executed, and the balance stands at -12.906.604. Minjae at mv 12.967.452 is the designated and only viable unwind: selling him leaves +60.848, i.e. 0,47% of headroom. Every alternative was checked this run and every one is worse — Neuer (14.690.759) would leave the squad with ZERO goalkeepers and no legal formation; Nusa (27.178.011) would leave three midfielders, forcing 5-3-2 and dropping the fielded eleven from 1440 to 1404; ter Horst plus Sirch together raise only 12.002.736, short of the debit, and take the squad to ten and the -100 penalty. THE SALE MUST WAIT FOR SUNDAY. His MD3 fixture is Elversberg (tid 77) v Bayern, 2026-09-13T15:30:00Z, confirmed cur true and mdst 0 NOT STARTED in get_player_performance, and he holds lo 2 in the locked MD3 eleven. Ligainsider's Bayern page, last updated 10.09.2026 23:22, puts him in the probable XI at centre-back alongside Upamecano for that match, and he is fit and absent from the injured-and-suspended table. So the wait is worth roughly his MD1 return of 110 points. ONE CAVEAT, RECORDED HONESTLY: his season is ONE start, 85 minutes, 110 points (MD1), then ZERO minutes in MD2 as an unused substitute — Ligainsider puts his Einsatzquote at 44%, 84 of 192 minutes. He is a projected starter, not a nailed one, so the 110 is an expectation and not a certainty. Previous entries describing him flatly as a \"STARTING Bayern centre-back\" overstated it. SELL WINDOW: Sunday from roughly 17:30Z, once the Elversberg match is complete, through to the MD4 lock 2026-09-18T18:30:00Z. Sell via instant-sale to Kickbase at mv. Selling Sunday afternoon transacts at the value set by the Saturday 20:00Z update, so his own MD3 performance cannot move the price against us. GUARD: after the 2026-09-12T20:00:00Z market-value update, confirm his mv is still at or above 12.906.604 — the headroom is only 0,47%. If it has fallen below, the fallback is to sell Minjae AND Sirch (2.421.088) and buy a sub-1M board body in the same session, which returns the squad to eleven with a positive balance; do NOT simply drop to ten. Do not re-buy him with the proceeds of his own sale.",
+   "reversal": "He is fit and a projected Bayern starter, so there is no availability case against re-buying him — judge him on ordinary merits only. Require ALL of: (1) the squad is no longer at exactly eleven, so a purchase does not force a matching sale; (2) an ask AT OR BELOW mv, because he is sold at exactly mv and paying a premium to undo our own sale is churn; (3) a dated Bayern XI at that time still starting him, and note the MD2 benching means a single dated XI is weaker evidence for him than for most; (4) a non-negative balance with genuine spare capacity after the buy. Being a Bayern starter is NOT a reversal — that was already true when he was sold. AND ONE OVERRIDE: if the Saturday measurement in WATCH W7eczse shows a negative balance voids a live matchday, this timing is wrong — sell him IMMEDIATELY rather than waiting for Sunday, because the 110 is already forfeit and only the unwind matters."
   }
  ],
  "arithmetic": [
   {
    "k": "Balance",
-   "v": "2.593.396"
+   "v": "-12.906.604"
   },
   {
    "k": "Squad value",
-   "v": "154.153.184"
+   "v": "166.944.298"
   },
   {
    "k": "33% floor",
-   "v": "-0,33 x (154.153.184 + 2.593.396) = -51.726.371"
+   "v": "-0,33 x (166.944.298 + -12.906.604) = -50.832.439"
   },
   {
    "k": "Spending power",
-   "v": "2.593.396 + 51.726.371 = 54.319.767 — NOT 2.593.396"
+   "v": "-12.906.604 + 50.832.439 = 37.925.835 — NOT -12.906.604"
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=233, -1,49% to +308,77%"
+   "v": "n=235, -1,49% to +308,77%"
   }
  ]
 }
