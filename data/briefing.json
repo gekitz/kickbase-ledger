@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-13T18:45:00Z",
+ "run": "2026-09-13T19:05:00Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -12706604,
   "floor": -51048433,
   "spending_power": 38341829,
-  "hours_to_lock": 119.57,
-  "exposure": "The account is leveraged and has been all week. A negative balance at matchday start scores zero for the whole matchday, so this is not a preference, it is the binding constraint on every other decision. The unwind is comfortably inside the remaining window, but it depends on sequencing: at the current squad size the floor permits exactly one sale, and a buy is what unlocks the second. Selling before the Ibrahimović auction resolves would close that door. If the Rönnow offer lands instead, both sale slots get consumed on a round trip that buys nothing.",
+  "hours_to_lock": 119.46,
+  "exposure": "Unchanged and still the binding constraint. What the keeper question adds is a structural trap worth spelling out: buying a second keeper takes the squad to thirteen, and unwinding a negative balance from there means two sales — but eleven players holding two keepers leaves only ten who can be fielded, which is the under-eleven penalty every week. So a second keeper forces one of the two sales to be a keeper, and the only coherent version of that is selling Neuer. That is a much bigger decision than the bid appeared to be.",
   "must_restore_by": "2026-09-18T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "Midfield. Onyeka picked up a head injury in Elversberg's match today and carries an availability flag, so one of the four midfield slots is currently occupied by a man who will most likely score zero. That is the hole worth money. The defence, the attack and the goalkeeping slot are all covered — the attack is closed at two by every legal formation, and the keeper slot has now rejected twenty-one candidates on the same argument.",
+ "binding_gap": "Still midfield, and now with a second item behind it. The keeper slot is not a gap this matchday, but it is no longer the settled thing this ledger treated it as — it is a recurring risk on Bundesliga weekends that follow a European midweek, and it needs watching rather than assuming.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 38341829,
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Two things are wrong at once and both are fixable tonight.",
-  "headline_short": "Two things are wrong at once and both are fixable tonight.",
-  "detail": "Two things are wrong at once and both are fixable tonight. First, there is a live offer sitting on the board in Georg's name for Frederik Rönnow — a second goalkeeper, on a standing AVOID, uncontested, and therefore winning by default when the listing expires in the small hours. It has to be pulled. Second, the fielded eleven has Gruber on the bench and Sirch in the back four, which is the largest free points swing available anywhere this week and costs nothing to correct. Everything else follows from the negative balance, which must reach zero before MD4 kicks off or the entire matchday scores nothing."
+  "headline": "Correction to the 18:45Z briefing, prompted by Georg.",
+  "headline_short": "Correction to the 18:45Z briefing, prompted by Georg.",
+  "detail": "Correction to the 18:45Z briefing, prompted by Georg. He placed the Rönnow bid because Neuer is not playing, and he was right about the fact — Neuer was an unused substitute in today's match, with Urbig in goal. The earlier run asserted the opposite, on a misread of the per-matchday history, which is ordered most-recent-first and was read oldest-first. The recommendation to pull the offer stands, but on completely different grounds, and the standing keeper logic in this ledger has been corrected rather than restated."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Minjae Kim is the unconditional leg and goes whatever else happens — he is one of only two players individually large enough to close the hole in a single sale, and he is the right one of the two. The nominal averages favour him over Gruber, but that is an artefact: Gruber has appeared on every matchday and Minjae missed one outright, and Ligainsider still has him in a rotation role at Bayern rather than as a fixture. A defender who plays two weeks in three is worth less than the slightly lower average that turns up every week. Onyeka is the conditional second leg and goes only if the Ibrahimović bid lands — if it does not, he stays, because eleven bodies with one passenger beats ten bodies and the under-eleven penalty.",
+  "reason": "Unchanged. The Minjae sale is still the unconditional leg and still the only single sale that closes the hole, and Onyeka is still the conditional second leg gated on the midfield buy landing. Neuer is emphatically not a sale in the recommended structure — he only becomes one in the keeper-swap branch, which is being rejected.",
   "standing": [
    {
     "name": "Antonio Nusa — re-issued on NEW grounds, the Grüll version is cancelled",
@@ -516,7 +516,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Arijon Ibrahimović is the only name on this board that survives both tests. He is listed at exactly market value with no offers on it, he has started Augsburg's last two matches — the club's own site confirms his first start on the 6th, sport.de's report has him starting again on the 12th — and the man he displaced is still a doubt. He steps straight into the slot Onyeka vacates, and since Onyeka is injured the real swing is his full average rather than the difference between the two. Two honest caveats, recorded rather than buried: his rating on Saturday was poor and he came off just before the hour, and his average rests on only two scoring appearances, so it is not yet a settled figure. On price, this is a contested Kickbase listing, not a manager ask, so it must be benchmarked against the high cluster. Four straight auctions have been lost by bidding near the middle of the band; the call this time sits a notch above the highest contested clearing price in the log, with the hard ceiling set by what the two sales can actually fund. Do not go past it — beyond that point the unwind cannot reach zero before the lock. Everything else on the board fails on merit, on formation, on an availability flag, or on money: the two genuinely good defenders available are priced past anything the envelope can reach, and one otherwise fairly-priced defender carries an injury flag behind a reasonable-looking ask.",
+  "reason": "The midfield buy is unchanged and remains the recommendation. On the keeper: the honest answer is that the hedge fails on this particular matchday for a reason that has nothing to do with price. The fixture is Bayern against Union, and the keeper on offer is Union's. He and Neuer are in the same ninety minutes, so only one can ever be fielded and the branch where Bayern are comfortable enough to rest Neuer is the same branch where the alternative is the keeper picking the ball out of the net. A hedge has to be uncorrelated with the thing it hedges; this one is the opposite. Run the numbers through to the end and the keeper swap loses in both branches — whether Neuer starts on Friday or sits again — while costing the better goalkeeper. Nothing cheaper on the board helps either: every low-priced keeper listed tonight is a club backup who does not play, so they insure nothing.",
   "standing": [
    {
     "name": "Arijon Ibrahimović (Augsburg)",
@@ -725,6 +725,15 @@
   ],
   "killed_this_run": [
    {
+    "name": "Frederik Rönnow — still pull the offer, but the earlier reasoning was WRONG",
+    "pos": "GK",
+    "club": "40",
+    "ask": 9451848,
+    "mv": 9451848,
+    "premium_pct": 0,
+    "why": "SUPERSEDES AVOID A2qtamv (now closed), WHOSE CENTRAL FACTUAL CLAIM WAS FALSE. Georg raised the objection and he was right: he placed this bid because NEUER IS NOT PLAYING, and the 18:45Z run asserted the opposite. THE CORRECTION, FROM PRIMARY DATA: get_player_performance for 237 shows 26/27 MD3 (mi 11968, md 2026-09-13T15:30:00Z, Elversberg 1 Bayern 2, cur true) with mp \"0'\" and st 4 — NEUER DID NOT PLAY TODAY. He was an unused substitute. t-online 13.09.2026 16:44 confirms it: Kompany made seven changes, \"die beiden Kapitäne Manuel Neuer und Joshua Kimmich zunächst auf der Ersatzbank\", with JONAS URBIG in goal. ROOT CAUSE OF THE ERROR, recorded so it cannot recur: the `ph` array returned by get_squad and get_lineup is ordered MOST RECENT FIRST, not oldest first. Neuer's ph [{hp:false},{97},{145}] is MD3-blank / MD2-97 / MD1-145, and the run read it as MD1-blank / MD2-97 / MD3-145, i.e. exactly inverted. Every ph reading in this ledger must be re-checked against that ordering. The squad-level `mdst` field is the cross-check that was available and ignored: Neuer carries mdst 3 and Sirch mdst 3 while all ten others carry mdst 5, and Sirch also did not play MD3 — mdst 5/3 is a played/did-not-play marker for the CURRENT matchday. THE RECOMMENDATION IS UNCHANGED — PULL THE OFFER — BUT ON DIFFERENT AND STRONGER GROUNDS. (1) THE CAUSE OF THE BENCHING DOES NOT APPLY TO MD4. Neuer played MD1 and MD2 in full (96' and 96', 145 and 97 points). He was rested for a Sunday away trip to a promoted side three days after the Champions League opener against Bodø/Glimt on 10.09.2026. fcbayern.com's published league-phase schedule has CL matchday 2 away at Viking FK on 13.10.2026, so there is NO Bayern midweek fixture between 14 and 18 September. MD4 is a home game against Union with a clear week before it. The pattern is \"Neuer sits after a Thursday in Europe\", not \"Neuer has lost his place\", and it does not bite this matchday. (2) RÖNNOW IS THE WRONG HEDGE FOR THIS PARTICULAR MATCHDAY, AND THIS IS THE DECISIVE POINT: MD4 IS BAYERN vs UNION BERLIN. Rönnow is Union's keeper, so he and Neuer are in the SAME NINETY MINUTES. Owning both is not insurance — only one can ever be fielded, and the branch where Bayern are comfortable enough to rest Neuer is the same branch where Rönnow is the keeper being scored on. A hedge has to be uncorrelated; this one is perfectly anti-correlated. (3) THE STRUCTURE IS FATAL, INDEPENDENT OF THE KEEPER ARGUMENT. Buying at 9.451.848 takes the balance to -22.158.452 at squad 13 (2 GK / 5 DEF / 4 MID / 2 ATT). Reaching non-negative by the 2026-09-18T18:30Z lock needs two sales totalling at least that, and the 11-man floor permits exactly two — but at squad 11 holding TWO keepers only ten men are fieldable, which is the -100 under-eleven penalty every single matchday. So one of the two sales must be a goalkeeper. Selling Rönnow makes the purchase pointless; selling NEUER is the only coherent version: Neuer 14.382.514 + Minjae 13.062.119 = 27.444.633, balance +5.286.181, squad 11 forced into 4-4-2 with Rönnow in goal. That eleven scores 1288 (Rönnow 109 + Matsima 140 + Gruber 118 + ter Horst 80 + Sirch 18 + Nusa 210 + Wolf 144 + Tanaka 96 + Onyeka 0 + Guirassy 196 + Gregoritsch 177). The Ibrahimović structure (BUY Bqee7c0) scores 1417 if Neuer starts and 1296 even if he is benched again. So the Rönnow route loses in BOTH branches — it is not a close call, and it costs Neuer's ap 121 to buy ap 109. ACTION: remove_offer on 2279 before 2026-09-14T03:37Z. Georg executes."
+   },
+   {
     "name": "Keke Topp (Gladbach)",
     "pos": "ATT",
     "club": "10",
@@ -822,26 +831,17 @@
     "mv": 20199395,
     "premium_pct": 395.06,
     "why": "NOT AN OFFER — A PRICE-DISCOVERY ASK, AND THE MOST EXTREME ONE THIS LEDGER HAS SEEN IN ABSOLUTE TERMS. Manager listing by Volte_28 2026-09-13T15:12:56Z, DEF, tid 43 Leipzig, mv 20.199.395, ask 99.999.996 = +395,06% over mv, comfortably past the previous record holder Maluze at +308,77%. The merit is real and worth recording — ap 139 off p 277 would be the second-best defender in the squad behind Matsima 140 — but the number is a placeholder, not a sale, and Volte_28 has just banked 17,75M selling Vieira to Kickbase, so he is not a forced seller. No news check performed or needed; the ask settles it. Revisit only on a relist at or below mv."
-   },
-   {
-    "name": "Jarell Quansah (Leverkusen)",
-    "pos": "DEF",
-    "club": "7",
-    "ask": 20000000,
-    "mv": 17742702,
-    "premium_pct": 12.72,
-    "why": "REAL MERIT, NO ENVELOPE — recorded so no future run re-derives it. Manager ask by Daggi D. 2026-09-12T11:56:29Z, DEF, tid 7 Leverkusen, mv 17.742.702, ask 20.000.000 = +12,72% over mv, which is three to four times the measured manager-to-manager cluster (+3,06%, +4,35%, +6,13%) — manager asks clear in low single digits and this one does not belong there. MERIT IS GENUINE: ap 96 off p 288 in three appearances, so he would displace ter Horst 80 in the back four for +16, or Sirch 18 for +78. THE FUNDING KILL IS ABSOLUTE: balance -12.706.604 against a hard requirement to be non-negative at the 2026-09-18T18:30Z lock, and squad 12 permits exactly one sale per buy. A 20M buy would need two sales totalling 32,7M, which means Minjae 13,06M plus Nusa 27,2M or Guirassy 31,3M — selling a 196-to-210-ap forward to field a 96-ap defender is a points loss, not a gain. He is unbuyable at any premium this week. Only revisit if the ask drops to at or below mv AND the squad has genuine unwind capacity."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip clears its cost this run. There are no manager asks below market value anywhere on the board, so the mechanism that makes a flip profitable is simply absent, and with a negative balance any flip would deepen a hole that has to be closed in five days. Worth noting what the rivals are doing instead: two managers spent the afternoon selling players back to Kickbase in batches, and two others ran same-hour round trips on cheap bodies for a fraction of a percent. That is motion, not points, and it is not a model to copy.",
+  "reason": "Unchanged — no flip clears its cost, and there are still no manager asks below market value anywhere on the board.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Onyeka is the one squad change and it is new enough to matter: head injury from a collision in today's match, flagged on Kickbase and confirmed by a Ligainsider update timed this afternoon. Five days to the lock and concussion protocol in between means the planning assumption is that he does not play. No other squad player carries an availability flag, and the goalkeeper is fit with nothing adverse dated against him. On the buy side, Ibrahimović is fit and starting; the one defender worth a second look on price is carrying the harder availability flag and was ruled out on that alone.",
+  "sweep": "Neuer is fit. He was rested, not injured, and that distinction matters for what to do about it: an injury would need replacing, rotation needs watching. Onyeka's head injury from today's match is unchanged and remains the one genuine availability problem in the squad. The keeper on offer carries a season-ending injury story in the search results that is dated late April and belongs to last season — he is fit now, and that item is a date trap, flagged here so it is not mistaken for current news on a later run.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
