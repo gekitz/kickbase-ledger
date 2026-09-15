@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-15T04:53Z",
+ "run": "2026-09-15T06:45:26Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 2994568,
   "floor": -51927053,
   "spending_power": 54921621,
-  "hours_to_lock": 85.6,
-  "exposure": "This is the part that outranks everything else. The live offer is larger than the cash balance, so if it wins, the balance goes NEGATIVE — and a negative balance when the matchday starts scores zero for the entire matchday, wiping out every point the eleven earn. That is survivable and planned for, because selling Onyeka brings the balance back above zero with room to spare, and the recommended raise was sized against that ceiling rather than against cash, leaving a deliberate cushion. But it only works if the sale actually happens after the buy settles. If Krauss lands and Onyeka is not sold before the lock, the matchday scores nothing. Two further notes. First, a ledger-integrity finding: the ledger had NO open buy or sell calls recorded this run, even though the offer is live on the market and Onyeka is still owned — both have been re-registered so the next run can reconcile them, but it means the previous run's tracking of its own live position had been lost. Second, worth Georg's own eyes: the feed shows an offer event on Ibrahimovic a few minutes before this run at a price well below the asking price, involving the manager who owns him. The listing itself shows no live offer from us, so this reads as an offer already declined rather than an open position — but if an offer of that size is in fact still outstanding alongside the Krauss bid, the unwind arithmetic stops working and the squad cannot get back to a positive balance without dropping below eleven. Confirm no second offer is live.",
+  "hours_to_lock": 83.58,
+  "exposure": "No leveraged position is open right now — the balance is positive and the formation is legal. But the recommended path deliberately opens one: if the Krauß offer wins, the balance goes negative the moment it clears, and a negative balance at matchday start scores zero for the entire matchday, not merely for one player. The unwind is the Onyeka sale, and there is a comfortable margin between the offer resolving and the lock. Comfortable is not automatic. This is the one thing in this briefing that can cost an entire matchday if it is forgotten, and it is the reason a notification went out on an otherwise quiet run.",
   "must_restore_by": "2026-09-18T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The binding gap is a midfield slot occupied by an injured player who cannot be replaced from a bench that does not exist. It is not a quality gap and not a budget gap — spending capacity is ample on paper. It is a sequencing gap: the replacement has to settle before the incumbent can go, and the only lever on that is the bid, which is why the bid is the whole recommendation. Everything else in the squad is fit, placed and playing after the lock.",
+ "binding_gap": "The binding constraint is not the spending floor and it is not the formation — it is cash, and specifically the fact that the squad sits at exactly eleven. At eleven, a purchase permits exactly one sale, so the most that can ever be spent on a single player is the cash balance plus the market value of the one man who can be let go. That ceiling is what rules out every genuinely better player on the board this run, including the two who would actually improve the eleven rather than merely fill it. The gap itself is the midfield slot currently occupied by a flagged player: it is filled on paper and empty in points, and closing it is the only move that adds anything this matchday.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 54921621,
@@ -51,16 +51,16 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 37,
+  "listings": 34,
   "cheapest": 884021,
   "cheapest_slot_filling": 13999999,
-  "expiring_within_2h": 4
+  "expiring_within_2h": 0
  },
  "squad": [
   {
    "name": "Nusa",
    "pos": "MID",
-   "club": "Leipzig",
+   "club": "43",
    "mv": 27218302,
    "ap": 210,
    "state": "clear",
@@ -70,7 +70,7 @@
   {
    "name": "Guirassy",
    "pos": "ATT",
-   "club": "Dortmund",
+   "club": "3",
    "mv": 31576428,
    "ap": 190,
    "state": "clear",
@@ -80,7 +80,7 @@
   {
    "name": "Gregoritsch",
    "pos": "ATT",
-   "club": "Augsburg",
+   "club": "13",
    "mv": 13974167,
    "ap": 178,
    "state": "clear",
@@ -90,7 +90,7 @@
   {
    "name": "Wolf",
    "pos": "MID",
-   "club": "Augsburg",
+   "club": "13",
    "mv": 10055584,
    "ap": 145,
    "state": "clear",
@@ -100,7 +100,7 @@
   {
    "name": "Matsima",
    "pos": "DEF",
-   "club": "Augsburg",
+   "club": "13",
    "mv": 15696735,
    "ap": 140,
    "state": "clear",
@@ -110,7 +110,7 @@
   {
    "name": "Neuer",
    "pos": "GK",
-   "club": "Bayern",
+   "club": "2",
    "mv": 13599928,
    "ap": 121,
    "state": "clear",
@@ -120,7 +120,7 @@
   {
    "name": "Gruber",
    "pos": "DEF",
-   "club": "Mainz",
+   "club": "18",
    "mv": 13472670,
    "ap": 117,
    "state": "clear",
@@ -130,7 +130,7 @@
   {
    "name": "Tanaka",
    "pos": "MID",
-   "club": "Schalke",
+   "club": "8",
    "mv": 8278034,
    "ap": 96,
    "state": "clear",
@@ -140,7 +140,7 @@
   {
    "name": "ter Horst",
    "pos": "DEF",
-   "club": "Paderborn",
+   "club": "29",
    "mv": 8505557,
    "ap": 82,
    "state": "clear",
@@ -150,7 +150,7 @@
   {
    "name": "Onyeka",
    "pos": "MID",
-   "club": "Elversberg",
+   "club": "77",
    "mv": 9971579,
    "ap": 63,
    "state": "clear",
@@ -160,7 +160,7 @@
   {
    "name": "Sirch",
    "pos": "DEF",
-   "club": "Elversberg",
+   "club": "77",
    "mv": 2011155,
    "ap": 18,
    "state": "clear",
@@ -170,18 +170,18 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Hold the shape, sharpen one bid.",
-  "headline_short": "Hold the shape, sharpen one bid.",
-  "detail": "Hold the shape, sharpen one bid. The squad is at exactly eleven with no bench, and the single hole in it is a fielded midfielder carrying a head injury. The fix already in motion is the right one — an offer is live on Tom Krauss, a fit Koeln midfielder who has started every match this season — and the only change this run recommends is raising that bid, because the current one sits exactly on the premium that beat us last time rather than above it. Nothing else on the board is both better and affordable. The order of operations is not negotiable: Krauss must land BEFORE Onyeka is sold, or the squad drops to ten and takes the penalty."
+  "headline": "One live decision, and it is to do nothing new.",
+  "headline_short": "One live decision, and it is to do nothing new.",
+  "detail": "One live decision, and it is to do nothing new. The standing offer on Tom Krauß should be left exactly where it is — not raised, not pulled — and the single thing Georg must actually execute is the Onyeka sale AFTER that offer resolves and BEFORE the lock. Everything else on the board this run is either unaffordable or below the fielded floor. The squad sits at the eleven-man minimum with a positive balance and a legal formation, so there is no emergency; there is one sequenced action with a hard consequence if the second leg is skipped."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Onyeka, conditionally, and only once Krauss has settled. His profile's latest entry is dated 13.09.2026 17:45 and describes a head injury from a collision with no return timeline; he is marked as doubtful and is absent from the probable eleven. Kickbase's own status flag agrees independently. The decisive argument is not the injury but the calendar: the lineup locks on the Thursday evening while Schalke against Elversberg does not kick off until the Sunday afternoon, so the eleven must be committed roughly two days before anybody knows whether he is cleared to play. Waiting for news is not an option the fixture list allows. He is also falling on both market-value trends, so the instant-sale price erodes at every daily tick — another reason the conditional sale should execute promptly once its condition is met, not drift.",
+  "reason": "Onyeka is the sale, and the order of operations is the whole point. Selling him before a replacement arrives leaves ten fielded players and takes the under-eleven penalty, which costs far more than he could ever return. So he is sold only once Krauß has landed, and then without delay, because his sale proceeds are what restore a positive balance. If the Krauß offer loses, he is not sold at all — a fielded man scoring nothing still beats the penalty for an empty slot. No other sale is recommended: every remaining outfielder either holds a fielded place on merit or is the cheapest body keeping the eleven intact.",
   "standing": [
    {
     "name": "Antonio Nusa — re-issued on NEW grounds, the Grüll version is cancelled",
     "pos": "MID",
-    "club": "Leipzig",
+    "club": "43",
     "mv": 27218302,
     "ap": 210,
     "why": "REVERSAL STATED OUT LOUD: the 02:45Z sale (Sqzy3ix) was conditional on winning Grüll, Grüll was LOST at 04:17Z, so that sale is cancelled. This is a NEW call on new grounds — the balance is -12.806.604 and a negative balance at matchday start scores ZERO for the whole matchday. Instant-sale to Kickbase at mv 27.204.353. TWO TIMING CONDITIONS, BOTH BINDING. (1) Do NOT sell before Leipzig's MD3 fixture today finishes — his matchday has not started (mdst 0) and selling first forfeits the return. (2) Sell only AFTER the Ibrahimović auction resolves at ~2026-09-14T21:14Z and only if it is WON, so the squad goes 13 to 12 and never touches the under-eleven -100. With both legs done the eleven is 1407 ap and the balance is roughly +3,9M. He is fit: the only Nusa injury story in circulation is a knee injury dated 12.02.2025, two seasons stale, and he is absent from Ligainsider's current injured/suspended table. He is not being sold on merit — he is the only single asset large enough to clear the hole in one sale while leaving a legal eleven.",
@@ -190,7 +190,7 @@
    {
     "name": "Antonio Nusa",
     "pos": "MID",
-    "club": "Leipzig",
+    "club": "43",
     "mv": 27218302,
     "ap": 210,
     "why": "CONDITIONAL ON THE IBRAHIMOVIC BUY (Bb5k0t8) LANDING FIRST, auction resolves 2026-09-14T21:00Z. THIS REVIVES THE SALE THE 08:45Z RUN EXPLICITLY STRUCK, and says so plainly - but the reason it was struck has changed. It was struck because Grull was LOST, which left no buy at all, and with no buy the unwind ceiling permits exactly one sale, for which Minjae was the correctly sized leg. A new buy restores the ceiling and does better than that: buy-one/sell-one ends at squad 12, not 11. NOT A VERDICT ON THE PLAYER - he is fit (st 0), a confirmed Leipzig starter at 95% of minutes, and returned 226 on MD3. He is sold because he is the only asset large enough to clear a -12.706.604 hole PLUS a 9.800.000 bid in one instant-sale, and because staying at squad 12 is what drops Sirch (ap 18) out of the fielded eleven. That is where the points are: this branch fields 1407 ap (Neuer 121; Matsima 140, Gruber 118, Minjae 110, ter Horst 80; Wolf 144, Ibrahimovic 117, Onyeka 108, Tanaka 96; Guirassy 196, Gregoritsch 177) against 1344 for the plain Minjae sale. IF THE BID IS LOST THIS SALE MUST NOT HAPPEN - sell Minjae instead and leave Nusa alone. NEVER execute this and the Minjae sale both: that is ten players and the -100 under-eleven penalty.",
@@ -199,7 +199,7 @@
    {
     "name": "Antonio Nusa",
     "pos": "MID",
-    "club": "Leipzig",
+    "club": "43",
     "mv": 27218302,
     "ap": 210,
     "why": "RE-ISSUED FROM 10:45Z (SELL S37lur8), UNCHANGED IN SUBSTANCE BUT WITH A HARD SEQUENCING GUARD THE EARLIER ENTRY DID NOT STATE. Instant-sale to Kickbase at mv 27.204.353, which takes cash from -12.706.604 to +14.497.749 and, paired with the Ibrahimovic buy at 10.400.000, to +4.097.749 at squad 12. NOT A VERDICT ON THE PLAYER: Ligainsider (profile checked this run) lists him Fit, three 26/27 appearances and two goals; he returned 226 on MD3 and is the best midfielder Georg owns at ap 146. He is sold only because he is the single asset large enough to clear the hole and fund the buy in one instant-sale. THE GUARD, STATED PLAINLY: DO NOT SELL HIM UNTIL THE IBRAHIMOVIC AUCTION HAS RESOLVED (~2026-09-14T21:14Z). If Nusa is sold first and the bid then loses, the squad sits at 11 with only three midfielders, forcing 5-3-2 and a fielded 1308 ap — 36 WORSE than the Minjae fallback (1344) and 128 worse than doing nothing. There is no reason to sell early: the instant-sale is available at any moment and the balance deadline is 2026-09-18T18:30:00Z, roughly 93 hours AFTER the auction resolves. Sell him only in the branch where the buy has actually landed.",
@@ -208,7 +208,7 @@
    {
     "name": "Frank Onyeka (Elversberg)",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "CONDITIONAL — THIS SALE HAPPENS IF AND ONLY IF THE GRÜLL BID (B6s8kaz) WINS. If that auction is lost, DO NOT SELL HIM: the squad would be at eleven after the Minjae leg and selling him drops it to ten, triggering the -100 penalty. That condition is the whole entry; read it before acting. WHY HIM AS LEG 2 RATHER THAN ter HORST, AND THIS IS THE NON-OBVIOUS PART: ter Horst (mv 9.581.648, ap 91) is the cheaper points loss — selling him instead yields a fielded XI of 1558 against 1541, i.e. 17 ap BETTER. But he raises 1.137.993 LESS, which drops the Grüll bid ceiling from 10.880.489 (+24,38% over mv) to 9.742.496 (+11,36%). The measured contested-Kickbase clearing cluster is +16,71% to +21,18%; a +11,36% bid sits BELOW it and is the exact shape that lost Rohr (bid +3,92%, cleared +16,96%), Campbell (+20,96%) and Ebnoutalib (+16,71%). Paying 17 ap to move the bid from probably-losing to inside the winning cluster is the right trade: 1541 with a real chance beats 1558 with a poor one. MERIT: Onyeka is ap 108 on p 215, the weakest of the four owned midfielders (Wolf 200, Nusa 146, Onyeka 108, Tanaka 96) once Grüll 209 enters, so he is the man Grüll actually displaces. Not on ligainsider's Verletzte-und-Gesperrte table read 2026-09-12 — he is fit, and this is a funding sale, not an availability call. SECOND-ORDER BENEFIT: it removes one of the two Elversberg bodies (Onyeka, Sirch) and cuts correlated fixture risk. ARITHMETIC: -12.806.604 - 10.500.000 (Grüll) + 12.967.452 (Minjae) + 10.719.641 (Onyeka) = +380.489, non-negative at the MD4 lock. If the bid clears BELOW 9.742.496, ter Horst becomes the better leg 2 and should be sold instead — check the clearing price before choosing.",
@@ -217,7 +217,7 @@
    {
     "name": "Francis Onyeka (Elversberg) — CONDITIONAL on Grüll landing",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "THE CONDITION IS THE WHOLE CALL: this sale happens IF AND ONLY IF the Grüll bid (BUY Bhmj6jl, 10.750.000, resolving ~2026-09-13T04:15Z) WINS. If that auction is lost, this sale is INERT — the squad is at eleven after the Minjae leg and selling him drops it to ten, triggering the -100 under-eleven penalty. Do not cite this entry as a reason to sell him otherwise. AND THE TIMING IS THE SAME REVERSAL AS THE MINJAE LEG: Elversberg host Bayern 2026-09-13T15:30Z — the SAME fixture that gates the Minjae sale — and he is in the locked MD3 XI, so selling before that final whistle forfeits his MD3 points. Both legs execute together in the window 2026-09-13T~17:30Z to the MD4 lock 2026-09-18T18:30Z. ARITHMETIC: -12.806.604 - 10.750.000 + 12.967.452 + 10.719.641 = +130.489, non-negative with 130.489 of slack; squad 13 after the buy permits exactly these two sales and no more. HE IS FIT AND BLAMELESS — ligainsider francis-onyeka_36948 (note the name: FRANCIS Onyeka, on loan from Leverkusen since 15.06.2026, NOT Frank Onyeka) shows fit, 2 league starts, 166 minutes, 57% quota, 2 goals and 1 assist, and he is in the probable XI for the Bayern game on both ligainsider and comunio 10.09.2026. He is sold on relative value only: Grüll at ap 209 displaces him at ap 108 in the midfield four, and he was chosen over ter Horst as the funding leg because ter Horst cannot go — selling ter Horst as well as Minjae would leave only THREE defenders (Gruber, Matsima, Sirch), which no legal formation can field.",
@@ -226,7 +226,7 @@
    {
     "name": "Francis Onyeka (Elversberg) — CONDITIONAL",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "CONDITIONAL LEG 2 — SUPERSEDES Sjnz09x ON ONE NUMBER: the Grüll bid it is gated on is now 10.750.000 (BUY Bzjtyt7), not 9.750.000. BOTH conditions still gate it and both must hold. (1) IT HAPPENS IF AND ONLY IF THE GRÜLL AUCTION IS WON (resolves ~2026-09-13T04:15:54Z). If it is lost the squad sits at eleven after the Minjae leg and selling him drops it to ten for the -100 under-eleven penalty, so the sale is INERT — check Bzjtyt7 before treating him as sold. (2) NOT BEFORE ELVERSBERG'S MD3 ENDS: they host Bayern 2026-09-13T15:30Z (mdst 0, not played), he is in the locked MD3 eleven (lo 6) and is genuinely expected to play, so an early sale forfeits real points. Execute both legs together between roughly 2026-09-13T17:30Z and the MD4 lock. He is FIT AND BLAMELESS and sold on relative value only: Grüll ap 209 displaces him at ap 108 and his mv is what funds the bid. He is absent from ligainsider's league-wide Verletzte-und-Gesperrte table read 2026-09-12, and the 14:45Z run's read of ligainsider sv-07-elversberg/1331 had him in the probable XI v Bayern with Seifert and Zimmerschied the only listed absentees. NAME AND CLUB, AGAIN, FOR EVERY FUTURE RUN: FRANCIS Onyeka, on loan at SV Elversberg from Bayer Leverkusen — NOT Frank Onyeka. EXPOSURE THIS CREATES: winning Grüll at 04:15Z takes the balance to about -23.556.604 and it stays there until these two sales land ~13h later. That is survivable only because the next lock is 2026-09-18T18:30Z; it must not be allowed to drift into lock week.",
@@ -235,7 +235,7 @@
    {
     "name": "Francis Onyeka",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "CONDITIONAL ON THE IBRAHIMOVIC BID (BUY, ~2026-09-14T21:07Z) LANDING FIRST — and the condition is INVERTED from the old Gruell-gated entry (SELL Sxz4lqi), which is now INERT because the Gruell auction was LOST at 04:17:22Z. At squad 11 after the Minjae leg, selling him drops to TEN and costs -100, so this sale is legal ONLY once a buy has restored the twelfth body. NEW AND DECISIVE FACT: HE IS INJURED, and this is new since the 14:45Z run. Kickbase now carries st 2, stl [2] on him — he was st 0 and described as fit and blameless in every prior entry. ligainsider.de/francis-onyeka_36948 confirms it with a dated item, 13.09.2026 17:45 Uhr, 'Onyeka kann nach Zusammenprall nicht weitermachen': he went down in the 5th minute in a challenge on Ismael Saibari, 'rutschte bei einer Graetsche seitlich in seinen Gegenspieler und schlug beim anschliessenden Zusammenprall mit dem Kopf auf dem Boden auf', and his profile now reads Angeschlagen / Kopfverletzung. The article states the exact injury could not be identified from TV pictures, so the severity is genuinely unknown — but a head injury five days before the 2026-09-18T18:30Z lock, with concussion protocol in play, is not a player to field blind. That is what turns the Ibrahimovic buy from a +9 ap nicety into a +117 swap: at squad 11 there is no bench, so an unavailable Onyeka is a FIELDED ZERO, and Ibrahimovic 117 replaces it in the same midfield slot. Post-structure XI is Neuer 121, Matsima 140, Gruber 118, ter Horst 80, Sirch 18, Nusa 210, Wolf 144, Tanaka 96, Ibrahimovic 117, Gregoritsch 177, Guirassy 196 = 1417, against 1408 with a fit Onyeka and roughly 1300 with an absent one. IF THE BID IS LOST: do NOT sell him. He stays as the eleventh man, injured, because a fielded zero costs less than the -100 for ten players — the identical logic that kept Widmer. IF THE BID IS WON: this sale is MANDATORY, not optional. Winning at 10.900.000 and failing to sell him leaves roughly -10.5M at the lock and a ZERO-SCORING MATCHDAY.",
@@ -244,7 +244,7 @@
    {
     "name": "Francis Onyeka (Elversberg) — conditional leg 2",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "SUPERSEDES SELL Saxgqey, WHOSE GATE WAS THE IBRAHIMOVIC BID BEING PLACED — IT NEVER WAS. list_market this run still shows Ibrahimović on the board with ofc 0, so by that call's own terms the sale was never live; this re-issues it against the NEW structure (BUY Bqee7c0). THE INJURY IS CURRENT, NOT INHERITED, AND NOT A DATE TRAP: Kickbase carries st 2 / stl [2]; ligainsider.de/francis-onyeka_36948 shows \"Kopfverletzung — Fehlt seit Heute\", last updated 13.09.2026 17:45, off the back of a collision in Elversberg's match on 13.09.2026 (\"Onyeka kann nach Zusammenprall nicht weitermachen\"). That is TODAY, one hour before this run. A head injury five days before MD4 means concussion protocol, and the honest planning assumption is that he does not play. FIELDED VALUE: nominal ap 63 is already the worst midfield figure in the squad against Nusa 210, Wolf 144 and Tanaka 96; realistically it is 0. THE CONDITION, AND IT IS HARD: execute this ONLY if the Ibrahimović bid LANDS. Squad 12 + 1 buy = 13 permits two sales, so Minjae (SELL Syf0klv) and Onyeka together return the balance to roughly +681.137 and leave exactly eleven bodies — 1 GK / 4 DEF / 4 MID / 2 ATT, with Ibrahimović ap 117 stepping directly into the midfield slot Onyeka vacates. If the bid is LOST or never placed, DO NOT SELL HIM: the squad would be at eleven after the Minjae leg, and selling him makes ten, triggering the -100 under-eleven penalty, which is strictly worse than fielding a man who scores zero. Check BUY Bqee7c0's resolution before acting.",
@@ -253,7 +253,7 @@
    {
     "name": "Francis Onyeka",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "CONDITIONAL LEG 2 — SUPERSEDES SELL Salmy7k (2026-09-13T20:45Z) AND Szf3xn5 (18:45Z), NEITHER EXECUTED. Instant-sale to Kickbase at mv 10.604.352, and ONLY if BUY B1tr50r (Ibrahimović) settles first, taking the squad to 12 and making this sale legal back down to 11. INJURY RE-VERIFIED THIS RUN, NOT INHERITED: Kickbase st 2 / stl [2], and ligainsider.de/francis-onyeka_36948 carries the head injury from a collision — \"kann nach Zusammenprall nicht weitermachen\" — dated 13.09.2026, one day before this run. Concussion protocol five days out from MD4 means the planning assumption is that he does not play. Note one source gap honestly: Ligainsider's league-wide Verletzte-und-Gesperrte table read 2026-09-14 lists Elversberg's absentees as only Seifert and Zimmerschied and has NOT yet picked him up, so the table lags his own player page — trust the player page, which is the more specific and more recent source, and re-read the table next run to see it catch up. ON MERIT HE IS ALREADY THE WEAKEST MIDFIELDER OWNED even when fit: 190 points over three matchdays = 63/MD (ph -25, 76, 139) against Nusa 210, Wolf 144 and Tanaka 64. THE CONDITION IS LOAD-BEARING AND HAS KILLED THIS SALE TWICE ALREADY — READ IT BEFORE ACTING. After SELL Sgq8bgd (Minjae) the squad is at EXACTLY ELEVEN. If the Ibrahimović bid is lost, pulled or never placed, this sale MUST NOT happen: it would leave ten players and trigger the -100 under-eleven penalty, which costs more than his fielded zero. In that branch this entry carries NO force and must not be cited as a reason to sell him. CHECK BUY B1tr50r's RESOLUTION FIRST. REVERSAL as a re-buy: st back to 0; a dated Elversberg XI, 2026-09-16 or later, that actually starts him AND post-dates the 13.09.2026 head injury, since any earlier source is worthless under concussion protocol; a re-based per-matchday return clearing whichever midfielder he would displace (the bar is Tanaka at 64, not his own 63); an ask at or below mv; and a non-negative balance with genuine spare capacity.",
@@ -262,7 +262,7 @@
    {
     "name": "Francis Onyeka",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "LEG 2, STRICTLY CONDITIONAL ON THE IBRAHIMOVIC BUY (BUY By81a6l) LANDING FIRST. Head injury re-verified this run: Kickbase st 2 / stl [2] live, and ligainsider.de/francis-onyeka_36948 dated 13.09.2026 17:45 - he slid into an opponent in minute 5 against Bayern, struck his head on the ground, could not continue, was replaced by Darvich, and the article gives NO return timeline. mv 10.604.352, mvt 2 falling, tfhmvt -121.270. He is the correct second leg because his fielded contribution is already zero: nominal ap 63 but an st-2 body scores nothing. IF THE IBRAHIMOVIC BID IS LOST, PULLED OR NEVER PLACED, THIS SALE MUST NOT HAPPEN. After the Minjae leg the squad is ELEVEN; selling him makes ten and triggers the -100 under-eleven penalty, which costs far more than his fielded zero. That is the same guard that correctly stopped the Widmer and ter Horst legs earlier this season. Order that is safe in both branches: sell Minjae -> bid Ibrahimovic -> only if won, instant-sell Onyeka. End state 11 players, balance +286.920 at a 10.750.000 clear, fielded eleven 1417.",
@@ -271,7 +271,7 @@
    {
     "name": "Francis Onyeka",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "CONDITIONAL LEG 3 — DO NOT EXECUTE UNTIL THE IBRAHIMOVIĆ BUY HAS ACTUALLY LANDED. Supersedes SELL Svitq8j (closed). THE GUARD IS THE WHOLE CALL: after the Minjae leg the squad is ELEVEN, so selling Onyeka makes TEN and triggers the -100 under-eleven penalty, which costs far more than his fielded zero. If the 10.900.000 bid is lost, pulled or again never placed, this sale MUST NOT happen — keep him, field him, take the ~1.300 effective XI and revisit on a later board. HEAD INJURY RE-VERIFIED THIS RUN, NOT INHERITED: Kickbase st 2 / stl [2] live in get_squad and get_lineup with stxt 'Stricken - substituted early due to a knock against FCB (H)' dated 2026-09-13T16:23:39Z, and ligainsider.de/francis-onyeka_36948 read this run shows 'Kopfverletzung', 'Fehlt seit Heute', latest item 13.09.2026 17:45 — collision in the 5th minute against Bayern, head struck the ground, could not continue, replaced by Darvich, NO return timeline given. He is STILL FIELDED at lo 6, so his contribution is a certain zero whatever the nominal ap 63 says, and that remains the worst fact in the lineup. mv falling (mvt 2, tfhmvt -121.270) so waiting costs money as well as points; Elversberg's MD4 is 20.09, two days AFTER the 18.09 18:30Z lock, so no team news can rescue him before the lineup is frozen. Sell via instant-sale to Kickbase at mv 10.604.352, which restores the balance to +236.920 after the Ibrahimović purchase and puts the squad back to eleven as 1GK/4DEF/4MID/2ATT = 4-4-2.",
@@ -280,7 +280,7 @@
    {
     "name": "Francis Onyeka (Elversberg)",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "CONDITIONAL ON BUY B50vrve LANDING FIRST - THIS CONDITION IS FRESH AND MUST NOT BE INHERITED AS UNCONDITIONAL. HARD GUARD, THE SAME ONE THAT CORRECTLY HELD LAST RUN: the squad is ELEVEN. Selling Onyeka before a replacement lands makes it TEN and triggers the -100 under-eleven penalty, which costs far more than his fielded zero. The previous run's SELL Srn54wc hung off BUY Bbzh6sd and that bid was NEVER PLACED (list_market showed Ibrahimović ofc 0), so the sale correctly did not happen and Onyeka is still here. Same structure, same guard: if B50vrve is lost, pulled or never placed, DO NOT SELL. CLUB CORRECTION FOR THE LEDGER: Onyeka is SV 07 ELVERSBERG, not Schalke - ligainsider profile 36948 and bundesliga.com both confirm, and any inherited note saying Schalke is wrong. Kickbase tid 77 = Elversberg (Sirch, Gyamerah, Condé, Schnellbacher all sit there too). NEWS, DATED AND CURRENT-SEASON: ligainsider 13.09.2026 17:45 \"Onyeka kann nach Zusammenprall nicht weitermachen\" - he slid into an opponent during a tackle and struck his head on the ground, could not continue; the club could not identify the affected area from TV pictures and NO return date has been given. His ligainsider profile carries status Kopfverletzung / doubtful. This is MD3, played 12-13.09.2026, so it is one day old, not a stale hit - it is too fresh to have reached ligainsider's Verletzte-und-Gesperrte table, which still lists only Seifert and Zimmerschied for Elversberg. Kickbase agrees independently: st 2 with stl [2]. THE ARITHMETIC: ap 63 is the worst fielded outfield figure in the squad after Sirch 18, and with an undated head injury four days before MD4 the realistic MD4 return is ZERO, not 63. Ibrahimović at ap 117 replaces him in the fielded eleven for a swing closer to +117 than +54. SELL VIA INSTANT-SALE TO KICKBASE, NOT A MANAGER ASK: the instant-sale pays exactly mv and is now 9-for-9 on this ledger (Minjae this morning at 13.139.172 was the latest); a manager ask needs a counterparty and the unwind is deadline-bound. A relist also risks the Conte/Minjae failure mode where the ask sat unsold while the balance stayed negative. AFTER BOTH LEGS: squad back to 11 (1GK/4DEF/4MID/2ATT, 4-4-2), balance ~+586.920, no leverage into the lock.",
@@ -289,7 +289,7 @@
    {
     "name": "Francis Onyeka (Elversberg)",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "CONDITIONAL INSTANT-SALE TO KICKBASE AT mv 10.604.352 — AND THE CONDITION IS THE WHOLE CALL. THE GUARD FIRST: the squad is EXACTLY ELEVEN. Sell him before the Ibrahimovic buy lands and the squad is TEN, which triggers the -100 under-eleven penalty and costs more than his fielded zero. SELL ONLY AFTER RAISE 3176 HAS ACTUALLY LANDED (buy resolves 2026-09-14T21:13:52Z; confirm Ibrahimovic in get_squad first). If that auction is LOST, PULLED OR NEVER PLACED, DO NOT SELL HIM — keep him, injured, in the fielded eleven, and no future run may cite this call as a reason to sell. THE MERIT: st 2 and stl [2] in Kickbase, the harder availability flag. ligainsider 13.09.2026 17:45 — he collided with Saibari in the 5th minute v Bayern on MD3, struck his head on the ground, appeared dazed and could not continue; his ligainsider profile carries status \"Angeschlagen — Kopfverletzung\" as read 14.09.2026. NO return date and NO follow-up of any kind exists as of this run — with a head strike the absence of news is not reassurance. ap 63 is the second-worst figure in the squad; a concussed midfielder four days from MD4 realistically returns ZERO. Elversberg are at Schalke 20.09.2026. The instant-sale pays exactly mv, so this leg funds the Ibrahimovic buy at face value: 882.568 - 10.950.000 + 10.604.352 = 536.920, squad back to ELEVEN, formation back to a legal 4-4-2 with Ibrahimovic (117) in Onyeka's midfield slot. TIMING RISK TO WATCH: market values tick at 20:00Z, BEFORE the 21:13Z auction resolves, and Onyeka is mvt 2 falling with tfhmvt -121.270. If the tick takes his mv materially below 10,1M the post-sale balance gets thin; the lock is still 101,6h away, so a later run can act, but do not let the balance sit negative into 2026-09-18T18:30:00Z — a negative balance at matchday start scores ZERO for the entire matchday.",
@@ -298,7 +298,7 @@
    {
     "name": "Francis Onyeka (Elversberg)",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "CONDITIONAL SELL — RE-AFFIRMED 2026-09-14T14:45Z, SUPERSEDES S4x18ea, AND THE CONDITION HAS NOT YET RESOLVED. Instant-sale to Kickbase at mv (10.604.352 as of this run; expect it lower after the 20:00Z re-set). THE ORDER IS NOT OPTIONAL: the squad is EXACTLY ELEVEN (1 GK / 4 DEF / 4 MID / 2 ATT, the only legal shape being 4-4-2), so selling him before Ibrahimovic lands drops the squad to TEN and triggers the -100 under-eleven penalty, which is worse than the fielded zero it was meant to avoid. Sell ONLY in the minutes after get_squad shows Ibrahimovic owned. IF THE AUCTION IS LOST OR PULLED, THIS CALL DIES WITH IT — he is kept, injured, in the fielded eleven, and no future run may cite it to sell him. NEWS RE-VERIFIED THIS RUN, AND IT IS UNCHANGED AND NOW TWO DAYS OLD WITH NO FOLLOW-UP: ligainsider profile read 14.09.2026 still shows status Angeschlagen with a Kopfverletzung, the only item being 13.09.2026 17:45 \"Onyeka kann nach Zusammenprall nicht weitermachen\" (collision, could not continue). NO return date, NO concussion-protocol update, NO matchday-4 word from club, kicker or ligainsider — searched again this run and none found. Kickbase carries st 2 with stl [2] independently. ap 63 is the second-worst outfield figure in the squad and a head-injury doubt five days from MD4 realistically returns ZERO. Ibrahimovic at ap 117 replaces him in the fielded 4-4-2, a swing of +54 on the eleven for a net cash cost of about 346k. CLUB CORRECTION THAT KEEPS RESURFACING: he is SV 07 ELVERSBERG (tid 77), on loan from Bayer Leverkusen, NOT Schalke — Elversberg's MD4 opponent being Schalke is where the inherited error comes from.",
@@ -307,7 +307,7 @@
    {
     "name": "Francis Onyeka (Elversberg) — conditional unwind leg, now backed by dated injury news",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "STRICTLY CONDITIONAL ON THE IBRAHIMOVIĆ BUY LANDING FIRST (~2026-09-14T21:13Z) — this supersedes SELL Sgrmx77 from the 14:45Z run and adds the news that run did not have. IF THE BID IS LOST, DO NOT SELL: squad is exactly 11, and selling at 11 drops him to 10 and triggers the -100 under-eleven penalty, which costs far more than Onyeka's zero. THE NEWS, WHICH IS NEW AND DATED: ligainsider 13.09.2026 — Onyeka collided with Saibari early against Bayern, hit his head on the ground, was disoriented and was substituted off; flagged \"Angeschlagen – Kopfverletzung – fehlt seit heute\", with NO published return date. This independently justifies Kickbase's st 2 / stl [2]. Note honestly that one 14.09.2026 preview still lists him in Elversberg's XI at Schalke on 20.09 — but that is a preview written against concussion-protocol uncertainty, and a head injury four days out is not a start to bank points on. THE MECHANICS: instant-sale to Kickbase pays exactly mv 10.604.352 (the instrument has paid exactly mv 8 for 8 in the log). That takes balance from -8.905.432 back to +1.698.920 and squad from 12 to 11, with the fielded midfield becoming Nusa 210 / Wolf 145 / Ibrahimović 115 / Tanaka 96 — every one of them confirmed fit and starting for MD4 as of 14.09.2026. Do NOT list him as a manager ask instead: he is visibly injured, the ask would sit unsold exactly as the Lokonga and Conté asks did, and the balance must be non-negative before the 18.09 lock.",
@@ -316,7 +316,7 @@
    {
     "name": "Francis Onyeka (Elversberg)",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "THE UNWIND LEG — STRICTLY CONDITIONAL ON THE IBRAHIMOVIĆ BID LANDING FIRST. Instant-sale to Kickbase at mv 10.604.352. NEWS CONFIRMED THIS RUN: Ligainsider profile carries \"Kopfverletzung — Fehlt seit Gestern\" dated 13.09.2026, from the match report \"Onyeka kann nach Zusammenprall nicht weitermachen\" (13.09.2026 17:45) — head injury in the 5th minute against Bayern after a collision with Saibari, left the pitch disoriented, replaced by Noah Darvich, no return date given. Kickbase agrees: st 2, stl [2]. He is currently IN the fielded eleven at ap 63 and will contribute 0 at MD4. IF THE BID IS LOST, DO NOT SELL HIM: the squad is at exactly eleven and selling drops it to ten, triggering the -100 penalty, which costs far more than his zero. The sale is the second half of a paired trade, never a standalone action. Sequencing is forced anyway — the bid resolves ~21:13Z, after tonight's 20:00Z market-value tick. He is mvt 2 (falling), but the unwind only needs 8.055.432 of his 10.604.352, so he would have to drop 24% overnight for it to fail; it will not.",
@@ -325,7 +325,7 @@
    {
     "name": "Francis Onyeka",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "STRICTLY CONDITIONAL on the Ibrahimović bid landing at ~21:13:48Z. IF IT LANDS: instant-sell Onyeka to Kickbase at mv 9.971.579 promptly — cash goes to -8.055.432 on the buy, and a negative balance at MD4 start scores ZERO for the whole matchday; the sale restores +1.916.147 and the squad to 11. Sell EARLY: mvt 2, tfhmvt -632.773, so every daily 20:00Z tick costs ~630k of unwind proceeds, and there are ~4 ticks before the lock. IF THE BID LOSES: DO NOT SELL — squad is exactly 11 and 4-4-2 is the only legal formation, so dropping to 10 triggers the -100 penalty, which costs far more than his zero. In that branch he is a dead slot to be replaced by the next buy, not a sale. Justification for the sale itself: st 2 / stl [2]; Ligainsider \"Kopfverletzung — Fehlt seit Gestern\" 13.09.2026, head injury in the 5th minute vs Bayern (collision with Saibari, replaced by Noah Darvich), NO return date given; MD3 score -25 confirms the curtailed appearance.",
@@ -334,7 +334,7 @@
    {
     "name": "Francis Onyeka (Elversberg)",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "SELL NOW, UNCONDITIONALLY, VIA INSTANT-SALE TO KICKBASE AT mv 9.971.579 — AND THIS REVERSES THE ORDERING THE 18:45Z ENTRY (SELL S7r4p3e) IMPOSED. That entry made the sale conditional on the Ibrahimović bid landing and said that if the bid was LOST Onyeka must be KEPT and replaced by the next buy rather than sold first, on the ground that selling drops the squad to ten and triggers -100. THE BID WAS LOST: feed t:15 at 2026-09-14T21:14:51Z shows Ibrahimović cleared to David at 11.387.111 against mv 8.868.987 = +28,39%; Georg bid 10.950.000 = +23,46% and lost by 437.111. So the losing branch is live and I am deliberately inverting its instruction. THREE REASONS, AND THEY ARE ARITHMETIC, NOT PREFERENCE. (1) The -100 the old entry feared bites ONLY at the matchday lock, 2026-09-18T18:30Z, which is 91,6 hours away — a squad of ten tonight costs nothing, a squad of ten on Friday evening costs 100. (2) Buy-first is what makes the buy unaffordable. Cash is 2.894.568. Buying Treu first at a competitive 12,8M puts the balance at about -9,9M, and the unwind then sells Onyeka at whatever his mv is AFTER the 15.09 20:00Z tick, not at today's — he is mvt 2 and shedding 632.773 per 24h, so the unwind returns roughly 9,3M and leaves the balance NEGATIVE going into the lock, which scores ZERO for the entire matchday. Sell-first locks 9.971.579 today and makes the whole structure cash-positive at every instant. (3) Sell-first raises the affordable Treu bid from about 12,2M (+14,5%) to 12.800.000 (+20,6%), which moves it out of the range that has lost every contested auction this season and into the measured cluster. NEWS, DATED AND CURRENT: Ligainsider's profile still reads Kopfverletzung, Fehlt seit Gestern, off the 13.09.2026 17:45 report; no return date is given and Kickbase independently shows st 2, stl [2]. He is a fielded zero at MD4 whatever happens. THE ONE GUARD THAT MATTERS: the squad is ten from the moment this sale settles until a buy lands. It must be ELEVEN at 2026-09-18T18:30Z. Treu is the intended refill; if that auction is lost, ANY fit body must be bought before the lock — the board carries sub-1M listings continuously and 60+ hours remain. A ten-man squad at the lock is the single worst outcome in this briefing and it is entirely avoidable.",
@@ -343,7 +343,7 @@
    {
     "name": "Francis Onyeka (Elversberg)",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "THE SALE STANDS BUT THE ORDERING IS INVERTED — SAY THIS OUT LOUD IN THE BRIEFING. The 2026-09-14T22:45Z call (SELL Smb23jl) said sell FIRST, unconditionally, ahead of any buy, on the ground that mv decay of 632.773/24h outruns the -100 penalty risk. Georg did not act, and this run reverses that ordering: BUY FIRST (BUY Krauß), THEN instant-sell Onyeka to Kickbase. THE REASON THE ORDERING CHANGED: at 22:45Z the squad was 12 with Minjae still unsold, so a sale left 11 and was free. The Minjae sale has since executed and the squad is now EXACTLY ELEVEN, so selling Onyeka first leaves TEN and puts the -100 under-eleven penalty live for 89 hours against the chance that every contested bid loses — which is precisely what has happened on Makengo, Rohr, Grüll, Mokwa and Ibrahimović. Buying first never drops below eleven and the unwind is guaranteed, because instant-sale to Kickbase pays exactly mv (8 for 8 in this log). The cost of waiting is one mv tick at 2026-09-15T20:00Z, about 632.773, which is the correct price for removing a -100 tail. THE SALE ITSELF IS NOT IN DOUBT: st 2, stl [2], Kickbase stxt \"Stricken - substituted early due to a knock against FCB (H)\" set 2026-09-13T16:23:39Z; ph read most-recent-first gives MD3 = -25 off a 5th-minute withdrawal against Bayern; ligainsider carries Kopfverletzung with NO return date. Elversberg's MD4 is at Schalke 2026-09-20T15:30Z. He is a fielded certain zero in an eleven with no bench, and his mv is the only funding in the squad that costs nothing to lose. REVERSAL: do not buy him back unless st is 0, a dated Elversberg source 16.09.2026 or later names him in the XI, the ask is at or below mv, and his re-based ap clears whoever he would displace.",
@@ -352,7 +352,7 @@
    {
     "name": "Francis Onyeka (Elversberg)",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "CONDITIONAL ON THE KRAUSS BID LANDING FIRST - DO NOT SELL HIM BEFORE IT DOES. The squad is at exactly ELEVEN (1GK/4DEF/4MID/2ATT, legal 4-4-2) with no bench, so selling Onyeka alone leaves TEN players and no fillable formation, which is the -100 penalty. The replacement that must land first is Tom Krauss (2358, BUY this run). HIS CASE: st 2, Kickbase stxt \"Stricken - substituted early due to a knock against FCB (H)\", status dated 2026-09-13T16:23:39Z. Ligainsider's profile, checked this run, records it as a HEAD injury from a collision, last updated 13.09.2026 17:45, with NO return timeline given and availability explicitly in doubt pending medical assessment. The timing is what makes this a sell rather than a wait: the MD4 lock is 2026-09-18T18:30Z but Elversberg do not play until 2026-09-20T15:30Z, so Georg must commit his eleven two full days BEFORE anyone knows whether Onyeka is cleared. A fielded player under concussion protocol is a coin-flip on a 63-ap slot. He is also the costlier half of the trade at mv 9.971.579 against Krauss at 7.212.368, mvt 2 and falling (sdmvt -345.475, tfhmvt -632.773), so he funds the buy and still leaves change. SELL VIA INSTANT-SALE TO KICKBASE at mv - it is immediate and cannot be outbid, which is what makes it a safe unwind of the brief negative balance the Krauss bid opens. NOTE ON ORDER: selling him BEFORE the 2026-09-15T20:00Z mv tick would capture roughly 630k more, but it would park the squad at ten players for up to 33h and stake that on winning a contested auction that the log says we lose five times out of five. The 630k is not worth the -100 risk. Georg optimises for points.",
@@ -361,10 +361,19 @@
    {
     "name": "Francis Onyeka (Elversberg)",
     "pos": "MID",
-    "club": "Elversberg",
+    "club": "77",
     "mv": 9971579,
     "ap": 63,
     "why": "RE-REGISTERING an untracked call - kb_context shows no open SELL, yet Onyeka is still in the squad, so SELL Snp4djr was never reconciled. STRICTLY CONDITIONAL on the Krauss buy landing first: squad is at exactly 11, selling before Krauss lands leaves TEN players, no fillable formation and the -100 penalty. Re-verified on a dated source THIS RUN, not inherited: Ligainsider profile latest status \"Onyeka kann nach Zusammenprall nicht weitermachen\", dated 13.09.2026 - 17:45, head injury (\"Kopfverletzung\"), NO return timeline, currently marked \"Angeschlagen\" and NOT in the probable XI. st 2 in Kickbase confirms independently. THE DECISIVE FACT IS THE CALENDAR: the MD4 lock is 2026-09-18T18:30Z but Schalke v Elversberg kicks off Sun 20.09.2026 17:30 (Ligainsider club page, updated 14.09.2026 15:14) - 47 hours AFTER the lock, so the eleven must be committed two days before anyone knows whether he is cleared. He is a fielded near-certain zero. Also falling on both trends (mvt 2, sdmvt -345.475, tfhmvt -632.773), so the sale price erodes each 20:00Z tick. Instant-sale to Kickbase at mv.",
+    "tag": "sell"
+   },
+   {
+    "name": "Francis Onyeka (Elversberg)",
+    "pos": "MID",
+    "club": "77",
+    "mv": 9971579,
+    "ap": 63,
+    "why": "THE MANDATORY UNWIND — SELL ONLY AFTER KRAUSS LANDS, AND BEFORE THE LOCK. Instant-sale to Kickbase at mv 9.971.579 (that instrument has paid exactly mv 8 times out of 8 in this log). ORDER OF OPERATIONS IS NOT OPTIONAL: squad is exactly 11, so selling him BEFORE a replacement arrives leaves 10 fielded players and takes the -100 penalty, which costs more than he could ever return. Krauß resolves ~2026-09-16T11:52Z; sell Onyeka after that and before 2026-09-18T18:30Z. THE ARITHMETIC THAT MAKES THIS URGENT: if the Krauß offer wins, balance goes 2.994.568 − 10.400.000 = −7.405.432. A NEGATIVE BALANCE AT MATCHDAY START SCORES ZERO FOR THE ENTIRE MATCHDAY. Selling Onyeka restores it to +2.566.147. If Krauß lands and Onyeka is NOT sold, Georg fields an eleven worth ~1359 ap and scores 0. There is ~54h of margin between the two events, which is comfortable but only if the sale actually happens. NEWS CONFIRMS THE SALE CASE: ligainsider 13.09.2026 17:45 \"Onyeka kann nach Zusammenprall nicht weitermachen\" — he slid into an opponent against Bayern, hit his head on the ground, was visibly dazed and was substituted; the article states the exact injury could not be determined from TV pictures and gives NO return date. Kickbase carries st 2, the harder status flag, and his mv is falling (mvt 2, −632.773 in the last twelve hours). MD4 is five days after a head injury with no clearance published, and the standing rule for head injuries is that a \"fit again\" line alone is not enough. He is a dead slot in the eleven at ap 63 nominal and ~0 effective. If the Krauß offer LOSES, do not sell him — he is the eleventh body and 0 from a fielded man still beats -100.",
     "tag": "sell"
    },
    {
@@ -668,12 +677,12 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Krauss is the buy, and the recommendation this run is to raise the existing offer rather than place a new one anywhere. The case for him is fitness and certainty rather than upside: a green fit flag, a start in every match, well over ninety per cent of available minutes, and a status entry dated 13.09.2026 in which the player himself gave the all-clear after being substituted. He replaces a near-certain zero, so the gain is his whole score, not the difference between his average and Onyeka's. On the premium: this is a Kickbase listing, not a manager ask, so it must be benchmarked against the contested cluster and never against the median — the median is dominated by uncontested buys at market value and is exactly the number that lost us Ibrahimovic twice. Our current bid matches the premium the Ibrahimovic winner paid, which is the threshold, not a margin over it. One honest caveat: ours is the only offer currently visible on the listing, which is weak evidence that nobody else is chasing him, so the raise is insurance rather than a certainty. It is not urgent this run — the listing runs well past the next several runs. Treu remains the best pure footballer on the board and is still correctly avoided, but this run re-derived that rather than inheriting it: at a premium high enough to actually win a contested listing, buying him and selling Onyeka leaves the balance BELOW zero at the lock, and the only way back to positive drops the squad to ten. The envelope genuinely does not reach him. Svensson fails the same test more heavily. Two new listings appeared this run and both are rejects on the status and record fields alone — one carries a hard status flag, the other has not played a minute all season.",
+  "reason": "Nothing new to bid on. The offer already standing on Krauß is the buy, and this run's job was to verify it rather than add to it. The verification came back clean: he is flagged fit, has started every matchday, and has played almost every available minute, so his modest scoring average is the honest rate of a defensive midfielder who always plays rather than a stale number or a cameo-inflated one. That matters because it is exactly the trap this ledger keeps catching elsewhere. The premium being paid is high, but it is benchmarked against contested Kickbase board listings rather than against manager asks, and this log has now lost four auctions by bidding into the middle of that band instead of the top of it. Treu is the one genuinely better player within sight, and he is still a no — the funding ceiling only reaches him if the auction clears cheap, and bidding on him while the Krauß offer is live risks both landing, which would leave a negative balance at the lock and score nothing at all. The rest of the board is the usual two piles: markup relists from the same two rivals, and cheap bodies with no record or negative returns.",
   "standing": [
    {
     "name": "Tom Krauss (Koeln)",
     "pos": "MID",
-    "club": "Koeln",
+    "club": "28",
     "ask": 10400000,
     "mv": 7212368,
     "premium_pct": 44.2,
@@ -685,7 +694,7 @@
    {
     "name": "Tom Krauss (Koeln)",
     "pos": "MID",
-    "club": "Koeln",
+    "club": "28",
     "ask": 9260000,
     "mv": 7212368,
     "premium_pct": 28.39,
@@ -697,7 +706,7 @@
    {
     "name": "Tom Krauß (Köln)",
     "pos": "MID",
-    "club": "Koeln",
+    "club": "28",
     "ask": 9259966,
     "mv": 7212368,
     "premium_pct": 28.39,
@@ -709,7 +718,7 @@
    {
     "name": "Tom Krauß (Köln)",
     "pos": "MID",
-    "club": "Koeln",
+    "club": "28",
     "ask": 9300000,
     "mv": 7212368,
     "premium_pct": 28.95,
@@ -721,7 +730,7 @@
    {
     "name": "Philipp Treu (SC Freiburg)",
     "pos": "DEF",
-    "club": "Freiburg",
+    "club": "5",
     "ask": 12800000,
     "mv": 10651997,
     "premium_pct": 20.17,
@@ -733,7 +742,7 @@
    {
     "name": "Arijon Ibrahimović (Augsburg)",
     "pos": "MID",
-    "club": "Augsburg",
+    "club": "13",
     "ask": 10950000,
     "mv": 8868987,
     "premium_pct": 23.46,
@@ -745,7 +754,7 @@
    {
     "name": "Arijon Ibrahimovic (Augsburg)",
     "pos": "MID",
-    "club": "Augsburg",
+    "club": "13",
     "ask": 10950000,
     "mv": 8868987,
     "premium_pct": 23.46,
@@ -757,7 +766,7 @@
    {
     "name": "Arijon Ibrahimović (Augsburg)",
     "pos": "MID",
-    "club": "Augsburg",
+    "club": "13",
     "ask": 10900000,
     "mv": 8868987,
     "premium_pct": 22.9,
@@ -769,7 +778,7 @@
    {
     "name": "Arijon Ibrahimović",
     "pos": "MID",
-    "club": "Augsburg",
+    "club": "13",
     "ask": 10900000,
     "mv": 8868987,
     "premium_pct": 22.9,
@@ -781,7 +790,7 @@
    {
     "name": "Arijon Ibrahimovic",
     "pos": "MID",
-    "club": "Augsburg",
+    "club": "13",
     "ask": 10750000,
     "mv": 8868987,
     "premium_pct": 21.21,
@@ -793,7 +802,7 @@
    {
     "name": "Arijon Ibrahimović",
     "pos": "MID",
-    "club": "Augsburg",
+    "club": "13",
     "ask": 9500000,
     "mv": 8868987,
     "premium_pct": 7.11,
@@ -805,7 +814,7 @@
    {
     "name": "Arijon Ibrahimović (Augsburg)",
     "pos": "MID",
-    "club": "Augsburg",
+    "club": "13",
     "ask": 9900000,
     "mv": 8868987,
     "premium_pct": 11.62,
@@ -817,7 +826,7 @@
    {
     "name": "Arijon Ibrahimović (Augsburg)",
     "pos": "MID",
-    "club": "Augsburg",
+    "club": "13",
     "ask": 10500000,
     "mv": 8868987,
     "premium_pct": 18.39,
@@ -829,7 +838,7 @@
    {
     "name": "Arijon Ibrahimovic",
     "pos": "MID",
-    "club": "Augsburg",
+    "club": "13",
     "ask": 10900000,
     "mv": 8868987,
     "premium_pct": 22.9,
@@ -841,7 +850,7 @@
    {
     "name": "Arijon Ibrahimović",
     "pos": "MID",
-    "club": "Augsburg",
+    "club": "13",
     "ask": 10400000,
     "mv": 8868987,
     "premium_pct": 17.26,
@@ -853,7 +862,7 @@
    {
     "name": "Arijon Ibrahimovic",
     "pos": "MID",
-    "club": "Augsburg",
+    "club": "13",
     "ask": 9800000,
     "mv": 8868987,
     "premium_pct": 10.5,
@@ -865,7 +874,7 @@
    {
     "name": "Arijon Ibrahimović (Augsburg)",
     "pos": "MID",
-    "club": "Augsburg",
+    "club": "13",
     "ask": 10450000,
     "mv": 8868987,
     "premium_pct": 17.83,
@@ -1021,9 +1030,27 @@
   ],
   "killed_this_run": [
    {
+    "name": "Grischa Prömel — plus the new-listing sweep (Dina Ebimbe, Assignon)",
+    "pos": "MID",
+    "club": "9",
+    "ask": 16912477,
+    "mv": 16912477,
+    "premium_pct": 0,
+    "why": "THREE NEW LISTINGS SINCE THE LAST RUN, KILLED IN ONE ENTRY SO NO FUTURE RUN SPENDS THREE CALLS ON THEM. (1) GRISCHA PRÖMEL (1671), MID, tid 9, Kickbase board listing posted 2026-09-15T05:26:24Z — 79 minutes before this run read the market and the most interesting thing to appear. prc 16.912.477 = exactly mv (+0,00%, so price is not the objection), st 0, mvt 1 rising, ap 102 off p 307, exs 155.703s resolving ~2026-09-17T01:41Z. MERIT IS REAL: at 102 he clears Tanaka 96 and would be the first genuine upgrade to the fielded midfield rather than a replacement for a dead slot. FUNDING KILL, AND IT IS ABSOLUTE: the one-buy ceiling is cash 2.994.568 + the mv of the single player who can be sold at squad 12, i.e. Onyeka 9.971.579 = 12.966.147. That is 3.946.330 BELOW his ask before any premium at all, and a contested board listing clears +16,71% to +28,82%, which puts the realistic price at 19,7M to 21,8M — about 8M beyond reach. Selling a second player to fund him drops the squad to 10 and takes the -100 penalty. Not news-checked, deliberately: the funding test settles it alone and no news could change it. (2) ÉRIC DINA EBIMBE (4406), MID, tid 8, board listing 2026-09-15T06:29:43Z, the newest thing on the board at 16 minutes old, prc 5.137.175 = exactly mv, st 0, mvt 1, exs 116.722s. MERIT KILL: ap 31 off p 94 — the fielded midfield floor is Tanaka 96 and even the post-Krauß floor is 62, so he is 31 below the weakest man Georg would field and cannot enter the eleven at any price. (3) LORENZ ASSIGNON (11043), DEF, tid 9, board listing 2026-09-15T03:15:20Z, prc 2.013.485 = exactly mv, st 0, mvt 2 falling, exs 141.299s. NO POINTS RECORD AT ALL — no p and no ap — and at 2,0M he is priced as a Sirch-clone, i.e. the cheap-body trap this ledger has now rejected a dozen times. A body with no record cannot be shown to beat Sirch 18, and mvt 2 says the market is marking him down. REVERSAL for all three: an ask at or below mv, a re-based ap clearing whichever player he would actually displace, and genuine spare envelope."
+   },
+   {
+    "name": "Philipp Treu (Freiburg)",
+    "pos": "DEF",
+    "club": "5",
+    "ask": 10651997,
+    "mv": 10651997,
+    "premium_pct": 0,
+    "why": "RE-AFFIRMED FOR A NEW REASON: HE IS NOW A ZERO-MATCHDAY RISK, NOT MERELY UNAFFORDABLE. This supersedes AVOID Atv54fk's pure affordability case with the arithmetic that matters now that the Krauß offer is live. Kickbase board listing at prc 10.651.997 = exactly mv, st 0, mvt 1 rising, ap 92, absent from ligainsider's Verletzte-und-Gesperrte table read this run. ON MERIT HE IS THE BEST THING ON THE BOARD THIS RUN: he would enter as a fifth defender in a 5-3-2 without displacing anyone, taking the fielded eleven to 1389 ap versus 1359 for the Krauß structure — a genuine +30/matchday. IT IS STILL A NO, ON EXPECTED VALUE. (1) THE CEILING: cash 2.994.568 + Onyeka mv 9.971.579 = 12.966.147, so the highest winning bid that still leaves a non-negative balance is +21,72% over mv. The contested-Kickbase high cluster runs +16,71% to +28,82%, so a bid that fits loses roughly half the time. (2) THE DOUBLE-LAND KILL, which is the new and decisive point: Treu resolves ~2026-09-15T23:26Z, the Krauß offer ~2026-09-16T11:52Z. Both landing costs 10.400.000 + ~12.8M = ~23,2M against a two-sale capacity of cash + Onyeka + Sirch = 14.977.302, leaving about −8,2M AT THE LOCK and ZEROING THE ENTIRE MATCHDAY. Avoiding that requires Georg to pull the Krauß offer inside the 12,5h window after Treu clears, at 23:26Z. (3) THE EV: holding Krauß alone is worth ~1347 ap; chasing Treu as well is ~1334 even at 95% execution reliability, because a 5% chance of scoring zero costs more than +30/matchday buys. The dual-bid needs better than 97,8% reliability to break even and it is being run overnight. DO NOT BID. REVERSAL: only if the Krauß offer has already lost or been pulled, AND a bid at or below 12.966.147 is still live."
+   },
+   {
     "name": "Lorenz Assignon",
     "pos": "DEF",
-    "club": "Bochum",
+    "club": "9",
     "ask": 2013485,
     "mv": 2013485,
     "premium_pct": 0,
@@ -1032,7 +1059,7 @@
    {
     "name": "Ansgar Knauff",
     "pos": "MID",
-    "club": "Frankfurt",
+    "club": "4",
     "ask": 3083862,
     "mv": 3083862,
     "premium_pct": 0,
@@ -1041,7 +1068,7 @@
    {
     "name": "Albian Hajdari + Ben Seghir 8M + Hansen 10M — the three re-logged kills",
     "pos": "DEF",
-    "club": "Wolfsburg",
+    "club": "14",
     "ask": 12718061,
     "mv": 12718061,
     "premium_pct": 0,
@@ -1050,43 +1077,25 @@
    {
     "name": "Christopher Nkunku (Leverkusen)",
     "pos": "ATT",
-    "club": "Leipzig",
+    "club": "43",
     "ask": 26212336,
     "mv": 26212336,
     "premium_pct": 0,
     "why": "THE STANDING THIRD-ATTACKER KILL, AND UNAFFORDABLE TWICE OVER. Newest large Kickbase board listing, posted 2026-09-14T22:49:27Z, ATT, tid 43, prc 26.212.336 = exactly mv (+0,00%), st 0, ofc 0, mvt 1 rising, ap 133 off p 398, exs resolving ~2026-09-16T20:17Z. The ap is genuine and irrelevant. Every legal formation available to this squad - 4-4-2, 5-3-2, 5-4-1 - fields at most TWO attackers, and Guirassy ap 190 and Gregoritsch ap 178 both hold their slots by a wide margin over 133. A third ATT is a fielded ZERO at any price, so no news check is warranted and none was spent. FUNDING KILL, independent: a winning contested bid at the bottom of the measured +16,71% band is 30,6M against cash 2.894.568 and a post-tick unwind ceiling near 12,2M - it is out of reach by a factor of two and a half. Logged so a future run does not re-derive a big ap into a buy case."
    },
    {
-    "name": "Daniel Svensson (Dortmund)",
-    "pos": "DEF",
-    "club": "Dortmund",
-    "ask": 20289343,
-    "mv": 20289343,
-    "premium_pct": 0,
-    "why": "THE BEST PLAYER ON THE BOARD AND THE ENVELOPE IS NOT WITHIN REACH OF HIM - killed on funding alone, so no news check was spent. Kickbase board listing re-posted 2026-09-14T16:10:03Z, DEF, tid 3 Dortmund, prc 20.289.343 = exactly mv (+0,00%), st 0, mvt 1 rising, ap 143 off p 428, y 1, exs resolving ~2026-09-15T23:01Z. THE MERIT IS REAL AND IS NOT THE OBJECTION: three starts in three matchdays (smc 3), ph 142 / 123 / 163 read most-recent-first as 163, 123, 142 - no cameo trap, no zero, the steadiest scorer on this board. He would be the single largest upgrade available, adding 143 as the eleventh man completing 5-3-2 once Onyeka goes. THE ARITHMETIC: a contested Kickbase listing at exactly mv clears in the measured +16,71% to +60,76% band, so a winning bid is 23,7M at the very bottom of it. Against cash 2.894.568 that is -20,8M, and the ONLY unwind available is the Onyeka instant-sale at about 9,3M post-tick, which lands at -11,5M. Selling Sirch as well takes the squad to TEN. There is no sequence of legal moves that ends non-negative, and a negative balance at the 2026-09-18T18:30Z lock scores ZERO for the entire matchday - about 1.359 fielded points thrown away to chase 143. REVERSAL: only if he is relisted at or below mv at a moment when the squad is at twelve or more with genuine spare capacity above the 33% floor. Wanting the best player on the board has never been capacity."
-   },
-   {
     "name": "The affordable-but-wrong cluster this run — Mickelson, Gyamerah, Hajdari, Lee, Nkunku, Klostermann",
     "pos": "DEF",
-    "club": "Elversberg",
+    "club": "77",
     "ask": 2540369,
     "mv": 2540369,
     "premium_pct": 0,
     "why": "SIX DISPOSED OF AS ONE SO A FUTURE RUN DOES NOT SPEND SIX CALLS. All were tested against the post-Onyeka core of 1GK/4DEF/3MID/2ATT, where the eleventh man adds his WHOLE ap, and against the one-buy envelope of 12.866.147. (1) NICHOLAS MICKELSON (11253) DEF tid 77 Elversberg, Kickbase board at exactly mv 2.540.369, ap 58 off p 58, exs 126.951s — THE MOST DANGEROUS TRAP ON THIS BOARD and the reason this entry leads with him: ap 58 for 2,5M looks like the cheapest points on offer, but the 58 is ONE scored appearance. ligainsider 15.09.2026: 2 apps, ZERO starts, 35 minutes total = 9% of available time, no news items at all. He sits behind an unchanged Elversberg back line and is not in the projected XI for Schalke away 20.09.2026. A body that does not start scores a fielded zero however cheap he is. (2) JAN GYAMERAH (859) DEF tid 77, board at exactly mv 7.818.644, ap 57, exs 16.059s resolving ~2026-09-15T05:12Z — THIS SUPERSEDES AVOID A33czpi AND CORRECTS ITS REASON: that call rejected him because \"a fifth defender sits on the bench scoring zero\", which was true at 1/4/4/2 and is FALSE now, since a fifth defender completes 5-3-2 and is fielded. He also genuinely starts — ligainsider 15.09.2026 puts him in Elversberg's XI (Kristof - Günther, Gyamerah, Rohr, Pinckert). He is rejected on RANK ONLY: ap 57 against Krauß 62 at a lower price and better minutes security, and the single buy slot cannot hold both. (3) ALBIAN HAJDARI (7673) DEF — CLUB CORRECTION FOR EVERY FUTURE RUN: tid 14 is TSG HOFFENHEIM, not Stuttgart; he and Coufal share it. Board at exactly mv 12.718.061, ap 53, exs 116.165s. Fit and a nailed starter (ligainsider 15.09.2026: 4 apps, 4 starts, 371 of 384 minutes = 97%; 11.09.2026 \"Ilzer stärkt Hajdari nach bitterem Eigentor\"), but ap 53 is the point: at mv he already eats 99% of the envelope, and a bid at the high contested cluster would be about 16,4M, far beyond it. (4) JAE-SUNG LEE (2476) MID tid 18, David ask 16.000.000 on mv 13.793.833 = +15,99%, ap 95 — genuinely the best midfield ap on the board, and still dead: the ask alone exceeds the 12.866.147 envelope by 3,1M before the markup is even argued. (5) CHRISTOPHER NKUNKU (2687) ATT tid 43, board at exactly mv 26.212.336, ap 133 — IMPORTANT REASONING CORRECTION, LOGGED SO IT IS NOT MISAPPLIED: the standing \"a third attacker scores exactly zero\" kill that has rejected Kofane, Latte Lath, Ljubicic, Beier, Guiu, Tigges, Topp, Machino, Schnellbacher and Ebnoutalib was derived at 1/4/4/2. At the post-Onyeka core of 1/4/3/2 a third attacker completes 4-3-3 and IS FIELDED, so that kill no longer applies on its own terms and must not be quoted as if it did. Nkunku dies on price instead — 26,2M against a 12,87M envelope — as does Ebnoutalib at 20.000.000. (6) LUKAS KLOSTERMANN (1333) DEF tid 43, David ask 5.000.000 on mv 1.854.510 = +169,6%, no p and no ap at all this season. Unpriceable premium on an unevidenced player. REVERSAL for each: a positive re-based ap that clears whoever he would actually displace, dated selection evidence at that time, an ask at or below mv, and a squad at twelve or more so the buy does not consume the single funding sale."
    },
    {
-    "name": "Arijon Ibrahimović — David's same-hour relist at +69,15%",
-    "pos": "MID",
-    "club": "Augsburg",
-    "ask": 15000000,
-    "mv": 8868987,
-    "premium_pct": 69.13,
-    "why": "THE PLAYER WE LOST, BACK ON THE BOARD AT A PRICE THAT IS A REFUSAL TO SELL. David cleared him off the Kickbase board at 2026-09-14T21:14:51Z for 11.387.111 against mv 8.868.987 (+28,39%); Georg's bid was 10.950.000 (+23,46%) and lost by 437.111. TEN MINUTES AND ELEVEN SECONDS LATER, at 2026-09-14T21:25:02Z, David relisted him as a manager ask at 15.000.000 = +69,15% over mv, against a measured manager-ask clearing cluster of +3,06% to +6,13%. That is eleven times the top of the band and 3.612.889 above what he himself just paid. BEING THE PLAYER WE LOST IS NOT A REASON TO BUY HIM BACK AT ANY PRICE — the ledger has now written that sentence for Makengo, Rohr, Grüll and Mokwa, and this is the fifth instance. THE HABIT IS NOW FULLY DOCUMENTED AND SHOULD BE PRICED AS A STANDING FEATURE OF THIS LEAGUE: David and Volte_28 buy contested board listings and relist them the same hour at 17% to 69% over mv (Rönnow bought 11.555.855 and relisted at 13.999.999 within fifty minutes; Potulski bought 9.850.858 and relisted at +38,61% under six hours later; Topp bought 825.111 at 20:25:22Z and relisted at 2.000.000 = +143,9% within twenty-five minutes). Read every same-day relist as spread-harvesting, never as opportunity. FUNDING KILL, INDEPENDENT AND ALSO FATAL: 15.000.000 exceeds the entire one-buy envelope of 12.866.147 (cash 2.894.568 plus the single permitted Onyeka sale). MERIT IS NOT THE OBJECTION — ap 115 would genuinely improve the fielded midfield — which is exactly why this needs an explicit reject rather than silence. REVERSAL: an ask AT OR BELOW mv and a squad at twelve or more with real spare capacity. A relist at any markup over mv is not a reversal."
-   },
-   {
     "name": "Philipp Treu (Freiburg) — the best buy on the board and the envelope will not reach him",
     "pos": "DEF",
-    "club": "Freiburg",
+    "club": "5",
     "ask": 10651997,
     "mv": 10651997,
     "premium_pct": 0,
@@ -1095,7 +1104,7 @@
    {
     "name": "Jae-Sung Lee (Mainz) / Klostermann / Topp — David's three new asks this hour",
     "pos": "MID",
-    "club": "Mainz",
+    "club": "18",
     "ask": 16000000,
     "mv": 13793833,
     "premium_pct": 15.99,
@@ -1104,7 +1113,7 @@
    {
     "name": "Arijon Ibrahimović (Augsburg) — David's ten-minute relist at +69,13%",
     "pos": "MID",
-    "club": "Augsburg",
+    "club": "13",
     "ask": 15000000,
     "mv": 8868987,
     "premium_pct": 69.13,
@@ -1113,7 +1122,7 @@
    {
     "name": "Nicholas Mickelson",
     "pos": "DEF",
-    "club": "Elversberg",
+    "club": "77",
     "ask": 2540369,
     "mv": 2540369,
     "premium_pct": 0,
@@ -1122,7 +1131,7 @@
    {
     "name": "Daniel Svensson",
     "pos": "DEF",
-    "club": "Dortmund",
+    "club": "3",
     "ask": 20289343,
     "mv": 20289343,
     "premium_pct": 0,
@@ -1133,11 +1142,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip clears its cost this run. There are no manager asks below market value at all, so the mechanism a flip depends on is simply absent. The activity feed underlines why chasing it would be a mistake: rivals spent the last twelve hours churning players for fractions of a per cent — one bought and instant-sold the same defender two minutes apart, another bought and flipped a forward who is out with a foot injury. That is motion, not points, and it is not a model to copy. With the squad at eleven and no bench, any flip would also have to come out of the fielded team, which rules it out on its own.",
+  "reason": "No flip clears its cost this run. There are no manager asks below market value anywhere on the board, so the mechanism a flip depends on is simply absent. What the feed does show is rivals churning players for fractions of a percent — several bought and sold back within a minute or two, one of them a player carrying an injury flag. That is motion, not points, and it is not a model to copy. With the squad at the eleven-man minimum and the entire funding envelope committed to the Krauß-for-Onyeka swap, there is no spare capacity to flip with even if a candidate existed.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "One squad player is flagged and it is not new — Onyeka, head injury, dated 13.09.2026 17:45, no return timeline, not in the probable eleven. Everyone else in the squad is clean. On the buy side Krauss was checked specifically because his own club's ticker mentioned him going off knocked, and the follow-up, also dated 13.09.2026, is the player giving the all-clear; his profile shows a green fit flag. Tanaka, who missed the last matchday, is back in his club's probable eleven on a page dated 14.09.2026. All dated checks this run fall within the current period — nothing was accepted from the spring, which is where this league's stale-news traps live.",
+  "sweep": "Krauß is confirmed fit and starting, with a dated all-clear he gave himself after being substituted at the weekend. Onyeka is the opposite case and the reason the sale stands: a dated report has him hitting his head in a collision, visibly dazed and substituted, with the injury explicitly undetermined from the pictures and no return date given. He is absent from the league-wide injury table, but that absence is not clearance — his status flag stands and an injury table is exactly what lags a head knock. One useful correction this run: the squad's Tanaka is the Schalke midfielder, not the Frankfurt player of the same surname, so an earlier check was run against the wrong man. Re-checked properly, he is flagged fit, was publicly praised as a regular and given a starting guarantee earlier this month; his missed matchday came with no injury attached. Nobody else in the squad appears on the injury or suspension table.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -1267,8 +1276,8 @@
   {
    "name": "Francis Onyeka (Elversberg)",
    "status": "7463",
-   "why": "RE-RECOMMENDED FOR SALE 2026-09-15T02:46Z (SELL Snp4djr) at mv 9.971.579 via instant-sale to Kickbase, CONDITIONAL on the Krauss buy (BUY Bkpdx13) landing first — this supersedes the 2026-09-15T00:45Z entry and hardens the order of operations. st 2, Kickbase stxt \"Stricken - substituted early due to a knock against FCB (H)\", status dated 2026-09-13T16:23:39Z. Ligainsider's profile, re-checked this run, records it as a HEAD injury from a collision, last updated 13.09.2026 17:45, with NO return timeline and availability explicitly in doubt pending medical assessment. The decisive fact is the calendar, not the ap: the MD4 lock is 2026-09-18T18:30Z and Elversberg do not kick off until 2026-09-20T15:30Z, so the eleven must be committed two days before anyone knows whether he is cleared. He is also falling (mvt 2, sdmvt -345.475, tfhmvt -632.773) and at mv 9.971.579 he funds Krauss at 7.212.368 with change. THE SQUAD IS AT ELEVEN WITH NO BENCH — selling him before Krauss lands leaves TEN players, no fillable formation and the -100 penalty.",
-   "reversal": "Do not buy him back unless ALL of: (1) st back to 0; (2) a dated Elversberg source, 17.09.2026 or later, explicitly clearing him from concussion protocol AND naming him in the starting XI — a \"fit again\" line alone is not enough for a head injury, and anything dated before 16.09.2026 is the knock itself, not a clearance; (3) an ask AT OR BELOW mv, since a manager ask above mv has never been a buy in this ledger; and (4) the purchase clears the marginal-points test against whoever he would actually displace at that moment — his ap 63 will be re-based after MD4 and must be re-read, not inherited from this entry. Being the player we sold is not a reason to buy him back at any price."
+   "why": "RE-RECOMMENDED FOR SALE 2026-09-15T06:45Z (SELL Stwhbuj) at mv 9.971.579 via instant-sale to Kickbase, CONDITIONAL on the Krauß offer (HOLD Hhdy5b2, 10.400.000, resolves ~2026-09-16T11:52Z) landing first — this supersedes the 2026-09-15T02:46Z entry and adds the first dated primary source for the injury. THE SOURCE, which earlier entries asserted but did not cite: ligainsider, 13.09.2026 17:45, \"Onyeka kann nach Zusammenprall nicht weitermachen\" — in the Bayern match he slid sideways into an opponent on a tackle, hit his head on the ground in the collision, appeared dazed and was substituted. The article states explicitly that the nature and location of the injury could NOT be determined from the TV pictures, and gives NO return date. Kickbase carries st 2, the harder status flag, and mv is falling (mvt 2, tfh -632.773, sd -345.475). He is ap 63 nominal and ~0 effective. NOTE FOR THE NEXT RUN: he is NOT on ligainsider's Verletzte-und-Gesperrte table as read 2026-09-15T06:45Z — do not read that absence as clearance, because the st 2 flag and the dated concussion report both stand and a head injury is precisely the case where an empty injury table lags the event.",
+   "reversal": "Do not buy him back unless ALL of: (1) st back to 0; (2) a dated Elversberg or ligainsider source, 17.09.2026 or later, explicitly clearing him from concussion protocol AND naming him in the starting XI — a bare \"fit again\" line is NOT enough for a head injury, and anything dated 13.09.2026 or earlier is the injury report itself, not a clearance; (3) a re-based ap after real minutes that clears whichever midfielder he would displace, which after the Krauß structure means beating 62 rather than the 63 he carries now; and (4) an ask at or below mv with genuine spare envelope. Being the player we sold is not a reason to buy him back."
   }
  ],
  "arithmetic": [
@@ -1290,7 +1299,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=290, -1,80% to +308,77%"
+   "v": "n=294, -1,80% to +308,77%"
   }
  ]
 }
