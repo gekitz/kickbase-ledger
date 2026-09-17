@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-17T12:45:46Z",
+ "run": "2026-09-17T14:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 266147,
   "floor": -51621272,
   "spending_power": 51887419,
-  "hours_to_lock": 29.56,
-  "exposure": "None, and none is being opened. The balance is positive and every recommendation this run keeps it that way. The one trade considered was checked against the unwind ceiling in both orderings and rejected partly because each ordering opens a real tail risk — selling first risks finishing at ten players if the auction is lost, buying first opens a leveraged position that has to be unwound before the lock. Separately, the bid-calibration table has been flagged as unreliable: its rows show our bids above the price the player actually cleared at while we still did not own him, which cannot happen if a bid was placed, so it is measuring bids that were never submitted rather than bids that were too high. The standing instruction to benchmark against a high premium cluster is not supported by the current measured band and would, on the trade considered today, have pushed the balance to zero or below.",
+  "hours_to_lock": 27.63,
+  "exposure": "None. The balance is positive, no offers are pending, no leveraged position is open, and nothing this run would open one. The negative-balance-zeroes-the-matchday rule is the binding constraint on every hypothetical trade above rather than a live risk — which is exactly the position to be in going into a lock. The next genuine window for a leveraged upgrade is after MD4 locks, when a negative balance is safe again until the following matchday.",
   "must_restore_by": "2026-09-18T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 4 MID)"
   ]
  },
- "binding_gap": "There is no positional gap — the shape is legal and fully manned. The binding constraint is cash, not shape. The balance is smaller than the cheapest player listed anywhere on the market, which means spending power is a theoretical figure here: it measures how far the balance may legally go below zero, and going below zero before the lock scores nothing for the entire matchday. So the real ceiling on any purchase is what a sale brings in, and the squad being at the floor means every sale has to be same-position and same-tick.",
+ "binding_gap": "Sirch. He is a fielded starter carrying by far the lowest average in the eleven, Ligainsider's Elversberg page does not have him in the projected XI for the weekend, and he is the one man Georg could sell without losing anything. But his market value plus the cash on hand is the entire replacement envelope, and nothing on this board in that bracket is an improvement on him — the two names near that price carry an identical average and a negative one respectively. The gap is real, it is the same gap as the last several runs, and it cannot be closed at current funding.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 51887419,
@@ -51,8 +51,8 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 33,
-  "cheapest": 1080401,
+  "listings": 32,
+  "cheapest": 788880,
   "cheapest_slot_filling": 9795128,
   "expiring_within_2h": 0
  },
@@ -172,11 +172,11 @@
   "action": "act",
   "headline": "No action.",
   "headline_short": "No action.",
-  "detail": "No action. The squad is at the eleven-man floor with effectively no cash, so the board is closed to us: the cheapest listing in the league costs more than the whole balance, which means every buy has to be funded by selling someone who is currently being fielded. Working through every same-position swap that keeps the balance non-negative, exactly one improves the eleven at all, and it improves it by an amount inside the noise of a single matchday. Set against a mis-sequenced trade costing either the under-eleven penalty or a zeroed matchday, the trade is not worth making. Hold everything into the lock."
+  "detail": "No action. Hold the 5-3-2 into the MD4 lock. The balance is positive, nothing is leveraged, the squad is a legal fully-placed eleven with no injury flags, and the board offers nothing Georg can fund without giving up more points than he gains. This is a quiet run and the quiet is the correct answer, not an absence of one."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Nothing. No squad player is injured, suspended, dropped or carrying a status flag, so there is no availability-driven sale. The one name previous runs had queued as a funding leg is explicitly reversed this run — see the fitness note — and the weakest player in the squad cannot be sold because his proceeds buy back only his own equivalent while the count would drop below the floor in the meantime.",
+  "reason": "None. Not because nobody deserves selling — Sirch plainly does on merit — but because the squad is exactly eleven and a standalone sale costs the under-eleven penalty, which is far more than his fielded contribution is worth. He becomes sellable the instant a buy lands first, and not before.",
   "standing": [
    {
     "name": "Antonio Nusa — re-issued on NEW grounds, the Grüll version is cancelled",
@@ -713,7 +713,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "One listing on the board has genuine merit: a centre-back who has started every matchday, played essentially full minutes each time, is trending sharply upward, carries no status flag, and is confirmed in his club's probable eleven by two separately dated sources this week. He is listed at exactly market value and expires before the lock. He is still not bought, and the reason is funding rather than merit: the only sale that pays for him without pushing the balance negative is a defender whose average is barely below his, so the whole exercise buys a rounding error and pays for it with two coordinated transactions inside a short window. Logged as a watch with an explicit ceiling so a future run with real cash slack can revisit him rather than rediscover him. Everything else new on the board was rejected on merit, including one listing that will look like the bargain of the week to any run reading only the Kickbase fields — a high average that rests on a single appearance, next to a status flag, with an injury confirmed in the league-wide table.",
+  "reason": "None. One name on the board genuinely passes both tests and it is worth saying so plainly rather than burying it: Katic at Schalke is priced at exactly market value on a Kickbase listing, carries three real appearances at an average well clear of anything Georg fields in defence bar Matsima, and Ligainsider's Schalke page has him starting at centre-back in the projected XI for Sunday. His auction also resolves comfortably before the lock. He is killed on funding alone. Working through the candidates Georg could sell to pay for him: the free sale funds a fraction of the price; the two mid-value defenders leave the balance below market value, and a bid under market value has lost every contested Kickbase listing ever measured in this league; and the single structure that is actually affordable — Gruber out, Katic in — buys a gain of a handful of average points for a premium up near the top of the contested band, on an asset where any overshoot leaves the balance negative at the lock and zeroes the entire matchday. That is not a trade, it is a coin flip with the matchday as the stake. Everything else on the board was rejected on merit or on the fitness flag and is logged so no future run re-checks it.",
   "standing": [
    {
     "name": "Tom Krauss (Koeln)",
@@ -862,6 +862,33 @@
   ],
   "killed_this_run": [
    {
+    "name": "Nartey, Klostermann and Musah — the survivors of Abs3j8b and Awss2bk, both closed this run",
+    "pos": "MID",
+    "club": "9",
+    "ask": 4742049,
+    "mv": 4742049,
+    "premium_pct": 0,
+    "why": "RE-ESTABLISHES COVERAGE AFTER TWO CLOSURES, SO NOTHING FALLS THROUGH. Abs3j8b was closed this run because its Tella leg settled — David bought Tella (7269) off the Kickbase board at 2026-09-17T04:39:50Z for 3.482.113 and INSTANT-SOLD him back to Kickbase at 11:29:30Z for 3.486.722, a 6h50m round trip for +4.609, i.e. +0,13%. Awss2bk was closed because two of its five legs settled: Lippmann (14911) bought by JakobDohr at 08:36:13Z for 1.590.000 and instant-sold back at 09:13:10Z for 1.592.055 (37 minutes, +2.055, +0,13%), and Quetant (14923) bought by Daggi D. at 09:13:23Z for 600.000. Both are exactly the fraction-of-a-percent churn on the daily mv tick that the standing instructions say is motion and not points — do not copy it, and note it is now four such round trips logged from three different rivals. THE SURVIVING KILLS, all still on the board and all at prc = exactly mv: (1) NIKOLAS NARTEY (2120), MID, tid 9, mv 4.742.049 (up from 4.430.579 when Abs3j8b was written, mvt 1 rising), exs 80.955 ~2026-09-18T13:13Z — no p and no ap at all, merit kill, unchanged. (2) LUKAS KLOSTERMANN (1333), DEF, tid 43, a MANAGER ask by David posted 2026-09-14T20:49:26Z at 5.000.000 against mv 2.416.954 = +106,87% over mv, against a manager-ask clearing band whose measured members sit at +3,06%, +4,35%, +6,13% and now +8,06%. He is asking more than double. Premium kill, absolute, and the ask has sat unsold for three days. (3) SALIM AMANI MUSAH (11262), ATT, tid 10, mv 2.681.026, mvt 2 falling, exs 106.244 ~2026-09-18T20:15Z — ap 1 off p 1, and the expiry falls AFTER the MD4 lock. Two kills, neither needing news."
+   },
+   {
+    "name": "Six uncovered board names killed in one entry — Konstantelias, Bakayoko, Capaldo, Ito, Karazor, Güther",
+    "pos": "MID",
+    "club": "3",
+    "ask": 7965167,
+    "mv": 7965167,
+    "premium_pct": 0,
+    "why": "SIX LISTINGS NOT COVERED BY ANY OPEN ENTRY, KILLED TOGETHER SO NO FUTURE RUN SPENDS A NEWS CHECK. All six are Kickbase board listings at prc = EXACTLY mv (+0,00%), so price is never the objection; merit or the st field is. (1) GIANNIS KONSTANTELIAS (16948), MID, tid 3, listed 2026-09-17T08:50:10Z, mv 7.965.167, exs 50.741 ~2026-09-18T04:53Z — ONE-LINE REJECT ON st: st 1, Kickbase itself flags him not fit. And note the reverse small-sample trap the standing instructions warn about: ap 181 off p 181 = exactly ONE appearance, so the big average is one game, not form. (2) JOHAN BAKAYOKO (8061), ATT, tid 43, mv 5.591.069, mvt 2 falling, exs 19.294 ~2026-09-17T20:07Z — MERIT KILL: ap 24 off p 48. Georg fields exactly TWO attackers in 5-3-2 and they are Guirassy 190 and Gregoritsch 178; ap 24 displaces neither and a third attacker scores nothing. (3) NICOLAS CAPALDO (11512), DEF, tid 6, mv 7.153.325, mvt 2 falling, exs 41.798 ~2026-09-18T02:22Z — MERIT KILL: ap 17 off p 52, i.e. BELOW Sirch's 18, the worst player in the squad. He is not an upgrade on anyone. (4) HIROKI ITO (3089), DEF, tid 2 Bayern, mv 3.223.875, mvt 2 falling, exs 146.595 ~2026-09-19T07:28Z — TWO kills: he carries NO p and NO ap at all, meaning no recorded minutes this season, and his expiry falls AFTER the MD4 lock so he cannot help MD4 even if he were good. (5) ATAKAN KARAZOR (2214), MID, tid 9, mv 2.733.373, mvt 2 falling, exs 151.917 ~2026-09-19T08:57Z — same pair of kills: no p, no ap, and expiry is post-lock. (6) LINUS GÜTHER (13629), MID, tid 40 Union Berlin, listed 2026-09-17T13:12:18Z (the newest thing on the board, 93 minutes before this run read it), mv 788.880, mvt 2 falling, exs 94.969 ~2026-09-18T17:07Z — no p, no ap, a 788k body with no record; the cheap-body kill that has now been re-established every run for a week. NONE of these six needs re-deriving."
+   },
+   {
+    "name": "Nikola Katic (Schalke) — merit PASSES and news PASSES; killed purely on funding, and this is the entry a future run should re-read first",
+    "pos": "DEF",
+    "club": "8",
+    "ask": 11798177,
+    "mv": 11798177,
+    "premium_pct": 0,
+    "why": "THE ONLY GENUINE UPGRADE ON THIS BOARD, AND THE FIRST ENTRY IN A WHILE WHERE THE KILL IS NOT MERIT AND NOT PRICE. Kickbase board listing (not a manager ask), dt 2026-09-16T09:38:23Z, DEF, tid 8 Schalke, mv 11.798.177, prc 11.798.177 = EXACTLY mv (+0,00%), st 0, ofc 0, mvt 1 rising, exs 44.574s resolving ~2026-09-18T03:08Z — i.e. 15h22m BEFORE the MD4 lock, so timing is clean and there would be room to unwind afterwards. MERIT PASSES: ap 124 off p 371 = three genuine appearances, no small-sample trap. NEWS PASSES, dated and checked this run: ligainsider's Schalke page for the Sun 20.09.2026 17:30 home match vs Elversberg puts Katic in the projected XI as a starting centre-back; st 0 and he is not on the injured list (Ljubicic, Heekeren, Hojlund, Siebeking are). THE KILL IS FUNDING AND IT IS ARITHMETIC. Cash is 266.147 and the squad is EXACTLY ELEVEN, so any buy needs a same-tick sale or the squad-of-ten -100 applies, and the balance must be non-negative at 2026-09-18T18:30Z or the whole matchday scores ZERO. That gives an affordable ceiling of 266.147 + (mv of the one man sold). Run the four candidates: Sirch 1.770.131 -> ceiling 2.036.278 (17% of the price, hopeless); ter Horst 7.942.314 -> 8.208.461 (-30,4% under mv, hopeless); Treu 11.020.014 -> 11.286.161 = -4,34% UNDER mv, and a bid below mv loses every contested Kickbase listing ever measured here; Gruber 13.814.221 -> 14.080.368 = +19,34% over mv, which IS inside the high cluster and is the ONLY fundable structure that exists. And that structure is worthless: Katic ap 124 replaces Gruber ap 117 for +7 fielded ap, against Gruber's own standing requirement of a MATERIALLY higher ap for a same-position swap. +7 is inside one matchday of noise and does not justify paying up to +19,34% on an 11,8M asset where any overshoot leaves the balance negative at the lock and zeroes MD4 entirely. DO NOT BID. Note for the next run: nothing about Katic is wrong — if the funding picture changes (post-lock, when leverage is safe again until the MD5 lock on 2026-10-10) a defender of his profile is exactly the right target, but he will be off this board by 03:08Z tomorrow."
+   },
+   {
     "name": "The other three new listings — Capaldo, Karazor, Ito",
     "pos": "DEF",
     "club": "6",
@@ -941,44 +968,17 @@
     "mv": 6162442,
     "premium_pct": 7.1,
     "why": "REPLACES AVOID Auebldc, CLOSED THIS RUN: PhiL95 cut the ask a second time, 7.200.000 to 6.800.000 to 6.600.000. This is a manager price change, not an mv tick — mv is unchanged at 6.162.442 — so the premium falls from +10,35% to +7,10%. RECORD THE TREND, because it is the useful part: two cuts in two days on an unsold ask is the ledger's own signal that a manager ask which has gone stale is an invitation to offer AT mv rather than at the ask. If he were worth buying, 6.162.442 would be the number to put in, not 6.600.000. HE IS NOT WORTH BUYING, and the reason is unchanged and durable: ap 35 off p 35 = ONE appearance, the small-sample trap in its purest form. Squad is exactly 11 with 5-3-2 the only legal shape, so he could only replace Tanaka 96 — a net -61 ap. No price makes a -61 swap worth doing, so the continuing cuts are irrelevant and a future run should not read them as the case improving. No news check spent. REVERSAL: none at this ap. Requires a re-based ap above whichever MID he would displace."
-   },
-   {
-    "name": "Ermedin Demirović — third-attacker kill plus a +29,26% manager ask",
-    "pos": "ATT",
-    "club": "9",
-    "ask": 22500000,
-    "mv": 17407536,
-    "premium_pct": 29.25,
-    "why": "NEW MANAGER ASK (Daggi D., posted 2026-09-17T06:04:56Z). ATT, tid 9, mv 17.407.536, ask 22.500.000 = +29,26% over mv, against a measured manager-ask clearing band of +3,06% to +6,13% — five to nine times the right number. MERIT KILL, DECISIVE AND PRICE-INDEPENDENT: ap 56 off p 168 = three appearances. Georg fields exactly TWO attackers in 5-3-2 and they are Guirassy 190 and Gregoritsch 178. Demirović at 56 is 122 below the weaker of the two, so he is a third attacker who cannot be fielded — the standing cheap-body/third-attacker logic (Ao5c7p3) applies at the top of the price range exactly as it does at the bottom. FUNDING KILL: cash 266.147, a 22,5M buy lands -22,23M, and NO single sale in the squad restores it — the largest is Guirassy 31.790.660, i.e. selling the 190 to field the 56. Note also that Daggi D. now has THREE asks live at once (Henrichs +99,98%, Hajdari +20,66%, Demirović +29,26%): he is running a shop, not a market, and no entry in it should be benchmarked against the median. REVERSAL: none at this ap."
-   },
-   {
-    "name": "Albian Hajdari — Daggi D. flipping yesterday's purchase at +20,66%; note this is the same instrument as Obermair and Bolin",
-    "pos": "DEF",
-    "club": "14",
-    "ask": 15500000,
-    "mv": 12845896,
-    "premium_pct": 20.66,
-    "why": "NEW MANAGER ASK posted 2026-09-17T06:05:24Z, and it closes a loop this ledger already opened. Daggi D. BOUGHT Hajdari off the Kickbase board at 2026-09-16T09:02:06Z for 14.100.999 (the clearing price that resolved AVOID Ayx793r) and has relisted him 21 hours later at 15.500.000. DEF, tid 14, mv 12.845.896, so the ask is +20,66% over mv and +9,92% over what he himself paid. PREMIUM KILL: a manager ask benchmarks against the LOW cluster (+3,06% to +6,13%); +20,66% is three to seven times that band and is a seller's price, not a market price. PATTERN WORTH KEEPING: this is the third same-window markup flip logged in 48 hours — Borussia Rumpelfuß on Obermair (bought 9.102.541, relisted 9.500.000) and JakobDohr offloading flagged bodies. The league is churning paper, not points; do not join it. MERIT KILL, INDEPENDENT AND DURABLE: ap 53 off p 160. The fielded back five is Matsima 140, Gruber 117, Treu 92, ter Horst 82, Sirch 18. Hajdari 53 beats only Sirch, and at squad 11 the funding sale would have to be Gruber 117 or ter Horst 82, so the real swap is negative in every branch. FUNDING KILL: cash 266.147; a 15,5M buy is -15,23M, and no single sale except Matsima 15.919.312 restores it — selling the best defender in the squad to field a 53. REVERSAL: ask at or below mv AND a re-based ap that clears whoever he would actually displace AND squad depth past 11."
-   },
-   {
-    "name": "Benjamin Henrichs — Daggi D. asks +99,98%, the largest real (non-park-it) premium ever logged on this board",
-    "pos": "DEF",
-    "club": "43",
-    "ask": 11500000,
-    "mv": 5750467,
-    "premium_pct": 99.98,
-    "why": "NEW MANAGER ASK (Daggi D., posted 2026-09-17T05:16:41Z, 29 minutes after the 04:47Z run read the board). DEF, tid 43 Leverkusen, mv 5.750.467, ask 11.500.000 = +99,98% over mv — he is asking exactly DOUBLE market value. PREMIUM KILL, absolute: a MANAGER ask is seller's choice and benchmarks against the LOW cluster (+3,06% to +6,13%), so +99,98% is roughly sixteen to thirty times the right band. It is not a park-it price like the two 99.999.999 listings (Quansah, Potulski) — it is a real number, which makes it worse, because it invites a counter-offer. Do not make one. MERIT IS GENUINELY THERE AND A FUTURE RUN WILL RE-DERIVE IT, SO LOG IT: ap 73 off p 145, st 0, mvt 1 rising. He would displace Sirch (ap 18) for +55, which is the second-largest upgrade on this board after Katic. IT CHANGES NOTHING, because of the FUNDING KILL: cash 266.147. Buying at 11,5M lands the balance at -11,23M; the only sale that restores it is Gruber 13.814.221, and Gruber is ap 117 — so the real swap is Henrichs 73 IN, Gruber 117 OUT for a net -44, with Sirch 18 still fielded either way. Selling Sirch instead leaves -9,46M at the lock = ZERO for all of MD4. Every branch is negative. REVERSAL: an ask at or below mv, a dated Leverkusen XI at that time starting him, and a squad past 11 so he displaces Sirch rather than Gruber."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip clears its cost this run. There are no manager asks below market value anywhere on the board, so the mechanism a flip depends on is simply absent. Worth noting what the rivals are doing instead: the feed shows one manager buying and selling the same players back to Kickbase within hours, repeatedly, for fractions of a percent. That is motion, not points, and with the squad at the floor it is not available to us anyway.",
+  "reason": "No flip clears its cost this run. The window is open on timing — the lock is comfortably more than half a day out — but the mechanism is simply absent: there is not a single manager ask on the board priced below market value, so there is nothing to buy cheap and nothing to sell dear. Worth noting what the rivals are doing instead, because it looks like activity and is not: four separate round trips settled today where a manager bought off the board and instant-sold back within hours for a fraction of a percent on the daily tick. That is churn on the market-value clock, not points, and it is not a model to copy.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "All eleven verified clean this run against the league-wide injured-and-suspended table and the relevant club pages — nobody newly hurt, banned or dropped. Two club attributions that earlier runs had backwards are corrected here, because both were steering decisions. The Kickbase team id previously read as one promoted club is in fact the other, which means the defender being considered as a buy plays for the opposite side of his own next fixture; and the defender queued for sale is at a different club, with a different first name, than the ledger recorded. The field earlier runs used to infer a player's club is the opponent, not the club. Both corrections are now written into the ledger with the proof, because the wrong one would have sent a future run news-checking the wrong squad and quietly concluding a confirmed starter was not in the eleven.",
+  "sweep": "Nothing newly wrong. Every squad player carries a clean availability flag. The one doubt worth checking was Tanaka, who scored well on the first two matchdays and then did not appear at all on the third — the shape of a man losing his place. He has not lost it: Ligainsider's Schalke page, dated to Sunday's home fixture against Elversberg, names him in the projected starting eleven, and he is absent from the club's injury list. Treat the blank matchday as rotation and keep him. That check is now recorded so no future run spends it again.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
