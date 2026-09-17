@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-17T16:52Z",
+ "run": "2026-09-17T18:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 266147,
   "floor": -51621272,
   "spending_power": 51887419,
-  "hours_to_lock": 25.63,
-  "exposure": "No leveraged position is open and none is recommended. The balance is positive going into the lock, which is the state that matters, because a negative balance at matchday start scores zero for the entire matchday. The important correction to make here is that spending power overstates what can actually be spent: it measures headroom against the thirty-three percent floor, not available cash, and cash is a tiny fraction of it. Anything bought above cash is leverage that must be unwound before the lock, and at eleven players exactly one sale is available to do the unwinding. That single-sale ceiling, not the floor, is what kills every buy on this board.",
+  "hours_to_lock": 23.63,
+  "exposure": "No leverage is open and none is recommended. The balance is positive going into the lock, which is the state that matters, since a negative balance at matchday start scores zero for the entire matchday. Holding is what keeps it that way.",
   "must_restore_by": "2026-09-18T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 4 MID)"
   ]
  },
- "binding_gap": "The binding gap is the weakest defender in the fielded eleven, whose season average is a fraction of the next lowest starter's. The gap is real and it is the single biggest available source of points. It is also unfixable this run: replacing him same-tick caps the spend at cash plus his own market value, and the only defender on the board under that ceiling has an identical season average. Fixing it properly needs either a twelfth player already in the squad, so a buy does not force a same-tick sale, or a lock far enough away that a leveraged position has room to unwind.",
+ "binding_gap": "There is no positional gap. The shortage is capacity, not shape: spending power looks ample on paper but almost none of it is reachable, because reaching it means either going negative into the lock or selling a fielded starter. The true ceiling this run is the market value of the one expendable defender plus the small cash balance, and nothing at that price is an upgrade on him.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 51887419,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 32,
+  "listings": 35,
   "cheapest": 788880,
   "cheapest_slot_filling": 9795128,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "No action.",
-  "headline_short": "No action.",
-  "detail": "No action. The squad is clean, the balance is positive for the first time in this run series, and nothing on the board can be bought without opening a leveraged position that the unwind ceiling cannot close before the lock. Field the eleven as they stand."
+  "headline": "No action before the MD4 lock.",
+  "headline_short": "No action before the MD4 lock.",
+  "detail": "No action before the MD4 lock. The squad is fit, fully placed and legally shaped, the balance is positive with no leverage open, and nothing on the board is both better than what Georg already fields and reachable without breaking the eleven. This is a quiet run, and the correct move is to leave the team alone."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Nothing. There is no sale to recommend, and at eleven players there is no sale that can be made safely in isolation. Sirch remains the weakest link in the side by a wide margin, but at eleven he is a fielded starter rather than surplus, and selling him without a same-tick replacement costs more than he is worth. The other ten are either core or comfortably ahead of anything the board offers at their position.",
+  "reason": "No sale is recommended. Selling anyone at all requires a simultaneous replacement, and no replacement worth having is affordable out of the proceeds. The one player whose departure would not cost points is the cheap defender, and his proceeds buy nothing better than himself. Every other squad member is a fielded starter whose scoring average exceeds anything purchasable with his own market value.",
   "standing": [
    {
     "name": "Antonio Nusa — re-issued on NEW grounds, the Grüll version is cancelled",
@@ -713,7 +713,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Nothing clears. Katic at Elversberg is the best merit on the board and the case is worth stating properly, because it is not a merit rejection: he is fit, started all three matchdays this season with minutes and returns both rising, and he would be a very large upgrade on the weakest fielded slot. He fails on funding alone. He is a contested Kickbase listing, so he benchmarks against the high cluster rather than the median — bidding near the ask is precisely how the last two contested listings were lost — and a winning bid sits well above the asking price. Cash cannot cover that, so the buy is leveraged, and with the squad at eleven only one sale is permitted to unwind it. No single permitted sale is both large enough and cheap enough in points: the two defenders big enough to fund him are the ones he would be replacing, so the trade nets almost nothing at best and goes backwards at worst, while the keeper cannot be sold at all and selling an attacker leaves a formation that cannot be filled. Orban is the same shape of problem one tier more expensive. Everything else on the board is either a manager ask priced far above the manager band, a listing whose expiry falls after the lock and so cannot help this matchday, or a body with no points history at all.",
+  "reason": "No buy clears the bar. The board is almost entirely manager asks posted well above market value, plus Kickbase listings at exactly market value whose scoring averages sit below the players they would have to displace. The three genuinely new items this run all arrived from one rival inside a single minute, which reads as a squad dump rather than three judgements, and all three fail on merit before price even matters. The two highest-average names on the board are killed by dated injury news and by an average built on a single appearance respectively.",
   "standing": [
    {
     "name": "Tom Krauss (Koeln)",
@@ -862,6 +862,33 @@
   ],
   "killed_this_run": [
    {
+    "name": "Ben Seghir (ask cut to 6.500.000) + Hansen 15.000.000 — successor to the closed A7rzqmy",
+    "pos": "MID",
+    "club": "7",
+    "ask": 6500000,
+    "mv": 5534050,
+    "premium_pct": 17.45,
+    "why": "REPLACES A7rzqmy, CLOSED THIS RUN ON PRICE, NOT MERIT. (1) ELIESSE BEN SEGHIR (11957), MID, tid 7, mv 5.534.050: David has CUT the ask from 8.000.000 to 6.500.000, so the premium falls from roughly +44,6% to +17,45%. RECORD THE TREND, because it is the useful part — this is the second logged instance of a David ask being marked down while unsold, and an ask that has gone unsold for days is an invitation to offer at mv rather than at the ask, IF the merit were ever there. It is not: he carries no p or ap field, i.e. no scoring record this season, so there is nothing to displace Tanaka (96), Wolf (145) or Nusa (210) with. Even at +17,45% the price is still three to six times the measured manager-ask clearing band (+3,06% to +6,13%). (2) MATTES HANSEN (6292), DEF, tid 29 Paderborn, mv 7.581.464, ask unchanged at 15.000.000 = +97,85% — David asking essentially double market value. ap 53 sits below every fielded defender but Sirch, and the funding arithmetic is the same one that kills Reggiani: the Sirch unwind ceiling is 2.036.278, so a 15.000.000 purchase is not reachable without a second sale that drops the squad to ten for -100. Note Ligainsider's Paderborn page (updated 16.09.2026 22:21) does start Hansen on 20.09, so this is a price and merit kill, not an availability one."
+   },
+   {
+    "name": "Ito, Capaldo, Güther, Nartey, Musah, Klostermann — the six board listings no open call covered, killed as one",
+    "pos": "DEF",
+    "club": "2",
+    "ask": 3223875,
+    "mv": 3223875,
+    "premium_pct": 0,
+    "why": "SWEEP ENTRY: six listings sitting on the board with no open call against them. Logged together so a future run does not re-research any of them. All six are one-line rejects; none got a news check and none needed one. (1) HIROKI ITO (3089), DEF, tid 2 Bayern, mv 3.223.875, prc = exactly mv (+0,00%, price is NOT the objection), mvt 2 FALLING, NO p or ap field at all — no scoring record this season. He is the only one with a plausible shape (a Bayern centre-back at 3,2M), and he still fails on funding: the Sirch unwind ceiling is 2.036.278 and he costs 3.223.875, so he cannot be bought without a second sale that drops the squad to ten. A 3,2M market value on a Bayern defender is the market saying he does not play; mvt falling agrees. (2) NICOLAS CAPALDO (11512), DEF, tid 6, mv 7.153.325, prc = mv, ap 17 — BELOW Sirch's 18, i.e. he is worse than the worst player in the squad and costs four times as much. (3) LINUS GÜTHER (13629), MID, tid 40 Union, mv 788.880, no scoring record; an 788k market value is a deep-bench body, not a starter. (4) NIKOLAS NARTEY (2120), MID, tid 9 Stuttgart, mv 4.742.049, no p or ap field — no record. (5) SALIM MUSAH (11262), ATT, tid 10 Werder, mv 2.681.026, ap 1 off p 1. (6) LUKAS KLOSTERMANN (1333), DEF, tid 43 Leipzig, mv 2.416.954, David asks 5.000.000 = +106,90% over mv — he is asking more than DOUBLE market value against a measured manager-ask clearing band of +3,06% to +6,13%. Premium kill, absolute, and note this is David's habitual same-day-markup instrument already logged against Neuhaus, Kimmich and Jung."
+   },
+   {
+    "name": "Sabitzer + Philippe + Reggiani — PhiL95 posted three asks in 43 seconds, all killed as one",
+    "pos": "MID",
+    "club": "3",
+    "ask": 10300000,
+    "mv": 8426467,
+    "premium_pct": 22.23,
+    "why": "THE ONLY NEW THINGS ON THE BOARD SINCE THE 16:45Z RUN, AND THEY ARRIVED AS A BLOCK: PhiL95 posted all three manager asks between 17:00:27Z and 17:01:10Z, i.e. a squad dump, not three separate judgements. Killed in one entry so no later run spends a news check on any of them. (1) MARCEL SABITZER (1856), MID, tid 3 Dortmund, mv 8.426.467, ask 10.300.000 = +22,23% over mv. MERIT KILL FIRST, price second: ap 50 off p 151 sits below every midfielder Georg already fields (Tanaka 96, Wolf 145, Nusa 210), so he cannot displace anyone — buying him would REDUCE the fielded eleven. The premium is the second kill: a MANAGER ask benchmarks against the measured LOW cluster (+3,06% to +6,13%), and +22,23% is four to seven times that. (2) RAYAN PHILIPPE (6217), ATT, tid 29 Paderborn, mv 5.861.294, ask 6.800.000 = +16,01%. ap 4 off p 12 — effectively no scoring record at all, against Gregoritsch 178 and Guirassy 190. Merit kill, decisive and price-independent. Note for the record that Ligainsider's Paderborn page (updated 16.09.2026 22:21) DOES start him for the 20.09 Hoffenheim fixture, so this is not an availability kill — he simply does not score. (3) LUCA REGGIANI (13472), DEF, tid 3 Dortmund, mv 5.682.071, ask 6.850.000 = +20,55%. ap 57 off p 57 = exactly ONE scoring appearance, the high-average-off-one-game pattern with no base under it, and even taken at face value 57 sits below every fielded defender but Sirch (18). FUNDING KILL ON TOP, and this is the decisive one: the only unwind that does not cost points is selling Sirch at mv 1.770.131, which with cash 266.147 buys 2.036.278 — Reggiani costs 6.850.000, a 4.813.722 gap that can only be closed by a SECOND sale, and a second sale drops the squad to ten for the -100 under-eleven penalty. Not buyable at any merit."
+   },
+   {
     "name": "Klostermann + Ito + Nartey + Bakayoko + Capaldo/Musah/Güther — every other unlogged listing, killed as one",
     "pos": "DEF",
     "club": "43",
@@ -916,15 +943,6 @@
     "why": "Cleared in one line each so no future run spends a news check on them. Capaldo (11512, tid 6, DEF, listed 12:09:07Z at mv 7.153.325): ap 17 off p 52 — three appearances averaging a figure that would be the second-worst outfield return in the squad, ahead of only Sirch. No. Karazor (2214, tid 9, MID, listed 09:55:26Z at mv 2.733.373): NO ap and NO p field at all, i.e. no scoring appearances this season — an unknown body, and a squad of exactly eleven cannot field an unknown. No. Ito (3089, tid 2 Bayern, DEF, listed 11:00:44Z at mv 3.223.875): likewise no ap and no p, a Bayern squad defender who is not playing, and his expiry at ~2026-09-19T05:43Z falls AFTER the MD4 lock so he cannot help this matchday even if he were good. No. None of the three is affordable anyway against cash 266.147 without first selling a fielded starter."
    },
    {
-    "name": "Giannis Konstantelias (Dortmund) — both traps at once, newest listing this run",
-    "pos": "MID",
-    "club": "3",
-    "ask": 7965167,
-    "mv": 7965167,
-    "premium_pct": 0,
-    "why": "Listed 2026-09-17T08:50:10Z at exactly mv 7.965.167, and the ap 181 will look like the best value on the board to any run that reads only the Kickbase fields. It is not. TRAP ONE: ap 181 off p 181 = exactly ONE scoring appearance, the high-average-off-a-cameo pattern, with no base under it. TRAP TWO: st 1, a non-zero status flag, i.e. not fit whatever the average says. Confirmed independently — Ligainsider's Bundesliga Verletzte-und-Gesperrte table lists him under Borussia Dortmund as \"Verletzung, 2 Wochen 5 Tage\". He is tid 3 = Dortmund (same tid as Guirassy and Chukwuemeka). An injured player with one appearance cannot be fielded in a squad of exactly eleven, where every body must score. Do not re-cost him on the ap."
-   },
-   {
     "name": "Johan Bakayoko (Leverkusen) — orphaned by the close of Abc3k1f, re-killed to keep coverage",
     "pos": "ATT",
     "club": "43",
@@ -950,35 +968,17 @@
     "mv": 8525836,
     "premium_pct": 0,
     "why": "TWO NEW LISTINGS SINCE THE 08:45Z RUN, KILLED IN ONE ENTRY SO NO LATER RUN SPENDS A NEWS CHECK. (1) JENS STAGE (3481), MID, tid 10 Werder, Kickbase listing 2026-09-17T07:44:59Z, mv 8.525.836, prc = exactly mv (+0,00%, price is not the objection), mvt 2 falling, exs 146.895s. TWO INDEPENDENT KILLS: st IS 1, a non-zero status flag, which by the standing rule settles it whatever else is true; and he carries NO ap and NO p field at all, i.e. not one scoring appearance in three matchdays, so there is no points case to weigh even if the flag cleared. (2) ATAKAN KARAZOR (2214), MID, tid 9, listing 2026-09-17T09:55:26Z — the newest thing on the board, 51 minutes before this run read it. mv 2.733.373, prc = exactly mv, st 0 (clean), mvt 2 falling, exs 166.302s. MERIT KILL: NO ap and NO p field at all. He is the cheap-body cluster (Awss2bk) in a fresh wrapper — a sub-3M mv with no points record and mvt 2 beside it is the market saying he does not play. THIRD KILL COVERING BOTH, AND IT IS DECISIVE ON ITS OWN WITHOUT ANY MERIT ARGUMENT: exs read at 2026-09-17T10:46Z resolves Stage ~2026-09-19T03:34Z and Karazor ~2026-09-19T08:58Z, both AFTER the MD4 lock at 2026-09-18T18:30Z. A player who lands after the lock scores nothing for MD4, so neither can affect this matchday at any price. STRUCTURAL POINT FOR FUTURE RUNS: at squad exactly 11 with 5-3-2 the only legal shape there are exactly three MID slots — Nusa 210, Wolf 145, Tanaka 96 — and no bench, so a midfield buy is a straight swap that must beat 96 to be worth anything. Neither of these has a points record at all. REVERSAL: for either, a real points record on real minutes, st 0, an ask at or below mv, an expiry before the relevant lock, and a re-based ap clearing the midfielder he would displace."
-   },
-   {
-    "name": "Giannis Konstantelias (Dortmund) — the highest ap on the whole board and a torn cruciate ligament. THE TRAP STEP 5 DESCRIBES, IN ITS PUREST FORM.",
-    "pos": "MID",
-    "club": "3",
-    "ask": 7965167,
-    "mv": 7965167,
-    "premium_pct": 0,
-    "why": "NEW KICKBASE BOARD LISTING (dt 2026-09-17T08:50:10Z, five minutes after the 08:45Z run read the board, so no earlier entry covers him). MID, tid 3 Dortmund, mv 7.965.167, prc 7.965.167 = EXACTLY mv (+0,00%, price is NOT the objection), exs 65.126s resolving ~2026-09-18T04:51Z. LOG THE MERIT FIRST, BECAUSE IT IS BAIT AND A FUTURE RUN WILL SEE IT AND REACH: ap 181 is the SECOND-HIGHEST average on the entire board behind Orban 196, and it would displace Tanaka (ap 96) for +85 — the largest genuinely FUNDABLE upgrade available this cycle, since selling Tanaka (mv 8.872.878) plus cash 266.147 gives a 9.139.025 envelope against a 7.965.167 ask. On price and funding alone this would have been the buy of the run. THE KILL IS MEDICAL AND ABSOLUTE: get_player stxt reads verbatim \"Cruciate ligament tear - out of action for several months\", st 1, ts 2026-09-15T18:44:41Z. Corroborated independently by bvb.de, \"Konstantelias erleidet Kreuzbandriss\" (30.08.2026), and by Ligainsider's Verletzte-und-Gesperrte table which lists him under Borussia Dortmund as out. He will not play MD4 or any matchday this autumn. READ THE ap PROPERLY, BECAUSE THIS IS THE TEXTBOOK CASE: ap 181 is off p 181 — ONE scoring appearance, 3.348 seconds (55 minutes), a single cameo. It is not a season average at all, it is one match divided by one. And the market has already priced the injury: cv 8.700.000 against mv 7.965.167, mvt 2 falling, tfhmvt -387.406 in a single tick. A cheap-and-falling market value beside a huge average is the market telling you it knows something, exactly as STEP 5 warns. NOTE FOR FUTURE RUNS: the pid 16948 ap of 181 must NEVER be inherited from this ledger. REVERSAL: none this season. Reconsider only on a published return-to-play clearance, st back to 0, a dated Dortmund XI starting him, and a re-based ap off real minutes."
-   },
-   {
-    "name": "Jens Stage (Werder Bremen)",
-    "pos": "MID",
-    "club": "10",
-    "ask": 8525836,
-    "mv": 8525836,
-    "premium_pct": 0,
-    "why": "NEWEST THING ON THE BOARD and the only listing posted since the 06:45Z run — Kickbase listing 2026-09-17T07:44:59Z, one hour before this run read the market, so no earlier entry covers him. ONE-LINE REJECT ON THE st FIELD, NO NEWS SPENT: st 1, i.e. Kickbase itself flags him as not fit. MID, tid 10, mv 8.525.836, prc = mv (+0,00%), mvt 2 falling. He carries NO p and NO ap at all, meaning no recorded minutes this season — so there is nothing to judge him on even if the flag cleared, and the cheap-mv-next-to-no-record pattern is the trap this ledger keeps logging. THIRD KILL, TIMING: exs 154.104s puts his expiry at 2026-09-19T03:33Z, which is AFTER the MD4 lock of 2026-09-18T18:30Z, so he cannot be acquired in time to score for this matchday under any circumstances. Fourth, he would have to displace Tanaka 96 in the forced 5-3-2. REVERSAL: none this cycle. Reconsider only if st returns to 0 AND he accumulates a real points record over at least two starts AND the squad has grown past 11."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip clears its cost this run. The mechanism is absent rather than merely unattractive: there is not a single manager ask below market value on the board, so there is nothing to buy cheap and nothing to drift into profit. Worth noting what the rivals are doing instead — one manager ran three separate buy-and-instant-sell round trips today, each returning a fraction of a percent on the daily market-value tick. That is motion, not points, and it is not a model to copy.",
+  "reason": "No flip clears its cost this run. Every manager ask on the board sits above market value, so the mechanism a flip depends on is simply absent. Rivals are visibly flipping players back to Kickbase for fractions of a percent within the same day; that is motion, not points, and it is not a model to copy while the squad has no spare body.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean across the board. Every squad player carries a zero status flag, and a full sweep of the Ligainsider injured-and-suspended table returns no squad player on it — the two clubs supplying our keeper and one of our defenders both report no injured or suspended players at all. No squad player has dated news suggesting he may leave the league. One item to carry rather than act on: our Elversberg midfielder did not feature on the most recent matchday despite being neither injured nor suspended, and a targeted search found no current information explaining why. His season average therefore rests on two appearances rather than three. It changes nothing today, because the formation fields exactly three midfielders and no midfielder on the board improves on him — the one who does has a torn cruciate ligament, which is the trap the news check exists to catch. If he is benched a second straight matchday he becomes a genuine candidate, but only as one leg of a midfielder-for-midfielder swap.",
+  "sweep": "The squad came through clean. Ligainsider's league-wide injured-and-suspended table lists no player Georg owns. The two squad members worth a second look were both checked individually and both come back as confirmed starters on pages dated within the last two days: the defender whose market value dropped sharply today is in his club's probable eleven, so that drop is a value tick rather than a fitness signal, and the midfielder who missed the last matchday is back in his club's starting eleven. Nothing needs flagging.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
