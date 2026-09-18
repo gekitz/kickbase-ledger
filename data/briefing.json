@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-18T14:55Z",
+ "run": "2026-09-18T16:45:24Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 366147,
   "floor": -51732186,
   "spending_power": 52098333,
-  "hours_to_lock": 3.58,
-  "exposure": "None, and it should stay that way. The balance is positive going into the lock and no recommended move would change that, because there is no recommended move. This is the mechanic that outranks every other consideration: a negative balance when the matchday starts scores zero for the entire matchday, no matter how good the eleven are. The only way to open exposure today would be to buy the one pre-lock listing without funding it first, which would put the balance under water for a player who has never scored. The instruction for the next few hours is simply to leave the account alone.",
+  "hours_to_lock": 1.64,
+  "exposure": "Clean. The balance is positive, there is no leveraged position open, and nothing recommended tonight would open one. This is the safe state going into the lock and it needs no action to maintain — the one thing that could break it is a buy, which is exactly what this run is not recommending. Note for the next run: the post-lock buy that fixes the dead slot will open a negative balance, and that is acceptable only because the Sirch sale is its own unwind leg and the following lock is days away. That unwind must be completed before the next matchday starts.",
   "must_restore_by": "2026-09-18T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 4 MID)"
   ]
  },
- "binding_gap": "Not positional - the squad fills its legal formation exactly, with a goalkeeper, a full back line, a midfield and a front pair. The binding constraint is depth. At exactly eleven players every single one is a starter by force, which simultaneously blocks every sale (going to ten costs a flat penalty that dwarfs any player's contribution) and makes the weakest body unswappable. The squad cannot improve by subtraction and, this close to the lock with the board resolving late, cannot improve by addition either. The gap closes on its own after the lock, when listings that expire tonight and tomorrow become buyable with the following matchday in mind and the squad can be taken past eleven.",
+ "binding_gap": "Sirch is the binding gap, and it is a selection gap rather than a shortage. He is news-confirmed out of Elversberg's probable XI for this matchday and he is not on their absentee list either, so he is benched rather than hurt. That matters more than it sounds: an injury would have set a status flag the API would show on every future run, whereas a benching leaves his row reading perfectly healthy. Expect close to nothing from him. He is also unsellable right now — the squad is exactly at the minimum and all of them are placed, so selling him would drop the side below eleven and trigger the under-eleven penalty, which costs far more than the little he will score. The fix is strictly post-lock and strictly in this order: land a twelfth player first, then sell him. Doing it the other way round is the expensive mistake.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 52098333,
@@ -54,7 +54,7 @@
   "listings": 28,
   "cheapest": 734152,
   "cheapest_slot_filling": 5244597,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "No action.",
-  "headline_short": "No action.",
-  "detail": "No action. Do nothing before the lock and make sure the balance is still positive when it comes. This is the rare run where the correct move is provably nothing rather than nothing-for-want-of-an-idea: of every Kickbase listing on the board carrying an auction clock, all but one resolve after the matchday lock, and the single exception is a Union Berlin midfielder with no scoring appearance to his name in three matchdays. A player who lands after the lock scores nothing for this matchday, so there is no purchase available that can add a single point to MD4. The manager listings carry no clock at all - they are seller's choice - so they cannot be relied on to land pre-lock either. The lineup is already complete and the only legal shape is the one already fielded."
+  "headline": "No action before the MD4 lock, and that is a conclusion rather than a shrug.",
+  "headline_short": "No action before the MD4 lock, and that is a conclusion rather than a ",
+  "detail": "No action before the MD4 lock, and that is a conclusion rather than a shrug. The eleven are set, legal and all placed, and ten of them are news-confirmed in their club's probable starting XI for this matchday. Nothing on the board can improve the fielded eleven in the time remaining: exactly one listing expires before the lock, and it is a player with no points record who does not appear in his club's squad section at all. Every other listing settles after the lock, so a winning bid on any of them arrives too late to score. The balance is positive, so there is no leverage to unwind and no zero-points risk. The one real finding is a dead slot in the fielded eleven, and it is deliberately not actionable tonight — see the binding gap."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Nothing. This is not a judgement that the squad is beyond improvement - it is arithmetic. At exactly eleven players any sale drops the fielded side to ten and triggers the flat squad penalty, which is far larger than anything the weakest man in the side can cost by underperforming. Sirch is the obvious candidate on merit and the news confirms it: he is not in Elversberg's projected XI. He is still the wrong man to sell today. The only mechanically legal restructure - sell him and buy the one midfielder whose listing resolves before the lock - trades a known near-zero for an unmeasured near-zero, and carries two ways to lose badly: buy first and the balance goes negative at the lock, which scores zero for the entire matchday; sell first and a lost auction leaves ten men and the penalty. Neither ordering is worth an expected gain of approximately nothing. Sirch stays, he is fielded, and he is expected to contribute little - that is the price of being at exactly eleven, and it gets paid this week.",
+  "reason": "Nothing to sell before the lock, and this is a hard mechanical block rather than a judgement call. The squad sits exactly at the eleven-player minimum with every player placed, so any sale at all drops the side to ten and triggers the under-eleven penalty. That penalty dwarfs anything a sale could gain tonight. Sirch is the player who should go and he is logged as a watch rather than a sell for precisely this reason: the recommendation is real but its precondition, a twelfth player on the books, cannot be met before the lock. Revisit immediately after the lock, buy first, sell second.",
   "standing": [
    {
     "name": "Antonio Nusa — re-issued on NEW grounds, the Grüll version is cancelled",
@@ -713,7 +713,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Nothing, and for once the reason is timing rather than merit or money. Spending power is not the constraint here - there is real capacity above the floor - but capacity buys nothing when every listing resolves too late to play. Three listings appeared since the last run and none had been assessed before: a Bayern goalkeeper, a Freiburg forward and a Gladbach defender, all priced at exactly their market value so price is not the objection in any of the three. All three resolve after the lock, and all three also fail on merit against the man each would displace - the keeper is behind Neuer on average points, the forward is far behind both strikers, and the defender beats only Sirch, who cannot be sold anyway. They are logged as avoided so no later run spends a news check on them. Everything else on the board was already killed in an earlier run and remains killed; the standing avoid list is unchanged and nothing on it has met its reversal condition.",
+  "reason": "No buy. Only one listing on the board expires before the lock, and it fails on the news rather than on price. It is a player with no recorded Kickbase points at all, and a check of his actual club's section in today's probable lineups finds him nowhere — not in the eleven, not on the bench, not among the absentees. There is a name trap sitting underneath this one that is now logged: a similarly spelled player does start at left-back for a different club, and a run that matched on the name alone would have talked itself into buying a non-starter. Every other listing on the board expires after the lock, so even a winning bid scores nothing for this matchday. Cash on hand is also thin enough that any purchase would open a negative balance, and a negative balance at matchday start scores zero for the entire matchday — so a buy tonight would need its unwind to complete inside the same short window, which only sharpens the case for doing nothing.",
   "standing": [
    {
     "name": "Tom Krauss (Koeln)",
@@ -974,11 +974,11 @@
  "movers": {
   "recommendation": "none",
   "window": "closed",
-  "reason": "Flip window closed - the matchday locks too soon for any hold period to pay, and in any case the flip mechanism is absent: there is not a single manager ask sitting below market value on the board right now. Worth recording what the rivals did instead, because it sharpens the doctrine rather than challenging it. One manager bought and instant-sold the same two players within seconds, clearing a fraction of a percent on each - motion, not points, and not a model to copy. More useful: two asks this run's predecessors had killed as over-priced never found a buyer at all and were dumped back to Kickbase at exactly market value by owners who ran out of road. That is a genuinely actionable pattern. An ask well above the manager band is not a price to negotiate against - it is a listing that will expire worthless to its owner, whose fallback is market value. Waiting costs nothing. Separately, a cheap contested board listing cleared at a new record premium this run, well above the previous high, while the three expensive uncontested buys all cleared at or just below market value. Affordability gates contention: benchmark a cheap contested listing against the high cluster and an expensive one against market value.",
+  "reason": "Flip window closed — the matchday locks in under two hours, well inside the twelve-hour cutoff. Independently of the timing, the flip mechanism is absent this run: there is not a single manager ask sitting below market value on the board, so there is no entry point that clears its own cost. Nothing here either way.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean, and better than it looked going in. Not one of the eleven appears on Ligainsider's injured-and-suspended table, and ten of the eleven are named in their club's probable starting XI in the bundesliga.com matchday preview dated 18 September. The open question coming into this run was Tanaka, who did not play at all in the previous matchday - that turns out to have been the Schallenberg rotation battle at Schalke rather than any injury, and both dated previews start him, so he is cleared. The genuine blemish is Sirch: fit, flagged clear, and simply not in Elversberg's projected side in either source. He is a fielded near-zero for a second straight matchday. That is a real cost and it is not fixable before the lock - see the sell section for why selling him is worse than keeping him.",
+  "sweep": "A dated sweep against the matchday-four probable lineups, published today, so there is no stale-date risk. Neuer, Matsima, Wolf, Gregoritsch, Guirassy, Nusa, Gruber, Treu, ter Horst and Tanaka are all in their club's probable starting eleven, none of them appears on any absentee list, and every squad row is flag-free in the API. Two items that looked like risks are cleared and should not be re-checked. Matsima's training absence is a report from earlier in the week; his coach said explicitly there was no cause for concern and expected him back at training the following day, and he is in today's probable eleven. Tanaka missed the previous matchday but is named in Schalke's probable eleven for this one. The single exception is Sirch, covered under the binding gap.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
