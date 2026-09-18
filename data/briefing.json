@@ -1,12 +1,12 @@
 {
  "schema": 1,
- "run": "2026-09-18T16:45:24Z",
+ "run": "2026-09-18T18:53Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
-  "number": 4,
-  "locks": "2026-09-18T18:30:00Z",
-  "played": 3
+  "number": 5,
+  "locks": "2026-10-09T18:30:00Z",
+  "played": 4
  },
  "cash": 366147,
  "squad_value": 156398054,
@@ -14,9 +14,9 @@
   "balance": 366147,
   "floor": -51732186,
   "spending_power": 52098333,
-  "hours_to_lock": 1.64,
-  "exposure": "Clean. The balance is positive, there is no leveraged position open, and nothing recommended tonight would open one. This is the safe state going into the lock and it needs no action to maintain — the one thing that could break it is a buy, which is exactly what this run is not recommending. Note for the next run: the post-lock buy that fixes the dead slot will open a negative balance, and that is acceptable only because the Sirch sale is its own unwind leg and the following lock is days away. That unwind must be completed before the next matchday starts.",
-  "must_restore_by": "2026-09-18T18:30:00Z"
+  "hours_to_lock": 503.61,
+  "exposure": "No leverage, no exposure. The balance is positive going into a matchday that has already started, so the zero-score risk that dominated earlier cycles is not live this cycle at all. Nothing recommended this run would open a negative position. The large headroom figure is room to the floor, not money in hand, and this run explicitly declines to treat it as spendable — a leveraged buy now would have no unwind path that does not shrink the squad below eleven.",
+  "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
   "gk": 1,
@@ -43,7 +43,7 @@
    "5-4-1 (needs 4 MID)"
   ]
  },
- "binding_gap": "Sirch is the binding gap, and it is a selection gap rather than a shortage. He is news-confirmed out of Elversberg's probable XI for this matchday and he is not on their absentee list either, so he is benched rather than hurt. That matters more than it sounds: an injury would have set a status flag the API would show on every future run, whereas a benching leaves his row reading perfectly healthy. Expect close to nothing from him. He is also unsellable right now — the squad is exactly at the minimum and all of them are placed, so selling him would drop the side below eleven and trigger the under-eleven penalty, which costs far more than the little he will score. The fix is strictly post-lock and strictly in this order: land a twelfth player first, then sell him. Doing it the other way round is the expensive mistake.",
+ "binding_gap": "There is no formation gap. The squad fills its only legal shape exactly — no position short, no slot unfilled, nothing to plug. The real constraint is not a missing position but squad size: at exactly eleven players every sale is blocked unless it is paired with a buy, and a paired buy spends the very proceeds the sale just raised. That circularity is what makes the large nominal spending power unusable, and closing it — getting the squad above eleven — is the structural project for the three-week break rather than any individual transfer.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 52098333,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 28,
-  "cheapest": 734152,
+  "listings": 27,
+  "cheapest": 1430587,
   "cheapest_slot_filling": 5244597,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 3
  },
  "squad": [
   {
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "No action before the MD4 lock, and that is a conclusion rather than a shrug.",
-  "headline_short": "No action before the MD4 lock, and that is a conclusion rather than a ",
-  "detail": "No action before the MD4 lock, and that is a conclusion rather than a shrug. The eleven are set, legal and all placed, and ten of them are news-confirmed in their club's probable starting XI for this matchday. Nothing on the board can improve the fielded eleven in the time remaining: exactly one listing expires before the lock, and it is a player with no points record who does not appear in his club's squad section at all. Every other listing settles after the lock, so a winning bid on any of them arrives too late to score. The balance is positive, so there is no leverage to unwind and no zero-points risk. The one real finding is a dead slot in the fielded eleven, and it is deliberately not actionable tonight — see the binding gap."
+  "headline": "No action needed.",
+  "headline_short": "No action needed.",
+  "detail": "No action needed. Matchday four locked with the full eleven fielded and the balance positive, so the two things that can actually cost Georg points this cycle — the under-eleven penalty and a negative balance at kickoff — are both banked as avoided. The next lock is three weeks away across the international break, so nothing on the board needs a decision tonight, tomorrow, or this weekend. The board itself offers nothing worth having: every listing is either already killed by a standing call or dies on a status flag or an empty scoring record, and the only two genuinely new listings were killed this run."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Nothing to sell before the lock, and this is a hard mechanical block rather than a judgement call. The squad sits exactly at the eleven-player minimum with every player placed, so any sale at all drops the side to ten and triggers the under-eleven penalty. That penalty dwarfs anything a sale could gain tonight. Sirch is the player who should go and he is logged as a watch rather than a sell for precisely this reason: the recommendation is real but its precondition, a twelfth player on the books, cannot be met before the lock. Revisit immediately after the lock, buy first, sell second.",
+  "reason": "Nothing to sell. The weakest player in the squad is the obvious candidate on merit and has been flagged as such on previous runs, but the squad sits at exactly eleven, so selling him without a same-tick replacement drops the count below the threshold and costs far more than he is worth. The replacement does not exist on this board: the only defender priced inside what his sale would fund carries a status flag and is excluded on that ground alone. He therefore stays, and stays a starter, until either the board improves or a squad value rises enough to widen the envelope. One useful thing was settled this run: the instant-sale instrument was observed paying exactly market value eleven separate times in a single day with no exceptions, so when a sale does come, proceeds can be treated as exact with no haircut assumed.",
   "standing": [
    {
     "name": "Antonio Nusa — re-issued on NEW grounds, the Grüll version is cancelled",
@@ -713,7 +713,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "No buy. Only one listing on the board expires before the lock, and it fails on the news rather than on price. It is a player with no recorded Kickbase points at all, and a check of his actual club's section in today's probable lineups finds him nowhere — not in the eleven, not on the bench, not among the absentees. There is a name trap sitting underneath this one that is now logged: a similarly spelled player does start at left-back for a different club, and a run that matched on the name alone would have talked itself into buying a non-starter. Every other listing on the board expires after the lock, so even a winning bid scores nothing for this matchday. Cash on hand is also thin enough that any purchase would open a negative balance, and a negative balance at matchday start scores zero for the entire matchday — so a buy tonight would need its unwind to complete inside the same short window, which only sharpens the case for doing nothing.",
+  "reason": "Nothing to buy, and for once the reason is not price. Every listing on the board is covered by a standing avoid or dies this run on one of two clean tests — a non-zero status flag, or no scoring appearances at all this season. The single listing with a genuinely strong scoring record is a defender whose price sits far beyond anything that can be funded without opening a leveraged position with no arithmetic way to unwind it. One correction for future runs, flagged plainly because it retires an argument used repeatedly: the objection that a listing expires after the lock is now spent, because the lock moved three weeks out. The calls it supported survive only on their independent kills — a status flag, or a scoring average below the man each would displace — and those do still hold, so no buy is reopened by the correction.",
   "standing": [
    {
     "name": "Tom Krauss (Koeln)",
@@ -862,6 +862,15 @@
   ],
   "killed_this_run": [
    {
+    "name": "Yamamoto (Freiburg) + Hübers (Köln) — the only two listings on the board not already covered by a standing call, killed as one",
+    "pos": "MID",
+    "club": "5",
+    "ask": 1656044,
+    "mv": 1656044,
+    "premium_pct": 0,
+    "why": "Every other listing on the 18.09 18:45Z board is already covered by an existing AVOID; these two are new and are killed here so no later run spends a news check on them. (1) RIHITO YAMAMOTO (15196), MID, tid 5 Freiburg, Kickbase board listing dt 2026-09-18T17:55:22Z — the newest listing on the board, posted 50 minutes before this run. mv 1.656.044, prc 1.656.044 = EXACTLY mv (+0,00%, so price is not the objection), st 0, mvt 2 falling, exs 56.190s resolving ~2026-09-19T09:32Z. KILL: he carries NO ap and NO p field at all, i.e. not one scoring appearance in four matchdays. There is no points case to weigh, and at MID he would have to beat Tanaka 96 to enter the eleven. Cheapness is not a case. (2) TIMO HÜBERS (2069), DEF, tid 28 Köln, MANAGER ask by JakobDohr at 3.500.000 against mv 3.174.417 = +10,25% over mv. TWO INDEPENDENT KILLS: st IS 1, a non-zero status flag, which by the standing rule settles it whatever the average says; and he carries no ap. CONTEXT WORTH KEEPING: the log shows JakobDohr bought Hübers at +191,23% over mv, the second-highest premium ever measured in this league, so he is sitting on a large paper loss and is asking above mv to recoup it. That is a seller's problem, not a reason to pay — and per the new calibration HOLD the manager band now measures as wide as +11,91%, so his +10,25% is NOT anomalous and will not necessarily fall. REVERSAL for either: an ask at or below mv AND a dated XI at that time actually starting him AND an ap that clears the man he would displace (Tanaka 96 for the MID slot, Sirch 18 for the DEF slot)."
+   },
+   {
     "name": "Urbig + Goto (14048) + Ullrich (4333) — the three listings not covered by an existing call",
     "pos": "GK",
     "club": "2",
@@ -916,15 +925,6 @@
     "why": "NEW KICKBASE BOARD LISTING THIS RUN (dt 2026-09-18T07:53:26Z, after the 06:44Z run read the board). DEF, tid 18 Mainz, mv 3.986.982, prc 3.986.982 = exactly mv (+0,00%, so price is not the objection), mvt 2 falling, exs 148562 resolving ~2026-09-20T01:16Z. THREE KILLS. (1) ST FLAG: st 1 means not fit, and per the standing rule a non-zero st overrides the season average whatever it says. His ap 96 would otherwise clear ter Horst's 82, which is exactly the trap the rule exists for — a cheap market value next to a respectable average because the market knows he is unavailable. (2) TIMING: the listing resolves ~2026-09-20T01:16Z, more than 31h AFTER the MD4 lock at 18:30Z today, so he cannot score a MD4 point even if bought. (3) FUNDING: cash is 366.147. At 3.986.982 the balance lands at -3.620.835 and the only unwind that does not cut the eleven is selling Sirch at 1.668.333, which still leaves -1.952.502 — negative at matchday start = ZERO for the whole matchday. REVERSAL: st back to 0, a dated Mainz XI starting him, an expiry before a lock, and genuine spare capacity above the floor."
    },
    {
-    "name": "Willi Orban — relisted as a Borussia Rumpelfuss same-day markup; UNWIND-CEILING kill, and this time there is no unwind at all",
-    "pos": "DEF",
-    "club": "43",
-    "ask": 30000000,
-    "mv": 27557865,
-    "premium_pct": 8.86,
-    "why": "SUPERSEDES A8eu4z0, which was closed this run when the board listing cleared. What changed: Borussia Rumpelfuss BOUGHT him off the Kickbase board at 2026-09-18T05:37:35Z for 27.555.000 (mv 27.557.865, -0,01%) and RELISTED him as a manager ask at 30.000.000 at 07:36:00Z, under two hours later. Against mv 27.557.865 that ask is +8,86%. This is the same buy-on-the-board, relist-at-a-markup instrument David and PhiL95 run habitually. PREMIUM: a MANAGER ask benchmarks against the LOW cluster (+3,06% to +6,13%), so +8,86% is roughly double the right band; the seller paid mv and wants 2,4M for two hours of ownership. MERIT IS REAL AND IS NOT THE ISSUE: ap 196 off p 587 is the best defensive figure on the board and would be the best in the squad, ahead of Matsima 140. DECISIVE KILL IS THE UNWIND CEILING, and it is harder than the old funding kill. Cash is 366.147, so buying at 30.000.000 opens a -29.633.853 position with the MD4 lock 9,8h away, and a negative balance at matchday start scores ZERO for the entire matchday. The squad is exactly ELEVEN, so the only shape that restores a non-negative balance is buy-then-sell, ending at eleven again. ONE sale must raise 29.633.853: the only player who clears it is Guirassy at mv 31.880.689, which leaves 1GK/6DEF/3MID/1ATT — 5+3+1 = 9 outfield players, and no legal Kickbase formation fills ten outfield slots from that, so the eleven cannot be fielded at all. TWO sales (e.g. Matsima 15.958.481 + Gruber 13.900.406 = 29.858.887) do clear the cash test but leave TEN players and the -100 penalty. There is no version of this trade that ends the day with eleven fieldable players and a non-negative balance. REVERSAL: only after the MD4 lock, when a sale no longer has to be same-tick, AND at an ask at or below mv, AND with his ap re-based after MD4. Note MD5 is not until 09-11.10, so the post-lock window is three weeks wide and he should be judged fresh in it rather than chased tonight."
-   },
-   {
     "name": "Nnamdi Collins (Frankfurt)",
     "pos": "DEF",
     "club": "4",
@@ -952,15 +952,6 @@
     "why": "NEW Kickbase board listing this run (dt 2026-09-18T03:26:26Z, 42 min after the 02:44Z run read the board, so no earlier entry covers him). DEF, tid 13 Augsburg, mv 2.132.148, prc = EXACTLY mv (+0,00%, price is not the objection), st 0, mvt 2 FALLING, exs 69.665s resolving ~2026-09-18T22:47Z. THIS IS THE ONE LISTING THIS RUN THAT SURVIVED THE MERIT SCREEN AND GOT A REAL NEWS CHECK, so record why it still fails. The merit case was genuine: ap 35 against Sirch ap 18 is a +17 ap upgrade of the worst slot in the squad, and the funding works — Sirch mv 1.668.333 plus cash 266.147 = 1.934.480 covers most of the 2.132.148 ask, and because the listing resolves at 22:47Z, AFTER the 18:30Z lock, nothing clears before the lock and the balance cannot go negative at matchday start. So this was not killed on price, not on funding, and not on the zero-balance rule. IT IS KILLED ON NEWS. Ligainsider profile (youngwoo-seol_37667, 2026/27 season stats read 2026-09-18): FIT, no injury, but ZERO STARTS — 3 appearances, all as a substitute, 44 minutes of 287 available = 15% playing time. He signed for Augsburg 27.08.2026 from Red Star Belgrade (dated Ligainsider items 25.08, 27.08, 28.08.2026) and has not displaced anyone. He is ALSO absent from the Augsburg probable XI for MD4 at Bremen (19.09.2026 15:30), where the projected back line is Banks, Matsima, Brackelmann with Fellhauer wide. The ap 35 is exactly the trap STEP 5 names in reverse: a respectable average off cameo minutes. A backup is excluded regardless of price. Secondary kill: the 22:47Z expiry means he could not score MD4 even if won. REVERSAL: a dated Augsburg XI that actually starts him AND an ask at or below mv."
    },
    {
-    "name": "Güther — the one mechanically-legal Sirch swap, and it is a downgrade; logged so a future run does not think it was overlooked",
-    "pos": "MID",
-    "club": "40",
-    "ask": 734152,
-    "mv": 734152,
-    "premium_pct": 0,
-    "why": "AMENDS HOLD Hvdwsca ON ONE POINT OF COMPLETENESS. That entry said the Sirch restructure has no candidate because no DEFENDER on the board sits under the 1.934.480 ceiling, which is true. But a swap does not have to be defender-for-defender: selling Sirch and buying a MID moves the squad to 1GK/4DEF/4MID/2ATT = 4-4-2, which is legal, keeps the count at eleven, and therefore does not trigger -100. Two board names fit the ceiling. Güther, mv 734.152, prc = mv, would leave the balance comfortably positive. Bachmann, mv 1.430.587, prc = mv, also fits. BOTH ARE STILL REJECTS, and the reason is worth stating so this is not re-derived every run. Güther carries NO ap and NO p field at all — zero recorded points, tid 40, an unknown body with no evidence he plays anywhere. Swapping Sirch's ap 18 for an unmeasured ~0 is not an upgrade, it is trading a known small number for an unknown one and paying transaction risk for the privilege. Bachmann is ap 17, i.e. BELOW Sirch outright, and his listing expires ~2026-09-18T21:29Z, about 3h AFTER the MD4 lock, so he could not score this matchday even if he were better. CONCLUSION UNCHANGED: Sirch stays, benched, in the fielded eleven. The restructure is mechanically available and financially safe, and there is nothing worth restructuring INTO. REVERSAL: revisit the instant a sub-1,93M player appears with a real points record AND a dated XI starting him AND an expiry before the lock."
-   },
-   {
     "name": "Vincenzo Grifo (Freiburg)",
     "pos": "MID",
     "club": "5",
@@ -968,17 +959,26 @@
     "mv": 6615520,
     "premium_pct": 0,
     "why": "The other new Kickbase board listing this run (feed t:3, 2026-09-18T01:16:47Z). MID, tid 5 Freiburg, mv 6.615.520, prc = EXACTLY mv (+0,00%), st 0, ofc 0, mvt 2 FALLING, exs 59.024s resolving ~2026-09-18T19:08Z. KILLED ON EXPIRY, one line: that is ~38 MINUTES AFTER THE MD4 LOCK of 18:30Z, so he cannot score an MD4 point. Merit is also short: ap 70 would be the third-worst outfielder in the squad, above only Sirch 18, and he does not enter a midfield of Nusa 210, Wolf 145 or Tanaka 96. NEWS CORROBORATES THE FADE: the Comunio Freiburg XI dated 17.09.2026 for MD4 at Frankfurt reads Backhaus - Treu, Ginter, Lienhart, Makengo - M. Eggestein, Engelhardt - Beste, Suzuki, Scherhant - Matanovic, with Grifo NOT in it; mvt 2 falling is the market pricing that same loss of place. Note the trap in reverse for a future run: a 6,6M price next to a recognisable name is cheap because he is out of the XI, not because the market is wrong. REVERSAL: only if relisted with an expiry BEFORE a matchday lock AND a dated Freiburg XI at that time actually starts him AND his re-based ap clears the man he would displace."
+   },
+   {
+    "name": "Serge Gnabry (Bayern)",
+    "pos": "MID",
+    "club": "2",
+    "ask": 13585346,
+    "mv": 13585346,
+    "premium_pct": 0,
+    "why": "NEW Kickbase board listing this run (feed t:3, 2026-09-18T02:24:12Z, 100 min after the previous run read the board, so no earlier call covers him). MID, tid 2 Bayern, mv 13.585.346, prc = EXACTLY mv (+0,00%, price is not the objection), st 0, ofc 0, mvt 1 rising, exs 105.969s resolving ~2026-09-19T08:11Z. KILLED TWICE OVER. (1) EXPIRY IS ~13.7h AFTER THE MD4 LOCK of 2026-09-18T18:30Z, so he cannot score a single MD4 point no matter what is bid — the same kill as Honorat (A8l7mdr). (2) HE IS NOT PLAYING: the listing carries NO ap and NO p field at all, i.e. zero points across MD1-MD3, and the Comunio Bayern XI dated 17.09.2026 for MD4 v Union Berlin reads Neuer - Laimer, Upamecano, Tah, Davies - Kimmich, Pavlovic - Olise, Musiala, Saibari - Kane, with Gnabry nowhere in it. Ligainsider's Bayern section reads \"Derzeit keine verletzten oder gesperrten Spieler\", so this is not injury — he is a fit squad player out of favour, which is worse, because there is no return date to wait for. FUNDING KILL ON TOP, independent of both: cash is 266.147 and one buy permits exactly one sale, so 13.585.346 would need a single sale of mv >= 13.319.199 — only Gruber, Matsima, Nusa or Guirassy clear that, and every one of them is a fielded starter with ap far above a player who has not played. REVERSAL: only if he is relisted with an expiry BEFORE a matchday lock, AND a dated Bayern XI at that time actually starts him, AND the buy fits inside cash plus one sale without taking the balance negative."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
-  "window": "closed",
-  "reason": "Flip window closed — the matchday locks in under two hours, well inside the twelve-hour cutoff. Independently of the timing, the flip mechanism is absent this run: there is not a single manager ask sitting below market value on the board, so there is no entry point that clears its own cost. Nothing here either way.",
+  "window": "open",
+  "reason": "No flip clears its cost this run. There are no manager asks below market value anywhere on the board, so the flip mechanism is simply absent — there is nothing to buy under value and resell. Rivals continue to churn players for fractions of a percent on the daily tick, and one rival dumped a midfielder at a loss ten hours after buying him; that is motion, not points, and it is not a model to copy. The more useful signal is that the same rival raised a large net cash position through instant sales today, so expect aggressive bidding from that quarter when the market reopens in earnest after the break.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "A dated sweep against the matchday-four probable lineups, published today, so there is no stale-date risk. Neuer, Matsima, Wolf, Gregoritsch, Guirassy, Nusa, Gruber, Treu, ter Horst and Tanaka are all in their club's probable starting eleven, none of them appears on any absentee list, and every squad row is flag-free in the API. Two items that looked like risks are cleared and should not be re-checked. Matsima's training absence is a report from earlier in the week; his coach said explicitly there was no cause for concern and expected him back at training the following day, and he is in today's probable eleven. Tanaka missed the previous matchday but is named in Schalke's probable eleven for this one. The single exception is Sirch, covered under the binding gap.",
+  "sweep": "Clean sweep, no concerns. The dated matchday-four preview published today places every relevant squad member in his club's probable eleven, with none appearing on any club's absence list, and the league-wide injured-and-suspended table returns none of them either. One soft note to carry forward rather than act on: an undated item mentions the squad's best defender sitting out a training session, but the dated preview published the same day still names him in the probable eleven, and undated items are stale by standing rule. Worth re-checking after the international break, when these players will have been away on national duty and the injury picture can change without any club announcement.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -1137,7 +1137,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=350, -1,80% to +308,77%"
+   "v": "n=351, -1,80% to +308,77%"
   }
  ]
 }
