@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-20T12:54Z",
+ "run": "2026-09-20T15:01Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 566147,
   "floor": -51648656,
   "spending_power": 52214803,
-  "hours_to_lock": 461.59,
-  "exposure": "No leverage is open. The balance is positive and no pending offers are outstanding, so there is nothing to unwind and no zero-score risk at the next lock. The only exposure in play is the under-eleven penalty created by the recommended sale, and it is fully controlled as long as the squad is restored before MD5.",
+  "hours_to_lock": 459.48,
+  "exposure": "No leveraged position is open and none should be opened. The largest strategic claim in this ledger — that once the break began, leverage became safe for three weeks and the big defensive upgrade it had been tracking finally became affordable — does not survive its own arithmetic and has been corrected this run. A negative balance is penalty-free only until the matchday-five lock, and at that instant a negative balance scores nothing for the entire matchday. The only way back to positive is selling a squad player, because market-value gains produce no cash and the daily bonus is negligible over the window. At exactly eleven players there is only one sale available, because a second drops the squad below the legal minimum. So the real ceiling on any buy is cash plus one sale, which is a small fraction of the spending power the floor calculation prints. The upgrade that claim was built around fails that test by a wide margin even after selling the biggest saleable defender. The one exposure to diary: selling Sirch leaves ten players, which is safe now but becomes a heavy penalty if the squad is still short at the October lock.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 4 MID)"
   ]
  },
- "binding_gap": "The binding constraint is not a position gap, it is the squad floor. At exactly eleven players every sale is also a formation problem, which is what has frozen this squad for several runs: the only upgrade worth making requires selling first, and selling first is what triggers the penalty. Tonight, once MD4 finishes, that deadlock breaks for nineteen days — the squad can safely sit at ten while a real starter is hunted, provided eleven is restored before the MD5 lock. That window is the most valuable thing available right now, and it is worth more than any listing currently on the board.",
+ "binding_gap": "Sirch is the binding gap and has been for several runs. He is fit but has never started this season, and with no bench he is fielded every matchday as a near-certain zero. The gap cannot be closed today. The only defenders cheap enough to buy without leverage are all confirmed bench players behind settled back lines, so buying one swaps a non-starter for a non-starter. The defenders who would genuinely close it are both Schalke starters in tonight's named eleven, and both are affordable on paper but not in practice, because the only sale that funds them is the sale that would also have to fund removing Sirch, and those are the same transaction. The gap therefore closes only when the squad holds a twelfth player or real spare cash.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 52214803,
@@ -51,7 +51,7 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 28,
+  "listings": 27,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
   "expiring_within_2h": 2
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Do nothing until tonight.",
-  "headline_short": "Do nothing until tonight.",
-  "detail": "Do nothing until tonight. MD4 is being scored RIGHT NOW — the ledger banner's \"lock in 461.8h\" is the transfer deadline, not the scoring lock, and a previous run built a sell window on that mistake. Four squad players still had unplayed MD4 fixtures this afternoon: Nusa at 13:30Z, Tanaka and Sirch together at 15:30Z, ter Horst at 17:30Z. The squad is exactly eleven, so selling anyone before the last whistle leaves ten men mid-matchday and risks the under-eleven penalty. The standing SELL Sirch call has been closed and re-issued with its window moved from 15:30Z to after roughly 19:30Z tonight. Nothing else is actionable: cash covers nothing on the board that starts, and every board listing settles after today's last fixture anyway, so no purchase could score in MD4 even if it were affordable."
+  "headline": "Quiet on points, one thing to do on value.",
+  "headline_short": "Quiet on points, one thing to do on value.",
+  "detail": "Quiet on points, one thing to do on value. The alarm this run appeared to carry — four squad players showing no matchday-four appearance, including the two most valuable assets — is a data artefact, not news: matchday four is still being played as this runs. Nobody is injured, nobody is dropped, and the squad is fielding its only legal shape. The single action is the standing Sirch sale, which has a hard cut-off tonight at the market-value update. Nothing on the board is worth the proceeds, so the money should sit rather than be redeployed today."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Sirch remains the one sale, and the case is stronger than ever — it just must not be executed yet. bundesliga.com's probable lineups piece dated 18.09.2026 leaves him out of Elversberg's XI and also off their absentee list, so he is benched rather than injured, which is why his Kickbase status flag stays clean and no future run will catch it from the API alone. His whole record is two substitute cameos, twenty-one minutes and eight minutes, plus one matchday missed entirely. Meanwhile his market value is collapsing faster than any other asset in the squad and will reach the floor before MD5. Selling converts a player who contributes nothing into preserved buying power at zero cost in points. The correction this run makes is purely about when: after the last squad fixture ends tonight, and before the evening market-value tick if possible. If that narrow window is missed, sell tomorrow regardless — another tick costs a few hundred thousand, the under-eleven penalty costs a hundred points. The hard condition on the other side is that this drops the squad to ten, and it must be back to eleven before the MD5 lock. There are nineteen days to do it and cheap bodies list daily, but it must not be forgotten.",
+  "reason": "Sell Sirch, as already called. He is fit, which is not the reason — he is sold on selection and on value decay. He has no starts this season, only two late cameos, and he is losing value every day toward the floor price, so holding him to the October lock forfeits most of what he is worth now. The timing is the actionable part: wait for his kick-off this afternoon to confirm he is again not in the eleven, then take the instant sale before the market-value update tonight, after which he is worth less. Do not sell anyone else. ter Horst is losing value substantially faster than Sirch in absolute terms and is worth watching for that reason, but he is a confirmed starter, and at eleven players selling him without buying first drops the squad below the legal minimum.",
   "standing": [
    {
     "name": "Luca Sirch",
@@ -191,17 +191,26 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No buy this run, and for once the reason is not the money alone. After the Sirch sale the envelope reaches only two listings on the entire board, Gendrey and Wojcik, and a dated news check kills both. Gendrey's average rests on a single twenty-six-minute cameo and he is absent from Hoffenheim's probable XI; Wojcik's rests on a single eighteen-minute cameo yesterday, his only appearance ever, and he is absent from Bremen's probable XI. Swapping a benched defender for a benched defender spends the whole envelope and buys no starting minutes. The genuinely attractive names — Aouchiche, Gosens, Kurucay, Hlozek, Behrens — all sit far beyond reach, and the arithmetic a previous run did on Gosens still holds: every route that funds one of them removes more scoring than it adds, and the leveraged route cannot be unwound without selling a starter. Hlozek expired minutes after this run began and was never affordable. Rots is now news-confirmed as a Hoffenheim starter, which is a genuine merit upgrade worth remembering, but he too is priced out.",
+  "reason": "No buy this run, and that is a considered answer rather than an empty market. The three defenders inside the affordable envelope were each checked against dated sources and all three are fit, none is suspended, and all three are bench players: one is an under-twenty-three promotion whose only appearances are substitute cameos, one is a fringe player returning from a spring operation who is behind a settled back four, and one is a genuine first-team signing whose own club news as recently as mid-September says he is still waiting for minutes. None of them would score more than the player being replaced. The two defenders who would improve the eleven are confirmed starters and are priced at exactly their market value, so price is not the obstacle; the obstacle is that funding either one requires selling a better player than the one arriving. The right move is to hold the Sirch proceeds and buy a starting defender when one appears at or below market value — there are nearly three weeks to do it in, and cheap bodies reach the board daily.",
   "standing": [],
   "killed_this_run": [
    {
-    "name": "Gendrey + Wójcik — the only two listings inside the post-Sirch envelope, both killed on a dated news check",
+    "name": "Kuruçay + Gosens — both CONFIRMED starters, both killed on the v2 unwind ceiling, not on merit",
     "pos": "DEF",
-    "club": "14",
-    "ask": 2020261,
-    "mv": 2020261,
+    "club": "8",
+    "ask": 10698620,
+    "mv": 10698620,
     "premium_pct": 0,
-    "why": "These two are the ONLY board listings that fit the post-Sirch envelope of 2.045.917 (cash 566.147 + Sirch mv 1.479.770), so they are the entire fundable buy universe this run. Both are CAMEO-AVERAGE TRAPS and both are now news-killed with a dated source, so no later run needs to re-spend the budget. (1) VALENTIN GENDREY (9598), tid 14 = HOFFENHEIM (get_player tn, authoritative — NOTE tid 14 was absent from club map v7 and tid 29 Paderborn has been wrongly called Hoffenheim across the blocked list). Kickbase listing, prc = EXACTLY mv 2.020.261 (+0,00%), st 0, exs 106.686 resolving ~2026-09-21T18:23Z. ap 56 looks like a +38 upgrade on Sirch's 18, but tp 56 off sec 1592 = ONE appearance of 26 minutes, MD3 only; ph is [MD4 none, MD3 56, MD2 none, MD1 none]. bundesliga.com 18.09.2026 probable XI for Hoffenheim is \"Baumann - Coufal, Kabak, Hajdari, Rots - Conte, Avdullahu, Burger, Daghim - Hlozek, Lemperle\" — GENDREY IS NOT IN IT. He is the same thing we are selling: a benched defender with a flattering average off cameo minutes. (2) OSKAR WOJCIK (15256), tid 10 = BREMEN (get_player tn). prc = mv 864.684 (+0,00%), st 0, mvt 2 falling, exs 55.505 resolving ~2026-09-21T04:10Z. ap 50 off tp 50 and sec 1112 = ONE 18-minute cameo, and it was YESTERDAY (MD4, Bremen 3-2 Augsburg, 19.09 13:30Z) — his only appearance ever. bundesliga.com 18.09.2026 Bremen XI is \"Hein - Arthur, Pieper, Friedl, Deman - Reis, Reeger - Dinkci, Chuki, Gruell - Fuellkrug\" — WOJCIK IS NOT IN IT. VERDICT: swapping Sirch for either is bench-for-bench churn that spends the whole envelope and buys no starting minutes. REVERSAL: either one appears in a DATED club XI at that time as a starter, with the ask at or below mv. A rising ap alone is not a reversal — it is the trap."
+    "why": "RECORDED SO A LATER RUN DOES NOT RE-SPEND THE NEWS CHECK, AND SO IT IS CLEAR THE OBJECTION IS MONEY, NOT THE PLAYER. Both are Schalke defenders and BOTH ARE IN SCHALKE'S CONFIRMED STARTING XI for the MD4 home game v Elversberg, kickoff 2026-09-20T15:30Z, named by schalketotal.de dated 20.09.2026: \"Karius - T. Becker, Katic, Kurucay - Dina Ebimbe, El-Faouzi, Tanaka, Gosens - Karaman, Aouchiche - Dzeko\". (1) HASAN KURUÇAY (4606), mv 10.698.620, Kickbase listing at prc = EXACTLY mv, st 0, mvt 1 rising, ap 77 off p 231 / 3 apps, exs 4873s = EXPIRES ~2026-09-20T16:06Z, i.e. inside two hours of this run. (2) ROBIN GOSENS (7242), mv 10.313.265, prc = EXACTLY mv, st 0, mvt 1 rising, ap 86 off p 259 / 3 apps, exs ~128.285s resolving 2026-09-22T02:22Z. Gosens carries the standing AVOID Ax57x1w, whose FITNESS half is now STRENGTHENED rather than reversed — the Kassel/Oberschenkel items remain the 01-03.08.2026 pre-season date trap Ax57x1w identified, and he is now positively confirmed in a named XI. THE KILL IS THE v2 CEILING (H8urg6z). A DEF buy takes the squad to 1/6/3/2, where only a DEF sale returns to a legal eleven, so the ceiling is cash 566.147 + the largest legal DEF sale, Matsima 16.091.547, = 16.657.694. Both men sit INSIDE that ceiling, and that is exactly the trap: the only unwind that pays for them is selling Matsima (ap 127), which costs MORE points than either brings — buy Gosens and sell Matsima is XI 1283 -> 1242, i.e. -41. The attractive route, buy Gosens and sell Sirch, is XI 1283 -> 1351 = +68 but leaves 566.147 - 10.313.265 + 1.479.770 = -8.267.348 with NO second unwind available at eleven players, so that leverage is still open at the MD5 lock 2026-10-09T18:30Z and scores ZERO for the entire matchday. The two unwinds are mutually exclusive and this is the whole reason the squad cannot upgrade. REVERSAL: either is a live buy the moment the squad holds TWELVE players, or holds genuine spare cash above the buy price, so that the Sirch unwind and the funding unwind are no longer the same transaction. Do not reverse on merit alone — the merit was never in question."
+   },
+   {
+    "name": "Nakuzola + Gendrey + Wójcik — the entire fundable DEF universe, all three killed on a dated start check. Closes A0bckcs.",
+    "pos": "DEF",
+    "club": "18",
+    "ask": 574591,
+    "mv": 574591,
+    "premium_pct": 0,
+    "why": "THREE REAL DATED CHECKS SPENT THIS RUN, KILLED IN ONE ENTRY, AND THIS IS THE ANSWER A0bckcs AND Atrmcnd WERE WAITING FOR. These three are the ONLY defenders on the 20.09 14:44Z board inside the no-leverage envelope of 2.045.917 (cash 566.147 + Sirch mv 1.479.770), so they are the entire fundable buy universe while the squad sits at eleven. ALL THREE ARE FIT — none is injured or suspended — AND ALL THREE ARE BENCH PLAYERS BEHIND SETTLED BACK LINES, which is the ground: a fielded non-starter scores what Sirch scores, so buying one of them swaps a dud for a dud. (1) RAEL-TSHIMBELA NAKUZOLA (17179), Mainz DEF tid 18, mv 574.591, prc = EXACTLY mv, mvt 2 falling, exs ~44h, THE ONLY NEW BOARD LISTING SINCE THE 12:45Z RUN (dt 2026-09-20T13:45:06Z, feed t:3). Born 28.04.2007, signed from Rot-Weiss Essen for the MAINZ U23; 2 Bundesliga appearances, 0 starts, 26 minutes; \"erstmals im Profi-Kader\" 23.08.2026, debut off the bench 06.09.2026; ligainsider's Mainz lineup dated 19.09.2026 has the back line Posch, Gruber, Potulski, Caci with Nakuzola on the bench. His ap 27 is cameo-based and would be re-based downward by any real minutes. (2) VALENTIN GENDREY (9598), Hoffenheim DEF tid 14, mv 2.020.261, prc = EXACTLY mv: 1 appearance, 0 starts, 27 minutes; ligainsider projection dated 17.09.2026 has Hoffenheim's defence as Coufal, Kabak, Hajdari, Rots with Gendrey benched; he was playing Hoffenheim II in the 3. Liga last season and is returning from a March 2026 ankle operation (comeback item 18.07.2026). (3) OSKAR WÓJCIK (15256), Werder DEF tid 10, mv 864.684, mvt 2: a genuine first-team signing (09.07.2026, EUR 3m, werder.de) but 1 appearance, 0 starts, 19 minutes, and the dated run of headlines is explicit — \"Werder ohne Wójcik im DFB-Pokal\" 20.08.2026, \"Wójcik verpasst Bundesliga-Auftakt\" 24.08.2026, \"Wójcik muss sich bei Werder noch gedulden\" 16.09.2026; ligainsider's Werder line dated 19.09.2026 is Arthur, Pieper, Friedl, Deman with Wójcik on the bench. WHAT WOULD REVERSE ANY OF THEM: a dated source of 01.10.2026 or later showing an actual START in a competitive match — not a cameo, not a debut, and not a ligainsider club-page Top11 grid, which Hj5cczb records as a performance table rather than a lineup. Price is not the objection for any of the three and never was; all three sit at or below mv. Being cheap is not a reversal."
    },
    {
     "name": "Gendrey + Wójcik + Behrens + Fellhauer — the four news-checked candidates, killed as one on two different grounds",
@@ -220,15 +229,6 @@
     "mv": 3615255,
     "premium_pct": 0,
     "why": "THE ONLY NEW BOARD ENTRY SINCE THE PREVIOUS RUN READ THE MARKET AT 06:45Z (feed t:3, dt 2026-09-20T06:54:10Z). Every other listing on the 20.09 08:44Z board is already covered by a standing AVOID. Kickbase listing at EXACTLY mv 3.615.255 (+0,00%, price is not the objection), st 0, mvt 2 FALLING, exs 155883 resolving ~2026-09-22T04:12Z. KILLED ON THREE INDEPENDENT GROUNDS, ANY ONE SUFFICIENT. (1) DATED NEWS, FIRST CALL OF THE SWEEP: bundesliga.com \"Voraussichtliche Aufstellungen und Ausfaelle am 4. Spieltag\", article date 18.09.2026 (current matchday, no stale-date risk), gives Paderborn's probable XI v Hoffenheim as Noll - ter Horst, Scheller, Hansen - Curda, Castaneda, Obermair - Ulrich, Vidovic - Philippe, Pieringer. MARINO IS NOT IN IT. He is also not on Paderborn's Ausfaelle list (Awortwie-Grant, Eickel, Gayret), and not on Ligainsider's Verletzte-und-Gesperrte table. So he is FIT BUT A BACKUP — the same worst-of-both-worlds state as Sirch, which is precisely the problem we are trying to sell out of, not buy into. (2) POINTS: ap 21 off p 63, i.e. three low cameo returns and a mean barely above Sirch's own ap 18. Swapping Sirch's 18 for Marino's 21 is +3/md, indistinguishable from noise, and it is an ATT-for-DEF swap that forces 1/4/3/3 (4-3-3) rather than fixing the defensive slot. (3) FUNDING: 3.615.255 is 1,77x the non-negative Sirch-route envelope (cash 566.147 + Sirch mv 1.479.770 = 2.045.917). Funding him instead off ter Horst (mv 7.222.908, ap 82) would trade away 82 ap/md to acquire 21 — the exact violation Hwdhjl4's guard (1) forbids. REVERSAL: a dated Paderborn XI (21.09.2026 or later) actually starting him, AND a re-based ap materially above 60, AND an ask at or below mv, AND a funding leg that is not ter Horst."
-   },
-   {
-    "name": "Robin Gosens (Schalke DEF)",
-    "pos": "DEF",
-    "club": "8",
-    "ask": 10313265,
-    "mv": 10313265,
-    "premium_pct": 0,
-    "why": "Only board listing not covered by an open call (prior AVOID Ak0onae is closed). Kickbase listing dt 2026-09-20T04:47:36Z, prc = EXACTLY mv 10.313.265 (+0,00%), st 0, mvt 1 rising, ap 86 off p 259 / 3 apps, exs 157039 resolving ~2026-09-22T02:22Z — over two days, so later runs will meet him repeatedly. FITNESS IS CLEAN AND THE INJURY HITS ARE A DATE TRAP: searches surface Sky/Eurosport/ran \"Testspiel Hessen Kassel, Oberschenkel, bis auf weiteres\" — those are 01-03.08.2026, PRE-SEASON. Ligainsider's player page shows \"Muslić erwartet Gosens gegen Halle zurück\" 21.08.2026, he has three apps since, Kickbase st 0, and the current Verletzte-und-Gesperrte table does not list him. NO FUTURE RUN MAY KILL HIM ON THE KASSEL ITEMS. KILLED ON ARITHMETIC INSTEAD. Squad 11 = 1/5/3/2, only 5-3-2 legal, so all eleven are forced and Sirch (ap 18) is in the XI. Buy Gosens -> 1/6/3/2; enumerate every unwind that keeps eleven and a legal shape: sell Treu -> 1/5/3/2, XI 1283 -> 1293 = +10 for ~10,3M; sell ter Horst -> 1/5/3/2, XI 1287 = +4 and cash -2.624.210; sell Sirch -> 1/5/3/2, XI 1351 = +68 BUT cash 466.147 - 10.313.265 + 1.479.770 = -8.367.348 with no second unwind that keeps eleven, i.e. an open leveraged position carried to the MD5 lock. The +68 route is the attractive one and it is the one that cannot be funded. REVERSAL: he is relisted at or below mv when cash (or a non-Treu, non-ter-Horst unwind) covers him without leverage — then the sell-Sirch route is live and he is a genuine +68."
    },
    {
     "name": "Leo Sauer + Daiki Hashioka — the only two listings new since the 00:45Z run, killed as one",
@@ -298,11 +298,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip clears its cost this run. Not a single manager ask on the board sits below market value, so the flip mechanism that would fund one is simply absent. The board's own settlements today reinforce why chasing them is a losing game: cheap players keep drawing violent bidding wars while expensive ones clear at or below value, so the premium a flip would have to overcome is largest exactly where the margins are thinnest.",
+  "reason": "No flip clears its cost this run. The ledger counts no manager asks below market value at all, so the mechanism a flip depends on is simply absent. The break does leave the flip window wide open on time, and rivals are using it: one manager bought and re-sold the same player within twelve minutes today for a fraction of a percent, and another instant-sold a player to the market within minutes of him being substituted with a knock. The first is motion rather than points and is not worth copying; the second is worth noting as a reminder that injured players can be dumped at market value immediately. The Sirch sale is itself the only value trade available, and it is a modest one.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Ten of the eleven are fit and confirmed starters against dated sources; the one exception is Sirch, benched rather than injured. Nusa, Tanaka and ter Horst are all explicitly named in their clubs' probable XIs for today's fixtures, so the three unplayed slots besides Sirch are healthy. No squad player carries a status flag, none appears on any club's absentee list, and nothing has changed for the worse since the last run. On the board, Awortwie-Grant and Gayret are both confirmed on Paderborn's absentee list, matching their status flags, and Njinmah, Suso and Diehl all carry flags too — Diehl with a thigh injury and still out of team training, which did not stop a rival paying for him this morning.",
+  "sweep": "Nothing is wrong with this squad. Nusa, ter Horst, Tanaka and Sirch all read as having missed matchday four; in every case the reason is that their fixture had not finished, or had not kicked off, at the time of reading. Confirmed by Kickbase's own fixture data and then by dated sources: Nusa started at Leverkusen and was on the pitch during the match; Tanaka is in Schalke's named starting eleven; ter Horst is in Paderborn's probable eleven for tonight and is on none of their absence lists; Guirassy started and played into the final quarter at Stuttgart on the nineteenth; Matsima started and played the full match at Werder on the nineteenth. Two date traps were cleared along the way and both are now logged: the Matsima tendon-rupture cluster is from January 2026, and a club article headlined that Matsima starts away at Bremen looks current but is from May 2026 and refers to last season. One genuine forward-looking note, not a current problem: Tanaka may be absent for the Asian Cup in January and February.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -467,7 +467,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=383, -1,80% to +308,77%"
+   "v": "n=385, -1,80% to +308,77%"
   }
  ]
 }
