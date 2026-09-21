@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-21T04:50Z",
+ "run": "2026-09-21T06:53Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 2145917,
   "floor": -51688697,
   "spending_power": 53834614,
-  "hours_to_lock": 445.66,
-  "exposure": "Balance is positive and the recommended buy keeps it positive. There is no leveraged position open. If the live Deman bid wins this afternoon the balance goes negative, but that is a deliberate and safe structure: it sits far inside the spending floor, the next matchday does not lock for over two and a half weeks, and the designated unwind leg is already identified and priced above the shortfall. The unwind must be complete before that lock, since a negative balance at matchday start scores zero for the whole matchday.",
+  "hours_to_lock": 443.6,
+  "exposure": "None open at this moment — the balance is positive. It turns negative this afternoon if the auction lands, and that position must be closed before the lock or the entire matchday scores nothing. The unwind path is set out step by step and the margin of time is comfortable; the risk here is not the arithmetic but the sequence going unexecuted, which is exactly what happened to the first step over the last cycle. Headroom to the floor is several times the size of the position, so the floor is not the binding constraint.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -42,7 +42,7 @@
    "5-4-1 (needs 5 DEF, 4 MID)"
   ]
  },
- "binding_gap": "One empty squad slot. That is the whole game this run: no formation is legal until it is filled, and the penalty for leaving it empty dwarfs anything an upgrade elsewhere could earn. It is filled by the cheapest fit outfielder available, not by the best player available, because the eleventh man's job is to exist.",
+ "binding_gap": "The gap is a body, not money and not a position. The squad cannot fill any legal formation at all, and the flat penalty for that dwarfs the difference between a good defender and a poor one. The cheapest body on the board closes it outright, and closing it first is precisely what makes every later step in the sequence safe rather than risky.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 53834614,
@@ -50,7 +50,7 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 26,
+  "listings": 27,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
   "expiring_within_2h": 0
@@ -159,13 +159,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Quiet run, one thing to do.",
-  "headline_short": "Quiet run, one thing to do.",
-  "detail": "Quiet run, one thing to do. The squad is still a body short of eleven, which is the only thing on the board that is worth real points, and the fix is already logged and still available: buy Nakuzola off the Kickbase board. He is a Mainz reserve who will score roughly nothing; that is fine, because an empty slot is a flat penalty and any fit outfielder erases it. Nothing else on the board improves the eleven. No board entry is new since the previous run — the newest listing predates it — so this run spent its checks on fitness rather than on fresh candidates. Georg's bid on Deman is live and resolves this afternoon; it is correct as placed and needs no change."
+  "headline": "The plan is unchanged from the last run and still un-executed.",
+  "headline_short": "The plan is unchanged from the last run and still un-executed.",
+  "detail": "The plan is unchanged from the last run and still un-executed. Buy the cheap Mainz defender first and unconditionally — that step alone removes the under-eleven penalty and it does not depend on the auction. The Deman bid resolves this afternoon and is correctly priced against the measured band; do not top it up. If it lands, sell Treu by instant sale to bring the balance back positive, with well over a fortnight of slack before the lock. Nothing on the board this run changes any of that."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "No new sale is recommended. The one standing sale, Treu, remains doubly conditional and must not be executed yet: it only becomes correct once Deman has actually landed AND the eleventh man is in, because selling him from a ten-man squad simply re-triggers the penalty the buy was meant to remove. If the Deman auction is lost, Treu stays — he is then a needed body, not a funding leg.",
+  "reason": "Treu, but only after the auction resolves and only once the eleventh body is already in. He is the lowest-rated player in the squad and the least secure of his place — a shade over half the available minutes so far and an unresolved competition for the right-back slot. He is also the only single sale large enough to clear the leverage the auction would open; the next two candidates each leave the balance short and would force a second sale. If the auction is lost he is not a sale at all, he is a needed body, and the instruction lapses.",
   "standing": [
    {
     "name": "Philipp Treu",
@@ -189,7 +189,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Nakuzola first and unconditionally. He is the only fit cheap outfielder on the board: the two other floor-priced players are keepers, and a squad with two keepers and nine outfielders fits no formation at all. The remaining cheap bodies carry injury flags. He is absent from the league-wide injured and suspended table read today. Beyond him the board offers nothing: the genuine names are either hurt, priced above mv by a manager, or would lower the eleven's average rather than raise it. The four listings that had never been explicitly killed — Amiri, El Khannouss, Itten and Potulski — were examined and killed as one this run, so the board is now fully covered and no later run needs to re-derive them.",
+  "reason": "The cheap Mainz defender is first and unconditional. No merit is claimed for him — he is a reserve-team signing who will score nothing — but an eleventh body is worth far more than he costs, and buying him now makes the penalty disappear whatever else happens. Deman is the only other buy and the offer is already standing: a nailed-on left-back who has started every match and played virtually every available minute, confirmed both by a dated match preview naming him in the eleven and by his absence from the league-wide injury table. The rest of the board is covered by standing avoids, and the single listing new since the last run is flagged unfit. The highest-rated player available is a trap worth naming: that average rests on one scored appearance, and the injury table confirms he is in rehabilitation training rather than squad training.",
   "standing": [
    {
     "name": "Nakuzola",
@@ -241,6 +241,15 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "Tom Zimmerschied",
+    "pos": "MID",
+    "club": "77",
+    "ask": 1452185,
+    "mv": 1452185,
+    "premium_pct": 0,
+    "why": "THE ONLY BOARD ENTRY NEW SINCE THE 04:44Z RUN (t:3, dt 2026-09-21T04:47:17Z). Everything else on the 21.09 06:46Z board is covered by a standing AVOID or by BUY Bcjxcsc / RAISE Rynqjkx. Elversberg MID tid 77, Kickbase listing at prc = EXACTLY mv 1.452.185 (+0,00%, price is not the objection), mvt 1, exs 41366 resolving ~18:15Z. KILLED ON THE STATUS FLAG, no news check spent: st 2, and the payload carries no p and no ap at all. PLUS A DECODE WORTH KEEPING: the Ligainsider Verletzte-und-Gesperrte table (read 21.09.2026) lists BOTH players this ledger has killed on st 4 — Rocco Reitz (2897) and Christoph Baumgartner (2275) — as being in Rehabilitation/Aufbautraining. So st 4 is not \"doubtful\", it is return-to-training rehab, i.e. weeks away, not days. That is an independent dated confirmation of At2hxrg and Ardo02y and means neither reversal condition (\"st back to 0\") is anywhere near met. Reitz in particular must stop tempting future runs: his ap 208 is the single highest figure on the board and it is ONE scored appearance on a player who is not training with the squad. REVERSAL: st back to 0 AND a dated Elversberg XI starting him AND an actual points record — he has none."
+   },
    {
     "name": "Amiri + El Khannouss + Itten + Potulski",
     "pos": "MID",
@@ -312,35 +321,17 @@
     "mv": 2302749,
     "premium_pct": -12.27,
     "why": "FOUR REAL DATED NEWS CHECKS SPENT THIS RUN, KILLED IN ONE ENTRY SO NO LATER RUN RE-SPENDS THEM. Clean negative check first: none of the four is on Ligainsider's league-wide injured/suspended table (read 20.09.2026). TWO ARE BENCH PLAYERS (the ap is a cameo artefact), TWO ARE NAILED-ON STARTERS KILLED PURELY ON A MANAGER MARKUP.\n(1) VALENTIN GENDREY (9598), Hoffenheim DEF, tid 14. Kickbase listing at prc = EXACTLY mv 2.020.261 (+0,00%, price is not the objection), mvt 1 rising, exs ~31,6h. ap 56 off p 56 = ONE scored appearance, and it is a 21-minute cameo: Sky team sheet for MD3 (12.09.2026, Hoffenheim 2-1 Stuttgart) has him ON THE BENCH, substituted on at 69' for Coufal. Ligainsider profile: 0 starts, 27 minutes, 9% of available minutes; bundesliga.com corroborates with 3,2 km covered. He is the backup right-back behind Coufal. THIS IS THE STANDING \"HIGH AVERAGE OFF A FEW CAMEO MINUTES\" TRAP IN ITS PUREST FORM — 56 looks like three times Sirch's 18 and is worth nothing, because it is a per-appearance mean over a single substitute cameo. Note fussballdaten.de shows \"1 start\" and is CONTRADICTED by the Sky team sheet and the distance figure; trust the team sheet. Fit (ankle surgery 13.03.2026 was last season; comeback 18.07.2026).\n(2) OSKAR WÓJCIK (15256), Werder Bremen DEF, tid 10, at mv 864.684, mvt 2 falling. REPLACES the two closed Wójcik AVOIDs (Ax1l2wj, Az5djc2), whose stated ground — \"ZERO Bundesliga appearances\" — IS NOW FACTUALLY FALSE and would have read as stale to a later run: Kickbase now shows p 50 / ap 50. HE DID DEBUT, AND IT CHANGES NOTHING. Dated: 19.09.2026, Werder 3-2 Augsburg, on in the 79th MINUTE for Amos Pieper (igol.pl match piece 19.09.2026); ~11 minutes. Werder's XI (deichstube.de 19.09.2026) was Hein - Deman, Friedl, Pieper, Arthur - Reis, Regeer, Chuki - Gruell, Fuellkrug, Dinkci, UNCHANGED FOR THE THIRD STRAIGHT MATCH (bundesliga.com report). fussballdaten: 1 appearance, 0 starts, 12,2% of minutes. The old entry set its reversal as \"a matchday squad AND on the pitch, or a confirmed start\" — the debut satisfies the weaker limb but the bar was always a body who STARTS, and Werder's settled XI is the thing in his way. The Weser-Kurier 16.09.2026 \"Oskar braucht noch ein wenig\" line is now partly overtaken, not refuted.\n(3) HENNES BEHRENS (10049), Augsburg DEF, tid 13, age 21, joined from Hoffenheim July 2026. MERIT IS EXCELLENT AND IS NOT THE REASON: 4 appearances, 4 STARTS, 100% of available minutes, ap 100, started MD4 at Werder 19.09.2026 in Augsburg's 3-4-2-1 (confirmed team sheet). KILLED ON PRICE ALONE. Borussia Rumpelfuss relisted him 2026-09-20T10:37:27Z asking 16.000.000 against mv 13.823.730 = +15,74%. A manager ask is SELLER'S CHOICE, not a clearing price. Note the feed: an offer of 14.200.000 was made to Rumpelfuss for Behrens at 2026-09-19T20:07:30Z (t:27) and he did not take it — he reposted 1,8M higher instead. Per Hqpneve a +6% to +10% ask can no longer be refused on premium alone, but +15,74% is outside even the corrected band, and per Hpgpcch premium scales inversely with price so a 14M asset should clear NEAR mv, not 2,2M above it.\n(4) ROBIN FELLHAUER (6168), Augsburg MID, tid 13. SAME SHAPE, WORSE PRICE. Merit real: 4 appearances, ap 93, ~9,75 km/match = full-match starter, STARTED AND SCORED the 18th-minute opener at Werder on MD4 (bundesliga.com match report 19.09.2026). Rumpelfuss asks 12.000.000 against mv 9.323.917 = +28,73%, posted 2026-09-20T10:36:33Z, one minute before the Behrens ask — a two-player shelf posted as a pair. Killed on the ask. NOTE a bundesliga.com \"Augsburg's Fellhauer on the mend\" headline surfaced UNDATED: treat as stale per standing rule, and it is contradicted by his full-minutes record and his MD4 goal.\nWHAT WOULD REVERSE ANY OF THEM: Gendrey and Wójcik need a dated CONFIRMED START, not a cameo or a debut. Behrens and Fellhauer need the ask AT OR BELOW mv — their merit is already established and does not need re-deriving, so if either shelf breaks to mv, re-price immediately rather than re-checking the news."
-   },
-   {
-    "name": "Stefano Marino (Paderborn ATT) — the only listing new since the 06:45Z run",
-    "pos": "ATT",
-    "club": "29",
-    "ask": 3615255,
-    "mv": 3537498,
-    "premium_pct": 2.2,
-    "why": "THE ONLY NEW BOARD ENTRY SINCE THE PREVIOUS RUN READ THE MARKET AT 06:45Z (feed t:3, dt 2026-09-20T06:54:10Z). Every other listing on the 20.09 08:44Z board is already covered by a standing AVOID. Kickbase listing at EXACTLY mv 3.615.255 (+0,00%, price is not the objection), st 0, mvt 2 FALLING, exs 155883 resolving ~2026-09-22T04:12Z. KILLED ON THREE INDEPENDENT GROUNDS, ANY ONE SUFFICIENT. (1) DATED NEWS, FIRST CALL OF THE SWEEP: bundesliga.com \"Voraussichtliche Aufstellungen und Ausfaelle am 4. Spieltag\", article date 18.09.2026 (current matchday, no stale-date risk), gives Paderborn's probable XI v Hoffenheim as Noll - ter Horst, Scheller, Hansen - Curda, Castaneda, Obermair - Ulrich, Vidovic - Philippe, Pieringer. MARINO IS NOT IN IT. He is also not on Paderborn's Ausfaelle list (Awortwie-Grant, Eickel, Gayret), and not on Ligainsider's Verletzte-und-Gesperrte table. So he is FIT BUT A BACKUP — the same worst-of-both-worlds state as Sirch, which is precisely the problem we are trying to sell out of, not buy into. (2) POINTS: ap 21 off p 63, i.e. three low cameo returns and a mean barely above Sirch's own ap 18. Swapping Sirch's 18 for Marino's 21 is +3/md, indistinguishable from noise, and it is an ATT-for-DEF swap that forces 1/4/3/3 (4-3-3) rather than fixing the defensive slot. (3) FUNDING: 3.615.255 is 1,77x the non-negative Sirch-route envelope (cash 566.147 + Sirch mv 1.479.770 = 2.045.917). Funding him instead off ter Horst (mv 7.222.908, ap 82) would trade away 82 ap/md to acquire 21 — the exact violation Hwdhjl4's guard (1) forbids. REVERSAL: a dated Paderborn XI (21.09.2026 or later) actually starting him, AND a re-based ap materially above 60, AND an ask at or below mv, AND a funding leg that is not ter Horst."
-   },
-   {
-    "name": "Janis Blaswich (GK) — the only other new listing since the 18:45Z run",
-    "pos": "GK",
-    "club": "7",
-    "ask": 500000,
-    "mv": 500000,
-    "premium_pct": 0,
-    "why": "New Kickbase board listing 2026-09-19T20:09:56Z, i.e. new since the 18:45Z run; logged so the next run does not re-examine him. GK, tid 7, mv 500.000 = the floor price, prc == mv, mvt 2 falling, no p and no ap at all in the listing payload. Killed on MARGINAL POINTS, not on timing (exs 132701s resolves ~2026-09-21T09:40Z, well inside the window) and not on price. A 500.000 keeper is a bench body: the squad already has Neuer at ap 147 and only one keeper can ever be fielded, so a second GK adds exactly zero to the fielded eleven while consuming one of the eleven slots. Worse, a second GK actively BREAKS the formation arithmetic — at 11 players with 2 GK the squad can only field 1+3+3+3 = 10 and takes the missing-man penalty. The only role a cheap keeper could play is as the make-weight body in a two-buy/two-sell unwind, and that structure was tested this run and rejected: 2GK/3DEF/3MID/3ATT cannot field a legal eleven. Note for future runs: a cheap MAKE-WEIGHT BODY, when one is ever needed, must be a DEFENDER, because the back line is where the squad thins out."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip clears its cost. There are no manager asks below market value anywhere on the board, so the mechanism a flip depends on is simply absent. Two rivals did run flips overnight, buying and re-selling the same players within hours for a fraction of a percent; that is motion rather than points and is not worth copying.",
+  "reason": "No flip this run, and the reason is mechanical rather than a judgement call — there is not a single manager ask sitting below market value, so the thing a flip depends on is simply absent. Rivals continue to churn injured and unavailable players for fractions of a percent on the daily tick; that is motion, not points, and it is not a model to copy.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean sweep, dated today. Not one squad player appears on the league-wide injured and suspended table, and none carries a Kickbase status flag. Deman, the subject of the live bid, was checked separately on his own dated profile: fit, and a starter in every league match this season with virtually all available minutes, with praise for his performances dated within the last week. The two recent items on him are September, so no date trap applies. Nakuzola is likewise absent from the injured table.",
+  "sweep": "A clean sweep, the best of any recent run. Nobody in the squad appears on the league-wide injured-and-suspended table and every one of them played the last matchday. The incoming defender is clear too: his only injury item is a pre-season knock that a later dated report explicitly closes out. Two players the ledger had previously killed on a status flag alone are confirmed by that same table to be in rehabilitation, which settles what that flag means — weeks away, not merely doubtful for the weekend.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
