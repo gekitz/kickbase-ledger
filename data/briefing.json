@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-24T02:50Z",
+ "run": "2026-09-24T04:49Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10367083,
   "floor": -51310457,
   "spending_power": 40943374,
-  "hours_to_lock": 375.66,
-  "exposure": "The balance is negative and has been for several runs. It costs nothing until the instant the matchday locks, and the lock is more than fifteen days out, so it constrains nothing this run — what matters is that the position can be unwound by then, and it can, with room to spare. The standing Treu sale clears it on its own. Adding the Brackelmann buy and both flips deepens the deficit well inside spending power, and the full unwind — Treu, the conditional Deman leg, and the two flips sold back at market value after the tick — closes to a positive balance with exactly eleven players and a legal formation intact. No live offer is outstanding and nothing expires inside the notification window.",
+  "hours_to_lock": 373.67,
+  "exposure": "A leveraged position is open, but with the lock more than two weeks away it carries no risk in this window. Adding both flips and the Brackelmann offer on top would still leave the position well inside the floor, and unwinding it needs only the sales already planned plus selling the flipped players back at market value. This becomes a live concern in early October, not now.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 4 MID)"
   ]
  },
- "binding_gap": "The binding gap is depth, not a hole. Every line is fillable, so there is no formation to fix — but midfield and attack sit at the exact minimum with no cover, and there is one goalkeeper. The upgrade that matters is the eleventh man, the weakest player in the fielded eleven by a wide margin, and the only credible replacement for him on the board is the conditional Brackelmann buy.",
+ "binding_gap": "The binding constraint is not a positional hole — the squad can field its only legal formation today. It is the deficit: every purchase has to be funded by selling roughly its own value on top of the sale that clears the existing balance, and with a squad this thin that limits any buy to what two defender sales can cover. That is what rules out the bigger defensive upgrade and leaves exactly one viable purchase.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 40943374,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 37,
+  "listings": 39,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -182,11 +182,11 @@
   "action": "act",
   "headline": "Quiet run.",
   "headline_short": "Quiet run.",
-  "detail": "Quiet run. Nothing settled in the two hours since the last briefing — no transfers cleared, no squad player changed status, and every open call remains live and unreconciled. The standing plan is unchanged: bid exactly market value on Brackelmann and never raise, fund the deficit with the Treu sale, and decide the second funding leg from a dated fitness re-check nearer the lock. The only clock-bound items are the two flips already called last run. No notification was sent: nothing this run changes an action Georg was already given, and the leveraged position is old news with the lock more than two weeks away."
+  "detail": "Quiet run. No transfers settled in the league since the last briefing, no squad change, no new squad injury. The single time-critical item is the Königsdörffer flip, whose listing resolves within roughly two hours; the Lidberg flip resolves later today, still ahead of tonight's value tick. Both are bid-exactly-at-market-value trades that cost nothing if lost. Nothing else needs Georg before this evening."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Treu remains the single sale that clears the deficit on its own, and it is a one-leg unwind, not two — the second leg died with the Fernandez auction. Deman stays conditional: he is sold only if Brackelmann lands AND is a dated confirmed starter, and if Brackelmann lands unfit the correct unwind is to sell Brackelmann back at market value instead. Neither sale is urgent; both have the full run to the lock.",
+  "reason": "The standing one-leg unwind is unchanged and still correct: Treu is the sale that clears the deficit on its own, and he is the weakest man in the fielded eleven by a clear margin. The Deman sale remains conditional, not standing — it fires only as the second funding leg if Brackelmann is bought AND is by then a dated confirmed starter. If Brackelmann lands and is still not confirmed, the fallback is to sell Brackelmann back rather than Deman, which is free because Kickbase repurchases at exactly market value with no spread.",
   "standing": [
    {
     "name": "Philipp Treu — the unwind is now ONE leg, not two. Closes Sibk18u and S95mfpf, whose two-leg premise died with the Fernandez auction.",
@@ -210,7 +210,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Brackelmann is still the only genuine points buy on the board and still the highest-value action available — he would replace the weakest man in the eleven for a very large points gain. The offer stands at exactly market value against a manager ask above it, and it must never be raised; no offer has yet been placed on that listing by anyone. Everything else on the board is priced above the measured manager-ask cluster for zero or negative points gain: the midfield asks are all at large premiums for players no better than what he already fields, the attacking ask is at an absurd premium, and the keeper ask repeats a trade the ledger has now rejected many times. The cheap-upgrade watch on the eleventh man remains unfilled — nothing on the current board under that price threshold is a credible improvement, and manufacturing one would be worse than leaving it open.",
+  "reason": "The Brackelmann offer stays open, unchanged, at exactly market value with no raise, against a manager ask that sits in the low single-digit premium cluster where manager asks actually clear. He is the only points-positive buy on the board: he is the best defender available by season average at a price two defender sales can actually fund, and the alternatives fail on arithmetic rather than on merit. Svensson is the better player and stays on watch, but funding him would need a third sale, which would drop the squad below eleven and trigger the penalty — so he is not buyable at this ask. Nothing else on the market improves a slot Georg already covers.",
   "standing": [
    {
     "name": "Calvin Brackelmann — offer EXACTLY mv 10.744.961 to PhiL95 and NEVER raise. SUPERSEDES Ba18sau, whose escalation clause is REVOKED.",
@@ -339,11 +339,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The measured edge is intact and has not decayed: the rising-flag drift, the share that rose, and the falling-flag penalty all re-measured this run essentially unchanged from the last measurement, on a slightly larger sample. Two candidates qualify on every rule — Kickbase listings with no manager ask, priced at exactly market value, carrying the rising flag, and resolving before the next daily tick. Bid exactly market value on each and never raise; winning captures the tick, losing costs nothing. The larger prize on the board fails the clock test and has been logged as an avoid so a later run does not take it on the naive ranking: it is by far the biggest apparent edge and by far the worst trade, because it settles after the tick its flag predicts. One further listing qualifies mechanically but is too small to be worth the transaction. Both flips are self-unwinding, neither reduces the fielded eleven, the transfer window is shut so no flip risks a player leaving the league, and the unwind has more than two weeks of slack before the lock. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
+  "reason": "Two Kickbase listings qualify on the measured mechanism: both are rising-flag, both are priced at exactly market value with no manager ask attached, and both resolve before tonight's tick, which is the condition that makes the flag pay. Königsdörffer ranks first on size and is also the more urgent by clock. Lidberg is the second and has most of the day left. A third rising-flag listing at a trivial value is technically eligible but not worth the click. Two otherwise attractive rising-flag listings, Hwang and Burger, are disqualified outright because they resolve after tonight's tick rather than before it. Neither qualifying flip reduces the fielded eleven, both sit comfortably inside spending power even alongside the Brackelmann offer, and the unwind runway is enormous. The measured drift was re-run this morning against the full log and is materially unchanged from the last measurement, so the edge has not decayed yet. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will compress if rivals crowd into it.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player is newly injured, suspended or benched. The defender carrying a knee flag remains dated-cleared for the coming matchday and is not a sell. The league-wide injury sweep returns nothing against any squad member. Brackelmann's back knock is unchanged and still unresolved: the newest dated item is the same one the last run found, it says only that whether he is sidelined remains unclear, and he does not appear on the league injury table — suggestive but not the dated starter confirmation the Deman branch requires. The midfielder projected to miss matchdays in the new year for the Asian Cup is fit and starting now; that hole is real but not yet actionable.",
+  "sweep": "Brackelmann was re-checked this run and is still not a dated confirmed starter — the back problem from the fourth matchday has not been cleared. This run also documented why that check keeps going wrong: Ligainsider contradicts itself on him, its injury-record page rendering him fit while its player page carries the live doubtful badge and the dated report of him coming off with back trouble. The player page is the one to trust. Kickbase itself does not flag him at all, so its own fitness field must not be used to clear him either, and a cluster of regional articles about him is from his Augsburg era and is stale. No squad player is newly injured. Gruber still carries a flag that was already dated-cleared and is not a reason to sell. Tanaka's Asian Cup absence remains a January problem, not a September one.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
