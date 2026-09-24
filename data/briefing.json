@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-24T06:51Z",
+ "run": "2026-09-24T08:49Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10267083,
   "floor": -51343457,
   "spending_power": 41076374,
-  "hours_to_lock": 371.64,
-  "exposure": "The balance is negative and has been for several runs. It costs nothing until the instant the matchday locks, and the lock is more than two weeks away, so no buy this run is constrained by the deficit's mere existence — what constrains a buy is whether it can be unwound in time, and it comfortably can. The single Treu sale clears the whole deficit on its own, which is why the unwind is one leg rather than two. If the flip is taken, the deficit deepens by the bid and the position is unwound by selling the flipped player back at market value after tonight's update — Kickbase pays exactly market value, so that leg is certain. The absolute constraint is unchanged and outranks everything else on this page: the balance must be non-negative and the squad at least eleven before the lock, or the entire matchday scores zero.",
+  "hours_to_lock": 369.67,
+  "exposure": "A leveraged position is open and has been since before this run. It is not urgent — the lock is more than two weeks away and one sale clears it — but it is real, and the recommended flips would deepen it for a day or so before the sell-back. The rule that governs it has not changed: a negative balance at matchday start scores zero for the whole matchday, so every flip must be unwound to a non-negative balance and at least eleven players before the lock. Nothing in the current plan comes close to that edge, but the deficit should not be allowed to drift into the final days unexamined.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 4 MID)"
   ]
  },
- "binding_gap": "There is no formation hole to fix this run, which is why nothing in the buy section leads. The binding constraint is not a position, it is the swap arithmetic: the squad is twelve and the XI is eleven, so any purchase has to be funded by a sale that removes a fielded player, and the net is simply the incoming average minus the outgoing one. Under a single funding leg the affordable band is tiny; under two legs the squad falls to eleven and Nakuzola enters the XI, which eats most of whatever the purchase adds. That is the whole reason the Brackelmann structure is worth so much less than his raw average suggests.",
+ "binding_gap": "There is no binding gap this run. The squad fills its formation with one man to spare, so there is no hole to plug, and the constraint on buying is not the negative balance but whether a position can be unwound before the lock — which, with the lock more than two weeks out and a single sale sufficient to clear the deficit, it comfortably can. The nearest thing to a gap is the weakest slot in the eleven, and the market offers nothing to fill it at the price.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 41076374,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 37,
+  "listings": 39,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Quiet run on the points side, one live action on the value side.",
-  "headline_short": "Quiet run on the points side, one live action on the value side.",
-  "detail": "Quiet run on the points side, one live action on the value side. Nothing in the squad changed for the worse: the league-wide Ligainsider Verletzte-und-Gesperrte table read this morning lists no Freiburg, Augsburg, Leverkusen, Stuttgart, Bayern, Frankfurt, Werder or Schalke entry for any of the twelve. No buy on the board clears a meaningful points gain, so the correct move is the flip, and the correct move on the standing Treu sale is to WAIT."
+  "headline": "Quiet run, nothing broken.",
+  "headline_short": "Quiet run, nothing broken.",
+  "detail": "Quiet run, nothing broken. No squad player is newly injured, suspended or benched, no call changes state, and no deadline bites inside the next two hours. Two things want a decision before the evening tick: the standing Lidberg flip bid and a new, much smaller Emre Can flip bid, both Kickbase listings priced at exactly market value and both resolving before tonight's update. Everything else holds where the last run left it."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Treu remains the correct single unwind leg and the sale premise is unchanged — but this run adds the clock that was never specified, and it says do not execute today. Two independent reasons, both pointing the same way. He is rising: his flag is up, his market value gained ground over the last day and again in the trailing hour, and selling back to Kickbase pays exactly market value with no spread, so every further day held is free money on the sale leg at the measured rising-flag drift. And he is fielded: selling him drops the squad to eleven and forces Nakuzola into the XI from the moment of sale, so an early sale pays a points penalty every matchday it is early by. Execute on either trigger — his flag flipping to falling, or forty-eight hours before the lock, whichever comes first. This is a refinement of the sale, never a cancellation: the deficit must be unwound before the lock or the entire matchday scores zero. Selling Deman instead of Treu was re-derived from live data this run and is still worse on both legs — a weaker fielded eleven for less cash.",
+  "reason": "The Treu sale remains the correct single unwind and remains something to do late rather than now. He is still rising on both the daily and the two-hour tick, the lock is more than two weeks away, and selling today burns that accrual for no benefit — the balance costs nothing until the matchday actually locks. The Deman sale stays parked exactly as the last run set it: its trigger is not Brackelmann being owned, it is Brackelmann being owned and being a dated confirmed starter, and today's news check says he is not.",
   "standing": [
    {
     "name": "Philipp Treu — the unwind is now ONE leg, not two. Closes Sibk18u and S95mfpf, whose two-leg premise died with the Fernandez auction.",
@@ -210,7 +210,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Nothing to do at a premium. Brackelmann is now listed by PhiL95 above market value, and the standing instruction holds unchanged: offer exactly market value, never raise, and only if his back clears. It has not. His Ligainsider profile this morning still reads angeschlagen with a missing-since counter running from the 20.09 substitution, and the 21.09 report on the back complaints still says it is unclear whether he misses time. He is absent from the league-wide injury table, which is mildly encouraging, but absent from a table is not a dated confirmed starter and the sale of Deman stays gated on exactly that. Run the arithmetic honestly: the full Brackelmann structure — buy him, sell Treu, sell Deman — lands a fielded eleven only modestly ahead of simply selling Treu and doing nothing else, because the second sale forces Nakuzola into the XI and gives most of the gain straight back. A modest edge, contingent on an unresolved back, is not a reason to chase an above-market ask. Everything else on the board was checked and rejected on merit rather than on price: the midfield asks would replace Tanaka with a player inside single-matchday noise of him, the big defenders are dearer than Brackelmann and worse, the goalkeeper on offer is behind Neuer, and the striker ask sits far above the manager-to-manager band. The standing search for a cheap upgrade to the eleventh-man slot also came up empty — the only sub-band outfielders listed have worse averages than Nakuzola.",
+  "reason": "Nothing new is worth buying for points. The standing offer on Brackelmann is still the right shape — exactly market value, never raised — and the ask is unchanged and only half a day old, so it has not aged into an invitation yet. His back knock was re-checked this run against dated sources and the answer has not moved: Ligainsider still lists him as questionable after coming off with back problems, and the Rotowire item confirming it is dated the following day, so both are current rather than last-season traps. That is fine for a bid at market value, because the downside of winning him unfit is nil and he is on a rising tick, but it is not fine as a trigger to sell Deman. Svensson is still the better defender and still the worse trade: the ask carries a real premium and taking him would need a second funding leg this squad does not have. The cheapest slot in the eleven still wants an upgrade, but nothing on the market in that price range beats what is already there — the only sub-threshold outfielders listed have negative season averages.",
   "standing": [
    {
     "name": "Calvin Brackelmann — offer EXACTLY mv 10.744.961 to PhiL95 and NEVER raise. SUPERSEDES Ba18sau, whose escalation clause is REVOKED.",
@@ -339,11 +339,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open — the lock is more than two weeks out — and the mechanism re-measured this run is unchanged, with no sign of the edge decaying as rivals crowd in. One listing qualifies on every filter and is worth taking: Lidberg, a Kickbase listing priced exactly at market value with the rising flag, expiring this afternoon and therefore resolving before tonight's update, which is the condition that matters. Bid exactly market value and never raise. His transfer risk was checked and is clean — he arrived at Gladbach from Darmstadt and the window is shut, so there is no route out of the league before January. Emre Can passes every mechanical filter and is logged as an avoid anyway, for two reasons worth keeping: the entire expected gain is immaterial against the team value, and he carries a cruciate ligament tear, which is the one case where a rising flag is a stale artefact rather than a prediction. That does not weaken the doctrine that a pure value flip needs no fitness check — fitness does not enter the daily tick — but fitness-irrelevant is not injury-irrelevant, because a season-ending injury changes the direction of the market value itself. Hwang and Burger both carry the rising flag but expire after tonight's update and are therefore disqualified. The Königsdörffer flip from the last run resolved against us: PhiL95 took him above market value, which is the auction going to the contested cluster exactly as expected. Bidding market value and losing costs nothing, and that is the design. Two questions stay open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that the measured edge comes from one league over one period and will decay if rivals crowd in.",
+  "reason": "Two listings qualify, and the mechanism was re-measured from the event log rather than assumed: the rising-flag drift to the next update is materially unchanged from the last measurement, both in mean and in hit rate, so the edge has not decayed and there is no crowding signal yet. Lidberg is the one that matters — a Kickbase listing at exactly market value, rising flag, resolving in the late afternoon and so comfortably ahead of tonight's update. Emre Can qualifies on the same test with the earliest clock of the day, but is an order of magnitude smaller and carries a long-term cruciate injury; that does not disqualify a pure value flip, because fitness does not enter the daily tick, but it does make the position unwind-only. Bid exactly market value on both and walk if either goes contested — a single high-cluster clear wipes out ten good flips. Two candidates that also carry the rising flag were rejected this run purely on the clock: both resolve after tonight's update, which forfeits the tick they were bought for. Capital absorbed by both bids sits well inside spending power, and neither reduces the fielded eleven. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean sweep. The Ligainsider league-wide injured-and-suspended table read this morning returns no entry for any of the twelve. Gruber's knee flag in the Kickbase data is the one already dated-cleared for MD5 and must not be re-read as a fresh problem. Outside the squad, the notable dated finding is Emre Can's cruciate ligament tear, which is what disqualifies him as a flip. Brackelmann, the one buy candidate, is still angeschlagen on his Ligainsider profile with the missing-since counter running from 20.09; the 21.09 report on the back complaints leaves his availability unclear and the international break is the stated reason to expect recovery time rather than a confirmed return. Tanaka's Asian Cup absence remains a January-onwards matter, not a MD5 one.",
+  "sweep": "Swept the league-wide injury and suspension table plus individual profiles. Not one squad player appears on it. Brackelmann, the only buy target with a fitness question, is still listed as questionable with a back problem and is not a dated confirmed starter — re-checked this run, unchanged. Emre Can is confirmed long-term injured, which is priced into the flip and is the reason that position is unwind-only.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
