@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-25T02:57Z",
+ "run": "2026-09-25T04:47Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10267083,
   "floor": -51079343,
   "spending_power": 40812260,
-  "hours_to_lock": 351.55,
-  "exposure": "The balance is negative and has been for days, but it costs nothing until the instant the matchday locks, and the lock is more than two weeks out. The standing unwind is sufficient on its own. The risk worth naming is not the deficit itself but forgetting it: if both flips are taken the unwind grows from one sale to three, and all three must land before the lock or the entire matchday scores zero. Two structural questions remain unresolved — whether squad size is capped, which would cap flip throughput, and whether the measured tick edge decays as rivals crowd into it.",
+  "hours_to_lock": 349.7,
+  "exposure": "The balance is negative and has been for days. That costs nothing until the instant the matchday locks, and the lock is roughly 350 hours away — far outside any window where it constrains a decision. What constrains a buy is whether it can be unwound by the lock, never the mere existence of a deficit. The Treu sale alone clears it, and the flips are unwound by selling back to Kickbase at exactly market value after the tick, so neither flip changes the exposure picture.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 4 MID)"
   ]
  },
- "binding_gap": "The gap is not a position, it is a price ceiling. Because the count rule allows exactly as many sales as purchases, any bought player who is actually kept has to be funded by selling the two defenders the side can spare, and those two are both in the eleven. That sets a hard ceiling on what can be spent and, separately, a points bar the incoming player must clear simply to break even on the swap. Nothing on the market clears both bars at once. Until the deficit is gone or a cheap midfielder or forward unlocks a second formation, the correct buy list is empty.",
+ "binding_gap": "There is no fillable gap to fix and no affordable upgrade. The ceiling derived at 02:45Z still binds: with one buy, the best legal pair he can sell is Treu plus Gruber, which caps any purchase at roughly 15,6M and requires the incoming player to carry a season average above 166 merely to break even on points. Nothing on the board clears both legs — Burkardt fails on price and points, Svensson fails on both, Eggestein's ask is far above the ceiling. So the binding constraint this run is capital, not position.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 40812260,
@@ -54,7 +54,7 @@
   "listings": 36,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Nothing is burning.",
-  "headline_short": "Nothing is burning.",
-  "detail": "Nothing is burning. The lock is more than a fortnight away, the deficit has a standing single-leg unwind in the Treu sale, and this run found no affordable points upgrade anywhere on the board. Two live tick flips remain open and are the only actions with a clock on them. The run's real work was subtractive: it closed three standing calls that could not survive the arithmetic or the evidence."
+  "headline": "Quiet run.",
+  "headline_short": "Quiet run.",
+  "detail": "Quiet run. Nothing changed since 02:45Z: no new transfers involving the squad, no new injuries, no new qualifying flips, and the measured tick drift is identical to the last re-measurement. The two open FLIP calls (Kosugi, Burger) remain the only actions on the board, and Kosugi's listing is the one with a real clock on it."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "The Treu sale stands and is still the only unwind leg needed. It is unconditional as to whether and free as to when, and the case for waiting has strengthened: his market value is rising and he is a starter, so every day held adds both value and points. He must be gone before the lock and there is no reason to do it today. News re-verified: fit, in the probable starting eleven at left-back, with only a long-standing positional duel as a mild risk. He plays for Freiburg, not St. Pauli, and the alarming injury story that surfaces in search is thirteen months stale.",
+  "reason": "Treu remains the standing sale and it is still correct, but it must be executed late, not now. There is no matchday before the lock, the eleven-player floor is checked only at matchday start, and he carries a rising flag with a healthy daily drift — every day held raises the proceeds. Selling him today burns money for nothing. Deman is a keep: the entry that made his sale conditional died when Brackelmann was never acquired.",
   "standing": [
    {
     "name": "Philipp Treu — the unwind is now ONE leg, not two. Closes Sibk18u and S95mfpf, whose two-leg premise died with the Fernandez auction.",
@@ -201,7 +201,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No buy is recommended. Burkardt and Svensson were both closed this run, not on judgement but on arithmetic — each fails the funding test even when priced at market value rather than at the seller's ask, and Burkardt fails the points test as well. Eggestein remains blocked for the same reason by a second route. The only player on the board who would genuinely improve the side is priced at several times the ceiling.",
+  "reason": "No buy. The board carries nothing that is both affordable under the ceiling and a points upgrade on the man it would displace. Olise and Diaz are far out of reach, Burkardt and Svensson fail the arithmetic in both directions, and the manager asks on Eggestein, Gadou and Avdullahu are all well above what the squad can fund. Padding the defence he already covers six-deep would be the opposite of the point.",
   "standing": [],
   "killed_this_run": [
    {
@@ -317,11 +317,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "Two qualifying tick flips are live and both pass the resolution-before-the-tick test that kills most candidates: a Frankfurt defender expiring first and a Hoffenheim midfielder later in the day. Both are Kickbase listings priced at exactly market value with a rising flag. Bid exactly market value and never raise — the third flip from the previous slate was lost overnight to a bidder who paid a premium deep in the contested cluster, which is precisely the outcome the never-raise rule is designed to accept. Three further rising listings are deferred rather than disqualified: they resolve after tonight's update and will re-base to a new value and be re-judged on a fresh flag. The measured drift was re-computed this run and has not moved, so the edge is intact and not visibly crowded. Taking both flips would deepen the deficit substantially, well within spending power but with an unwind obligation that now has three legs instead of one.",
+  "reason": "Two flips qualify on all three legs and both are already logged. Kosugi is a Frankfurt defender listed by Kickbase at exactly market value with a rising flag, and his auction resolves well before tonight's value update — that is the one with the clock, and the next scheduled run lands with only minutes to spare. Burger is the larger of the two, a Hoffenheim midfielder on the same terms, resolving in the early afternoon and likewise comfortably ahead of the update. Bid exactly market value on both and never raise: winning captures the tick, losing costs nothing, and chasing a contested listing into the high cluster destroys the edge. Three other rising listings at market value — Chandler, Poulsen and Burkardt — all resolve after tonight's update, so they are deferred rather than disqualified; they re-base to the new value and get re-judged on their fresh flag. Two open questions stand unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that the measured edge comes from one league over one period and will decay if rivals crowd in. Re-measured this run, the drift has not moved at all.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Gregoritsch is the open question and it is still open: the ankle knock is confirmed and dated, but no diagnosis and no expected absence have been published, and the club site, the league injury table and the club lineup page all carry nothing. The lineup page predates the injury and must not be read as an all-clear. A re-check is due later this morning. It changes no decision either way, because no replacement striker is affordable. Gruber's knee flag is still technically live but the reporting is reassuring and dated: he withdrew from international duty to rest after playing every minute of the season, and he is expected back. He plays for Mainz, not Leverkusen. Nusa is fit and starting; the bench claim carried by the previous run traces to a real page but an auto-generated one, built weeks before the fixture and internally contradictory, and every hard dated fact has him in the side.",
+  "sweep": "Gregoritsch's ankle from his Austria debut is still the open medical question — the MRI result remains unpublished, and the ledger's negative checks say not to re-spend searches on it before roughly 10:00Z. He has fifteen days of runway to the matchday, so this is a flag, not an emergency, and he cannot be sold in any case without breaking the only legal formation. Gruber's knee flag is dated-cleared. Nobody else in the squad carries a status flag, and nobody is newly flagged this run. The transfer window has been closed since the start of September, so the leave-the-league leg of the flip check is dead until January.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
