@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-27T14:50Z",
+ "run": "2026-09-27T16:49Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10067083,
   "floor": -50064056,
   "spending_power": 39996973,
-  "hours_to_lock": 291.65,
-  "exposure": "The balance is negative and has been for twenty-five consecutive runs. It costs nothing until the instant the matchday locks, and the lock is roughly twelve days away — far outside the twelve-hour window where leverage becomes the leading item. The unwind is fully specified and single-leg: sell Treu before the lock and the balance turns positive with eleven players still standing. The flip deepens the deficit tonight and is unwound by selling back at market value after the tick, which leaves the Treu unwind untouched. No push notification was warranted on the leverage alone; sending one every two hours for twelve days is how a notification stops being read.",
+  "hours_to_lock": 289.68,
+  "exposure": "A leveraged position is open and has been open, unchanged, for twenty-six runs. It is comfortably unwindable — the standing sale alone more than clears it, and the lock is still the better part of two weeks away, so this is a position to watch rather than a fire. The flip, if it lands, deepens the deficit by its own price and is reversible at any moment by selling back to the board at market value, which pays exactly market value with no spread.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 4 MID)"
   ]
  },
- "binding_gap": "There is no formation hole to fix, which is why no buy leads this briefing. The binding constraint is not the gap but the ceiling: what can be spent is bounded by what can be unwound before the lock, and that number is small enough to exclude every player on the board who would actually improve the eleven.",
+ "binding_gap": "There is no fillable-formation hole — the eleven is legal and fields. The binding constraint is money, not shape: the deficit has to be unwound before the matchday locks or the whole matchday scores zero, and the single standing sale is what unwinds it. Until that sale clears, every buy has to be small enough to be sold back out of the way in time.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 39996973,
@@ -54,7 +54,7 @@
   "listings": 35,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Quiet run, and correctly so — the position is unchanged for a twenty-fifth consecutive run.",
-  "headline_short": "Quiet run, and correctly so — the position is unchanged for a twenty-f",
-  "detail": "Quiet run, and correctly so — the position is unchanged for a twenty-fifth consecutive run. There is exactly one action on the table and it is a value move, not a points move: the standing Møller Wolfe flip, bid at exactly his market value, which must be placed before his auction closes just seconds ahead of tonight's market-value tick. No points buy is possible, no sale is due today, and no squad player is newly unavailable."
+  "headline": "Position bit-identical to the last run for a twenty-sixth consecutive time — no offer placed, nothing bought, nothing sold.",
+  "headline_short": "Position bit-identical to the last run for a twenty-sixth consecutive ",
+  "detail": "Position bit-identical to the last run for a twenty-sixth consecutive time — no offer placed, nothing bought, nothing sold. The only live action is the Møller Wolfe flip, which expires tonight essentially on the market-value tick. Bid exactly market value and never raise; if it resolves a moment after the tick that is a deferral, not a loss, and it re-bases to the fresh value. No points buy is possible: the funding envelope is a low single-digit-million figure and nothing on the board fits it at an average worth owning."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "The Treu sale stands and the timing has not changed: it is the correct unwind, it is a single leg since the Fernandez auction resolved against us, and it should be executed late rather than today. He is in Freiburg's probable starting eleven for the matchday and Kübler is not, so every day he is held is a day of points that the sale would have forfeited for nothing. Selling him drops the squad to eleven, which is still exactly 5-3-2, so the sale is legal on its own — no replacement has to land first.",
+  "reason": "The standing sale is the Freiburg left-back and it remains correct, but the timing matters more than the call. He is in his club's probable eleven for the coming matchday, his market value is still rising, and selling him today burns both points and money for nothing. Sell late, before the lock, not now. No other sale is on the table: the squad is one player above the minimum, so a second departure would cost the empty-slot penalty.",
   "standing": [
    {
     "name": "Philipp Treu — the unwind is now ONE leg, not two. Closes Sibk18u and S95mfpf, whose two-leg premise died with the Fernandez auction.",
@@ -201,7 +201,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing to buy. This is a derived conclusion, not a shrug. A buy has to be unwound to a non-negative balance before the lock, and the only players that can be sold without breaking the formation are Treu and Nakuzola; that caps any points buy at a little over three million. Separately, a buy only earns points if he displaces someone already in the eleven, which means clearing Treu's average as a defender, Tanaka's as a midfielder, or Gregoritsch's as a forward. Nothing on the board clears both legs at once — everything under the price ceiling is a five-hundred-thousand keeper, an unavailable player, or an average in the forties. The ceiling is a formula and drifts with every tick, so it was recomputed this run rather than carried forward.",
+  "reason": "Nothing qualifies. The affordability envelope is the standing sale's value plus the benched defender's, less the deficit — a low single-digit-million ceiling that recomputes every tick and is not a constant. Every board listing that clears that ceiling has a season average far below the weakest player already being fielded, and every listing with an average worth owning is several times too expensive to unwind before the lock. The premium band is no help here either: the cheap end of the board is cheap because the market has priced the same thing we are seeing.",
   "standing": [],
   "killed_this_run": [
    {
@@ -317,11 +317,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "One listing passes every leg: Møller Wolfe, a Hamburg defender on the Kickbase board with a rising market-value flag, priced at exactly his market value with no manager ask behind it, and — the leg that matters — his auction resolves a few seconds before tonight's twenty-hundred tick, so a winning bid owns him when the tick lands. Bid exactly his market value and never raise; chasing a contested board listing into the high clearing cluster destroys the edge outright. Losing the auction costs nothing. Four other rising-flag board listings were checked and all resolve after tonight's tick — Stanišić, Ulrich, Moffi and Agu. Those are deferred, not disqualified: each re-bases to the new market value and gets re-judged on its fresh flag tomorrow. The drift was re-measured from the event log this run rather than quoted from memory, and it is flat against both the original measurement four days ago and this morning's run — no decay to flag yet. Two open questions remain unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the standing caveat that this edge is measured in one league over one period and will decay if rivals crowd in. A separate pattern was measured and deliberately rejected this run: a rival is buying board listings and selling them straight back minutes later for a tiny riskless margin, four times today. It is real, it confirms that selling back pays exactly market value, and it is roughly a twelfth the size of the tick edge on the same capital — not worth a call.",
+  "reason": "One qualifying flip, and only one. The rising-value flag on a board listing priced at market value is the whole mechanism; the measured next-tick drift was re-measured this run from the event log and has not decayed at all — same sample direction, same hit rate, no sign yet of rivals crowding the edge in. The bid is exactly market value and never a cent more; chasing a contested listing into the high clearing cluster destroys the edge outright. Five other rising-flag board listings exist but all resolve after tonight's tick, which defers them rather than disqualifying them — they must be re-judged on their fresh flag tomorrow, not thrown away. Two questions remain open and unresolved: whether the game caps squad size, which would cap how many flips can run at once, and the fact that the measured edge comes from one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player is newly injured, suspended or benched. Gregoritsch carries a Kickbase fitness flag that is a lagging indicator: the live Ligainsider injured-and-suspended table lists none of the twelve squad players, and two outlets dated the twenty-fifth confirm the ankle twist produced no serious injury, that he stays in the Austria camp and that playing is not ruled out. A new date trap was logged alongside it — an undated kicker article describing a torn muscle fibre, a different injury from the ankle, which under the standing undated-is-stale rule is last season. Gruber's flag remains covered by the existing dated clearance. Treu was re-confirmed fit and starting.",
+  "sweep": "The league-wide injury and suspension table was swept fresh this run and returns not one squad player. The two Kickbase status flags carried in the squad are lagging markers on players whose scans came back clear — that is now the fourth consecutive sweep confirming it, and a future run reading either flag as new news is re-deriving a closed question. No squad player is newly injured, suspended or benched, and the transfer window has been shut since the start of the month, so the leave-the-league leg of every flip check is dead until the new year.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
