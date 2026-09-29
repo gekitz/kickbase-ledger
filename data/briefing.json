@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-29T15:05Z",
+ "run": "2026-09-29T16:50Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10067083,
   "floor": -48531132,
   "spending_power": 38464049,
-  "hours_to_lock": 243.41,
-  "exposure": "The balance is negative and has been for twelve runs, but it costs nothing until the matchday locks, and the lock is more than ten days away. The standing Treu sale clears it in a single leg. If both flips win, the deficit deepens sharply — that is fine and fully planned: selling both back at market value plus the Treu sale unwinds to a positive balance with eleven players still on the books, with over a week of slack. The thing that must not happen is reaching the lock with the position still open.",
+  "hours_to_lock": 241.65,
+  "exposure": "A leveraged position is open and has been for thirteen runs, but it is not urgent: the matchday lock is more than ten days away, and a negative balance costs nothing until the instant it locks. The standing Treu sale clears it on its own with room to spare. What the Engelhardt buy does is deepen the leverage temporarily and commit both sale legs to clearing it — which the arithmetic confirms it does, ending positive with a legal eleven. The risk to watch is not the deficit itself but overpaying: above the ceiling, the position becomes unclearable on two sales, and the only escape would leave ten players and a hundred-point penalty.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 4 MID)"
   ]
  },
- "binding_gap": "Midfield and attack both sit at the bare minimum the only legal formation allows, so there is no bench depth in either. That is the structural gap, and it is unfixable at the moment because any buy large enough to matter has to be funded by selling two players who are already in the fielded eleven.",
+ "binding_gap": "The binding constraint is not the negative balance and not the squad count. It is the unwind ceiling. The account carries a deficit that must be cleared before the matchday locks, and exactly two sales are available before the squad would fall below eleven players. Those two sales together raise a fixed amount, and that amount minus the existing deficit is the absolute maximum payable for any purchase. Everything else follows from that single number. The squad is also at bare minimum in midfield and attack, which is why a midfielder is the only position where a buy unlocks a second formation rather than merely upgrading a slot already covered.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 38464049,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 38,
+  "listings": 36,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 0
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Two live flip bids expire inside the hour and they are the only actions on the board.",
-  "headline_short": "Two live flip bids expire inside the hour and they are the only action",
-  "detail": "Two live flip bids expire inside the hour and they are the only actions on the board. Bid exactly market value on Querfeld and on Kade, never a cent more, and let both go if someone outbids you. Nothing else needs doing: the squad is unchanged for the twelfth consecutive run, the injury sweep is clean, and there is still no points buy that survives the unwind arithmetic."
+  "headline": "The first genuine points buy in weeks is live, and it comes with a reversal.",
+  "headline_short": "The first genuine points buy in weeks is live, and it comes with a rev",
+  "detail": "The first genuine points buy in weeks is live, and it comes with a reversal. Both open flip calls (Querfeld, Kade) lost at the auction this hour, so nothing is pending. In their place: Yannik Engelhardt (Freiburg, MID) is on the Kickbase board at exactly market value, ap 149, fit and starting. Buying him switches the squad into a legal 4-4-2 and is worth about +48 average points per matchday against the standing unwind — but only if he is won at or under a hard ceiling of 14.122.647. Bid at mv and walk away above the ceiling; chasing him breaks the unwind and drops the squad to ten. Nothing is urgent: the matchday lock is over ten days out."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "The Treu sale still stands and still must not be executed today. He is the single leg that clears the deficit on his own, he is a confirmed starter in Freiburg's probable eleven, and every day he stays owned is a day his value keeps ticking with him in it. Sell him late, close to the lock, not now. Note for anyone searching his name: the Sky story saying he is out indefinitely is dated August 2025 and is fourteen months stale — a second outlet carrying the same pre-season shoulder injury already logged as a trap.",
+  "reason": "Treu remains the standing sale and the timing advice is unchanged: sell late, not now. He is fit, he started for Germany on 24.09, and he is in Freiburg's probable eleven for the matchday-5 fixture on 11.10 — so every day he is held is a day of points and of market value that the sale captures. A second, strictly conditional sale now exists: Deman, but only if Engelhardt actually lands. That is an explicit reversal of the standing 'Deman is a keep' entry, and it is stated out loud rather than buried. The keep entry was right on its own terms — it existed because nothing was left for a Deman sale to fund. The Engelhardt buy supplies that structure. Deman is chosen by arithmetic, not preference: under 4-4-2 only four defenders are fielded, and he raises the most money per point surrendered. If Engelhardt does not land, this call is void and Deman stays.",
   "standing": [
    {
     "name": "Philipp Treu — the unwind is now ONE leg, not two. Closes Sibk18u and S95mfpf, whose two-leg premise died with the Fernandez auction.",
@@ -196,13 +196,35 @@
     "ap": 76,
     "why": "STATE CHANGE, FIRST-PARTY: the Fernandez auction RESOLVED AGAINST US. Feed t:15 at 2026-09-23T22:28:21Z — Linguini07 bought Ezequiel Fernandez (11956) for 16.385.882 against mv 13.324.873 = +22,97%, squarely in the contested-Kickbase high cluster. Georg's 14.000.000 (+5,07%) was never going to win it; BUY B92350r is reconciled as missed at that clearing price. CONSEQUENCE, AND IT IS THE WHOLE POINT OF THIS ENTRY: Sibk18u and S95mfpf both existed ONLY to fund a 14.000.000 purchase that never happened. Cash is unchanged at -10.367.083, not -24.367.083, so the \"exactly TWO sales are required\" arithmetic in Sibk18u is now FALSE and both calls are closed. ONE sale clears the debt. THE SALE IS STILL REQUIRED — a negative balance at the MD5 lock (2026-10-09T18:30Z) scores ZERO for the whole matchday, and nothing else on the account generates cash. WHY TREU AND NOT ANOTHER: exhaustive over every single-player sale that clears 10.367.083. Only five players are big enough — Treu 12.379.397, Deman 11.612.631, Neuer 12.420.574 (only GK, illegal), Gruber 13.846.168, Guirassy 32.359.425 — and Wolf 8.504.666, Tanaka 7.858.455, ter Horst 6.826.057 all fall short alone. Any MID or ATT sale leaves 2 MID or 1 ATT and kills 5-3-2 (H94vojv). Among the legal DEF sales Treu has the lowest ap (76) and the worst distribution in the squad (ph newest-first 31/141/103/28, median 67) — selling him costs 49 fielded points (1329 -> 1280 as Nakuzola ap 27 enters the XI), Deman costs 74, Gruber costs 90. Treu is the cheapest legal unwind and it is not close. TIMING, AND THIS IS NOT URGENT: there is NO matchday between now and 2026-10-09 (Hms74yu), the 11-player floor is checked ONCE at matchday start (Hn0qy58), and Treu carries mvt 1 with sdmvt +1.359.383 today, so every day held is free money on the sale price. Do NOT sell tonight. The sale must simply be DONE before 2026-10-09T18:30Z. If BUY Bkcalvn (Brackelmann) lands first, Treu leaves the fielded eleven anyway and this sale becomes literally points-free.",
     "tag": "sell"
+   },
+   {
+    "name": "Olivier Deman — CONDITIONAL leg 2, fires ONLY if Engelhardt (BUY Bjogs8o) actually lands. This REVERSES Ww3n2ef's \"Deman is a KEEP\" and says so out loud.",
+    "pos": "DEF",
+    "club": "10",
+    "mv": 11377965,
+    "ap": 101,
+    "why": "EXPLICIT REVERSAL, NARROWLY SCOPED, SO NO RUN EITHER MISSES IT OR OVER-READS IT. Ww3n2ef says \"Deman is a KEEP — do not sell Deman\". That entry was correct on its own premise: it closed Spflahq because Spflahq's trigger (Brackelmann lands) could never fire, leaving NO structure that a Deman sale would fund. THAT IS NO LONGER TRUE. BUY Bjogs8o supplies a structure, and inside it Deman is the correct second funding leg — chosen by arithmetic, not by preference. WHY DEMAN AND NOT ANOTHER DEFENDER: with Engelhardt in, the squad plays 4-4-2, which fields only FOUR defenders, so exactly one of the current six drops out on top of Treu. Deman is simultaneously the LOWEST ap of the big-mv defenders (101 vs ter Horst 102, Gruber 117, Matsima 125) and the second-highest mv among them (11.377.965), i.e. he raises the most money per point surrendered. Selling ter Horst instead raises 7.308.277 and misses the non-negative target; selling Gruber raises 10.756.654 and costs 117 instead of 101. Nakuzola cannot be the leg — Wa10klo is right that at 500.000 he is a body, not funding. CHECKED, NOT ASSUMED: with Treu AND Deman gone the squad is 11 = 1GK/4DEF/4MID/2ATT, which is a legal 4-4-2, and the fielded XI is 1328 ap versus 1280 for the Treu-only unwind. Nakuzola (ap 27) enters the back four, and that 74-point hit is ALREADY PRICED INTO the +48 — it is not an unbooked cost. THE CONDITION IS ABSOLUTE: if Engelhardt does not land by 2026-09-30T03:38Z, this call is void and Ww3n2ef stands unchanged — do NOT sell Deman on his own merits, because outside the Engelhardt structure the Treu-only unwind (Scamo0p) already clears the deficit and a bare Deman sale would surrender 101 ap for money the account does not need. NEWS LEG: Ligainsider Verletzte-und-Gesperrte read 2026-09-29T16:5xZ does not list Deman; st 0 first-party; he is fit, which is why this is a structural sale and not an availability sale.",
+    "tag": "sell"
    }
   ]
  },
  "buy": {
-  "recommendation": "none",
-  "reason": "No points buy again, and this time the near-miss is worth naming. Engelhardt is the only listing on the board that clears the four-four-two break-even, and buying him forces the sale of two real defenders to fund the unwind, which lands the fielded eleven fractionally worse than it is now. He is break-even at best, not an upgrade. Everything inside the cheap envelope that could be funded by selling Treu and Nakuzola alone falls short on average points. Nothing to do.",
-  "standing": [],
+  "recommendation": "act",
+  "reason": "Engelhardt is the whole buy list, and he is on the board at exactly market value with a rising trend flag. The points case: a fourth midfielder switches the squad from 5-3-2 to 4-4-2, which swaps Treu out of the eleven for the new man, so the marginal test is simply whether he beats Treu's average — and he beats it by 73. Checked against all ten legal formations rather than assumed. The affordability case is where the discipline lives. With Treu and Deman as the funding pair, the maximum payable price is 14.122.647, about six and a quarter percent over market value. One rupee above that and a third sale is needed, which takes the squad to ten players and triggers the hundred-point penalty. So this is bid-at-mv-or-walk-away, exactly like a flip. The honest odds: high-average board listings clear at or below market value only about a quarter of the time, so this bid probably loses. Losing costs nothing, which is why it is worth placing. News is verified and dated: a hundred percent starting quota reported on 08.09, a Germany appearance on 24.09, no injury listing today, and the average is built on four matchdays of this season rather than stale last-season data.",
+  "standing": [
+   {
+    "name": "Yannik Engelhardt (SC Freiburg, tid 5, MID) — bid EXACTLY mv 13.292.077. HARD CEILING 14.122.647 (+6,25%); above that the two-leg unwind breaks and the squad falls to 10. First genuine POINTS buy this ledger has cleared in weeks.",
+    "pos": "MID",
+    "club": "5",
+    "ask": 13292077,
+    "mv": 13292077,
+    "premium_pct": 0,
+    "listing": "Kickbase listing",
+    "why": "NEW, AND IT OVERTURNS THE \"NO POINTS BUY IS POSSIBLE\" VERDICT OF W483zbb/Wen7bnb ON FRESH ARITHMETIC. FIRST-PARTY 2026-09-29T16:45Z: KICKBASE BOARD listing (no `u`), prc 13.292.077 = mv EXACTLY, mvt 1, st 0, ap 149, p 595 over 4 matchdays (so the ap is CURRENT-SEASON, not a stale-season trap), exs 39.180s => expiry ~2026-09-30T03:38Z. THE STRUCTURE, COMPUTED NOT REMEMBERED (brute-forced over all ten legal Kickbase formations): squad today 12 = 1GK/6DEF/3MID/2ATT, only legal shape 5-3-2, fielded XI = 1329 ap. The STANDING unwind (SELL Scamo0p, Treu only) leaves 11 in 5-3-2 = 1280 ap — that 49-point drop is the known price of clearing the deficit. WITH Engelhardt: buy 13.292.077, then sell Treu (12.811.765) AND Deman (11.377.965); balance -10.067.083 -13.292.077 +24.189.730 = +830.570 NON-NEGATIVE; squad 11 = 1GK/4DEF/4MID/2ATT = legal 4-4-2; fielded XI = 1328 ap. So the Engelhardt structure is +48 ap PER MATCHDAY against the baseline unwind, and it ends non-negative with a legal eleven. WHY Wen7bnb's ap-136 BREAK-EVEN DOES NOT BITE HERE: that figure is a mean across buy positions. For a 4th MID specifically the 4-4-2 switch swaps Treu (ap 76, the 5th DEF) out for the new MID, so the marginal test is ap > 76, which Engelhardt clears by 73. THE CEILING IS THE REAL CONSTRAINT: max price P with Treu+Deman as the funding pair is P <= 24.189.730 - 10.067.083 = 14.122.647 = mv +6,25%. Above that a THIRD sale is needed, which takes the squad to 10 and triggers the -100 penalty — so this is a bid-at-mv-or-walk-away, exactly like a flip, and Georg must NOT chase it. ODDS, MEASURED, STATED HONESTLY: ap90+ board listings clear at or below mv only 24,5% of the time (Wpq30gf/W5t9yom/Wc2pdrx), so a bid at mv probably loses — but losing costs nothing, and this is the first candidate in weeks where winning is clearly worth having. NEWS, DATED, VERIFIED THIS RUN: gladbachtotal 08.09.2026 12:09 \"der gebuertige Goettinger kommt bislang auf eine 100-prozentige Startelfquote\"; flashscore.de 24.09.2026 has him on for Germany at the Klopp debut (80th min for Amiri) — i.e. fit and internationally selected five days ago; Ligainsider Verletzte-und-Gesperrte read 2026-09-29T16:5xZ does NOT list him. st 0 first-party. He is fit and starting.",
+    "rank": 1,
+    "trigger": "2026-09-30T03:38:00Z"
+   }
+  ],
   "killed_this_run": [
    {
     "name": "Yannik Engelhardt (Freiburg, tid 5, MID, ap 149) — the best points buy on the board and STILL points-negative. Every funding structure computed in full so no run re-derives it. Also re-bases the Wakerq4 envelope.",
@@ -233,11 +255,11 @@
    },
    {
     "name": "Anton Kade (Augsburg, tid 13, ATT) — ap 273 is REAL but he is NOT a points buy: muscle bundle tear, MD5 only \"could be an option\". As a flip he ranks BELOW Pavlovic and is not jointly affordable with him.",
-    "pos": "ATT",
-    "club": "13",
+    "pos": "",
+    "club": null,
     "ask": 10849619,
-    "mv": 10849619,
-    "premium_pct": 0,
+    "mv": null,
+    "premium_pct": null,
     "why": "NEW BOARD LISTING 2026-09-29T00:24:52Z, AND IT IS THE MOST TEMPTING ap ON THE SLATE — logged so no run buys it on the average alone. FIRST-PARTY: Kickbase board listing (no `u`), prc 10.849.619 = mv EXACTLY, mvt 1, exs 55.969s => expiry ~2026-09-29T16:04Z, ~4h BEFORE the 20:00Z tick, so Wls9xhx PASSES. ap 273 = tp 273 off smc 1 (one appearance, 94 min, 1G 1A) — the single-match sample the prompt's \"high average off few minutes\" warning is about, except it is a full match, which is why it needs the news leg rather than a reflex. THE NEWS LEG KILLS THE POINTS BUY, DATED: Kickbase stxt \"After muscle bundle tear - set to join team training next week\" (st 4, stl [4]). ligainsider 418414, dated 22.09.2026 20:28, verbatim \"Fuer die naechste Woche ist dem Bericht zufolge der Einstieg ins Mannschaftstraining vorgesehen\" and, on MD5 v Bayern 10.10, only \"koennte er fuer das erste Pflichtspiel nach der Pause wieder zu einer ernsthaften Option werden\" — COULD, conditional, no guarantee. werra-rundschau 94495405, dated 16.09.2026 15:23, has Baum refusing a return date at all. So he fails STEP 5 (\"exclude anyone injured or unlikely to start\") outright. AS A FLIP HE IS LEGITIMATE BUT LOWER-EV, AND THE RANKING MATTERS: ap 273 puts him in the ap90+ band, ~16% win-at-mv per Wpq30gf, so EV = 10.849.619 x 2,40% x 0,16 ~= 42k, versus Pavlovic 34.715.887 x 2,40% x 0,16 ~= 133k and Saibari ~106k and Arrhov 3.547.435 x 2,40% x 0,63 ~= 54k. He ranks FOURTH. AFFORDABILITY SETTLES IT: spending power 38.464.049, and W0mhdw7's Arrhov+Pavlovic pair already absorbs 38.263.322 leaving 200.727 — Kade does not fit alongside Pavlovic at all. He fits only if Pavlovic is skipped, and skipping a 133k-EV leg for a 42k-EV leg is strictly worse. REVERSAL: if Pavlovic (Fcekgw2) resolves against us AND Saibari (Wvngd86 fallback) is also gone AND Kade is still listed at exactly mv with mvt 1 and resolving pre-tick, he becomes the live flip on the freed capital. Do NOT reverse on a fitness update alone — a fit Kade is a points candidate only after a DATED confirmed-starter line for MD5, which does not exist as of 2026-09-29T00:45Z."
    },
    {
@@ -317,11 +339,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "Exactly two qualifiers, both already standing calls, both Kickbase board listings priced at market value with a rising flag, and crucially both resolve before tonight's value update — which is the only way the tick can actually be captured. Querfeld is the larger of the two and the earlier to expire; Kade follows about a quarter of an hour later and his fitness flag is correctly irrelevant, because fitness does not enter the daily value tick. Bid exactly market value on each and never raise: losing costs nothing, chasing destroys the edge. Both together fit inside spending power, and winning both still unwinds comfortably to a positive balance and eleven players well before the lock. Be realistic about the odds — both sit in the worst measured cohort, where a bid at market value wins roughly one time in four. Four board auctions cleared above market value this week, the newest being Campbell today, which is the expected shape of this trade, not evidence against it. Four further rising listings are deferred rather than rejected: they resolve after tonight's update and will be re-judged tomorrow on their fresh flag. Two open questions remain unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that the measured edge comes from one league over one period and will decay if rivals crowd in. It has not decayed — the drift table is identical for the sixth run running.",
+  "reason": "No qualifying flip this run, and the reason is timing rather than absence. A rising-trend flag only pays if you own the player when the market values update, and every rising-trend board listing on the market right now expires after that update rather than before it. They are deferred, not dead: after the update they re-base to the new market value and get re-judged on a fresh trend flag next run. Worth recording separately: both flips recommended earlier today lost, Querfeld at nearly ten percent over market value and Kade at just over ten. That is six consecutive board losses for a bid-at-market-value against two wins and one that would have won. The rule is not broken — a loss at market value costs nothing — but a bid at market value should no longer be expected to land. The measured tick edge itself is unchanged for the seventh consecutive run, so there is no sign yet that rivals have crowded it out. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once; and the fact that the measured edge comes from one league over one period and will decay if rivals pile in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Squad sweep clean. Ligainsider's injured-and-suspended table lists none of the twelve. The two status flags on the roster are both stale and both already resolved in the ledger: Gregoritsch cleared by a negative scan, Gruber's knee irritation dated-cleared for the coming matchday. No new injury, no new suspension, nothing newly benched.",
+  "sweep": "Clean sweep. Ligainsider's injured-and-suspended table, read this hour, lists none of the twelve squad players. Gregoritsch and Gruber carry status flags that are both documented stale — do not read either as new. One live caution carried forward rather than rediscovered: Gregoritsch plays two internationals on 01.10 and 04.10 on a recently healed ankle before the matchday, which is a fixture risk rather than an injury. Engelhardt, the buy candidate, is fit, unlisted, and was on the pitch for Germany five days ago. Treu and Deman, the two sale legs, are both fit — these are structural sales, not availability sales.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -498,7 +520,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=528, -1,80% to +308,77%"
+   "v": "n=530, -1,80% to +308,77%"
   }
  ]
 }
