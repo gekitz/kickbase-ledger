@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-09-30T04:52Z",
+ "run": "2026-09-30T06:50Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -25557083,
   "floor": -47215184,
   "spending_power": 21658101,
-  "hours_to_lock": 229.63,
-  "exposure": "A LEVERAGED POSITION IS OPEN and it is the largest of the cycle, created when the purchase settled overnight. It must be unwound to a non-negative balance AND at least eleven players before the matchday locks, or the entire matchday scores zero. There is time — the lock is over nine days away — so this is not a panic, but it is now a two-sale commitment rather than a one-sale one, and the headroom after both sales is thin. Sell the falling leg today; hold the rising leg until close to the lock. If the flip is taken, it must be unwound as a third leg, which the arithmetic confirms still clears.",
+  "hours_to_lock": 227.66,
+  "exposure": "A leveraged position is open from the overnight purchase. It scores zero for the entire matchday if it is still negative when the matchday starts, which is the only risk that outranks everything else here. It does not bind yet: the lock is more than nine days out, there is no matchday before it, and the two queued sales more than cover the deficit with room to spare. The floor check is not binding either — spending power is well above what any recommended action absorbs. Treat this as a clock to respect, not an alarm.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "The binding gap is the LINEUP, not a position. The newly bought midfielder is not in the placed eleven, and the formation that his arrival made legal has not been adopted. Collecting it requires one action in the app and no money. After the unwind the structural weak point becomes the fourth defender slot, which the cheapest squad member is forced to fill — a genuine hole, but one that provably cannot be funded before the lock without risking a zero-point matchday.",
+ "binding_gap": "There is no positional hole. The squad fields a legal eleven today and a legal eleven after the unwind, in either shape. The binding constraint is not a missing position — it is the deficit, and specifically whether it can be unwound by the lock, which it comfortably can.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 21658101,
@@ -51,7 +51,7 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 33,
+  "listings": 42,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
   "expiring_within_2h": 0
@@ -190,13 +190,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "The Engelhardt offer LANDED — it settled overnight and the squad is now thirteen.",
-  "headline_short": "The Engelhardt offer LANDED — it settled overnight and the squad is no",
-  "detail": "The Engelhardt offer LANDED — it settled overnight and the squad is now thirteen. Two things follow immediately. First, and this is the single highest-value action available, KICKBASE DID NOT PLACE HIM: Engelhardt is sitting on the bench while the pre-purchase eleven is still the placed one. Switching to 4-4-2 and benching Treu collects a large points gain for nothing — no cash, no sale, no risk. Do that first. Second, the conditional sale that was waiting on this purchase has now FIRED and is unconditional: Matsima goes, and he goes today rather than late, because he is falling and every daily tick held is a pure loss. Treu still goes late, because he is rising. Properly unwound, the whole Engelhardt deal is net accretive per matchday against the state we would have been in without it, so the reversal that authorised the offer is vindicated on outcome and not merely on argument."
+  "headline": "The free points come first: the placed eleven is still stale.",
+  "headline_short": "The free points come first: the placed eleven is still stale.",
+  "detail": "The free points come first: the placed eleven is still stale. Engelhardt, bought overnight and the second-highest-scoring outfielder on the books, is sitting outside the lineup while Treu, the weakest fielded man, holds a starting slot. Switching from 5-3-2 to 4-4-2 and benching Treu costs nothing, moves no money and needs no market to cooperate. It was the top move of the previous run and it is still undone. After that, the deficit from the Engelhardt purchase is open and must be unwound before the matchday locks — but the lock is more than nine days away and there is no matchday in between, so this is a queue, not an emergency. Nothing on the board is worth buying for points."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "MATSIMA — sell to Kickbase NOW, before tonight's tick. This is leg one and it is no longer conditional. He is falling on the daily tick and the sell-back pays exactly market value with no spread, so holding him to the lock burns a substantial sum for no compensating gain. Be clear about what this is: he is FIT and he is in Augsburg's probable eleven for the Bayern fixture, confirmed on a dated club page this run. The sale is funding, not fitness, and no future run should reverse it on a 'but he is fit' reading. It does cost points — he is in the best eleven — but every legal pair that clears the deficit costs more, and a negative balance at the lock scores zero for the entire matchday. TREU — leg two, still correct, still to be executed LATE rather than now. He is rising on the daily tick, so each day held adds to the proceeds, and he comfortably covers the remainder once Matsima is gone. He is also fit and in Freiburg's probable eleven, re-confirmed this run. Exhaustively checked: Matsima plus Treu is the cheapest unwind in points of every pair that clears, and the near-misses (Matsima plus Gruber, Treu plus Gregoritsch, Treu plus Deman) all fall short and must not be retried — the Treu-plus-Gregoritsch gap actually WIDENS by the lock, since one is rising and the other falling.",
+  "reason": "Two sales are queued and they are not interchangeable. Matsima is the urgent one: he is falling, the sale pays exactly his market value, and every daily tick held costs real money, so he should go before tonight's update rather than after it. His alarming injury headline is last season's — verified again this run as a January date trap — and he has started and scored well in all four matchdays. This is a funding sale of a good player, not a dud sale. Treu is the opposite: he is rising, he is in Freiburg's probable eleven, and the standing instruction is to sell him late, not now. Do not fire both today. One alternative was priced in full this run and rejected: selling Nusa alone would clear the whole deficit in a single transaction and field a marginally stronger eleven, but it would mean selling the best and fastest-rising asset to keep the two fastest-decaying ones. The margin is inside the noise; the value case is not.",
   "standing": [
    {
     "name": "Chrislain Matsima (FC Augsburg, tid 13, DEF) — sell to Kickbase NOW at mv 14.763.165. UNCONDITIONAL: the condition in Syvkl24 has FIRED (Engelhardt landed 03:38:52Z). Syvkl24 closed and replaced.",
@@ -220,25 +220,25 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "NOTHING. This is a derived verdict, not a shrug. The real hole is the defender slot that Nakuzola is forced into after the unwind, and the board does offer a clean fix at a modest price in Scheller — a Kickbase listing at exactly market value who would be a large upgrade on that slot. It does not fund: buying him and then selling Matsima, Treu and Nakuzola still leaves the balance NEGATIVE at the lock, which forfeits the whole matchday. Riding the rising asset for nine days closes the gap only to a margin far too thin to stake a matchday on, and the candidate himself is falling, so his own sell-back value decays meanwhile. Rejected. Tah is rejected harder — the purchase alone would breach the floor, so it is not even permitted. Karl would displace only the weakest midfielder for a trivial gain against a third forced sale. The binding gap this run is not a position at all: it is the stale lineup, and collecting that costs nothing and beats every affordable buy on the board.",
+  "reason": "Nothing. The affordable envelope after the queued unwind is narrow, and once you also require a man who beats the weakest fielded body, the board is empty inside it — every listing under the ceiling is either a goalkeeper, a player with no appearances at all, or carries an injury flag. The one nominal pass would add almost nothing and is flagged unfit. Do not pad a position already covered, and do not stretch the ceiling to reach the interesting names: the deficit has to come back to zero before the lock.",
   "standing": [],
   "killed_this_run": [
    {
     "name": "Konstantinos Karetsas (Dortmund, tid 3, MID) — a textbook-qualifying flip that must NOT be taken, because it crowds out the Engelhardt offer. Expires ~2026-09-30T00:13Z.",
-    "pos": "",
-    "club": null,
+    "pos": "MID",
+    "club": "3",
     "ask": 25145346,
-    "mv": null,
-    "premium_pct": null,
+    "mv": 25145346,
+    "premium_pct": 0,
     "why": "LOGGED BECAUSE HE PASSES EVERY FLIP FILTER AND IS STILL THE WRONG TRADE, AND A FUTURE RUN WILL RE-DERIVE THE TEMPTATION FROM THE FILTERS ALONE. FIRST-PARTY 2026-09-29T22:45Z: KICKBASE BOARD listing (no `u`), prc 25.145.346 = mv EXACTLY, mvt 1, st 0, exs 5326s, ap 103 on p 308. He resolves at ~2026-09-30T00:13Z, comfortably BEFORE the 2026-09-30T20:00:00Z tick, so he satisfies Wls9xhx as well. WHY HE IS REJECTED — CAPITAL, NOT MERIT: spending power is 37.821.013 and 15.500.000 of it is already committed to the live Engelhardt offer, leaving 22.321.013. Karetsas needs 25.145.346. The two CANNOT both be funded, and STEP 7D is explicit that a points trade outranks a flip. Taking him would mean pulling an offer with a measured 69,6% win probability on a +48/MD-class upgrade to chase a flip whose own measured win probability is 20,6% (cohort ap90-129, n=34, re-measured this run). THE FLIP EV IN FIGURES, SO THE REJECTION IS PRICED AND NOT ASSERTED: mvt-1 drift re-measured this run from the event log is n=613, mean +2,425%, 86,8% rose — IDENTICAL to the 20:45Z run, so no crowding-in decay signal. 25.145.346 x 2,425% = 609.775 if held through the tick, x 0,206 win probability = EV ~125.614 of team value, against a points trade worth 24 fielded ap per matchday for the rest of the season. Not close. NO STARTER CHECK WAS DONE AND NONE WAS NEEDED — fitness does not enter the daily tick, and the transfer leg is dead until January 2027 (Wo4ztzv, window closed 01.09.2026 20:00). REVERSAL: if the Engelhardt offer LOSES at 03:37Z, the 15.500.000 is freed and a Karetsas-class board listing at prc=mv with mvt 1 becomes fundable again — but he specifically will be gone by 00:13Z, so this is a rule for the next one, not for him. Note also for the next run that at ap 103 he sits in the 20,6% cohort, so even funded he is a poor flip target compared with an ap<40 or ap-unknown board listing at 66,8%/66,9%."
    },
    {
     "name": "Karetsas (Dortmund, tid 3, MID) — the largest mvt-1 flip on the board and UNAFFORDABLE alongside the Engelhardt buy at ANY price. Logged so a future run stops re-deriving it.",
-    "pos": "",
-    "club": null,
+    "pos": "MID",
+    "club": "3",
     "ask": 25145346,
-    "mv": null,
-    "premium_pct": null,
+    "mv": 25145346,
+    "premium_pct": 0,
     "why": "FIRST-PARTY 2026-09-29T20:45Z: KICKBASE BOARD listing (no `u`), prc 25.145.346 = mv EXACTLY, mvt 1, st 0, exs 12489s, ap 103. On raw drift it is by far the best flip on the slate — 25.145.346 x 2,42% = ~608.000 gross, ~149.000 after the ap90+ 24,5% win rate, three times Ndiaye and Neuhaus combined. IT IS STILL AN AVOID, ON CAPITAL, AND THE TEST IS ARITHMETIC: spending power is 37.821.013 (first-party, post-tick, floor -47.878.096). Engelhardt at the live offer 15.500.000 + Karetsas 25.145.346 = 40.645.346, over by 2.824.333. Engelhardt at mv 13.491.175 + Karetsas 25.145.346 = 38.636.521, STILL over by 815.508. So there is no Engelhardt price at which both fit, and the points buy outranks the flip absolutely — section D beats section E by construction, and +48 ap/matchday for the rest of the season dwarfs a one-off ~149.000 expected tick. He is affordable ONLY in the branch where the Engelhardt offer expires unfilled at 03:38Z, and his own listing resolves at 00:13Z, THREE HOURS EARLIER — so that branch is not observable in time and cannot be waited for. REVERSAL: if the Engelhardt listing resolves against us before 00:13Z, Karetsas becomes a live FLIP at exactly mv and nothing else about him changes."
    },
    {
@@ -336,11 +336,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open — the lock is over nine days out. The measured mechanism was RE-MEASURED from the event log this run and is UNCHANGED: the rising flag still predicts a solid average gain at the next update with a high hit rate, the falling flag still predicts the opposite, and there is no sign yet of rivals crowding the edge away. Exactly one listing on the board qualifies: NEUHAUS, a Kickbase listing priced at exactly market value, flagged rising, no injury flag, and — critically — expiring BEFORE tonight's update, so a winner owns him when the tick lands. Bid EXACTLY market value and never raise; losing the auction costs nothing, and chasing a contested board listing into the high cluster is what destroys the edge. Be honest about the cohort: his average rests on a single scoring appearance, so it is not form and he sits in the least predictable band for win-at-market-value. He is affordable against spending power with room to spare, and he does NOT break the unwind — selling him back alongside the two-leg sale still clears the deficit and still lands on eleven players. No starter check is needed for a pure value flip, and the transfer-risk leg is dead until January because the window is shut. Two open questions remain unresolved and are restated rather than re-derived: whether Kickbase caps squad size, which would cap flip throughput; and that the measured edge comes from one league over one period and will decay if rivals crowd in.",
+  "reason": "The flip window is wide open and there is exactly one qualifying listing on the whole board: Neuhaus, a Kickbase listing priced at market value with a rising flag, resolving comfortably before tonight's update, so a winner owns him at the tick. Bid the market value exactly and never raise. Win and the tick is captured; lose and it cost nothing. Be honest about the odds — his scoring average sits in the band that historically clears well above market value, so this is a cheap lottery ticket rather than an expectation. Capital is well inside spending power and the position unwinds cleanly.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player is newly injured, suspended or benched this run. Matsima is fit and in Augsburg's probable eleven, on a club page dated late September. Engelhardt and Treu are both in Freiburg's probable eleven for the Schalke fixture. Gregoritsch carries a knock marker alongside his selection and still appears in the probable eleven; his scan came back negative earlier and he has two internationals before the matchday on a recently healed ankle, which stays on watch rather than becoming an action. Gruber's flag remains the stale, already-cleared one. Nothing here changes a buy or a sell.",
+  "sweep": "No new injury on the squad this run. The two standing flags are both already dated-cleared in the ledger: Gregoritsch's came back negative on a scan and Gruber's knee was cleared for the matchday, though Gregoritsch plays two internationals this week on a recently healed ankle and that remains the one thing worth re-checking. A fresh sweep for dated news on every fielded player turned up nothing current beyond what is already logged. Engelhardt was verified fit and a regular starter under Schuster.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
