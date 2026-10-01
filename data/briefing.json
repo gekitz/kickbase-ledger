@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-01T20:51Z",
+ "run": "2026-10-01T22:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10743918,
   "floor": -46554505,
   "spending_power": 35810587,
-  "hours_to_lock": 189.64,
-  "exposure": "A leveraged position is open — the balance is negative — but the matchday lock is more than a week away, so this carries no zero-points risk at present and should not be led on. The unwind is already designed: the standing sale clears the deficit on its own, and every flip is self-unwinding because selling back to Kickbase pays exactly market value, a rule now confirmed nine times in this ledger including twice by a rival earlier this evening. Each flip adds a body and removes it again, so the fielded eleven is never reduced and the squad never falls below the penalty threshold. There is more than a week of slack between the flip unwind and the lock, so no flip called this run carries lock exposure. The constraint that actually binds is concurrent spending power, which is why the fourth flip is sequenced behind tonight's resolution rather than placed alongside the others.",
+  "hours_to_lock": 187.62,
+  "exposure": "A leveraged position is open, but it is not urgent and should not be treated as such. The deficit is covered several times over by the designated unwind leg alone, and the lock is more than a week out. The flip programme recommended here deepens the deficit substantially while the auctions resolve, and that is acceptable precisely because every leg unwinds at market value within a day of the tick, leaving more than a week of slack before the lock. The hard rule still binds: a negative balance at matchday start scores zero for the whole matchday, so every flip must be sold back and the balance returned to non-negative, with at least eleven players standing, before the matchday locks.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "There is no formation hole and no fillable-formation risk. The squad covers every position the legal shapes need, with a spare defender beyond the fielded eleven. The gap that binds is not positional but financial: the negative balance caps what can be bought, and the standing sale is what clears it. Until that sale lands, the points side of the board is closed and only the value side is actionable.",
+ "binding_gap": "Defensive quality behind the top three defenders. The fourth defender in the eleven is well below the standard of the first three, and the only body behind him is a replacement-level fill. The gap is real but currently unfixable: the one listed defender who would close it cannot be funded without stripping more points out of the attack than he adds to the defence. It stays open until the Treu sale lands and frees genuine capacity.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 35810587,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 43,
+  "listings": 41,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "The nightly market-value tick has fired, and that is the whole story of this run.",
-  "headline_short": "The nightly market-value tick has fired, and that is the whole story o",
-  "detail": "The nightly market-value tick has fired, and that is the whole story of this run. The previous run told Georg to hold fire — every qualifying flip listing expired after the tick, so bidding at a pre-tick market value would have gone stale. That hold is now spent and reversed. Bidding is live, and the three standing flip calls were repriced because their old prices now sit below market value and would simply lose. No points trade has changed: the squad is unchanged, nobody is newly hurt, and the standing sale remains the sale. The actionable change is on the value side, and the first deadline is tonight."
+  "headline": "Two of the standing flip offers are bidding ABOVE market value, and at those prices the trade is arithmetically EV-negative — the premium paid on entry exceeds the entire expected ",
+  "headline_short": "Two of the standing flip offers are bidding ABOVE market value, and at",
+  "detail": "Two of the standing flip offers are bidding ABOVE market value, and at those prices the trade is arithmetically EV-negative — the premium paid on entry exceeds the entire expected tick. Worse, they are consuming the spending-power headroom that the single best flip on the board needs. The move this run is subtraction, not addition: pull the Ruoppi and Trimmel offers, then place Vieira at exactly market value. The squad itself is quiet, fully fielded, and needs nothing."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "The standing sale is unchanged and unconditional: the full-back is the sole unwind leg for the negative balance, and the exhaustive re-check of every alternative was already done from live data and must not be repeated. His own manager ask is live on the board and uncontested, priced modestly above market value, which is inside the measured manager-ask clearing band and honestly priced. Leave it standing. The pull trigger is unchanged: pull it only if it is still unsold after the tick on the third. On fitness, the live first-party read is unambiguous — no status flag, started and scored on all four matchdays, absent from the injury table. Two German-language injury articles about him rank high in search and are both traps: one is from two seasons ago and one is from last season. Both have been logged so no future run is caught by them.",
+  "reason": "Treu only, and it is already listed — the standing ask sits modestly above market value, which is within the measured manager-ask band, and it has not yet drawn an offer. No action tonight; the standing guidance to pull it only if it is still unsold after the 03.10 tick is unchanged. He is fit, starting, and was player of the match on the last matchday, so this is a funding sale and not a merit sale, and nothing in this run's news changes that. No other sale is recommended and none is needed.",
   "standing": [
    {
     "name": "Philipp Treu",
@@ -201,9 +201,27 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No points buy is recommended, and this run deliberately did not re-derive that. A full marginal-points sweep of the board was completed earlier today and is still standing; its finding is that nothing on the board both improves the fielded eleven and can be funded before the sale lands. The board has barely moved since: the two genuinely new listings are a striker whose average sits below the weakest fielded outfielder, so he is not an upgrade, and a midfielder with no points record and a status flag, who is out for months. The one listing that would be a real points upgrade — a defender whose average is more than double the weakest fielded body — remains unbuyable for the reason a previous run already established: he eats almost the entire spending power on his own. He stays a watch, not a buy. Every name on the avoid list is still on the board and every avoid still holds.",
+  "reason": "No fundable points buy exists on this board, and this run re-derived it rather than inheriting it. The only defender who would genuinely improve the eleven is the marquee Dortmund centre-back listed at market value, and he fails on funding, not on merit: he absorbs nearly the whole of spending power, and every two-sale unwind that pays for him strips more fielded points from the eleven than he adds. The mid-priced manager asks that look tempting on average points all fail the same test — they are either out of position, priced well above the measured manager-ask band, carrying a fitness flag, or they displace a defender only by promoting the weakest body in the squad into the back four, which costs more than it gains. The standing AVOIDs on Querfeld, Fellhauer, Doan, Tietz, Moreira, Beier and Lukeba all hold.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "Christopher Trimmel",
+    "pos": "DEF",
+    "club": "40",
+    "ask": 5000000,
+    "mv": 4853706,
+    "premium_pct": 3.01,
+    "why": "PULL OR LET EXPIRE — the standing 5.000.000 offer is above mv and EV-negative. Replaces Fxbcp62, whose premise (bid EXACTLY mv 4.853.706) is dead: the LIVE offer read from list_market 2026-10-01T22:45Z is ofc 1, ofs = Georg Kitz uop 5.000.000 against mv 4.853.706 = +3,01% over mv. At the re-measured mvt-1 drift of +2,49% the expected post-tick mv is 4.974.543, so the expected round trip is -25.457. Small, but strictly negative, and it is negative for the structural reason that matters: the premium paid on entry exceeds the entire expected tick. EXPIRES 2026-10-01T23:47:18Z, roughly one hour from this run, so if it is not pulled it resolves tonight either way. SEPARATE AND STRONGER REASON NOT TO WIN HIM: ap -17 and p -33. He is the only negative-ap body on the board. If the flip wins and the sell-back is delayed for any reason he is a 4,85M asset that actively costs points if ever fielded, and he cannot substitute for any of the fielded eleven. The 5.000.000 also consumes spending power that Vieira needs — see the Ruoppi entry for the full crowding-out arithmetic. Pure value flip, so no starter check applies and none was done; the transfer check is clean, the window is shut in October."
+   },
+   {
+    "name": "Otto Ruoppi",
+    "pos": "MID",
+    "club": "18",
+    "ask": 6500000,
+    "mv": 6079806,
+    "premium_pct": 6.91,
+    "why": "PULL THE STANDING 6.500.000 OFFER. Replaces F2qxlgh, whose premise (bid EXACTLY mv 6.079.806) is dead because the LIVE offer on the board is 6.500.000, not the called price. Read from list_market 2026-10-01T22:45Z: ofc 1, ofs = Georg Kitz uop 6.500.000 against mv 6.079.806 = +6,91% over mv. THE FLIP IS EV-NEGATIVE AT THAT PRICE AND THIS IS ARITHMETIC, NOT JUDGEMENT: the re-measured mvt-1 drift is +2,49% (n=661, 87,7% rose), so expected mv after the 2026-10-02T20:00Z tick is 6.079.806 x 1,0249 = 6.231.193, and selling back to Kickbase pays EXACTLY mv with no spread (verified 8 for 8 on this ledger). Win at 6.500.000 and the expected round trip is 6.231.193 - 6.500.000 = -268.807. The whole MOVERS edge is bidding AT mv and never above; a +6,91% entry hands back 2,8x the entire expected tick. Losing the auction costs nothing, so there is no downside to pulling. SECOND REASON, INDEPENDENT OF EV: the 6.500.000 commitment counts against spending power 35.810.587. With Nicolas 12.135.293 and Trimmel 5.000.000 also committed, total committed is 23.635.293 and the remaining headroom is 12.175.294 — which is LESS than Vieira at 14.099.714, the single best EV flip on this board. The over-mv offers are literally crowding out the good one. ap 28, so there is no points case to fall back on. Expiry 2026-10-02T02:47:14Z."
+   },
    {
     "name": "Lorenz Assignon",
     "pos": "DEF",
@@ -290,11 +308,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "This is where the run earns its keep. The flip mechanism is bidding exactly market value on a rising Kickbase board listing and capturing the next nightly tick, and the drift was re-measured from the log this run rather than inherited: the rising flag is holding its edge and its win rate, on a sample that has grown again since the last measurement. No decay. Four listings qualify — a Union full-back, a Leverkusen midfielder, a Gladbach goalkeeper and an HSV midfielder — all of them genuine Kickbase listings priced at exactly market value with the rising flag, all uncontested at read, and critically all four expiring before the next tick, so a winning bid cannot go stale. Bid exactly market value on each and never raise: a contested clear in this league has now run as high as forty-one percent over market value, and one such clear wipes out ten good flips. The binding constraint is capital, not merit: all four placed at once exceed spending power, so place the three that expire soonest now and add the fourth once tonight's auction resolves, whichever way it goes. The full-back is worth a specific note — he has now ticked over six and a half percent twice in a row, which says the league-wide mean materially understates the upper tail on small-cap listings. That is a reason to prefer small caps when capital is tight, not a reason to bid above market value. Fitness is deliberately not checked on any of these, which is correct, because fitness does not enter the tick; the check that does bind is the transfer check, and it clears league-wide because the summer window shut at the start of September and the winter window does not open until January. Two questions remain open. It is still unknown whether Kickbase caps squad size, which would cap flip throughput — three concurrent flips take the squad into untested territory, and Georg should check this in the app once. And the edge is measured in one league over one period and will decay if rivals crowd in, so it must be re-measured every run rather than trusted.",
+  "reason": "The flip window is wide open — the lock is more than a week away, so there is no timing risk on any of this. The mechanism re-measured cleanly this run with no sign of decay: the rising-flag cohort again predicts a positive next-tick move on a larger sample than before, and the hit rate actually improved. Selling back to Kickbase still pays exactly market value with no spread, now verified on every observation the ledger holds. The correction this run is about entry price, not about the mechanism. Two live offers are above market value, and that is the one way to destroy this edge: the whole trade is bidding AT market value and never a cent more, because losing an auction at market value costs nothing while winning one above it hands back more than the tick is worth. Pull both. That frees enough headroom to place the strongest remaining candidate at exactly market value, with room left for a third smaller leg. The highest-drift listing on the board is deliberately not taken — it would eat almost all available capital in a single contested auction, and three independent at-market bids beat one large bid with a low win probability. Two open questions stand unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will erode if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Nobody in the squad is newly injured, suspended or benched, and nobody has dated news suggesting they might leave the league. The league-wide injury table was fetched and cross-checked this run, and no squad player appears on it. One caution worth carrying: that table came back with a misleading date, and the way it was validated was by corroborating it against live status flags on the board rather than trusting its own metadata — two players it lists as absent are flagged on the live board this minute. Use that technique rather than discarding a badly-dated table.",
+  "sweep": "No new injury, no new suspension, and nothing that warrants acting. Gruber's status flag was chased to source and is benign — a knee irritation managed over the international break, with two dated September sources saying explicitly that he will not be out long and expecting him available for the next matchday. Gregoritsch remains in his club's probable eleven while flagged as carrying a knock, unchanged from the standing note. A warning for future runs went into the ledger: the top search result for Gregoritsch's ankle is a seven-year-old article describing an almost identical international-break knock, which reads as confirmation of the current flag and is nothing of the kind. Read the dateline on every fitness hit, not only the ones that smell like last season.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -471,7 +489,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=560, -1,80% to +308,77%"
+   "v": "n=561, -1,80% to +308,77%"
   }
  ]
 }
