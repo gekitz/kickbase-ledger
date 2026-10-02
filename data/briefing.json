@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-02T04:51Z",
+ "run": "2026-10-02T06:50Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -17243918,
   "floor": -46415841,
   "spending_power": 29171923,
-  "hours_to_lock": 181.64,
-  "exposure": "The balance is negative and has been since the Ruoppi purchase settled. This does NOT constrain buying today: a deficit costs nothing until the instant the matchday locks, and that lock is a full week away. What constrains buying is whether a position can be UNWOUND by then, which is why flips - self-unwinding within a day at exactly market value - are fine and keepers are not. The standing unwind is Treu plus Ruoppi, and it returns the balance to positive with a thin but real margin. No notification was sent for the open leveraged position: the lock-proximity scope recorded in the ledger exists precisely so this does not fire every two hours for eight days. If the three recommended flips all win, the deficit deepens temporarily and then reverses after tonight's update, finishing slightly better than it started.",
+  "hours_to_lock": 179.65,
+  "exposure": "The balance is negative and will go substantially more negative if both flips win — but a deficit costs nothing until the instant the matchday locks, and that is more than a week out. The position stays inside the floor with slack even with both flips on the books, which was checked directly rather than assumed. Both flips unwind by selling straight back to Kickbase after tonight's update, at exactly market value, with no spread; the two standing sales then clear the remaining deficit and leave the squad at exactly eleven. There is no timing pressure on any leg. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in a single league over a single period and will decay if rivals crowd in.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "None. The squad covers every position with spare bodies in two of them, five formations are legal, and nothing this run recommends changes that. The real constraint is not a formation hole and not the deficit - it is the unwind ceiling for any player Georg would KEEP. The two standing sale legs clear the balance to positive before the lock with very little margin, so a kept purchase of almost any size breaks it. That, and not the negative balance by itself, is what rules out the only two points buys on the board.",
+ "binding_gap": "There is no formation hole and no fundable points upgrade, so nothing binds on the points side at all. What binds is the unwind ceiling: the squad is small enough that the number of permitted sales, not the size of the deficit, is what decides whether a player can be kept. That is why the best outfield body on the board is a flip rather than a signing, and it will keep deciding buys until the standing sales land.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 29171923,
@@ -53,16 +53,16 @@
  "board": {
   "listings": 43,
   "cheapest": 500000,
-  "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 3
+  "cheapest_slot_filling": 732236,
+  "expiring_within_2h": 0
  },
  "squad": [
   {
-   "name": "Gregoritsch",
-   "pos": "ATT",
-   "club": "13",
-   "mv": 11894748,
-   "ap": null,
+   "name": "Nusa",
+   "pos": "MID",
+   "club": "43",
+   "mv": 27928982,
+   "ap": 169,
    "state": "clear",
    "note": "",
    "tag": "keep"
@@ -72,97 +72,7 @@
    "pos": "ATT",
    "club": "3",
    "mv": 32724880,
-   "ap": null,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Nusa",
-   "pos": "MID",
-   "club": "43",
-   "mv": 27928982,
-   "ap": null,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Wolf",
-   "pos": "MID",
-   "club": "13",
-   "mv": 6572340,
-   "ap": null,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "ter Horst",
-   "pos": "DEF",
-   "club": "29",
-   "mv": 8206484,
-   "ap": null,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Neuer",
-   "pos": "GK",
-   "club": "2",
-   "mv": 12677280,
-   "ap": null,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Tanaka",
-   "pos": "MID",
-   "club": "8",
-   "mv": 5179271,
-   "ap": null,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Gruber",
-   "pos": "DEF",
-   "club": "18",
-   "mv": 9608369,
-   "ap": null,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Treu",
-   "pos": "DEF",
-   "club": "5",
-   "mv": 12823321,
-   "ap": null,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Deman",
-   "pos": "DEF",
-   "club": "10",
-   "mv": 9822889,
-   "ap": null,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Nakuzola",
-   "pos": "DEF",
-   "club": "18",
-   "mv": 500000,
-   "ap": null,
+   "ap": 161,
    "state": "clear",
    "note": "",
    "tag": "keep"
@@ -172,7 +82,87 @@
    "pos": "MID",
    "club": "5",
    "mv": 13879613,
-   "ap": null,
+   "ap": 149,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Neuer",
+   "pos": "GK",
+   "club": "2",
+   "mv": 12677280,
+   "ap": 143,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Gregoritsch",
+   "pos": "ATT",
+   "club": "13",
+   "mv": 11894748,
+   "ap": 137,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Gruber",
+   "pos": "DEF",
+   "club": "18",
+   "mv": 9608369,
+   "ap": 117,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Wolf",
+   "pos": "MID",
+   "club": "13",
+   "mv": 6572340,
+   "ap": 111,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "ter Horst",
+   "pos": "DEF",
+   "club": "29",
+   "mv": 8206484,
+   "ap": 102,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Deman",
+   "pos": "DEF",
+   "club": "10",
+   "mv": 9822889,
+   "ap": 101,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Tanaka",
+   "pos": "MID",
+   "club": "8",
+   "mv": 5179271,
+   "ap": 87,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Treu",
+   "pos": "DEF",
+   "club": "5",
+   "mv": 12823321,
+   "ap": 76,
    "state": "clear",
    "note": "",
    "tag": "keep"
@@ -182,7 +172,17 @@
    "pos": "MID",
    "club": "18",
    "mv": 6079806,
-   "ap": null,
+   "ap": 28,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Nakuzola",
+   "pos": "DEF",
+   "club": "18",
+   "mv": 500000,
+   "ap": 27,
    "state": "clear",
    "note": "",
    "tag": "keep"
@@ -190,20 +190,20 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Quiet run on points, active run on value.",
-  "headline_short": "Quiet run on points, active run on value.",
-  "detail": "Quiet run on points, active run on value. No formation hole, no fundable points upgrade, no new injury. The one thing that changed is a measured correction to how flip capital is sized: the 33% floor moves with every purchase, so the real headroom is spending power divided by 0,67, not spending power itself. That is materially more room than previous runs allowed, and it means the three board listings that expire before tonight's market-value update all fit at the same time rather than competing for one slot. TOP MOVE: bid on Fabio Vieira at EXACTLY his market value, no raise, before his listing closes this morning. Second: Steffen Tigges, same rule, same reasoning, later this afternoon. The Moritz Nicolas bid is already standing at exactly market value and uncontested with under an hour to run - leave it alone, do not raise it, no action needed."
+  "headline": "One genuinely new thing on the board, and it is the biggest value opportunity this ledger has carried: Waldemar Anton sits on the Kickbase board as an uncontested, rising-flag list",
+  "headline_short": "One genuinely new thing on the board, and it is the biggest value oppo",
+  "detail": "One genuinely new thing on the board, and it is the biggest value opportunity this ledger has carried: Waldemar Anton sits on the Kickbase board as an uncontested, rising-flag listing priced at exactly his market value, and he expires before tonight's tick. He has been there since yesterday afternoon and earlier runs appear to have screened him out on raw cash rather than on the floor — which is precisely the mistake the measured sizing rule corrected. He is affordable. Pair him with Tigges and bid both at exactly market value, never raising. Everything else this run is housekeeping: no points buy exists, the two standing sales stay as they are, and the squad is unchanged."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Both standing sale calls remain open and NEITHER should be executed today. Ruoppi is leg two of the unwind and the timing is the whole point of that call - he is not to be sold before the fifth. Treu's manager ask is live and self-correcting; it has been on the board since yesterday afternoon without a bite, which is expected, and the instruction stands to leave it there and only reconsider pulling it after tomorrow evening's update. Treu is confirmed fit, so the ask is not a fitness sale. Together those two legs are what returns the balance to positive before the lock, and they clear it with very little slack - which is precisely why nothing bought this week can be kept.",
+  "reason": "No new sale this run and no change to the two standing ones. Treu's manager ask is still live and still unsold after most of a day; leave it standing, as it self-corrects against the tick, and revisit only if it is still there after tomorrow night's update. Ruoppi stays put — his call is timed deliberately, and the timing is the whole point of it, so he is not to be sold early no matter how weak the body looks. Between them the two legs clear the deficit with room to spare and land the squad at exactly eleven, which is legal.",
   "standing": [
    {
     "name": "Philipp Treu",
     "pos": "DEF",
     "club": "5",
     "mv": 12823321,
-    "ap": null,
+    "ap": 76,
     "why": "REPLACES Ssglxsf, NOW CLOSED, WHOSE CENTRAL CLAIM IS FACTUALLY DEAD. Ssglxsf said Treu \"is the sole unwind leg for cash -10.773.918\". BOTH HALVES ARE NOW WRONG. Feed 2026-10-02T02:47:34Z: Georg Kitz BOUGHT Otto Ruoppi (13438) at 6.500.000, i.e. the live offer that AVOID A3f1c6h explicitly said to PULL was not pulled and it won. Budget re-read immediately after: cash -17.243.918 (was -10.743.918), squad 13 (1GK/5DEF/5MID/2ATT), placed 11, floor -44.409.505, spending power 27.165.587. THE ARITHMETIC THAT CHANGED: Treu sold alone returns 12.823.321 at mv, or 13.500.000 if the standing ask clears. Either is LESS than the 17.243.918 deficit. Treu alone therefore NO LONGER CLEARS THE DEBT and a second leg is now mandatory before 2026-10-09T18:30:00Z. WHETHER TO SELL TREU: unconditional and unchanged — he is still leg 1, ap 76 is the weakest among the sellable high-mv bodies, and removing him leaves a legal 4-4-2. HOW: do nothing new. The 13.500.000 ask placed by Georg (list_market 2026-10-02T02:45:40Z shows u = 3667000 Georg Kitz, prc 13.500.000 vs mv 12.823.321 = +5,28%) is LIVE and remains self-correcting per Wlsvi3r; leave it standing, do not pull, do not reprice. LEG 2 IS RUOPPI — see the companion SELL call. Treu + Ruoppi at mv = 12.823.321 + 6.079.806 = 18.903.127 against 17.243.918, which clears with 1.659.209 to spare and leaves exactly 11 players in a legal 4-4-2 (Neuer; ter Horst, Gruber, Deman, Nakuzola; Nusa, Wolf, Tanaka, Engelhardt; Gregoritsch, Guirassy). FITNESS: Treu st 0, mvt 1, no dated current-season item found this run — the 01.10 check stands, nothing contradicts it.",
     "tag": "sell"
    },
@@ -212,7 +212,7 @@
     "pos": "MID",
     "club": "18",
     "mv": 6079806,
-    "ap": null,
+    "ap": 28,
     "why": "LEG 2 OF THE UNWIND, BUT NOT TODAY — TIMING IS THE WHOLE POINT OF THIS CALL, so no run between now and 05.10 should sell him early or re-derive this. HOW HE ARRIVED: bought 2026-10-02T02:47:34Z at 6.500.000 against AVOID A3f1c6h (now resolved `missed`), over an mv of 6.079.806, i.e. a REALISED PREMIUM OF +6,91% — inside the contested-Kickbase high cluster, which is exactly what A3f1c6h was trying to prevent. WHY HE IS THE RIGHT LEG 2 AND NOT A KEEPER: ap 28 over 4 matchdays, the second-weakest body in the squad after Nakuzola (ap 27), and he is NOT in the placed XI, so selling him cannot reduce the fielded eleven. No current dated info found on his starter status this run (searched 02.10; only undated profile pages returned) — recorded as \"no current info found\", not as a clean bill. WHY NOT NOW: selling back to Kickbase pays EXACTLY mv, so an immediate sale crystallises a 420.194 loss. He is mvt 1, and the measured next-tick drift for mvt 1 this run is +2,49% (n=661, 87,7% rose). There are SEVEN 20:00Z ticks between now and the MD5 lock. Recovering the +6,91% premium needs roughly three of them, so he should be back above the 6.500.000 paid from about 05.10. SELL HIM ONCE mv >= 6.500.000, and in any case BEFORE 2026-10-09T18:30:00Z — a negative balance at matchday start scores ZERO for the whole matchday, and that risk outranks recovering the premium. If mv has still not reached 6.500.000 by the 08.10 run, sell anyway and take the loss: the deadline binds, the premium does not.",
     "tag": "sell"
    }
@@ -220,7 +220,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing. The exhaustive marginal-points sweep from yesterday still stands and is not re-derived here. One new listing genuinely tempted this run - Luka Lochoshvili, a fit defender who would be a large upgrade on the body that inherits Treu's slot after the sale - and he is killed on the unwind ceiling, not on merit: keeping him leaves the balance several million short of positive at the lock even after selling every spare body, and a negative balance at matchday start scores nothing for the entire matchday. That is written into the ledger so no later run upgrades him from a flip to a buy. Waldemar Anton is the only genuine points listing on the board and is the highest-rated player available anywhere, but he is blocked by the live Nicolas commitment, not by merit - and he is not a keeper either, since his unwind is far worse than Lochoshvili's. Two new listings arrived since the last read and both are logged as avoids: a same-day relist at a very large markup, and a backup keeper on the falling side of the only measured edge.",
+  "reason": "None, and this is not a thin board — it is a funding problem. The exhaustive marginal-points sweep from yesterday still stands and is not to be re-derived before Treu's sale lands. The painful case is Anton himself: his season average is higher than any body Georg owns, and he would replace the weakest fielded defender for the largest points upgrade available anywhere on this board. He still cannot be kept. Buying him caps the squad at three permitted sales before the under-eleven penalty bites, and the three largest sales that do not gut the fielded eleven leave the balance far short of zero at the lock — a negative balance at matchday start scores nothing for the entire matchday. Reaching zero would mean selling into the points core, which defeats the purpose of buying him. So he is a flip and nothing more. This is recorded explicitly so a later run cannot talk itself into keeping him.",
   "standing": [],
   "killed_this_run": [
    {
@@ -318,11 +318,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open - the lock is a full week away, so there is no risk of carrying an open position into a matchday. Drift was re-measured from the event log this run and has NOT decayed: the rising flag still predicts a clear positive move at the next update with the same hit rate as before, and the falling flag still predicts the opposite. Bid EXACTLY market value on a rising Kickbase board listing and never raise; win and you capture the tick, lose and it cost nothing. Three listings expire before tonight's update and therefore capture it: Nicolas, already bid and uncontested with under an hour left; Vieira, the largest capturable gain on the board and the one that needs action this morning; and Tigges this afternoon. Under the corrected sizing rule all three fit together with room left over, which is the change from previous runs. Three more listings - Culbreath, Lochoshvili and Castrop - are flip-legal but expire after tonight's update, so they capture tomorrow's tick instead and only if their flag is still rising then; they are strictly lower priority and can wait for a later run. Anton would be the single largest capture available but does not fit alongside the live Nicolas bid, and pulling a near-certain uncontested win to chase a listing that still has half a day to attract this league's most active traders is a bad trade when our rule forbids raising. Every flip sells back to Kickbase at exactly market value, so none of them reduces the fielded eleven and all unwind inside a day. TWO OPEN QUESTIONS, UNRESOLVED: whether Kickbase caps squad size, which would cap how many flips can run at once; and that this edge is measured in one league over one period and will decay if rivals crowd in - it has not decayed yet, and it is re-measured every run.",
+  "reason": "The flip window is wide open — the lock is more than a week away, so there is no risk of a flip being caught open at matchday start. The re-measurement from the event log shows no decay at all: the rising flag still predicts a clear positive move at the nightly update, on a larger sample than the prompt's baseline and with a marginally higher hit rate than yesterday. Rivals have not yet crowded the edge out. The refinement that mattered this run is timing: a rising flag read now predicts tonight's update and nothing beyond it, so only listings that expire BEFORE tonight's update capture it. That splits the board cleanly. Three listings are pre-tick and live; three expire afterwards and have to be re-qualified against their flag as it reads after the update — they are not bad trades, just not today's trades, and their calls were closed rather than left to rot. Of the three live ones, capital is exclusive: Anton plus Tigges fits inside the headroom, Anton plus Vieira does not, and Vieira resolves first — so winning Vieira this morning would quietly make the much larger Anton unaffordable by the afternoon. Anton plus Tigges is worth roughly double the alternative pair. Bid both at exactly market value and never raise; losing either costs nothing, while chasing a contested listing into the stepped-up high cluster would wipe out the edge outright. The honest caveat on Anton is concentration: he is by far the largest single position this ledger has proposed, the measured downside case on a rising flag is a meaningful loss at that size, and the edge remains measured in one league over one period.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player is newly injured, suspended or benched, and no squad player has dated news suggesting he may leave the league - the transfer window has been shut since the start of September. Gruber carries a status flag for a knee irritation; the primary source was re-read this run and its newest item is unchanged from the last check, an individual training programme several days ago, with no update since. That is a watch item for the fifth matchday, not a change, and it is not re-derived here. Gregoritsch remains noted as carrying a knock but shows a clear status flag. Everyone else in the placed eleven is clean. Fitness does not enter the flip reasoning at all, by design - the market-value tick does not care whether a player is available.",
+  "sweep": "No squad player is newly injured, suspended or benched, and nothing dated suggests any of them is leaving the league. Gruber still carries his minor knock flag, unchanged and still expected to clear before the matchday — no new information either way. The only injury item search returns for Anton is from December 2024, two seasons stale, and was rejected as a date trap; no current information was found on him, which does not matter for a flip, since fitness does not enter the nightly value tick. The transfer check is what a flip needs and it passes: the German window shut at the start of September, so no league-departure risk exists for any candidate.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -499,7 +499,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=565, -1,80% to +308,77%"
+   "v": "n=568, -1,80% to +308,77%"
   }
  ]
 }
