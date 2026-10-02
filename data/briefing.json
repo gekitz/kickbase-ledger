@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-02T14:54Z",
+ "run": "2026-10-02T16:50Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -17243918,
   "floor": -46415841,
   "spending_power": 29171923,
-  "hours_to_lock": 171.6,
-  "exposure": "The position is leveraged and will get much more so if the flip is taken, but the lock is a week out, so this is carried risk rather than live risk. The unwind is three sales against a squad of fourteen, and it clears in the central case with room to spare. The one genuine fragility is that the flip leg is large enough that a bad update on it, at the worst rate ever measured here, leaves the unwind marginally short with no spare body — which is an argument for selling it back promptly once won, not for skipping it. The standing sales remain the backstop: selling back to Kickbase always pays exactly market value with no spread, confirmed again today by a rival's five-minute round trip, so neither unwind leg depends on finding a buyer.",
+  "hours_to_lock": 169.66,
+  "exposure": "The balance is leveraged and the flip would deepen it sharply for a few hours. That costs nothing until the instant the matchday locks, and the lock is a week away — but a negative balance at matchday start scores zero for the entire matchday, and this ledger's history includes correct calls that were simply not executed. So the flip is conditional, not flat: if you cannot be at the app tonight to sell him back after the tick, do not place the bid at all. The standing sales alone already unwind the existing deficit to positive well before the lock.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "There is no formation gap. Thirteen bodies cover every legal shape, and the eleven is intact. The binding constraint is not the squad and not the deficit — a negative balance costs nothing until the instant the matchday locks, and that is a week away. What binds is the unwind ceiling: how much can be sold back before the lock while still fielding eleven. That ceiling is what keeps every genuine starter on this board out of reach, and it is why the only buy-shaped opportunity today is a flip that reverses itself rather than a player who stays.",
+ "binding_gap": "There is no formation gap. The binding constraint is the unwind, and specifically whether it is executed rather than whether it is arithmetically possible. I am partially reversing the standing sizing warning: it concluded that the worst measured tick breaks the three-leg unwind, but the ceiling is four legs, not three — the board carries cheap bodies every day, so buying one and instant-selling the weakest falling placed body clears even the worst case to positive while staying at eleven players, with a full week of runway and no matchday in between.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 29171923,
@@ -51,12 +51,112 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 43,
+  "listings": 45,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 2
  },
  "squad": [
+  {
+   "name": "Nusa",
+   "pos": "MID",
+   "club": "43",
+   "mv": 27928982,
+   "ap": 169,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Guirassy",
+   "pos": "ATT",
+   "club": "3",
+   "mv": 32724880,
+   "ap": 161,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Engelhardt",
+   "pos": "MID",
+   "club": "5",
+   "mv": 13879613,
+   "ap": 149,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Neuer",
+   "pos": "GK",
+   "club": "2",
+   "mv": 12677280,
+   "ap": 143,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Gregoritsch",
+   "pos": "ATT",
+   "club": "13",
+   "mv": 11894748,
+   "ap": 137,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Gruber",
+   "pos": "DEF",
+   "club": "18",
+   "mv": 9608369,
+   "ap": 117,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Wolf",
+   "pos": "MID",
+   "club": "13",
+   "mv": 6572340,
+   "ap": 111,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "ter Horst",
+   "pos": "DEF",
+   "club": "29",
+   "mv": 8206484,
+   "ap": 102,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Deman",
+   "pos": "DEF",
+   "club": "10",
+   "mv": 9822889,
+   "ap": 101,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Tanaka",
+   "pos": "MID",
+   "club": "8",
+   "mv": 5179271,
+   "ap": 87,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
   {
    "name": "Treu",
    "pos": "DEF",
@@ -66,17 +166,37 @@
    "state": "clear",
    "note": "",
    "tag": "keep"
+  },
+  {
+   "name": "Ruoppi",
+   "pos": "MID",
+   "club": "18",
+   "mv": 6079806,
+   "ap": 28,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Nakuzola",
+   "pos": "DEF",
+   "club": "18",
+   "mv": 500000,
+   "ap": 27,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
   }
  ],
  "verdict": {
   "action": "act",
-  "headline": "One live action, one new trap closed, nothing else changed.",
-  "headline_short": "One live action, one new trap closed, nothing else changed.",
-  "detail": "One live action, one new trap closed, nothing else changed. The Waldemar Anton flip (F7yasni) is still on the board, still priced at exactly mv with no manager ask behind it, and it is the ONLY qualifying mover left that expires before tonight's 20:00Z tick — every other mvt-1 board listing (Castrop, Günther, Onyeka, Lochoshvili, Culbreath) runs past the tick and therefore captures nothing. Bid exactly mv, never raise. The two standing sales are unchanged: the Treu ask stays live, Ruoppi still sells on 05.10. No buy is recommended: the keeper window reopened when Ruoppi joined the squad, the one listing that fits inside it turned out to be a cameo-average trap, and it is now logged as an AVOID."
+  "headline": "One live action and a deadline inside the hour: bid exactly mv on Waldemar Anton before his Kickbase listing expires, and only if you can sell him back immediately after tonight's ",
+  "headline_short": "One live action and a deadline inside the hour: bid exactly mv on Wald",
+  "detail": "One live action and a deadline inside the hour: bid exactly mv on Waldemar Anton before his Kickbase listing expires, and only if you can sell him back immediately after tonight's twenty-hundred tick. He is the only pre-tick flip qualifier on the board this run, so there is no sequencing contest. Everything else holds: the two standing sales stay as timed, and nothing on the board is a points buy worth the deficit."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Both sales stand exactly as written, and neither is re-derived here. Treu: the 13.500.000 ask is live, self-correcting and unsold since 01.10 — leave it standing and pull it only if it is still unsold after the 03.10 tick. He is the one XI body being sold, and the points cost of losing him is Nakuzola entering the eleven. Ruoppi: sell on 05.10, not before. He is benched, so the sale costs nothing in points, and the only reason to wait is that he is the squad's strongest riser. NEW THIS RUN, and the reason the call now carries a tripwire: his Kickbase injury flag is corroborated for the first time by a dated source — a 02.10 report has him back early from Finland U21 duty with knee irritation, training individually, described as precautionary. That does not move the sale, because he does not play. But a knock is exactly what flips a rising market value to falling, and the wait is only worth it while he is rising. So if any run before 05.10 reads him as falling, sell that run instead of waiting.",
+  "reason": "Both standing sales are unchanged and neither needs touching today. Treu stays listed at the manager ask that has been sitting since yesterday: it is a modest premium over his market value, it is inside the measured manager-to-manager band, his market value is rising toward it, and there is no matchday before the lock, so patience costs nothing. Ruoppi stays timed for the fifth, exactly as the standing call specifies — no run between now and then should sell him early or re-derive that timing, and his market value has been climbing hard, which is the whole point of waiting.",
   "standing": [
    {
     "name": "Philipp Treu",
@@ -89,10 +209,10 @@
    },
    {
     "name": "Otto Ruoppi",
-    "pos": "",
-    "club": null,
-    "mv": null,
-    "ap": null,
+    "pos": "MID",
+    "club": "18",
+    "mv": 6079806,
+    "ap": 28,
     "why": "LEG 2 OF THE UNWIND, BUT NOT TODAY — TIMING IS THE WHOLE POINT OF THIS CALL, so no run between now and 05.10 should sell him early or re-derive this. HOW HE ARRIVED: bought 2026-10-02T02:47:34Z at 6.500.000 against AVOID A3f1c6h (now resolved `missed`), over an mv of 6.079.806, i.e. a REALISED PREMIUM OF +6,91% — inside the contested-Kickbase high cluster, which is exactly what A3f1c6h was trying to prevent. WHY HE IS THE RIGHT LEG 2 AND NOT A KEEPER: ap 28 over 4 matchdays, the second-weakest body in the squad after Nakuzola (ap 27), and he is NOT in the placed XI, so selling him cannot reduce the fielded eleven. No current dated info found on his starter status this run (searched 02.10; only undated profile pages returned) — recorded as \"no current info found\", not as a clean bill. WHY NOT NOW: selling back to Kickbase pays EXACTLY mv, so an immediate sale crystallises a 420.194 loss. He is mvt 1, and the measured next-tick drift for mvt 1 this run is +2,49% (n=661, 87,7% rose). There are SEVEN 20:00Z ticks between now and the MD5 lock. Recovering the +6,91% premium needs roughly three of them, so he should be back above the 6.500.000 paid from about 05.10. SELL HIM ONCE mv >= 6.500.000, and in any case BEFORE 2026-10-09T18:30:00Z — a negative balance at matchday start scores ZERO for the whole matchday, and that risk outranks recovering the premium. If mv has still not reached 6.500.000 by the 08.10 run, sell anyway and take the loss: the deadline binds, the premium does not.",
     "tag": "sell"
    }
@@ -100,7 +220,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No buy. The sweep was re-run from scratch rather than inherited, because the old standing conclusion rested on a squad count that is no longer true — Ruoppi's arrival added a third sellable body and genuinely widened the keeper window. One listing fits inside that window and only one: Stalmach, priced at exactly mv, a midfielder whose season average sits far above the body he would displace. On the numbers it reads like a free upgrade. It is not. Dated club-history data shows three appearances this season, all off the bench — on at 46, at 83, at 70 minutes — and no appearance at all on the most recent matchday; the average is manufactured almost entirely by one lucky goal as a substitute on matchday one. His own club described the signing as development rather than immediate impact, and his market value is already falling. He is logged as an AVOID so no later run finds him again and makes the same arithmetic mistake. Everything on the board that genuinely starts — Estève, Lochoshvili, Minjae, Wimmer, Jóhannesson — is two to four times the window and breaks the unwind. So the conclusion survives, but now for a measured reason rather than an arithmetic one: the window exists, and nothing inside it plays.",
+  "reason": "Nothing. The board was swept in full and there is no genuine points upgrade on it. Anton has the highest average points of any body available anywhere and he is still a flip only, not a keeper, because funding him as a keeper means selling Guirassy, which is points-negative and leaves a single attacker. Everything else with a real average is either already an open AVOID, on the blocked list, carrying a status flag, or below the man it would displace. Padding a covered position while the balance is leveraged would be the worst of both trades.",
   "standing": [],
   "killed_this_run": [
    {
@@ -216,11 +336,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open — the lock is a week away, so there is no risk of carrying an open position into a matchday. Anton is the only qualifier and he is a large one: a board listing, not a manager ask, priced at exactly market value, rising, and expiring before tonight's update, which is the whole mechanism. Bid exactly market value and do not raise a cent; losing the auction costs nothing, and chasing a contested board listing into the high cluster destroys ten good flips at once. Today's board gives the proof: the Tigges flip called this morning was lost because it cleared well above mv from a listing that read as uncontested when we saw it. That is now logged as a standing calibration fact — the offer count is a snapshot at read time, never evidence that a bid at mv will win. The one thing to add on a leg this size is timing. The headroom rule clears it comfortably, but the downside does not: if the tick goes the wrong way at the worst rate this ledger has ever measured, the three-leg unwind lands slightly short with no fourth body to sell. That needs an unlikely event and there are seven updates between now and the lock during which the other legs appreciate, so the flip stands. But if it is won, sell it back at the first update that prints a gain rather than sitting on it.",
+  "reason": "The one qualifier is Anton: a Kickbase board listing with no manager ask, priced at exactly market value, flagged rising, uncontested at read time, and — the part that matters — expiring before tonight's tick rather than after it. The drift was re-measured this run on a larger sample and is unchanged from the last reading, so the edge has not decayed and rivals are still not capturing it. Bid exactly market value and never raise: chasing a contested listing into the high cluster destroys the edge, and losing the auction costs nothing. The three other rising listings on the board all expire after tonight's tick and therefore capture nothing, which is the pre-tick rule doing its job.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Nothing new in the eleven. Gruber's flag is the known minor one — a knee irritation that kept him out of an international trip, dated well before this run, with his club's next match not until 10 October; his own club's reporting called it no cause for concern, and the reading that it clears in time still holds. Ruoppi's flag is now corroborated for the first time, dated today: back early from international duty with knee irritation, individual training, precautionary, with availability after the break still to be assessed. He is benched and being sold, so it costs nothing in points. No other squad member carries a flag, and no squad member has any dated news suggesting he leaves the league. Anton was checked for transfer risk only, which is all a pure value flip needs — he is in his national team squad and going nowhere. The old injury item that search engines keep surfacing for him is two years stale and is already logged as a date trap.",
+  "sweep": "No squad player is newly injured, suspended or benched. Gruber and Ruoppi both carry a Kickbase status flag, and both were logged and verified on earlier runs — Gruber's is a minor knock expected to clear before the matchday, Ruoppi's is a corroborated knee issue with individual training that does not disturb his sale timing. Anton reads fit and the transfer window is shut, so there is no leave-the-league risk on the flip. Two fresh date traps were logged this run: a stale two-season-old injury story about Anton mirrored across two domains under one article id, and a matchday-five injury page from an old season that invents a leg fracture for Neuer. Neuer is fit and in the placed eleven.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
