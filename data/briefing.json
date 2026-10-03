@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-02T22:52Z",
+ "run": "2026-10-03T00:54Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -9,13 +9,13 @@
   "played": 4
  },
  "cash": -17243918,
- "squad_value": 157897983,
+ "squad_value": 157713265,
  "leverage": {
   "balance": -17243918,
-  "floor": -46415841,
-  "spending_power": 29171923,
-  "hours_to_lock": 163.63,
-  "exposure": "A leveraged position is open and it is fully covered by the two scheduled sales, with margin to spare. The lock is still roughly a week out, so this is a planned deficit rather than a live risk, and the standing doctrine is not to escalate it every two hours just because it exists. What does bind is flip sizing: the two live legs sit comfortably inside the worst-case cap derived from the post-unwind slack, and that cap — not the headroom rule, and not spending power — is the number any future run should size against. If both flips win, both must be sold back after tomorrow evening's update, which leaves days of margin before the lock.",
+  "floor": -46354885,
+  "spending_power": 29110967,
+  "hours_to_lock": 161.6,
+  "exposure": "The leveraged position is open and the balance is negative, but the matchday lock is almost a week away and there is no matchday before it, so this is not yet urgent — only unavoidable. The rule that governs it is unchanged: a negative balance at matchday start scores zero for the whole matchday, so both standing sales plus both flip legs must be unwound to a non-negative balance and at least eleven players before the lock. A negative balance costs nothing until that instant, which is why the flip bids are not blocked by it. What would change the picture is any of the two sales failing to clear, and Treu's is a manager ask that is seller's choice and may never find a buyer — if it is still unsold with two days to go, it must be pulled and sold to Kickbase at market value instead.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,18 +43,18 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "Defensive cover, not an empty slot. The formation is legal and stays legal, so there is no penalty exposure from squad size. The gap is that the only defender with a fitness question is in the starting eleven, and the two scheduled sales remove the bench behind him. There is no money to fix it — any replacement would need a third sale leg that does not exist — so the realistic answer is to accept the risk, keep both flip legs small enough that the unwind margin survives, and revisit if the fitness picture worsens before the lock.",
+ "binding_gap": "The gap is a defender, and it opens only when the Treu sale lands: the fielded four then has to include Nakuzola, who is by a wide margin the weakest body in the eleven. It is real and it is not fillable. Every defender on this board either costs more in points than it adds once the third sale needed to fund it is counted, or sits above market value as a manager ask, or is on the blocked list with its reversal condition unmet because the balance is negative. The honest answer this run is that the gap stays open until the Treu ask clears and something else frees money, and no run should manufacture a buy to close it.",
  "surplus": "",
  "run_kind": "scheduled",
- "cash_ceiling_before_md1": 29171923,
+ "cash_ceiling_before_md1": 29110967,
  "daily_bonus": null,
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 43,
+  "listings": 45,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 3
  },
  "squad": [
   {
@@ -190,13 +190,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Quiet board, two live flip legs, and one real ledger repair.",
-  "headline_short": "Quiet board, two live flip legs, and one real ledger repair.",
-  "detail": "Quiet board, two live flip legs, and one real ledger repair. Nothing on the market is a points buy: the unwind ceiling, not spending power, is what kills every candidate, and after the two scheduled sales the squad lands on exactly eleven with no third sale leg available. The only actions tonight are the two standing flip bids — both still listed, both still priced at exactly market value, both still rising, and neither yet bid on. Bid exactly market value and never raise."
+  "headline": "A quiet board for points and a live one for value.",
+  "headline_short": "A quiet board for points and a live one for value.",
+  "detail": "A quiet board for points and a live one for value. Nothing on the market fixes the squad, and the two standing sales stay exactly as they were — Treu's ask runs, Ruoppi waits for the fifth. The actionable work this run is a pair of mv-exact flip bids that both expire while Georg is awake, plus one reversal: Gruber's injury flag is a rest-the-knee flag, not a worsening injury, and he is expected available for the matchday."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Both standing sales are confirmed and neither changes. Treu is live on the market at the manager ask and has drawn no offers. News checks out: fit, at Freiburg, but in open competition for the right-back slot per a dated September source — a fit rotation defender is exactly the right thing to sell to clear a deficit, and the older items about cramps and knocks are last-season date traps. Ruoppi stays deliberately unsold until the fifth; the timing is the whole point of that call and no run between now and then should pull it forward. Together the two legs clear the deficit with a thin but positive margin. Both are needed — Treu alone, even at the full ask, leaves the balance negative.",
+  "reason": "No change and no new sale. Treu remains leg one, listed by Georg as a manager ask that is modestly above the measured manager band and has sat unsold with no offers; his market value is rising, so the premium shrinks on its own every day and there is no reason to cut it yet. Ruoppi remains leg two and must not be sold early — he is rising fastest of the two, there is no matchday before the lock, and the eleven-player floor is checked once at matchday start. The pair at market value more than clears the deficit. The cost of the unwind is unchanged and should not be forgotten: Treu leaving pushes Nakuzola into the fielded four, and that is the single largest points loss on the account this week.",
   "standing": [
    {
     "name": "Philipp Treu",
@@ -220,9 +220,18 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No buy. Nothing on this board survives the unwind ceiling, and that is a ceiling question rather than a deficit question — a negative balance costs nothing until the matchday locks, but a third sale leg does not exist once Treu and Ruoppi are gone and the squad is at eleven. The tempting names are all already logged as avoids so no run re-derives them: the big attacking ask, the one genuine defensive upgrade, and the cheap midfielder with the cameo average. One avoid was closed this run for a different reason — Moreira's, whose every stated figure had gone stale after the evening tick. His conclusion survives his arithmetic: harder to justify now, not easier, because the deficit has grown since it was written.",
+  "reason": "Nothing to buy. The board's most tempting listing is a fit Frankfurt defender offered at exactly market value with no premium to argue about, and he is logged as an avoid anyway — not on price and not on fitness, but because the deficit turns every points buy into a one-for-one swap funded by a third sale, and no swap available here beats doing nothing by more than a rounding error. The same arithmetic kills the Ebnoutalib watch and kills keeping the smaller flip leg rather than unwinding him. This is the general result worth carrying forward: while the squad sits at thirteen with this debt, the board cannot sell Georg points.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "Maxime Estève",
+    "pos": "DEF",
+    "club": "43",
+    "ask": 6382870,
+    "mv": 6382870,
+    "premium_pct": 0,
+    "why": "KILLED ON THE UNWIND ARITHMETIC SO NO RUN RE-DERIVES HIM — HE IS THE BEST-LOOKING POINTS BUY ON THIS BOARD AND HE STILL DOES NOT WORK. Kickbase board listing (no `u`), prc 6.382.870 = mv EXACTLY, so there is no premium to argue about at all: DEF, Eintracht Frankfurt (tid 43), st 0, ap 93 on p 278 over 3 appearances, exs 34807 at the 00:46Z read = expires ~2026-10-03T10:26Z. On the surface he is exactly what the post-unwind squad lacks: a fit defender at mv who is +66 ap on Nakuzola (27), the man the Treu sale forces into the fielded four, at 96,7k per marginal point. WHY IT FAILS: the deficit, not the price. Cash is -17.243.918. The ONLY unplaced bodies are Ruoppi (6.156.866) and Nakuzola (500.000), so the debt cannot be cleared without selling a PLACED player, and Treu is already that player (SELL Spx9bs5). Buy Esteve and sell both of Treu and Ruoppi at mv and the balance is -17.243.918 - 6.382.870 + 12.836.648 + 6.156.866 = -4.633.274, i.e. STILL NEGATIVE at the lock, which scores ZERO for all of MD5. Even Treu's full 13.500.000 ask only reaches -3.969.922. So he requires a THIRD sale, and every candidate third sale costs more than he adds. (a) Sell Tanaka (4.968.113) as well: balance +334.839, squad 11 forced into 5-3-2, XI = 143 + (102+117+101+27+93) + (169+111+149) + (137+161) = 1310, against the do-nothing unwind's forced 4-4-2 at 1304. That is +6 ap for 6,4M of churn and two extra auctions of execution risk. (b) Sell Deman (9.592.237) instead: balance +4.958.963, squad 11 at 4-4-2, XI = 143 + (102+117+27+93) + (169+111+87+149) + 298 = 1296, i.e. -8 ap, WORSE than doing nothing, because Esteve 93 simply replaces Deman 101. (c) Keep twelve players and carry the deficit: scores zero. THE GENERAL RESULT, WHICH IS THE POINT OF LOGGING HIM: with the squad at 13 and the debt at 17,2M, every points buy on this board collapses into a 1:1 swap funded by a third sale, and no 1:1 available here is better than +6 ap. Do not re-derive Esteve, Guenther-as-keeper, or Ebnoutalib (W3lkdmx) as points buys while that holds. HE BECOMES LIVE AGAIN only if the balance reaches non-negative with the squad still at 12 or more — which on this account means the Treu ask clearing AND a further asset sale — and only on an ask at or below mv. NOTE AGAINST HIM EVEN THEN: mvt 2, so he is marked down ~3,40% at tonight's tick; he is a points asset, not a value one."
+   },
    {
     "name": "Dariusz Stalmach",
     "pos": "MID",
@@ -318,11 +327,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open — the lock is a week away — and the edge has not decayed. Re-measured from the event log this run, the rising-flag drift is statistically unchanged from the September measurement, on a larger sample, with the same share of players rising. That directly answers the standing question about rivals crowding in: they are not, yet. Two legs are live and both still qualify on every test — board listings rather than manager asks, priced at exactly market value, flagged rising, and expiring before tomorrow evening's update so a win is held through the tick. Lochoshvili is the earlier of the two and needs a decision first; Heuer Fernandes runs until mid-morning. Bid exactly market value on each and never raise: winning captures the tick, losing costs nothing, and chasing a contested listing into the high clearing band destroys the whole edge. A third candidate, Moreira, carries the largest expected capture on the board and is still declined — not on its merits but on worst-case sizing, because the post-unwind slack is thin enough that a bad tick across too much flip capital would leave the balance negative at the lock, and a zeroed matchday is never worth a few hundred thousand of expected capture. Three smaller qualifiers are passed over for the same reason. Two open questions stay open: whether the game caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if the rivals start taking it.",
+  "reason": "Four mvt-1 Kickbase listings qualify on the pre-tick rule, and the binding constraint this run is not headroom — it is the clock. Two of them expire in the middle of Georg's night and cannot realistically be bid on; recommending them would be recommending nothing. The slate is therefore the two that expire in his waking hours: the HSV keeper late morning and the Elversberg defender early afternoon, each bid at exactly market value and never raised. Both are board listings with no manager ask, so a loss costs nothing. Sized against the worst measured tick rather than the mean, the pair fits inside the post-unwind cushion with room to spare; the larger pairing that the mean would prefer breaks that line and is rejected on the rule. Neither can leave the league before the matchday — the German window shut at the start of September — and neither needs a starter check, because fitness does not enter the daily tick. Unwind both back to Kickbase at market value any time after tonight's update. Two open questions remain unresolved and should stay on the page: whether Kickbase caps squad size, which would cap flip throughput, and the fact that the measured edge comes from one league over one period and will decay if rivals crowd in. The re-measured drift has not fallen materially this run, and the rivals' own round trips in the feed are still instant resells rather than tick captures.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "One real concern, and it is not new. Gruber is carrying a knee irritation; the dated club-news sequence has him pulling out of international duty in late September and still on an individual training programme at the end of the month, with no confirmed return date. He is in the placed eleven, and after the unwind there is no spare defender behind him — that is the genuine cost of the Treu sale and it is already on the watch list. Ruoppi carries a fitness flag that the independent source does not corroborate; either way the scheduled sale is unaffected. Everyone else in the squad is clear: no flags, no dated absence news. Satoshi Tanaka specifically is fit with no flag, contrary to the confusion the identity error created.",
+  "sweep": "Reversal on Gruber, stated plainly because it contradicts a standing call. Two dated sources from late September — Ligainsider and absolutfussball — say he withdrew from international duty with a knee irritation to rest during the long break, that he had completed every opening match in full, and that he is expected to be available for the tenth, which is this matchday. Ligainsider's league-wide injured-and-suspended table, read this run, does not list him, nor any other Georg squad player. The previous call that his timeline had moved the wrong way is closed. The caveat is honest: those items are eleven days old, so they are a forecast rather than fresh news, and this should be re-checked once in the two days before the lock. Ruoppi's flag is unchanged and still uncorroborated, and it does not affect his sale either way. No squad player is newly injured, suspended or benched, and no squad player has dated news suggesting he may leave the league.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -493,19 +502,19 @@
   },
   {
    "k": "Squad value",
-   "v": "157.897.983"
+   "v": "157.713.265"
   },
   {
    "k": "33% floor",
-   "v": "-0,33 x (157.897.983 + -17.243.918) = -46.415.841"
+   "v": "-0,33 x (157.713.265 + -17.243.918) = -46.354.885"
   },
   {
    "k": "Spending power",
-   "v": "-17.243.918 + 46.415.841 = 29.171.923 — NOT -17.243.918"
+   "v": "-17.243.918 + 46.354.885 = 29.110.967 — NOT -17.243.918"
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=578, -1,80% to +308,77%"
+   "v": "n=579, -1,80% to +308,77%"
   }
  ]
 }
