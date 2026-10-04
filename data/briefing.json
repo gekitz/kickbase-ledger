@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-04T10:49Z",
+ "run": "2026-10-04T12:50Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -17233918,
   "floor": -46309349,
   "spending_power": 29075431,
-  "hours_to_lock": 127.68,
-  "exposure": "A leveraged position is open, and it is not an alarm this run. The lock is more than five days out, which is far outside the proximity scope that makes leverage urgent, and the task's own rule is explicit that a negative balance costs nothing until the instant the matchday locks — what matters is whether it can be unwound, and it can, twice over. The two standing sales clear the deficit on their own. Taking the large flip would roughly double the exposure for part of a day, but the flip is its own unwind leg: it gets sold back to Kickbase at market value after tonight's tick, which consumes no unwind capacity and leaves five days of margin before the lock. Ledger note carried forward: the Cloudflare D1 connector is still not present in this session, so the direct ledger query the task prescribes could not be run. The defect it was meant to work around is already resolved in the computed context, so no actionable call was hidden from this run — but the gap is real and worth fixing.",
+  "hours_to_lock": 125.65,
+  "exposure": "A leveraged position is open and stays open until the unwind completes. It is not urgent: the lock is still days out, and the two standing sales alone clear the deficit at market value with room to spare, so the deficit costs nothing between now and then — a negative balance only bites at the instant the matchday starts. Adding the flip keeps that true provided the flipped player is sold back after tonight's tick, which the instant sale to Kickbase always allows at exactly market value. No live offers are outstanding and nothing expires inside the next two hours.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "There is no binding formation gap today — eleven are placed, several formations are fillable and nothing forces a purchase. The binding constraint is instead the unwind: the negative balance has to be cleared before matchday five locks, and the two standing sales do that with room to spare whether or not the listed ask clears or the sale falls back to market value. The gap that will bind, once those sales land, is the defensive slot that the weakest body in the squad has to fill, and that one has already been confirmed to have no remedy on this board.",
+ "binding_gap": "None. Every legal formation is fillable from the current squad and the fielded eleven is intact, so nothing binds on the points side. What binds instead is the unwind: the balance is negative and must be back to non-negative with at least eleven players before the matchday locks. That is days away and fully covered by the two standing sales at market value, so it constrains which sales happen rather than whether a buy is possible.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 29075431,
@@ -51,12 +51,112 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 40,
+  "listings": 39,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 3
+  "expiring_within_2h": 1
  },
  "squad": [
+  {
+   "name": "Nusa",
+   "pos": "MID",
+   "club": "43",
+   "mv": 28025037,
+   "ap": 169,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Guirassy",
+   "pos": "ATT",
+   "club": "3",
+   "mv": 32794967,
+   "ap": 161,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Engelhardt",
+   "pos": "MID",
+   "club": "5",
+   "mv": 14225875,
+   "ap": 149,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Neuer",
+   "pos": "GK",
+   "club": "2",
+   "mv": 12791085,
+   "ap": 143,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Gregoritsch",
+   "pos": "ATT",
+   "club": "13",
+   "mv": 11767017,
+   "ap": 137,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Gruber",
+   "pos": "DEF",
+   "club": "18",
+   "mv": 9262524,
+   "ap": 117,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Wolf",
+   "pos": "MID",
+   "club": "13",
+   "mv": 6236005,
+   "ap": 111,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "ter Horst",
+   "pos": "DEF",
+   "club": "29",
+   "mv": 8902673,
+   "ap": 102,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Deman",
+   "pos": "DEF",
+   "club": "10",
+   "mv": 9384673,
+   "ap": 101,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Tanaka",
+   "pos": "MID",
+   "club": "8",
+   "mv": 4899713,
+   "ap": 87,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
   {
    "name": "Treu",
    "pos": "DEF",
@@ -66,17 +166,37 @@
    "state": "clear",
    "note": "",
    "tag": "keep"
+  },
+  {
+   "name": "Ruoppi",
+   "pos": "MID",
+   "club": "18",
+   "mv": 5910790,
+   "ap": 28,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Nakuzola",
+   "pos": "DEF",
+   "club": "18",
+   "mv": 500000,
+   "ap": 27,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
   }
  ],
  "verdict": {
   "action": "act",
-  "headline": "One thing is urgent and everything else can wait five days.",
-  "headline_short": "One thing is urgent and everything else can wait five days.",
-  "detail": "One thing is urgent and everything else can wait five days. The Ebnoutalib flip that two previous runs opened is STILL UNBID — the listing shows no offers at all — and it expires inside the hour, before tonight's market-value tick. That is the whole run. Bid exactly market value, never raise, and if the auction is lost it has cost nothing. The Tella flip is the same trade at roughly a quarter of the size and has most of the day left on it. Beyond those two, the board is dead: every manager ask on it has already been killed in writing, the two listings that appeared since the last run were both killed this run, and there is no points buy worth the unwind capacity. Matchday 5 does not lock for more than five days, so nothing in the squad needs touching today."
+  "headline": "Quiet run, one live action.",
+  "headline_short": "Quiet run, one live action.",
+  "detail": "Quiet run, one live action. Nothing in the position changed since the last run — same cash, same squad, same thirteen bodies, same fielded eleven. The only thing with a clock on it today is the Tella flip, already recommended two hours ago and still live on the board at exactly market value with no offers against it. The large Ebnoutalib flip expired before this run opened and was never bid on; it is resolved missed. No new buy is warranted and neither standing sale moves today."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Both standing sales remain open and correct, and neither should be executed today. The Treu leg is already listed and has sat without a single offer for three days — the ask is above where manager-to-manager listings actually clear, and the market value has risen underneath it since listing, which narrows the premium without any action needed. Worth watching: if it still has no offers in a couple of days, the ask is the thing to cut, not the plan. The Ruoppi leg is explicitly deferred to the fifth by its own call, and no run before then should sell him early or re-derive the timing. Honest caveat carried forward from Wg4wafx: his value fell at the last tick while still flagged as rising, so the timing premise behind that deferral is damaged. It is not dead, and the deferral stands, but the fifth is when it gets judged on facts rather than on the original prose.",
+  "reason": "Both standing sales remain open and neither should be executed today. The defender sale is unconditional as to whether and free as to when; his manager ask has now sat unsold for three days, which says the ask sits above the band managers actually clear at, but there is no reason to cut it while he still carries a rising flag and the lock is days away. The midfielder sale is deliberately timed for tomorrow and that timing stands, though its original premise is weaker than when written: he fell at the last tick despite carrying a rising flag, and his twenty-four-hour trend has turned down. Do not re-derive the pairing — it was derived independently yesterday and is optimal.",
   "standing": [
    {
     "name": "Philipp Treu",
@@ -89,10 +209,10 @@
    },
    {
     "name": "Otto Ruoppi",
-    "pos": "",
-    "club": null,
-    "mv": null,
-    "ap": null,
+    "pos": "MID",
+    "club": "18",
+    "mv": 5910790,
+    "ap": 28,
     "why": "LEG 2 OF THE UNWIND, BUT NOT TODAY — TIMING IS THE WHOLE POINT OF THIS CALL, so no run between now and 05.10 should sell him early or re-derive this. HOW HE ARRIVED: bought 2026-10-02T02:47:34Z at 6.500.000 against AVOID A3f1c6h (now resolved `missed`), over an mv of 6.079.806, i.e. a REALISED PREMIUM OF +6,91% — inside the contested-Kickbase high cluster, which is exactly what A3f1c6h was trying to prevent. WHY HE IS THE RIGHT LEG 2 AND NOT A KEEPER: ap 28 over 4 matchdays, the second-weakest body in the squad after Nakuzola (ap 27), and he is NOT in the placed XI, so selling him cannot reduce the fielded eleven. No current dated info found on his starter status this run (searched 02.10; only undated profile pages returned) — recorded as \"no current info found\", not as a clean bill. WHY NOT NOW: selling back to Kickbase pays EXACTLY mv, so an immediate sale crystallises a 420.194 loss. He is mvt 1, and the measured next-tick drift for mvt 1 this run is +2,49% (n=661, 87,7% rose). There are SEVEN 20:00Z ticks between now and the MD5 lock. Recovering the +6,91% premium needs roughly three of them, so he should be back above the 6.500.000 paid from about 05.10. SELL HIM ONCE mv >= 6.500.000, and in any case BEFORE 2026-10-09T18:30:00Z — a negative balance at matchday start scores ZERO for the whole matchday, and that risk outranks recovering the premium. If mv has still not reached 6.500.000 by the 08.10 run, sell anyway and take the loss: the deadline binds, the premium does not.",
     "tag": "sell"
    }
@@ -100,7 +220,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing to buy for points. The single most tempting listing on the board remains a high-average striker whose ask carries a real premium, and he stays avoided on the unwind ceiling rather than on merit — that call is unchanged and this run does not reopen it. Every other manager ask is already logged as an avoid. Two listings appeared since the last run and both were killed this run: a Dortmund midfielder whose average looks like a bargain but rests on a single scoring appearance and who is flagged unfit, and a St. Pauli striker at an average below the weakest body already in the squad. Both are also falling in value, so neither works as a flip either. Nothing on this board improves a slot Georg can already fill.",
+  "reason": "No buy. There is no formation hole to fix and no slot on the board that is a genuine points upgrade on anyone currently fielded; the high-average names are all either flagged unavailable, carrying a falling flag, or asking well above market value, and every one already sits on the avoid list from earlier runs. Padding a position already covered would only deepen the deficit that has to be unwound before the lock.",
   "standing": [],
   "killed_this_run": [
    {
@@ -149,15 +269,6 @@
     "why": "REPLACES Al66vie, NOW CLOSED, WHOSE PRICE PREMISE IS DEAD — THE SELLER CUT THE ASK. Borussia Rumpelfuss has moved him 15.000.000 -> 14.000.000 against mv 13.129.635, i.e. the premium falls from +14,24% to +6,63%. THAT IS THE ONLY THING THAT CHANGED, AND IT DOES NOT CHANGE THE ANSWER, so this is logged to stop the next run re-deriving a buy case off the cheaper headline. HE REMAINS THE ONLY GENUINE POINTS UPGRADE ON THE BOARD: DEF, ap 144, st 0, mvt 1, against Treu's ap 76 in the slot he would take, i.e. +68 ap. THE ARITHMETIC STILL KILLS HIM, RE-DERIVED AT 2026-10-03T22:45Z ON THE CURRENT FIGURES. Cash -17.233.918, squad 13, placed 11 in 4-4-2, lock 2026-10-09T18:30Z. Buy at 14.000.000 -> cash -31.233.918, squad 14. The unwind legs that exist are Treu 12.864.921 and Ruoppi 5.910.790 = 18.775.711, which leaves cash -12.458.207 at squad 12 — STILL NEGATIVE. Add the only other named sale, Gregoritsch 11.767.017 (W96bjvb), and cash is -691.190 at squad 11 — STILL NEGATIVE, and now every remaining player must be fielded with no slack. A FOURTH leg takes the squad to 10 and triggers the -100 under-eleven penalty. So there is no path from this buy to a non-negative balance AND >= 11 players before the lock, which is the test, and a negative balance at matchday start scores ZERO for all of MD5. The premium was never the binding objection and a smaller premium therefore does not reverse it. REVERSAL CONDITION: only if the debt is already cleared to non-negative AND the squad is at 12 or more, so that he can be bought and unwound by a single sale. Do NOT reverse on a further price cut."
    },
    {
-    "name": "Younes Ebnoutalib",
-    "pos": "ATT",
-    "club": "4",
-    "ask": 17962263,
-    "mv": 18149222,
-    "premium_pct": -1.03,
-    "why": "REPLACES WATCH W7haz5s, NOW CLOSED. HE IS AVOIDED ON THE UNWIND CEILING, NOT ON MERIT — and no future run may re-open him as a buy on the merit case, because the merit case is GOOD and will keep tempting runs. MERIT, VERIFIED THIS RUN: ligainsider profile 38489 read 2026-10-03 gives 5 appearances, 4 starts, 4 goals 1 assist, 81% of available minutes, 77% as starter, st 0, no injury, contract to 2031. The 'Systemwechsel kostet Ebnoutalib den Startelfplatz' article is dated 14.09.2026 and is a ONE-OFF, now superseded: Huetter restored him for MD4 v Freiburg on 19.09.2026 as a Doppelspitze with Burkardt (sge4ever.de). So ap 151 is REAL, not a stale-average trap, and he would displace Gregoritsch (ap 137) for about +14 ap per matchday. THE ARITHMETIC THAT KILLS IT: cash is -17.243.918. Buying at mv 17.962.263 takes the debt to -35.206.181. One buy permits one extra sale, so the unwind set becomes Treu + Ruoppi + one of {Ebnoutalib, Gregoritsch}. Best realisable at mv is Treu 12.836.648 + Ruoppi 6.156.866 + Gregoritsch 11.761.355 = 30.754.869, which is 4.451.312 SHORT of the debt. A negative balance at the 2026-10-09T18:30Z lock scores ZERO for the whole matchday, so this buy cannot be unwound and the +14 ap is bought at the price of the entire matchday. REVERSAL: only if the debt is already cleared to roughly -12M or better AND he is still listed at or below mv. Spending power alone (29.110.967) is NOT the test and must not be cited as one — it is the 33% floor, not the unwind."
-   },
-   {
     "name": "Emmanuel Latte Lath",
     "pos": "ATT",
     "club": "40",
@@ -198,11 +309,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open — the lock is more than five days away, so there is no risk of a flip being caught by matchday start. Two listings qualify on the full screen: a Kickbase board listing, no manager ask, priced exactly at market value, flagged rising, and expiring BEFORE tonight's tick. Ebnoutalib is the large one and expires inside the hour with no offers placed. Tella is the small one at roughly a quarter of the exposure and runs until early evening, still comfortably before the tick. Bid exactly market value on each and never raise — losing costs nothing, chasing destroys the edge. Both together fit inside spending power with room left over. Three other rising board listings priced at market value were screened and rejected because their expiry falls after tonight's tick, so a win would capture nothing; that screen is logged so it is applied consistently rather than re-derived. The doctrine was re-measured from the event log this run as the task requires: the sample has grown by well over two hundred observations since the baseline, the mean next-tick drift on rising players is essentially unchanged, and the hit rate has actually improved slightly. The edge is not decaying yet. The two open questions stand unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in. One live reminder of why the never-raise rule exists: a board listing cleared this morning at nearly three times its market value. Under the doctrine we would have bid market value, lost, and paid nothing — chasing that one clear would have wiped out dozens of good flips.",
+  "reason": "The flip window is wide open and the measured edge is intact — the rising-flag drift was re-measured from the event log this run against a sample half again as large as the one the doctrine was written on, and the mean held with the hit rate slightly better. Exactly one board listing qualifies: a midfielder priced at exactly market value, rising flag, no offers against him, expiring comfortably before tonight's tick so a win still captures it. Bid exactly market value and never raise. The capital it absorbs is a small fraction of spending power and it unwinds inside the deadline alongside the two standing sales — but note the flip is unwind-mandatory rather than optional: selling only the two standing legs while keeping him leaves the balance negative, so all three must go. Five other rising-flag listings sit at exactly market value but expire after tonight's tick, where the flag no longer predicts, so they do not qualify this cycle. The headline finding is on the one that got away: the largest listing of the cycle expired with no bid from anyone in the league, direct evidence that the bid-at-market-value rule wins uncontested on big names rather than being chased into the high cluster. Size appears to deter rivals rather than attract them. That is a single observation and must not be hardened into a rule, but it argues for sizing future flips up rather than defaulting to the small version. Two questions stay open: whether Kickbase caps squad size, which would cap how many flips can run at once, and the standing caveat that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player is newly injured, suspended or benched. The two players carrying status flags are the same two as at the last run, and both already have their dated cause recorded in the ledger: the placed defender whose club page and player profile disagree, where the club page is the one to trust, and the unplaced midfielder who is the deferred unwind leg. Neither is a new alarm and neither changes a decision today. The transfer check on the Tella flip turned up one league-exit item, which is undated and names the January window, against a club announcement of a contract extension — it cannot bite inside a same-day round trip, and it is logged so a later run does not rediscover it and kill the flip on it. The Ebnoutalib monitoring item is already logged for the same reason and is likewise not a blocker. Flips do not need a starter check in any case: fitness does not enter the daily tick.",
+  "sweep": "No squad player is newly unavailable. The two unavailable flags in the squad both pre-date this run and both already carry a dated cause from the consolidated sweep earlier today; one sits on a placed defender and is the one to keep an eye on before the lock, the other is on a player already marked for sale and not in the fielded eleven. A fresh league-wide injury sweep this run turned up nothing current — everything returned was previous-season material, so no new information, and nothing was invented to fill the gap. The flip candidate needs no starter check, since fitness does not enter the daily value tick, and his transfer question was already answered and must not be re-discovered.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -385,7 +496,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=595, -1,80% to +308,77%"
+   "v": "n=596, -1,80% to +308,77%"
   }
  ]
 }
