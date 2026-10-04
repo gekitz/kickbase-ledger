@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-04T00:49Z",
+ "run": "2026-10-04T02:48Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -17233918,
   "floor": -46309349,
   "spending_power": 29075431,
-  "hours_to_lock": 137.67,
-  "exposure": "A leveraged position is open and has been for days, but the lock is 137,7 hours away, so this is exposure to manage rather than an emergency — a negative balance costs nothing until the instant the matchday locks. The two-leg unwind clears it at current market values with roughly 1,5M of headroom and leaves exactly eleven players in a legal 4-4-2. The live threat to that is the Onyeka offer: win it and the two legs no longer cover the debt and a third sale is forced out of the placed eleven. The flips do not threaten it — each flip is its own unwind leg and consumes no unwind capacity, and both can be sold back to Kickbase at mv immediately after tonight's tick with five days to spare.",
+  "hours_to_lock": 135.69,
+  "exposure": "The leveraged position is open but not yet dangerous, because the lock is days out and the planned unwind clears it with room. The real exposure this run is the unpulled offer: if it wins it deepens the debt past what the two planned sales can cover, converting a tidy two-leg unwind into a three-leg one whose third leg has to be a starter. That is the whole case for pulling it inside the hour. A ledger defect also surfaced: a blocked row carries the wrong player name against its id, which could cause a future run either to kill a valid flip or to lose a real sale record. It is recorded with the repair instruction.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "Not a position — the squad fields five legal formations and nothing is short. The binding constraint is the negative balance against the 09.10 18:30Z lock, and the only thing that actually threatens it this run is the unpulled Onyeka offer, which would break the two-leg unwind outright.",
+ "binding_gap": "There is no points gap to fill while the balance is negative. The binding constraint is the unwind, not the board: the two standing sales return the balance to positive at exactly eleven players, with no spare leg, so any points purchase before they execute forces a third sale out of the fielded eleven. The defensive slot that opens after the unwind still has no remedy on this board, which the ledger already recorded and this run confirms.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 29075431,
@@ -54,9 +54,109 @@
   "listings": 39,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 4
  },
  "squad": [
+  {
+   "name": "Nusa",
+   "pos": "MID",
+   "club": "43",
+   "mv": 28025037,
+   "ap": 169,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Guirassy",
+   "pos": "ATT",
+   "club": "3",
+   "mv": 32794967,
+   "ap": 161,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Engelhardt",
+   "pos": "MID",
+   "club": "5",
+   "mv": 14225875,
+   "ap": 149,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Neuer",
+   "pos": "GK",
+   "club": "2",
+   "mv": 12791085,
+   "ap": 143,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Gregoritsch",
+   "pos": "ATT",
+   "club": "13",
+   "mv": 11767017,
+   "ap": 137,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Gruber",
+   "pos": "DEF",
+   "club": "18",
+   "mv": 9262524,
+   "ap": 117,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Wolf",
+   "pos": "MID",
+   "club": "13",
+   "mv": 6236005,
+   "ap": 111,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "ter Horst",
+   "pos": "DEF",
+   "club": "29",
+   "mv": 8902673,
+   "ap": 102,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Deman",
+   "pos": "DEF",
+   "club": "10",
+   "mv": 9384673,
+   "ap": 101,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Tanaka",
+   "pos": "MID",
+   "club": "8",
+   "mv": 4899713,
+   "ap": 87,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
   {
    "name": "Treu",
    "pos": "DEF",
@@ -66,17 +166,37 @@
    "state": "clear",
    "note": "",
    "tag": "keep"
+  },
+  {
+   "name": "Ruoppi",
+   "pos": "MID",
+   "club": "18",
+   "mv": 5910790,
+   "ap": 28,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Nakuzola",
+   "pos": "DEF",
+   "club": "18",
+   "mv": 500000,
+   "ap": 27,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
   }
  ],
  "verdict": {
   "action": "act",
-  "headline": "ONE ACTION, AND IT IS A PULL, NOT A BUY.",
-  "headline_short": "ONE ACTION, AND IT IS A PULL, NOT A BUY.",
-  "detail": "ONE ACTION, AND IT IS A PULL, NOT A BUY. The standing 7.351.999 offer on Francis Onyeka is still live and still unpulled — a fourth consecutive run — and it expires at 03:49Z, roughly three hours from this run. Georg is the ONLY bidder (ofc 1), so this is not a risk of winning, it is a near-certainty of winning unless he pulls. AVOID Al7zxzg stands unchanged and the arithmetic has only got worse: the bid is +15,19% over an mv of 6.382.195, and winning takes cash to -24.585.917, which the two-leg Treu+Ruoppi unwind no longer clears (it lands at -5.810.206 and needs a third sale). The two ways out of that are both losses — dump Onyeka straight back to Kickbase at mv for a guaranteed -969.804, or sell Wolf and swap a placed ap 111 for an ap 48, costing about 63 fielded points a matchday. Pull the offer. Everything else on the board can wait: the MD5 lock is still 137,7 hours away, no transfer has settled in the league since the last run, and the squad-wide fitness sweep came back clean."
+  "headline": "One action, and it has a clock on it: pull the standing offer on Francis Onyeka before it expires.",
+  "headline_short": "One action, and it has a clock on it: pull the standing offer on Franc",
+  "detail": "One action, and it has a clock on it: pull the standing offer on Francis Onyeka before it expires. It has now survived four run cycles unpulled, and this is the run the ledger designated as the push. Everything else on the board can wait."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Both sale legs stay open and neither is for tonight. Ruoppi (SELL Slqs8pd) is still timed for 05.10 and the deadline is not urgency — there is no matchday before the lock and the eleven-player floor is checked once at matchday start. His timing premise has taken a real knock, though, and it should be stated plainly rather than buried: he fell 4,00% at the last 20:00Z tick while carrying mvt 1, and he is now 589.210 below the 6.500.000 he was bought for. He still carries mvt 1 into tonight's tick, and the measured edge on that flag is positive, so holding remains the better side of the bet — but the 'every tick held is free money' framing from the original call is no longer accurate and a future run should not lean on it. Treu (SELL Spx9bs5) likewise stays open; if the ask has still not moved by 07.10, the right move is to pull it and sell to Kickbase at mv rather than carry an unsold listing into the lock week.",
+  "reason": "Both standing sale calls remain open and correct, and neither should be executed tonight. The Treu ask is still live on the market at the manager price, unsold, and his deadline is the lock. The Ruoppi leg is deliberately timed for the fifth, not now, and no run between here and then should bring it forward or re-derive it. Executed together they return the balance to positive at exactly eleven players, which is the whole of the slack and the reason nothing else may be bought on points.",
   "standing": [
    {
     "name": "Philipp Treu",
@@ -89,10 +209,10 @@
    },
    {
     "name": "Otto Ruoppi",
-    "pos": "",
-    "club": null,
-    "mv": null,
-    "ap": null,
+    "pos": "MID",
+    "club": "18",
+    "mv": 5910790,
+    "ap": 28,
     "why": "LEG 2 OF THE UNWIND, BUT NOT TODAY — TIMING IS THE WHOLE POINT OF THIS CALL, so no run between now and 05.10 should sell him early or re-derive this. HOW HE ARRIVED: bought 2026-10-02T02:47:34Z at 6.500.000 against AVOID A3f1c6h (now resolved `missed`), over an mv of 6.079.806, i.e. a REALISED PREMIUM OF +6,91% — inside the contested-Kickbase high cluster, which is exactly what A3f1c6h was trying to prevent. WHY HE IS THE RIGHT LEG 2 AND NOT A KEEPER: ap 28 over 4 matchdays, the second-weakest body in the squad after Nakuzola (ap 27), and he is NOT in the placed XI, so selling him cannot reduce the fielded eleven. No current dated info found on his starter status this run (searched 02.10; only undated profile pages returned) — recorded as \"no current info found\", not as a clean bill. WHY NOT NOW: selling back to Kickbase pays EXACTLY mv, so an immediate sale crystallises a 420.194 loss. He is mvt 1, and the measured next-tick drift for mvt 1 this run is +2,49% (n=661, 87,7% rose). There are SEVEN 20:00Z ticks between now and the MD5 lock. Recovering the +6,91% premium needs roughly three of them, so he should be back above the 6.500.000 paid from about 05.10. SELL HIM ONCE mv >= 6.500.000, and in any case BEFORE 2026-10-09T18:30:00Z — a negative balance at matchday start scores ZERO for the whole matchday, and that risk outranks recovering the premium. If mv has still not reached 6.500.000 by the 08.10 run, sell anyway and take the loss: the deadline binds, the premium does not.",
     "tag": "sell"
    }
@@ -100,7 +220,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No buys. This is deliberate, not an empty board. The binding gap is not a position — the squad can field five legal formations — it is the negative balance, and until it is unwound every euro spent on points has to be unwound again before 09.10 18:30Z. The two listings worth noting are both already on the AVOID list and both stay there: Ebnoutalib as a points buy (Aodapj9, killed on the unwind ceiling, not on merit) and Onyeka (Al7zxzg). Nothing new appeared on the board in the last two hours except Reggiani, who is mvt 2 and falling.",
+  "reason": "No points buy this run. The board holds nothing that improves the fielded eleven, and the unwind has no room for one in any case. Onyeka is the only name worth arguing about and the argument goes against him: he is a confirmed starter on a dated club source, which is genuinely new, but the avoid never rested on fitness. It rests on the premium, and at his points average he does not enter the eleven, so the premium buys a bench body. Worse, landing him leaves the balance still negative after both planned sales, forcing a third leg that would have to come out of the fielded eleven. Pull, do not reprice.",
   "standing": [],
   "killed_this_run": [
    {
@@ -189,11 +309,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open — the lock is 137,7 hours away — and both standing FLIP calls survive this run unchanged. Ebnoutalib and Tella are each still a Kickbase board listing with no manager behind it, priced at exactly mv, carrying mvt 1, with zero offers against them, and both expire before tonight's 20:00Z tick, so a win captures that tick. Bid exactly mv on either and never raise: the entire edge is in refusing to chase, and one contested clear in the high cluster wipes out ten good flips. Ebnoutalib is the larger of the two and carries most of the expected value; Tella is the same mechanism at roughly 28% of the exposure and is the one to take if that concentration is unwanted. Both fit inside spending power together, and both unwind cleanly back to a positive balance and eleven players with days to spare. Two smaller mvt-1 listings also qualify mechanically but are not worth the keystrokes — Nguefack is too small to matter, and Bensebaini and Bolin both expire AFTER tonight's tick, so they capture nothing tonight. Onyeka is the awkward case: mechanically he is a qualifying flip at mv, but the live offer on him is 969.804 ABOVE mv, so the action there is to pull, not to re-price — and only if Georg is awake and wants it should he consider re-bidding at exactly 6.382.195. Re-measured this run: the mvt-1 edge is holding, now on 716 observations rather than 472, with essentially the same mean and a slightly higher hit rate, so no decay yet. The two open questions stand: it is unknown whether Kickbase caps squad size, which would cap how many flips can run at once, and the edge is measured in one league over one period and will erode if the rivals crowd in.",
+  "reason": "The flip window is open and the re-measured drift has not decayed: the rising-flag cohort is now measured over a larger sample than when the doctrine was set and the mean next-tick move is essentially unchanged, with the share that rose slightly higher. Two candidates qualify in size, both Kickbase board listings at exactly market value with the rising flag and both expiring before tonight's tick, which is what makes a win capture it. Bid exactly market value on each and never raise; losing the auction costs nothing, chasing one into the contested high cluster destroys the edge. Two further listings carry the rising flag at exactly market value but expire after tonight's tick and so capture nothing, and a fifth is too small to matter. Taking both qualifying flips absorbs most of the spending power and is precisely why Onyeka cannot also be repriced to market value. Both flips are self-unwinding, consume no unwind capacity, and must be sold back after the tick well ahead of the lock. The two open questions still stand: whether Kickbase caps squad size, which would cap flip throughput, and that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "A clean run. Ligainsider's league-wide Verletzte-und-Gesperrte table lists none of the thirteen squad players, and none of the flip candidates either. One refinement worth recording: Gruber's Kickbase st 2 flag now has a dated cause of its own — his Ligainsider profile carries a Kniereizung with a newest item of 29.09.2026 and no update since. That partially qualifies the earlier conclusion that both st 2 flags in the squad were resolved. The 03.10 Mainz probable XI is newer and still starts him, so the call is not overturned, but it is now one dated XI standing against a live knee flag rather than a clean all-clear, and he is a placed ap 117 defender. No action: the lock is five and a half days out and selling him would drop the post-unwind squad below a fillable shape. Re-check from 07.10. Ruoppi also carries st 2 and that one remains uncorroborated by any dated source — but he is unplaced and being sold, so it is moot.",
+  "sweep": "Clean sweep. Nobody in the squad appears on the current injury or suspension table. Onyeka is in Elversberg's probable eleven for the matchday on a dated club page, alongside one long-term absentee and three doubtfuls who are not him. Neither flip candidate appears injured, and neither carries transfer risk with the German window long shut.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
