@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-04T14:51Z",
+ "run": "2026-10-04T16:45:24Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -8,14 +8,14 @@
   "locks": "2026-10-09T18:30:00Z",
   "played": 4
  },
- "cash": -17233918,
+ "cash": -17213918,
  "squad_value": 157565280,
  "leverage": {
-  "balance": -17233918,
-  "floor": -46309349,
-  "spending_power": 29075431,
-  "hours_to_lock": 123.65,
-  "exposure": "The balance is negative and must be back to non-negative before the MD5 lock, or the whole matchday scores zero. The unwind is already specified and still works: Treu first, Ruoppi second, and together they clear the deficit with room to spare. The lock is over five days out and there is no matchday in between, so nothing has to happen today. Adding the Tella flip deepens the deficit temporarily, but the flip unwinds at market value back to the board and still leaves both sell legs free to clear the rest — the squad would go to fourteen bodies and three sales bring it back to eleven, which remains a legal formation.",
+  "balance": -17213918,
+  "floor": -46315949,
+  "spending_power": 29102031,
+  "hours_to_lock": 121.64,
+  "exposure": "The balance is negative and must be unwound before the lock, because a negative balance at matchday start scores zero for the entire matchday. That risk outranks every other consideration — but it is not urgent, and this run will not pretend otherwise: the lock is five days away, and the deficit costs nothing at all until the instant it arrives. The two standing sales clear it comfortably on their own at market value, with slack left over. Adding the flip deepens the deficit in the short term and makes the unwind need all three legs rather than two, but it still clears with room and still leaves the squad legal at eleven bodies in a valid formation. The sequencing that must not be broken: both the flip and the sales have to settle before the lock, and the flip must never be left open across it.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,10 +43,10 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "There is no formation hole. Every legal shape is fillable from the current squad and the placed eleven is complete, so the eleven-player penalty is not in play. The binding constraint this run is not position scarcity, it is unwind capacity: buys are permitted only one-for-one against sales, and both available sale legs are already committed to clearing the deficit. A merit buy would therefore need a third sale, and the next body in line is a fielded midfielder whose proceeds are small and whose departure costs points. That is what kills the buy list, not the negative balance.",
+ "binding_gap": "There is no formation hole — every legal shape is fillable and the bench covers the one flagged starter. The binding constraint this cycle is not the squad at all, it is the board: nothing available improves the fielded eleven at any price, so the spending power has nowhere useful to go. The real gap is quality at the back end of the eleven, where the weakest fielded body is also the designated sale — and replacing him is a problem for a future board, not this one.",
  "surplus": "",
  "run_kind": "scheduled",
- "cash_ceiling_before_md1": 29075431,
+ "cash_ceiling_before_md1": 29102031,
  "daily_bonus": null,
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
@@ -54,7 +54,7 @@
   "listings": 39,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 3
  },
  "squad": [
   {
@@ -190,13 +190,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "One time-bound action: place the Tella flip bid at exactly his market value before the listing expires this evening, and never raise.",
-  "headline_short": "One time-bound action: place the Tella flip bid at exactly his market ",
-  "detail": "One time-bound action: place the Tella flip bid at exactly his market value before the listing expires this evening, and never raise. Everything else holds. No buy earns its place this run, both standing sell legs are unchanged, and no squad player is newly unavailable. The leveraged position is open but the lock is still more than five days away, so it is a scheduled unwind, not an emergency."
+  "headline": "Hold the line and let tonight's tick run.",
+  "headline_short": "Hold the line and let tonight's tick run.",
+  "detail": "Hold the line and let tonight's tick run. Nothing in the squad needs fixing before the lock, which is still five days out, and the board offers no body that would improve the fielded eleven. The one time-boxed action is the standing Tella flip bid, which expires late this afternoon, before tonight's market-value update — win it and the tick is captured, lose it and it costs nothing. Above all, do not touch the Treu ask."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Both standing legs are unchanged and neither needs action today. Treu is leg one: fit, starting, lowest-scoring body in the fielded defence, and already sitting on the market at a manager ask a little above his market value — which is at the upper edge of the measured manager-to-manager clearing band and has gone unsold for three days. That is the signal to take his market value rather than wait on the ask if it has still not cleared nearer the lock. Ruoppi is leg two and is deliberately timed for tomorrow rather than now: he is a bench body, so selling him costs zero fielded points, and he carries a rising flag, so every tick held before the sale should add to the proceeds. One honest qualification on that timing: he actually fell at the last daily update despite carrying the rising flag, so the free-money premise is damaged rather than dead. The expected value still favours holding one more tick, because the rising flag is right the large majority of the time across a sample of several hundred observations, but this is now one observation against the call rather than none.",
+  "reason": "Two legs, both already standing, neither to be executed today. Treu remains the primary unwind leg: he is the lowest scorer in the fielded eleven and by a wide margin its worst points-per-euro, and his right-back place at Freiburg is contested rather than secure. His ask has now sat unsold for three days with no offers against it, which would normally argue for cutting it to market value. This run argues the opposite, and that is the one call worth reading twice. He is carrying a rising flag and has just made his Germany debut, so his market value is climbing toward the ask on its own; waiting turns a premium that sits above the band where manager asks actually clear into one that sits inside it, without Georg touching anything. Leave the ask exactly where it is. Ruoppi is leg two and stays deferred as the standing call requires, but with a caveat this run will not bury: he fell at the last tick while carrying a rising flag, which is the minority case, and he is still drifting down over the last few hours. One more fall tonight and the deferral should be abandoned — sell him immediately rather than hold for a recovery that is not coming.",
   "standing": [
    {
     "name": "Philipp Treu",
@@ -220,9 +220,36 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing. There is no position to fill and no fundable upgrade, so padding the list would be the mistake. The arithmetic: a buy needs a matching sale, both sale legs are spoken for by the deficit, and the third body in line is a fielded midfielder whose proceeds cap the budget low and whose departure costs points. Nothing on the board inside that budget beats him by more than noise — the two plausible midfield listings improve his scoring average by a couple of points each, cost more than the sale would raise, and one of them is falling in value. Every genuinely tempting ask on the board is already killed in writing from earlier runs and none of those judgements has changed: the big striker ask, the high-scoring defender ask, the two mid-priced manager asks, and the one priced at roughly half again over market value. The listing that most looks like a bargain is the cheap midfielder with the enormous season average — that is the stale-average trap in its classic form, the average rests on a single appearance, and he carries an unfit flag. The existing avoid stands.",
+  "reason": "Nothing, and that is a finding rather than a gap in the work. Every manager ask on the board is priced well above the band in which manager asks actually clear, several of them at multiples of it, and every Kickbase listing sitting at exactly market value is a weaker body than whatever already occupies the equivalent slot. The one real temptation was Lee, whose season average beats the weakest body in the fielded eleven — but he is a midfielder, so he would displace the fourth midfielder rather than the defender, and the true gain shrinks to a rounding error bought with fresh debt on an already negative balance. He is now logged as an avoid, as are the two listings that appeared since the last run. The spending power is not a target; do not pad the squad to spend it.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "Amara Conde",
+    "pos": "MID",
+    "club": "77",
+    "ask": 500000,
+    "mv": 500000,
+    "premium_pct": 0,
+    "why": "THE OTHER NEW LISTING SINCE THE 14:45Z RUN (feed t:3 2026-10-04T15:32:37Z), logged so no run re-derives him. (1745, MID, tid 77 = Heidenheim.) Kickbase board listing, no u, prc == mv == 500.000 — the floor price, which is Kickbase's marker for a player with no market at all — exs 64123, st 0. FAILS ON MERIT ABSOLUTELY: ap -1 on p -2, i.e. he has produced NEGATIVE points across the season to date, so he cannot improve any slot in a squad whose weakest fielded body is already ap 76. FAILS AS A FLIP: mvt 0 drifts +0,01% at the next tick (n=74, only 1,4% rose), so there is no tick to capture, and the 500.000 floor does not move. He is a squad-filler body and Georg does not need one — squad 13 already fields 11 with two spare. REVERSAL: none on merit. Only relevant if the squad somehow falls below 11 bodies before a lock and a warm body at the floor price is the cheapest way to dodge the -100 penalty."
+   },
+   {
+    "name": "Marcel Sabitzer",
+    "pos": "MID",
+    "club": "3",
+    "ask": 4197307,
+    "mv": 4197307,
+    "premium_pct": 0,
+    "why": "NEW BOARD LISTING SINCE THE 14:45Z RUN (feed t:3 2026-10-04T16:39:52Z), logged so the 'two new listings, both killed' sweep stays complete. (1856, MID, tid 3 = Dortmund.) Kickbase board listing, no u, prc == mv == 4.197.307, exs 94198, st 0. FAILS ON THREE COUNTS. (1) mvt 2 — the re-measured drift for a falling flag is -3,35% at the next 20:00Z tick (n=610, 11,8% rose), so he is the wrong side of the flip edge and disqualified as a MOVERS candidate before anything else is checked. (2) Expiry 2026-10-06 is two ticks away in any case, so even a rising flag would fail the expiry test that H648bvg requires. (3) ON POINTS he is the season-average trap the task prompt warns about in reverse: p 168 over ap 42 is a thin four-matchday return, well under Tanaka's ap 87 in the same MID slot he would compete for, and Georg already fields four MID. Nothing here is worth adding to a -17.213.918 balance. REVERSAL: a re-listing carrying mvt 1 with an expiry before the next tick, for a pure flip only — never on merit."
+   },
+   {
+    "name": "Jae-Sung Lee",
+    "pos": "MID",
+    "club": "18",
+    "ask": 7218677,
+    "mv": 7218677,
+    "premium_pct": 0,
+    "why": "KILLED IN WRITING SO NO RUN RE-DERIVES HIM — he is the single most tempting non-flip body on the 04.10 board and he still fails. (2476, MID, tid 18 = Mainz 05.) Kickbase board listing, no u, prc == mv == 7.218.677, exs 63069 at 2026-10-04T16:45Z. THE TEMPTATION: ap 90 is the third-highest ap available anywhere on the board and beats Treu's ap 76, the weakest body in the placed XI, at 12,5 ap per M against Treu's 5,9. THE TWO REASONS IT FAILS. (1) POSITION, NOT PRICE: he is a MID, and Georg already fields four MID (Nusa 169, Engelhardt 149, Wolf 111, Tanaka 87). Lee does not displace Treu — a DEF — he displaces TANAKA, so the real gain is ap 90 minus ap 87 = THREE ap, bought for 7.218.677 of fresh debt on a balance already at -17.213.918. (2) mvt 2: the re-measured log says a falling flag drifts -3,35% at the next 20:00Z tick (n=610, only 11,8% rose), so the position loses about 242.000 of value overnight on top of contributing nothing. NOT A FLIP EITHER: mvt 2 is the wrong side of the tick edge, and his expiry falls after the 04.10 20:00Z tick in any case. REVERSAL: only if he is re-listed carrying mvt 1 AND Georg is short a MID body, neither of which is true now."
+   },
    {
     "name": "Marius Bülter",
     "pos": "ATT",
@@ -309,11 +336,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open — the lock is more than five days away, far outside the twelve-hour cutoff. The edge was re-measured from the event log this run rather than trusted from memory, and there is no material decay: the rising flag still predicts a gain at the next daily update across a sample that has grown by half since the last measurement, and the share that actually rose has edged up rather than down. The falling flag predicts the mirror image. Exactly one listing qualifies this cycle: Tella, a Kickbase board listing with no manager behind it, priced at exactly his market value, carrying the rising flag, fit, with no offers on him at all, and expiring a little over an hour before tonight's update — which is what makes him qualify, because a win still captures that tick. Bid exactly his market value and never raise; chasing a contested board listing into the high premium cluster destroys the edge, since one bad clear wipes out ten good flips. Five other board listings carry the rising flag at exactly market value but all expire after tonight's update, or are too small to matter, so they do not qualify and are logged as such. The flip absorbs well under a fifth of spending power, never reduces the fielded eleven because the bought player is an extra body, and unwinds back to the board at market value with no spread. Two open questions remain unresolved and are restated once: whether Kickbase caps squad size, which would cap how many flips can run at once; and that this edge is measured in one league over one period and will decay if rivals crowd in. On that second point, the rivals here are visibly running the same trade — the most active traders in this league, who were last season's top four finishers, were observed again today selling back to the board at exactly market value, including injured players, which for a pure value flip is correct because fitness does not enter the daily tick.",
+  "reason": "The flip window is open and exactly one candidate qualifies. Tella is a Kickbase board listing with no manager behind it, priced at exactly market value, carrying a rising flag and a clean status — and, the test that matters and that disqualified every rival, expiring before tonight's market-value update, so a win still captures the tick. Bid exactly market value and never raise: chasing a contested listing up into the high clearing cluster destroys the edge outright, and a single bad clear wipes out ten good flips. The other rising listings at market value all expire after tonight's tick and are logged as non-qualifying on timing rather than rejected on merit. The mechanism was re-measured from the event log this run and has not decayed — the rising flag still predicts a gain at the next update on a large sample, with the share that rose essentially unchanged from the last measurement, so there is no sign yet of rivals crowding the edge out. This flip is purely additive: it does not touch the fielded eleven, and it unwinds inside the existing sale plan with slack to spare. Two questions remain open and neither is answered yet — whether Kickbase caps squad size, which would cap how many flips can run at once, and the standing caveat that this edge is measured in one league over one period and will decay if the other traders crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player is newly injured, suspended or benched. Two squad players carry a Kickbase unfit flag, both already explained on dated sources in this morning's sweep, and neither is in the placed eleven in a way that changes selection. The one genuinely new finding is a date trap, and it is on the primary unwind leg: a search for Treu's fitness returns, as its top hit, a Ligainsider item about Freiburg resting him as a precaution. That item is from February of this year — last season — and a second hit about a shoulder injury is from last season too. Neither is current. The club's probable eleven has Treu starting at left-back with no status flag and lists only one long-term absentee at the club, and Kickbase agrees he is fit. Stated honestly: that club page was last updated about two weeks ago, so it is corroboration rather than fresh confirmation, but nothing dated after it contradicts. The trap is now logged so no future run kills the sell leg on stale news.",
+  "sweep": "No squad player is newly unavailable. Gruber is the one flagged body in the fielded eleven and his case resolved this run in the good direction: the cause is a knee irritation he withdrew from international duty to rest, not a structural injury, and the dated reporting has him available again for the Mainz fixture that is this very matchday — corroborated independently by the opponent field in the lineup data. His individual-training update and the stated absence window both land before the lock. If he is not cleared in time, the bench covers him and the formation stays legal, so this is a re-check item for the final runs rather than a problem now. Treu carries no injury flag; the only recent item on him is a selection duel for his position, and the stale precautionary-rest story from last season did not resurface. The goalkeeper slot is the one genuinely uncovered risk, and there is no fit goalkeeper on the board to cover it.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -480,7 +507,7 @@
  "arithmetic": [
   {
    "k": "Balance",
-   "v": "-17.233.918"
+   "v": "-17.213.918"
   },
   {
    "k": "Squad value",
@@ -488,11 +515,11 @@
   },
   {
    "k": "33% floor",
-   "v": "-0,33 x (157.565.280 + -17.233.918) = -46.309.349"
+   "v": "-0,33 x (157.565.280 + -17.213.918) = -46.315.949"
   },
   {
    "k": "Spending power",
-   "v": "-17.233.918 + 46.309.349 = 29.075.431 — NOT -17.233.918"
+   "v": "-17.213.918 + 46.315.949 = 29.102.031 — NOT -17.213.918"
   },
   {
    "k": "Clearing premium band (measured)",
