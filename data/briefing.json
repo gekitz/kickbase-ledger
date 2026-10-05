@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-05T00:52Z",
+ "run": "2026-10-05T02:51Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -17213918,
   "floor": -46160922,
   "spending_power": 28947004,
-  "hours_to_lock": 113.63,
-  "exposure": "A negative balance is open and must be cleared before the matchday locks, because a negative balance at matchday start scores zero for the entire matchday — that risk outranks everything else here. There is a lot of runway, so this is not yet urgent, but it is also not progressing: the same debt was open at the last run and neither sale has been made. The two sales together clear it with a small surplus, and the flips, if taken, each have to be sold back on top of that before the same deadline. Two open questions remain unresolved and are restated rather than answered: whether Kickbase caps squad size, which would cap how many flips can run at once; and that the measured tick edge comes from one league over one period and will decay if rivals crowd in — the four most active traders in this league were the top four finishers last season, and they are running the same trade. The independent database cross-check could not run this time; the connector is absent, for a second run in a row.",
+  "hours_to_lock": 111.64,
+  "exposure": "A leveraged position is open and must be closed before the matchday locks, because a negative balance at matchday start scores zero for the whole matchday. It is not yet urgent: the lock is still several days out, and the two-sale unwind has been checked against every alternative pairing and is the only one that clears the deficit while keeping eleven players. Flips add to the deficit temporarily, but each one is its own unwind leg and all of them clear well before the deadline. The thing to guard is sequencing, not the size of the number.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "The binding gap is capital, not a position. After the two sales the leftover is too small to buy anything that improves the eleven, so the gap that actually costs points — a very weak body entering the back four when Treu leaves — cannot be closed this cycle at any price the envelope allows. It can only be closed after the lock, once the balance is positive and there is room to add without forcing a sale. Noting it now so a later run does not treat it as newly discovered.",
+ "binding_gap": "The structural gap is the third attacker, and it is unfillable right now: nothing on the board comes close to what is already fielded, and the one manager ask that would be an upgrade cannot be unwound before the lock. The gap costs formation flexibility, not points, so it waits.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 28947004,
@@ -51,9 +51,9 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 43,
+  "listings": 44,
   "cheapest": 500000,
-  "cheapest_slot_filling": 7495308,
+  "cheapest_slot_filling": 500000,
   "expiring_within_2h": 1
  },
  "squad": [
@@ -190,13 +190,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Nothing from the last run was executed.",
-  "headline_short": "Nothing from the last run was executed.",
-  "detail": "Nothing from the last run was executed. No offers were placed on any of the four flip listings, and Ruoppi is still in the squad — so every action carried forward is the same action, not a new one. The position is leveraged and the whole unwind still rests on two sales that have not happened. The single thing to do now is sell Ruoppi back to Kickbase. He is the only leg that is both points-free and time-critical: he is falling, he is outside Mainz's probable XI, and he is cheaper to the ledger every tick he is held. Treu is the opposite case and should NOT be rushed — he is rising, so waiting pays, and the standing ask can keep running."
+  "headline": "No new action this run, and nothing has changed in the two hours since the last one.",
+  "headline_short": "No new action this run, and nothing has changed in the two hours since",
+  "detail": "No new action this run, and nothing has changed in the two hours since the last one. The standing plan is intact and correct: sell Ruoppi back to Kickbase before tonight's tick, then hold Treu to the last tick before the lock and sell him there. Everything else is optional upside. The leveraged position is open but it is not urgent - the lock is still days away and the unwind is verified, so this run deliberately sends no notification."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Ruoppi is the live one, and the deadline is tonight's tick. He has fallen on two consecutive ticks, carries the falling flag, and the measured drift on that flag is negative — so holding him past tonight has a known expected cost and no offsetting case. Kickbase's own flag has him with a knee irritation dated 03.10, and Ligainsider's Mainz probable XI, updated 03.10, does not name him at all. He is not placed, so selling him costs nothing in points. Treu is leg two and stays on the slower track: he is fit, he is rising, and selling him back early forfeits the tick. Leave the standing ask running; if it has not cleared by the day before the lock, take the instant sale then. Treu is the only single sale that clears what remains of the debt without a third sale, which is why the pairing holds — that was settled already and is not being re-derived.",
+  "reason": "Two sales, in a strict order, and the order is the whole point. Ruoppi goes first and goes tonight: he is falling, he is not in Mainz's probable eleven, and every tick held costs real money for zero fielded points. Treu goes last and must not be rushed. He is rising, and four tick cycles fall between now and the lock; compounding at the measured drift lifts him past his own standing manager ask, which has sat unbid for three and a half days. Leaving that ask up costs nothing and may yet be hit, but it must not be lowered to chase a sale, and he must not be sold to Kickbase early. The one thing that kills this is his flag flipping from rising to falling, so re-check it every run. Treu is a confirmed starter, so the sale has a genuine points cost - that is worth saying plainly rather than glossing. It is still the right sale, because he is the cheapest leg in points that actually clears the deficit, and no other pairing does.",
   "standing": [
    {
     "name": "Philipp Treu",
@@ -220,7 +220,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No buy this run, and the reason is arithmetic rather than taste. Once both sales land, what is left over is a very thin sliver — anything larger needs a third sale, and a third sale drops the squad below eleven and takes the penalty. Nothing available inside that sliver improves the fielded eleven: the only listings that cheap are a floor-priced attacker already on the avoid list, a reserve forward, and an injured striker. The genuine weakness is that Nakuzola enters the back four on a very low average once Treu goes, but every route to fixing it is blocked — the defenders who would actually improve it are either already on the avoid list, or manager asks priced above market value, which this ledger has never bought and should not start buying while leveraged. Do not confuse this with the flips below: a flip is bought and sold back, so it does not consume that sliver.",
+  "reason": "Nothing clears. The board's attackers are all far below what is already fielded, and the manager asks that would be genuine upgrades fail the unwind test rather than the merit test - the most tempting of them cannot be sold back without dropping the squad under the floor and taking the penalty. The binding constraint this run is the unwind, not the board. That is a reason to buy nothing, not a reason to lower the bar.",
   "standing": [],
   "killed_this_run": [
    {
@@ -336,11 +336,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open — the lock is still days away, so a position opened now has ample room to unwind. The measured edge was recomputed from the event log this run and has NOT decayed; the rising-flag drift is marginally higher than the last reading on a larger sample, and the share that rose is unchanged. All four candidates from the last sweep are still listed, still unsold, still carrying the rising flag, still priced exactly at market value with no manager behind them, and every one of them expires before tonight's tick — so winning any of them captures that tick in full. Nobody has bid on any of them, which is further evidence that the at-market-value bid goes uncontested on these. The order is unchanged: Bolin, then Bensebaini, then Zentner, then Rondic, which is simply largest first since the drift is a percentage. Bid exactly market value on each and never raise — chasing one into the contested band destroys the edge for ten good flips. Zentner carries a fitness flag and Bensebaini is barred as a points buy on his own avoid entry; neither matters here, because fitness does not enter the daily tick. Sequencing caution: these stack on top of a debt that must be cleared, so treat the Ruoppi sale as the first action and the flips as what follows, not the reverse.",
+  "reason": "The flip window is wide open and four board listings qualify on the exact measured shape: Kickbase listings with no manager behind them, priced at market value, flagged rising, all expiring before tonight's tick. The edge was re-measured from the event log this run and has not decayed - if anything it is marginally stronger than the last reading, on a larger sample. Bid exactly market value on each and never raise; winning captures the tick, losing costs nothing, and chasing one into a contested premium destroys more than ten good flips return. All four fit inside spending power at once with room to spare, and selling Ruoppi first widens that room rather than consuming it. Two of them expire within a few hours, so they are use-it-or-lose-it. Two open questions remain unresolved and should stay on the record: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "One live concern, and it is on a player who is in the eleven. Gruber has a knee irritation flagged by Kickbase on 03.10 and is tagged doubtful by Ligainsider, whose Mainz probable XI — page updated 03.10 — does nonetheless name him in the back four for the Leverkusen match. The dated trail points towards availability: he pulled out of international duty on 21.09, and reports on 22.09 and 23.09 both said he should be back for the Leverkusen game, with one noting he had played a full ninety shortly before. The caveat is that as of 29.09 he was still doing individual rather than full team training. Do not sell him on this — he is not the cheap body to lose, and selling him forces a worse replacement — but re-check him in the day or two before the lock, because with the squad heading to exactly eleven there is no cover if he is ruled out. Separately, two date traps were caught and neither is current news: the prominent reports that Treu is out indefinitely are from August of last year, not this season, and he is currently listed fit. A ledger naming error was also corrected — the blocked player at that id is Fabio Gruber of Mainz, not the name the list carries.",
+  "sweep": "Both fitness flags are resolved, and resolved the right way round. Gruber is knocked but starting - the probable eleven has him at centre-back and a dated report has him using the international break to rest the knee and available for the next match. Do not sell him on the flag. Ruoppi carries no injury designation at all on his club's page but is simply not in the eleven, which strengthens the case for selling him on points as well as on value. Across both squad clubs the only genuine absentees belong to other managers.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
