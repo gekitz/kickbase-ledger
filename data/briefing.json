@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-04T22:49Z",
+ "run": "2026-10-05T00:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -17213918,
   "floor": -46160922,
   "spending_power": 28947004,
-  "hours_to_lock": 115.68,
-  "exposure": "The balance is negative and has been since the Ruoppi purchase landed. This is open leverage and it must be closed before the matchday locks, because a negative balance at matchday start scores zero for the entire matchday — that risk outranks everything else in this briefing. But it is not urgent tonight and should not be read as urgent: a deficit costs nothing until the instant the lock arrives, and the lock is days away, not hours. The two called sales close it with room to spare, and both of their proceeds are known quantities — one is an instant sale at market value, the other an instant sale at a floor that is currently rising.\n\nWhat would make this urgent is the lock coming inside a day with the sales still unexecuted. It is not there yet. Deliberately not pushing a notification on the open leverage this run, for the reason already in the ledger: an unscoped leverage alert fires every two hours for days and teaches you to ignore it. The alert is being held for lock proximity, which is where it is actually worth your attention.\n\nOne caveat on flips and exposure together: each flip won adds to the deficit until it is unwound, and every flip must be sold back to a non-negative balance and at least eleven players before the lock. The flips are self-funding across a tick — bought at market value, sold back above it — so they do not change the shape of the unwind, but they do mean more legs to execute. Size the number you take against the number of sales you are actually willing to run before the lock, not against spending power alone.",
+  "hours_to_lock": 113.63,
+  "exposure": "A negative balance is open and must be cleared before the matchday locks, because a negative balance at matchday start scores zero for the entire matchday — that risk outranks everything else here. There is a lot of runway, so this is not yet urgent, but it is also not progressing: the same debt was open at the last run and neither sale has been made. The two sales together clear it with a small surplus, and the flips, if taken, each have to be sold back on top of that before the same deadline. Two open questions remain unresolved and are restated rather than answered: whether Kickbase caps squad size, which would cap how many flips can run at once; and that the measured tick edge comes from one league over one period and will decay if rivals crowd in — the four most active traders in this league were the top four finishers last season, and they are running the same trade. The independent database cross-check could not run this time; the connector is absent, for a second run in a row.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "There is no binding gap. Every legal formation is fillable and the squad is above the eleven-player floor, so the hundred-point penalty is not in play. The binding constraint is not a hole in the eleven — it is the unwind: the leverage has to be closed before the lock, and the two sales already called are what close it. That is what any new buy competes against, and it is why the attacking slot being thin is not worth fixing right now. Buying a third body to deepen a position that is already fillable would add an unwind leg to a structure that has exactly enough room without it.",
+ "binding_gap": "The binding gap is capital, not a position. After the two sales the leftover is too small to buy anything that improves the eleven, so the gap that actually costs points — a very weak body entering the back four when Treu leaves — cannot be closed this cycle at any price the envelope allows. It can only be closed after the lock, once the balance is positive and there is room to add without forcing a sale. Noting it now so a later run does not treat it as newly discovered.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 28947004,
@@ -51,7 +51,7 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 44,
+  "listings": 43,
   "cheapest": 500000,
   "cheapest_slot_filling": 7495308,
   "expiring_within_2h": 1
@@ -190,13 +190,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Quiet run.",
-  "headline_short": "Quiet run.",
-  "detail": "Quiet run. Nothing material moved in the two hours since the last sweep, and no recommendation changes. The one action that still wants doing tonight is the Ruoppi instant-sale, and it is the same action the 20:45Z run called. Sell Otto Ruoppi back to Kickbase before tomorrow's 20:00Z tick; leave everything else exactly as it stands. The sharpest thing this run can tell you is an asymmetry you can act on without thinking twice: Ruoppi and Treu are both sales with the same hard deadline, but Ruoppi is flagged falling and Treu is flagged rising, so their correct timing is opposite. Ruoppi goes before the next tick, Treu goes after it — or later still. Same squad, same deadline, and the trend flag is the entire reason they differ."
+  "headline": "Nothing from the last run was executed.",
+  "headline_short": "Nothing from the last run was executed.",
+  "detail": "Nothing from the last run was executed. No offers were placed on any of the four flip listings, and Ruoppi is still in the squad — so every action carried forward is the same action, not a new one. The position is leveraged and the whole unwind still rests on two sales that have not happened. The single thing to do now is sell Ruoppi back to Kickbase. He is the only leg that is both points-free and time-critical: he is falling, he is outside Mainz's probable XI, and he is cheaper to the ledger every tick he is held. Treu is the opposite case and should NOT be rushed — he is rising, so waiting pays, and the standing ask can keep running."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Two open sale calls, neither executed, both still correct, and they want opposite timing.\n\nRuoppi is the one to do now, back to Kickbase at market value, before tomorrow's tick. His trend flag is falling and the measured drift for that flag is negative, so every tick he is held costs money with no points offsetting it — he is not in your eleven. This already reversed an earlier call that said to wait, and that reversal stands: the deferral's own mechanism inverted when he started falling, and nothing since has un-inverted it.\n\nTreu is the opposite case and should NOT be rushed. His trend flag is rising, so the instant-sale floor underneath him climbs with every tick, and the sale was always free as to when — only the lock is binding, and the lock is days away. Leave the standing ask where it is and let the floor rise. One caution worth stating plainly: the ask has sat three days without a single offer, and it sits at the top of the measured manager-ask clearing band, which is a low-single-digit game. Treat it as unlikely to clear on its own. The realistic path is that the ticks lift the market value toward the ask and you instant-sell before the lock, not that a rival takes it. That is still the better path than selling tonight — but do not let a future run mistake patience for a plan to wait indefinitely. He must be gone before the lock.",
+  "reason": "Ruoppi is the live one, and the deadline is tonight's tick. He has fallen on two consecutive ticks, carries the falling flag, and the measured drift on that flag is negative — so holding him past tonight has a known expected cost and no offsetting case. Kickbase's own flag has him with a knee irritation dated 03.10, and Ligainsider's Mainz probable XI, updated 03.10, does not name him at all. He is not placed, so selling him costs nothing in points. Treu is leg two and stays on the slower track: he is fit, he is rising, and selling him back early forfeits the tick. Leave the standing ask running; if it has not cleared by the day before the lock, take the instant sale then. Treu is the only single sale that clears what remains of the debt without a third sale, which is why the pairing holds — that was settled already and is not being re-derived.",
   "standing": [
    {
     "name": "Philipp Treu",
@@ -220,7 +220,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No points buy this run, and that is a finding rather than an omission. Nothing on the board improves the eleven: every Kickbase listing is either a cheap body, a falling asset, or already carries a standing AVOID from an earlier run, and all of those AVOID premises were re-checked against the live market this run and are still live. The manager asks are worse — two fresh ones went up right after the last sweep at markups far outside the measured manager-ask clearing band, and both are no-bids at the asked price.\n\nThe standing bar on buying also has not moved: the squad is already carrying leverage, and every new body bought for points has to be unwound before the lock alongside the two sales already committed. A points buy would have to beat a man in your eleven by enough to justify adding a third unwind leg. Nothing on this board does.",
+  "reason": "No buy this run, and the reason is arithmetic rather than taste. Once both sales land, what is left over is a very thin sliver — anything larger needs a third sale, and a third sale drops the squad below eleven and takes the penalty. Nothing available inside that sliver improves the fielded eleven: the only listings that cheap are a floor-priced attacker already on the avoid list, a reserve forward, and an injured striker. The genuine weakness is that Nakuzola enters the back four on a very low average once Treu goes, but every route to fixing it is blocked — the defenders who would actually improve it are either already on the avoid list, or manager asks priced above market value, which this ledger has never bought and should not start buying while leveraged. Do not confuse this with the flips below: a flip is bought and sold back, so it does not consume that sliver.",
   "standing": [],
   "killed_this_run": [
    {
@@ -336,11 +336,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open — the lock is days off, not hours — and the four candidates from the 20:45Z sweep are all still listed, all still unsold at zero offers, and all still correct. No new qualifying listing appeared in the last two hours. One new board listing went up and it carries a falling flag, so it does not qualify.\n\nRanked by expected gain, which is just market value times the measured rising-flag drift: Bolin first, Bensebaini second, Zentner third, Rondic a marginal fourth. Every one of them is the qualifying shape — Kickbase board listing with no manager behind it, asking price exactly at market value, rising flag, and expiring after tonight's completed tick but before tomorrow's, so winning captures tomorrow's tick in full. Bid exactly market value on each and never raise. Losing costs nothing; chasing one into the contested high cluster would wipe out the edge from several good flips at once.\n\nZentner is the thinnest of the four because he expires barely over an hour before the tick, so if his auction runs long the capture window is tight — he still clears first, but he has the least room. He also carries a fitness flag, which does not matter here: fitness does not enter the daily tick, and this is a pure value trade, not a points buy. The transfer check that DOES matter passes cleanly for all four — the summer window is shut and the winter one is months away, so none of them can leave the league before tomorrow's tick.\n\nOn the edge itself: the measured rising-flag drift was re-read fresh from the event log this run, on a larger sample than the last run had, and it did not decay — it came in fractionally higher with the hit rate holding. No sign yet of rivals crowding the at-mv bid out. Two things remain unresolved and both bound how far this can be pushed: it is still unknown whether Kickbase caps squad size, which would cap how many flips can run at once; and the edge is measured in one league over one period, so it will decay if the other active traders find it. Four of them are already flipping on the daily tick constantly, and they were the top four finishers last season.",
+  "reason": "The flip window is open — the lock is still days away, so a position opened now has ample room to unwind. The measured edge was recomputed from the event log this run and has NOT decayed; the rising-flag drift is marginally higher than the last reading on a larger sample, and the share that rose is unchanged. All four candidates from the last sweep are still listed, still unsold, still carrying the rising flag, still priced exactly at market value with no manager behind them, and every one of them expires before tonight's tick — so winning any of them captures that tick in full. Nobody has bid on any of them, which is further evidence that the at-market-value bid goes uncontested on these. The order is unchanged: Bolin, then Bensebaini, then Zentner, then Rondic, which is simply largest first since the drift is a percentage. Bid exactly market value on each and never raise — chasing one into the contested band destroys the edge for ten good flips. Zentner carries a fitness flag and Bensebaini is barred as a points buy on his own avoid entry; neither matters here, because fitness does not enter the daily tick. Sequencing caution: these stack on top of a debt that must be cleared, so treat the Ruoppi sale as the first action and the flips as what follows, not the reverse.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player is newly flagged. Two carry non-zero status flags — Gruber and Ruoppi — and both were already flagged and reasoned through at the last sweep; neither is new information. Ruoppi is a sale anyway. Gruber is explicitly not a sale and that block carries no force.\n\nA news check was run at this hour and turned up nothing current: no dated item later than the last sweep's, on any squad player. That is expected rather than reassuring — it is the middle of the night in Germany and no club or outlet publishes at this hour. The dated verification from the 20:45Z run is what stands, and it stands unchallenged. No current info found beyond it. The standing date-trap warnings still apply to anything a future run turns up: the previous season ran into May, so any hit dated in the first five months of the year is last season, and the known trap on Treu specifically is already logged.",
+  "sweep": "One live concern, and it is on a player who is in the eleven. Gruber has a knee irritation flagged by Kickbase on 03.10 and is tagged doubtful by Ligainsider, whose Mainz probable XI — page updated 03.10 — does nonetheless name him in the back four for the Leverkusen match. The dated trail points towards availability: he pulled out of international duty on 21.09, and reports on 22.09 and 23.09 both said he should be back for the Leverkusen game, with one noting he had played a full ninety shortly before. The caveat is that as of 29.09 he was still doing individual rather than full team training. Do not sell him on this — he is not the cheap body to lose, and selling him forces a worse replacement — but re-check him in the day or two before the lock, because with the squad heading to exactly eleven there is no cover if he is ruled out. Separately, two date traps were caught and neither is current news: the prominent reports that Treu is out indefinitely are from August of last year, not this season, and he is currently listed fit. A ledger naming error was also corrected — the blocked player at that id is Fabio Gruber of Mainz, not the name the list carries.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -523,7 +523,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=598, -1,80% to +308,77%"
+   "v": "n=599, -1,80% to +308,77%"
   }
  ]
 }
