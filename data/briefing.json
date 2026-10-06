@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-06T00:46:49Z",
+ "run": "2026-10-06T02:50Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -12068040,
   "floor": -46393199,
   "spending_power": 34325159,
-  "hours_to_lock": 89.62,
-  "exposure": "Negative balance, no offers placed, nothing at risk tonight. The deficit only bites at the instant the matchday locks, and that is still most of four days out. If both flips are won the exposure roughly triples for a day or so, and the unwind was checked end to end: selling both back after the tick, then Treu after Thursday's tick, clears the debt with room to spare and still leaves a legal eleven well before the lock. No action is needed on the exposure itself until the flips settle.",
+  "hours_to_lock": 87.66,
+  "exposure": "The balance is negative and has been for days. That is not a problem until the instant the matchday locks, and the lock is still the better part of four days away — this is why the leveraged-position alert needs a lock-proximity scope rather than firing every run. What does bind: the Treu sale must happen before the lock, and any flip that is won must be unwound back to a non-negative balance and at least eleven players before the same moment. The tail risk worth naming out loud: if both primary flips win and both, together with Treu, land on the wrong side of the tick on the same evening, the unwind comes up short on that day. It is an unlikely conjunction given how reliably rising tickets rise, and there are several further ticks before the lock to recover on — but it is the reason not to add a third flip on top.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "Defence, and specifically the hole that opens the moment Treu goes: Nakuzola is forced into the eleven and he is by some distance the weakest body you own. The money to fix it is thin. Selling Treu alone leaves only a sliver, and selling Nakuzola alongside him frees a little more but not much — and both figures were re-derived from live data this run because the ceilings carried in the ledger no longer reconcile and had their labels the wrong way round. At that budget the board holds one plausible defender and one who is plainly out of favour at his club. Flip profit would widen this, but flip profit belongs to the value trade and is deliberately not counted here.",
+ "binding_gap": "Defence, and it has no fix on this board. Once Treu is sold the back four falls to three strong defenders plus a replacement who averages a fraction of what the others do. Nothing on the market is both a confirmed starter and inside the unwind ceiling, so the gap is carried into MD5 rather than papered over with a buy that cannot be kept through the lock.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 34325159,
@@ -51,7 +51,7 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 51,
+  "listings": 52,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
   "expiring_within_2h": 1
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Quiet window.",
-  "headline_short": "Quiet window.",
-  "detail": "Quiet window. One new listing and one settled transfer in the whole two hours, and neither changes the plan. The instruction is exactly what the last run gave you: bid mv on the two open Kickbase flips, bid nothing else, and leave Treu alone until after the Thursday tick. Nothing needs you tonight."
+  "headline": "A quiet run.",
+  "headline_short": "A quiet run.",
+  "detail": "A quiet run. One new listing, one settled transfer, and nothing in the squad changed — so every standing instruction from the overnight run carries forward unaltered. The single binding action remains the Treu sale: he is the sufficient unwind leg for the negative balance and he must be gone before the matchday locks, because a negative balance at matchday start scores zero for the whole of MD5. The lock is still days away, so there is no urgency tonight and no reason to interrupt Georg. The pre-tick flip queue — Bischof first, Proemel second, Reis only if one of those is lost — is unchanged and still live, with every ticket expiring before this evening's market-value update."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Treu remains the one and only sale, and it is still a sale of timing rather than urgency. He is fit, news-clear and named in Freiburg's probable eleven against Schalke, which is exactly why he is worth more every day: he is rising, so the right move is to hold him through Thursday's tick and then instant-sell him back to Kickbase. He clears the deficit on his own and leaves a legal eleven, which no other single sale in the squad does. The cost is honest and should not be glossed: he is the lowest-scoring player in your fielded eleven, but Nakuzola, who replaces him, is far worse. No second sale is recommended — Gruber looks tempting as a faller, but selling him breaks the shape with nothing funded to replace him.",
+  "reason": "Treu, and only Treu. The case is unchanged and still binding: instant sale back to Kickbase, which pays exactly market value with no spread, clears the deficit on its own and leaves a legal eleven with nothing to spare. Timing is the one open judgement — holding him to the last tick before the lock is worth a little more than selling now, because his value is rising, and the deficit costs nothing until the instant the matchday locks. Nothing else in the squad should be sold: every other body is either in the eleven on merit or is the last cover at its position.",
   "standing": [
    {
     "name": "Philipp Treu",
@@ -201,9 +201,18 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing on the board clears the bar, and that is a real answer rather than a shrug. Every manager ask currently listed is priced far above market value, and the ones that are not are already killed in writing by an open avoid. The only new listing since the last run is a Kickbase board listing that belongs in the flip queue, not the points squad — you are already deep in midfielders and he would not reach your eleven. The one honest buy candidate is a cheap St. Pauli defender who would be a small upgrade on Nakuzola for almost no money, but his listing runs past tonight's tick, so his rising flag has to be re-read afterwards before anyone bids. That decision belongs to the first run after the tick, not to this one.",
+  "reason": "Nothing to buy. This is the honest answer rather than a thin one. The binding gap is defence once Treu goes, and the board offers no fix: the only cheap defender on it has started just half the season's matchdays, and an extended search turned up nothing dated this month on whether he is selected for MD5 — record that as no current information found, not as a clearance. His headline average is flattering precisely because it rests on a couple of appearances, which is the cameo trap in reverse. He stays a flip ticket, not a points buy. Everything else on the board is either a manager ask well above market value, which this ledger has never bought at any point in its history, or a player already on the blocked list.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "Mattes Hansen",
+    "pos": "DEF",
+    "club": "29",
+    "ask": 3722776,
+    "mv": 3722776,
+    "premium_pct": 0,
+    "why": "THE ONLY NEW LISTING SINCE THE 00:47Z RUN (feed t=3 at 2026-10-06T01:42:18Z) AND IT DOES NOT QUALIFY. Hansen (6292, DEF, tid 29, ap 63) is a Kickbase board listing at prc 3.722.776 == mv exactly and no u — two of the three legs of the H648bvg flip shape — BUT HIS mvt IS 2, NOT 1. Measured from this run's own event log: mvt 2 means n=651, mean -3,28% at the next 20:00Z update, only 12,7% rose. Bidding mv on an mvt-2 listing is the flip trade run in reverse and loses about 122.000 in expectation on this ticket. exs 158870s = expiry ~2026-10-07T21:48Z, i.e. AFTER the 06.10 20:00Z tick, so even a post-tick re-read would have to see the flag turn to 1 before he is reconsidered — and an mvt-2 player turning to mvt 1 at the very next tick happens in only 12,7% of cases. Not a points buy either: DEF is covered to 5 bodies and his ap 63 is below ter Horst (102), Deman (101) and Gruber (117). REVERSAL: only if a post-tick read shows mvt 1 with prc still == mv and the listing still live."
+   },
    {
     "name": "Daniel Heuer Fernandes",
     "pos": "GK",
@@ -290,11 +299,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip queue is unchanged and still the best thing on the table. Both open flips are Kickbase board listings priced at exactly market value with a rising flag and, critically, both expire before tonight's tick, so winning either means owning him when the value updates. Bid market value exactly and never raise — chasing one of these into a contested clear destroys ten good flips at once. The new Werder listing qualifies on every leg and is genuinely good, but it does not fit alongside both of the others, so it is the substitute leg: bid it only if one of the first two is lost. A second wave of three qualifying listings runs past tonight's tick and is deliberately left alone until their flags can be re-read. The edge itself was re-measured this run and has not decayed — the sample has grown and both the average move and the hit rate are fractionally better than the baseline. The reason why showed up in the feed tonight: the league's most active trader bought a falling player at a premium, which is the exact inverse of the trade. Two questions remain open and unresolved — whether Kickbase caps squad size, which would cap how many flips can run at once, and the standing caveat that this edge is measured in one league over one period and will decay if rivals ever do crowd in.",
+  "reason": "The flip window is wide open — the lock is days away, not hours. The edge was re-measured from the event log this run and has not decayed at all: bidding exactly market value on a rising Kickbase board listing still predicts a gain at the next update, with the overwhelming majority rising, and the identical figures to the overnight run. Falling listings predict the opposite just as reliably. The queue is unchanged: Bischof first, Proemel second, Reis third and only if one of the first two is lost, because the three together absorb more capital than the floor permits. Bid exactly market value on each and never raise — chasing a contested listing into the high premium cluster destroys the edge, and this ledger has lost three auctions by benchmarking against bands computed from older, cheaper clears. All three expire before this evening's update, so a win captures the tick. The one new listing since the overnight run does not qualify: it is a falling ticket, and bidding market value on a falling ticket is the trade run backwards. The second-wave queue all expires after this evening's update and must have its flags re-read before any bid. Two open questions stay open: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in. Fresh evidence they are not crowding in: the league's most active trader spent the night buying a falling player off the board at market value who is carrying a knee injury with a stated return still a week or two away.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "One flagged player in the squad and he moved the right way. Gruber is still carried as knocked-about with a knee irritation, but for the first time since late September there is dated news newer than the old item: Mainz's probable eleven now names him in the back four for the Leverkusen game. Doubtful, trending up, worth re-checking every run until the lock, not worth selling. Treu is clean — the alarming headlines that rank top on a plain search are all last season's story and the traps held again. Engelhardt is confirmed in Freiburg's eleven, the first dated starter confirmation since his buy cleared.",
+  "sweep": "No squad player is newly injured, suspended or benched. Gruber still carries his status flag, but it is not new and he is named in Mainz's probable eleven at home to Leverkusen. Treu is clear and has played every matchday this season — the cluster of stories saying he is out indefinitely is from August of last year and is a date trap; it has been added to the trap list. Engelhardt is a confirmed starter and has played every matchday. Flip candidates need no starter check, since fitness does not enter the daily value tick, but they do need the transfer check: the German window closed at the start of September, so none of the three can leave the league before the lock.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -477,7 +486,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=614, -1,80% to +308,77%"
+   "v": "n=615, -1,80% to +308,77%"
   }
  ]
 }
