@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-06T14:54Z",
+ "run": "2026-10-06T16:53Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -12068040,
   "floor": -46393199,
   "spending_power": 34325159,
-  "hours_to_lock": 75.6,
-  "exposure": "The balance is still negative and the deficit is unchanged. It costs nothing until the instant the matchday locks, and the lock is still days away, so this is not yet urgent — but it is the thing that must not be forgotten, because a negative balance at matchday start scores zero for the entire matchday. The Treu sale alone clears it with very little to spare, which is precisely why the flip has been resized: there is not enough room to absorb a large adverse tick on top of the existing deficit. Any flip taken must be unwound to a non-negative balance and at least eleven players before the lock.",
+  "hours_to_lock": 73.6,
+  "exposure": "A leveraged position is open and has been all day, but the lock is still nearly three days out, so this is not yet urgent — it becomes urgent only as that window closes. The recommended flip deliberately deepens the deficit for about a day before unwinding it. Sized against the measured worst case it leaves roughly 438 thousand of headroom even if the flip goes wrong, and the unwind has to be complete — flip sold, Treu sold, eleven bodies, balance non-negative — before the matchday locks. If only one thing gets done, it is the Treu sale; the flip is optional upside and the sale is not.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "Defence. Once Treu is sold the eleven is locked into a single legal shape with no spare bodies, and the slot he vacates is filled by much the weakest scorer in the side. That is the gap worth money, but it cannot be bought this run: the envelope after clearing the deficit admits exactly one defender on the market and he is not in his club's probable eleven. The gap therefore stays open and should be the first claim on any headroom that appears.",
+ "binding_gap": "The binding constraint is not a positional hole, it is the negative balance. The squad can field three legal shapes and will field 4-4-2. What binds is that the deficit has to be cleared before the lock and there is exactly one sale that clears it without dropping below eleven bodies. Downstream of that, the defensive slot vacated by Treu has no affordable upgrade, so the gap is real but unfillable at this budget.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 34325159,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 52,
+  "listings": 49,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 3
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "The market did not move at all in this window — no new listings, no settled transfers since the last run.",
-  "headline_short": "The market did not move at all in this window — no new listings, no se",
-  "detail": "The market did not move at all in this window — no new listings, no settled transfers since the last run. But this run changes a standing instruction. The flip you were told to place on Tom Bischof before his listing expires this afternoon is WITHDRAWN, and Ludovit Reis is promoted in his place. Nothing about Bischof has gone wrong; the error was ours. Every earlier run ranked flip candidates by expected tick gain alone and never checked the flip against the size of the cushion available to unwind it. Bischof is too big for the cushion: an adverse tick well inside the measured loss tail would leave the balance negative at the matchday lock, and a negative balance at lock scores zero for the whole of MD5. Reis is small enough that even the worst adverse tick ever measured cannot break the unwind. The expected value given up is a fraction of a matchday; the risk avoided is an entire matchday. Bid Reis at exactly his market value and never raise. If the bid loses, it costs nothing."
+  "headline": "Nothing has changed in the position since the 14:45Z run — the balance is still negative and the Treu sale is still unexecuted — but the fitness picture is now as clean as this led",
+  "headline_short": "Nothing has changed in the position since the 14:45Z run — the balance",
+  "detail": "Nothing has changed in the position since the 14:45Z run — the balance is still negative and the Treu sale is still unexecuted — but the fitness picture is now as clean as this ledger has ever recorded, and one flip is live with roughly two hours on the clock. Two actions, in order: bid Reis at exactly his market value before he expires, then sell Treu to Kickbase at any point before the matchday locks. Everything else is a hold."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Treu remains the standing sale and the substance is unchanged: he is the primary and sufficient unwind leg for the deficit and he must be gone by instant sale to Kickbase before the lock. He is not a distressed sale. A news check this run caught a new date trap worth recording: the two most prominent search hits saying he is out indefinitely are both from August of the season before last, not this one. He is listed fit, his status flag is clear and his value is still rising. The live-season item that matters is a September piece describing an open contest for the right-back slot, which explains his modest average and mildly supports selling rather than arguing against it. Because his value is still trending up, holding him until closer to the lock captures the remaining daily ticks — but the sale must not be forgotten, as missing it is the single most expensive mistake available here.",
+  "reason": "Treu is the sale, and he is being sold fit. The Ligainsider injury file settles the question the ledger has been circling: his last complaint was a single day in February, and the alarming 'out indefinitely' headlines resolve to August 2025, the season before last. He starts at left-back for Freiburg this weekend and he made his Germany debut under Klopp last month. None of that changes the decision, because the balance is negative and a negative balance at matchday start scores zero for the entire matchday — but it does mean this is a rank sale, not a cut, and it costs real points. Sell him to Kickbase directly rather than waiting on a manager ask; the instant sale pays market value with no spread and no timing risk, and there is no second leg available if it fails. No other sale comes close: the alternatives that are large enough to clear the deficit on their own are Guirassy, Nusa and Engelhardt, and each of them costs more fielded points than Treu does.",
   "standing": [
    {
     "name": "Philipp Treu",
@@ -201,7 +201,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No buy this run, and the question is now closed rather than deferred. The points hole is the defensive slot Nakuzola inherits when Treu leaves — his average is far below everyone else in the eleven. Filling it is the right priority, but the purchase envelope after the mandatory Treu sale is tiny, and Mickelson was the only defender on the entire market inside it. A LigaInsider club page dated the third of October puts out Elversberg's probable eleven for the coming matchday and he is not in it, which matches his having started only half the matchdays so far. He therefore fails the starter test and is logged as an avoid for points purposes, though he stays eligible as a pure value flip where fitness does not enter. No other defender within reach improves on what is already in the eleven. Do not re-derive this next run.",
+  "reason": "No points buy clears this run, and the arithmetic is now written into the ledger so it stops being re-derived every two hours. A replacement defender has a hard ceiling of about 1,38 million — that is what is left if Treu and Nakuzola both go and the balance still has to end non-negative with eleven bodies. Exactly two players on the board sit under that ceiling and both fail: Mickelson is absent from Elversberg's projected line-up on a page updated yesterday, and Friedrich is falling in value with no minutes at all this season. Going the other way and buying at full size was tested too — Orban is a confirmed Leipzig starter listed at exactly his market value, and the only unwind that fits him means giving up Guirassy, which buys seven average points for twenty-eight million and the whole cushion. Rejected.",
   "standing": [],
   "killed_this_run": [
    {
@@ -317,11 +317,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open with days to spare, and the measured edge is intact: the rising-flag drift was re-measured from the event log this run and shows no material decay against the original measurement, on a larger sample. The mechanism is unchanged — bid exactly market value on a rising-flag Kickbase board listing with no manager ask, and never raise. What changes is sizing. A flip is only safe if the worst adverse tick ever measured still fits inside the cushion available to unwind it, and that cap rules out Bischof, Proemel and Orban outright at the current cushion. Reis is the only candidate that clears both the shape test and the size cap while also expiring before tonight's value update, so he is the only flip endorsed. Capaldo, Burke and Mickelson all expire after tonight's update and must have their flag re-read once it has run before any bid is considered. Two open questions stand unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that the edge is measured in one league over one period and will decay if rivals crowd into it.",
+  "reason": "One flip qualifies and it needs a decision inside the next two hours. Reis is a Kickbase listing priced at exactly his market value with no manager behind it, he is flagged as rising, and critically he expires about an hour before tonight's market-value update — which is what lets the purchase settle in time to capture the tick. Bid exactly his market value and do not raise; winning captures the tick, losing the auction costs nothing. Two other listings share that shape tonight, Bischof and Proemel, and both are rejected on size rather than on merit: the cushion after the Treu sale is 876 thousand, the measured worst case for a rising player is minus 8,71 percent, and that caps any single flip at about ten million. Reis fits with room to spare; the other two would break the cushion and risk the zero. This confirms the previous run's call rather than reversing it. The edge itself was re-measured and has not decayed — if anything it is marginally stronger on a larger sample. Unwind the flip after tonight's update and well before the lock; it never touches the fielded eleven. The two open questions stand: it is still unknown whether Kickbase caps squad size, which would cap how many flips can run at once, and the edge remains measured in one league over one period and will decay if rivals crowd in. A separate measurement this run contradicts a standing assumption about manager asks — the three largest premiums ever recorded in this log are all manager-to-manager trades, not contested board listings, which means Georg's own asks could be priced far above market value instead of always instant-selling at it.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player is newly flagged. Every status flag in the squad is clear and no October source contradicts any of them. Treu is confirmed fit against a dated source, with the indefinite-absence stories traced back to the season before last. Mickelson is fit but not selected. Bischof's apparent injury item remains a trap from last April and is not the reason he is dropped this run — the reason is purely the size of the unwind.",
+  "sweep": "Nothing adverse. No squad player is newly injured, suspended, dropped, or carrying transfer news. Treu is explicitly cleared. The one negative selection note is about a player Georg is about to be forced to field rather than one he might lose: Nakuzola is not in Mainz's projected eleven, which is the real cost of the Treu sale.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -504,7 +504,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=619, -1,80% to +308,77%"
+   "v": "n=623, -1,80% to +443,38%"
   }
  ]
 }
