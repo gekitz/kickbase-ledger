@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-07T02:56Z",
+ "run": "2026-10-07T04:51Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -12028040,
   "floor": -46713364,
   "spending_power": 34685324,
-  "hours_to_lock": 63.56,
-  "exposure": "The balance is negative and must be back above zero at kickoff or the entire matchday scores nothing. That is the one constraint outranking everything else, but it is not urgent yet — the lock is more than two and a half days away, and the standing sale clears it on its own with room to spare. The flip deepens the deficit temporarily and then unwinds it, and the sizing rule passes with margin: even at the worst single outcome the log has ever recorded for a rising-flagged player, the two sales together still land above zero before the lock. What would make this dangerous is leaving the flip open into the final hours, or treating the deficit as a reason to skip the flip — it is neither. A negative balance costs nothing until the instant the matchday locks.",
+  "hours_to_lock": 61.64,
+  "exposure": "A leveraged position is open and must be closed before the lock. There is comfortable time — well over two days — and the mechanism is already decided and sitting as a standing call, so this is a scheduled action rather than a live alarm. It becomes urgent only if the sale has not happened by the final tick before the lock. Any flip taken in the meantime adds to the deficit and must be unwound on top of it.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "There is no formation gap. The eleven is legal now and stays legal through the sale, because the defender leaving is the fifth of five and the shape falls back onto a standard four-four-two. The gap is one of quality rather than legality: the body that inherits the vacated slot is a bench player, and there is no affordable way to do better. Under eleven never comes into play in any version of this plan, including the flip, which adds a body rather than removing one.",
+ "binding_gap": "There is no position gap. The binding constraint is the negative balance, which scores zero for the entire matchday if it is still negative when the matchday starts. Everything else is subordinate to unwinding it before the lock.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 34685324,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 58,
+  "listings": 57,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 3
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "One action, and it expires before dawn: the Capaldo flip on the board is still live, still priced at exactly market value, still flagged rising, and the news check came back clean ",
-  "headline_short": "One action, and it expires before dawn: the Capaldo flip on the board ",
-  "detail": "One action, and it expires before dawn: the Capaldo flip on the board is still live, still priced at exactly market value, still flagged rising, and the news check came back clean on the only thing a flip needs — no exit story, no transfer noise, back in full team training at the end of September. Bid exactly market value and do not raise. Losing the auction costs nothing. Everything else holds: the standing Treu sale remains the correct and only way out of the deficit, but it should be executed late rather than now, and no points buy clears the ceiling. Georg still fields a legal eleven, every man in it confirmed starting in a source dated this week."
+  "headline": "Hold.",
+  "headline_short": "Hold.",
+  "detail": "Hold. The one thing that must happen before the matchday locks is the Treu sale, and the right time to do it is late, not now — he is rising and every tick he is held is money that lands in the balance for free. Nothing else on the board earns a transaction this run. The flip queue rolls over to a small, safe candidate after the previous one was lost by a whisker."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "The standing sale is unchanged in substance and unchanged in choice of player. Of the bodies individually large enough to clear the deficit on their own, he is the cheapest, carries the lowest average of anyone in the placed eleven, and leaves a legal shape behind him. The one thing that has changed is timing. He is flagged rising, so his market value is expected to tick up tonight and again tomorrow night, and he scores Georg nothing either way because he is gone before the lock in every version of this. Selling him after the second tick rather than today is free money. The only trigger for selling early is his flag turning to falling. Nothing else on the squad should be sold.",
+  "reason": "Treu remains the correct and only leg to clear the deficit. He is the lowest point-scorer of the placed eleven and the only body individually large enough to clear the balance on its own without breaking the formation — the alternatives at that size are the goalkeeper, which is illegal, or the three players the team is actually built around. Instant-selling to Kickbase pays exactly market value with no spread, so there is nothing to negotiate and no reason to list him. The timing is the whole decision: he carries a rising flag, so each market-value tick he is held before the lock adds to what the sale pays. Sell him after the last tick that precedes the lock and before the lock itself, not today.",
   "standing": [
    {
     "name": "Philipp Treu",
@@ -201,9 +201,18 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No points buy clears, and the arithmetic has moved against it rather than for it since this was last derived. The ceiling for a body Georg would actually keep through the lock is whatever the Treu sale leaves above zero, because a kept purchase cannot be sold back to fund itself — and that cushion is now tighter than it was when this test was last run. The two defenders on the board cheap enough to fit both fail on the merits: one is on the avoid list for falling value and age, the other has started only half the season's matchdays with no October source confirming his selection. Buying either to fill the slot the spare will inherit would spend the entire cushion on a player who is also not a confirmed starter. Nothing on the board is worth the deficit risk at full size, and nothing cheap enough is worth owning.",
+  "reason": "No points buy clears, and this run re-derived the ceiling rather than trusting the stored one — it moved with the tick, but not far enough to bring any new body into range. The only defenders listed under the replacement ceiling either have no points history at all this season, which is what a collapsed market value next to no appearances means, or score below the bench player they would replace, or have started only half the matchdays with no current source confirming selection. Padding the back line with any of them costs capital and gains nothing.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "Sebastiaan Bornauw",
+    "pos": "DEF",
+    "club": "6",
+    "ask": 7991727,
+    "mv": 7991727,
+    "premium_pct": 0,
+    "why": "NEW TRAP — A FLIP THAT PASSES EVERY TEST EXCEPT TIMING, AND TIMING IS THE ONE THAT KILLS IT. Bornauw was listed to the board at 2026-10-07T03:50:22Z: no u, prc = mv = 7.991.727, mvt 1, st 0, and at 7.991.727 he sits comfortably under the 11.149.483 cushion ceiling. A naive read of the MOVERS rules endorses him at 7.991.727 x 2,55% = 203.789 expected. REJECT HIM ANYWAY. His exs is 154.349s, so the auction resolves at 2026-10-08T23:38:21Z. The last market-value tick before the MD5 lock is 2026-10-08T20:00:00Z — THREE AND A HALF HOURS EARLIER. The next tick after he is acquired is 2026-10-09T20:00:00Z, which falls AFTER the 2026-10-09T18:30:00Z lock. So winning him means holding 7.991.727 of capital through zero ticks and selling it back at exactly the price paid: zero expected gain, and a live risk that the unwind is forgotten and a -7.020.607 balance scores ZERO for the whole of MD5. GENERAL RULE FOR FUTURE RUNS, STATE IT ONCE: a flip candidate must expire BEFORE the last 20:00Z tick that precedes the lock, not merely before the lock. Expiry-after-final-tick is now a disqualifier in its own right, alongside sizing and the leaving-the-league check."
+   },
    {
     "name": "Malik Pimpong",
     "pos": "ATT",
@@ -215,11 +224,11 @@
    },
    {
     "name": "Burke + Mickelson + Günter + Honorat — the four board listings this run does NOT endorse, each for a different and stated reason",
-    "pos": "ATT",
-    "club": "40",
+    "pos": "",
+    "club": null,
     "ask": 2582759,
-    "mv": 2582759,
-    "premium_pct": 0,
+    "mv": null,
+    "premium_pct": null,
     "why": "FOUR KICKBASE BOARD LISTINGS (no u, prc == mv) ARE LIVE BESIDE CAPALDO AND NONE OF THEM IS TAKEN. STATED ONCE WITH THE ARITHMETIC SO NO LATER RUN RE-DERIVES IT. (1) TWO FAIL ON mvt. Christian Günter (89, DEF, tid 5 Freiburg), listed 2026-10-06T23:30:16Z (feed t=3, i 12968883385), prc = mv = 563.327, exs 40.790 so expiry ~2026-10-07T12:04Z, mvt 2 — measured next-tick drift for mvt 2 is mean -3,28% with only 13,2% rising on n=669, so this is the WRONG side of the edge. Franck Honorat (6319, MID, tid 15 Gladbach), listed 2026-10-07T00:38:48Z (feed t=3, i 12969253807), prc = mv = 4.721.663, exs 115.582 so expiry ~2026-10-08T08:51Z, mvt 2 AND st 4 — fails twice over. These two are the ONLY new listings since the 22:45Z run. (2) OLIVER BURKE (1955, ATT, tid 40) FAILS ON SIZE, NOT ON MERIT, AND THIS IS THE FIRST TIME THE SIZING RULE HAS ACTUALLY BOUND. He qualifies on every mechanical test: board listing, no u, prc = mv = 2.582.759, mvt 1, exs 12.979 so expiry ~2026-10-07T04:21Z, EV 2.582.759 x 2,55% = +65.860. But W0qivy2's rule is max total flip stake = cushion / 8,71% (the measured worst case of the mvt-1 distribution). The cushion is the post-unwind balance after the standing Treu sale, 971.120, so the ceiling is 971.120 / 0,0871 = 11.149.483. Capaldo alone is 9.867.510. Capaldo + Burke = 12.450.269, which exceeds the ceiling by 1.300.786, and the explicit worst case confirms it: 12.450.269 x 8,71% = 1.084.418 of drawdown against a 971.120 cushion leaves the unwind at -113.298, i.e. NEGATIVE AT THE LOCK AND A ZERO-SCORING MD5. Capaldo is the larger EV (+251.622 vs +65.860) so Capaldo is the one that stays. Burke is rejected ONLY because Capaldo occupies the stake, and if the Capaldo listing expires unbid at 04:22:55Z Burke becomes takeable on his own — he expires one minute earlier at ~04:21Z, so in practice the two cannot be sequenced and only one bid can be live. (3) NICHOLAS MICKELSON (11253, DEF, tid 77) FITS THE SIZING RULE AND IS STILL NOT WORTH THE ACTION. His mv jumped at the 2026-10-06T20:00:00Z tick from 510.229 to 662.231 (+29,79%) and he is still mvt 1, prc = mv = 662.231, exs 23.310 so expiry ~2026-10-07T07:13Z. Capaldo + Mickelson = 10.529.741, inside the 11.149.483 ceiling, worst-case drawdown 917.140 against the 971.120 cushion, so it CLEARS. But the EV is 662.231 x 2,55% = +16.887, which is 0,011% of a 153.583.690 team value and is below any sane action threshold for adding a thirteenth body that must then be sold back before the lock. NOTE FOR THE RECORD that this is not a reversal of Aktwmn9 or W4e599b: both of those rejected Mickelson as the DEF POINTS BUY on his selection record, and W4e599b expressly left him alive as a flip-only candidate. This call closes the flip question too, on size rather than on selection."
    },
    {
@@ -302,26 +311,17 @@
     "mv": 10837548,
     "premium_pct": 52.25,
     "why": "NEW LISTING SINCE THE 20:45Z RUN, LOGGED SO NO RUN RE-DERIVES HIM. Posted by Daggi D. at 2026-10-05T20:43:19Z — about ninety seconds BEFORE the last run's market read, which is why it is absent from that run's sweep and appears new here. (2854, ATT, tid 9 = VfB Stuttgart.) Manager ask 16.500.000 against mv 10.728.708 = +53,79%. That is more than twelve times the measured manager-ask clearing band (+3,06% to +4,35%) and above every contested-Kickbase clear in this league's log bar the three tail outliers. FAILS ON PREMIUM ALONE, before any fitness or marginal-points argument is needed. It also fails independently on direction: mvt 2, i.e. the measured -3,28% next-tick drift, so the ask is a markup on an asset the log says falls tomorrow — the exact inverse of the H648bvg flip shape. And it fails on need: Georg's two attackers are Guirassy (ap 161) and Gregoritsch (ap 137); Demirović's ap 38 would not displace either, so even at mv he buys nothing. NOT a flip candidate either — a manager ask is never the tick trade, which requires prc == mv and no u. Reverse only if ALL of: relisted at or below mv, a dated VfB XI at that time starting him, and a re-based ap that clears the attacker he would displace."
-   },
-   {
-    "name": "Klaas + Friedrich — the only two new listings since 14:45Z, both non-qualifying",
-    "pos": "",
-    "club": null,
-    "ask": 500000,
-    "mv": null,
-    "premium_pct": null,
-    "why": "LOGGED SO NO RUN RE-DERIVES EITHER. Exactly two new board listings since the 14:45Z market read, and NEITHER qualifies as a flip, so the 05.10 evening flip queue is unchanged. (1) SEBASTIAN KLAAS (3491, VfB, MID), feed t:3 2026-10-05T15:45:15Z, Kickbase board (no u), prc == mv == 500.000, exs 96.634 = expiry 2026-10-06T18:35Z. FAILS TWICE: mvt 0, which the event log measures at mean +0,01% with only 1,3% rising (n=78) — i.e. no tick edge at all, not a thin one — and the expiry is AFTER tonight's 20:00Z tick, so even a rising flag could not be captured today. A 500.000 floor-value body is also not a points buy: ap unknown, no points history on the listing. (2) MARVIN FRIEDRICH (1223, St. Pauli, DEF), feed t:3 2026-10-05T14:40:58Z, board listing, prc == mv == 1.361.082, exs 151.037 = expiry 2026-10-07T08:38Z. FAILS ON mvt 2 — the log measures falling-flag players at mean -3,32% with 12,1% rising (n=630), so bidding mv on him is a measured EXPECTED LOSS of about -45.000, the opposite trade. He is also the wrong answer to the post-Treu DEF hole: at mv 1.361.082 he is a cheap body, not an upgrade on Nakuzola's ap 27 in any way the listing evidences. NOTE FOR THE NEXT RUN: do not re-check either of these when their expiry comes round — an mvt-0 or mvt-2 board listing never becomes a flip, and both would need a fresh points case to become a buy."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The edge has not decayed and has not moved at all for a third consecutive run — rising-flagged players still gain, at the same rate, at the same hit rate, on the same sample. Falling-flagged players still lose, and flat-flagged players still do nothing at all, which is why the night's single new listing is a pass. One qualifying candidate, and he is the one already queued: a board listing, no manager ask, priced at exactly market value, flagged rising, read after last night's tick so the flag applies to tonight's. He is a defender, so buying him does not touch the fielded eleven, and he unwinds inside the window with room even in the worst case the log has ever recorded for a rising-flagged player. A new data point cuts in favour of the doctrine rather than against it: a board player was taken off the market overnight slightly below market value, which is a reminder that the spectacular contested clears are real but not typical, and that bidding exactly market value and never raising wins often enough and loses for free. Two questions stay open and unanswered: whether Kickbase caps squad size, which would cap how many flips can run at once; and the fact that this edge is measured in one league over one stretch and will decay if the rivals crowd in. They are the four most active traders in the league and they finished top four last season.",
+  "reason": "The previous flip was lost, and lost narrowly — the winner paid a premium barely above market value, which is well inside the one-tick drift and means a fractionally higher bid would have taken him and still turned a profit. That is a real question about whether bidding exactly market value is leaving money on the table against the low cluster, and it is logged for measurement rather than acted on, because the same discipline is what stops the ruinous chases against the high cluster. This run endorses one small flip: a board listing with a rising flag, priced at market value, expiring early enough to actually capture a tick, and small enough that the worst drawdown ever observed would not threaten the balance. It is worth very little in absolute terms, but the capital comes back on demand at market value. A second, larger candidate was rejected on a trap worth naming: it passes sizing and every other test, but its auction resolves after the final tick before the lock, so winning it means holding capital through no tick at all. Expiry after the last pre-lock tick is now a disqualifier in its own right. Two open questions stand unchanged: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in. It has not decayed yet — the drift is identical for the fourth consecutive run.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "A full sweep came back clean on every placed player, each confirmed in a probable lineup or an injury-table absence dated this week. Two amber notes, neither of which changes an action. The Mainz defender is in the probable eleven but still carries an 'angeschlagen' tag from a knee irritation picked up in late September; he trained fully this week and is explicitly described as a candidate for the starting formation, but Friday and Saturday team news is worth a second look. And the Leipzig winger has January transfer links from two dated sources this week — a Premier League club named, a domestic rival monitoring — which is irrelevant to this matchday and relevant only as a market-value watch on the second most valuable asset in the squad. Separately, the squad metadata in the app maps several players to the wrong clubs and a few to the wrong first names; the news check was done against the corrected clubs, not the app's.",
+  "sweep": "Clean sweep. Every placed player is named in his club's probable starting eleven in a source published yesterday, none carries a Kickbase status flag, and none appears on the league-wide injury-and-suspension table. The known date traps held: the prominent injury stories for the player being sold are from the season before last and remain stale. One board listing is confirmed genuinely injured by a current source, which vindicates the standing instruction not to touch him.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -504,7 +504,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=628, -1,80% to +443,38%"
+   "v": "n=631, -1,80% to +443,38%"
   }
  ]
 }
