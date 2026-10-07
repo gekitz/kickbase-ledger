@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-07T08:51Z",
+ "run": "2026-10-07T10:57Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -12028040,
   "floor": -46713364,
   "spending_power": 34685324,
-  "hours_to_lock": 57.64,
-  "exposure": "A leveraged position is open and it is the whole of this briefing. The unwind deadline is the MD5 lock. The deficit is covered exactly once, by the Treu sale, and by nothing else on this account — there is no second leg and no margin, which is why no buy and no flip can be stacked on top of it this run. The sale is unconditional as to whether and free as to when: there is no matchday before the lock and the 11-player floor is checked once at matchday start, so the only thing the timing changes is the proceeds. Treu carries mvt 1, so the optimal window is AFTER the last market-value tick before the lock and before the lock itself. Do not treat the deadline as urgency and do not sell tonight.",
+  "hours_to_lock": 55.55,
+  "exposure": "A leveraged position is open and will stay open until the Treu sale goes through. It is not yet urgent: the lock is still more than two days out, well outside the proximity window agreed for escalating this, which is why no notification was sent for it this run. It becomes urgent in the final hours before the lock. There is no live offer standing and no pending bid, so nothing can land unexpectedly and deepen the deficit. The one structural weakness is on the tooling side, not the squad: the Cloudflare database connector has now been absent for ten consecutive runs, so the full open-call list cannot be enumerated and the drift re-measure has to be taken from the ledger's own computed statistics block instead of run directly. That substitution works, and the open-call display now ranks sales first so they are no longer invisible, but the connector needs re-adding for the ledger step to work as designed. Separately, eight stale per-run calibration snapshots were left open by previous runs and were closed this run; doctrine entries were deliberately kept.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "There is no points gap binding this squad — it fields a legal eleven and three formations are available. The binding constraint is entirely financial: the negative balance. Selling Treu closes it and costs roughly 49 ap of fielded strength, because Treu (the lowest-ap man in the placed eleven) leaves and Nakuzola, currently the unplaced twelfth man, must come into the XI to keep the count at eleven. That is a real cost and it is not close to the alternative: a negative balance at matchday start scores zero for every player, so the trade is 49 ap against the entire matchday.",
+ "binding_gap": "The binding constraint is not a position on the pitch, it is the negative balance and the clock. Spending is capped by the floor rather than by cash, and the deficit costs nothing at all until the instant the matchday locks — at which point it costs the entire matchday. So the gap that binds is the unwind, and the unwind is a single sale that is already identified, already priced, and already in the ledger. Once it is done the squad sits at exactly eleven, which means any later sale would need a replacement landing first.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 34685324,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 58,
+  "listings": 57,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Quiet run, one action, unchanged.",
-  "headline_short": "Quiet run, one action, unchanged.",
-  "detail": "Quiet run, one action, unchanged. Sell Philipp Treu to Kickbase before the lock — it is the only move that matters and it has not changed since the last five runs. Nothing else on the board clears: no points buy, no flip. The balance is still negative, which scores ZERO for the whole of MD5 if it is still negative when the matchday starts."
+  "headline": "Nothing has changed since the last run and nothing new needs doing.",
+  "headline_short": "Nothing has changed since the last run and nothing new needs doing.",
+  "detail": "Nothing has changed since the last run and nothing new needs doing. The standing instruction still stands: instant-sell Philipp Treu back to Kickbase before the matchday locks. That single sale clears the negative balance and leaves a legal eleven. Hold it until after tomorrow evening's market-value update — Treu is flagged rising, instant sales pay exactly market value, so every tick he is held is free money — but do not leave it to the last hours. A negative balance when the matchday locks scores zero for the whole of MD5, and that risk dwarfs the gain from squeezing the final tick."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Philipp Treu (DEF, SC Freiburg) — instant-sell to Kickbase, which pays exactly mv with no spread. He remains the correct and only leg. Of the bodies individually large enough to clear the deficit, Neuer is the only goalkeeper and selling him leaves an illegal squad; Engelhardt, Nusa and Guirassy are the three highest scorers on the roster; Gregoritsch and ter Horst are each too small to clear it alone; and every two-body combination that does clear it drops the squad to ten and triggers the -100 penalty. Treu is also the lowest-ap man among the eleven placed, so he is the cheapest exit in points terms as well as the only sufficient one. Fitness confirmed today: he is in Freiburg's probable XI for the 11.10 fixture against Schalke and appears on no injury or suspension table.",
+  "reason": "Treu, and only Treu. He is the weakest placed outfielder by season average apart from the unplaced Nakuzola, he is individually large enough to clear the deficit on his own, and selling him back to the board pays exactly market value with no spread. The sale is unconditional as to whether and free as to when, with a hard deadline at the lock. He is fit — the live injured-and-suspended table does not list him — so there is no fitness reason to rush it; his probable-XI page is stale and he is in an open right-back duel, but that is irrelevant to an instant sale, which pays market value whether he starts or not.",
   "standing": [
    {
     "name": "Philipp Treu",
@@ -201,7 +201,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing. No points buy clears and the arithmetic is not marginal. After the Treu sale the cushion is the entire budget for any purchase, and nothing on the board both fits under it and improves the eleven. The only player the squad would actually upgrade after the sale is the twelfth man who comes into the XI, and every defender on the board cheap enough to afford either carries fewer points per appearance than he does, or is flagged not fit, or both. This has now been settled identically for several consecutive runs and should not be re-derived from scratch again.",
+  "reason": "Nothing. This was settled with arithmetic two runs ago and is not being re-derived: after the Treu sale the cash available for a defensive replacement is far below what any usable body costs, and the only two defenders on the board under that ceiling both fail — one carries a fitness flag, the other has collapsed in value to a token price and has no points record this season, which is the market telling you he has lost his place. Buying either would spend real money to field a non-starter. Leave the slot to Nakuzola and keep the balance positive.",
   "standing": [],
   "killed_this_run": [
    {
@@ -317,11 +317,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip this run, and the window is open — the lock is well clear of the 12-hour cutoff, so this is a real rejection rather than a closed window. Exactly two board listings qualify mechanically on the tick test (Kickbase listing, asking price equal to market value, rising-value flag, no fitness flag): Willi Orban and Sebastiaan Bornauw. Both were already on the avoid list and both reasons still hold. Orban fails the sizing rule: his measured worst case alone is larger than the entire post-sale cushion, so a bad tick on him puts the balance back under water at the lock and forfeits the matchday to chase a gain worth a fraction of it. Bornauw fails on timing, which is the subtler trap: his listing does not clear until after the last market-value update before the lock, so he captures no tick at all and cannot be unwound in time — owning him at the lock puts the balance firmly negative. The edge itself is intact and was re-measured again this run with no decay for a sixth consecutive run, but it does not get to spend the matchday. Two open questions stand, unchanged: whether Kickbase caps squad size, which would cap how many flips can be run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd into it. Separately, the board proved this run that it is bimodal — two clears four hours apart, one at under one percent over market value and one at fifty-one percent. That is the case for bidding exactly market value and never raising: the upside mode cannot be forecast, losing an auction costs nothing, and one chased listing erases twenty disciplined ones.",
+  "reason": "No flip this run, and for once not because the market is quiet in general but because the two candidates both fail on named grounds. The flip window is still open — the lock is more than two days away — and the measured edge has not decayed for a seventh consecutive run: bidding exactly market value on a rising board listing and capturing the evening tick still wins the large majority of the time. But there are only two rising board listings, and neither works. Orban is rejected on both legs: as a points buy he adds almost nothing at full size, and as a flip he is far too large for the cushion the unwind leaves — the sizing rule caps a flip at the post-unwind cushion divided by the measured worst case, and he is several times over it. Bornauw passes the sizing test and fails on timing: his auction resolves after tomorrow evening's tick, so the only tick he could capture falls after the lock, which means he would have to be sold back at market value for exactly nothing while carrying real downside. Zero new listings arrived in the last two hours, so there is nothing else to assess. Two open questions remain unresolved and are restated once, not re-argued: whether Kickbase caps squad size, which would cap flip throughput; and that the measured tick edge comes from one league over one period and will decay if rivals crowd in. It has not decayed yet.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean sweep, checked today. No player in the squad appears on the league injury-and-suspension table, and the matchday preview dated yesterday names no absence affecting any of them. Treu and Engelhardt are both confirmed in Freiburg's probable starting eleven. Nothing newly injured, suspended or benched since the last run, and no dated report that any squad player may leave the league. One date-trap note for future runs: searches on Treu surface international-duty material that is easy to misread as a club absence — it is not one, and his club page lists him as a starter.",
+  "sweep": "All eleven placed players are fit, and none of the twelve appears on the live injured-and-suspended table retrieved today. Starters were confirmed on club pages dated within the last two days for Neuer, Gruber, Deman, Tanaka, Gregoritsch, Guirassy, Wolf and Engelhardt. Fabio Gruber is the one piece of good news: he returned to full team training yesterday after a knee irritation and is back in the probable eleven. Two soft spots, both fit but unconfirmed in a current lineup: Treu's and ter Horst's probable-XI pages were last updated in late September, before the freshness cutoff, so re-check both nearer kickoff if either is still owned. Nusa read inconsistently on two passes of the same club page, once in the eleven and once on the bench; his start record and minutes share say starter, so treat it as likely-but-verify. One new date trap caught and discarded: a story headlined as a potentially serious shoulder injury for Treu is from last year, not this season. Both Transfermarkt and Kicker were unreachable this run, so every fitness claim rests on a single outlet with no independent second source.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -504,7 +504,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=634, -1,80% to +443,38%"
+   "v": "n=635, -1,80% to +443,38%"
   }
  ]
 }
