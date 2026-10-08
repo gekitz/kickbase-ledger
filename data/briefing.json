@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-08T12:45:00Z",
+ "run": "2026-10-08T14:47:23Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -12028040,
   "floor": -47108182,
   "spending_power": 35080142,
-  "hours_to_lock": 29.64,
-  "exposure": "A leveraged position is open and has been for days. It is not urgent in the sense of costing anything yet — a negative balance is free right up to the instant the matchday locks — but it becomes total at that instant. The unwind is a single instant sale that executes in seconds and cannot fail, so the only real risk here is inattention, not market risk. There is more than a day of margin left, and no offer is standing on anything, so nothing can clear against the account unexpectedly in the meantime. No alert was sent for this run because nothing changed since the last one; alerts will fire every run once the lock is inside twelve hours.",
+  "hours_to_lock": 27.64,
+  "exposure": "A leveraged position is open and it is the single thing that can ruin the matchday: a negative balance at matchday start scores zero for the entire matchday, whatever the eleven do. It is unwound by one instant sale and there is comfortable time to do it, so this is not yet urgent — but it is not optional either, and it should not be left to the last hours. No offer is live in either direction, so nothing can surprise the balance in the meantime.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "The binding constraint is not a position and not a shortage of talent — it is the deficit itself. Until the balance is non-negative nothing else can be bought, and if it is still negative when the matchday starts the entire matchday scores zero regardless of who is fielded. Once the deficit is cleared the binding gap becomes the back four, where the forced replacement is a rotation body with the lowest scoring average in the squad; but that is a points problem worth a few dozen points, where the deficit is a problem worth the whole matchday. Fix them in that order.",
+ "binding_gap": "The binding constraint is cash, not a formation hole. The squad can field a legal eleven right now and will still be able to after the sale, but only as a 4-4-2 exactly, with Nakuzola forced into the back four. After the sale the gap becomes a cheap defender better than Nakuzola — and nothing on the board fills it: the affordable defenders all score worse than he does, and the ones who score better cost more than the post-sale balance allows.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 35080142,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 62,
+  "listings": 53,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 3
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Nothing has moved in two hours — no new listings, no settled transfers, no offers placed, squad and balance identical to the last run.",
-  "headline_short": "Nothing has moved in two hours — no new listings, no settled transfers",
-  "detail": "Nothing has moved in two hours — no new listings, no settled transfers, no offers placed, squad and balance identical to the last run. The briefing is therefore unchanged and the one action that matters is still outstanding: sell Treu back to Kickbase and clear the deficit before the matchday locks. A negative balance at matchday start scores zero for the entire matchday, and that is the only way this squad can lose its whole weekend. The sale is an instant, seconds-long action that pays exactly market value with no spread and no auction risk. Do it, then place the bench-body bid. Everything else on the board is noise."
+  "headline": "Unchanged and still one move: sell Treu back to Kickbase to clear the deficit before the matchday locks.",
+  "headline_short": "Unchanged and still one move: sell Treu back to Kickbase to clear the ",
+  "detail": "Unchanged and still one move: sell Treu back to Kickbase to clear the deficit before the matchday locks. The position has not moved a cent since the last run, but the market woke up — rivals spent a twenty-minute burst liquidating squad players back to Kickbase at market value, which is the same pre-lock leverage unwind Georg has to do. That is confirmation of the plan, not a reason to change it."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Treu, instant sale back to Kickbase. He is the lowest-scoring outfielder in the fielded eleven and his most recent matchday return was his second worst of the season, so he costs the fewest points of anyone who could fund this. He is also the only single sale large enough to clear the deficit in one leg — no other individual player covers it, and a two-leg unwind would drop the squad below the eleven-player floor and trigger the under-eleven penalty. He is fit and starting; that is not why he is going. Selling back to Kickbase pays exactly market value every time, so there is no auction to lose and no premium to negotiate. Waiting for tonight's market-value update adds a trivial amount against the risk of the sale simply not happening, and that trade was rejected on the last run and is rejected again here. Sell now.",
+  "reason": "Treu remains the sale, and he remains the right one. He is the lowest-scoring of the regular back four on season average and also the most valuable, so he is the only single player whose instant sale clears the whole deficit on its own. Selling him back to Kickbase pays exactly market value with no spread and no auction risk. The cost is real and should be stated plainly: Nakuzola replaces him in the back four, which is a meaningful points drop for the matchday. There is no cheaper way to clear the deficit while keeping eleven bodies. Selling Deman instead does not clear it; selling both drops the squad to ten and triggers the penalty. Delaying the sale to catch tonight's market-value tick was already rejected and stays rejected: the gain is small and the downside is a zero-scoring matchday.",
   "standing": [
    {
     "name": "Philipp Treu",
@@ -201,7 +201,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "One buy only, and it is a body rather than an upgrade: Bachmann off the board at the minimum price, bid exactly the listed price, as bench insurance once Treu is gone. The sale leaves the squad at the bare floor with nobody spare, and the cheapest alternative bodies all cost more than the post-sale cushion, so this is the only one that actually fits. Place it after the sale, not before. There is no points-improving buy on this market and the reason is arithmetic rather than judgement: the cheapest defender on offer who would actually beat Treu's scoring average is a manager ask carrying a substantial premium, and buying him after the sale still leaves the balance negative at the lock. Every other defender on the board either scores worse than the man he would replace, carries a fitness flag, or is asked at a premium far outside anything this ledger has ever paid.",
+  "reason": "One buy stands, and it is insurance rather than ambition: Bachmann off the Kickbase board at market value, as a twelfth body after the Treu sale. Without him the squad sits at exactly eleven with eleven placed and no bench at all, which leaves no room to react to late team news. He is a midfielder, so he does not fill the defensive hole the sale opens — that is a known limitation of the call, not an oversight. Nothing else on the board is worth buying. The three listings that arrived since the last run are all rejected: two are manager asks at large premiums on players carrying injury flags, the third is a falling-value board listing in a position Georg already covers and expiring after the lock.",
   "standing": [
    {
     "name": "Janik Bachmann",
@@ -217,6 +217,15 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "Svensson + Kleindienst + Sylla — the three new listings since 12:45Z, all three killed",
+    "pos": "DEF",
+    "club": "3",
+    "ask": 18119618,
+    "mv": 18119618,
+    "premium_pct": 0,
+    "why": "THE ONLY THREE NEW LISTINGS SINCE THE 12:45Z RUN, logged so the \"every new listing is swept\" record stays unbroken. All three arrived inside a ten-minute window at the end of a rival cash-raising burst (see WATCH run state 14:47Z). (1) DANIEL SVENSSON (10115, DEF Dortmund, tid 3), listed by JakobDohr at 2026-10-08T13:48:56Z. Manager ask 23.000.000 against mv 18.119.618 = +26,93% over mv. KILLED TWICE OVER: st 2 (not fit — a non-zero status flag overrides the ap 126 season average per STEP 5), and the ask is +26,93% on a manager listing where the seller chooses, so there is no highest-bid-wins mechanism to exploit. (2) TIM KLEINDIENST (849, ATT Gladbach, tid 15), listed by JakobDohr at 2026-10-08T13:49:19Z. Manager ask 18.000.000 against mv 11.694.335 = +53,92% over mv, the largest live ask on the board. ALSO st 2, and ap 3 off 9 total points — he has barely played. Reject on every axis at once. (3) MOUSSA SYLLA (8222, ATT Freiburg, tid 8), Kickbase board listing at 2026-10-08T13:39:04Z, prc = mv = 3.768.665, no u, ofc 0. Fails the tick edge on the flag: mvt 2, measured next-tick drift -3,22% with only 14,1% rising (n=690). Also fails the Wqi1195 two-clock test independently — exs 111.590s puts expiry at 2026-10-09T21:47Z, which is AFTER the 2026-10-09T18:30Z lock. Neither is a points buy either: Georg's binding need is a DEF body under ~1,0M after the Treu sale, and all three are far above that and in the wrong positions."
+   },
    {
     "name": "Kennet Eichhorn",
     "pos": "MID",
@@ -315,26 +324,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "THE ONLY NEW LISTING SINCE THE 10:45Z RUN AND IT DOES NOT QUALIFY ON THE H648bvg SHAPE. Tangvik (12368, GK, tid 6), listed by the board at 2026-10-06T11:31:44Z (feed t=3, i 12964353154), prc 500.000 == mv 500.000, no u, ofc 0, exs 152293 = expiry 2026-10-08T06:04Z. THE DISQUALIFIER IS mvt 0, NOT THE PRICE: the measured next-tick drift on mvt 0 is +0,01% on n=85 with only 1.2% rising, i.e. the flip edge is absent by construction — a floor-value 500k body does not tick. Separately he is a GK behind an owned Neuer and carries no points case (no p, no ap on the listing). NOT A BUY, NOT A FLIP. Logged so the 14:45Z run does not re-examine him."
-   },
-   {
-    "name": "Daniel Heuer Fernandes",
-    "pos": "GK",
-    "club": "6",
-    "ask": 11300000,
-    "mv": 10583586,
-    "premium_pct": 6.77,
-    "why": "THE SECOND AND LAST NEW LISTING SINCE THE 20:45Z RUN, LOGGED SO THE 'two new listings, both killed' sweep stays complete. Posted by Borussia Rumpelfuss at 2026-10-05T20:18:15Z. (1863, GK, tid 6.) Manager ask 11.300.000 against mv 10.457.356 = +8,06%, roughly double the measured manager-ask clearing band of +3,06% to +4,35%. KILLED ON POSITION BEFORE PRICE, AND THAT IS THE DURABLE REASON: only one keeper is ever fielded and Georg's is Neuer at ap 143 against Heuer Fernandes's ap 74, so this is a worse keeper at a premium, buying a guaranteed zero into an already leveraged balance. The ledger has twice established (Baumann block; Onyeka envelope) that a second keeper is 500.000 insurance off the board, never an eight-figure manager ask. Not a flip either: manager ask, so prc != mv and a u is present — it fails the H648bvg shape on two legs. Reverse only if Neuer is sold or long-term unavailable AND the ask is at or below mv."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "Closed, and now closed for the entire rest of this matchday cycle rather than just for this run. A board flip is acquired when the listing expires, not when the bid is placed, so to capture a market-value tick the listing has to expire before that tick lands. Only one tick remains before the lock — tonight's — because the following one falls after the matchday has already started. Everything on the board that expires before tonight's tick is flagged flat or falling, and every rising listing expires too late, the nearest miss by a little over an hour. New listings cannot rescue it either: board listings here run a day or more, so nothing posted from now on can also expire before tonight. Later runs can state this and skip the derivation until after the lock. The edge itself is intact — this run re-measured the next-tick drift on roughly double the earlier sample and it has strengthened rather than decayed, so rivals crowding in is not yet visible in the data. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if it becomes crowded.",
+  "reason": "Closed again, and this time on arithmetic rather than sentiment. A flip only earns the drift if the listing resolves before a market-value update and that update lands before the lock. Only one update remains before the matchday locks, and not a single rising-value board listing expires before it. Eichhorn is the near miss — right flag, right price, but his auction runs out a little over an hour after the update, so he would be bought and never ticked. Futkeu and Seol fail the same way by a wider margin. No flip to recommend. Worth noting as a measured curiosity: a rival bought a board listing slightly below market value and sold it straight back seconds later for a tiny risk-free gain, which confirms board listings can clear under market value but is far too small to be a mechanism. The two open questions stand unchanged — it is still unknown whether Kickbase caps squad size, which would cap flip throughput, and the rising-flag edge is measured in one league over one period and will decay if rivals crowd in. Re-measured this run, it has not decayed.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean, and freshly checked rather than carried over. The league-wide injury and suspension table was read this run and not one of the twelve appears on any club absence list; every squad club was checked individually and the names listed on each are all players outside this squad. All twelve carry a clear status flag and were in the last starting eleven. The page was confirmed current rather than cached by cross-checking two independent markers on it. No squad player is newly injured, suspended, benched or the subject of any transfer story.",
+  "sweep": "Clean sweep, and better validated than usual. Ligainsider's injured-and-suspended table was read live this run and names none of Georg's twelve. None of them carries a Kickbase status flag either. As a cross-check, every board player who did carry a status flag turned up in the Ligainsider table with a matching injury, which means the status field is a reliable instrument and a cheap substitute for a per-player web leg when a run only needs a fit-or-not read.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -517,7 +517,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=648, -1,80% to +443,38%"
+   "v": "n=649, -1,80% to +443,38%"
   }
  ]
 }
