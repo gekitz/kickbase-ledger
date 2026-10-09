@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-09T12:45:30Z",
+ "run": "2026-10-09T14:49Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 1344720,
   "floor": -47585743,
   "spending_power": 48930463,
-  "hours_to_lock": 5.66,
-  "exposure": "None. The balance is positive, there is no leverage open, no offer is live, and nothing needs to be unwound before the lock. There is no deadline on Georg this run and nothing he has to be at his phone for.",
+  "hours_to_lock": 3.68,
+  "exposure": "None. The balance is positive and there is no open leveraged position, so the matchday-start rule that zeroes a negative balance cannot bite. No live offers, no pending bids, nothing that needs unwinding before the lock.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "One defender slot, and it is the same slot it has been all cycle. The player holding it is fit but is nowhere near his club's side, so he should be read as scoring nothing. The fix has to clear two independent tests at once — land before the lock, and fit inside cash plus what he sells back for — and the full board has now been checked against both. Nothing clears. The slot is conceded for this matchday; the work is to fix it for the next one, when the clock stops binding and the nightly tick has repriced the candidates.",
+ "binding_gap": "Nakuzola, a fielded defender who will not start. He has two Bundesliga appearances, zero starts, and does not appear in today's probable XI. He is fit — he simply is not picked. Replacing him before the lock would mean buying a defender who both resolves in time and can be paid for without going negative, and no such player exists on the board. You field him and accept the thin return for this matchday; he is an MD6 problem, and Nwaneri remains the candidate worth not losing.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 48930463,
@@ -53,8 +53,8 @@
  "board": {
   "listings": 31,
   "cheapest": 500000,
-  "cheapest_slot_filling": 11296940,
-  "expiring_within_2h": 0
+  "cheapest_slot_filling": 500000,
+  "expiring_within_2h": 3
  },
  "squad": [
   {
@@ -172,18 +172,27 @@
   "action": "none",
   "headline": "No action.",
   "headline_short": "No action.",
-  "detail": "No action. The position is clean, unlevered and unchanged since the last run, and the market is now exhaustively closed — every single board listing has been tested against the lock clock and the cash envelope, and not one survives. This is the second consecutive run reaching the same answer, but for the first time the kill is complete rather than partial: five listings that had never been evaluated (a Köln keeper, a Mainz playmaker, an Elversberg winger, a Gladbach full-back and a Bayern centre-back) were put through the two-clock test and all five fail it. Sit on the eleven and let the matchday lock."
+  "detail": "No action. The position is clean and unchanged to the euro since the 12:45Z run: cash positive, no leverage, exactly eleven players, all eleven placed, 4-4-2 legal. Every single starter bar Nakuzola has now been re-confirmed against a source dated today, and the market has been killed exhaustively rather than partially. Sit on your hands until the lock."
  },
  "sell": {
   "recommendation": "none",
-  "reason": "Nothing to sell. The squad is at the bare minimum, so a sale is only legal as the unwind leg of a purchase, and no purchase survives this run. Deman is the one body worth watching: he is the fastest faller in the squad and the only one whose value is sliding into the next tick, which makes him the natural funding leg for a midfield upgrade once the clock stops binding. That is a next-matchday thought, not a today one.",
+  "reason": "Nothing to sell. A sale drops you to ten players and costs the -100 short-squad penalty, and there is no buy available before the lock that could replace the body — so every sale this afternoon is strictly negative. Nakuzola remains the weak link rather than a sale candidate: he is the binding gap, not a tradable asset, and the arithmetic below shows there is no affordable fix for him before the lock.",
   "standing": []
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing to buy, and the reason is a clock rather than a judgement. A Kickbase board listing only becomes yours when its own auction expires, so a listing whose expiry falls after the lock cannot exist as a player for this matchday at any price. Exactly four listings on the entire board expire before the lock, and three of them die instantly: the Dortmund full-back carries a fitness flag and is far outside the envelope, the Freiburg midfield body was already killed on merit, and the Bremen forward is both flagged and the wrong position. That leaves one Augsburg defender as the single timing-viable and affordable candidate, so he was re-opened rather than taken on trust from the standing avoid — and the dated probable eleven published yesterday does not have him in the side. The avoid is confirmed on fresh evidence. Two of the newly tested names are worth keeping for the next cycle: the Elversberg winger and the Mainz playmaker are both confirmed starters with real averages, and they are the first genuine upgrade candidates to appear in days. Both fail today purely on the clock, and the winger additionally fails the cash envelope by a margin small enough to be worth re-running the moment the tick repriced him.",
+  "reason": "Nothing to buy. Of twenty-two Kickbase board listings only four can resolve before the lock, and all four are dead. Ryerson was the first listing all cycle to pass the timing test and he still fails twice over: Kickbase flags him unfit, a report dated 02.10.2026 has him injured on Norway duty with the extent unknown, and he is absent from today's probable XI. Even fit he is unaffordable in the only sense that counts — buying him puts the balance deep in the red, and the only single sales large enough to unwind it are four confirmed starters who all score far more than he does. Bachmann, Musah and Seol are dead on merit. Florian Müller, the one listing new since the last run, is a backup keeper whose auction resolves after the lock. All nine manager asks are priced above market value and die on the standing rule.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "Ryerson + F. Müller + Musah",
+    "pos": "DEF",
+    "club": "3",
+    "ask": 12897589,
+    "mv": 12897589,
+    "premium_pct": 0,
+    "why": "THE THREE BOARD LISTINGS NEVER YET KILLED, AND RYERSON IS THE FIRST LISTING THIS WHOLE CYCLE TO PASS THE TWO-CLOCK TEST — so he needed a real kill, not a timing kill. Stated once with the arithmetic so no later pre-lock run redoes it. Measured 09.10 14:45Z, lock 18:30Z = 13.500s away.\n\n(1) JULIAN RYERSON (2395, DEF, Dortmund tid 3). Kickbase BOARD listing, prc 12.897.589 = mv exactly, no u, mvt 2 (falling). exs 1.323 -> resolves ~15:07Z, i.e. BEFORE the lock. He therefore PASSES Wqi1195's two-clock test, the only live listing that does. He fails on two other grounds, either sufficient:\n  (a) FITNESS. Kickbase st 2 (non-zero = not fit). getfootballnewsgermany, dated 02.10.2026 — current period, NOT a date trap — reports a fresh injury on Norway duty: subbed 66' v Portugal, then sat down 16' v Wales and was replaced, extent unknown. He is ABSENT from bundesliga.com's probable XI dated 09.10.2026. ap 82 is last-season-weighted and irrelevant if he does not play.\n  (b) UNWIND, which kills him even if he were fit. prc 12.897.589 against cash 1.344.720 leaves balance -11.552.869. Spending power 48.930.463 is the FLOOR constraint and happily permits the buy — this is exactly the case Hfbknqv warns not to kill on the deficit alone — so the test is the UNWIND, and it fails on every path. Keeping >=11 players means selling exactly ONE player for >=11.552.869. Only four qualify: Guirassy 32.948.666 (ap 161), Nusa 28.261.137 (ap 169), Engelhardt 14.880.633 (ap 149), Neuer 13.077.867 (ap 143) — all four CONFIRMED starters on the 09.10.2026 source, every one a huge points downgrade to Ryerson. Selling Nakuzola instead (500.000) leaves -11.052.869, still negative, still zero for the matchday. Selling two (Nakuzola + Deman 9.028.415 = 9.528.415) leaves -2.024.454 AND drops the squad to 10 -> -100. There is no path. Note the shape for reuse: a buy that passes the two-clock test can still die on the unwind, and with cash at 1.344.720 the unwind ceiling for a single-buy-single-sale is the mv of the cheapest starter he would actually part with.\n\n(2) FLORIAN MÜLLER (1910, GK, Freiburg tid 5), the only listing new since the 12:45Z run (hit the board 12:50:22Z). Board listing, prc 500.000 = mv, mvt 0 (no drift, so no flip edge either). exs 49.700 -> resolves ~2026-10-10T04:33Z, AFTER the 18:30Z lock. Dies on the two-clock test for MD5. On merit he is also nothing: a 500.000 backup keeper behind Neuer (ap 143), and 4-4-2 fields exactly one GK.\n\n(3) SALIM MUSAH (11262, ATT, Bremen tid 10). Board, prc 500.000 = mv, mvt 0, exs 3.656 -> resolves ~15:46Z, pre-lock, so timing is not the kill. Merit is: st 1 (not fit), ap 9, p 26. 4-4-2 fields exactly two ATT and both are confirmed starters, Guirassy ap 161 and Gregoritsch ap 137, so he is a 12th body worth zero MD5 points. He would leave cash at 844.720 — positive, not fatal, just pointless.\n\nPRE-LOCK RESOLUTION CENSUS, so no later run recomputes it: of 22 board listings only FOUR have exs below 13.500 and can therefore resolve before the lock — Ryerson 1.323, Bachmann 2.657 (dead, Azc5fgn), Musah 3.656 (dead here), Seol 11.765 (dead, Axouqcv). Every other board listing resolves after the lock and is an MD6 question, not an MD5 one. All nine manager asks (Kleindienst, Bernardo, Baumgartner, Scheller, Claude-Maurice, Svensson, Mickelson, El Ouahdi, Estève) are priced ABOVE mv and die on the standing rule that a manager ask above mv is not a buy at any point in this ledger's history. The MD5 market is therefore closed exhaustively, not partially."
+   },
    {
     "name": "Schwäbe + Amiri + Petkov + Herold + Ito — the five board listings never yet killed. All five die on the SAME two-clock test, stated once with the arithmetic so no later pre-lock run redoes it.",
     "pos": "MID",
@@ -282,26 +291,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "THE QUESTION THIS SETTLES: after the Treu sale the squad is 1 GK / 4 DEF / 4 MID / 2 ATT = 11, and the ONLY fillable formation is 4-4-2 exactly, with Nakuzola (ap 27, not in Mainz's probable XI) forced into the back four. That makes a cheap DEF body look more attractive than the MID Bachmann of B3fyppp, because a 5th DEF would restore 5-3-2 and 5-4-1. IT DOES NOT WORK, ON CASH: post-sale cash is exactly 1.031.188, so the only affordable extra body is a 500.000 listing. Koehn (3453) at 1.557.781 and Seol (13806) at 1.239.374 BOTH exceed it, and the resulting deficit would sit at the lock, which scores ZERO for the whole of MD5. The ledger rule that a negative balance is fine if it can be unwound (Hfbknqv) does NOT rescue them: unwinding means selling the body back before the lock, which defeats the entire purpose of buying a body to HOLD through the lock. Koehn is additionally mvt 2 (measured -3,22% on the tick) and ap 7; Seol expires 2026-10-09T18:01Z, twenty-nine minutes before the lock, which is an unacceptable settlement risk. THE ONLY 500.000 DEF ON THE BOARD IS HUEBERS (2069), and he is st 1 with an eleven-month knee absence per Ligainsider, so he could never be fielded — he would be a formation token only, and he expires 2026-10-08T07:28Z, inside three hours. BACHMANN THEREFORE STANDS AND B3fyppp IS CONFIRMED, NOT REVERSED: at 500.000 he is fit (not on either absence list), he is affordable (1.031.188 - 500.000 = +531.188 at the lock), and the formation argument against him is WEAKER THAN Wr1p5sq IMPLIED — with 1 GK / 4 DEF / 5 MID / 2 ATT he adds 4-5-1 and 3-5-2 as fillable formations alongside 4-4-2, where today only 4-4-2 would survive the sale. SEQUENCING IS BINDING: Bachmann settles 2026-10-09T15:29:46Z, three hours before the lock. If the Treu sale has NOT happened by then, that settlement takes the balance to -12.528.040 at the lock and scores ZERO. Sell first, bid second."
-   },
-   {
-    "name": "SOURCE TRAP — flashscore.de's \"5. Spieltag Verletzungen und Sperren\" page is a 2023/24 article on a 2026 URL. Never cite it.",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "LOGGED SO NO FUTURE RUN WASTES A WEB LEG ON IT, and because it would have produced a catastrophically wrong briefing if trusted. The URL flashscore.de/news/fu-ball-bundesliga-bundesliga-5-spieltag-verletzungen-und-sperren-in-der-ubersicht/CA5Jc9Ei/ renders with a 2026 footer and 2026 sidebar content and carries only an \"Aktualisiert\" label with NO timestamp, so it reads as current. It is not. Its own meta description says \"der 5. Spieltag der Bundesliga 2023/24\", and the player list proves it: Manuel Neuer with a lower-leg fracture (that is the 2023 injury; our Neuer is st 0, ap 143 and has played all four matchdays), Mateu Morey and Thomas Meunier at Dortmund, Daniel-Kofi Kyereh and Christian Günter at Freiburg. HOW IT WAS CAUGHT, as a reusable method alongside Wzkz5kj: cross-check the page's named absentees against live Kickbase st flags for players we actually hold. One contradiction on a squad player is enough to condemn the whole page — a genuinely current table never says our fit, four-times-fielded goalkeeper has a broken leg. THE GENERAL RULE THIS SHARPENS: an undated injury table is stale until proven otherwise, and a 2026 chrome around the article body proves nothing, because the chrome is templated and the body is not. The club-page route used instead this run (ligainsider SC Freiburg, which prints the fixture date 11.10.2026 and a lineup stamp of 21.09.2026) is the one to prefer, because it dates itself twice. The pid on this entry is Dahmen's only so the row has an anchor; it is NOT a judgement on Dahmen, whose own AVOID is A4vy4xi and rests on sizing."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "closed",
-  "reason": "Flip window closed — the matchday locks inside the twelve-hour floor, and a flip still open at the lock risks the whole matchday for a few percent of value. The measured edge itself is intact and showing no decay: the rising-value flag still predicts a clear positive move at the next nightly update across a large sample, and the falling flag still predicts the mirror image, both in line with every previous measurement. Two things remain unresolved and neither has moved: it is still unknown whether Kickbase caps squad size, which would cap how many flips can be run at once; and the edge is measured in one league over one period, so it will decay if the rivals here crowd into it. The four most active traders in this league were the top four finishers last season, so that crowding is a question of when.",
+  "reason": "Flip window closed — matchday locks in under four hours. The 12-hour rule alone would settle it; the two-clock proof from earlier in the cycle settles it a second time, since no remaining auction resolves before the last pre-lock tick. One open question stands: whether Kickbase caps squad size, which would cap flip throughput. And the measured mvt-1 edge comes from one league over one period, so it will decay if rivals crowd in — worth re-measuring the moment the flip window reopens after the lock.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean sweep, re-verified rather than inherited. The dated probable-elevens piece published yesterday has every one of the ten real starters in his club's side, and the league-wide injury and suspension table names none of the eleven. No fitness flags anywhere on the squad, and nothing has changed in either direction since the last run. The one exception is the known one, and he is not injured — he simply is not in anybody's eleven.",
+  "sweep": "All ten non-Nakuzola starters confirmed fit and expected to start, checked against bundesliga.com's probable-XI piece dated 09.10.2026, which is updated through Friday. None injured, suspended or doubtful. Kickbase's own status flags agree — clean across all eleven squad rows. The only absence listed at any of your clubs is Musiala at Bayern, who is not yours. Nothing newly flagged, nothing to react to.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
