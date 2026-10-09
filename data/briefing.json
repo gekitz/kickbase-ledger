@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-09T10:49Z",
+ "run": "2026-10-09T12:45:30Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 1344720,
   "floor": -47585743,
   "spending_power": 48930463,
-  "hours_to_lock": 7.67,
-  "exposure": "None. The balance is positive, there is no open offer, no leveraged position, and nothing that needs unwinding before the lock. This is the first run in six with nothing to defuse.",
+  "hours_to_lock": 5.66,
+  "exposure": "None. The balance is positive, there is no leverage open, no offer is live, and nothing needs to be unwound before the lock. There is no deadline on Georg this run and nothing he has to be at his phone for.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The binding constraint is no longer money, it is the one defensive slot that will not produce. A fielded defender who will not start is worth roughly nothing on the day, and there is no affordable replacement in the market. That gap carries into this matchday unfixed and becomes the first thing to solve once the market reopens, when the full budget is available rather than the sliver that a buy-one-sell-one trade allows.",
+ "binding_gap": "One defender slot, and it is the same slot it has been all cycle. The player holding it is fit but is nowhere near his club's side, so he should be read as scoring nothing. The fix has to clear two independent tests at once — land before the lock, and fit inside cash plus what he sells back for — and the full board has now been checked against both. Nothing clears. The slot is conceded for this matchday; the work is to fix it for the next one, when the clock stops binding and the nightly tick has repriced the candidates.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 48930463,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 32,
+  "listings": 31,
   "cheapest": 500000,
   "cheapest_slot_filling": 11296940,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 0
  },
  "squad": [
   {
@@ -170,20 +170,29 @@
  ],
  "verdict": {
   "action": "none",
-  "headline": "No action needed.",
-  "headline_short": "No action needed.",
-  "detail": "No action needed. The position is clean for the first time in a week: cash is positive, the squad sits at exactly eleven, all eleven are placed, 4-4-2 is legal and there is no leverage anywhere. Ten of the eleven are confirmed starters on a source dated 08.10.2026. The one weak slot cannot be fixed before the lock, and the arithmetic that proves it is below. Leave the team as it stands."
+  "headline": "No action.",
+  "headline_short": "No action.",
+  "detail": "No action. The position is clean, unlevered and unchanged since the last run, and the market is now exhaustively closed — every single board listing has been tested against the lock clock and the cash envelope, and not one survives. This is the second consecutive run reaching the same answer, but for the first time the kill is complete rather than partial: five listings that had never been evaluated (a Köln keeper, a Mainz playmaker, an Elversberg winger, a Gladbach full-back and a Bayern centre-back) were put through the two-clock test and all five fail it. Sit on the eleven and let the matchday lock."
  },
  "sell": {
   "recommendation": "none",
-  "reason": "Nothing should be sold. The only sale that would not cost points is Nakuzola, and selling him is only worth doing if a better body lands first — which, as the buy section shows, cannot happen before this lock. Selling anyone else drops the squad to ten and triggers the hundred-point penalty, or else removes a confirmed starter to fund a weaker one.",
+  "reason": "Nothing to sell. The squad is at the bare minimum, so a sale is only legal as the unwind leg of a purchase, and no purchase survives this run. Deman is the one body worth watching: he is the fastest faller in the squad and the only one whose value is sliding into the next tick, which makes him the natural funding leg for a midfield upgrade once the clock stops binding. That is a next-matchday thought, not a today one.",
   "standing": []
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing is buyable. With the squad at eleven, each purchase permits exactly one sale, so the hard budget for staying non-negative at the lock is this cash plus Nakuzola's market value. Every board defender inside that budget is a confirmed non-starter: Kohr is a listed injury absence at Mainz, Ito does not appear in the Bayern eleven and has no points all season, and Herold — listed fresh this morning — is absent from the Gladbach eleven. The cheapest board defender who IS a confirmed starter is Gyamerah of Elversberg, and he sits comfortably above the budget; buying him and selling Nakuzola would leave the balance negative at kickoff, which scores zero for the whole matchday. Funding him by selling Deman instead keeps Nakuzola on the pitch and swaps a confirmed Bremen starter for a materially weaker one. Both routes are points-negative. Gyamerah is killed on affordability for this matchday only, not on merit — he stays top of the matchday-six defensive shortlist alongside Nwaneri.",
+  "reason": "Nothing to buy, and the reason is a clock rather than a judgement. A Kickbase board listing only becomes yours when its own auction expires, so a listing whose expiry falls after the lock cannot exist as a player for this matchday at any price. Exactly four listings on the entire board expire before the lock, and three of them die instantly: the Dortmund full-back carries a fitness flag and is far outside the envelope, the Freiburg midfield body was already killed on merit, and the Bremen forward is both flagged and the wrong position. That leaves one Augsburg defender as the single timing-viable and affordable candidate, so he was re-opened rather than taken on trust from the standing avoid — and the dated probable eleven published yesterday does not have him in the side. The avoid is confirmed on fresh evidence. Two of the newly tested names are worth keeping for the next cycle: the Elversberg winger and the Mainz playmaker are both confirmed starters with real averages, and they are the first genuine upgrade candidates to appear in days. Both fail today purely on the clock, and the winger additionally fails the cash envelope by a margin small enough to be worth re-running the moment the tick repriced him.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "Schwäbe + Amiri + Petkov + Herold + Ito — the five board listings never yet killed. All five die on the SAME two-clock test, stated once with the arithmetic so no later pre-lock run redoes it.",
+    "pos": "MID",
+    "club": "77",
+    "ask": 10422726,
+    "mv": 10422726,
+    "premium_pct": 0,
+    "why": "Measured 09.10 12:45Z, lock 18:30Z = 20.700s away. A BOARD listing resolves only at its own expiry, so exs must be BELOW 20.700 for the buy to exist before the lock. All five fail: Schwäbe exs 57.166 (~10.10 04:38Z), Amiri 62.686, El-Khannouss-class Petkov 94.490 (~10.10 15:00Z), Herold 77.168 (~10.10 08:05Z), Ito 44.116 (~10.10 01:00Z). NONE can clear before MD5 locks, so none is an MD5 buy at ANY price — merit never enters. Merit for the record anyway, from the DATED 08.10.2026 bundesliga.com probable-XI piece: Schwäbe is a GK and Georg already has Neuer (ap 143) starting; Ito is NOT in Bayern's XI (Laimer/Upamecano/Tah/Davies) and has ZERO appearances all season; Herold is not in a listed XI and his ap 7 off 3 outings is cameo noise. Petkov (Elversberg, ap 113) and Amiri (Mainz, ap 106) ARE confirmed starters and are genuine MD6 candidates — do not lose them, same status as Nwaneri in Ajes754. But both also fail the MD5 ENVELOPE independently: the only unwind that keeps 11 bodies is Deman out (mv 9.028.415) for Petkov in (10.422.726), which lands cash at 1.344.720 + 9.028.415 - 10.422.726 = MINUS 49.591. A negative balance at the lock scores ZERO for the whole matchday, so it is dead by 49.591 even if the clock allowed it. Amiri at 29.160.793 is not close. Reversal for Petkov/Amiri: re-price against the 20:00Z tick and re-run the envelope for MD6, when the clock no longer binds."
+   },
    {
     "name": "Nicholas Mickelson — the last affordable DEF body, killed on a dated zero-starts record",
     "pos": "DEF",
@@ -282,26 +291,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "LOGGED SO NO FUTURE RUN WASTES A WEB LEG ON IT, and because it would have produced a catastrophically wrong briefing if trusted. The URL flashscore.de/news/fu-ball-bundesliga-bundesliga-5-spieltag-verletzungen-und-sperren-in-der-ubersicht/CA5Jc9Ei/ renders with a 2026 footer and 2026 sidebar content and carries only an \"Aktualisiert\" label with NO timestamp, so it reads as current. It is not. Its own meta description says \"der 5. Spieltag der Bundesliga 2023/24\", and the player list proves it: Manuel Neuer with a lower-leg fracture (that is the 2023 injury; our Neuer is st 0, ap 143 and has played all four matchdays), Mateu Morey and Thomas Meunier at Dortmund, Daniel-Kofi Kyereh and Christian Günter at Freiburg. HOW IT WAS CAUGHT, as a reusable method alongside Wzkz5kj: cross-check the page's named absentees against live Kickbase st flags for players we actually hold. One contradiction on a squad player is enough to condemn the whole page — a genuinely current table never says our fit, four-times-fielded goalkeeper has a broken leg. THE GENERAL RULE THIS SHARPENS: an undated injury table is stale until proven otherwise, and a 2026 chrome around the article body proves nothing, because the chrome is templated and the body is not. The club-page route used instead this run (ligainsider SC Freiburg, which prints the fixture date 11.10.2026 and a lineup stamp of 21.09.2026) is the one to prefer, because it dates itself twice. The pid on this entry is Dahmen's only so the row has an anchor; it is NOT a judgement on Dahmen, whose own AVOID is A4vy4xi and rests on sizing."
-   },
-   {
-    "name": "Julian Ryerson",
-    "pos": "DEF",
-    "club": "3",
-    "ask": 13208450,
-    "mv": 12897589,
-    "premium_pct": 2.41,
-    "why": "THE ONLY NEW LISTING SINCE THE 20:45:30Z RUN, LOGGED SO THE \"every new listing is swept\" RECORD STAYS UNBROKEN. Ryerson (2395, DEF Dortmund, tid 3) listed to the Kickbase board 2026-10-07T20:57:05Z at prc = mv = 13.208.450. KILLED TWICE OVER. (1) mvt 2 — falling. Re-measured this run: mvt 2 is n=690, mean -3,22% at the next 20:00Z tick with only 14,1% rising, so the flip shape is not merely absent, it is inverted; buying him at mv is a measured expected LOSS of ~425k. (2) st 2 — a live status flag, so he is not fit, and the H648bvg shape is irrelevant anyway. Note he does NOT appear on the Ligainsider Verletzte-und-Gesperrte table read this run, which is a reminder that st and Ligainsider disagree at the margin and st is the faster of the two — trust st when they conflict. As a POINTS buy he fails on the envelope regardless: a player kept through the lock must be funded outright, and the cushion after the Treu sale and Bachmann is 531.188."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "closed",
-  "reason": "Flip window closed — the matchday locks well inside twelve hours, and the mechanics are decisive quite apart from that: the next market-value tick falls after the lock, so no flip bought now can capture a tick before the matchday starts. The edge itself was re-measured this run from the event log and shows no decay at all: the rising flag still predicts a solid gain at the next update with nearly ninety percent of players rising, and the falling flag still predicts a loss with only one in seven rising. Both legs are slightly better than the September baseline, so there is still no sign of rivals crowding the edge out. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that the edge is measured in one league over one period and will decay if the other traders pile in.",
+  "reason": "Flip window closed — the matchday locks inside the twelve-hour floor, and a flip still open at the lock risks the whole matchday for a few percent of value. The measured edge itself is intact and showing no decay: the rising-value flag still predicts a clear positive move at the next nightly update across a large sample, and the falling flag still predicts the mirror image, both in line with every previous measurement. Two things remain unresolved and neither has moved: it is still unknown whether Kickbase caps squad size, which would cap how many flips can be run at once; and the edge is measured in one league over one period, so it will decay if the rivals here crowd into it. The four most active traders in this league were the top four finishers last season, so that crowding is a question of when.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean sweep, nothing new. Ten of the eleven are named in their club's probable eleven on a dated 08.10.2026 source, cross-checked against the league-wide injury and suspension table, which carries no squad player at all: the goalkeeper at Bayern, the defenders at Paderborn, Mainz and Bremen, both forwards at Dortmund and Augsburg, and the midfielders at Augsburg, Leipzig, Schalke and Freiburg. Not one appears in any absence list. Nakuzola is the sole exception — he is absent from the Mainz eleven, which confirms what the ledger already held about him.",
+  "sweep": "Clean sweep, re-verified rather than inherited. The dated probable-elevens piece published yesterday has every one of the ten real starters in his club's side, and the league-wide injury and suspension table names none of the eleven. No fitness flags anywhere on the squad, and nothing has changed in either direction since the last run. The one exception is the known one, and he is not injured — he simply is not in anybody's eleven.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -484,7 +484,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=658, -1,80% to +443,38%"
+   "v": "n=659, -1,80% to +443,38%"
   }
  ]
 }
