@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-08T22:51Z",
+ "run": "2026-10-09T00:54Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -12028040,
   "floor": -47499943,
   "spending_power": 35471903,
-  "hours_to_lock": 19.64,
-  "exposure": "The balance is negative and stays negative until Treu is sold. A negative balance when the matchday starts scores zero for the whole matchday, so this is the only thing on the page that can actually cost the week, and it has a hard deadline at the lock. The sale on its own closes it with room to spare and leaves eleven players, so there is no sequencing problem and no second leg to get right. No offers are outstanding, nothing is listed, and nothing else this run would open any new exposure.",
+  "hours_to_lock": 17.59,
+  "exposure": "A leveraged position is open and must be closed before the matchday locks this evening; a negative balance at matchday start scores zero for the whole matchday, which outranks every other consideration on this page. The unwind is a single instant sale back to Kickbase and needs no counterparty, so it cannot fail for want of a buyer — the only way it goes wrong is if it simply does not get done. There is no live offer outstanding and nothing else is at risk.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "The defensive slot that opens when Treu leaves. Nakuzola has to fill it and he is not in his club's probable eleven, so it is close to a dead slot — but it is a cheap one, and every way of closing it costs more than it returns. Filling it with a defender forces a second sale that gives up a far better player; filling it with a cheap attacker and switching to three at the back is affordable and needs no second sale, but no attacker currently listed is a starter. Leave it. Re-test the three-at-the-back route next run against whoever is newly on the board, judging on minutes played rather than on average points.",
+ "binding_gap": "There is no points gap to fix this cycle, because there is no money to fix one with. The binding constraint is the negative balance and the eleven-man floor acting together: the balance has to reach non-negative before the lock, and the only sale that achieves it also takes the squad down to the bare minimum, which removes every further degree of freedom. The real gap — a weak defender and a thin bench — can only be addressed after the lock, once the balance is positive again and the squad can breathe.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 35471903,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 39,
+  "listings": 38,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Quiet run.",
-  "headline_short": "Quiet run.",
-  "detail": "Quiet run. Nothing material has changed since the last one and there is exactly one thing to do: sell Treu. That sale is already the standing call, it clears the negative balance on its own, it needs no second leg, and there is no longer any reason to delay it — the last market-value tick before the matchday locks has already fired, so holding him another day no longer raises the proceeds. Execute it at any point before the lock and the position is clean. Do nothing else."
+  "headline": "Nothing has changed since the last run, and the plan is unchanged: sell Treu back to Kickbase at market value before the matchday locks this evening.",
+  "headline_short": "Nothing has changed since the last run, and the plan is unchanged: sel",
+  "detail": "Nothing has changed since the last run, and the plan is unchanged: sell Treu back to Kickbase at market value before the matchday locks this evening. That single sale clears the whole negative balance and leaves a legal eleven. The one thing this run settles that earlier runs could not is the timing: the next market-value tick now falls AFTER the lock, so there is no longer any tick left to wait for. Holding Treu cannot add anything. Sell whenever convenient today — there is no premium in hurrying and no gain in waiting."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Treu, unconditionally and now. The reasoning is settled and should not be re-opened: he is the funding leg of the leveraged position, the proceeds alone take the balance positive, and he is the lowest-scoring outfielder of the five defenders. The one argument that used to favour waiting — that he is still rising, so every held day paid — is dead, because the next tick lands after the lock. Sell him back to Kickbase, which pays exactly his market value with no spread. Nobody else should be sold: every other outfielder outscores whoever would replace him.",
+  "reason": "Treu, and only Treu. The sale is forced by the balance, not earned on merit — he is fit and in Freiburg's probable eleven for this matchday, so letting him go costs real fielded points. He remains the correct leg all the same: of the players valuable enough to clear the deficit on their own he has by some distance the weakest scoring average, and every alternative would sell a genuine points contributor. Selling back to Kickbase pays exactly market value with no spread, so there is nothing to negotiate.",
   "standing": [
    {
     "name": "Philipp Treu",
@@ -201,7 +201,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing. One genuinely new candidate appeared tonight and it is worth saying why it failed, because the route it opened is real. A cheap attacker — rather than the cheap defenders tested before — would make the squad one over the minimum and open a three-at-the-back shape, which pushes Nakuzola out of the eleven instead of forcing him into it. That hatch is live and affordable out of the Treu proceeds with no second sale. Boniface was the candidate and he is fit, but Ligainsider has him with no starts this season, twelve minutes off the bench and a bench-minutes total in the hundreds; his average comes off a single cameo. An expected zero does not beat Nakuzola. Everything else on the board is either unfit, priced above market value by a manager, or scores less than the man it would replace. Kohr, the one cheap defender with a real scoring record, is injured on two sources.",
+  "reason": "None. This is not a judgement about the board — it is arithmetic. Once Treu goes the squad sits exactly at the eleven-man floor, which permits no further sales, so anything bought now could only be unwound by selling it straight back: a wash. The only structure that could work is buying one and selling two, and even the strongest candidate on the board fails it — funding him from Treu plus the weakest midfielder still leaves the balance negative at the lock, which would score zero for the entire matchday. The one combination that does clear it would sell a better player than it buys. The deficit consumes the whole capacity.",
   "standing": [],
   "killed_this_run": [
    {
@@ -259,15 +259,6 @@
     "why": "THE ONLY THREE NEW LISTINGS SINCE THE 12:45Z RUN, logged so the \"every new listing is swept\" record stays unbroken. All three arrived inside a ten-minute window at the end of a rival cash-raising burst (see WATCH run state 14:47Z). (1) DANIEL SVENSSON (10115, DEF Dortmund, tid 3), listed by JakobDohr at 2026-10-08T13:48:56Z. Manager ask 23.000.000 against mv 18.119.618 = +26,93% over mv. KILLED TWICE OVER: st 2 (not fit — a non-zero status flag overrides the ap 126 season average per STEP 5), and the ask is +26,93% on a manager listing where the seller chooses, so there is no highest-bid-wins mechanism to exploit. (2) TIM KLEINDIENST (849, ATT Gladbach, tid 15), listed by JakobDohr at 2026-10-08T13:49:19Z. Manager ask 18.000.000 against mv 11.694.335 = +53,92% over mv, the largest live ask on the board. ALSO st 2, and ap 3 off 9 total points — he has barely played. Reject on every axis at once. (3) MOUSSA SYLLA (8222, ATT Freiburg, tid 8), Kickbase board listing at 2026-10-08T13:39:04Z, prc = mv = 3.768.665, no u, ofc 0. Fails the tick edge on the flag: mvt 2, measured next-tick drift -3,22% with only 14,1% rising (n=690). Also fails the Wqi1195 two-clock test independently — exs 111.590s puts expiry at 2026-10-09T21:47Z, which is AFTER the 2026-10-09T18:30Z lock. Neither is a points buy either: Georg's binding need is a DEF body under ~1,0M after the Treu sale, and all three are far above that and in the wrong positions."
    },
    {
-    "name": "Sebastiaan Bornauw",
-    "pos": "DEF",
-    "club": "6",
-    "ask": 8225828,
-    "mv": 8429561,
-    "premium_pct": -2.42,
-    "why": "THE MOST TEMPTING BUY ON THE BOARD THIS RUN, AND IT MUST BE REJECTED ON AFFORDABILITY, NOT ON QUALITY — logged so the next run does not re-derive it. He is genuinely attractive: DEF, Kickbase board listing at EXACTLY mv 8.225.828 (zero premium, so no premium-band question at all), mvt 1 (rising), st 0 fit, ap 38 — which is higher than Nakuzola's ap 27, and Nakuzola is FORCED into the XI by every single-sale unwind. So Bornauw would be the one buy that actually fixes the XI hole rather than papering over it. THE ARITHMETIC KILLS IT: cash is -12.028.040. The forced Treu sale (13.059.228) only reaches +1.031.188, against a price of 8.225.828. Financing him therefore requires selling a SECOND player, and every second sale available is a confirmed MD5 starter — and worse, dropping to 11 players puts Nakuzola straight back into the XI, which is the very thing Bornauw was bought to prevent. Modelled: sell Treu + buy Bornauw + sell Deman = 11 players, 4 DEF = ter Horst/Gruber/Nakuzola/Bornauw, Nakuzola starting again. Self-defeating. REVERSAL: a non-negative balance carrying at least 8,3M of genuine spare capacity (i.e. spare AFTER the unwind, not spending power against the 33% floor), with the squad still at 12+ bodies so no forced sale follows. Until then he is a right player at a wrong moment."
-   },
-   {
     "name": "AVOID the cheap-DEF-body alternatives to Bachmann — Koehn, Seol, Huebers all fail, and the arithmetic is stated once so no later run redoes it",
     "pos": "DEF",
     "club": "40",
@@ -311,17 +302,26 @@
     "mv": 500000,
     "premium_pct": 0,
     "why": "THE ONLY NEW LISTING SINCE THE 16:45Z RUN, LOGGED SO THE \"every new listing is swept\" RECORD STAYS UNBROKEN. Bachmann (3307, MID SC Freiburg, tid 8) hit the Kickbase board at 2026-10-07T17:44:19Z (feed t=3, i 12975633034), 61 minutes before this run. No u, so a board listing; prc 500.000 == mv 500.000 exactly; ofc 0; exs 161.010s, i.e. expiring 2026-10-09T14:28Z, which is 4,0h BEFORE the MD5 lock. FAILS THE FLIP TEST ON THE FLAG: mvt 0, and the re-measured mvt-0 cohort is n=90, mean +0,01% at the next 20:00Z tick with only 1,1% rising. That is not a weak edge, it is no edge — a 500.000 body held across a tick returns 50 Euro in expectation. FAILS THE POINTS TEST TOO: ap 17 on p 17, i.e. one scoring appearance all season, against a fielded eleven whose weakest outfielder is Treu at ap 76 and whose weakest MID is Tanaka at ap 87. He would not displace anyone. THE ONE CONTEXT IN WHICH HE IS NOT A REJECT, STATED SO A LATER RUN DOES NOT HAVE TO RE-DERIVE IT: if the squad ever falls to ten before a lock, a 500.000 board body is the correct -100-penalty insurance and Bachmann is as good as any other. That is not the position now — the squad is 12 and the Treu sale leaves exactly 11."
+   },
+   {
+    "name": "Salim Amani Musah — the only new listing since 16:45Z... since the 14:45Z run, and it fails on every test at once",
+    "pos": "ATT",
+    "club": "10",
+    "ask": 500000,
+    "mv": 500000,
+    "premium_pct": 0,
+    "why": "Logged so the \"every new listing is swept\" record stays unbroken. Musah (11262, ATT Werder Bremen, tid 10) hit the Kickbase board at 2026-10-07T16:35:58Z, 10 minutes before this run. No u, prc = mv = 500.000, exs 169.253s (expires 2026-10-09T15:46Z). He fails four ways and any one of them is sufficient. (1) mvt 0, not 1 — measured next-tick drift for mvt 0 is +0,01% over n=90. There is no tick edge on a flatlined 500k floor player; that is the whole point of the mvt-flag mechanism. (2) st 1 — a non-zero Kickbase status flag, so not fit, whatever else is true. (3) ap 9 off p 26 — he would not displace Nakuzola (ap 27), let alone anyone in the XI, so there is no POINTS case either. (4) At the 500.000 floor there is no capital at risk but also no capital at work: even a full +2,55% tick on 500.000 is 12.750, which is noise against a 12.028.040 deficit. Nothing here. The two board listings that DO carry mvt 1 — Dahmen (A4vy4xi, killed on size) and Bornauw (Apuc8fl, killed on timing) — remain the only live flip-shaped objects on the board and both remain correctly avoided; see this run's MOVERS note."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "Closed, and closed on mechanics rather than on judgement. The market reports its next value update for after the matchday locks, so there is no tick left to capture before kickoff — any flip opened now would still be open at the lock, which risks the entire matchday for nothing. This holds for every remaining run in this cycle; it does not need re-deriving, only re-reading. Worth noting separately that the edge itself has not decayed: re-measured from the log tonight on nearly double the earlier sample, rising players still rise at the next update at a slightly better rate and a slightly better hit rate than when this was first measured. Rivals are playing it hard — one bought a Leverkusen midfielder who has never played a minute this season and is out for months, at market value, hours after the tick, in the same window in which he dumped four players back to the board. That is the trade, and it is unaffected by fitness. The two open questions stand: it is still unknown whether Kickbase caps squad size, which would cap how many flips can run at once, and the edge is measured in one league over one period and will decay if enough rivals crowd in.",
+  "reason": "Closed, and this run proves it from the live clocks rather than taking it on trust. A flip only pays if the listing resolves before a market-value tick AND that tick falls before the lock. The next tick is now scheduled after the lock, so no listing on the board can satisfy the test — the window is shut for the rest of this matchday cycle regardless of how attractive anything looks. The underlying edge itself is intact and was re-measured this run with no decay at all; if anything the rising-value signal has strengthened slightly on a sample that has nearly doubled, so there is no sign yet of rivals crowding it out. Two more board listings settled below market value overnight, which again supports bidding exactly market value and never raising. Two questions remain genuinely open: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if the other traders pile in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean sweep, nothing to flag. All twelve carry a clear status flag in Kickbase, and not one of them appears on Ligainsider's injured-and-suspended table read today. No new injury, no suspension, no transfer story on anyone owned. The only fitness findings this run are on players Georg does not own and should not buy.",
+  "sweep": "The squad sweep came back clean. Every player carries a clear status flag, and all ten fielded outfielders plus the goalkeeper appear in probable elevens dated the eighth of October. The only name with nothing current is the bench defender, who is the unfielded cheap body and is not in his club's eleven — expected, and not a new problem. No squad player is newly injured, suspended or dropped, and nothing suggests anyone is leaving the league.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -504,7 +504,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=653, -1,80% to +443,38%"
+   "v": "n=655, -1,80% to +443,38%"
   }
  ]
 }
