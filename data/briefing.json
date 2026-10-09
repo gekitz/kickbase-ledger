@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-09T02:49Z",
+ "run": "2026-10-09T04:50Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -12028040,
   "floor": -47499943,
   "spending_power": 35471903,
-  "hours_to_lock": 15.68,
-  "exposure": "The leveraged position is open and is the only thing on this board that can cost a full matchday. Selling Treu at market value clears it outright and leaves a little headroom, with the squad still at eleven and a legal formation intact. Nothing else in the squad clears the deficit on its own at a lower points cost: the only other single sales large enough are the goalkeeper, which would leave no keeper at all, and three of the best scorers on the team. Two smaller sales together would clear it but drop the squad below eleven and trigger the penalty, which is worse than the deficit it fixes. Per the standing notification doctrine, the lock is still far enough out that this goes on the page rather than to the phone.",
+  "hours_to_lock": 13.66,
+  "exposure": "A leveraged position is open and has been for several runs. It must be unwound before the matchday locks tonight, and the Treu sale is the only instrument that does it. Hours remain, so there is no need for panic, but there is also no alternative plan to fall back on: if the sale does not go through before the lock, the entire matchday scores zero regardless of how the eleven performs. The lock-time ambiguity flagged by the previous run has been resolved against the pessimistic reading — the opener kicks off at half past eight German time, which converts exactly to the timestamp the connector reports, so the deadline is the later one and the margin is real.",
   "must_restore_by": "2026-10-09T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "There is no fielding gap right now — eleven are placed in a legal formation. The binding constraint is purely financial. It becomes a composition question only after the sale: Treu is a defender, so his departure leaves the back line exactly filled with no spare, and the weakest player on the team has to start. That is the real, accepted cost of clearing the deficit, and it is cheaper than every alternative.",
+ "binding_gap": "There is no points gap to fill, because there is no legal way to fill one before the lock. The gap that binds is the defensive hole the sale itself opens: losing a first-choice full-back and replacing him with a cheap bench body costs real expected points, and no defender on the market beats that body. That cost is the price of not blanking the matchday, and it is worth paying many times over.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 35471903,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 38,
+  "listings": 34,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 3
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Third consecutive run with the position unchanged and the conclusion unchanged: sell Philipp Treu back to the board, buy nothing.",
-  "headline_short": "Third consecutive run with the position unchanged and the conclusion u",
-  "detail": "Third consecutive run with the position unchanged and the conclusion unchanged: sell Philipp Treu back to the board, buy nothing. The balance is still negative and a negative balance at matchday start scores zero for the whole of MD5, so the sale is not optional. One new thing this run, and it is a clock, not a player: the Kickbase lock timestamp looks like German local time wearing a UTC label, which would put the real deadline two hours earlier than every previous run has quoted. Act on the earlier reading — being early costs nothing, being late costs the entire matchday."
+  "headline": "One action, and it is forced: sell Philipp Treu before the matchday locks tonight.",
+  "headline_short": "One action, and it is forced: sell Philipp Treu before the matchday lo",
+  "detail": "One action, and it is forced: sell Philipp Treu before the matchday locks tonight. The balance is negative, and a negative balance at matchday start scores zero for the whole of MD5 — so this is not an optimisation, it is the difference between a scoring matchday and a blank one. Nothing else needs doing: no buy can improve the eleven, and the flip window is shut on mechanics. The lock-time scare raised by the last run is resolved in our favour — the deadline is the one the connector reports, not two hours earlier."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Treu is the sale and he is confirmed fit and starting, so this is a genuine points cost rather than a free disposal — bundesliga.com's matchday-five preview, dated the eighth of October, has him in Freiburg's probable eleven against Schalke on Sunday. He is nonetheless the right man to go: of the players whose market value alone clears the deficit, he has much the lowest season average, and selling back to the board pays exactly market value with no spread. Note a date trap for future runs: the most prominent search result for Treu is a shoulder-injury story from 2025, which is last season and must never be cited.",
+  "reason": "Treu, and only Treu. A single sale is forced, because two sales leave ten men and the hundred-point penalty, so whoever goes must cover the whole deficit alone. Exactly five squad members are large enough to do that, and one of those is the goalkeeper, whose sale would leave no legal formation. Of the four that remain, Treu has by far the lowest season average — the next cheapest in points terms is Gregoritsch, and selling him would cost roughly twice as much expected scoring. So the call is unique rather than a judgement, and it has not moved in four runs. He is fit and expected to start for Freiburg on Sunday; we are selling a starter because the arithmetic leaves no one else. Afterwards the squad is eleven men in a legal four-four-two, with Nakuzola promoted into the back line — worth confirming the lineup in the app once the sale settles.",
   "standing": [
    {
     "name": "Philipp Treu",
@@ -201,9 +201,18 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No buy survives, re-derived on live data rather than inherited. The sale leaves only a sliver of headroom at eleven players, and nothing on the board inside that figure earns a place: the cheapest defender is a Bayern backup who is not in his club's probable eleven, the next one carries an injury flag and is post-surgery at Mainz for over a month, and the remainder have season averages at or below zero or are themselves in rehab. Every one of them is worse than the player who already fills the post-sale defensive slot. The two-leg route — sell Treu, buy a defender, sell the spare — lifts the ceiling only marginally, and its entire candidate set was killed arithmetically in an earlier entry. Only one new listing appeared since the last run and it fails on points, on the wrong side of the tick, on timing and on affordability simultaneously.",
+  "reason": "Nothing. This is proved from the expiry clocks rather than argued: only a handful of listings resolve before the lock at all, and every one of them is at or below Nakuzola's season average except Ryerson, who carries a fitness flag and is listed as doubtful in yesterday's preview. Ryerson is also simply unaffordable — the real pre-lock budget is not the spending power figure but the Treu proceeds minus the deficit, which is a fraction of his ask, so buying him would re-open the very leverage this sale closes. The two new board listings since the last run, El Khannouss and Nwaneri, are both priced at market value with a rising flag, which is the shape we like, and both expire after the lock, which kills them for this matchday. Nwaneri is worth keeping in view: he is in Dortmund's probable eleven tonight and his season average per euro is the best genuine upgrade the market has offered in days. If his listing is still open once the lock has passed and the balance is clean, he is a buy at exactly market value and never a cent above.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "El Khannouss + Nwaneri — the only two new listings since 02:44Z. Both killed for MD5 on TIMING, not on merit. Nwaneri is a genuine MD6 candidate; do not lose him.",
+    "pos": "MID",
+    "club": "9",
+    "ask": null,
+    "mv": 13612853,
+    "premium_pct": null,
+    "why": "BOTH ARE KICKBASE BOARD LISTINGS AT EXACTLY mv WITH mvt 1 — on the face of it the ledger's ideal shape — AND BOTH FAIL ANYWAY, FOR THE SAME REASON, SO STATE IT ONCE. (1) Bilal El Khannouss (11955, MID tid 9), listed 09.10 04:00:55Z, mv and prc both 13.612.853, mvt 1, ap 56, exs 89.794s = expiry about 10.10 05:00Z. (2) Ethan Nwaneri (17309, MID Borussia Dortmund), listed 09.10 02:57:47Z, mv and prc both 10.874.881, mvt 1, ap 91, tp 272, exs 106.346s = expiry about 10.10 10:00Z. THE KILL IS THE CLOCK, AND IT IS ABSOLUTE. Both expiries fall AFTER the MD5 lock at 2026-10-09T18:30:00Z, so neither can enter the MD5 eleven whatever he is worth; and a win would land cash at roughly -12,5m against a post-sale balance of 1.084.720, i.e. it would re-open exactly the leveraged position this run exists to close. For MOVERS they fail the two-clock test (Wqi1195) as well: the next tick is 2026-10-09T20:00Z, before either expiry, so the first tick either could capture is 10.10 20:00Z, a full cycle away. NOW THE PART THAT MATTERS FOR THE NEXT RUN: NWANERI IS NOT A BAD PLAYER, HE IS A BADLY TIMED ONE. comunio (dated 08.10.2026) has him in Dortmund's probable XI for tonight, in the ten behind Guirassy and Fabio Silva, and his ap 91 off four appearances at mv 10.874.881 is the only genuinely cheap starting-calibre points upgrade this market has shown in days. If his listing is still open after the lock clears and the balance is non-negative, he is a BUY at EXACTLY mv — never above, since Mensah just cleared +24,70% and chasing destroys the edge. El Khannouss by contrast is ap 56 at 13,6m and does not beat anyone Georg would field; he is a pass on merit as well as on timing."
+   },
    {
     "name": "Leo Sauer",
     "pos": "MID",
@@ -251,11 +260,11 @@
    },
    {
     "name": "Gideon Mensah",
-    "pos": "DEF",
-    "club": "28",
+    "pos": "",
+    "club": null,
     "ask": 5121970,
-    "mv": 5346101,
-    "premium_pct": -4.19,
+    "mv": null,
+    "premium_pct": null,
     "why": "THE ONLY NEW LISTING SINCE THE 14:47Z RUN, logged so the \"every new listing is swept\" record stays unbroken. Mensah (14140, DEF, 1. FC Koeln tid 28) hit the Kickbase board at 2026-10-08T15:48:30Z (feed t=3, i 12984261805): no u, prc = mv = 5.121.970, ofc 0, mvt 1, ap 58, exs 39.886s so he expires 2026-10-09T03:51Z. KILLED THREE WAYS AND EACH ONE IS SUFFICIENT. (1) TIMING, by Wqi1195's two-clock test. He expires 09.10 03:51Z. The only tick left before the lock is TONIGHT'S 2026-10-08T20:00:00Z, which falls 7.9h BEFORE his expiry, and the following tick 09.10 20:00Z falls 1.5h AFTER the 18:30Z lock. So acquisition at expiry captures NO tick at all. This is the same mechanical failure that closes all of MOVERS (W96jsrc) and it is not a judgement call. (2) AFFORDABILITY. Post-Treu-sale balance is exactly +1.031.188. 5.121.970 is 5x that, and it cannot be unwound: the Treu sale already takes the squad to exactly 11, so there is no second body to sell without breaching the eleven and taking the -100. (3) POINTS. ap 58 against Treu's ap 76 — he is not even an upgrade on the man being sold, so the points case is negative before the money case is reached. FITNESS, for the record: clean, absent from ligainsider's Verletzte-und-Gesperrte table read 2026-10-08T16:4xZ. He is a fine player at a fair price and still a clear no."
    },
    {
@@ -296,32 +305,23 @@
    },
    {
     "name": "Futkeu + Bornauw + Seol — now mvt 1 but all three fail on TIMING",
-    "pos": "ATT",
-    "club": "77",
+    "pos": "",
+    "club": null,
     "ask": 3462289,
-    "mv": 3612985,
-    "premium_pct": -4.17,
+    "mv": null,
+    "premium_pct": null,
     "why": "CLOSES Alhfioi, WHOSE STATED GROUND IS NOW FACTUALLY WRONG, AND RE-KILLS FUTKEU ON A DIFFERENT AND DURABLE GROUND. Alhfioi rejected Futkeu because he was mvt 2. The 2026-10-07T20:00Z tick flipped him to mvt 1, so that reason is dead — but he is still not a buy, and a later run must not resurrect him on the strength of the flag alone. THE TEST THAT KILLS ALL THREE IS TIMING, AND IT IS THE TEST RUNS KEEP FORGETTING. For a flip to pay, the listing must expire BEFORE the next tick (2026-10-08T20:00:00Z, per mvud) so the win captures it, AND leave room to sell back before the 2026-10-09T18:30Z lock. (1) NOEL FUTKEU (6183, ATT, tid 77) mv = prc = 3.462.289, mvt 1, st 0 — expires 2026-10-09T04:35:12Z, which is 8,6h AFTER the tick. A win hands him over with no tick left to capture before the lock, so the trade is a guaranteed round-trip at mv for zero, plus auction risk. (2) SEBASTIAAN BORNAUW (2725, DEF, tid 6) mv = prc = 8.225.828, mvt 1, st 0 — expires 2026-10-08T23:38:30Z, 3,6h after the tick. Same kill. This CONFIRMS the standing AVOID Apuc8fl rather than replacing it; Apuc8fl got this exactly right and should be left open. (3) YOUNG-WOO SEOL (13806, DEF, tid 13) mv = prc = 1.239.374, mvt 1, st 0 — expires 2026-10-09T18:01:15Z, twenty-nine minutes before the lock. Worst of the three: no tick, and effectively no unwind window either. ALSO STILL DEAD, AND FOR AN UNCHANGED REASON: FINN DAHMEN (2195, GK FC Augsburg, tid 13) at mv = prc = 15.012.149 passes the shape test AND the timing test (expires 2026-10-08T03:06:31Z) and fails only on SIZE — the W0qivy2 ceiling is 6.098.600 with the cushion this run actually has, and even the pre-Bachmann ceiling of 11.839.127 does not reach him. AVOID A4vy4xi remains correct and stays open. THE GENERAL RULE, STATED SO IT STOPS BEING RE-DERIVED: a flipped mvt flag revives only the FLAG test, never the timing or size tests. Check all three legs before re-opening any closed AVOID."
-   },
-   {
-    "name": "Janik Bachmann",
-    "pos": "MID",
-    "club": "8",
-    "ask": 500000,
-    "mv": 500000,
-    "premium_pct": 0,
-    "why": "THE ONLY NEW LISTING SINCE THE 16:45Z RUN, LOGGED SO THE \"every new listing is swept\" RECORD STAYS UNBROKEN. Bachmann (3307, MID SC Freiburg, tid 8) hit the Kickbase board at 2026-10-07T17:44:19Z (feed t=3, i 12975633034), 61 minutes before this run. No u, so a board listing; prc 500.000 == mv 500.000 exactly; ofc 0; exs 161.010s, i.e. expiring 2026-10-09T14:28Z, which is 4,0h BEFORE the MD5 lock. FAILS THE FLIP TEST ON THE FLAG: mvt 0, and the re-measured mvt-0 cohort is n=90, mean +0,01% at the next 20:00Z tick with only 1,1% rising. That is not a weak edge, it is no edge — a 500.000 body held across a tick returns 50 Euro in expectation. FAILS THE POINTS TEST TOO: ap 17 on p 17, i.e. one scoring appearance all season, against a fielded eleven whose weakest outfielder is Treu at ap 76 and whose weakest MID is Tanaka at ap 87. He would not displace anyone. THE ONE CONTEXT IN WHICH HE IS NOT A REJECT, STATED SO A LATER RUN DOES NOT HAVE TO RE-DERIVE IT: if the squad ever falls to ten before a lock, a 500.000 board body is the correct -100-penalty insurance and Bachmann is as good as any other. That is not the position now — the squad is 12 and the Treu sale leaves exactly 11."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "Closed, and this time proved from live data rather than recalled. The next market-value tick falls after the matchday lock, so a flip bought now cannot resolve into a tick before the matchday starts — the two-clock test fails on the first clock. This holds under both readings of the ambiguous lock timestamp, which is what makes it safe to state flatly. The edge itself is intact and if anything stronger: the rising-flag drift re-measured on a much larger sample shows no decay at all against the original measurement, and the falling flag remains a reliable predicted loss. So the mechanism is healthy and simply has no window in this cycle; the first flip opportunity is after the matchday locks. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will decay if rivals crowd into it — and the four most active traders here were the top four finishers last season.",
+  "reason": "Closed, and closed on mechanics rather than sentiment. A flip needs its listing to resolve before a market-value tick, and that tick to fall before the lock. Tonight's tick comes after the lock, so no listing on the board can complete the round trip in time, and a position left open across the lock would risk the entire matchday to chase a couple of percent. This was settled two runs ago and nothing has changed it. The underlying edge itself is intact: five rivals sold back to the board this morning and every single sale paid exactly market value, with no spread, which is the leg of the trade the ledger has never seen slip. The cautionary half came from the same window — a contested board listing cleared nearly a quarter above market value, which is why the standing rule is to bid exactly market value and never raise. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that the measured tick edge comes from one league over one period and will decay if rivals crowd in. It has not decayed yet.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "The squad-wide sweep is clean. Every squad row carries a zero status flag, and a full read of Ligainsider's current season injury-and-suspension table names none of the twelve. Better than that, the dated matchday-five previews positively place our players in their clubs' probable elevens: Treu and Engelhardt for Freiburg, Guirassy for Dortmund, Deman for Werder, Nusa for Leipzig, Neuer for Bayern, and both Gregoritsch and Wolf for Augsburg. Nobody newly injured, nobody benched, no transfer noise. One source correction worth keeping: the Ligainsider injury table lives under the season-specific path; the bare one returns an error.",
+  "sweep": "No squad player is newly injured, suspended or benched, and no squad player has dated news suggesting he may leave the league. All twelve carry a clean status flag. Guirassy and Deman are both in yesterday-dated probable elevens for tonight's game. On the market side, Ryerson's flag is re-confirmed as doubtful by the same source, which keeps the standing avoid in place. Nothing current was found on Nakuzola's selection for Mainz, which is a gap rather than a warning — he enters the eleven by necessity either way.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -504,7 +504,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=655, -1,80% to +443,38%"
+   "v": "n=656, -1,80% to +443,38%"
   }
  ]
 }
