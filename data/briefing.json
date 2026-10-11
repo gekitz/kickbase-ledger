@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-11T04:50Z",
+ "run": "2026-10-11T06:50Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 1364720,
   "floor": -48061452,
   "spending_power": 49426172,
-  "hours_to_lock": 133.66,
-  "exposure": "No leveraged position is open and the balance is positive. The lock is several days away, so a negative balance opened today is not itself dangerous; what matters is that it can be unwound before the lock, and flips unwind instantly because the sale back to Kickbase is immediate and at market value. The one exposure that does need attention is the standing offer sitting well above the one-sale ceiling. If it wins as it stands, clearing the resulting deficit takes two sales and drops the squad to ten, which costs the penalty for the whole matchday. Cutting it to exactly market value removes that risk entirely.",
+  "hours_to_lock": 131.66,
+  "exposure": "No leveraged position is open — the balance is positive. The recommended purchase does open a deficit deliberately, as the first leg of a two-leg trade, and that is intended and safe with the lock five and a half days away. What is not safe is the standing offer at its current level: it opens a deficit that the single affordable sale does not close, and clearing it would require either a second sale, which means ten players and the penalty, or selling an attacker, which costs more points than the purchase gains. That is the entire case for lowering it. The D1 ledger remains unreachable for a third consecutive run — the account lists no databases at all — so the drift re-measurement was taken from the ledger context's own computation over the same event log rather than from direct SQL. Call visibility is not currently affected, because every actionable call now renders.",
   "must_restore_by": "2026-10-16T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The weakest fielded body is Nakuzola in defence, and he is the real structural gap rather than ter Horst. He cannot be traded out, because selling him raises almost nothing and funds no replacement. That is the honest shape of the problem: at exactly eleven players the squad can only upgrade where the outgoing body is worth enough to pay for the incoming one, so the bottom of the eleven stays where it is until a twelfth body exists. The Augsburg trade improves the back four from the middle rather than the bottom, and it is still the best available use of the money.",
+ "binding_gap": "The gap is quality at the back, not legality. The formation can be filled, but the fourth defender slot is occupied by a player whose average is a small fraction of everyone else's. Replacing him indirectly, by buying a strong Augsburg defender and funding it with the weakest sellable defender, is the whole of this run's points plan.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 49426172,
@@ -51,7 +51,7 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 31,
+  "listings": 30,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
   "expiring_within_2h": 2
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Quiet run, one live action.",
-  "headline_short": "Quiet run, one live action.",
-  "detail": "Quiet run, one live action. Nothing has settled in the league since the previous read, every open call survives unchanged, and the balance is positive with the squad at the legal minimum. The single thing that needs Georg today is the standing Brackelmann offer, which is still far above the ceiling the one-sale unwind allows and must be cut to exactly market value before it resolves this afternoon. Everything else is the flip board, which belongs on this page and not on his phone."
+  "headline": "One action matters this run and it is free: lower the standing Brackelmann offer to exactly his market value.",
+  "headline_short": "One action matters this run and it is free: lower the standing Brackel",
+  "detail": "One action matters this run and it is free: lower the standing Brackelmann offer to exactly his market value. Georg's offer of 13.000.009 is the only offer on that listing, so leaving it alone does not risk losing him — it guarantees winning him at a price no single sale can unwind. The listing resolves this afternoon. Everything else on the page is secondary to that."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "The funding leg is ter Horst, and he is sold for structure rather than on merit. Ligainsider's profile reads him fit with every league appearance a start and almost no minutes missed, so this costs real points on its own and only earns them back because the incoming defender is clearly better. Two reasons to prefer him over Deman as the leg: the instant sale back to Kickbase is certain and pays market value with no spread, whereas Deman's own manager ask sitting on the board is seller's choice and may never clear; and ter Horst carries the falling flag tonight while Deman carries the rising one, so selling the falling body and keeping the rising one is worth a little extra on the tick. The sale stays strictly conditional and second in order: do not sell until the defender is actually owned, because selling first leaves ten players and the penalty is live at the lock.",
+  "reason": "Both sale calls remain open and both remain strictly conditional: nothing is sold until an Augsburg defender is actually owned. Selling first leaves ten players. Of the two funding legs, ter Horst is the reliable one — an instant sale to Kickbase pays exactly his market value with no spread, he is the falling flag of the two, and he is the weakest of the three real defenders. Deman is the better leg if it clears, because his standing manager ask sits far above his market value and that spread is pure gain, but it has sat a full day without a single offer and the ask is far above the band manager asks have actually been clearing at, so it should not be relied on. Whichever resolves first funds the purchase; the other must then be closed, because executing both drops the squad to ten.",
   "standing": [
    {
     "name": "Jens ter Horst",
@@ -200,7 +200,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Brackelmann is the buy and the case is now confirmed by Augsburg themselves. The club's own match report for yesterday's home draw with Bayern names him in the starting eleven, which is as good as starter evidence gets and retires any need for further checks on him. Bid exactly market value and never raise. The hard ceiling is cash plus the single sale the squad can afford, and his price clears it by a thin margin, which is why the standing offer has to come down rather than stay where it is. Behrens is the fallback only, from the same club and also confirmed starting in that same official eleven, a worse points buy but a safer margin against the ceiling; his listing resolves after Brackelmann's, so there is a genuine window to fall back into if Brackelmann is lost. Do not bid on both. Both would land the squad in a two-sale unwind that the eleven cannot survive.",
+  "reason": "Brackelmann is the buy and the verification could not be stronger. The club's own team-sheet names him in the starting eleven against Bayern yesterday, and the club's own match report has him scoring the second goal in the sixty-fourth minute with Behrens assisting. Both are fit, both are starting, neither was substituted, injured or booked. Bid exactly his market value and never raise — the listing carries no manager ask, so there is no premium to benchmark and nothing to chase. Behrens remains the fallback only: he is the same club, the same day, the same confirmation, but materially the weaker points buy, so he is taken only if Brackelmann is lost. The reason the offer must come down is arithmetic, not doubt about the player — the current offer exceeds what one sale can fund, and a second sale would mean ten players.",
   "standing": [
    {
     "name": "Hennes Behrens",
@@ -341,11 +341,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open and the board is unusually deep tonight. The mechanism is unchanged and was re-measured from the event log this run with no decay at all: the rising flag predicts the next market-value update with a large sample and a very high hit rate, selling back to Kickbase pays market value exactly, so bidding at market value on a rising Kickbase listing costs nothing when it loses and captures the tick when it wins. Never raise on one. The qualifying listings are those that resolve before tonight's update; anything expiring after it is not a flip at all and several listings on the board fall into that trap. Two of the qualifying listings resolve inside the next couple of hours, including the largest body on the board, which is also the largest absolute tick available. Two further candidates qualify mechanically but are excluded because they sit on the blocked list from earlier sales, and a value flip is still a repurchase, so the block binds. The two open questions are unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
+  "reason": "The tick edge re-measures with no decay at all this run, on a large sample, and in fact slightly better than the figures this task carries. The falling flag is confirmed as its mirror image. The trade is unchanged: bid exactly market value on a rising-flag Kickbase listing that resolves before tonight's update, and never raise. Four listings qualify. Two flips were lost overnight and both are instructive in opposite directions — one cleared only a hair above market value, which is the first time the discipline has lost narrowly rather than to the high cluster, and the other cleared far above it, which is exactly why raising is never the answer. Flips sell back to Kickbase at market value instantly and never reduce the fielded eleven, so the only hard requirements are a non-negative balance and at least eleven players at the lock, both of which have days of room. Two questions remain unresolved and are stated here again rather than quietly assumed: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd into it.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Two squad problems, both already known and neither new today, so neither earns an interruption. Wolf is out with an infection and was not in Augsburg's matchday squad at all yesterday, which the club's own report states; his status flag has been set for several runs. Gregoritsch has lost his Augsburg starting place and appears among the substitutes in that same official report; he came off the bench and returned a negative score. With no bench of his own, Georg fields both regardless. Everyone else reads clean, and both sale legs and both buy targets are confirmed fit and starting on dated sources from this season.",
+  "sweep": "Two squad players are compromised and both are now corroborated by the official Augsburg team-sheet rather than by inference. Wolf appears neither in the starting eleven nor among the named substitutes, which confirms the illness flag already carried on him and means he did not feature at all in the last matchday. Gregoritsch is named among the substitutes and his most recent score is negative, which confirms he has lost his starting place. Neither is newly discovered and neither is sellable without breaking the eleven, so both stay on watch rather than becoming actions. Every other squad player featured in the last matchday. Among the targets, both Augsburg defenders are confirmed fit and starting on a dated club source from yesterday.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -528,7 +528,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=684, -2,20% to +443,38%"
+   "v": "n=686, -2,20% to +443,38%"
   }
  ]
 }
