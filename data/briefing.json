@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-11T12:52Z",
+ "run": "2026-10-11T14:51Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 1364720,
   "floor": -48061452,
   "spending_power": 49426172,
-  "hours_to_lock": 125.63,
-  "exposure": "No leverage open. The balance is positive and the squad sits at the legal minimum with every slot filled, so nothing is at risk at the lock as things stand. The live offer on Brackelmann is the only thing that could change that: if it wins at its current level it opens a deficit that a single sale cannot close, forcing a filler buy and a second sale to unwind. Cutting it to market value removes that entirely. If the flips are taken as well they open a temporary deficit tonight, but all of it unwinds within the hour after the update and the lock is five days out, so the exposure is nominal.",
+  "hours_to_lock": 123.64,
+  "exposure": "No leveraged position is open right now; the balance is positive and the lock is days away. But the live offer, if it wins at its current price, opens one that cannot be closed — the single sale available is not large enough to cover it, and a negative balance when the matchday locks scores zero for the entire matchday. That is the whole reason the offer must come down. Once it is at market value the position unwinds with a small positive margin. The flips open deficits too, but each is self-closing the moment the player is sold back after tonight's update, and there are days of runway before the lock, so they carry no matchday risk.",
   "must_restore_by": "2026-10-16T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Defence. Four defenders, one of them a minimum-value filler who did not play and two of them mid-range full-backs on near-identical season averages. Brackelmann is a clear upgrade on either and the only one on the board inside the unwind ceiling who is a confirmed starter. The secondary gap is attack, where one of the two forwards is currently benched, but nothing on the board fixes it without losing points on season average, so it stays a watch rather than a buy.",
+ "binding_gap": "Defence. The squad fields four defenders and one of them scores at a fraction of the rate of everyone else on the pitch, so the upgrade there is worth more per matchday than anything available in midfield or attack. Nothing can fund it except a defender sale, because the weak defender's own value is too small to pay for his replacement — which is what makes the trade a swap of a mid-tier defender for a better one rather than a straight replacement of the weak link.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 49426172,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 30,
+  "listings": 35,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Quiet run.",
-  "headline_short": "Quiet run.",
-  "detail": "Quiet run. Every open call survives at an unchanged price and nothing new settled in the league in the last two hours bar a single goalkeeper sale. The one action that matters is unchanged from this morning and still undone: the live offer on Brackelmann is far above the ceiling the squad can actually unwind, and it resolves this afternoon. Lower it to exactly his market value or pull it. Winning at the current offer is not fatal — it can be unwound with a minimum-price filler buy and two sales — but it means overpaying badly and losing both full-backs instead of one. The matchday lock is five days out, so there is no time pressure on anything else."
+  "headline": "One action decides this run, and it is a correction rather than a new idea: the live offer on Brackelmann is far above the price he can actually be bought at, and above the ceiling",
+  "headline_short": "One action decides this run, and it is a correction rather than a new ",
+  "detail": "One action decides this run, and it is a correction rather than a new idea: the live offer on Brackelmann is far above the price he can actually be bought at, and above the ceiling at which the trade still unwinds to a non-negative balance. Lower it to exactly his market value, or pull it. Left as it stands it wins him at a price that leaves the balance negative when the matchday locks, which scores zero for the whole matchday — the overpayment is not merely wasteful, it voids the points. The auction is uncontested, so lowering it carries little risk of losing him. If he lands, sell ter Horst back to Kickbase immediately and the squad settles at eleven with a stronger defence."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Both sales remain open, both strictly conditional, and only one of them can execute against a single buy. Ter Horst is the funding leg and goes first: he carries the falling flag, so his instant-sale value is expected to erode at tonight's update, and selling back to Kickbase pays market value exactly with no spread — there is no reason to list him at a markup and wait. Do not sell him until an Augsburg defender is actually owned; selling first leaves ten players and the minus-hundred penalty is live at the lock. Deman is the alternative funding leg and his own manager ask is already standing on the board at a healthy premium, unsold since yesterday morning. Leave it standing; it costs nothing and clears above what an instant sale would pay.",
+  "reason": "A defect in the ledger itself, not in the market: the two standing sell calls read as independent instructions, but they are alternatives. Executing both would leave the squad a player short of a legal eleven and trigger the penalty. Exactly one may fire, and the right one is ter Horst — he carries the falling flag and is the asset decaying under its owner, while Deman carries the rising flag and has a markup working for him on the board. Their scoring averages are within a point of each other, so the value difference decides it cleanly. Separately, Deman's own ask is live on the board right now, which means that sale is already delegated and can fire without Georg doing anything; the instruction not to sell him cannot actually prevent it. The ask is priced far above the band at which manager asks have historically cleared and has sat untouched for well over a day, so leave it standing — but the exposure is real and should be understood rather than assumed away.",
   "standing": [
    {
     "name": "Jens ter Horst",
@@ -200,7 +200,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Brackelmann is the buy and he is now verified rather than assumed: a source dated yesterday has him starting against Bayern with an assist, and lists no injury, illness or suspension for him. The back problem reported after he came off late in that match is settled — he started and he produced. Bid exactly his market value and never raise. The hard ceiling is cash plus the single points-expendable sale the squad can afford, and his market value sits just inside it. Behrens is the fallback only: also confirmed starting in the same match, also a Kickbase board listing at market value with a safer margin under the ceiling, but materially the worse points buy on season average, and his listing resolves later. Take Brackelmann first; only fall to Behrens if Brackelmann is lost. The Gregoritsch-for-a-striker swap was tested this run and rejected on points, not structure — buying a forward first does dissolve the formation problem, but every available forward is well below his season average, so the swap only pays if he stays out, and one benching is not a lost place with a home fixture against a promoted side next. Do not churn him; re-test when a dated probable eleven exists.",
+  "reason": "Brackelmann is the buy, and the case is unchanged except that his fitness is now closed rather than merely probable. Bid exactly his market value and never raise: the ceiling that makes the trade work is cash plus the single sale the squad can afford, and he clears it only narrowly. Above that line the position cannot be unwound and the matchday scores nothing, which is why the ceiling and not the mere existence of a deficit is what governs. Behrens remains the fallback and resolves later in the evening, so losing Brackelmann does not end the night — but he is the weaker player by a wide margin on scoring average, and he should be taken only if Brackelmann is actually lost. Every other listing on the board is refused: the new asks that appeared since the last read are all manager postings priced far above the band at which manager asks clear, two of them on players who are not even fit.",
   "standing": [
    {
     "name": "Hennes Behrens",
@@ -228,6 +228,15 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "AVOID the five new listings since the 12:45Z read — Gyamerah, Collins, Regeer, Obermair, Badé. A NEW rival (Daggi D.) is now running the same-day-markup habit.",
+    "pos": "DEF",
+    "club": "77",
+    "ask": 8500000,
+    "mv": 3961416,
+    "premium_pct": 114.57,
+    "why": "ONE ENTRY KILLING EVERY NEW LISTING SINCE THE LAST RUN so no future run re-derives them. THE NEW STRUCTURAL FACT: Daggi D. (3670374) posted THREE manager asks inside 97 seconds (13:43:08Z-13:44:35Z). That is a FOURTH rival running the same-day-markup habit already measured on David (Apwolix, Axf326n), PhiL95 (Ai8uugq) and Volte_28 (A04wv1d) — the habit is now league-wide, not one manager's quirk, and every future run should expect manager asks to cluster well above the measured manager-ask clearing band of +3,06% to +4,35%. (1) JAN GYAMERAH (859, DEF, tid 77 Elversberg, Daggi D., 13:43:36Z): prc 8.500.000 against mv 3.961.416 = +114,57%. Refused twice over: the premium is in the extreme tail of the band, AND st 2 — he is not fit, whatever his ap 55 says. (2) NNAMDI COLLINS (2864, DEF, tid 4 Frankfurt, Daggi D., 13:43:08Z): prc 11.500.000 against mv 10.842.028 = +6,07%. The premium alone is above the manager-ask band, but the killer is mvt 2 — the falling flag, measured -3,11% at the next 20:00Z tick, so the asset decays under him. ap 27 is also no upgrade on anything in the XI. (3) YOURI REGEER (17288, MID, tid 10 St. Pauli, Daggi D., 13:44:35Z): prc 15.500.000 against mv 11.034.541 = +40,47%, and st 2. Not fit, and priced in the contested-Kickbase high cluster by a manager who can simply refuse to move. (4) RAPHAEL OBERMAIR (2015, MID, tid 29 Werder, Borussia Rumpelfuss, 13:08:11Z): prc 10.000.000 against mv 7.041.960 = +42,01%. ap 65 is below four of the five midfielders already owned; there is no marginal-points case at any premium, let alone this one. (5) LOIC BADE (4563, DEF, tid 7 Leverkusen, Kickbase board, 12:47:06Z): prc = mv 2.829.794, no manager ask, so he passes the price filter — and he is still NOT a flip on two independent grounds: mvt 2 (measured -3,11% at the next tick, only 15,2% rise) and exs 102.955 puts resolution at roughly 2026-10-12T19:21Z, which is TWO ticks away, so the flip mechanism cannot even be timed on him. ap 35 kills the points case separately."
+   },
    {
     "name": "AVOID the six board listings posted since the 08:45Z read — Kristof, Undav, Dzeko, Hofmann, Schaefer, Lippmann. None is a points buy and none is a flip.",
     "pos": "GK",
@@ -326,26 +335,17 @@
     "mv": 11522114,
     "premium_pct": 21.51,
     "why": "ONE ENTRY KILLING ALL THREE, so no run re-derives them, AND it closes the \"zero manager asks board-wide\" streak the last six runs recorded — manager asks are BACK, all from one rival. MEASURED 10.10 08:45Z. (1) SCHWAEBE (1580, GK, tid 28): David BOUGHT him from the board at 2026-10-10T04:38:59Z for 11.480.699 against mv 11.400.112 = +0,71%, and RELISTED him at 07:00:04Z for 14.000.000 = +22,81% over mv. Two hours and twenty-one minutes between buy and ask. (2) EL KHANNOUSS (11955, MID, tid 9 Stuttgart): bought 05:42:14Z for 13.925.858 against mv 13.741.390 = +1,34%, relisted 07:00:27Z at 15.000.000 = +9,16%. (3) BENSEBAINI (2736, DEF, tid 3 Dortmund): asked at 13.000.000 against mv 9.297.528 = +39,82%, the largest of the three; ap 43 on p 85, which is not a points buy at any price. THE RULE STANDS UNCHANGED AND IS NOW EVIDENCED, NOT ASSUMED: a manager ask above mv has never been a buy in this ledger's history, and these three are a rival monetising a spread he paid under +1,4% for. The forecast in the David block (\"relists same-day at a markup as a matter of habit\") is confirmed a fourth and fifth time with timestamps. ALSO USEFUL FOR THE OTHER SIDE OF THE BOOK: David pays at or just over mv on the board and asks +9% to +23% on the relist, so Georg's own Deman ask of 10.910.099 (+20,23%) is priced inside the range this rival himself asks — it is not an absurd ask, it is simply not a certain one, and no unwind may be planned on it clearing."
-   },
-   {
-    "name": "David Mokwa",
-    "pos": "ATT",
-    "club": "77",
-    "ask": 6416410,
-    "mv": 6538166,
-    "premium_pct": -1.86,
-    "why": "THE EVENT THE BLOCK PREDICTED HAS HAPPENED AND THE ANSWER IS STILL NO — RESOLVED IN WRITING SO NO RUN RE-OPENS IT. Mokwa's blocked-list reversal read \"None while Volte_28 owns him — he is not on the market. If he is ever relisted...\" HE IS NOW RELISTED: feed t:3 (Kickbase board posting, no manager involved) at 2026-10-10T01:50:13Z, the only new listing since the 00:45Z run. So the reversal's own three tests now apply and must be run, not waved through. (1) ASK AT OR BELOW mv — PASSES. It is a board listing, prc = mv = 6.416.410 exactly, no `u`. (2) A DATED ELVERSBERG XI THAT STARTS HIM — not reached, because (3) fails first and decisively. (3) THE RE-BASED ap MUST CLEAR THE MARGINAL-POINTS TEST AGAINST THE ATTACKER HE WOULD DISPLACE — FAILS BY A MILE. He is pos 4 (ATT) on ap 84 across p 337. Georg's two attackers are Guirassy (ap 142) and Gregoritsch (ap 137), and in the only legal formation (4-4-2) BOTH are fielded. Buying Mokwa displaces nobody: he would be a 12th man who cannot enter the eleven, for -53 ap against the worse of the two. The ap did re-base downward as the old entry predicted (149 -> 84), and it re-based the wrong way. HE IS ALSO DEAD AS A FLIP: mvt 2, which the log measures at -3,16% mean into the next 20:00Z tick with only 14,9% rising. His mv has fallen 7.251.481 -> 6.416.410 since Volte_28 paid 10.252.500 for him on 10.09, so whoever buys him now is catching a falling asset that has already cost its owner ~3,8M. NOTE THE CLOSED LOOP THIS COMPLETES: the ledger's largest-but-one calibration miss was losing him at +41,39%; one month later the board offers him back 37% cheaper and he is correctly not worth owning. That is the clearest evidence yet that \"being the player we lost\" is not a reason to buy, exactly as the block said. BLOCK STANDS, unchanged, with the reversal now narrowed to: only if he is relisted at or below mv AND his ap has re-based ABOVE 137."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open — the lock is five days away and tonight's market-value update is this evening. The mechanism re-measures with zero decay for the fourth consecutive run, and the rising flag is running above the baseline the playbook assumes, so rivals have not yet crowded the edge out. Three Kickbase board listings qualify cleanly: all carry the rising flag, all are priced at market value with no manager ask, and all resolve before tonight's update. Lemperle is the largest and ranks first, Tillman second, Ayhan a rounding error listed for completeness. Bid exactly market value on each and never raise — chasing a contested listing into the high clearing band destroys the edge, and one bad clear wipes out ten good flips. Mokwa also qualifies mechanically but is left out on two grounds: his listing resolves barely twenty minutes before the update, which is no margin at all if the expiry estimate slips, and he sits on the blocked list from the auction we lost. That block is not reversed here. Unwind all of it after tonight's update by selling back to Kickbase, which pays market value exactly. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if the other traders crowd in.",
+  "reason": "The flip window is wide open — the lock is days away, so nothing here risks the matchday. Three listings qualify on the mechanism: a Kickbase board posting, priced at market value with no manager ask, carrying the rising flag, and resolving before tonight's market-value update. Ranked by the capital each puts to work, Lemperle leads, then Tillman, then Ayhan. Bid exactly market value on each and never raise; winning captures the tick, losing costs nothing, and chasing a contested listing upward destroys the edge outright. They are additive to the Brackelmann trade rather than competing with it, since the floor leaves ample headroom and each flip unwinds by selling that same player back after the update. Mokwa qualifies on the mechanism and the price condition in his block is now satisfied, but his block is not being reversed here: it forbids recommending him as a buy, and a flip is a buy. Two open questions stay open. Whether Kickbase caps squad size is still unsettled, though the budget endpoint returns a pair of counters, one of which tracks the squad exactly and the other of which sits well above it — suggestive of a cap, not proof of one. And the edge remains measured in one league over one window, so it will decay if rivals crowd in; it has not yet, and this run it reads slightly stronger than the original baseline rather than weaker.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Verified against a club page dated yesterday. Brackelmann and Behrens both started against Bayern and neither appears on any injury, illness or suspension list; Behrens picked up a yellow card, which is not a suspension. Wolf is out ill — sourced and dated at an earlier run, unchanged, and he did not feature. Gregoritsch was an unused bench player and his points for that match confirm it. Neither is new this run. Of the flip candidates no starter check is needed, because fitness does not enter the daily market-value tick; all three are established Bundesliga players with no transfer risk in October.",
+  "sweep": "Both buy candidates and both sale candidates are clear on a live, dated check. The injury table read this run lists neither Brackelmann nor Behrens nor Gregoritsch nor ter Horst, and carries no section for Deman's club at all. Brackelmann's back trouble is now fully dated and fully resolved: the substitution that generated the alarming headlines belongs to September, its all-clear followed a week later, and he started and scored against Bayern last weekend. Future runs should treat that whole cluster as stale rather than re-deriving it. Wolf is on the table with illness, dated yesterday, which confirms his status flag with a current source rather than a stale one. Gregoritsch is not injured — his problem is selection, and he has lost his starting place, which is a points question and not a fitness one.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
