@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-12T08:51Z",
+ "run": "2026-10-12T10:50Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -11565289,
   "floor": -47850273,
   "spending_power": 36284984,
-  "hours_to_lock": 105.64,
-  "exposure": "The balance is negative and has been for some time. That is not an error and it is not urgent — a deficit costs nothing until the instant the matchday locks, and the lock is still days away, which is why it is not worth a push at this distance. It becomes the only thing that matters as the lock approaches: a negative balance at matchday start scores zero for the entire matchday. The Gregoritsch sale alone clears it at today's market value with room to spare, and every flip won before then adds to what has to be unwound on top. Size flips against the headroom that survives the sale, not against raw spending power, and keep the unwind ceiling in view — each buy permits exactly one sale back.",
+  "hours_to_lock": 103.66,
+  "exposure": "The balance is negative and must be non-negative when MD6 locks, or the entire matchday scores zero. That is the only hard constraint on the run, and it is more than four days away, which is why it is reported here rather than pushed. The clearing transaction is identified, sized and sufficient on its own; it simply should be executed late rather than early. A negative balance costs nothing until the instant the lock arrives — it is the inability to unwind that would be fatal, and that inability does not exist here. The three flips add to the deficit while they are open, but each unwinds back to Kickbase at market value on demand, and all three together absorb well under a quarter of spending power.",
   "must_restore_by": "2026-10-16T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "There is no positional gap. The binding constraint is a lineup that fields a player who will not play and benches the best defender in the squad, and it is fixable for free with no transaction. Behind it sits the real deadline: the deficit must be unwound to non-negative, with at least eleven players, before the matchday locks, and the Gregoritsch sale is the leg that does it.",
+ "binding_gap": "A fielded defender who is actually available. The eleven currently includes one player flagged out and one whose average is a quarter of what the man on the bench averages. The gap is supply-bound, not budget-bound — spending power is ample and the board simply has nothing in the defensive band that beats what is already owned, which is why the answer is a lineup change rather than a purchase.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 36284984,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 32,
+  "listings": 33,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "The single biggest item on this ledger is still free and still undone: Brackelmann is sitting on the bench while Nakuzola occupies a defensive slot, and Wolf — confirmed out with i",
-  "headline_short": "The single biggest item on this ledger is still free and still undone:",
-  "detail": "The single biggest item on this ledger is still free and still undone: Brackelmann is sitting on the bench while Nakuzola occupies a defensive slot, and Wolf — confirmed out with illness on a dated primary source and flagged by Kickbase itself — is still in the eleven. Switching to 5-3-2, fielding Brackelmann and Nakuzola together and benching Wolf, costs nothing, needs no money and no counterparty, and is worth more than anything on the market. This corrects the earlier instruction, which said only to field Brackelmann and implied a straight swap in the current shape; that swap leaves Wolf in to score nothing. Second priority is the Muheim bid, which expires this morning and has no offer on it. The market is otherwise quiet: nothing new has been listed since the last read, and the only settled transfer is the Khedira flip, which a rival took at a premium well above our discipline — losing it cost nothing, which is the point of bidding exactly at market value and never raising."
+  "headline": "Three qualifying tick flips are live and none of them has a bid on it — Muheim lapses in minutes, Stöger this afternoon, Džeko tonight.",
+  "headline_short": "Three qualifying tick flips are live and none of them has a bid on it ",
+  "detail": "Three qualifying tick flips are live and none of them has a bid on it — Muheim lapses in minutes, Stöger this afternoon, Džeko tonight. That is the whole run. The points structure is unchanged and not urgent: the balance is negative but MD6 is more than four days out, so the unwind leg (Gregoritsch) is deliberately left late to collect the 20:00Z ticks. No squad player is newly unavailable. Bid exactly mv on all three flips and never raise."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Gregoritsch remains the sole unconditional unwind leg and that has not changed. What has changed is the timing: he is on a rising market-value flag, Kickbase buys back at exactly market value with no spread, and there are four daily updates between now and the lock. Holding him through those updates is free money on the same mechanism the flip section uses, and it costs nothing because a deficit is only ever punished at the moment the matchday locks. He is benched at his club and has not featured, so holding him costs no points either. Execute on the run after the last reachable update at the latest, and earlier if his flag turns to falling. The Nakuzola sale stays strictly conditional on Muheim actually being in the squad — selling him first takes the squad below eleven after the Gregoritsch leg and triggers the penalty.",
+  "reason": "One sale, and it is the same one as the last several runs: Gregoritsch, back to Kickbase at exactly mv. It is the only single transaction that clears the entire deficit, and it is the cheapest one in points terms because Brackelmann steps straight into the eleven behind it. Timing is the live question, not the choice: he is rising, Kickbase pays exactly mv with no spread, and there are four more daily updates before the lock, so every tick held is free money on the sale price. Sell him on the last run before the lock, not now. The Deman listing stays up at the raised ask — the two standing offers beneath it are both refused, not because the price is bad but because neither clears the position, and taking one forfeits the sale that would. The conditional Nakuzola sale stays conditional: it is a hard gate, not a caveat.",
   "standing": [
    {
     "name": "Michael Gregoritsch",
@@ -210,7 +210,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "No points buy is recommended. The board holds nothing that improves a fielded slot at a price worth paying, and the manager asks are all priced in or above the contested band where premiums destroy the trade. Muheim is the one exception and he is already on the ledger: he is cheap, he is fit and back per a dated check, and his average rests on a single appearance, so treat the points leg as a punt and the value leg as the real reason. The bid is exactly market value and must not be raised. There is no positional hole to fill while the squad is at twelve; the gap is a lineup error, not a missing player, and padding a position already covered would only deepen the deficit that has to be unwound before the lock.",
+  "reason": "Nothing is recommended on points grounds. The board has one player who would genuinely improve the eleven and he is unbuyable twice over on price. Everything else either sits below the men it would displace or fails the fitness check. The binding gap is a fielded-defender hole, and the two new listings since the last run are an attacker and an injured defender, so neither touches it. Muheim is the one buy on the ledger and he is honestly described: the flip leg is the real case, the points leg is a small punt on a three-way fight for a left-back slot. His average rests on a single appearance and should not be read as form.",
   "standing": [
    {
     "name": "Miro Muheim",
@@ -226,6 +226,15 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "Königsdörffer (3318) and Juma Bah (9754) — the only two new listings since the 08:45Z run. Both killed on the tick-timing test; Bah also st 2.",
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
+    "premium_pct": null,
+    "why": "ONE ENTRY KILLING BOTH NEW LISTINGS SO NO FUTURE RUN RE-DERIVES THEM. Both are Kickbase board postings (feed t:3, no u), both prc = mv with mvt 1, which is the whole flip pattern — and both fail on the SAME mechanical ground, the one that has killed every near-miss this week: they resolve AFTER the 2026-10-12T20:00:00Z market-value update, so the bid does not capture the tick it would have to beat, and the capital sits idle across it. (1) RANSFORD KÖNIGSDÖRFFER (3318, ATT, tid 18, listed 2026-10-12T10:28:26Z, mv 4.750.767, st 0, ap 40): exs 163283 read at 10:45Z resolves about 2026-10-14T08:09Z — two full ticks away, so not a flip. Not a points buy either: ap 40 is below every attacker in the squad (Guirassy 142, Gregoritsch 109) and buying an ATT does not touch the binding gap, which is a fielded-defender hole, not an attacking one. (2) JUMA BAH (9754, DEF, tid 13, listed 2026-10-12T09:20:17Z, mv 1.575.561, ap 67): exs 38474 resolves about 2026-10-12T21:26Z, 1h26m AFTER tonight's update — so close that it is worth stating plainly, because an exs read that drifts the wrong way does not rescue it, it only makes the miss narrower. AND HE IS SEPARATELY DISQUALIFIED ON FITNESS: st 2. His ap 67 is off a single appearance (p 67 = ap 67), the same cameo artefact as Muheim's 243, so there is no form case underneath the flip case either. Neither is to be revisited unless relisted with an expiry before the next 20:00Z update."
+   },
    {
     "name": "Lucas Vázquez",
     "pos": "DEF",
@@ -324,26 +333,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "NEW manager ask since the 20:45Z read - Volte_28 listed him 2026-10-10T20:32:36Z at 9.088.555 against mv 7.398.271 = +22,85%. Refused on two independent grounds, either sufficient: (1) the premium sits in the CONTESTED-KICKBASE high cluster while this is a MANAGER ask, whose measured clearing band is low single digits (+3,06%, +4,35%) - paying +22,85% to a manager has never once been justified on this ledger; (2) he is mvt 2, the FALLING flag, which measures -3,12% at the next 20:00Z update (n=717, only 15,1% rose), so the asset decays while the premium is paid. ap 46 makes him no points buy either - he would not displace Gregoritsch (109) or Guirassy (142). Volte_28 is one of the four most active traders and this is the same same-day-markup pattern already logged against David under Apwolix and Axf326n."
-   },
-   {
-    "name": "Edmond Tapsoba",
-    "pos": "",
-    "club": null,
-    "ask": 28999999,
-    "mv": null,
-    "premium_pct": null,
-    "why": "THE ONLY NEW MANAGER ASK SINCE THE 16:45Z READ, killed here so no run re-derives him. Volte_28 listed him 2026-10-10T17:32:58Z at 28.999.999 against mv 25.951.499 = +11,75%. (1) HE IS NOT AFFORDABLE AND IT IS NOT CLOSE. The one-sale unwind ceiling is cash 1.364.720 plus the largest sellable defender, ter Horst at 10.081.603, = 11.446.323. Tapsoba is 17.553.676 ABOVE it. Funding him would take Nusa (28.298.028) or Guirassy (32.981.360) — selling either costs far more points than a defender with ap 105 returns, and selling Guirassy drops the squad to one attacker. There is no branch where this clears. (2) THE PREMIUM IS ALSO WRONG FOR THE GAME IT IS IN. Manager-to-manager asks in this league clear in the low single digits (measured +3,06%, +4,35%); +11,75% is a contested-BOARD number being charged on a manager ask, which is the pricing error this ledger has logged against David (Apwolix, Axf326n) and PhiL95 (Ai8uugq) four times now. Volte_28 is the third rival running the habit. (3) NOTE FOR THE PREMIUM BAND, NOT FOR THE BUY LIST. Volte_28 bought Petkov from the board at 11.385.555 at 15:01Z and relisted him at 13.288.555 within 35 minutes, and has now put Tapsoba up at +11,75% two hours after buying Amiri for 33.000.000 at +12,94% over mv 29.219.149. Amiri is the datapoint that matters: it is a MANAGER-TO-MANAGER clear at +12,94%, which is far above the low cluster this ledger has been benchmarking manager asks against, and it was JakobDohr selling, who dumped Wimmer, Scheller and Esteve back to Kickbase at exactly mv in the same twenty minutes. One rival is liquidating and another is accumulating at board-level premiums. Re-check whether the manager-ask low cluster still holds on the next calibration run."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open and the measured edge has not decayed for a fourth consecutive run: the rising flag still predicts a gain into the next daily update on a large sample with a high hit rate, the falling flag still predicts the opposite, and the flat flag is noise. Three board listings qualify — priced at market value, no manager ask, rising flag, clean fitness status, and crucially all three resolve before tonight's update. Muheim goes first and expires soonest, Stöger is the largest, and Dzeko is the tightest because he resolves only shortly before the update; any drift in that reading turns him from a flip into an overnight hold. Bid exactly market value on each and never raise — the Khedira loss this morning is the case in point: a rival paid a double-digit premium for an edge worth a fraction of that. The capital all three would absorb is comfortably inside spending power, but every one of them adds to a deficit that must be unwound to non-negative, with at least eleven players, before the lock. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
+  "reason": "Three listings qualify in full and the window is wide open — the lock is more than four days away, so there is no flip-at-the-lock risk this run. All three are Kickbase board postings with no manager behind them, priced at exactly market value, flagged rising, and resolving before tonight's update. The rule is the same one the measurement supports and the only one that protects the edge: bid exactly market value and never raise. Winning captures the tick; losing the auction costs nothing. Chasing a contested listing upward is what destroys the edge — one clear at the high cluster wipes out ten good flips, and today's own clears show the two-cluster pattern again, one uncontested body clearing at a rounding error over mv and a contested one at over ten percent. The measured drift re-reads unchanged for the fourth consecutive run with no sign of decay. Two questions remain open and neither has moved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "A squad-wide sweep this run found exactly one flag. Wolf is out with illness, confirmed by the club's own dated match report, by his profile's newest dated item, and by the league injury table — and there is no dated all-clear. Kickbase's own status flag corroborates it. He is still in the starting eleven, which is the error the lineup change fixes. Every other squad player reads clean and none appears on the injury table. The absence is an illness several days before the lock and can clear: if a dated source says he is back and training, or the status flag resets, the four-at-the-back shape with Brackelmann in becomes the better one again and should be restored. Gregoritsch is fit per a dated item but was not named in his club's last match account and his recent scoring is poor, which is what makes him the right unwind leg rather than a points loss. Muheim is fit and back but not a confirmed starter, and there is dated talk of a possible winter departure — irrelevant to a flip that resolves this morning, relevant if he is held for points.",
+  "sweep": "No squad player is newly injured, suspended or benched this run. Wolf remains unavailable and remains in the fielded eleven, which is the standing lineup error. Every other squad player reads clear. Muheim was re-verified from his club profile this run: the flag reads fit and the news runs through a comeback on the tenth of October — but the headline a plain search returns first, declaring his season over, is from April and belongs to last season. That trap is now logged so no future run kills him on it. He is fit and he is not a confirmed starter; both halves of that matter.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -532,7 +532,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=704, -2,20% to +443,38%"
+   "v": "n=705, -2,20% to +443,38%"
   }
  ]
 }
