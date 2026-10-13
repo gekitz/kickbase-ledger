@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-13T10:49Z",
+ "run": "2026-10-13T12:51Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10881289,
   "floor": -48456516,
   "spending_power": 37575227,
-  "hours_to_lock": 79.67,
-  "exposure": "The balance is negative and has been all cycle. That costs nothing until the instant the matchday locks, and the lock is roughly three days away, so it is not a reason to skip anything. What matters is whether the position can be unwound in time, and it can with very large margin: the flips sell back to Kickbase at market value after tonight's tick, and the standing striker sale clears the remainder well inside the window. Winning the whole rationed slate still leaves headroom against the thirty-three percent floor. The ledger's own notification threshold applies — an open leveraged position is pushed only inside six hours of the lock or on the last run before it, and neither holds here.",
+  "hours_to_lock": 77.65,
+  "exposure": "A leveraged position is open and must be unwound before the matchday locks, because a negative balance at matchday start scores zero for the entire matchday. There is no urgency yet — the lock is comfortably more than three days out, far outside the threshold at which this warrants interrupting him — but the path has to stay intact. The unwind is the late Gregoritsch sale, which clears the deficit and takes the squad to eleven in one move. Running the flip slate deepens the deficit temporarily and stays inside the floor, and each flip is self-liquidating: sold back at market value after tonight's update, well before the lock. The ordering matters — flips unwind first, the Gregoritsch sale goes last, and the balance must be non-negative with at least eleven players standing when the matchday starts.",
   "must_restore_by": "2026-10-16T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "The binding gap is not a missing position — it is the single keeper. Neuer is the only goalkeeper owned, he carries a knock flag, and nothing on the market is a sane replacement at a price the floor allows. Everything else in the eleven is covered. The second, softer gap is the attack: two strikers, one of them the standing sale, which is what makes the post-sale shape so rigid.",
+ "binding_gap": "Goalkeeper, and it is supply-bound rather than budget-bound. A single keeper carrying a fitness flag with no sane insurance available on this market: the one keeper listed is a manager ask priced well above where manager asks clear, which makes him an expensive hedge against a doubt that has not yet become an absence. Buying him would convert a soft risk into a hard cost. The right posture is to carry the risk and revisit late in the week, when the keeper's status is reported rather than guessed, and to treat the gap as a reason not to spend rather than a reason to spend.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 37575227,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 36,
+  "listings": 31,
   "cheapest": 500000,
   "cheapest_slot_filling": 15000000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 4
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "The highest-value action this run costs nothing and is still undone: fix the lineup.",
-  "headline_short": "The highest-value action this run costs nothing and is still undone: f",
-  "detail": "The highest-value action this run costs nothing and is still undone: fix the lineup. Brackelmann is confirmed in Augsburg's probable XI for matchday six and is sitting on Georg's bench, while Wolf is flagged angeschlagen, listed well outside that same XI, and is currently in the fielded eleven. Switching to the five-three-two and swapping them is a free upgrade with no capital, no market risk and no unwind. That beats every flip on the board and should be done before anything else. Behind it sits the value trade: a ranked, capital-rationed slate of board listings that expire inside tonight's tick window, each bid at exactly market value and never raised."
+  "headline": "A quiet run with one free point-gain still sitting unexecuted.",
+  "headline_short": "A quiet run with one free point-gain still sitting unexecuted.",
+  "detail": "A quiet run with one free point-gain still sitting unexecuted. Nothing new has broken: no squad player picked up a fresh flag, no open call died, and the only listing posted since the last read fails the tick-timing test and was logged as an AVOID. The single highest-value action remains the lineup swap, not a trade — bench Wolf, field Brackelmann, go 5-3-2. It costs nothing, needs no capital, and today's dated Augsburg probable XI re-confirms both halves of it: Brackelmann inside the first eleven with no status icon, Wolf outside it carrying an Angeschlagen marker. Everything else on the board is a value trade, and value trades never outrank a free points upgrade."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Gregoritsch remains the standing sale and the premise is re-confirmed on a source dated the twelfth of October: Augsburg's probable eleven for Saturday at Elversberg lists him outside the starting group, and a benched striker scores close to nothing. But sell him LATE, not now. He is still rising day on day, so every day held adds value, and the lock is three days out. A new and previously unpriced cost was found this run and must be settled before the sale is executed: selling him drops the squad to eleven, and at eleven the only legal shape left is five-four-one, which forces all four midfielders into the eleven — including Wolf, the doubtful one the lineup fix is currently removing. So the sale is not free. Either re-check Wolf on a source dated close to the match, or land a twelfth body first, or accept the forced shape with eyes open.",
+  "reason": "The Gregoritsch sale stands, unchanged in substance and re-confirmed on a dated primary source this run: he sits outside Augsburg's probable eleven for the Elversberg fixture with no status icon, which is a selection call rather than an injury. His season average is backward-looking, earned while he was starting, so it is not what a sale gives up — a benched striker scores near nothing. The timing rule is unchanged too: sell him LATE, not now, because he is the designated unwind leg and his value is still ticking upward. Selling him drops the squad to eleven and leaves exactly one legal shape, which forces Wolf into the eleven — that cost is real and is the reason the sale waits rather than being taken today. The standing manager offer on Deman is still to be refused; it remains a stranding trap, not merely an underpriced bid.",
   "standing": [
    {
     "name": "Michael Gregoritsch",
@@ -201,9 +201,18 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No points buy is recommended. Nothing on the board improves a slot Georg already covers at a price the floor permits, and the two listings posted since the last run both fail mechanically without needing a news check. Pinckert stays an AVOID as a points buy while remaining a valid flip — those are different questions about the same man and must not be collapsed.",
+  "reason": "Nothing on the board earns a points buy this run. The binding gap is in goal — a sole keeper carrying a fitness flag — and the only keeper listed is a manager ask priced far above the band that manager asks actually clear at, so it stays an AVOID rather than becoming insurance. Everywhere else the squad is already covered or over-covered: five defenders for at most five slots, and the midfield candidates on offer are either below the players they would displace or flagged. Padding a position he can already fill is how capital gets spent for no points, so the recommendation is to buy nothing for points today and keep the spending power pointed at the flip slate.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "Daiki Hashioka",
+    "pos": "DEF",
+    "club": "15",
+    "ask": 3606991,
+    "mv": 3606991,
+    "premium_pct": 0,
+    "why": "THE ONLY NEW LISTING SINCE THE 10:44Z READ (posted to the Kickbase board 2026-10-13T11:38:55Z, read 12:45Z). Killed on the TICK-TIMING TEST, which is mechanical and needs no news check: exs 89817s puts expiry at about 2026-10-14T13:40Z, i.e. AFTER tonight's 2026-10-13T20:00:00Z update, so winning him cannot capture tonight's tick and the mvt 1 flag on him is worthless to this run. Mechanics otherwise clean (prc = mv = 3.606.991, no u, st 0), so he is NOT blocked on merit — if he is still listed at mv with mvt 1 after tonight's tick and his expiry then falls before the 14.10 20:00Z update, he qualifies and should be re-derived as a FLIP. As a POINTS buy he fails outright and separately: ap 6 on p 19 is the lowest non-negative ap on the board bar the 500k rookies, Heidenheim (tid 15), and Georg already fields five defenders he cannot all start. Logged so no future run re-derives him from scratch."
+   },
    {
     "name": "Lukas Pinckert — as a POINTS BUY. THIS REVERSES By9v93u (closed this run), which called him \"THE RUN'S TOP MOVE, AND IT IS A FREE OPTION\". He is NOT a free option. He remains a valid FLIP.",
     "pos": "DEF",
@@ -302,26 +311,17 @@
     "mv": 500000,
     "premium_pct": 0,
     "why": "Le Joncour (7514, listed 03:58Z, mv 500.000, prc = mv, no u): mvt 0, and the re-measured mvt-0 drift is +0,02% on n=122 with only 1.6% rising — that is noise, not an edge, so he does not qualify as a tick flip. ap 20 off a single appearance; he does not displace anyone in the XI, whose weakest fielded slot is Nakuzola at ap 27 and whose real problem is that Brackelmann (ap 123) is benched, not that a body is missing. Nartey (2120, listed 02:55Z, mv 3.672.429, prc = mv, no u): mvt 2, which the log measures at -3,11% into the next 20:00Z tick with only 15.4% rising — this is the INVERSE of the flip trade and buying it is a measured loss. He also carries st 2 and ap -9. Neither needs a news check: the mvt flag alone disqualifies both, and fitness does not enter the tick. Logged so the next run does not re-price either one."
-   },
-   {
-    "name": "AVOID the five new listings since the 12:45Z read — Gyamerah, Collins, Regeer, Obermair, Badé. A NEW rival (Daggi D.) is now running the same-day-markup habit.",
-    "pos": "DEF",
-    "club": "77",
-    "ask": 8500000,
-    "mv": 4482553,
-    "premium_pct": 89.62,
-    "why": "ONE ENTRY KILLING EVERY NEW LISTING SINCE THE LAST RUN so no future run re-derives them. THE NEW STRUCTURAL FACT: Daggi D. (3670374) posted THREE manager asks inside 97 seconds (13:43:08Z-13:44:35Z). That is a FOURTH rival running the same-day-markup habit already measured on David (Apwolix, Axf326n), PhiL95 (Ai8uugq) and Volte_28 (A04wv1d) — the habit is now league-wide, not one manager's quirk, and every future run should expect manager asks to cluster well above the measured manager-ask clearing band of +3,06% to +4,35%. (1) JAN GYAMERAH (859, DEF, tid 77 Elversberg, Daggi D., 13:43:36Z): prc 8.500.000 against mv 3.961.416 = +114,57%. Refused twice over: the premium is in the extreme tail of the band, AND st 2 — he is not fit, whatever his ap 55 says. (2) NNAMDI COLLINS (2864, DEF, tid 4 Frankfurt, Daggi D., 13:43:08Z): prc 11.500.000 against mv 10.842.028 = +6,07%. The premium alone is above the manager-ask band, but the killer is mvt 2 — the falling flag, measured -3,11% at the next 20:00Z tick, so the asset decays under him. ap 27 is also no upgrade on anything in the XI. (3) YOURI REGEER (17288, MID, tid 10 St. Pauli, Daggi D., 13:44:35Z): prc 15.500.000 against mv 11.034.541 = +40,47%, and st 2. Not fit, and priced in the contested-Kickbase high cluster by a manager who can simply refuse to move. (4) RAPHAEL OBERMAIR (2015, MID, tid 29 Werder, Borussia Rumpelfuss, 13:08:11Z): prc 10.000.000 against mv 7.041.960 = +42,01%. ap 65 is below four of the five midfielders already owned; there is no marginal-points case at any premium, let alone this one. (5) LOIC BADE (4563, DEF, tid 7 Leverkusen, Kickbase board, 12:47:06Z): prc = mv 2.829.794, no manager ask, so he passes the price filter — and he is still NOT a flip on two independent grounds: mvt 2 (measured -3,11% at the next tick, only 15,2% rise) and exs 102.955 puts resolution at roughly 2026-10-12T19:21Z, which is TWO ticks away, so the flip mechanism cannot even be timed on him. ap 35 kills the points case separately."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The slate is ranked by market value times the measured rising-flag drift and then rationed against spending power, which is the binding cap rather than cash. Five names fit; the sixth is cut purely on headroom and is named as first reserve should one of the five be lost at auction. Two of them were carried as AVOID until this run on the tick-timing test, and that test is now passed because their expiries have rolled forward into tonight's window — a premise that died by the clock, not an error being reversed. Bid exactly market value on each and never raise. Losing a contested listing costs nothing; chasing one destroys the edge, and this run measured a fresh board clear far into the high cluster that shows exactly how fast it is destroyed. The two open questions stand: whether Kickbase caps squad size, which would cap flip throughput, and that this edge is measured in one league over one period and will decay if rivals crowd in. It has now held flat for ten consecutive runs with no sign of that decay.",
+  "reason": "The flip window is open and the mechanism is unchanged. Re-measured from the refreshed log this run, the rising-flag drift is flat for an eleventh consecutive run with no material decay, and the falling flag continues to predict the opposite — so no sign yet of rivals crowding the edge out. The trade is unchanged: bid EXACTLY market value on a Kickbase board listing carrying the rising flag whose expiry falls before tonight's update, and never raise. Losing the auction costs nothing; chasing a contested listing into the high premium cluster is what destroys the edge. The slate is capital-rationed against spending power rather than taken whole, and the top four fit underneath it with headroom. Two of the ranked listings expire within the hour, so in practice the slate is thinner than it looks. Every flip must be sold back after the update and before the matchday locks — selling to Kickbase pays exactly market value with no spread, so the unwind is mechanical. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "The squad sweep is clean apart from the two flags already known. Wolf is angeschlagen and outside Augsburg's probable eleven, which is the reason to bench him rather than a reason to sell. Neuer still carries a knock flag and is confirmed out of midweek European duty, but his club lists him first among keepers and names only one absentee for the weekend, so the doubt narrows without resolving; he is the sole keeper and there is no sane insurance on this market, so the decision point is late in the week, not now. No squad player is newly injured, suspended or benched this run.",
+  "sweep": "Swept clean apart from the two known flags, and neither changed this run. The keeper's doubt narrows without resolving: he is out of midweek European duty and not training, but the club continues to state him as first choice, so the decision point is late in the week rather than now. Wolf carries a doubtful marker on today's dated probable XI and sits outside the eleven, which is the second half of the case for the lineup swap. No squad player is newly injured, suspended, benched or carrying dated news that he may leave the league. Searches for current keeper news returned only last-season material — February and May 2026 items — which is the known date trap and was discarded rather than used.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
