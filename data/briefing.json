@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-13T12:51Z",
+ "run": "2026-10-13T14:50Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10881289,
   "floor": -48456516,
   "spending_power": 37575227,
-  "hours_to_lock": 77.65,
-  "exposure": "A leveraged position is open and must be unwound before the matchday locks, because a negative balance at matchday start scores zero for the entire matchday. There is no urgency yet — the lock is comfortably more than three days out, far outside the threshold at which this warrants interrupting him — but the path has to stay intact. The unwind is the late Gregoritsch sale, which clears the deficit and takes the squad to eleven in one move. Running the flip slate deepens the deficit temporarily and stays inside the floor, and each flip is self-liquidating: sold back at market value after tonight's update, well before the lock. The ordering matters — flips unwind first, the Gregoritsch sale goes last, and the balance must be non-negative with at least eleven players standing when the matchday starts.",
+  "hours_to_lock": 75.65,
+  "exposure": "The balance is negative and has not moved since the previous run. This is not a problem yet and must not be treated as one: a deficit costs nothing until the instant the matchday locks, and lock is roughly three days away. What matters is that it can be unwound, and it can — the Gregoritsch sale alone clears it with room to spare at the current market value. If all three flips are won the deficit deepens temporarily, and the discipline is to sell every winner back to Kickbase after tonight's update rather than carrying them. The hard constraint, restated: non-negative balance and at least eleven players before the lock, or the whole matchday scores zero.",
   "must_restore_by": "2026-10-16T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "Goalkeeper, and it is supply-bound rather than budget-bound. A single keeper carrying a fitness flag with no sane insurance available on this market: the one keeper listed is a manager ask priced well above where manager asks clear, which makes him an expensive hedge against a doubt that has not yet become an absence. Buying him would convert a soft risk into a hard cost. The right posture is to carry the risk and revisit late in the week, when the keeper's status is reported rather than guessed, and to treat the gap as a reason not to spend rather than a reason to spend.",
+ "binding_gap": "Goalkeeper, and it is a gap that cannot be closed. There is one keeper in the squad, he carries a status flag, and the only keeper on the market is priced well outside the band at which manager asks clear. Selling him is forbidden rather than merely unwise while he is the only one. So the position is simply carried: if he is ruled out, the slot scores what it scores. Watch for a second keeper appearing on the board at or near market value between now and Friday — that, and only that, changes the answer.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 37575227,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 31,
+  "listings": 27,
   "cheapest": 500000,
   "cheapest_slot_filling": 15000000,
-  "expiring_within_2h": 4
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "A quiet run with one free point-gain still sitting unexecuted.",
-  "headline_short": "A quiet run with one free point-gain still sitting unexecuted.",
-  "detail": "A quiet run with one free point-gain still sitting unexecuted. Nothing new has broken: no squad player picked up a fresh flag, no open call died, and the only listing posted since the last read fails the tick-timing test and was logged as an AVOID. The single highest-value action remains the lineup swap, not a trade — bench Wolf, field Brackelmann, go 5-3-2. It costs nothing, needs no capital, and today's dated Augsburg probable XI re-confirms both halves of it: Brackelmann inside the first eleven with no status icon, Wolf outside it carrying an Angeschlagen marker. Everything else on the board is a value trade, and value trades never outrank a free points upgrade."
+  "headline": "Three qualifying flips are live and the largest of them, Pinckert, expires inside two hours — bid exactly market value on each and never raise.",
+  "headline_short": "Three qualifying flips are live and the largest of them, Pinckert, exp",
+  "detail": "Three qualifying flips are live and the largest of them, Pinckert, expires inside two hours — bid exactly market value on each and never raise. Separately, the lineup is still fielding Wolf, who carries a fitness flag, while Brackelmann sits on the bench; switching to 5-3-2 is free and is the only change that adds expected points to this matchday. The leveraged position is unchanged and the unwind lever, the Gregoritsch sale, is still untouched and still correct to execute late rather than now. Lock is three days out, so nothing here is forced."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "The Gregoritsch sale stands, unchanged in substance and re-confirmed on a dated primary source this run: he sits outside Augsburg's probable eleven for the Elversberg fixture with no status icon, which is a selection call rather than an injury. His season average is backward-looking, earned while he was starting, so it is not what a sale gives up — a benched striker scores near nothing. The timing rule is unchanged too: sell him LATE, not now, because he is the designated unwind leg and his value is still ticking upward. Selling him drops the squad to eleven and leaves exactly one legal shape, which forces Wolf into the eleven — that cost is real and is the reason the sale waits rather than being taken today. The standing manager offer on Deman is still to be refused; it remains a stranding trap, not merely an underpriced bid.",
+  "reason": "Gregoritsch remains the sole unwind leg and the call is unchanged from the overnight runs. He is fit — there is no availability case against him — but he is not starting: Augsburg's own team sheet for the Bayern match benched him, and the match report lists him with no rating and no substitution marker, meaning he never came on. His season average is backward-looking, carried by the first and third matchdays; his last two returns are a modest score and a negative cameo. Against that, he is still appreciating on the daily tick, which is why the instruction is to sell him late rather than now — every tick held is value captured at no points cost, since a benched striker scores near nothing either way. Sell him in the final hours before lock, not today.",
   "standing": [
    {
     "name": "Michael Gregoritsch",
@@ -201,7 +201,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing on the board earns a points buy this run. The binding gap is in goal — a sole keeper carrying a fitness flag — and the only keeper listed is a manager ask priced far above the band that manager asks actually clear at, so it stays an AVOID rather than becoming insurance. Everywhere else the squad is already covered or over-covered: five defenders for at most five slots, and the midfield candidates on offer are either below the players they would displace or flagged. Padding a position he can already fill is how capital gets spent for no points, so the recommendation is to buy nothing for points today and keep the spending power pointed at the flip slate.",
+  "reason": "No points buy this run. The binding gap is goalkeeper and it has no answer on this market: the only keeper listed is a manager ask priced far above the band at which manager asks actually clear, and taking it would cost real money for a body who is not clearly better than the keeper already owned. The two attractive outfield names on the board — El Mala and Chabot — both fail on fit rather than on merit: the squad already covers their positions, and both expire after tonight's value update, so buying either means carrying the cost through a tick without the flip mechanism paying for it. El Mala stays on watch because the points case is genuinely real and only the timing and the balance are wrong. Everything else on the board is already logged as an avoid.",
   "standing": [],
   "killed_this_run": [
    {
@@ -317,11 +317,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open and the mechanism is unchanged. Re-measured from the refreshed log this run, the rising-flag drift is flat for an eleventh consecutive run with no material decay, and the falling flag continues to predict the opposite — so no sign yet of rivals crowding the edge out. The trade is unchanged: bid EXACTLY market value on a Kickbase board listing carrying the rising flag whose expiry falls before tonight's update, and never raise. Losing the auction costs nothing; chasing a contested listing into the high premium cluster is what destroys the edge. The slate is capital-rationed against spending power rather than taken whole, and the top four fit underneath it with headroom. Two of the ranked listings expire within the hour, so in practice the slate is thinner than it looks. Every flip must be sold back after the update and before the matchday locks — selling to Kickbase pays exactly market value with no spread, so the unwind is mechanical. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
+  "reason": "The edge is re-measured again this run and has not decayed for an eleventh consecutive run: rising-flagged players overwhelmingly rise at the next update, falling-flagged ones fall, and selling back to Kickbase pays exactly market value with no spread — re-confirmed today by another manager's instant sale clearing at exactly market value. Three board listings pass every test tonight: Pinckert, Henrichs and Haberer are all priced at exactly market value, all flagged rising, all with a clean status flag, and all expiring before tonight's update. Pinckert is the big one and also the urgent one. All three together sit comfortably inside spending power. Bid exactly market value on each and never raise — two straight losses by small margins are tempting but paying even a few per cent over turns a reliable gain into a loss. Four listings were rejected and the reasons are logged so no later run re-derives them; the sharpest is Simpson-Pusey, who misses the update by about a minute. Asllani is a candidate for tomorrow's window, not tonight's. Two things stay unresolved and are worth restating: it is still unknown whether Kickbase caps squad size, which would cap how many flips can run at once, and the measured edge comes from one league over one period and will decay if the other traders crowd into it — the four most active flippers here were last season's top four.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Swept clean apart from the two known flags, and neither changed this run. The keeper's doubt narrows without resolving: he is out of midweek European duty and not training, but the club continues to state him as first choice, so the decision point is late in the week rather than now. Wolf carries a doubtful marker on today's dated probable XI and sits outside the eleven, which is the second half of the case for the lineup swap. No squad player is newly injured, suspended, benched or carrying dated news that he may leave the league. Searches for current keeper news returned only last-season material — February and May 2026 items — which is the known date trap and was discarded rather than used.",
+  "sweep": "Nothing newly injured. The status flags are unchanged from the previous run: the keeper and Wolf both carry a flag, everyone else is clean. The keeper situation has not moved either — he is out of midweek European duty and not training, but the sporting director has restated him as first choice, so the doubt narrows without resolving, and the decision point is still Thursday or Friday rather than today. The league-wide injury table could not be fetched this run, both URLs erroring, so the live status flags are the instrument being relied on. No current dated news surfaced on the flip candidates, which does not matter: a pure value flip needs only the transfer check, and the German window is shut until January.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -516,7 +516,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=723, -2,20% to +443,38%"
+   "v": "n=727, -2,20% to +443,38%"
   }
  ]
 }
