@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-15T00:55Z",
+ "run": "2026-10-15T02:50Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10871289,
   "floor": -48886482,
   "spending_power": 38015193,
-  "hours_to_lock": 41.57,
-  "exposure": "The balance is negative and must be back to non-negative before the matchday locks, or the entire matchday scores zero. That risk outranks everything else on this page. Two unwind legs exist and they are mutually exclusive — selling both drops the squad to ten and triggers the penalty. There is one more market-value tick before the lock, and both legs are rising, so the standing instruction holds: do not sell before tonight's tick. The hard fallback deadline leaves a comfortable margin after it. Georg chose to list Gruber as a manager ask rather than sell instantly; that ask is well above the band manager asks actually clear at and has drawn no offers since it went up, so expect it to sit. It costs nothing while it sits, and the instant-sale fallback covers it.",
+  "hours_to_lock": 39.66,
+  "exposure": "The balance is negative and has been all run. That costs nothing until the instant the matchday locks, and the lock is still well over a day away, so it constrains nothing except that it must be unwound in time. The unwind is a single sale with a hard fallback set comfortably ahead of the lock, and the surplus it leaves is thin but positive even assuming no tick gain whatsoever. A flip on top of it stays inside that surplus at worst-case values. The real risk here is not arithmetic but execution: the last instruction to sell instantly was carried out as a listing instead, and a listing that does not clear is not an unwind.",
   "must_restore_by": "2026-10-16T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "Goalkeeper, and it is unfillable rather than merely unfilled. Neuer is the only keeper and still carries a fitness flag. A full sweep this run turned up nothing newer than two days ago: no diagnosis, no return date, no training report. Kompany's own words were that he did not know whether it was days or weeks and did not think it was serious. The club's own matchday preview, published since, mentions him only conditionally — a hedge in a statistics piece, not a status. Every startable keeper on the board fails for a reason that is not price: one is blocked while the balance is negative, one cannot be unwound without leaving too few outfield players, one is priced far outside any band, and the cheap backup insures nothing because a keeper at the floor price does not start and scores the same zero as an injured Neuer would. The decisive source is Friday's Bayern press conference, which lands before the lock with hours to spare. Hold the slot and read Friday.",
+ "binding_gap": "Goalkeeper. One keeper in the squad, carrying a status flag, with no affordable or unblocked insurance on this market. The gap does not resolve on data; it resolves on the pre-matchday press conference, which lands before the lock. Until then the correct action is to hold and watch, not to buy cover at a price that would force a second unwind leg.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 38015193,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 44,
+  "listings": 43,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "No trade is due in this window.",
-  "headline_short": "No trade is due in this window.",
-  "detail": "No trade is due in this window. The leveraged position is open but not yet urgent, the unwind must wait for tonight's market-value tick, and the market has not moved at all since the last run — zero new listings and zero settled transfers. The one action worth taking right now is free: fix the lineup. Everything else is a Friday decision."
+  "headline": "Nothing on the board changed and nothing needs buying — but two free things are still undone.",
+  "headline_short": "Nothing on the board changed and nothing needs buying — but two free t",
+  "detail": "Nothing on the board changed and nothing needs buying — but two free things are still undone. The fielded eleven is wrong: Brackelmann is on the bench behind Gruber, the player who is being sold, so the swap costs nothing and gains points. And the flip should be bid on Baum first rather than Rothe, because Baum's auction resolves hours before the daily tick while Rothe's resolves minutes before it — bidding Baum now gives two shots at one flip instead of one shot with no fallback. The Gruber unwind itself needs no action until after tonight's tick."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Gruber remains the funding leg and the better one. Selling him costs nothing in fielded points, because the player who replaces him in the eleven scores more than he does, and the replacement is already in the squad — no buy has to land first. Gregoritsch is the fallback leg only, and a worse one: it leaves a thinner shape and a lower fielded total. Take one, never both.",
+  "reason": "Gruber remains the unwind leg and the call is unchanged. Georg acted on it, but as a manager ask rather than the instant sale that was called for, and the ask has now sat most of a day with no offers at a markup roughly double the measured manager-ask clearing band. That is not a failure yet: the hard fallback sits after tonight's tick and well before the lock, and the tick works in both directions at once — on a rising flag it lifts what an instant sale pays and simultaneously narrows the standing ask toward the band where manager asks actually clear. So there is nothing to do on this leg before tonight. If the ask has still not cleared by the fallback, pull it and sell to the board; that is the whole plan and it has not changed. Gregoritsch stays the fallback leg and is mutually exclusive with Gruber — exactly one of them goes, never both, or the squad falls below eleven.",
   "standing": [
    {
     "name": "Michael Gregoritsch",
@@ -210,9 +210,18 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing. The binding gap has no answer on this board, and no other position is worth touching. The upgrades that would actually add points all die on the same constraint rather than on price or on merit: with the balance negative, buying them requires raising more before the lock than the permitted number of sales can raise, or it leaves too few outfield players to field a legal eleven. That is worth stating plainly because the shortlist keeps regenerating — the candidates are genuinely good players at fair asks, and they are still unbuyable this cycle. Do not pad a position already covered; the defence is deep and the problem is in goal.",
+  "reason": "No buy. The binding gap is the keeper and the market still offers no sane insurance for it. The one board keeper priced at value is blocked while the balance is negative, by the terms of his own block. The cheap board keeper is under a standing avoid that has not expired. The two manager-ask keepers both sit above the band where manager asks clear, and neither would add a point unless the first-choice keeper misses — in which case the better of them is still a downgrade on recent returns. Buying one would also deepen the deficit enough to need two unwind legs before the lock instead of one. The decisive source on the keeper is the pre-matchday Bayern press conference, and it lands before the lock, so the decision belongs there and not here. Nothing outfield on a completely static board improves the eleven.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "SOURCE TRAP — bulinews.com \"Kompany confirms Neuer start ... ahead of Leipzig clash\"",
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
+    "premium_pct": null,
+    "why": "ADDITIVE to Ak7is7p and Acvydzk. A future run searching the Neuer question will surface bulinews.com/kompany-confirms-neuer-start-provides-squad-update-ahead-leipzig-clash and it reads exactly like the resolution: \"Manuel Neuer will start tomorrow, confirmed FC Bayern coach Vincent Kompany at a press conference on Tuesday.\" IT IS NOT. Fetched 2026-10-15T02:45Z: the page carries NO publication date (footer only \"Copyright Bulinews.Com - 2026\"), and its own body refers to \"Wednesday's quarter-final\" — a DFB-Pokal QUARTER-FINAL against Leipzig, not Bundesliga MD6. Undated plus a cup fixture that is not MD6 = stale by the standing rule. It also contains no mention of the foot problem at all, which a genuinely current item could not omit. DO NOT let it close W4proal/Whrxs00. Two further traps from the same sweep: kicker.de/bayern-gegen-leipzig-2026-dfb-pokal-5180628 (cup, not MD6) and kicker.de/bayern-gegen-leipzig-2026-vereine-freundschaftsspiele-5202513 (FRIENDLY). The only decisive source remains the Bayern presser before MD6."
+   },
    {
     "name": "Josip Stanisic — qualifies as a flip on every flag and FAILS FLIP SIZING by 64.521. This is the sizing boundary, measured.",
     "pos": "DEF",
@@ -311,26 +320,17 @@
     "mv": 8470998,
     "premium_pct": 27.5,
     "why": "Read 2026-10-14T10:45:20Z against the 08:45:20Z previous read. Exactly two listings are new; neither needed a news check because both die mechanically. POTULSKI (11665, DEF, tid 18, posted by Volte_28 at 2026-10-14T10:43:57Z, two minutes before the read): carries a u, so manager ask, NOT a board listing — therefore NOT a flip, whatever his mvt 1 says, because the tick edge is only harvestable by buying at exactly mv and selling back to Kickbase at mv. prc 10.800.888 against mv 8.208.374 = +31,59%, which is far outside the measured manager-ask low cluster (+3,06%, +4,35%) and above even the contested-BOARD high cluster (+16,71%, +20,96%). AS A POINTS BUY: ap 62, which loses to every defender Georg already fields (Brackelmann 123, Gruber 94, Deman 89, ter Horst 88) and would displace nobody — he only beats Nakuzola 27, and the fix for Nakuzola is Hqrsd4w's free lineup swap, not a 10,8M purchase. NMECHA (3069, MID, tid 3 Dortmund, posted by Lukas at 2026-10-14T09:01:27Z): also a manager ask, prc 29.300.000 against mv 27.806.792 = +5,37%. That is nearer the low cluster and he is a genuine player (ap 145), but he is NOT a flip (manager ask) and as a points buy he loses to Nusa 193 and Engelhardt 134 is only 11 behind him for a fifth of the money — 29,3M for +11 ap over the man he would replace is the worst points-per-euro on the board, and it would open 29,3M of leverage on top of an already-negative -10.881.289 balance that must be cleared by the 2026-10-16T18:30Z lock. If Nmecha is ever re-listed at or below mv by the BOARD, reconsider him on the tick mechanism only."
-   },
-   {
-    "name": "Nathan De Cat — the one listing new since the 06:45Z read",
-    "pos": "MID",
-    "club": "14",
-    "ask": 3843662,
-    "mv": 3959672,
-    "premium_pct": -2.93,
-    "why": "Posted to the Kickbase board at 2026-10-14T08:39:41Z, the only new listing since the previous run. AVOID ON POINTS, unconditionally: ap -6 on p -11, a Gladbach teenager with no established place, and he would displace nobody in a squad whose worst fielded outfielder once Hqrsd4w is executed has ap 88. He is also not a sell-side target. ON THE FLIP SIDE he technically qualifies — Kickbase listing, prc = mv = 3.843.662, mvt 1, so the measured +2,95% next-tick drift applies and the expected capture is about 113.388. He is NOT recommended even there, and the reason is sequencing, not merit: W6qafcg forbids opening any flip before the Gregoritsch sale, Wa3grbd forbids that sale before tonight's 2026-10-14T20:00Z tick, and this listing expires 2026-10-15T09:07Z, so the window that remains after both constraints clear is real but the capture is the smallest on the qualifying board bar Schallenberg. If a flip is opened at all in that window, Stanisic and Rothe dominate him by three to four times the expected capture at the same mechanical risk. Logged so the next run does not re-derive him from scratch."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The measured edge is intact. The next-tick drift on rising players was re-measured from the event log this run and is flat-to-better against the stored baseline, on a sample that has more than doubled — a twenty-second consecutive reading with no decay. The standing flip stands: a board listing priced at exactly market value, rising, fit, with no manager behind it, expiring shortly before tonight's tick so it is held through it. Bid exactly market value and never raise; losing the auction costs nothing, and chasing a contested listing destroys the edge. Transfer risk is nil with the window closed. One correction worth carrying forward: this flip survives the worst-case tick only if the bad-case unwind leg is Gregoritsch rather than Gruber, and that branch costs fielded points. Size every flip against the worst tick on both legs, not the average. On that test the next-largest candidate on the board fails by a hair despite passing every mechanical flag, which brackets where the ceiling currently sits. No second concurrent flip — two at once cannot be unwound without a third sale that drops the squad below the floor. Two questions stay open: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
+  "reason": "The flip window is open and the mechanism is intact — the rising-flag drift re-measured flat for a twenty-third consecutive run, with no material decay. The change this run is sequencing, not selection. Baum and Rothe are both Kickbase board listings priced at exactly market value with a rising flag, a clean status and no bids. Bid Baum first, at market value exactly, and never raise: his auction resolves many hours before tonight's tick, so winning him banks the flip cleanly and losing him leaves Rothe untouched for the rest of the day. Rothe alone is a single shot that resolves less than half an hour before the tick, with nothing behind it. Do not bid both — winning both would open two positions needing three sale legs in the hours before the lock, and the execution record this week is the argument against that, not the arithmetic. Worst case, assuming no tick gain at all, either flip unwinds alongside the Gruber sale to a positive balance and eleven players, with the fielded eleven untouched because the flipped man is never fielded. Two open questions stand, as they have: whether Kickbase caps squad size, which would cap how often this can be run, and that the measured edge comes from one league over one period and will decay if rivals crowd into it — they are already the most active traders here.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "The squad sweep is clean apart from Neuer. The matchday injury and suspension radar names nobody from this squad, and the only other fitness flag in the squad already carries a dated positive. Three new dated source traps were found and logged this run, and all three would have mattered: a goal.com piece whose headline reads as a current ruling-out is from February and describes a calf tear, not the current foot problem; a goalkeeper-crisis article whose headline matches the present situation almost word for word is two seasons old; and the top search result for a Bayern probable eleven against Leipzig is seven years old and still starts Lewandowski and Thiago. The current complaint is a foot. Any item naming a calf or a muscle tear is last season and is wrong in both directions.",
+  "sweep": "No new dated information on the keeper in over two days. The newest genuine item still has him benched on medical grounds for the midweek European tie, with no diagnosis and no return date published. Everything fresh that surfaced this run was a trap and has been logged as one: an undated piece that reads like a confirmation but is previewing a cup quarter-final, plus a cup fixture page and a friendly fixture page under near-identical headlines. None of them resolves the matchday question. The squad sweep is otherwise clean — the only other status flag is the midfielder's, which already carries a dated positive.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -525,7 +525,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=747, -2,20% to +443,38%"
+   "v": "n=748, -2,20% to +443,38%"
   }
  ]
 }
