@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-15T14:53Z",
+ "run": "2026-10-15T16:53Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 154435,
   "floor": -48893082,
   "spending_power": 49047517,
-  "hours_to_lock": 27.61,
-  "exposure": "No leveraged position is open right now and the lock is more than a day away, so the standing rule keeps this off the push list on its own. What matters is the leverage the current plan would create. Winning Banzuzi opens a deficit that the conditional Deman sale closes with room to spare, and that path is safe. Adding the goalkeeper swap on Friday is what breaks it: buying Baumann costs materially more than selling Neuer returns, so the whole structure only clears zero if the Banzuzi leg comes in cheap enough. At the price currently bid it does not, and a negative balance at matchday start scores nothing for the entire matchday. The Rothe flip, even at its measured expected return, closes only part of that gap.",
+  "hours_to_lock": 25.6,
+  "exposure": "Winning the auction tonight opens a leveraged position, and a second one if the flip also lands. Both unwind comfortably before the lock and there is more than a day of room, but the order matters: the funding sale and the flip sell-back both have to be done, and the goalkeeper swap must never be executed if it would leave the balance under water at the lock. A negative balance at matchday start scores zero for the entire matchday, which is worth vastly more than anything the goalkeeper swap can add. That risk outranks every other consideration here.",
   "must_restore_by": "2026-10-16T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Still the goalkeeper, and it got sharper rather than softer. Neuer is the sole keeper, is forced into the eleven at squad minimum, and carries a non-zero status flag with a falling market value. The freshest dated source this run — comunio's probable lineups, published early this afternoon — puts Urbig in the Bayern goal and says in plain terms that whether Neuer will be fit enough is still uncertain. That is the first dated item to place him outside a Bundesliga eleven rather than just outside a cup tie. It tilts the odds under the break-even but does not settle them: Kompany's press conference is Friday morning, comfortably before both the Baumann listing's expiry and the lock. Baumann was checked this run and is fit — no injury history flagged, and he has played almost every league minute for Hoffenheim. The problem is no longer whether to hedge. It is whether the hedge can still be paid for.",
+ "binding_gap": "Still the goalkeeper, and the correction this run is that the hedge has got harder, not easier. The ceiling the last run computed was arithmetically right but used market values from before tonight's update. Both hedge legs move the wrong way overnight — the replacement keeper is rising and so costs more tomorrow, while Neuer is falling and so funds less — and that swing is larger than the cushion the lowered offer bought. On central estimates the full swap now lands slightly under water even with the flip won, and clearly under water without it. So do not lower the offer again to chase the cushion: the hedge only exists if Banzuzi is won, and shaving the bid weakens exactly the leg that funds it. Make the goalkeeper call Friday morning, after the overnight update has fixed every number and after the coach has spoken, and execute it only if the end state is non-negative. If it is not, keep Neuer and accept the risk.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 49047517,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 56,
-  "cheapest": 600000,
-  "cheapest_slot_filling": 600000,
-  "expiring_within_2h": 0
+  "listings": 58,
+  "cheapest": 500000,
+  "cheapest_slot_filling": 500000,
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "ONE TIME-BOXED ACTION, AND IT IS A CORRECTION TO A BID ALREADY PLACED.",
-  "headline_short": "ONE TIME-BOXED ACTION, AND IT IS A CORRECTION TO A BID ALREADY PLACED.",
-  "detail": "ONE TIME-BOXED ACTION, AND IT IS A CORRECTION TO A BID ALREADY PLACED. Georg's live offer on Banzuzi sits at 9.000.009, which is above mv and above the ceiling that the Friday goalkeeper hedge can tolerate. Lower it to roughly 8.447.000 before the auction closes this evening. Everything else — the conditional Deman sale, the Rothe flip, the Neuer decision — stays exactly as the last two runs set it."
+  "headline": "Hold the line.",
+  "headline_short": "Hold the line.",
+  "detail": "Hold the line. Georg already did the one thing the last run asked for — the Banzuzi offer has been lowered to exactly the figure that call named, it is still the only offer on the listing, and the auction settles inside the next hour and a half. Leave it alone. The one unplaced action is the Rothe flip bid, which must go in before his listing expires this evening, at exactly his market value and not a cent more. Everything else waits for Friday morning."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Deman remains the funding leg and nothing more. He is not a bad player and is not being sold on merit — he goes only if the Banzuzi auction is actually won, because the squad is at exactly eleven and an unconditional sale drops it to ten for the hundred-point penalty. Selling him back to Kickbase pays his market value exactly, with no spread, which is what makes the swap cash-positive. If the Banzuzi bid loses, this sale is void. No other sale is recommended. Neuer's sale is live only as the second leg of the Friday goalkeeper swap, never on its own and never before a replacement keeper has actually been won — losing a contested auction after selling him would leave the squad with no goalkeeper at all.",
+  "reason": "Deman only, and only after the Banzuzi auction has been won. He is not a bad player and this is not a sale on merit — it is the funding leg of the swap, and an instant sale back to the board pays his market value with no spread, which is what makes the swap cash-positive. Sell him after tonight's value update rather than before it: he is rising, so waiting is free money. No other sale is recommended, and no other sale is affordable at eleven players.",
   "standing": [
    {
     "name": "Olivier Deman",
@@ -191,7 +191,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Banzuzi is the buy, and the only change is the price. He was re-verified this run against two separately dated sources from today: he has started every Bundesliga match this season and is named in Leipzig's probable eleven. Competition from a returning midfielder is noted in one of those pieces but has not displaced him. He is a board listing, so a bid at or just above market value is the right shape, and his is currently the only offer on it. The case for pulling the bid down is not that the higher price is unaffordable in isolation — it is that the margin above market value is almost exactly what the goalkeeper hedge needs on Friday. Giving up a few points of win probability on a thirty-odd point upgrade to keep alive an option worth more than that is the better trade. Caci is the one genuinely tempting alternative that appeared since the last run — the highest average on the board today, a defender, listed at market value with a rising flag and a clean fitness record. He is rejected anyway, and the reason is arithmetic rather than news: every pairing that brings him in ends the matchday on a negative balance, and he is worth only a handful of fielded points more than Banzuzi. Nothing else on the board survives either the price test or the position test.",
+  "reason": "Banzuzi is verified fit and is in today's dated probable Leipzig eleven for Saturday, in central midfield. The offer is live, it is the only offer on the listing, and it has been sitting unchallenged for the better part of a day. Do not touch it and do not raise it. Winning him is worth a real points gain on the fielded eleven and he is also what makes the goalkeeper option affordable at all — without him there is no funding leg and the hedge does not exist.",
   "standing": [
    {
     "name": "Ezechiel Banzuzi",
@@ -207,6 +207,15 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "AVOID Maximilian Kinzig (11666, Schalke, GK) — NOT GK INSURANCE, AND A FUTURE RUN WILL BE TEMPTED. New board listing 15.10 16:19Z at mv 500.000, mvt 0, st 0, exs 66394 -> 16.10 10:45Z, i.e. before the lock and cheap. He has NO p and NO ap field at all: never played, Schalke third keeper. A benched keeper scores the same ZERO as an injured Neuer, so he insures nothing — he is only a 12th body that costs 500k of unwind headroom. Also mvt 0, so no flip value either. The ONLY real GK hedge on this market is Baumann (524).",
+    "pos": "GK",
+    "club": "18",
+    "ask": null,
+    "mv": 500000,
+    "premium_pct": null,
+    "why": "Cheap GK bodies look like Neuer insurance and are not. Same logic kills Lehmann (6149, 600k ask) and Diehl (4589)."
+   },
    {
     "name": "AVOID Anthony Caci (18, Schalke, DEF, ap 129) — THE BIGGEST ap ON THE BOARD TODAY AND HE STILL DIES ON END-STATE CASH. Board listing, no u, prc=mv 10.479.192, mvt 1, st 0, listed 15.10 12:52:39Z, expires 16.10 ~04:26Z. Not in the Ligainsider injured/suspended table.",
     "pos": "DEF",
@@ -305,26 +314,17 @@
     "mv": 29908666,
     "premium_pct": 0,
     "why": "CORRECTION, NOT A REPEAT. Avqamzh avoided him as a points buy but explicitly flagged him as \"the largest MOVERS candidate on the board\". On the flip test he passes every flag and FAILS ON UNWIND CAPACITY, and a future run must not resurrect him on the strength of that flag. The mechanism is fine: Kickbase board, prc 29.908.666 = mv exactly, mvt 1, st 0, expires 2026-10-15T19:27Z, 33 minutes before the mvud tick, expected capture ~885.000 — by far the biggest on the board. THE ARITHMETIC THAT KILLS IT: buying takes the balance from -10.871.289 to -40.779.955 and the squad to 13, which permits EXACTLY TWO sales before the eleven-man floor. The only two legs that exist are Upamecano sold back and Gregoritsch (13.181.715) — selling Gruber as well would be a third sale and drops the squad to ten for -100. At the measured mvt-1 worst case of -8,71% he returns 27.303.532, so 27.303.532 + 13.181.715 = 40.485.247 against 40.779.955 — SHORT BY 294.708, i.e. a negative balance at the MD6 lock and ZERO POINTS for the entire matchday across ~1.200 fielded ap. A ~885.000 expected capture is not worth a ~9% chance of forfeiting the matchday, and this is the same oversized-flip failure A90zvri recorded for Chabot and Brown. Rothe (Fofh3u1) is the correctly sized expression of the identical edge. SECOND, UNRELATED TRAP LOGGED HERE SO IT IS NOT WALKED INTO: flashscore.de \"Bundesliga 6. Spieltag — Verletzungen und Sperren in der Uebersicht\" (slug lp4qGeHG) carries NO publication date, its own metadata says 2023/24, and it lists Neuer with an Unterschenkelbruch, Thomas Mueller at Bayern, Gregoritsch at Freiburg, Guirassy at Stuttgart and Darmstadt and Bochum in the league. It is three seasons old and must never be used as an MD6 fitness source."
-   },
-   {
-    "name": "Konrad Laimer and Maurice Krattenmacher — the only two listings new since the 16:45Z read; both die mechanically, neither needs a news check",
-    "pos": "DEF",
-    "club": "2",
-    "ask": 23500000,
-    "mv": 21360492,
-    "premium_pct": 10.02,
-    "why": "LAIMER (2038, Bayern, DEF, ap 118): MANAGER ask by Lukas, listed 2026-10-14T17:57:47Z at 23.500.000 against mv 21.291.093 = +10,37%. The measured manager-ask clearing band is low single digits (+3,06%, +4,35%); +10,37% is more than double the top of it, so the ask is a seller's price and paying it is a guaranteed paper loss on day one. It also fails on squad shape — Georg carries 5 DEF for a 4-4-2 and the binding gap is GK, not defence — and on envelope: 23,5M against spending power 37.859.207 with a -10.871.289 balance to clear before the lock would force two unwind legs instead of one. Dead three times over. Do NOT revisit above mv. KRATTENMACHER (8252, Bayern II/77, MID, ap 77): board listing, prc 7.831.913 = mv EXACTLY, no u, mvt 1, st 0 — he passes every structural flip test and dies on TICK TIMING alone, which is why he is logged rather than ignored. exs 113.831 at the 18:45Z read puts his expiry at ~2026-10-16T02:22Z; the next 20:00Z market-value update after that is 2026-10-16T20:00Z, which falls AFTER the MD6 lock at 2026-10-16T18:30Z. He would be bought, never ticked, and unwound at exactly the price paid — zero gain for 7,8M of spending power held across the lock, plus the unwind risk of carrying a thirteenth player into a leveraged position. As a POINTS buy he is also weak: ap 77 against Tanaka's 66 is +11 for 7,8M that Georg does not have. REVERSAL: if he is relisted with an expiry before 2026-10-15T20:00Z he qualifies as an ordinary mvt-1 board flip and this entry carries no force."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is still open but it closes tonight, and Rothe is the last listing that can use it. His auction ends shortly before tonight's market-value update; every other board listing runs past it, and the following update falls after the lock, so this is the final tick of the matchday that any flip can capture. He is a board listing priced exactly at market value with a rising flag and a clean status, which is the exact shape the measured edge applies to. The rule holds: bid exactly market value and never raise. Winning costs nothing if the tick behaves, and losing the auction costs nothing at all. The drift was re-measured from the event log this run and has not decayed — the rising flag still predicts a gain at the next update on a large sample, with the great majority of observations rising. The decision point is after tonight's tick, not now: sell him straight back for the tick, rather than keeping him and selling a midfielder instead, because the few extra fielded points that keeping him buys are inside the measurement noise while the capital is not. Two open questions stay open: whether Kickbase caps squad size, which would cap how often this can be run, and the fact that the edge is measured in one league over one period and will erode if rivals crowd in.",
+  "reason": "One qualifying flip, same as the last run: Rothe. He is a board listing priced exactly at market value with the rising flag, and he is the last listing that expires before tonight's value update — every other board listing runs past it, and the next update after that falls after the matchday locks, so no later flip can capture a tick at all. Bid exactly his market value and never raise; losing costs nothing, chasing a contested listing into the high cluster destroys the edge. Sell him straight back after the update. The measured drift re-reads unchanged from the event log this run with no sign of decay, but note two things that are still open: whether Kickbase caps squad size, which would cap how many flips can run at once, and that this edge is measured in one league over one period and will fade if rivals crowd in. The direct database query behind the re-measurement could not be run — the ledger store is still unreachable at account level — so these figures come from the same event log by the other path, not from memory.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Squad sweep clean apart from Neuer. Banzuzi verified fit and starting against two sources dated today. Baumann verified fit. Rothe and Caci both absent from the injured-and-suspended table. No squad player carries dated news suggesting he may leave the league. One source conflict worth recording: a Ligainsider headline still reads that Neuer remains the number one with rotation open, but it carries no visible date and the club page behind it was last updated two days ago and shows him only as knocked up. Under the standing rule an undated item is treated as stale, so the dated comunio lineup from today is the better evidence.",
+  "sweep": "Neuer is the story and it moved today. Three separately dated items from this afternoon all say the same thing: he missed Thursday's team session entirely and did individual work only, his coach called the midweek rest purely medical and said out loud that nobody knows whether it is two days or two weeks, and the decision comes after Friday's final training. Today's dated probable eleven puts the backup in goal with Neuer only in brackets. This pushes the chance he starts well below the level at which keeping him beats replacing him. Nothing else in the squad carries a flag — every other player reads clean on Kickbase's own status field, and the two Leipzig players held are both in today's probable eleven.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
