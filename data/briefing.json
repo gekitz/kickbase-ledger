@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-15T10:55Z",
+ "run": "2026-10-15T12:51Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 154435,
   "floor": -48893082,
   "spending_power": 49047517,
-  "hours_to_lock": 31.58,
-  "exposure": "No leveraged position is open at this moment — the balance is positive and the squad sits at the floor. Both open bids are unwindable: if both land, two sales restore both a non-negative balance and the eleven-man minimum well before the lock, and if only one lands the single matching sale does the same. The goalkeeper decision carries its own rule, and it is the one that must not be broken: the replacement is a contested board auction that can be lost, so the existing keeper is never sold first. Doing so in a squad of eleven would leave no keeper at all.",
+  "hours_to_lock": 29.64,
+  "exposure": "No leverage is open. Balance is positive and spending power comfortably covers both live bids together. The exposure to watch is conditional: if both bids win, the balance goes deeply negative and must be unwound before the lock by selling Deman and selling the flip back, and a negative balance at matchday start scores zero for the entire matchday. Both unwind legs exist and both pay market value with no spread, so the risk is one of execution, not of capacity.",
   "must_restore_by": "2026-10-16T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no formation hole — a legal eleven can be fielded today. The binding constraint is the eleven-man floor itself, which makes every buy self-funding or not at all, and the goalkeeping slot, which is the only position where a single piece of news could cost a large block of points with no substitute available. The weakest fielded slot is the cheap defender, and the only board listing that would genuinely upgrade it is the one already being bid on as a flip, which creates a real choice tonight rather than now.",
+ "binding_gap": "The keeper remains the binding gap and it is still not resolvable today. He is the only keeper, he carries a status flag, he has not featured in days, and the one piece of insurance on the board is a board keeper whose listing runs until shortly before the lock. That timing is the point: the decisive press conference falls on Friday morning, hours before both the listing expires and the matchday locks, so the decision can be taken with the answer in hand rather than guessed at now. The keeper must never be sold first — losing a contested auction for the replacement would leave none at all.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 49047517,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 51,
+  "listings": 57,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 3
  },
  "squad": [
   {
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Hold the line — both live positions are intact, valid and correctly priced, and nothing new on the board earns a third leg.",
-  "headline_short": "Hold the line — both live positions are intact, valid and correctly pr",
-  "detail": "Hold the line — both live positions are intact, valid and correctly priced, and nothing new on the board earns a third leg. This is a quiet run with one genuinely new finding, and it is about the goalkeeper's timing rather than about a trade. Bayern play Leipzig on SATURDAY, not Friday, so the decisive Neuer press conference lands on Friday morning, hours before the lock and before the only realistic replacement keeper's auction resolves. That sequencing turns an unresolved risk into a scheduled decision. No action is required today."
+  "headline": "Nothing in the 10:45Z plan changes.",
+  "headline_short": "Nothing in the 10:45Z plan changes.",
+  "detail": "Nothing in the 10:45Z plan changes. The two live actions are the same two: bid exactly mv on Banzuzi (points), bid exactly mv on Rothe (flip), and sell Deman to Kickbase ONLY if the Banzuzi bid is actually won. Neither bid shows an offer count yet, so if Georg has not placed them they are still unplaced with several hours left on each. The squad injury sweep came back clean and Banzuzi re-verified as a genuine starter, so there is no reason to re-open anything. Balance is positive and the lock is more than a day away, so there is no leverage risk live right now."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Only one sale is live and it is conditional, not a judgement on the player: the standing instruction to instant-sell Deman is the funding leg of the Banzuzi bid and nothing else. It fires only if that board auction is actually won. If the bid loses, the call is void and Deman stays — selling him unconditionally would drop the squad to ten and invite the hundred-point penalty. He is fit, starting and perfectly good; this is arithmetic, not merit. No other sale is recommended.",
+  "reason": "Only one sale is live and it is strictly conditional: Deman, to Kickbase at exactly market value, and ONLY after the Banzuzi auction has actually been won. This is the funding leg of a swap, not a judgement on Deman. If the Banzuzi bid loses, the sale is void — the squad is at exactly eleven and selling him unconditionally drops it to ten for the minus-hundred penalty. Instant sale to Kickbase pays market value exactly with no spread, which is what makes the swap cash-positive.",
   "standing": [
    {
     "name": "Olivier Deman",
@@ -191,7 +191,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "The Banzuzi bid stands and is re-verified this run. A dated Ligainsider piece from 14.10 has him established in Leipzig's central midfield, and the Kickbase record shows him starting all five matchdays with a clean status flag. Two caveats worth carrying: he came off against Frankfurt with calf cramps, and Rocco Reitz is back from injury, which sharpens the competition for that slot. Neither is enough to pull the bid. The bid is exactly market value and must not be raised — today's board clears have all come in soft, in the low single digits, which is unusually friendly to an exact-value bid. Nothing else on the board is a points buy: every manager ask is priced above market value, which this ledger has never paid, and the remaining board listings are either unaffordable against the floor or resolve too late to matter.",
+  "reason": "Banzuzi is the buy and he is the only one. He is a Kickbase board listing priced at market value exactly, rising, no status flag, and this run re-verified him from the performance record rather than from news alone: he has started every matchday of the current season with real minutes in each, and his scoring is the best of any listing at this price. Bid market value exactly and never raise. He replaces Deman in the eleven and moves the shape from four at the back to three. Nothing else on the board clears the bar: the manager asks are all priced well above the measured manager clearing band, and the remaining board listings are either falling, flagged, or already on the avoid list.",
   "standing": [
    {
     "name": "Ezechiel Banzuzi",
@@ -207,6 +207,24 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "SOURCE TRAP ON AN OWNED PLAYER — goal.com \"Verletzungs-Schock fuer den BVB: Faellt Neuzugang Serhou Guirassy laenger aus als gedacht\" is 07.08.2024, TWO YEARS old, about a knee issue at his BVB medical. Guirassy is FIT.",
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
+    "premium_pct": null,
+    "why": "Fetched 15.10 12:52Z, byline 07. Aug. 2024. Nearly raised a false injury alarm on a fielded ap-146 striker. Current MD6 radar (12.10, upd 15.10) does not list him at all. st 0."
+   },
+   {
+    "name": "SOURCE TRAP, WORST YET — spox \"FC Bayern: Baldiges Comeback? Manuel Neuer ist zurueck im Training\" is 25.04.2025, EIGHTEEN MONTHS OLD, and it is about a CALF tear, not the foot. Its sidebar even prints \"17. Okt. 2026\" and can fool a date check.",
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
+    "premium_pct": null,
+    "why": "Fetched and date-checked 15.10 12:50Z. Byline \"25. April 2025 16:11\", SID/SPOX. It is the exact headline a run hoping for a Neuer recovery will click. Do NOT read it as a return-to-training ruling."
+   },
    {
     "name": "SOURCE TRAP — ligainsider name-ORDERING is not a starting eleven; it put Nusa outside the XI and the Kickbase data says 5 starts of 5",
     "pos": "",
@@ -253,15 +271,6 @@
     "why": "ADDITIVE to Ak7is7p and Acvydzk. A future run searching the Neuer question will surface bulinews.com/kompany-confirms-neuer-start-provides-squad-update-ahead-leipzig-clash and it reads exactly like the resolution: \"Manuel Neuer will start tomorrow, confirmed FC Bayern coach Vincent Kompany at a press conference on Tuesday.\" IT IS NOT. Fetched 2026-10-15T02:45Z: the page carries NO publication date (footer only \"Copyright Bulinews.Com - 2026\"), and its own body refers to \"Wednesday's quarter-final\" — a DFB-Pokal QUARTER-FINAL against Leipzig, not Bundesliga MD6. Undated plus a cup fixture that is not MD6 = stale by the standing rule. It also contains no mention of the foot problem at all, which a genuinely current item could not omit. DO NOT let it close W4proal/Whrxs00. Two further traps from the same sweep: kicker.de/bayern-gegen-leipzig-2026-dfb-pokal-5180628 (cup, not MD6) and kicker.de/bayern-gegen-leipzig-2026-vereine-freundschaftsspiele-5202513 (FRIENDLY). The only decisive source remains the Bayern presser before MD6."
    },
    {
-    "name": "Josip Stanisic — qualifies as a flip on every flag and FAILS FLIP SIZING by 64.521. This is the sizing boundary, measured.",
-    "pos": "DEF",
-    "club": "2",
-    "ask": 14085182,
-    "mv": 14085182,
-    "premium_pct": 0,
-    "why": "THE SECOND-LARGEST NON-BLOCKED FLIP CANDIDATE ON THE BOARD, AND THE ONE THAT DEFINES WHERE FLIP SIZING BITES. Kickbase BOARD listing, no u, prc 14.085.182 = mv EXACTLY, mvt 1, st 0, ofc 0, exs 39049 -> expires 2026-10-15T11:36Z. Every mechanical flag passes, and the expiry is BEFORE the 2026-10-15T20:00Z tick, which is correct for a flip (he is owned through the tick). Ranked on mv x the measured +2,96% mvt-1 drift he is worth ~+416.921, the best available after Upamecano (Ate5998, rejected) and Baumann (blocked). He still dies, on the joint bad-tick case, and the arithmetic is the point.\n\nTHE TEST. Balance -10.871.289. Buying him makes it -24.957.471. Squad goes 12 -> 13, so exactly TWO sales may be made while keeping 11 players. The unwind is Stanisic back to Kickbase (which pays exactly mv) plus ONE of Gruber / Gregoritsch.\n  Mean case (+2,96% on both): Stanisic 14.502.103 + Gruber 11.331.493 = 25.833.596 vs 24.957.471 = +876.125. Clears.\n  Joint bad case, using the WORST mvt-1 outcome in the log (-8,71%): Stanisic 12.858.363 + Gruber 10.047.126 = 22.905.489 = -2.051.982. ZERO MATCHDAY.\n  Joint bad case with the Gregoritsch leg instead, which is the rescue that saves the Rothe flip: Stanisic 12.858.363 + Gregoritsch 12.034.587 = 24.892.950 vs 24.957.471 = -64.521. STILL NEGATIVE, by 64.521.\nThere is no third leg: a 14-player squad minus three sales is 10 and triggers -100.\n\nWHY THIS MATTERS BEYOND STANISIC. FLIP Fofh3u1 (Rothe, 8.209.023) passes the SAME test only because it is smaller: Rothe's joint bad case rescued by Gregoritsch is 7.494.018 + 12.034.587 = 19.528.605 against a -19.080.312 deficit = +448.293. So with the balance at -10.871.289 and two sale legs available, the flip ceiling sits between 8,21M and 14,09M. Stanisic misses it by 64.521 — close enough that a future run must not eyeball it. SIZE EVERY FLIP AGAINST THE WORST-TICK CASE ON BOTH LEGS, NOT THE MEAN.\n\nREVERSAL: he becomes a legitimate flip the moment the deficit is closed. Post-unwind at a non-negative balance the joint bad case is trivially survivable and he is simply the biggest clean mvt-1 board listing available."
-   },
-   {
     "name": "Marius Funk — the 500.000 board keeper. It LOOKS like the insurance the Baumann reversal names. It is not, and it breaks the cheaper unwind leg.",
     "pos": "GK",
     "club": "9",
@@ -305,26 +314,17 @@
     "mv": 21360492,
     "premium_pct": 10.02,
     "why": "LAIMER (2038, Bayern, DEF, ap 118): MANAGER ask by Lukas, listed 2026-10-14T17:57:47Z at 23.500.000 against mv 21.291.093 = +10,37%. The measured manager-ask clearing band is low single digits (+3,06%, +4,35%); +10,37% is more than double the top of it, so the ask is a seller's price and paying it is a guaranteed paper loss on day one. It also fails on squad shape — Georg carries 5 DEF for a 4-4-2 and the binding gap is GK, not defence — and on envelope: 23,5M against spending power 37.859.207 with a -10.871.289 balance to clear before the lock would force two unwind legs instead of one. Dead three times over. Do NOT revisit above mv. KRATTENMACHER (8252, Bayern II/77, MID, ap 77): board listing, prc 7.831.913 = mv EXACTLY, no u, mvt 1, st 0 — he passes every structural flip test and dies on TICK TIMING alone, which is why he is logged rather than ignored. exs 113.831 at the 18:45Z read puts his expiry at ~2026-10-16T02:22Z; the next 20:00Z market-value update after that is 2026-10-16T20:00Z, which falls AFTER the MD6 lock at 2026-10-16T18:30Z. He would be bought, never ticked, and unwound at exactly the price paid — zero gain for 7,8M of spending power held across the lock, plus the unwind risk of carrying a thirteenth player into a leveraged position. As a POINTS buy he is also weak: ap 77 against Tanaka's 66 is +11 for 7,8M that Georg does not have. REVERSAL: if he is relisted with an expiry before 2026-10-15T20:00Z he qualifies as an ordinary mvt-1 board flip and this entry carries no force."
-   },
-   {
-    "name": "Ayoube Amaimouni",
-    "pos": "MID",
-    "club": "4",
-    "ask": 2281980,
-    "mv": 2173685,
-    "premium_pct": 4.98,
-    "why": "The ONLY listing new since the 14:45:36Z read (posted 2026-10-14T16:11:12Z). Dies mechanically on both legs, so no news check was needed or done. NOT A FLIP: mvt 2, and the measured next-tick drift for mvt 2 is -3,10% with only 15,3% rising (n=731) — buying a falling flag is the inverse of the edge. NOT A POINTS BUY: ap 24 on p 97, Heidenheim MID, against an XI whose weakest midfielder is Tanaka at 66 and whose weakest fielded man after Hqrsd4w is ter Horst at 88. He would displace nobody. Capital 2.281.980 against an unwind margin measured at 4.225 this run makes it worse, not better. Board listing (no u), prc 2.281.980 = mv exactly, exs 116011 = expiry ~2026-10-16T01:58Z."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open and the mechanism is healthy — the measured drift is holding with no decay at all, and nine in ten rising-flagged players rose at the last update. The Rothe flip is the right one and is already running: it is the only qualifying listing of meaningful size whose auction resolves before tonight's market-value update, which is the whole point of the trade. Two small candidates also clear that timing test and expire within about two hours, but each would open a third concurrent leg against a Friday lock in exchange for roughly a hundred thousand of market value, and that is not a trade worth making when a mistimed unwind costs an entire matchday. They are flagged, not recommended. Everything else on the board dies on one of three tests: it resolves after tonight's update and so captures no tick before the lock, it is flagged falling rather than rising, or it does not fit under the spending floor alongside the two positions already open. Upamecano is the instructive case — he passes every mechanical test and would still leave the balance within a few million of the floor with three unwind legs to run, risking a zero matchday for under a million of market value. The earlier rejection of him stands, and now with its reason stated plainly. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap flip throughput outright, and the standing caveat that this edge is measured in one league over one period and will decay if rivals crowd into it.",
+  "reason": "The flip window for this matchday closes at tonight's market-value tick, and Rothe is the last listing that can still catch it. Every other board listing expires after tonight's tick, and the following tick falls after the matchday lock — so no flip started from here on can capture a tick at all. Rothe qualifies on every flag: board listing, priced at market value exactly, rising, no status flag, and he expires shortly before the tick. Bid market value exactly and never raise; losing costs nothing, and chasing a contested listing upward destroys the whole edge. The drift was re-measured from the log this run and has not decayed — if anything it is running slightly ahead of the original measurement, and the share of rising players that actually rose is higher than when the edge was first found. Two things remain unresolved and should stay on the record: nobody has established whether Kickbase caps squad size, which would cap how many flips can run at once; and the edge is measured in one league over one period, so it will decay if enough rivals crowd into it.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Neuer is the one real concern and he is unresolved. Ligainsider carries him today as knocked-about with a foot problem and missing for five days; the newest dated item is still the 13.10 note that he sat out the European tie for medical reasons. That is now roughly forty-five hours without new information. He is the only keeper in a squad of eleven, so he is forced into the eleven whatever happens. The rest of the squad sweeps clean: Wolf still carries a status flag but the newest dated item on him is positive, and no other squad player is flagged injured, suspended or benched, and none carries dated news of leaving the league.",
+  "sweep": "The dated matchday radar lists none of the squad as injured or suspended, and the only status flag in the squad is still the keeper's. Two new source traps were caught and logged this run, both of which would have produced a wrong call. One is a recovery story about the keeper returning to training that is eighteen months old and describes a different injury entirely — its own sidebar prints a current fixture date, which is what makes it dangerous. The other is an injury-shock story about an owned striker that is two years old and describes a problem found at his signing medical. He is fit and does not appear on the current radar at all.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -519,7 +519,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=755, -2,20% to +443,38%"
+   "v": "n=756, -2,20% to +443,38%"
   }
  ]
 }
