@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-16T02:49Z",
+ "run": "2026-10-16T04:51Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 154435,
   "floor": -48929043,
   "spending_power": 49083478,
-  "hours_to_lock": 15.67,
-  "exposure": "None. The balance is positive, no offers are outstanding, and nothing has to be unwound before the lock. The only exposure carried into the matchday is selection risk in goal, which cannot be hedged at a price that leaves the balance non-negative.",
+  "hours_to_lock": 13.65,
+  "exposure": "No leverage is open. The balance is positive, the squad is at the minimum rather than above it, and no offer is outstanding, so there is nothing that has to be unwound before the lock. The risk this run is entirely about the keeper slot scoring zero, not about the balance.",
   "must_restore_by": "2026-10-16T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no formation hole. The shape is filled and legal, so there is no gap for a buy to close — which is precisely why no buy clears the bar this matchday. The binding constraint is the squad count, not a position: at exactly eleven, the number of buys and the number of sales must match, and nothing on the board pairs profitably with anything sellable.",
+ "binding_gap": "The binding gap is the goalkeeper, and it is unfixable this matchday. It is not a cash problem in the ordinary sense — spending power is ample on paper — but an unwind problem: the only upgrade cannot be paid for and unwound back to a non-negative balance with eleven players before the lock. After the keeper, the second gap is the cheap Mainz defender, who is a fielded body with a near-worthless scoring average; both gaps are next-matchday work, funded by the tick trade that reopens tonight.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 49083478,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 48,
+  "listings": 44,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 0
  },
  "squad": [
   {
@@ -172,16 +172,16 @@
   "action": "none",
   "headline": "No action.",
   "headline_short": "No action.",
-  "detail": "No action. The matchday-six buy question is now closed on arithmetic that has been re-verified three runs in a row, the sell question is closed by the squad sitting at exactly eleven, and the flip question is closed by the tick landing after the lock. Set the eleven and leave it. The one thing still genuinely unresolved is the goalkeeper, and it is unresolvable by design: Bayern play after the lock, so the lineup must be set without the team news."
+  "detail": "No action. The squad is at exactly eleven, all placed, balance positive, and the only legal formation is already set — so there is nothing to sell without taking the under-eleven penalty and nothing on the board that can be bought and unwound before the lock. This is the fifth consecutive quiet run and the position has not moved. The one thing that changed is informational: Kompany's pre-Leipzig press conference is this morning, well before the lock, which corrects the standing ledger claim that Georg would have to set this matchday blind on the keeper. Even so, the presser cannot change what he does — every goalkeeper alternative is either a confirmed non-starter or leaves a negative balance at lock, which would zero the entire matchday."
  },
  "sell": {
   "recommendation": "none",
-  "reason": "Nothing. At exactly eleven, any sale costs the fielded-eleven penalty, and no buy exists on the board that could be paired with one to keep the count whole. The standing sell-side blocks all remain blocks on buying those players back, not instructions to sell anyone now.",
+  "reason": "No sale is possible or advisable. At exactly eleven players, any sale drops the fielded side below the minimum and takes the flat penalty, which outweighs every value argument on the board. The standing instruction not to sell the keeper also holds: the slot is uninsurable, and the alternatives all score the same as an injured keeper while costing a roster slot.",
   "standing": []
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing is buyable for this matchday. Only five board listings still expire before the lock, and each of them is already dead on a logged avoid — either the price cannot be funded from a single matching sale, or the swap loses average points, or both. The three listings that appeared since the last run all expire after the lock, so they cannot score this matchday whatever their merit. The one genuinely large name on the board is simply beyond spending power and needs no further argument. The strongest defensive upgrade of the cycle remains a matchday-seven question, not a matchday-six one, for the same expiry reason.",
+  "reason": "No buy is possible for this matchday. Only four board listings expire before the lock, and only one of them — the Hoffenheim keeper — is a genuine starter and a genuine upgrade. He is still short by a little over two million after selling the current keeper back at market value, which would leave a negative balance at the lock and score zero for the whole matchday. Adding a second sale closes less than half the gap and drops the squad to ten. Every manager ask on the board is priced above market value, which this ledger has never treated as a buy. The remaining pre-lock listings are a never-played Mainz backup keeper, a Schalke forward and a cheap Dortmund defender, none of whom improves a fielded slot. Everything else on the board, including the Bayern defender listed overnight and the Freiburg defender whose block conditions are partly met, expires after the lock and is a next-matchday question, not this one.",
   "standing": [],
   "killed_this_run": [
    {
@@ -276,11 +276,11 @@
    },
    {
     "name": "Aleksandar Pavlović",
-    "pos": "MID",
-    "club": "2",
+    "pos": "",
+    "club": null,
     "ask": 35603222,
-    "mv": 35660785,
-    "premium_pct": -0.16,
+    "mv": null,
+    "premium_pct": null,
     "why": "THE BIGGEST ap ON THE BOARD ALL CYCLE AND HE STILL DIES — written in full so no future run re-opens him. Kickbase BOARD listing (no u), pid 6080, Bayern, pos 3 MID, prc 35.603.222 = mv EXACTLY, mvt 1, st 0, ofc 0, listed 2026-10-15T04:03:20Z (feed t:3), exs 81171 at the 04:45:07Z read -> expires 2026-10-16T03:17Z. ap 200, the highest on the board by 29 over Upamecano's 171. AS A POINTS BUY the case looks overwhelming: he would displace Tanaka (ap 66) in the fielded four and that is +134 ap, by far the largest single-slot upgrade available this cycle. IT FAILS ON UNWIND CAPACITY, WHICH IS THE TEST THAT BINDS, NOT SPENDING POWER. Spending power prints 38.015.193 so the 33% floor permits the purchase and a future run WILL be tempted by that. But balance is -10.871.289, so a win puts it at -46.474.511, and one buy permits exactly one sale (squad 12 -> 13 -> 12). The largest sale Georg would actually make is Gregoritsch at mv 13.181.715; even the two open unwind legs together (Gregoritsch 13.181.715 + Gruber 11.005.724 = 24.187.439) leave -22.287.072 and drop the squad to eleven with no slack. There is no legal unwind to a non-negative balance before the 2026-10-16T18:30Z lock, and a negative balance at lock scores ZERO for the whole matchday. SECOND, INDEPENDENT REASON — HE IS NOT CONFIRMED FIT. sport1.de /news/fussball/champions-league/2026/10/fc-bayern-kompany-laesst-bei-pavlovic-aufhorchen, published 13.10.2026 20:59 German time (metadata 18:59 UTC): Pavlović was NOT in the Stavanger XI, sat on the bench for medical reasons, is described as \"leicht angeschlagen\", Kompany said \"Es ist nichts Ernstes\" and hoped to have him training again later in the week. So the ap 200 is a pre-injury figure and Bayern's MD6 is 2026-10-17T16:30Z vs Leipzig, a full day AFTER the lineup locks — the doubt cannot be resolved in time even if the money existed. AND AS A FLIP he fails the same unwind test by a wider margin than Stanišić (Ab00tuq) failed it by 64.521, so the measured sizing boundary around 14,02M rules him out mechanically without any further derivation."
    },
    {
@@ -297,11 +297,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip is possible for the rest of this matchday, and this is a mechanical fact confirmed from the API rather than an inference: the next market-value update lands after the lock, so nothing bought now can capture a tick before the matchday scores. This is not the retired sub-market-value test — the flip edge itself is intact. The rising-flag drift was re-measured this run and has not decayed; it is marginally the strongest reading on record, with the overwhelming majority of rising-flagged players rising again at the next update. The next flip window opens after tonight's tick, for matchday seven, and several board listings priced at exactly market value with a rising flag will qualify then. Two open questions remain unresolved: whether Kickbase caps squad size, which would cap flip throughput; and that this edge is measured in one league over one period, with rival traders now visibly crowding into the same tick-capture trade.",
+  "reason": "No flip is possible, and the reason is mechanical rather than a pricing judgement. The next market-value tick lands after the lock, so no listing bought now can capture a tick before this matchday scores, while the cash it absorbs would leave a negative balance at the lock. The edge itself is intact and has not decayed: rising-flag players still rose at the next tick in roughly nine cases out of ten, on a sample that has kept growing, and falling-flag players still fell. Rivals continue to harvest it at scale — one manager churned four sales and a buy inside seven minutes overnight, and that buy cleared in the low single digits over market value, consistent with the low cluster. The flip window reopens after tonight's tick, for the next matchday. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if enough rivals crowd into it.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "The goalkeeper is the only squad player carrying a status flag, and the news has not moved in roughly eight hours — everything surfaced this run is older than what was already on file, including two items that look fresh but predate it. The picture stands: foot trouble, no team training, fitness decided only at the final session, with a named deputy waiting. He is still the right hold, because every alternative is worse: the one real replacement costs more than the sale raises and would open a negative balance at the lock, and the cheap keepers score the same zero as an injured starter while burning a roster slot. The rest of the squad is clean on the API status flags. The usual squad-wide injury table could not be fetched this run, so that cross-check is missing; the flags are the primary instrument and the table has previously been shown to be unreliable in both directions.",
+  "sweep": "The keeper is the only squad player flagged, and the news got firmer rather than better: a dated probable eleven published yesterday names the backup in goal and calls him only doubtful. That is the first source that actively replaces him rather than merely doubting him. The decisive moment is this morning's press conference, which lands hours before the lock — the next run is too early to read it, the one after is the first that can. The other ten are clean: none appears on the league-wide injured-and-suspended table, and nine of them are named in their club's probable eleven. The exception is the cheap Mainz defender, who is absent from his club's probable eleven — a selection problem, not a fitness one, and one that has been true all season.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -502,7 +502,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=759, -2,20% to +443,38%"
+   "v": "n=760, -2,20% to +443,38%"
   }
  ]
 }
