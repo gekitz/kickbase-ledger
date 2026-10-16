@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-16T12:51Z",
+ "run": "2026-10-16T14:48Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 184435,
   "floor": -48938943,
   "spending_power": 49123378,
-  "hours_to_lock": 5.64,
-  "exposure": "No leverage. The balance is positive, it stays positive through the lock because nothing can settle before then, and the recommended purchase would leave it positive afterwards with room to spare. A bonus landed this morning and lifted the cash slightly; it changes nothing structurally. The one exposure worth naming is a sequencing one for tomorrow: the defender the ledger has been watching resolves ten hours before the keeper does, so any bid on him would be placed blind to the keeper outcome, and the two cannot both be funded from a single sale. The keeper has absolute priority — committing the Neuer proceeds anywhere else risks ending up with no keeper at all.",
+  "hours_to_lock": 3.68,
+  "exposure": "None. The balance is positive and no leveraged position is open or proposed. The Schwolow structure cannot open one: his auction resolves more than a day after the lock, and the sale that funds him is sequenced after it. The ledger database remains unreachable at account level for the third consecutive run, so the direct query over open calls cannot be run and the rendered context is the only ledger view — which means sell and watch entries below its display cap stay invisible. The dropped connector in this session is not the one that would fix that; the database binding itself needs re-creating.",
   "must_restore_by": "2026-10-16T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The keeper slot, and it is binding in two different ways at once. For this matchday it is binding and unfixable — the arithmetic has been worked and recorded so no later run repeats it. For next matchday it is binding and solvable, and the solution is already on the table in the form of the Schwolow listing funded by the Neuer sale, which leaves money over rather than consuming it. The sequencing is what matters: the sale must follow the auction, never precede it.",
+ "binding_gap": "The keeper slot, and it is not closable this matchday. The owner does not play, every alternative on the board expires after the lock, and the only one that would fit before it is unaffordable without going leveraged. The gap closes for matchday seven through the Schwolow swap, which is funded entirely by the keeper sale with money left over and keeps the squad at eleven with a legal formation throughout.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 49123378,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 28,
+  "listings": 27,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -170,18 +170,18 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "One action, and it is not an MD6 action: place the bid on Schwolow at exactly his market value and do not raise.",
-  "headline_short": "One action, and it is not an MD6 action: place the bid on Schwolow at ",
-  "detail": "One action, and it is not an MD6 action: place the bid on Schwolow at exactly his market value and do not raise. It is still unplaced two hours after the last run flagged it, and the listing shows no offer from you. Everything else is hold. The MD6 lineup is already the only legal eleven you can field, so there is nothing to set and nothing to sell before the lock."
+  "headline": "No action required before tonight's lock.",
+  "headline_short": "No action required before tonight's lock.",
+  "detail": "No action required before tonight's lock. The eleven is placed in the only legal formation, the balance is positive, no leveraged position is open, and nothing buyable on the board can score this matchday. The one live recommendation — the Schwolow bid — is unchanged from the previous run, still unbid, and deliberately sits outside the lock. Matchday six is closed; the next decision point is after tonight's market-value tick, for matchday seven."
  },
  "sell": {
   "recommendation": "none",
-  "reason": "No sale before the lock, and this is the one instruction that must not be misread. Neuer is the recommended funding leg for the Schwolow purchase, but selling him now would leave the squad with no keeper at all, no legal formation, and the hundred-point penalty. Hold him through the lock and sell him only once the Schwolow auction has resolved tomorrow evening. A standing do-not-sell entry from an earlier run was closed this run: the replacement keeper it was conditional on exists again, so it no longer applies.",
+  "reason": "Nothing to sell before the lock. Selling anyone from a squad of exactly eleven drops it to ten and takes the automatic penalty, which costs more than any of these players is worth. The one sale the ledger does plan — the keeper, to fund the Schwolow swap — must wait until after the lock and after that auction resolves, because selling him now leaves no keeper and therefore no legal formation at all.",
   "standing": []
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Schwolow remains the only buy, and the case got stronger rather than weaker: a second independent source dated today starts him for Mainz and lists Zentner out with a hand injury. He is a board listing priced exactly at market value, so bid exactly that and never raise — chasing a contested board listing into the high cluster is what has cost this ledger its last four auctions. He expires well after the lock, so he cannot score this matchday and carries no matchday risk; he is the keeper fix for next week. Everything else on the board is excluded: the only two listings that expire before the lock are a keeper who cannot be funded without going negative and a defender already logged as a trap, and the one new listing since the last run is on the falling side of the tick, is the bench option in his club's probable eleven, and scores below the weakest defender he would replace.",
+  "reason": "One buy stands, unchanged and un-executed: Schwolow, the Mainz keeper, as a straight one-for-one replacement for Neuer. He is a Kickbase board listing priced at exactly market value with zero offers against him more than nine hours after he appeared, so the instruction is to bid exactly market value and never raise — every contested board listing this ledger has lost was lost by chasing a premium. His starter premise hardened this run on a live injury table: the incumbent is still in rehab training and Schwolow is absent from the table entirely. His listing expires well after tonight's lock, so he cannot score this matchday and carries no risk for it. Nothing else on the board is worth a bid: the two listings that do expire before the lock are both already on the avoid list, and the rest either expire after it or are behind players already owned.",
   "standing": [
    {
     "name": "Alexander Schwolow (620, Mainz GK) — REVERSES Wplkjpg's \"every GK alternative is a confirmed non-starter or unaffordable\". Kickbase BOARD listing at EXACTLY mv 6.824.261, no u, mvt 1, st 0, listed 16.10 05:28:23Z (feed t:3) — he was NOT on the board at the 04:45Z run, which is the only reason that conclusion held. CONFIRMED STARTER on a dated source: bundesliga.com \"Voraussichtliche Aufstellungen 6. Spieltag\" 15.10.2026 names Schwolow in the MAINZ XI (NOT Schalke — see club-label correction below); Zentner is out in Aufbautraining, Ligainsider headline \"Zentner weiter eingeschraenkt – Schalke wohl zu frueh\"; Schwolow is absent from the Ligainsider 15.10 injured/suspended table. 26/27 record is CURRENT, not stale: MD1 bench (st 4, 0'), MD2 151 (94'), MD3 bench (st 4, 0'), MD4 102 (104'), MD5 66 (99') = p 319 / ap 106 over 3 starts, and he has started BOTH matches since Zentner's ~13.09 injury. EXPIRY 17.10 ~21:44Z, i.e. ~27h AFTER the 16.10 18:30Z lock — same structural fact as Caci (Wx5f1xk) and Matsima (W5w8xng): he CANNOT score MD6, so he carries ZERO MD6 risk and no MD6 cash test applies. FUNDING IS CLEAN AND IS THE WHOLE POINT: Neuer to Kickbase at mv 11.298.834 gives 154.435 + 11.298.834 − 6.824.261 = +4.629.008 POSITIVE, squad stays 11, GK stays 1, 4-4-2 stays legal. One-for-one GK swap, no second sale, no leverage. BID EXACTLY mv AND DO NOT RAISE (board listing, measured rule). DOMINATES BAUMANN on both legs — cheaper by 6.824.140 AND ap 106 vs 91 — so Ae9egem stands and needs no re-derivation. SEQUENCING: hold Neuer THROUGH the 18:30Z lock (selling him now = 0 GK, no legal formation, −100); sell him only once this auction resolves. DECAY RISK: Zentner is in Aufbautraining with no published comeback date — re-verify a dated Mainz XI before MD7.",
@@ -310,11 +310,11 @@
  "movers": {
   "recommendation": "none",
   "window": "closed",
-  "reason": "Flip window closed — the matchday locks this evening, and the next market-value tick lands after it. Worth recording for the runs that follow: every listing that could still be flipped expires after the lock, so no capital would actually be at risk at the lock itself, and the drift was re-measured this run with no decay at all on either side of the tick. The flip decision belongs to the post-lock runs, not to this one. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that the measured edge comes from one league over one period and will decay if rivals crowd in — the four most active traders here were last season's top four finishers.",
+  "reason": "No flip is possible for the rest of this matchday, and this is a mechanical fact confirmed from the API again this run, not a judgement about pricing: the next market-value tick lands after the lock, so nothing bought from here can capture a tick before the matchday scores. The rising-flag edge was re-measured from the event log with no decay — it remains strongly positive and the falling flag remains strongly negative. The next flip window opens after tonight's tick, for matchday seven. Two open questions stand, as always: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in — and rivals here are demonstrably crowding, with another cluster of instant sell-backs to Kickbase logged this run. A separate calibration note: a manager-to-manager sale cleared barely above market value this run, the lowest such clear logged, which together with the two high clears earlier this week means the manager-ask band spans everything from about one per cent to about fifteen. No point estimate in it is usable as a benchmark; price a manager ask off the player, never off the band.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "The keeper is the whole story. A source dated today names the backup in Bayern's probable eleven and leaves Neuer out of it entirely, and the manager's own quoted words that morning were that Neuer had not trained the day before and the call would be made at short notice. Kickbase still flags him, and his market value is falling hard on both the day and the twelve-hour measure. Treat the keeper slot as a near-certain zero for this matchday. It cannot be fixed: the only keeper on the board who could land before the lock cannot be bought without ending the day on a negative balance, and a negative balance at matchday start scores zero for every player, not just one. That trade is strictly worse than the zero it would be trying to avoid. No other squad player has any new injury, suspension or dated transfer news.",
+  "sweep": "Clean. A live read of the league-wide injured-and-suspended table this run returns none of the eleven. The only squad flag is the keeper's, which is the known foot complaint already in the ledger and not fresh; it changes nothing for this matchday, since he was already out of his club's probable XI on dated sources. An undated article agreeing that Schwolow starts was found and deliberately discarded under the standing date-trap rule — it did not contribute to any conclusion here.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -515,7 +515,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=761, -2,20% to +443,38%"
+   "v": "n=762, -2,20% to +443,38%"
   }
  ]
 }
