@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-17T16:57Z",
+ "run": "2026-10-17T18:54Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -15776453,
   "floor": -48572579,
   "spending_power": 32796126,
-  "hours_to_lock": 145.55,
-  "exposure": "A leveraged position is open and it does not close by itself. The lock is still comfortably far off, so there is no emergency today and nothing has to be executed this evening beyond letting the keeper auction run. But the sequence is now fixed and each leg depends on the one before it: Schwolow must land first, because selling the only keeper before a replacement is secured leaves the squad with none; Neuer goes back to Kickbase after that, at whatever his value is once tonight's tick has marked him down further; and the second leg must then follow before the lock. Only one further sale is possible without dropping to ten players and taking the penalty, which is why the choice of that leg matters more than its timing. The deadline that actually binds is the MD7 kickoff, and the last leg's own match starts at that same moment.",
+  "hours_to_lock": 143.6,
+  "exposure": "A leveraged position is open and will deepen before it closes, because the pending bid is spent before either sale lands. This is not an emergency: the lock is still almost six days out, and a negative balance costs nothing at all until that moment arrives. It does, however, make the ordering non-negotiable and it rules out every discretionary purchase between now and then. The unwind completes with room to spare once both sales go through, leaving a positive balance and a legal eleven. The risk to watch is not the size of the deficit but the sequencing: if the goalkeeper bid were to lose and the first sale were made anyway, the squad would be left without a keeper.",
   "must_restore_by": "2026-10-23T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "Goalkeeper, and it is the only gap worth spending on. The squad carries exactly one keeper and he is the one player flagged unfit, which means the current eleven fields a probable zero in goal. Schwolow closes it in a single move and pays for part of itself, since the keeper leaving is worth more than the keeper arriving. Everywhere else the squad is adequately covered and there is no slot where an affordable board option beats the incumbent, so no other position justifies capital while the balance is underwater.",
+ "binding_gap": "The gap is cash at the lock, not any position on the pitch. Every outfield slot is covered and the keeper slot is covered the moment the pending bid resolves. What binds is that the balance must be non-negative when the matchday starts, and clearing it requires a sale large enough to cover the shortfall while still leaving eleven players in a formation that can legally be filled. Exactly one player in the squad satisfies both conditions, which is why the plan has no flexibility in it and why no buy can be added on top.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 32796126,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 32,
+  "listings": 30,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Two things changed this run, and one of them reverses a standing instruction.",
-  "headline_short": "Two things changed this run, and one of them reverses a standing instr",
-  "detail": "Two things changed this run, and one of them reverses a standing instruction. First: the unwind does NOT close on the Neuer sale alone. Even after Schwolow lands and Neuer goes back to Kickbase, the balance stays deeply negative, and a negative balance at the MD7 lock scores zero for the entire matchday. A second sale is mandatory before the lock. Second, and following from it: the free-points lineup swap that previous runs recommended — Jeltsch in for Nakuzola — is REVERSED. Jeltsch is now the designated second unwind leg, so fielding him would leave a hole in the eleven the moment he is sold. Keep Nakuzola in the XI. Nothing else needs doing today: the Schwolow bid is live, correctly sized and should NOT be raised, and the flip window is structurally empty rather than merely quiet."
+  "headline": "Nothing to do right now, and that is the correct answer rather than a quiet one.",
+  "headline_short": "Nothing to do right now, and that is the correct answer rather than a ",
+  "detail": "Nothing to do right now, and that is the correct answer rather than a quiet one. The goalkeeper bid is already placed on the board, it is the only offer on that listing, and it resolves by itself tonight — Georg does not need to touch it. The rest of the plan is the unwind that was set out on earlier runs, and this run re-derived that arithmetic independently from scratch rather than trusting it, and reached the same conclusion. The negative balance is real but it is not urgent: the matchday lock is almost six days away, and the balance only has to be positive at that moment."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Neuer first, then Jeltsch, strictly in that order and with Schwolow landing before either. Neuer is the merit sale as well as a funding leg: Kickbase still flags him unfit, the market is marking him down hard, and Urbig has taken the gloves. The honest caveat is that Bayern's MD7 fixture falls AFTER the lock, and Kompany has said the aim is to have Neuer back for the Arsenal midweek tie — so the lineup has to be committed before anyone knows how that resolved. That is a reason to take the certain keeper over the doubtful one, not a reason to wait. Jeltsch is the second leg and the choice is not close: selling him keeps Brackelmann in the back four, whereas selling Brackelmann instead would field Jeltsch in his place — the Jeltsch sale is better on points AND raises more cash for the same single disposal. He was bought this morning above his market value, so he is underwater; he is rising, and roughly two ticks put him back above cost. Hold him for the ticks, sell well before the lock, and sell at once if he flips to falling.",
+  "reason": "Two sales, in a strict order that must not be swapped. The goalkeeper goes first but only after the replacement keeper has actually been won, never before — he is currently the only keeper in the squad, so selling ahead of a lost auction would leave the team with no goalkeeper and no legal formation. He is carrying a fitness flag and the market is marking him down hard, so this is a sale on merit as well as a funding move. The second sale is the spare defender, and this run tested every alternative: every other defender is too cheap to close the gap, and selling a midfielder, a striker or the keeper would leave a formation that cannot legally be filled. He is the only player in the squad who both covers the shortfall and leaves a legal eleven behind.",
   "standing": [
    {
     "name": "Finn Jeltsch",
@@ -210,7 +210,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Schwolow only, and the offer is already placed — there is nothing to do but leave it alone. He is confirmed as Mainz's keeper in a dated probable XI, and the keeper he displaced is still a month from returning, so this is as close to a nailed-on starter as the board offers. DO NOT RAISE THE BID. Eight board auctions cleared in this league today and the standing offer, even after tonight's tick erodes its premium, would have beaten seven of them; only one cleared in the high cluster. Raising chases that single tail outcome and the ledger's own measured rule is that one overpriced clear destroys the gain from ten disciplined ones. No second buy: there is no affordable defender on the board who improves the back four, and a further purchase would need a third sale the unwind cannot spare. If the auction is lost, Neuer simply stays and his sale call voids by its own terms — no emergency, and the cheap backup keeper on the board is not worth taking as insurance since he has no points record at all.",
+  "reason": "One buy, already bid, and the bid is being held rather than raised. The replacement goalkeeper is a confirmed starter on three independent dated sources now, having started every league match since he took the gloves, with no injury or suspension time logged against him. His listing has attracted no rival offer at all in well over a day, so the bid sits alone. It was deliberately set above market value on earlier runs because this ledger had recorded a run of narrow misses from bidding exactly at market value, and that premium still comfortably exceeds what most winning bids in our own records have paid. Tonight's revaluation will shrink the premium slightly without taking it below market value, which is why no raise is warranted. Beyond that, nothing on the board is worth buying: the one genuinely attractive striker would improve the fielded eleven only marginally and cannot be paid for without leaving the balance negative at the lock, which would forfeit the entire matchday to save a handful of points. Four listings that appeared in the last half hour are all from a single manager raising cash after a large purchase, and all are priced far above what such players actually clear at.",
   "standing": [
    {
     "name": "Alexander Schwolow",
@@ -226,6 +226,15 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "AVOID — manager \"David\" dumped FOUR listings at 18:29-18:31Z, all at punitive premiums (Ginter +7,8%, Romulo +31,0%, Sabitzer +49,6%, Banzuzi +66,4%)",
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
+    "premium_pct": null,
+    "why": "CONSOLIDATED AVOID — ONE ENTRY FOR FOUR LISTINGS, SO THE DISPLAY IS NOT BLOATED. Within 100 seconds (18:29:19Z to 18:30:47Z) the manager David (uid 1880059) put four players on the market, every one of them a MANAGER ASK (`u` present) priced far above mv: Ginter (49) DEF Freiburg ask 30.000.000 vs mv 27.825.835 = +7,81%, ap 169; Romulo (11886) ATT Leipzig ask 15.000.000 vs mv 11.447.176 = +31,04%, ap 90; Sabitzer (1856) MID Dortmund ask 10.000.000 vs mv 6.682.507 = +49,64%, ap 54; Banzuzi (11008) MID Leipzig ask 15.000.000 vs mv 9.012.576 = +66,44%, ap 123. THREE REASONS A LATER RUN MUST NOT CHASE THESE. (1) PRICE: the ledger's measured manager-ask clearing band is low single digits (+3,06%, +4,35%, and today's Diaz outlier +7,73%). Only Ginter is even inside shouting distance of that band; the other three are 4x to 8x outside it. An ask that sits unsold is an invitation to offer at mv, never to pay the ask. (2) TIMING TELLS YOU WHY: David BOUGHT Diaz for 51.000.000 at 18:03:11Z and listed all four of these 26 minutes later. This is a manager raising cash after a large purchase, so the asks are set to what he needs, not to what the players are worth. (3) AFFORDABILITY: Georg is at cash -15.776.453 with a MANDATORY unwind of >= 13.186.881 before the 2026-10-23T18:30Z lock. He cannot fund a single one of these without breaking the legal eleven, and Banzuzi in particular is a trap — the ledger already records a MISSED bid on him at 8.378.940 that cleared 8.485.688 (+1,27%), so a 15.000.000 ask is +77% over what he actually clears at. REVERSAL: re-assess only if an ask drops to mv or below AND the unwind has already completed to a non-negative balance."
+   },
    {
     "name": "SOURCE TRAP — getfootballnewsgermany 03.08.2026 calls Schwolow Mainz's BACKUP to Zentner. It is PRE-SEASON and REFUTED by a 16.10.2026 source.",
     "pos": "GK",
@@ -324,26 +333,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "ADDITIVE TO Ak7is7p, Acvydzk, Aj37and, A90zvri and Al0a1al. FETCHED AND DATE-CHECKED 2026-10-15T06:50Z. absolutfussball.com/deutschland/fc-bayern-muenchen/aufstellung-gegen-leipzig-ihr-koennt-es-erraten-kompany-gibt-hinweis-auf-bayern-93711261.html surfaces at or near the TOP of the obvious search \"Kompany Aufstellung Neuer Leipzig\" and reads perfectly on-point: Kompany previewing a Bayern XI against Leipzig, with an explicit goalkeeper line. IT IS DATED \"Stand: 04.05.2025, 04:45 Uhr\" — not last season, TWO seasons ago. The tells that confirm it, so a future run can kill it in one read without re-fetching: it says \"Fuer Neuer hat die Klub-WM Prioritaet\" (the Club World Cup was June/July 2025), it discusses Sacha Boey starting over Minjae Kim (Minjae was sold out of this squad on 14.09.2026), and it calls Urbig \"ein zuverlaessiger Ersatz\" in a rotation context, not an injury one. ANY run that cites it as evidence that Urbig replaces Neuer against Leipzig on matchday 6 of 26/27 is wrong. The Neuer question is NOT answered by any source older than 12.10.2026; see Wkb4r15 this run for the live state."
-   },
-   {
-    "name": "SOURCE TRAP — bulinews.com \"Kompany confirms Neuer start ... ahead of Leipzig clash\"",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "ADDITIVE to Ak7is7p and Acvydzk. A future run searching the Neuer question will surface bulinews.com/kompany-confirms-neuer-start-provides-squad-update-ahead-leipzig-clash and it reads exactly like the resolution: \"Manuel Neuer will start tomorrow, confirmed FC Bayern coach Vincent Kompany at a press conference on Tuesday.\" IT IS NOT. Fetched 2026-10-15T02:45Z: the page carries NO publication date (footer only \"Copyright Bulinews.Com - 2026\"), and its own body refers to \"Wednesday's quarter-final\" — a DFB-Pokal QUARTER-FINAL against Leipzig, not Bundesliga MD6. Undated plus a cup fixture that is not MD6 = stale by the standing rule. It also contains no mention of the foot problem at all, which a genuinely current item could not omit. DO NOT let it close W4proal/Whrxs00. Two further traps from the same sweep: kicker.de/bayern-gegen-leipzig-2026-dfb-pokal-5180628 (cup, not MD6) and kicker.de/bayern-gegen-leipzig-2026-vereine-freundschaftsspiele-5202513 (FRIENDLY). The only decisive source remains the Bayern presser before MD6."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip this run, and the reason is structural rather than a quiet market — worth stating plainly so the next run does not go looking again. Not one rising Kickbase board listing expires before tonight's market-value update. Every rising listing on the board resolves after the tick, and a listing that settles after the update captures none of the measured edge, because the price you pay has already moved with it. The one candidate that did qualify, Matsima, expired this afternoon with no offer ever placed against it — the call was right and simply was not executed. On the edge itself: re-measured this run on a much larger sample than the original calibration, the rising-flag drift is slightly STRONGER than the baseline, not weaker, so rivals have not yet crowded it out. The two open questions remain unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if the other active traders pile into it.",
+  "reason": "No flip qualifies, and for once the reason is mechanical rather than a judgement call. The edge comes from buying a rising player before the nightly revaluation and capturing that move. Every single listing on the board right now expires after tonight's revaluation — the shortest-dated one by only a few minutes — so there is no listing anywhere that can be bought at the pre-revaluation price. The mechanism is simply absent tonight; this is not a case of the opportunities being unattractive. The underlying edge itself was re-measured from the event log this run and has not decayed at all: the rising-player signal is performing exactly as it did on the previous run, on a slightly larger sample. Two open questions remain unresolved and are worth restating: it is still unknown whether Kickbase caps squad size, which would cap how many flips can run at once; and the edge is measured in a single league over a single period, so it will erode if rivals crowd into it.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "The squad is clean apart from the keeper. A sweep of Ligainsider's injury and suspension table read today returns none of the outfield eleven, and Kickbase flags only Neuer. Two specific checks are worth recording because both looked like traps and neither was. Engelhardt showed an odd status code that suggested he might have lost his place; he has not — he is fit, has started every match he has been available for, and the only injury item on his profile is from last season, which is exactly the date trap this ledger keeps catching. Jeltsch is fit and an ever-present, confirmed after resolving the club mix-up described above. Neuer is the only genuine doubt, and the dated reporting is consistent: foot trouble, missed the final session before the weekend, deputy in goal, return targeted but not confirmed.",
+  "sweep": "One scare, investigated and dismissed. A fielded midfielder is showing an unusual matchday status code that no other squad member carries, which reads alarmingly at a glance. It is a bookkeeping field, not a fitness flag: his club page shows him fit, having started every league match this season and logged no time at all lost to injury or suspension. The only injury-flavoured item on his page dates from last season, which is the same date trap this ledger has now recorded several times. Elsewhere the squad is clean — every player carries a clear fitness flag except the goalkeeper already being sold, whose flag is part of the reason he is going. The defender being sold and the defender who stays were both independently confirmed in their clubs' probable lineups on dated pages.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -550,7 +550,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=776, -3,62% to +443,38%"
+   "v": "n=778, -3,62% to +443,38%"
   }
  ]
 }
