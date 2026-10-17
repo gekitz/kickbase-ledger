@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-17T10:54Z",
+ "run": "2026-10-17T12:54Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -15776453,
   "floor": -48572579,
   "spending_power": 32796126,
-  "hours_to_lock": 151.59,
-  "exposure": "A leveraged position is open — the balance went negative when Jeltsch settled this morning. This costs nothing until the instant the matchday locks, and the lock is roughly six days out, so there is no urgency and no reason to unwind at a bad price. The planned sequence clears it with days to spare: Matsima is sold straight back after tonight's update, Neuer follows once Schwolow has landed, and Jeltsch is sold a day later after a second tick has recovered the overpayment. At no point in that sequence does the fielded eleven shrink, and the end state is a positive balance with eleven players in a legal formation. The one thing that would change this assessment is Jeltsch's trend flag turning negative — if that happens he should be sold at once rather than held for a second tick.",
+  "hours_to_lock": 149.59,
+  "exposure": "The balance is negative and has been since this morning's settlement, so a leveraged position is open. It is not urgent. A deficit costs nothing until the instant the matchday locks, and the lock is more than six days and several value-update cycles away. What constrains the open trades is not the deficit's existence but whether it can be unwound in time, and it can, three times over: the keeper sale pays market value instantly with no spread, the flip is sold back at market value after it has captured the tick, and the defender bought above value this morning needs only a couple of the daily upticks to clear what was paid for him, with roughly six of them left before the lock. Those three sales take the squad from fourteen down to eleven, which is exactly the floor, and leave the balance positive with margin. Both of the mechanics that override everything are satisfied: spending stays inside the floor rather than inside cash, and the deficit unwinds well before the matchday starts. The notification threshold on this is deliberate and was not met — a push on an open deficit is warranted only inside the final hours before the lock, or on the last run before it, and this run is neither.",
   "must_restore_by": "2026-10-23T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "Goalkeeper. The squad carries exactly one, and he is the one player flagged unfit, with his club's probable eleven naming someone else. Until Schwolow lands this is the only hole in the squad that costs points, and it outranks every value consideration on the board.",
+ "binding_gap": "Goalkeeper, and it is the only gap. One keeper in the squad, carrying an injury flag, which is why the sale and the replacement buy are a single linked operation with a strict ordering: buy first, sell second, never the reverse. Until the replacement actually lands, the keeper slot is a single point of failure and the squad has exactly one legal way to fill it. Everywhere else the squad is covered: defence is deep enough to carry a spare, midfield and attack both field without strain, and three formations remain legal.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 32796126,
@@ -54,7 +54,7 @@
   "listings": 35,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 0
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Jeltsch landed this morning and the squad is leveraged.",
-  "headline_short": "Jeltsch landed this morning and the squad is leveraged.",
-  "detail": "Jeltsch landed this morning and the squad is leveraged. Two things to do today: bid on Schwolow before his listing expires tonight, and do NOT sell Jeltsch back at tonight's tick. He was bought above market value by more than the measured one-tick drift, which turns him from a one-tick flip into a multi-tick hold — selling him tonight locks in a loss, holding him one more tick gets the money back. The lock is almost a week away, so the negative balance costs nothing yet and there is ample room to unwind."
+  "headline": "Nothing on the board needs Georg's money in the next two hours, but one thing needs ten seconds of his time and it is the largest points item in this briefing: Jeltsch is sitting u",
+  "headline_short": "Nothing on the board needs Georg's money in the next two hours, but on",
+  "detail": "Nothing on the board needs Georg's money in the next two hours, but one thing needs ten seconds of his time and it is the largest points item in this briefing: Jeltsch is sitting unplaced on the MD7 sheet while Nakuzola, a floor-priced non-player, occupies a defensive slot in the eleven. That swap costs nothing, breaks no formation, and is worth roughly fifty points a matchday. After that, the standing plan is unchanged and on rails — the goalkeeper bid is already placed and still uncontested, the keeper sale that funds it waits behind it, and one tick flip is open with a four-hour clock. The deficit is real but it is not pressing: the lock is more than six days out and there are three independent unwind legs against it."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Neuer, strictly after Schwolow is won and never before. He is the only goalkeeper in the squad, so selling first and then losing the Schwolow auction leaves nothing in goal but low-value backups on the board. The merit case is unchanged and now independently confirmed: Kickbase flags him unfit, the market is marking him down hard on both the daily and the two-hour trend, and bundesliga.com's probable lineups of 16.10.2026 put Urbig in Bayern's goal and call Neuer still doubtful. Holding him across tonight's tick costs something, because he is on a falling trend — that cost is the insurance premium for not being goalkeeper-less, and it is worth paying. Nakuzola is the only other sellable body and is worth too little to matter.",
+  "reason": "The keeper sale stands exactly as written, and the ordering constraint on it is the part that matters: it must happen only after the replacement is actually won, never before. He is currently the squad's only goalkeeper, so selling first and then losing the auction leaves no keeper at all with nothing but floor-priced backups on the board. On merit the sale is independently right — he carries an injury flag, his value is falling on both the daily and the short-horizon measures, and the market is marking him down hard. Selling back to Kickbase pays his market value exactly, with no spread, a rule this ledger has now confirmed repeatedly. Nothing else in the squad is a sale: the earlier reversal on Gregoritsch holds, and no other player has a case against him.",
   "standing": [
    {
     "name": "Manuel Neuer",
@@ -201,7 +201,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Schwolow is the binding move and the only genuine points buy on this board. He fills the one position where the squad is exposed, and the news is as clean as this ledger ever gets: bundesliga.com on 16.10.2026 names him in Mainz's probable eleven, and LigaInsider's Mainz page of 13.10.2026 has him in goal with Zentner still in rehab training and on a limited programme as of 06.10.2026. The standing bid sits above market value deliberately, after four straight misses at exactly market value. One caveat for the evening run: his listing expires after tonight's value update and he is on a rising trend, so the same cash bid will represent a materially smaller premium by the time it settles, and against a contested Kickbase listing that benchmarks to the high cluster it may no longer be enough. The run nearest the update must re-test it. Nothing else on the board is worth buying for points — the squad already covers defence, midfield and attack, and the remaining manager asks are all priced above market value, two of them by a manager reselling what he bought hours earlier.",
+  "reason": "The goalkeeper buy is the only one, it is the binding gap, and the bid is already in and still the only offer on the listing more than a day after it appeared. It survived a serious scare this run and it is worth recording why, because the scare will recur. The fitness check searched the wrong club: he does not play for the club this run first assumed, and the sources that appeared to refute him were current, correctly dated, and entirely about a different team's goalkeeper. The date-trap heuristic cannot catch that kind of error, because nothing about those sources is stale — the mistake sits upstream, in the club attribution itself. Reading the club straight off the player record settles it in one call, and that is now logged as the standing instrument. Once pointed at the right club the confirmation is clean and dated: his club's probable eleven, updated four days ago, lists him in goal and does not list him among the absentees, while the first-choice keeper he is deputising for is listed as still in rehab training and explicitly flagged as probably too early to return. The cause is independently confirmed on a second dated source from September. One honest soft spot: he is a stand-in who has started three of six, with one gap mid-season, so he is not a nailed-on starter — but the incumbent is still not training fully and the fixture is at home. No other buy is recommended. The only new listing since the last run fails both the flip test and the points test and is logged as an avoid.",
   "standing": [
    {
     "name": "Alexander Schwolow",
@@ -217,6 +217,24 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "Timothy Chandler",
+    "pos": "DEF",
+    "club": "4",
+    "ask": 2326587,
+    "mv": 2326587,
+    "premium_pct": 0,
+    "why": "AVOID Timothy Chandler (461, tid 4, DEF) — the ONLY new listing since the 10:45Z run (feed t:3 at 2026-10-17T12:24:33Z), and he is cheap enough that a later run will be tempted. Kickbase BOARD listing, no u, prc = mv = 2.326.587, st 0, ofc 0, exs 97956 -> expires 2026-10-18T15:57Z. FAILS ON BOTH TESTS INDEPENDENTLY. (1) FAILS THE FLIP TEST TWICE OVER: mvt 2, and the measured next-tick drift for mvt 2 on this ledger is -3,11% with only 14,9% rising (n=753) — buying him is a negative-expectancy trade, not a flip; separately his listing expires 2026-10-18T15:57Z, i.e. AFTER the 2026-10-17T20:00Z mvud, so even on a rising flag he would carry no measured edge (per Wikp7iw). (2) FAILS THE POINTS TEST BY A MILE: ap 6, tp 12 across the whole season. The squad's weakest fielded DEF is Nakuzola at ap 27 and the weakest unplaced is Jeltsch at ap 76 — Chandler would not displace either, so he cannot add a single expected point. Note also the cheap-price-next-to-low-average pattern: at 2,3m he looks like a bargain body, but the market has priced him as a non-playing veteran and the ap confirms it. No starter check was run and none is needed: he fails before fitness enters."
+   },
+   {
+    "name": "SOURCE TRAP, OPERABLE FORM — SCHWOLOW IS MAINZ, NOT WERDER. tid 18 = Mainz 05, tid 10 = Werder Bremen. Resolve ANY club question with get_player -> `tn`, never with a web search on a remembered club.",
+    "pos": "GK",
+    "club": "18",
+    "ask": null,
+    "mv": 7086106,
+    "premium_pct": null,
+    "why": "ADDITIVE TO Aypvyy3, WHOSE BODY THE DISPLAY TRUNCATES SO ITS WARNING IS UNREADABLE — THIS RUN WALKED INTO THE EXACT TRAP IT LOGGED AND NEARLY KILLED A LIVE 7.800.000 BID. WHAT HAPPENED: the STEP-5 check searched \"Schwolow Werder Bremen\" and got a COHERENT, CORRECTLY-DATED, CURRENT-SEASON refutation — torwart.de \"Werder Bremen: Karl Hein ist der neue Stammtorwart\" dated 31.08.2026 (this season, NOT a date trap), plus ligainsider's Werder club page updated 16.10.2026 15:14 which shows Hein first in the probable XI and does not mention Schwolow anywhere, plus a deichstube item \"Nach Absage von Werder: Schwolow findet neuen Club (Hearts of Midlothian)\". Every one of those is TRUE and every one is IRRELEVANT: Schwolow does not play for Werder. THE DATE-TRAP HEURISTIC CANNOT CATCH THIS — the sources are current and accurate; the error is in the CLUB ATTRIBUTION, upstream of the date check. RESOLUTION INSTRUMENT, USE IT FIRST: get_player 620 returns tn \"Mainz\". Confirmed independently by mdsum (MD5 18 v 7, MD6 8 v 18, MD7 18 v 10) and by lineup `os` fields (Nakuzola tid 18 has os SVW, Deman tid 10 has os M05 — so MD7 is Mainz v Werder). TID MAP ESTABLISHED THIS RUN, CARRY IT: 18 = Mainz 05 (Schwolow, Nakuzola, Da Costa, Caci), 10 = Werder Bremen (Deman, Lynen), 8 = Schalke 04 (Tanaka, Kurucay, Ljubicic), 2 = Bayern (Neuer, Tah, Karl, Stanisic, Diaz), 3 = Eintracht Frankfurt (Guirassy, Schlotterbeck), 43 = RB Leipzig (Nusa, Seiwald, Ouedraogo), 9 = Gladbach (Jeltsch, Hendriks, Tiago Tomas), 5 = Freiburg (Engelhardt, Ginter, Makengo, Ogbus), 13 = (Gregoritsch, Wolf, Brackelmann, Matsima, Komur, Wisbereit), 29 = (ter Horst, Obermair, Pruhs), 4 = (Burkardt, Chandler, Chaibi, Brassier), 14 = Hoffenheim (Kramaric, Rots), 28 = (Okon-Engstler, Heskey), 6 = (Gronbaek, Vieira), 15 = (Ullrich), 77 = (Pinckert). RULE: before any fitness/starter search, read tn from get_player. A club you \"remember\" for a player is not evidence."
+   },
    {
     "name": "SOURCE TRAPS ON JELTSCH AND ON SCHWOLOW'S CLUB — both nearly killed a correct call",
     "pos": "",
@@ -306,35 +324,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "ADDITIVE to Ak7is7p and Acvydzk. A future run searching the Neuer question will surface bulinews.com/kompany-confirms-neuer-start-provides-squad-update-ahead-leipzig-clash and it reads exactly like the resolution: \"Manuel Neuer will start tomorrow, confirmed FC Bayern coach Vincent Kompany at a press conference on Tuesday.\" IT IS NOT. Fetched 2026-10-15T02:45Z: the page carries NO publication date (footer only \"Copyright Bulinews.Com - 2026\"), and its own body refers to \"Wednesday's quarter-final\" — a DFB-Pokal QUARTER-FINAL against Leipzig, not Bundesliga MD6. Undated plus a cup fixture that is not MD6 = stale by the standing rule. It also contains no mention of the foot problem at all, which a genuinely current item could not omit. DO NOT let it close W4proal/Whrxs00. Two further traps from the same sweep: kicker.de/bayern-gegen-leipzig-2026-dfb-pokal-5180628 (cup, not MD6) and kicker.de/bayern-gegen-leipzig-2026-vereine-freundschaftsspiele-5202513 (FRIENDLY). The only decisive source remains the Bayern presser before MD6."
-   },
-   {
-    "name": "SOURCE TRAPS x3 — goal.com and comunio Neuer items, plus a ligainsider \"Aufstellung gegen Leipzig\" page that is SEVEN YEARS OLD",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "THREE NEW TRAPS, ALL FETCHED AND DATE-CHECKED 2026-10-15T00:50Z, and all three surface on the obvious searches for Neuer's current status. ADDITIVE TO A90zvri, Al0a1al and Acvydzk.\n\n(1) goal.com/de/listen/topspiel-einsatz-wohl-unmoeglich-bitteres-update-bei-bayern-keeper-manuel-neuer/blt48ffcfdf2d5444b2 — published 16.02.2026 by Nino Duit. LAST SEASON. It reports a Faserriss in the LEFT CALF suffered in a 3:0 against Werder, Sky's \"at least three weeks\", and names the Topspiel as Dortmund v Bayern on 28 FEBRUARY. This is the SAME February 2026 calf cluster as Al0a1al (sportschau 15.02.2026) and A90zvri (spox), now a THIRD outlet. The headline reads as a current ruling-out and the words \"Topspiel-Einsatz wohl unmoeglich\" are exactly what a run looking for MD6 news wants to find. It is not about the October foot problem at all. The current injury is a FOOT complaint (12.10.2026); any item naming a CALF or a Faserriss is February and is wrong in both directions.\n\n(2) magazin.comunio.de/verletzten-update-bayerns-torhueter-problem-stuttgart-und-union-stars-fit/ — published 20.11.2024, TWO SEASONS OLD. The slug \"Bayerns Torhueter-Problem\" is the single most likely string to match the current situation. Its content is Neuer leaving training early per BILD, Ulreich also absent, and Daniel Peretz possibly starting — a plausible-sounding goalkeeper crisis that has nothing to do with 2026/27. Note comunio is otherwise a GOOD source (magazin.comunio.de 08.10.2026 13:25Z was used correctly for Brackelmann); it is this one URL that is stale, so do not blacklist the domain.\n\n(3) ligainsider.de/fc-bayern-muenchen/1/aufstellung-gegen-leipzig-276918/ — published 14.09.2019 17:33. SEVEN YEARS OLD. It is the top search hit for a ligainsider Bayern-v-Leipzig probable XI, its footer and keywords reference 2026/27, and it starts \"Neuer - Pavard, Suele, Hernandez, Alaba - Kimmich, Mueller, Thiago - Gnabry, Lewandowski, Coman\". A run that skimmed it would record \"ligainsider starts Neuer against Leipzig\" as a current XI and wrongly resolve the binding gap. The squad names are the tell: Lewandowski, Thiago, Boateng. ALSO NOTE the club-page id: ligainsider's Bayern club page is /fc-bayern-muenchen/1/ (tid 1), NOT /14/ — a fetch of /fc-bayern-muenchen/14/ errors out."
-   },
-   {
-    "name": "SOURCE TRAP — sportschau.de \"Bayerns Trainer Kompany: Die koennen Tore machen\" (video-pressekonferenz-bayern-vor-leipzig-100) is 16.01.2026, LAST SEASON",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "ADDITIVE TO A90zvri and Al0a1al, the existing Neuer source-trap entries. A search for newer Neuer news this run surfaced sportschau.de /fussball/bundesliga/bayerns-trainer-kompany-die-koennen-tore-machen-wir-koennen-tore-machen,video-pressekonferenz-bayern-vor-leipzig-100.html. The URL slug says \"bayern-vor-leipzig\" and Bayern DO play Leipzig on MD6 (17.10.2026), so it reads as the MD6 presser. IT IS NOT. The page meta-date is 2026-01-16T11:58:28 — the Rueckrunde fixture of LAST SEASON, nine months stale. It also carries no Neuer content at all; the video body is not in the page text. DO NOT cite it for the keeper question. THE NEWEST GENUINE NEUER SOURCE IS STILL 13.10: ligainsider's Bayern page, Letzte Aktualisierung 13.10.2026 23:40 (per W7rync7), which keeps him in the XI. Checked and found NOTHING newer this run: fussballtransfers \"Kompany verkuendet Torwart-Entscheidung\" is 12.10.2026 17:56 (updated 13.10 07:36) and is the Urbig-for-Stavanger call already held by Wpcm5ou; ligainsider 419061 is 12.10.2026 18:23 and is already held. Neuer is NOT on ligainsider's Verletzte-und-Gesperrte table (checked this run; Bayern's only entry there is Musiala). The 12.10 quote still stands as the whole of it: \"Manuel Neuer trainiert heute nicht, er hat etwas am Fuss gespuert\" and \"Damit bleibt auch fraglich, ob Neuer rechtzeitig fuer das anstehende Topspiel gegen Leipzig wieder einsatzbereit ist.\""
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open — the lock is days away, not hours. The edge was re-measured from the log this run and has not decayed: rising-flag players still gain on the next update in nine cases out of ten, falling-flag players still lose, and flat-flag players still do nothing. Only two board listings qualify today, meaning a Kickbase listing with no manager ask, priced at exactly market value, on a rising flag, and expiring before tonight's update: Matsima and Kurucay. They do not both fit alongside the Schwolow bid, so Kurucay is dropped — he is the smaller prize, and the shortfall is now far wider than it was this morning because Jeltsch consumed more capital than the mv bid assumed. Bid Matsima at exactly market value and never raise: winning a contested listing into the high cluster destroys the edge, and one bad clear wipes out ten good flips. Everything else on the board fails mechanically — expiring after the update and so carrying no measured edge, or on a falling flag, or a manager ask above market value. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once and is now worth checking in the app given the squad is at twelve and thirteen is planned; and the fact that this edge is measured in one league over one period and will decay if rivals crowd in — the four most active traders here were last season's top four finishers.",
+  "reason": "The flip window is wide open — the lock is far beyond the twelve-hour cutoff — and the edge was re-measured this run rather than assumed. It has not decayed. The sample behind the rising-flag drift has more than doubled since the figure quoted in the standing doctrine, and the mean and the hit rate both came out slightly higher, not lower. Rivals have not competed it away yet. The falling-flag mirror is just as sharp in the other direction, which is what makes the flag worth trading on at all. One candidate qualifies and is already an open call: a rising-flag board listing, priced at exactly market value with no manager behind it, no competing offers, and — critically — expiring before tonight's value update, which is what makes the tick capturable at all. The bid is exactly his market value and must never be raised; winning captures the tick, losing costs nothing, and chasing a contested listing upward destroys the edge outright. A second listing qualifies on every mechanical test and is dropped purely on capital: the three open commitments together exceed spending power by a small margin, and this run reproduced that shortfall to the exact figure the previous run computed, which confirms the allocation rather than re-deriving it. Everything else on the board with a rising flag expires after tonight's update and therefore carries no measured edge at all, however attractive the name. Two open questions remain unresolved and are restated here rather than quietly dropped: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player is newly injured, suspended or benched, and no squad player has dated news suggesting he may leave the league. The only fitness flag in the squad is Neuer's, which is long-standing and is the reason he is being sold. Jeltsch is fit and starting — the injury article that surfaces first in search is from last April, and the club page carrying it has last season in its URL path. A second trap caught this run is worth remembering: the first articles returned for Schwolow are about Werder Bremen, and are current-season rather than stale, but he plays for Mainz. Resolve a player's club from other squad and board members sharing his team id before reading any club news, because a current-season article about the wrong club defeats a date check entirely.",
+  "sweep": "No squad player is newly injured, suspended, benched, or carrying dated news that he may leave the league. The current-season league-wide injury and suspension table lists none of the twelve. The only flag in the squad is the goalkeeper's, which is long known and is itself the basis of the standing sale. On the buy side the replacement keeper is clean, confirmed on a club page updated four days ago, and absent from that club's missing list. The flip candidate needs no starter check by doctrine — fitness does not enter the daily value tick — and he carries no flag in any case. The source trap this run hit was not a date trap but a club trap, and the resolution instrument is now logged so the next run resolves it in one call instead of four searches.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
