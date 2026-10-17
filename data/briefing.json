@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-17T20:51Z",
+ "run": "2026-10-17T22:56Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -15776453,
   "floor": -48429732,
   "spending_power": 32653279,
-  "hours_to_lock": 141.64,
-  "exposure": "A leveraged position is open and it must be closed before the matchday locks, because a negative balance at the lock scores nothing for the entire matchday. There is no urgency tonight — the lock is days away and the full two-sale path is mapped, priced and recorded — but there is no slack to waste either, and the second sale in particular is timed to run close to its deadline deliberately. The pending keeper bid deepens the position before it improves it; that is expected and accounted for. The flips also add to the position temporarily, but each unwinds by selling back at market value immediately after the tick, which is mechanical and always available. The one thing that would force a rethink is losing the keeper auction, because the cheapest leg of the unwind disappears with it.",
+  "hours_to_lock": 139.56,
+  "exposure": "The balance is negative and must be back above zero before the lock, which is still comfortably far away — no action is required tonight on the deficit itself beyond starting the rebuilt sequence. The rebuilt structure clears it on today's values, before counting a single favourable tick, which is the right standard: the tick upside is cushion, not the plan. The one hard dependency is that the buy must land first. If it does not, only a sale of one of the two best players in the squad clears the deficit alone, and that is a large, avoidable loss of points — which is why the fallback chain matters and why the bid was priced to win rather than to be clever.",
   "must_restore_by": "2026-10-23T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "Goalkeeper, and it resolves tonight one way or the other. The squad has exactly one keeper, he is flagged, he is marked down, and he is the designated first leg of the unwind — but he cannot be sold until a replacement is actually secured. The replacement bid is live and expires within the hour, and he is the only keeper listed on the entire board. If the bid wins, the gap closes and the whole sequence proceeds. If it loses, the keeper cannot be sold at all, the unwind has to be rebuilt around much more expensive sales that cut real points out of the eleven, and the next board keeper becomes the priority. That is the single thing this run is waiting on.",
+ "binding_gap": "The binding gap is no longer a position on the pitch — it is a goalkeeper the squad cannot replace. With one keeper owned and none listed anywhere on the board, the squad is one injury or one careless sale away from having no legal formation. Every run from here should check the market for a keeper first and open a buy the moment one appears, because until a second goalkeeper is owned, Neuer's substantial and steadily decaying value is frozen and cannot be converted into anything.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 32653279,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 29,
+  "listings": 24,
   "cheapest": 500000,
-  "cheapest_slot_filling": 7384320,
-  "expiring_within_2h": 6
+  "cheapest_slot_filling": 500000,
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "First run after the evening tick, and nothing in the plan changes — which is the point.",
-  "headline_short": "First run after the evening tick, and nothing in the plan changes — wh",
-  "detail": "First run after the evening tick, and nothing in the plan changes — which is the point. The Schwolow bid was re-tested against the new market value and is HELD, not raised: it is still the only offer on that listing, and raising would spend cash that has to be unwound anyway. He resolves inside the hour. Everything else this run is confirmation rather than news: Schwolow verified from the matchday just played rather than from any article, the measured market edge re-measured with no decay, and the unwind path re-derived off post-tick values. No action is needed on the squad itself."
+  "headline": "The standing plan is dead and has been rebuilt.",
+  "headline_short": "The standing plan is dead and has been rebuilt.",
+  "detail": "The standing plan is dead and has been rebuilt. Schwolow — the goalkeeper the whole unwind was built around — was lost at auction tonight to PhiL95, who paid a premium well above our bid. He was the only keeper on the board and the board still shows none. That makes the Neuer sale impossible: he is the squad's only goalkeeper, and selling him would leave no legal formation at all, which is a worse outcome than the negative balance the sale was meant to cure. So the Neuer leg is closed, not deferred. In its place: buy Ullrich, then sell Tanaka and Jeltsch. That structure clears the deficit on today's values without relying on a single market tick, keeps a legal eleven, and is points-POSITIVE rather than a sacrifice."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Two sales, strictly in order, and the ordering is not negotiable. The keeper goes first but ONLY after the replacement keeper is actually won — he is currently the only goalkeeper in the squad and the only goalkeeper listed anywhere on the board, so selling before the auction resolves would leave the position empty with nothing to buy. He is a merit sale as well as a cash one: he is being marked down hard by the market, while the keeper we are bidding for played the same matchday, kept a clean sheet and scored far better on a cheaper valuation. The second sale is the defender bought this morning, and he goes LAST, near his deadline rather than early: he was bought above market value and is flagged rising, so each remaining tick before the lock works to close that gap and then some. He is the cheapest completing sale on points by a wide margin — every alternative cuts a materially better player out of the eleven. Both prices were refreshed this run purely because the tick moved them; the reasoning behind both is unchanged.",
+  "reason": "Two legs, in a strict order, and both are legal only AFTER a buy has landed. The squad is at twelve, so two sales without a buy drop it to ten and trigger the penalty. Tanaka goes first and goes soon: he is the lowest-scoring fielded outfielder apart from Nakuzola, who is too cheap to raise anything useful, and he is on a falling market-value flag, so every tick he is held burns most of the structure's cushion. Jeltsch goes last and deliberately late: he is benched, so his sale costs no points, and he is on a rising flag with several ticks left before the lock, which makes patience worth real money. Hold him through the final tick, then sell with a clear margin before the lock — not in the lock hour.",
   "standing": [
    {
     "name": "Finn Jeltsch",
@@ -194,35 +194,35 @@
     "club": "9",
     "mv": 15200246,
     "ap": 76,
-    "why": "REPLACES Sk0zvii, closed ONLY because its price 15.131.034 was pre-tick. Post-tick mv 15.200.246 (tfhmvt +69.212, mvt 1). SECOND AND FINAL UNWIND LEG. After the Neuer sale cash is -13.416.665 with squad 12, so exactly ONE more sale is both permitted (12 -> 11) and mandatory (>=13.416.665). WHY JELTSCH AND NOT THE OTHERS — MARGINAL POINTS, RE-DERIVED THIS RUN FROM LIVE ap: the sale forces Nakuzola (ap 27) into the XI whichever position is cut, because he is currently the benched 12th man. Cutting Jeltsch (ap 76) gives 1GK/4DEF/4MID/2ATT = 4-4-2 and costs 76-27 = 49 ap. Cutting Gregoritsch (ap 107) gives 5-4-1 and costs 80 ap. Cutting Engelhardt (ap 134) gives 5-3-2 and costs 107 ap. Nusa (159) and Guirassy (132) are worse still. Jeltsch is the cheapest legal completing sale by a wide margin, and this is unchanged from last run even though Gregoritsch newly clears the cash bar. CONSEQUENCE ALREADY LOGGED: this is why Wlowop0's Jeltsch-over-Nakuzola lineup swap stays REVERSED — Jeltsch is designated for sale, not for the XI. TIMING, AND IT IS THE REASON FOR THE 23.10T12:00Z DEADLINE NOT AN EARLIER ONE: he was bought 2026-10-17T10:00Z at 16.000.888 against a pre-tick mv of 15.131.034 (+5,75%), so he is underwater by 800.642 at today's mv. He is mvt 1 and the re-measured mvt-1 drift is +2,93% per tick on n=1157 with 90,7% rising. Five ticks remain before the lock (18.-22.10), so holding him to the deadline is expected to carry mv to roughly 17,5M, turning the paper loss into a gain AND comfortably covering the residual. Sell him LAST, near the deadline, never early. Fitness is not a factor in a cash sale, but for the record he is st 0 and scored 184 on MD6.",
+    "why": "REPLACES Sgfv2iu, CLOSED BECAUSE ITS PREMISE DIED, NOT ITS CONCLUSION. Sgfv2iu called him the \"SECOND AND FINAL UNWIND LEG\" after a Neuer sale, and named Nakuzola as the benched 12th man. BOTH ARE NOW FALSE: the Neuer sale is closed (Schwolow lost, no keeper on the board, Neuer is the only GK), and get_lineup shows JELTSCH is the player with no `lo` slot — he is the benched 12th man, Nakuzola is placed at lo 4. THAT IS THE KEY CORRECTION AND IT MAKES THIS SALE BETTER THAN PREVIOUSLY SCORED: selling Jeltsch costs ZERO fielded points, not the 49 ap that Sgfv2iu computed. The current XI is Neuer / Deman, ter Horst, Brackelmann, Nakuzola / Engelhardt, Tanaka, Wolf, Nusa / Gregoritsch, Guirassy = 4-4-2, and Jeltsch is outside it. SELL LATE, DELIBERATELY: he is mvt 1, tfhmvt +69.212, and the measured mvt-1 drift is +2,93% per tick on n=1157 with 90,7% rising. Five ticks remain before the 2026-10-23T18:30Z lock (18.10 through 22.10); at the measured rate that is roughly 15.200.246 -> 17.56M, about +2,36M of free cushion for holding him to the last safe moment. Hold to the 22.10 20:00Z tick, then sell by 2026-10-23T12:00Z — do NOT leave it to the lock hour. ORDERING: this is the SECOND sale and is legal only after a buy has landed (BUY Bi6h69d) and after Tanaka (SELL Stba7yp) — squad 12 +1 -2 = 11. The structure is non-negative at TODAY's values (+281.387) without relying on a single tick; the tick upside is cushion, not the plan. He is FIT (st 0, not on ligainsider's Verletzte table read 17.10.2026) — this is a funding sale of a benched asset, and no future run may cite it as an injury.",
     "tag": "sell"
    },
    {
-    "name": "Manuel Neuer",
-    "pos": "GK",
-    "club": "2",
-    "mv": 10159788,
-    "ap": 121,
-    "why": "REPLACES Sk8jh99, closed ONLY because its price 10.723.056 was pre-tick and is now stale. The 2026-10-17T20:00Z tick fired: Neuer mv 10.723.056 -> 10.159.788 (tfhmvt -563.268, -5,25%), mvt 2 again. Instant sale to Kickbase pays EXACTLY mv, no spread (confirmed on this ledger by Matsima, Treu, and now four more t=2 settlements this run: Erevbenagie, Heskey, Makengo, Karl, Baum, Vieira, Bade, Schlager all cleared at exactly mv). STRICT ORDERING UNCHANGED AND NON-NEGOTIABLE: sell ONLY AFTER Schwolow (620) is won. Neuer is the squad's only keeper; Schwolow is the ONLY pos-1 listing on the entire board this run, so selling first and losing the 21:44Z auction leaves zero keepers and no replacement available. MERIT, NOW VERIFIED FROM MATCH DATA NOT NEWS: Neuer played MD6 (97 pts) but carries st 2, ht false, mvt 2, tfhmvt -563.278, sdmvt -2.964.586 — the market has marked him down 2,96M since the deadline. Schwolow played the same matchday for 151 pts with a clean sheet (cs 2), st 0, mvt 1, +298.214 at the tick, ap 121 equal to Neuer's on a 2,8M cheaper mv. The swap is BOTH a points upgrade and cash-positive by 2.359.788. REFRESHED UNWIND ARITHMETIC (done here so no future run re-derives it): cash -15.776.453. Schwolow wins at 21:44Z -> -23.576.453, squad 13. Sell Neuer at 10.159.788 -> -13.416.665, squad 12. One further sale of >=13.416.665 is then MANDATORY before the 2026-10-23T18:30Z lock, because a negative balance at lock scores ZERO for all of MD7. NOTE THE CHANGE FROM LAST RUN: the required residual moved from 13.186.886 to 13.416.665, and the post-tick mv rises mean Gregoritsch (13.753.123) NOW also clears that bar, so the qualifying set is Jeltsch 15.200.246, Gregoritsch 13.753.123, Engelhardt 15.289.514, Nusa 28.880.878, Guirassy 33.225.012. Jeltsch remains correct on points — see the companion SELL.",
+    "name": "Ao Tanaka",
+    "pos": "MID",
+    "club": "8",
+    "mv": 7157594,
+    "ap": 63,
+    "why": "FIRST LEG OF THE REBUILT UNWIND, AND IT IS TIME-SENSITIVE FOR A MEASURED REASON. Instant sale to Kickbase pays EXACTLY mv with no spread (confirmed again this run: Curda 10.139.492 and Tiago Tomas 3.756.449 both settled at exactly mv). Tanaka is mvt 2, tfhmvt -375.660 — the measured next-tick drift for mvt 2 is -3,11% on n=764, only 14,9% rose. Selling him BEFORE the 2026-10-18T20:00Z tick is worth roughly 222.600 against selling after, which is most of the structure's 281.387 cushion. STRICT ORDERING, NON-NEGOTIABLE: this sale is legal ONLY AFTER a buy lands (BUY Bi6h69d Ullrich, or the fallback below). Squad is 12; two sales without a buy put him at 10 and trigger -100. If no buy is won, sell NOTHING but Jeltsch and accept that the balance is still negative — then escalate, because at that point only a Guirassy or Nusa sale clears the debt alone. FALLBACK IF ULLRICH IS LOST, in order: Chaibi (7277) mv 3.493.684 ap 61, expires 2026-10-18T13:45Z — cushion +3.087.703, ap -2 vs Tanaka; then Hendriks (8247) mv 6.502.626 ap 62, expires 2026-10-18T15:08Z — cushion +78.761, ap -1. Becker (2762, ap 67) and Kosugi (12284, ap 64) are ARITHMETICALLY EXCLUDED: at 7.070.184 and 6.632.243 they leave -488.797 and -50.856, i.e. a zero matchday. WHY TANAKA AND NOT ANOTHER FIELDED BODY: at ap 63 he is the lowest-scoring fielded outfielder except Nakuzola (ap 27), and Nakuzola at mv 500.000 raises nothing — Jeltsch + Nakuzola still leaves -76.207. Tanaka is FIT (st 0, not on ligainsider's Verletzte table read 17.10.2026); this is a funding-and-structure sale, not an injury sale. DO NOT SELL NEUER (237) TO FUND ANYTHING: he is the only GK, there is no keeper on the board, and SELL S1tdelt is closed for exactly that reason.",
     "tag": "sell"
    }
   ]
  },
  "buy": {
   "recommendation": "act",
-  "reason": "One buy, already placed, already verified, and expiring shortly. The keeper is confirmed fit and starting from the match just played — a clean sheet and a strong score — which is stronger evidence than any news source and immune to the dated traps this ledger keeps catching. The bid is held at its existing level. Its premium over market value actually FELL this run, because his value rose at the tick while the offer stayed put, so the level is now more comfortable than it was, not less. No one else has bid. The one genuine points upgrade available among the forwards is still on the board and is still being declined, and the reason is unchanged and arithmetic: financing him would need sales that cut deeper into the eleven than he adds. That is a capital problem, not a doubt about the player.",
+  "reason": "Ullrich is the move, and he is doing two jobs at once: he is the extra body that licenses a second sale, and he is a genuine upgrade on the man he replaces. He is a fit, regular starter playing close to full matches, and he is cheap for that profile. The bid is set deliberately ABOVE market value. This is the fifth consecutive contested board listing lost by bidding a band computed from older, cheaper clears, and tonight's Schwolow clear is the freshest reading of what this market actually pays. The flip discipline — bid exactly market value and never raise — is unchanged and still absolutely binds on flips, where any premium destroys the edge. It does not bind on a player being bought to keep. If Ullrich is lost, Chaibi is the fallback and leaves far more cushion at a negligible points cost; Hendriks is the second fallback. Becker and Kosugi look tempting on points and are arithmetically excluded — either one leaves the balance negative at the lock, which scores zero for the whole matchday. Fullkrug remains the only real points upgrade on the board and remains unfinanceable: paying for him means selling one of the two best assets in the squad, which is a net loss of points.",
   "standing": [
    {
-    "name": "Alexander Schwolow",
-    "pos": "GK",
-    "club": "18",
-    "ask": 7800000,
-    "mv": 7384320,
-    "premium_pct": 5.63,
+    "name": "Lukas Ullrich",
+    "pos": "DEF",
+    "club": "15",
+    "ask": 6300000,
+    "mv": 5756521,
+    "premium_pct": 9.44,
     "listing": "Kickbase listing",
-    "why": "REPLACES Bwvoito (closed, not because the buy changed but because its price 6.824.261 is stale: the 16.10 20:00Z tick moved mv to 7.086.106). THE SUBSTANTIVE CHANGE IS THE BID LEVEL, AND IT IS DELIBERATE. Every prior run priced this at exactly mv. The ledger's own calibration table now shows FOUR bids at +0,00% over mv and FOUR misses (Banzuzi +1,27%, Pinckert +7,61%, Kristof +3,58%, Muheim +125,73%). Bidding mv on a Kickbase board listing is a losing strategy and this run stops doing it on POINTS buys. The mv-exactly doctrine (H648bvg) is correct for FLIPS, where losing is free; it is wrong here, where losing means fielding an injured keeper. Fresh board evidence from this run's own feed: Dinkci cleared 7.921.333 vs mv 7.384.920 = +7,26%, and Koemuer cleared 3.999.999 vs mv 3.696.175 = +8,22% — both Kickbase listings, both today. 7.800.000 = +10,07% over mv, inside the contested-board cluster (+7% to +21%) and 714k above mv, which is cheap against a zero-point GK slot. MERIT: Neuer (237) is st 2, ht true, and the ONLY keeper in an 11-man squad whose single legal formation 4-4-2 requires one. fcbinside 15.10.2026 has him with Fussprobleme, out of CL training, Kompany \"two days or two weeks\", Urbig starting. Schwolow is Mainz #1 while Zentner is out — ligainsider Mainz page updated 13.10.2026 lists him first in the probable XI and notes \"Zentner weiter eingeschraenkt\". st 0, ap 106. The only other GKs on the board are Kevin Mueller (755) and Wisbereit (13671), both mv 500.000 backups. SEQUENCING IS LOAD-BEARING: WIN SCHWOLOW FIRST, THEN SELL NEUER. Selling first and losing the auction leaves zero keepers. Balance path 184.435 -> -7.615.565 -> +3.107.491 after the Neuer sale, against a floor of -48.846.431 and a lock 165.7h away, so the deficit is free for the whole week. Expiry 2026-10-17T21:44Z, ofc 0 after 15h17m on the board.",
+    "why": "REPLACES FLIP F8nst20 — SAME PLAYER, DIFFERENT PURPOSE. He is no longer a one-tick flip; he is the body that makes the whole unwind legal. WHY THE STRUCTURE CHANGED: BUY Bgbd5qc (Schwolow) is MISSED — PhiL95 cleared him 2026-10-17T21:44:45Z for 8.099.999 against mv 7.384.320 = +9,69%; Georg's 7.800.000 was +5,63% and lost by 299.999. Schwolow was the ONLY pos-1 listing on the board and there is STILL no keeper listed. Neuer is the squad's only GK, so SELL S1tdelt is CLOSED and MUST NOT BE REVIVED: selling him leaves 0 GK and no legal formation. THE UNWIND ARITHMETIC, RE-DERIVED FROM LIVE FIGURES: cash -15.776.453, squad 12, so without a buy exactly ONE sale is permitted (12->11) and it must raise >=15.776.453. Only Guirassy (33.225.012, ap 132) or Nusa (28.880.878, ap 159) clear that alone — both are the two best assets in the squad. Jeltsch alone leaves -576.207, i.e. a ZERO matchday. So ONE BUY IS MANDATORY to license a second sale. CHOSEN LEG: buy Ullrich, sell Tanaka (12297, ap 63, mvt 2 falling) and Jeltsch (7349, ap 76, ALREADY BENCHED so his sale costs zero fielded points). At today's values: -15.776.453 -6.300.000 +7.157.594 +15.200.246 = +281.387, squad 11, formation 1GK/5DEF/3MID/2ATT = 5-3-2 (legal). POINTS: -Tanaka 63 +Ullrich 79 = +16 ap, so the unwind is points-POSITIVE rather than a sacrifice. BID LEVEL IS DELIBERATELY ABOVE mv 5.756.521 (+9,44%). The calibration table shows FOUR bids at +0,00% and FOUR misses, and Schwolow was lost TONIGHT at +9,69%; the ledger's most repeated and most expensive error is bidding a band computed from older, cheaper clears. 6.300.000 is the freshest measured clearing premium in this market. CUSHION CEILING: the structure stays non-negative up to +14,33% (824.866) on TODAY's Jeltsch value, before any tick. VERIFIED STEP 5: get_player tn = \"M'gladbach\" (tid 15 — resolved from the API, not a web search, per AVOID Alikjuv); st 0, stl empty; NOT on ligainsider's Verletzte-und-Gesperrte table read 17.10.2026; in the Gladbach squad list on ligainsider/5 updated 16.10.2026 16:22 — but that graphic is NAME-ORDERING, not an XI (AVOID A8d0ol0), so selection rests on Kickbase match data: smc 4, sec 21.218s = 353 min over 4 appearances = ~88 min each, MD2 91, MD3 143, MD5 63. He starts and plays full games. Gladbach play MD6 vs Hoffenheim 2026-10-18T15:30Z, after this listing expires.",
     "rank": 1,
-    "trigger": "2026-10-17T21:44:00Z"
+    "trigger": "2026-10-18T02:36:00Z"
    }
   ],
   "killed_this_run": [
@@ -237,10 +237,10 @@
    },
    {
     "name": "SOURCE TRAP — getfootballnewsgermany 03.08.2026 calls Schwolow Mainz's BACKUP to Zentner. It is PRE-SEASON and REFUTED by a 16.10.2026 source.",
-    "pos": "GK",
-    "club": "18",
+    "pos": "",
+    "club": null,
     "ask": null,
-    "mv": 7384320,
+    "mv": null,
     "premium_pct": null,
     "why": "THIRD TRAP IN THE SCHWOLOW FAMILY, AND THIS ONE IS THE MOST DANGEROUS BECAUSE IT IS NOT A WRONG-CLUB ERROR — IT IS THE RIGHT PLAYER, THE RIGHT CLUB, AND A STALE ROLE. getfootballnewsgermany.com/2026/alexander-schwolow-bundesliga/ is bylined 03.08.2026 and reads: he wears the No. 1 shirt but \"is expected to begin the season as the backup to club captain Robin Zentner\". A STEP-5 check that stops there kills the live 7.800.000 bid (call Bgbd5qc) as a backup-keeper buy. It is a PRE-SEASON expectation, not a current ruling. POSITIVE REFUTATION, DATED 16.10.2026: bundesliga.com \"Voraussichtliche Aufstellungen am 6. Spieltag\" (news id 39561, covering 16-18.10) prints the Mainz XI as Schwolow; Posch, Gruber, Potulski; Caci, Sano, Mwene, Amiri, Lee; Becker, Tietz — SCHWOLOW IN GOAL — and lists ZENTNER OUT with a hand injury. Kickbase hard data agrees: get_player 620 st 0, smc 3, ismc 3 (three appearances, three starts), cs 1, mvt 1, tn \"Mainz\". RULE: Schwolow's ROLE question is settled only by a source dated AFTER Zentner's hand injury. Any article from the summer window describing the depth chart is stale by construction. Additive to Alikjuv (the Werder/Mainz club trap) and Aypvyy3."
    },
@@ -255,10 +255,10 @@
    },
    {
     "name": "SOURCE TRAP, OPERABLE FORM — SCHWOLOW IS MAINZ, NOT WERDER. tid 18 = Mainz 05, tid 10 = Werder Bremen. Resolve ANY club question with get_player -> `tn`, never with a web search on a remembered club.",
-    "pos": "GK",
-    "club": "18",
+    "pos": "",
+    "club": null,
     "ask": null,
-    "mv": 7384320,
+    "mv": null,
     "premium_pct": null,
     "why": "ADDITIVE TO Aypvyy3, WHOSE BODY THE DISPLAY TRUNCATES SO ITS WARNING IS UNREADABLE — THIS RUN WALKED INTO THE EXACT TRAP IT LOGGED AND NEARLY KILLED A LIVE 7.800.000 BID. WHAT HAPPENED: the STEP-5 check searched \"Schwolow Werder Bremen\" and got a COHERENT, CORRECTLY-DATED, CURRENT-SEASON refutation — torwart.de \"Werder Bremen: Karl Hein ist der neue Stammtorwart\" dated 31.08.2026 (this season, NOT a date trap), plus ligainsider's Werder club page updated 16.10.2026 15:14 which shows Hein first in the probable XI and does not mention Schwolow anywhere, plus a deichstube item \"Nach Absage von Werder: Schwolow findet neuen Club (Hearts of Midlothian)\". Every one of those is TRUE and every one is IRRELEVANT: Schwolow does not play for Werder. THE DATE-TRAP HEURISTIC CANNOT CATCH THIS — the sources are current and accurate; the error is in the CLUB ATTRIBUTION, upstream of the date check. RESOLUTION INSTRUMENT, USE IT FIRST: get_player 620 returns tn \"Mainz\". Confirmed independently by mdsum (MD5 18 v 7, MD6 8 v 18, MD7 18 v 10) and by lineup `os` fields (Nakuzola tid 18 has os SVW, Deman tid 10 has os M05 — so MD7 is Mainz v Werder). TID MAP ESTABLISHED THIS RUN, CARRY IT: 18 = Mainz 05 (Schwolow, Nakuzola, Da Costa, Caci), 10 = Werder Bremen (Deman, Lynen), 8 = Schalke 04 (Tanaka, Kurucay, Ljubicic), 2 = Bayern (Neuer, Tah, Karl, Stanisic, Diaz), 3 = Eintracht Frankfurt (Guirassy, Schlotterbeck), 43 = RB Leipzig (Nusa, Seiwald, Ouedraogo), 9 = Gladbach (Jeltsch, Hendriks, Tiago Tomas), 5 = Freiburg (Engelhardt, Ginter, Makengo, Ogbus), 13 = (Gregoritsch, Wolf, Brackelmann, Matsima, Komur, Wisbereit), 29 = (ter Horst, Obermair, Pruhs), 4 = (Burkardt, Chandler, Chaibi, Brassier), 14 = Hoffenheim (Kramaric, Rots), 28 = (Okon-Engstler, Heskey), 6 = (Gronbaek, Vieira), 15 = (Ullrich), 77 = (Pinckert). RULE: before any fitness/starter search, read tn from get_player. A club you \"remember\" for a player is not evidence."
    },
@@ -282,11 +282,11 @@
    },
    {
     "name": "Danny Da Costa",
-    "pos": "DEF",
-    "club": "18",
+    "pos": "",
+    "club": null,
     "ask": 5082092,
-    "mv": 5010495,
-    "premium_pct": 1.43,
+    "mv": null,
+    "premium_pct": null,
     "why": "AVOID Danny Da Costa (1540, Mainz DEF) — the only NEW listing since the 10:45Z run, and a future run will be tempted by the cheap price. Kickbase BOARD listing 16.10 12:07:25Z (feed t:3), no u, prc = mv = 5.082.092, st 0, exs 117577 -> expires ~17.10 20:52Z, i.e. AFTER the 16.10 18:30Z lock, so he carries zero MD6 relevance. THREE reasons he is not a buy. (1) mvt 2 = FALLING, the wrong side of the measured tick: mvt 2 n=745 mean -3,11% at the next 20:00Z update with only 15% rising, so he is a negative-carry asset and fails the MOVERS test outright. (2) NOT A CONFIRMED STARTER: bundesliga.com \"Voraussichtliche Aufstellungen 6. Spieltag\" 16.10.2026 starts Posch, Gruber and Potulski in the Mainz back line; comunio 15.10 names Potulski with \"Alternative: da Costa\", i.e. he is explicitly the bench option. (3) ap 75 is BELOW ter Horst (88), the weakest DEF Georg would displace, so he fails the marginal-points test even if he started. REVERSAL: only if a dated Mainz XI actually starts him AND mvt returns to 1 AND the ask is at or below mv."
    },
    {
@@ -339,11 +339,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The window is wide open — the lock is days away — and the measured edge re-measured STRONGER than the baseline in the playbook, not weaker, on a larger sample. So the crowding worry stays on the watchlist but has not fired. The trade is unchanged: bid exactly market value on a rising Kickbase listing, never raise, and sell back after the tick. A lost auction costs nothing; chasing one into a contested premium is what destroys the edge, and this run produced a fresh example of exactly that in a listing we did not chase. Five listings qualify on both the rising flag and the timing test, and they are small enough to sit alongside the keeper bid. Two of them expire overnight and must be bid tonight or lost. The two large qualifiers cannot be funded while the keeper bid is live — that is a capital constraint, and it only lifts if the keeper auction is lost. Worth repeating: the timing test is time-dependent. Listings excluded before the tick can qualify after it, so it has to be re-run every time, and two were re-admitted on exactly that basis this run. Two questions remain open and unresolved. Whether the game caps squad size is still unknown, and it matters because it would cap how many flips can run at once. And the edge is measured in one league over one period; if rivals crowd in it will decay, so the drift gets re-measured every run rather than assumed.",
+  "reason": "The flip window is open — the lock is still days away. The measured tick edge has been re-checked by the worker against a much larger sample than the figure this task was written with, and there is no decay; if anything it is slightly stronger. Rising-flag listings priced at exactly market value and expiring before the next daily update qualify; four do. They are optional upside, not part of the unwind, and they must never be allowed to compete for capital with the Ullrich buy, which is the move that actually fixes the position. Schlotterbeck qualifies on the mechanism but is excluded on capital — he would consume almost the entire spending allowance on his own. Two of the qualifying flips double as keep-fallbacks, so if the Ullrich bid fails, the better of them converts from a flip to a purchase rather than being flipped. A note for future runs: the ledger's own 'manager asks below market value: zero' line counts only standing asks. Sub-market clears are happening on board listings — a rival ran a twenty-one-second buy-and-sell round trip tonight for a small guaranteed profit, and another bought two injured players slightly under value. That zero does not mean the arbitrage is absent. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap flip throughput; and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No new problem anywhere in the squad. Every player appeared on the matchday just played, and the only fitness flag is the standing one on the keeper who is already designated for sale — which is part of why he is being sold, not a new development. One midfielder continues to show a fixture marker that an earlier run already established is not an injury flag; it has not changed and should not be re-litigated. The flip candidates were deliberately NOT fitness-checked, which is correct: fitness does not enter the daily value tick. They were checked for transfer risk, and there is none — the German window is shut.",
+  "sweep": "No squad player is newly injured. None of the eleven outfielders appears on the league injury and suspension table read today. Neuer continues to carry a non-zero status flag, which is known and already logged, and his value is falling steadily — but that decay is NOT a reason to sell him, and a future run will be tempted to read it as urgency. It is not. The decay costs value; selling him costs the entire matchday. Ullrich was verified properly: his club was resolved from the API rather than a web search, after an earlier run nearly killed a correct call by searching a remembered club. He is absent from today's injury table and his match record shows him starting and playing close to full games, which is the authority here — the club page's player list is name-ordering, not a starting eleven, and has misled this ledger before.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -525,10 +525,16 @@
    "reversal": "Reverse if a dated source confirms Neuer is Bayern's starting keeper again AND his Kickbase st returns to 0 — or immediately if the Schwolow auction is lost and no other confirmed-starter GK is on the board, in which case he was never sold and the block has no force."
   },
   {
+   "name": "Ao Tanaka",
+   "status": "12297",
+   "why": "Recommended for sale this run (SELL Stba7yp) at mv 7.157.594 as the first leg of the rebuilt unwind. He is FIT — st 0, not on ligainsider's Verletzte-und-Gesperrte table read 17.10.2026 — so NO future run may cite this block as evidence of an injury. He is sold on MARGINAL POINTS and on DECAY: at ap 63 he is the lowest-scoring fielded outfielder except Nakuzola (ap 27), who raises nothing at mv 500.000; and he is mvt 2 with tfhmvt -375.660 against a measured mvt-2 drift of -3,11% per tick, so holding him burns roughly 222.600 per tick.",
+   "reversal": "Do NOT buy back before the 2026-10-23T18:30Z lock under any circumstances — after this sale the squad sits at exactly ELEVEN, so a re-buy is a net addition fundable only by going leveraged again, and funding it with another sale drops the squad to ten for -100. After that lock, reverse ONLY if ALL of: (1) the balance is non-negative with genuine spare capacity above the 33% floor; (2) the ask is AT OR BELOW mv, since the instant sale pays exactly mv and buying back above it is a guaranteed loss; (3) his mvt has turned to 1, because buying a falling asset compounds the decay this sale was made to stop; (4) a dated 1. FC Koeln XI at that time actually STARTS him; and (5) a re-based ap that beats whichever fielded body he would displace."
+  },
+  {
    "name": "Finn Jeltsch",
    "status": "7349",
-   "why": "RECOMMENDED FOR SALE 2026-10-17T16:45Z (SELL, this run) as the SECOND AND FINAL unwind leg clearing the ~-13.186.886 that remains after the Schwolow buy and the Neuer sale. He is NOT blocked on merit and no future run may cite this block as an injury or a selection doubt: he is st 0, 5/5 played, ap 76, mvt 1, and absent from Ligainsider's Verletzte-und-Gesperrte table read 17.10.2026. He is purely the funding leg, chosen because selling him retains Brackelmann (ap 108) in the XI while selling Brackelmann instead would field Jeltsch (ap 76) — +32 ap and +2,77M more cash for the same single sale. He was bought 17.10 10:00Z at 16.000.888 against mv 15.131.034 (+5,75%), so a re-buy above mv is a guaranteed loss on top of a realised one. CLUB TRAP: he is STUTTGART (tid 9, get_player tn), never Gladbach — a web search on a remembered club will mis-resolve him.",
-   "reversal": "Do NOT buy him back before the 2026-10-23T18:30Z lock under any circumstances: once the sale executes the squad sits at exactly ELEVEN, so a re-buy is a net addition fundable only by going leveraged again, which re-opens the exact zero-matchday risk the sale just closed, and funding it with another sale drops the squad to ten for -100. After that lock, reverse ONLY if ALL of: (1) the balance is non-negative with genuine spare capacity above the 33% floor; (2) the ask is AT OR BELOW mv, since the instant sale to Kickbase pays exactly mv and buying back above it is a guaranteed loss; (3) a dated VfB Stuttgart XI at that time actually STARTS him; and (4) his ap at that point beats the defender he would displace. A relist at any markup over mv is NOT a reversal."
+   "why": "Recommended for sale this run (SELL S4keo7j) at mv 15.200.246, to be sold LATE — hold through the 22.10 20:00Z tick, then sell by 2026-10-23T12:00Z. He is FIT — st 0, not on ligainsider's Verletzte-und-Gesperrte table read 17.10.2026 — so NO future run may cite this block as evidence of an injury. He is sold because he is the BENCHED 12th man: get_lineup 2026-10-17T22:45Z shows he alone has no `lo` slot, so his sale costs ZERO fielded points. This corrects Sgfv2iu, which wrongly named Nakuzola as the benched man and scored this sale at -49 ap. He is underwater against his 16.000.888 purchase (mvgl -800.642), which is why HOLD H65b2qj argues for multiple ticks before selling — compatible with, not contrary to, this call.",
+   "reversal": "Do NOT buy him back before the 2026-10-23T18:30Z lock — the squad sits at exactly eleven after the unwind and a re-buy is fundable only by re-levering or by dropping to ten for -100. After that lock, reverse ONLY if ALL of: (1) a non-negative balance with genuine spare capacity above the 33% floor; (2) an ask AT OR BELOW mv; (3) a dated VfB Stuttgart XI at that time that ACTUALLY STARTS him, because the whole basis of this sale is that his own manager benched him in Kickbase terms and his ap 76 is the lowest of the fielded defenders bar Nakuzola; and (4) a re-based ap that beats the defender he would displace. Being cheap relative to the 16.000.888 paid for him is NOT a reversal — sunk cost is not a points argument."
   }
  ],
  "arithmetic": [
@@ -550,7 +556,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=779, -3,62% to +443,38%"
+   "v": "n=785, -3,62% to +443,38%"
   }
  ]
 }
