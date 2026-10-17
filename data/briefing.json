@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-17T06:51Z",
+ "run": "2026-10-17T08:51Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 184435,
   "floor": -48846431,
   "spending_power": 49030866,
-  "hours_to_lock": 155.63,
-  "exposure": "No leveraged position is open — the balance is positive and the lock is more than six days away. The recommended moves would open a temporary deficit, but every leg of it unwinds tonight when the flips are sold back at the new market value, which is nearly a week before the matchday locks, so the zero-points risk from a negative balance at lock is not in play on this timetable. The real constraint is not the deficit but the unwind: every flip must be sold back to a non-negative balance and at least eleven players before the lock, and no flip may ever reduce the fielded eleven. Note that spending power is the floor-based cap on what Kickbase permits, not a measure of what can safely be kept — a permanent purchase has to clear a non-negative balance at the lock, which is a far tighter test and is what rules out the expensive defender.",
+  "hours_to_lock": 153.64,
+  "exposure": "No leveraged position is open right now and the balance is positive. The recommended sequence would open a deep one, but only briefly and with a very wide margin of safety: the flips resolve well before tonight's value update and can be sold back immediately after it, while the lock is still the better part of a week away. The unwind arithmetic is exact — three purchases permit three sales and three are precisely what is needed, returning the squad to eleven in the only legal shape with a positive balance. The one hard rule still binding is that nothing may leave the balance negative or the squad under eleven when the matchday starts.",
   "must_restore_by": "2026-10-23T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Goalkeeper. The squad carries one keeper, he is not playing, and only one formation is legal — so the slot is simultaneously the biggest points leak and the single point of failure. Fixing it is the whole of the points trade this run, and it strictly precedes the sale that funds it. The next gap behind it is the minimum-value defender holding a starting place on a near-zero average, which is diagnosed but not actionable until capital frees up.",
+ "binding_gap": "Goalkeeper. The squad carries exactly one, he is unavailable with no return date, and the only legal formation requires him in the eleven — so the slot is currently worth close to nothing every matchday it stays unfixed. That is why the keeper buy outranks both flips despite being the smallest ticket of the three, and why it is the one leg that is never dropped when capital gets tight.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 49030866,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 27,
+  "listings": 33,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Nothing has changed about what Georg should do, and the one thing that did change narrowed the value trade rather than the points trade.",
-  "headline_short": "Nothing has changed about what Georg should do, and the one thing that",
-  "detail": "Nothing has changed about what Georg should do, and the one thing that did change narrowed the value trade rather than the points trade. The plan remains: win Schwolow first, sell Neuer only after he is won, and take the tick flips that still fit alongside that bid. The squad is intact — a dated matchday-six preview confirms every outfield player as a probable starter, with no new injury, suspension or benching anywhere in the eleven. Neuer remains the single points leak, and he is the only squad player carrying a fitness flag."
+  "headline": "Bid on Schwolow — the keeper slot is the only real hole in this squad and he is the only fix on the board.",
+  "headline_short": "Bid on Schwolow — the keeper slot is the only real hole in this squad ",
+  "detail": "Bid on Schwolow — the keeper slot is the only real hole in this squad and he is the only fix on the board. Two separate sources dated 15.10.2026 now say Zentner is out with a hand injury, is not yet back in goalkeeper training, and has no return date, which makes Schwolow Mainz's keeper for MD7 and not just a one-week stopgap. His listing has sat uncontested for more than a day. Alongside that, two of the three qualifying tick flips fit inside spending power; the third does not, and the one to let go is Kurucay."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Neuer, and only Neuer. The case is unchanged and has strengthened: Bayern are resting him, his deputy has the gloves for the league fixture, and his return date is openly described as uncertain. He is also the squad's fastest faller on both the daily and the two-hourly market-value trend, so holding him costs value as well as points. The ordering is strict and must not be inverted: he is the only goalkeeper, so the sale happens only after the replacement keeper is actually won, never before and never in anticipation. Selling first and then losing the auction would leave no keeper at all, with nothing but minimum-value backups on the board. Selling back to Kickbase pays exactly market value with no spread, so there is no timing cleverness to extract here beyond respecting that ordering.",
+  "reason": "Neuer, and only after Schwolow is actually won. He is the squad's sole goalkeeper right now, so selling first and then losing the auction would leave the team with no keeper and nothing but minimum-value backups on the board. On merit the sale is straightforward: Bayern cannot say whether his foot problem costs days or weeks, he has already missed the midweek European tie, he is flagged unavailable, and the market is marking him down on both the short and the daily trend. An instant sale back to Kickbase pays exactly market value with no spread, a rule this ledger has confirmed repeatedly. Nothing else in the squad is a sell.",
   "standing": [
    {
     "name": "Manuel Neuer",
@@ -191,7 +191,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Schwolow is the whole buy list, and he is the binding gap. The fitness and starter check is clean and current: he is the first-choice keeper, his club's regular starter is out for roughly another month, and a dated preview published yesterday puts him in goal for the next fixture. The listing is a Kickbase board listing rather than a manager ask, which means it benchmarks against the contested high cluster, not the median — and the ledger's own record now shows a fifth consecutive bid placed at exactly market value that lost, the newest one this morning. That is why the standing bid sits deliberately above market value rather than at it. The listing runs until late tonight, comfortably past the point where this run matters. Nothing else on the board earns a buy: the highest-average defender listed would be a large points upgrade on paper, but he is not financeable as a keep once the keeper swap is paid for, and spending power is not the test — what matters is the balance being non-negative at the lock.",
+  "reason": "Schwolow is the whole buy list and he is the binding gap. Zentner's absence is open-ended, Schwolow is fit and named in the probable eleven, and he has a clean sheet already this season. One trap worth naming so it is not rediscovered: his appearance record has two blanks in it, which looks like rotation risk but is not — those were Zentner starts from before the hand injury. The bid stays above market value deliberately, because every bid this ledger has placed at exactly market value on a contested listing has lost. His listing resolves after tonight's value update, so the run closest to that update must re-test whether the bid is still rich enough. Nothing else on the board earns a place: the squad already covers defence and midfield well, and the large defenders listed are either priced above value by their owners or expire too late to be useful.",
   "standing": [
    {
     "name": "Alexander Schwolow",
@@ -320,11 +320,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip set shrank from four to three. Leweling went this morning to another manager above the asking level, which closes that call as missed and, notably, is the fifth straight loss for a bid placed at exactly market value. The three survivors are all Kickbase board listings at exactly market value, all flagged rising, all fit, and all expiring before tonight's market-value update, so all three capture the very next tick. Ranked by expected gain they run Matsima, then Jeltsch, then Kurucay. The constraint is capital, not quality: the keeper bid plus all three flips overruns spending power by a small margin, so it is the keeper plus two flips, and the one to drop is Kurucay as the smallest expected gain. The keeper sale cannot rescue the third, because that auction does not resolve until long after every flip listing has expired. Several other board listings look superficially qualifying but expire after tonight's update and therefore carry no measured edge — do not count them. The measured tick edge was re-measured this run and shows no material decay. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd into it.",
+  "reason": "Three listings qualify on the measured tick edge — priced at exactly market value, no owner markup, rising trend, and crucially all expiring before tonight's value update, which is what makes the edge real. Two of them fit alongside the keeper buy and one does not. Take the two larger ones; drop the smallest, which is also the smallest expected gain. The margin by which the full set misses is tiny, and that is exactly the temptation to resist — there is no later point in the day when the dropped one becomes affordable. Bid at market value and never raise: winning captures the tick, losing costs nothing, and chasing a contested listing upward destroys several good flips at once. The edge was re-measured again this run from the event log and has not decayed — if anything it has widened slightly since the September baseline, now across more than a thousand paired observations with nine in ten rising. Two things remain unresolved and should stay on the record: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will erode if enough rivals crowd into it. Four consecutive runs have shown no erosion so far.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "A dated squad-wide sweep published yesterday lists every outfield player in the eleven as a probable starter, with none appearing on any injury, suspension or rotation list. Neuer is the sole exception and the sole flagged player: rested for the league fixture with his deputy starting, and no clear return date. The incoming keeper is explicitly fit with no injury listed. The two flip targets both appear as probable starters as well, which is not required for a pure value flip but removes any transfer-risk doubt about them. No squad player is newly injured this run.",
+  "sweep": "Neuer is the only squad player with a problem and it is open-ended — missed training, individual work only, already out of the European tie, and his coach explicitly unwilling to put a timeframe on it. Everyone else in the squad is absent from the league-wide injury and suspension table and reads fit. All three flip targets are fit and under no transfer risk, the window having long since shut — though for a pure value flip fitness would not matter anyway, since it does not enter the daily value tick.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
