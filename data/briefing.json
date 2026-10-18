@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-18T00:55Z",
+ "run": "2026-10-18T02:55Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -15776453,
   "floor": -48429732,
   "spending_power": 32653279,
-  "hours_to_lock": 137.58,
-  "exposure": "The balance is negative and will go deeper before it recovers, which is correct and costs nothing while the lock is days away. The full programme — body in, two legs out, flips unwound after tonight's tick — lands non-negative with eleven players and a legal shape, with days to spare. The thing to watch is not the deficit but the floor: the flip basket plus Ullrich sits inside spending power, but adding Schlotterbeck does not until Tanaka is sold. Never fund a flip by skipping a leg of the unwind.",
+  "hours_to_lock": 135.57,
+  "exposure": "A leveraged position is open and it is substantial. It costs nothing until the instant the matchday locks — but at that instant, a negative balance scores ZERO for the entire matchday, which would waste the squad completely. The lock is still more than five days away, so this is not yet urgent by the clock, and the standing rule is to escalate on the leverage itself only inside the final hours. What makes it worth flagging now is that the plan to unwind it was broken overnight and has had to be rebuilt from scratch. The rebuilt sequence clears the balance comfortably positive with four full days to spare, and it never lets the squad fall below eleven or out of a legal formation at any point. If both body bids are lost, the fallback is to sell Jeltsch alone after tonight's tick — that leaves the balance only slightly negative, within reach of the kept flip basket's expected gain, and there are several runs left before the lock to find another body.",
   "must_restore_by": "2026-10-23T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "The gap is a legality gap, not a points gap. The squad sits one above the eleven-man floor, so exactly one sale is permitted — and one sale does not close the deficit. A body must land before the second leg can be sold, and that body must be an outfielder, because a second keeper cannot be fielded and the final squad lands exactly on the floor with every player in the eleven. Ullrich is the only listing on the board that satisfies position, fitness and price at once, and he expires first.",
+ "binding_gap": "The binding constraint is not a position — it is squad SIZE against the balance. At twelve players with eleven placed, only one sale is legal, and no single sale clears the debt. That is the gap: a twelfth body is what converts one legal sale into two, and two sales are what turn the balance positive. Every formation currently fillable stays fillable through the whole sequence, and the squad never drops below eleven at any step.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 32653279,
@@ -51,7 +51,7 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 25,
+  "listings": 26,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
   "expiring_within_2h": 1
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Buy Ullrich before his listing expires — that is the whole run.",
-  "headline_short": "Buy Ullrich before his listing expires — that is the whole run.",
-  "detail": "Buy Ullrich before his listing expires — that is the whole run. He is the pos-2 body that makes the two-leg unwind legal, he is a confirmed starter on two dated sources, and he improves the fielded eleven over Tanaka. Everything else waits behind him. Second, and new this run: the Schlotterbeck board listing has aged into the flip window, which reverses a previous exclusion and makes him by far the largest qualifying flip on the board — but he is affordable only after the Tanaka sale lands, and he must never jump the queue ahead of Ullrich."
+  "headline": "The Ullrich buy was LOST overnight, and with it the entire unwind structure — this run rebuilds it.",
+  "headline_short": "The Ullrich buy was LOST overnight, and with it the entire unwind stru",
+  "detail": "The Ullrich buy was LOST overnight, and with it the entire unwind structure — this run rebuilds it. PhiL95 cleared him in the measured high cluster while Georg's bid sat near the median; that is the sixth straight contested Kickbase auction lost the same way, and this run finally prices against it. The position is leveraged and, critically, the debt CANNOT be cleared by selling alone: with twelve players and eleven placed, exactly one sale is legal before the squad drops to ten and takes the minus-hundred penalty, and no single sale is big enough. A replacement body must land first. The lock is still five and a half days out, so there is time — but the action Georg was last told to take no longer exists, and the one that replaces it has a deadline this afternoon."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Two legs, in strict order, and only after a body has landed. Tanaka first: he is flagged falling, the measured drift for falling players is negative, and an instant sale to Kickbase pays exactly market value with no spread, so selling him before tonight's tick is worth real money against selling after. He is fit and playing — the sale is structural, not a fitness call. Jeltsch second: he is the benched twelfth man, so his sale costs zero fielded points, and at his market value he is the only asset that closes the deficit without touching the first eleven. His big score last matchday is one spike against a modest season rate; do not let it talk you out of the sale.",
+  "reason": "Two sales, in a strict order, and the order carries real money. Tanaka goes FIRST and must go before tonight's twenty-hundred tick — he is on a falling flag, the measured drift is sharply negative, and instant sale to Kickbase pays exactly market value with no spread, re-confirmed on four settlements in this feed alone. Waiting until after the tick simply burns cash. Jeltsch goes SECOND and should be held THROUGH tonight's tick, because he is on a rising flag and each day held while that holds is worth roughly the same again; the hard stop is the twenty-second, to leave a clear day of margin before the lock. Both are fit — Jeltsch is in fact in his club's probable eleven — so neither is an injury sale. The critical condition: Tanaka is only sellable once a replacement body has landed. If no body lands, Tanaka must be KEPT and Jeltsch sold alone, because Jeltsch raises more than twice as much for zero points lost.",
   "standing": [
    {
     "name": "Finn Jeltsch",
@@ -203,26 +203,38 @@
     "club": "8",
     "mv": 7157594,
     "ap": 63,
-    "why": "FIRST LEG OF THE REBUILT UNWIND, AND IT IS TIME-SENSITIVE FOR A MEASURED REASON. Instant sale to Kickbase pays EXACTLY mv with no spread (confirmed again this run: Curda 10.139.492 and Tiago Tomas 3.756.449 both settled at exactly mv). Tanaka is mvt 2, tfhmvt -375.660 — the measured next-tick drift for mvt 2 is -3,11% on n=764, only 14,9% rose. Selling him BEFORE the 2026-10-18T20:00Z tick is worth roughly 222.600 against selling after, which is most of the structure's 281.387 cushion. STRICT ORDERING, NON-NEGOTIABLE: this sale is legal ONLY AFTER a buy lands (BUY Bi6h69d Ullrich, or the fallback below). Squad is 12; two sales without a buy put him at 10 and trigger -100. If no buy is won, sell NOTHING but Jeltsch and accept that the balance is still negative — then escalate, because at that point only a Guirassy or Nusa sale clears the debt alone. FALLBACK IF ULLRICH IS LOST, in order: Chaibi (7277) mv 3.493.684 ap 61, expires 2026-10-18T13:45Z — cushion +3.087.703, ap -2 vs Tanaka; then Hendriks (8247) mv 6.502.626 ap 62, expires 2026-10-18T15:08Z — cushion +78.761, ap -1. Becker (2762, ap 67) and Kosugi (12284, ap 64) are ARITHMETICALLY EXCLUDED: at 7.070.184 and 6.632.243 they leave -488.797 and -50.856, i.e. a zero matchday. WHY TANAKA AND NOT ANOTHER FIELDED BODY: at ap 63 he is the lowest-scoring fielded outfielder except Nakuzola (ap 27), and Nakuzola at mv 500.000 raises nothing — Jeltsch + Nakuzola still leaves -76.207. Tanaka is FIT (st 0, not on ligainsider's Verletzte table read 17.10.2026); this is a funding-and-structure sale, not an injury sale. DO NOT SELL NEUER (237) TO FUND ANYTHING: he is the only GK, there is no keeper on the board, and SELL S1tdelt is closed for exactly that reason.",
+    "why": "REPLACES Stba7yp, WHOSE CONDITION NAMED THE NOW-DEAD Ullrich BUY. STRICTLY CONDITIONAL AND THE CONDITION IS NOT OPTIONAL: sell Tanaka ONLY AFTER a body has landed (BUY Chaibi, or the Hendriks fallback). If no body lands today, DO NOT SELL HIM — with squad 12 and 11 placed only one sale is legal, and that sale must be Jeltsch, who is benched and worth more than twice as much. Selling Tanaka instead would field ten men or leave -8.618.859 with the better asset still unsold. ONCE A BODY HAS LANDED, SELL HIM BEFORE THE 2026-10-18T20:00Z TICK AND NOT AFTER. Instant sale to Kickbase pays EXACTLY mv with no spread — re-confirmed again this run on four settlements (Curda 10.139.492, Tiago Tomas 3.756.449, Erevbenagie 3.382.606, Heskey 2.074.145, all t:2 at exactly mv). He is mvt 2 with tfhmvt -375.660, and the drift re-measured from the event log this run is -3,11% on n=764 with only 14,9% rising, so selling after the tick costs about 222.601. He is the correct one of the two to sell early for exactly that reason, while Jeltsch is mvt 1 and should be held THROUGH the tick. He is FIT (st 0, absent from the ligainsider injured table) — this is a funding and structure sale, not an injury sale, and his ap 63 is the lowest of the four fielded midfielders.",
     "tag": "sell"
    }
   ]
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Ullrich is the buy, and he is the binding one. Two independent dated previews name him in the Gladbach starting eleven for this afternoon, one of them calling him undroppable and crediting him three assists in four league games; he carries no status flag and is absent from the injured-and-suspended table. The standing bid is deliberately left above market value rather than re-cut to the board rule: he is not a pure flip, because losing him costs the structure and an upgrade on Tanaka, and the premium still sits below the measured high cluster for contested board listings. Fullkrug remains the one real points upgrade on the board and remains unfinanceable — nothing changed there. Do not substitute a cheap body for Ullrich: a keeper cannot be fielded as the eleventh man, and because the squad lands exactly on the floor, any body is a fielded player who must score.",
+  "reason": "One buy, and it is structural rather than an upgrade: it exists to make the second sale legal. Chaïbi is the pick, and the reason is headroom, not quality. Hendriks is the better-verified starter of the two — named in a dated probable eleven — but he is nearly twice the price, which leaves the unwind clearing by a hair and no room at all to pay a winning premium. Chaïbi is cheap enough that a full high-cluster premium costs very little and still leaves a comfortable cushion, and he is close enough to points-neutral against Tanaka that the whole manoeuvre costs about two points of average while rescuing a matchday. His caveat is stated plainly: two starts in five appearances, so his average is partly inflated by substitute cameos and should be expected to settle lower. He is fit, he started matchday six and played it out, and his coach was publicly praising him two days ago. Hendriks is the fallback ONLY — the two listings resolve eighty-three minutes apart, so the first outcome is known before the second bid is placed. Bidding both would cost more than the sales raise and end the day still under water. Füllkrug remains the one genuine points upgrade on the board and remains unaffordable; the arithmetic was re-checked this run and has not changed.",
   "standing": [
    {
-    "name": "Lukas Ullrich",
+    "name": "Ramon Hendriks",
     "pos": "DEF",
-    "club": "15",
-    "ask": 6300000,
-    "mv": 5756521,
-    "premium_pct": 9.44,
+    "club": "9",
+    "ask": 6502626,
+    "mv": 6502626,
+    "premium_pct": 0,
     "listing": "Kickbase listing",
-    "why": "REPLACES FLIP F8nst20 — SAME PLAYER, DIFFERENT PURPOSE. He is no longer a one-tick flip; he is the body that makes the whole unwind legal. WHY THE STRUCTURE CHANGED: BUY Bgbd5qc (Schwolow) is MISSED — PhiL95 cleared him 2026-10-17T21:44:45Z for 8.099.999 against mv 7.384.320 = +9,69%; Georg's 7.800.000 was +5,63% and lost by 299.999. Schwolow was the ONLY pos-1 listing on the board and there is STILL no keeper listed. Neuer is the squad's only GK, so SELL S1tdelt is CLOSED and MUST NOT BE REVIVED: selling him leaves 0 GK and no legal formation. THE UNWIND ARITHMETIC, RE-DERIVED FROM LIVE FIGURES: cash -15.776.453, squad 12, so without a buy exactly ONE sale is permitted (12->11) and it must raise >=15.776.453. Only Guirassy (33.225.012, ap 132) or Nusa (28.880.878, ap 159) clear that alone — both are the two best assets in the squad. Jeltsch alone leaves -576.207, i.e. a ZERO matchday. So ONE BUY IS MANDATORY to license a second sale. CHOSEN LEG: buy Ullrich, sell Tanaka (12297, ap 63, mvt 2 falling) and Jeltsch (7349, ap 76, ALREADY BENCHED so his sale costs zero fielded points). At today's values: -15.776.453 -6.300.000 +7.157.594 +15.200.246 = +281.387, squad 11, formation 1GK/5DEF/3MID/2ATT = 5-3-2 (legal). POINTS: -Tanaka 63 +Ullrich 79 = +16 ap, so the unwind is points-POSITIVE rather than a sacrifice. BID LEVEL IS DELIBERATELY ABOVE mv 5.756.521 (+9,44%). The calibration table shows FOUR bids at +0,00% and FOUR misses, and Schwolow was lost TONIGHT at +9,69%; the ledger's most repeated and most expensive error is bidding a band computed from older, cheaper clears. 6.300.000 is the freshest measured clearing premium in this market. CUSHION CEILING: the structure stays non-negative up to +14,33% (824.866) on TODAY's Jeltsch value, before any tick. VERIFIED STEP 5: get_player tn = \"M'gladbach\" (tid 15 — resolved from the API, not a web search, per AVOID Alikjuv); st 0, stl empty; NOT on ligainsider's Verletzte-und-Gesperrte table read 17.10.2026; in the Gladbach squad list on ligainsider/5 updated 16.10.2026 16:22 — but that graphic is NAME-ORDERING, not an XI (AVOID A8d0ol0), so selection rests on Kickbase match data: smc 4, sec 21.218s = 353 min over 4 appearances = ~88 min each, MD2 91, MD3 143, MD5 63. He starts and plays full games. Gladbach play MD6 vs Hoffenheim 2026-10-18T15:30Z, after this listing expires.",
+    "why": "CONDITIONAL FALLBACK BODY — BID THIS ONLY IF THE Chaibi AUCTION IS LOST AT 13:45Z. DO NOT BID BOTH: winning both costs 10.695.047 and the two sales then leave -4.113.660, which needs a third sale and still ends negative at -619.976. The listings resolve 83 minutes apart (Chaibi 13:45Z, Hendriks 15:08Z), so the Chaibi outcome is known before this bid must be placed. BID EXACTLY mv 6.502.626 AND DO NOT RAISE — not because the flip doctrine says so, but because the budget forbids more: -15.776.453 -6.502.626 +7.157.594 +15.200.246 = +78.761, so any premium at today's market values puts the unwind back under water. If Jeltsch is instead sold after tonight's tick at roughly 15.645.613 the margin becomes 524.128 and a bid of up to about 7.026.900 (+8,06%) would still clear — but that premium is below the measured high cluster anyway, so it buys little win probability. HE IS THE BETTER-VERIFIED STARTER OF THE TWO, DATED: ligainsider VfB Stuttgart page, Letzte Aktualisierung 16.10.2026 15:35, names Hendriks in the voraussichtliche Aufstellung at rating 3,8; he is absent from the Verletzte-und-Gesperrte table and Kickbase st is 0. CLUB-ATTRIBUTION WARNING FOR FUTURE RUNS, AND THIS RUN WALKED INTO IT: Hendriks is VfB STUTTGART (tid 9), NOT Moenchengladbach. The first search this run was run against Gladbach and returned nothing usable. tid 15 is Gladbach (confirmed by get_player 4333 tn \"M'gladbach\"); tid 9 is Stuttgart, which is also Jeltsch's club. This is the third instance of the club-attribution trap after Schwolow/Mainz-vs-Werder (Alikjuv) and Mokwa. On a DEF body the resulting XI is 1GK/5DEF/3MID/2ATT = 5-3-2, also legal.",
     "rank": 1,
-    "trigger": "2026-10-18T02:36:00Z"
+    "trigger": "2026-10-18T15:08:00Z"
+   },
+   {
+    "name": "Farès Chaïbi",
+    "pos": "MID",
+    "club": "4",
+    "ask": 4192421,
+    "mv": 3493684,
+    "premium_pct": 20,
+    "listing": "Kickbase listing",
+    "why": "THE BODY THAT MAKES THE UNWIND LEGAL, REPLACING THE MISSED Ullrich (Bi6h69d). WHY A BODY IS MANDATORY, NOT OPTIONAL: cash -15.776.453, squad 12 with 11 placed. Exactly ONE sale is legal without a replacement, because a second drops the squad to ten and triggers -100. The best single sale is benched Jeltsch at 15.200.246, which leaves -576.207, or -130.840 even if held through tonight's +2,93% tick. NO SINGLE SALE CLEARS THE DEBT. A negative balance at the 2026-10-23T18:30Z lock scores ZERO for all of MD7, so the body is what prevents a zeroed matchday. ARITHMETIC AT THIS BID: -15.776.453 -4.192.421 (buy, squad 13) +7.157.594 (Tanaka, squad 12) +15.200.246 (Jeltsch, squad 11) = +2.388.966 POSITIVE, or +2.834.333 if Jeltsch is sold after the tick. Resulting XI is 1GK/4DEF/4MID/2ATT = 4-4-2, legal; Chaibi (ap 61) replaces Tanaka (ap 63) for a net -2 fielded ap and Jeltsch was benched, so the whole structure costs about two points and saves an entire matchday. WHY +20,00% AND NOT mv — THIS IS THE SIXTH-LOSS CORRECTION: bidding at or near mv on a contested Kickbase listing has now lost SIX consecutive auctions (Makengo +60,76% vs our +13,03%; Banks +30,43% vs +15,01%; Mokwa +41,39% vs +31,01%; Schwolow +9,69% vs +5,63%; Ullrich +19,92% vs +9,44%). Kickbase listings are highest-bid-wins, so a premium genuinely buys win probability, and the measured HIGH cluster is where they clear (Ebnoutalib +16,71%, Campbell +20,96%, Ullrich +19,92%). +20,00% = 4.192.421 sits inside that cluster and still leaves a 2.388.966 cushion. He is the right body precisely BECAUSE he is cheap: at mv 3.493.684 a 20% premium costs only 698.737, whereas Hendriks at mv 6.502.626 leaves only 78.761 and therefore no headroom at all. FITNESS/STARTER, DATED: FIT — absent from the ligainsider Verletzte-und-Gesperrte table read this run, which independently cross-validates against Kickbase st flags (Skhiri, Ache, Guiu, Remberg, Silas all match), and his Kickbase st is 0. He STARTED MD6 against Koeln on 16.10.2026 (ligainsider Eintracht Frankfurt page shows him in that lineup at rating 3,0 with no substitution marker) and ligainsider carries a 16.10.2026 item headlined \"Huetter belohnt fleissigen Chaibi\". CAVEAT, STATED HONESTLY: only 2 Startelf in 5 appearances and 259 minutes, so the ap 61 is partly cameo-inflated and should be expected to regress toward roughly 50. He is a starter trending up, not an established one — but the body's job here is to be legal and roughly points-neutral against Tanaka, and he is both.",
+    "rank": 2,
+    "trigger": "2026-10-18T13:45:00Z"
    }
   ],
   "killed_this_run": [
@@ -339,11 +351,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The window is wide open — the lock is days away, so every flip unwinds tonight with no matchday risk. The tick edge was re-measured from the log this run and has not decayed; if anything it is stronger on a much larger sample than the stored baseline. The headline is Schlotterbeck: his listing now expires comfortably before tonight's update, which is the exact test a previous call used to exclude him, and that call's premise has simply expired with the clock. He is a board listing at exactly market value with a rising flag, and his expected tick gain dwarfs the existing four-name basket combined. Two cautions that bind. He and Ullrich do not both fit inside current spending power, so Ullrich goes first and Schlotterbeck only after the Tanaka sale frees room. And he is the largest single-name exposure this ledger has recommended, so size him against the measured downside tail rather than the mean. The existing four — Hendriks, Wober, Chaibi, Okon-Engstler — all still qualify unchanged: bid exactly market value, never raise, unwind after the tick. Two open questions stand unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
+  "reason": "The flip window is open — the lock is days away — and the measured edge has NOT decayed: the rising-flag drift re-measures essentially flat against both the last run and the original measurement a month ago, on a much larger sample. Rivals have not yet crowded it out. But this run deliberately shrinks the basket. Schlotterbeck qualified on every test and was dropped anyway, purely on capital priority: he resolves in the small hours, hours before the body does, and would absorb the overwhelming majority of the spending envelope — forcing the body to be bid at roughly market value, which is precisely the error that has now lost six auctions. A tick gain is never worth risking the buy that prevents a zeroed matchday. The two small qualifiers are kept; both are comfortably funded alongside the body, and a lost flip auction still costs nothing. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once; and the standing caveat that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean sweep. Nobody in the squad and nobody on the shortlist appears in the injured-and-suspended table. Neuer still carries a status flag in Kickbase, but that is residual rather than new: his own match data shows he played yesterday and scored well, and he is not in the table. Treat the flag as stale and do not re-open it on a web search — the search results for him are almost entirely years-old injury stories, the same trap this ledger has logged three times before. Ullrich, Tanaka and Jeltsch are all fit and playing.",
+  "sweep": "All clear across the squad. No squad player appears on the injured-and-suspended table, and Neuer's lingering status flag is confirmed residual rather than real — his club lists only one absentee, and it is not him. That table carries no calendar date, which is a known weakness of the source, so it was cross-checked against live status flags on five separate players on the transfer board and matched on every one; it is a current snapshot. Both buy candidates are fit and absent from it.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -527,14 +539,14 @@
   {
    "name": "Ao Tanaka",
    "status": "12297",
-   "why": "Recommended for sale this run (SELL Stba7yp) at mv 7.157.594 as the first leg of the rebuilt unwind. He is FIT — st 0, not on ligainsider's Verletzte-und-Gesperrte table read 17.10.2026 — so NO future run may cite this block as evidence of an injury. He is sold on MARGINAL POINTS and on DECAY: at ap 63 he is the lowest-scoring fielded outfielder except Nakuzola (ap 27), who raises nothing at mv 500.000; and he is mvt 2 with tfhmvt -375.660 against a measured mvt-2 drift of -3,11% per tick, so holding him burns roughly 222.600 per tick.",
-   "reversal": "Do NOT buy back before the 2026-10-23T18:30Z lock under any circumstances — after this sale the squad sits at exactly ELEVEN, so a re-buy is a net addition fundable only by going leveraged again, and funding it with another sale drops the squad to ten for -100. After that lock, reverse ONLY if ALL of: (1) the balance is non-negative with genuine spare capacity above the 33% floor; (2) the ask is AT OR BELOW mv, since the instant sale pays exactly mv and buying back above it is a guaranteed loss; (3) his mvt has turned to 1, because buying a falling asset compounds the decay this sale was made to stop; (4) a dated 1. FC Koeln XI at that time actually STARTS him; and (5) a re-based ap that beats whichever fielded body he would displace."
+   "why": "RECOMMENDED FOR SALE 2026-10-18T02:45Z (SELL Su7sbfb) at mv 7.157.594 by instant sale to Kickbase, conditional on a body landing first and timed BEFORE the 20:00Z tick. He is FIT — st 0 and absent from the ligainsider Verletzte-und-Gesperrte table read this run — so no future run may cite this block as evidence of injury. He is sold on VALUE DECAY and on being the cheapest fielded point: mvt 2 with tfhmvt -375.660 against a measured mvt-2 drift of -3,11% on n=764 where only 14,9% rise, and ap 63 is the lowest of the four fielded midfielders (Nusa 159, Engelhardt 134, Wolf 96). He is the funding leg that, together with benched Jeltsch, turns -15.776.453 into a positive balance and saves an entire matchday from the zero-balance rule.",
+   "reversal": "Reversible if the Chaibi and Hendriks bids are BOTH lost and no other body lands — in that branch Tanaka must be KEPT and Jeltsch sold alone, and this block carries no force. Also reversible if his mvt flips to 1 and the debt is cleared by other means. Do NOT re-buy him at a premium: he was sold for structure, not disliked on merit."
   },
   {
    "name": "Finn Jeltsch",
    "status": "7349",
-   "why": "Recommended for sale this run (SELL S4keo7j) at mv 15.200.246, to be sold LATE — hold through the 22.10 20:00Z tick, then sell by 2026-10-23T12:00Z. He is FIT — st 0, not on ligainsider's Verletzte-und-Gesperrte table read 17.10.2026 — so NO future run may cite this block as evidence of an injury. He is sold because he is the BENCHED 12th man: get_lineup 2026-10-17T22:45Z shows he alone has no `lo` slot, so his sale costs ZERO fielded points. This corrects Sgfv2iu, which wrongly named Nakuzola as the benched man and scored this sale at -49 ap. He is underwater against his 16.000.888 purchase (mvgl -800.642), which is why HOLD H65b2qj argues for multiple ticks before selling — compatible with, not contrary to, this call.",
-   "reversal": "Do NOT buy him back before the 2026-10-23T18:30Z lock — the squad sits at exactly eleven after the unwind and a re-buy is fundable only by re-levering or by dropping to ten for -100. After that lock, reverse ONLY if ALL of: (1) a non-negative balance with genuine spare capacity above the 33% floor; (2) an ask AT OR BELOW mv; (3) a dated VfB Stuttgart XI at that time that ACTUALLY STARTS him, because the whole basis of this sale is that his own manager benched him in Kickbase terms and his ap 76 is the lowest of the fielded defenders bar Nakuzola; and (4) a re-based ap that beats the defender he would displace. Being cheap relative to the 16.000.888 paid for him is NOT a reversal — sunk cost is not a points argument."
+   "why": "STANDING SALE (SELL S4keo7j) at mv 15.200.246, re-confirmed this run. He is FIT and in fact STARTING — ligainsider VfB Stuttgart probable XI, Letzte Aktualisierung 16.10.2026 15:35, names him at rating 3,9, and he is absent from the Verletzte-und-Gesperrte table — so no future run may cite this block as evidence of injury or of losing his place. He is sold because he is the BENCHED TWELFTH MAN in Kickbase: get_lineup shows him with no `lo` slot while Nakuzola is placed at lo 4, so selling him costs ZERO fielded points while raising more than twice what any other legal single sale raises. TIMING REFINEMENT ADDED THIS RUN: he is mvt 1 with tfhmvt +69.212, so he should be held THROUGH the 2026-10-18T20:00Z tick and sold after it — worth about +445.367 at the measured +2,93%. Each further day held while mvt 1 is worth roughly the same again, but the balance stays negative until he sells, so the hard stop is 2026-10-22 to leave a full day of margin before the 2026-10-23T18:30Z lock.",
+   "reversal": "Reversible only if he is PLACED in the eleven — i.e. if a fielded defender is sold or injured and Jeltsch becomes a starter rather than the twelfth man — or if the debt is cleared by other means and the squad is at twelve or more. Do NOT re-buy him; if he is still owned after the balance turns positive, re-evaluate as a KEEP rather than as a purchase."
   }
  ],
  "arithmetic": [
@@ -556,7 +568,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=786, -3,62% to +443,38%"
+   "v": "n=787, -3,62% to +443,38%"
   }
  ]
 }
