@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-19T04:50Z",
+ "run": "2026-10-19T06:53Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -8,14 +8,14 @@
   "locks": "2026-10-23T18:30:00Z",
   "played": 6
  },
- "cash": -15726453,
+ "cash": -15666453,
  "squad_value": 162224370,
  "leverage": {
-  "balance": -15726453,
-  "floor": -48344313,
-  "spending_power": 32617860,
-  "hours_to_lock": 109.65,
-  "exposure": "The balance is negative and has been for days. That costs nothing until the instant the matchday locks, and the lock is still the better part of five days away, so it constrains nothing today except the unwind. Both planned purchases fit inside spending power together, and the unwind is fully specified: the flip sells back tonight, the keeper goes once his replacement has settled, and the defender goes on the twenty-third after the last tick. That sequence returns the balance to positive and leaves exactly eleven players in a legal formation. The risk to watch is not the deficit — it is any step that gets taken out of order.",
+  "balance": -15666453,
+  "floor": -48364113,
+  "spending_power": 32697660,
+  "hours_to_lock": 107.61,
+  "exposure": "The balance is negative and has been for several cycles, which costs nothing until the instant the matchday locks — at which point a negative balance scores zero for the entire matchday. The lock is still several days out, so there is no urgency tonight, but the unwind is now fully committed: the keeper purchase is covered by the two planned sales with only a thin margin left over, and that margin is the entire buffer. Any flip taken on top of this must be unwound on its own legs, not out of that margin. The sequence has to run in order — buy, then sell the injured keeper once the replacement has actually settled, then sell the twelfth man on the twenty-third after the final tick — and no leg can slip past the lock.",
   "must_restore_by": "2026-10-23T18:30:00Z"
  },
  "counts": {
@@ -43,18 +43,18 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "Goalkeeper, and nothing else is close. The outfield is complete and fit; the keeper slot is occupied by an injured player who will score nothing. Only one fit starting keeper exists on the board at a real price — the other three are all priced at the floor with no matchday points all season, and one of them has already been refuted by an official lineup. Fill this before upgrading anything.",
+ "binding_gap": "Goalkeeper, and it has been the binding gap for several cycles. The squad holds exactly one keeper, he is injured, and he is occupying a slot in the fielded eleven. There is no legal formation without a keeper, so this is not an upgrade question but a structural one: either a fit keeper settles before the lock or Georg fields a dead slot for the whole matchday. Only one obtainable keeper is a genuine starter; the rest of the board is floor-priced bodies with no points all season. Fixing this outranks every other move, including the value trade.",
  "surplus": "",
  "run_kind": "scheduled",
- "cash_ceiling_before_md1": 32617860,
+ "cash_ceiling_before_md1": 32697660,
  "daily_bonus": null,
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 40,
+  "listings": 39,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 0
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Nothing has moved since the last run: the squad is unchanged, no squad player is newly injured, and the plan stands exactly as it was cut.",
-  "headline_short": "Nothing has moved since the last run: the squad is unchanged, no squad",
-  "detail": "Nothing has moved since the last run: the squad is unchanged, no squad player is newly injured, and the plan stands exactly as it was cut. Two things are actionable right now. The Füllkrug flip is still live at exactly market value and expires within the next couple of hours, and it is the last listing on the board that can still catch tonight's tick. And Schwolow is still sitting unsold on PhiL95's listing while Georg's last recorded offer was below the ask — the only fit starting goalkeeper obtainable before the lock is still obtainable, and still not owned."
+  "headline": "One action decides this cycle and it is still not done: raise the Schwolow offer to PhiL95's full ask, in one step, now.",
+  "headline_short": "One action decides this cycle and it is still not done: raise the Schw",
+  "detail": "One action decides this cycle and it is still not done: raise the Schwolow offer to PhiL95's full ask, in one step, now. Two findings from this run make the delay more expensive than any previous run understood. First, the auction was never contested — the listing carries a single offer and it is Georg's own, so the ladder rungs earlier runs read as rival bids were all his. Fourteen rungs, no acceptances, no rival. Laddering against a fixed ask with nobody else bidding is noise. Second, waiting for the premium percentage to fall is backwards: the ask is fixed in euros, so every tick that passes hands the keeper's rise to the seller rather than to Georg, and the Neuer sale that funds everything is gated on a keeper settling while Neuer himself is falling. Buy at the ask, sell Neuer the moment the keeper shows in the squad, sell Jeltsch on the twenty-third after the last tick and before the lock. That sequence clears to a non-negative balance with a legal eleven, and it is the only sequence that does."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Two sales are queued and neither should be executed today. The keeper sale is strictly conditional and the condition is still unmet — no replacement has settled in the squad, and selling first would leave no goalkeeper at all, no legal formation and the full penalty. Sequencing is not a preference here, it is the entire call. The defender sale is the unconditional unwind leg and its timing is the point: it is an instant sale back to Kickbase, which pays exactly market value with no spread, and he is still rising. Selling him today throws away every remaining tick before the lock. He goes on the twenty-third, after the last tick and before the lock, and not before.",
+  "reason": "Two sales, both already standing, neither of them new. Neuer is the conditional one and the condition is absolute: he is the only goalkeeper, so selling him before a replacement has actually settled in the squad leaves no legal formation and the penalty. He is injured, has no return date, and is a falling asset, so the moment the replacement appears he should go at market value without waiting. Jeltsch is the unconditional unwind leg and the timing is the whole point of it: he is fit, rising, and outside the eleven, so he is held through every remaining tick and instant-sold on the twenty-third after the final tick and before the lock. Nobody else should be sold. Tanaka is the weakest player in the eleven and a falling asset, but selling him would break the formation once Jeltsch is gone, so he waits for the next cycle.",
   "standing": [
    {
     "name": "Finn Jeltsch",
@@ -210,7 +210,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "The goalkeeper is the binding gap and the ask has not changed by a cent since it was posted. What changed is the denominator: last night's tick lifted his market value, so the same fixed ask now benchmarks at a premium well above the measured manager band. That number is a measurement artefact, not a price. The cash that leaves the balance is identical whether Georg pays today or on the twenty-third — waiting shrinks only the percentage printed beside it, while leaving the one non-substitutable asset on the board exposed to any rival who wants it. Benchmark substitutable listings against the band; buy the irreplaceable one on the nominal number. He is re-confirmed on the strongest possible leg this run: not a preview but a completed match two days ago, where he started and kept a clean sheet, with the incumbent keeper still in build-up training on the current injury table. Offer the full ask in one step and do not ladder — the ladder is what failed five times already, because a manager listing is seller's choice, not highest bid wins.",
+  "reason": "One buy, and it is the binding gap: the Mainz keeper on PhiL95's manager listing, at the full ask, in one step. He is fit, confirmed in the starting eleven on a dated probable lineup, and the incumbent he displaced is still out with a hand injury on a table updated this week. The premium over market value is real and it is high for a manager ask, but the usual low-cluster benchmark does not apply here, because this is not a listing Georg can walk away from — the only other keepers on the board are floor-priced bodies with no points all season, and all three are already logged as traps. The premium is simply the price of a legal, points-scoring keeper slot before the lock, and the alternative is fielding an injured keeper for a whole matchday. Nothing else should be bought. There is no gap anywhere else, and the unwind has no room for a second commitment.",
   "standing": [
    {
     "name": "Alexander Schwolow — go straight to the full ask",
@@ -351,11 +351,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "One flip qualifies and it is the only one on the board: a Kickbase listing, not a manager ask, priced at exactly market value, flagged rising, and expiring early enough this morning to capture tonight's update. Bid exactly market value and never raise — winning captures the tick, losing the auction costs nothing, and chasing a contested board listing into the high cluster destroys the edge outright. The transfer check clears him: every dated source has him arriving in the league, not leaving. The flip adds a body rather than removing one, so the fielded eleven is untouched, and it must be sold back after tonight's update, well inside the lock. The measured edge was re-computed from the log again this run and has risen rather than decayed, on a sample that keeps growing — four consecutive runs now at or above the baseline, so there is still no evidence in the log for the crowding-decay worry.",
+  "reason": "The value trade is live but nothing should be bid before tonight's tick, and that is the finding. Exactly four board listings qualify — Kickbase's own, priced at market value, flagged rising, no injury flag — and every one of them expires after tonight's update. A board listing's price tracks market value, so the update re-prices all four and a bid placed now at today's value sits below the asking price by the time the listing settles, which is precisely how most of the open flips died earlier this week and why the last flip call had to be re-priced twice. So the correct action right now is none; the run after tonight's update should price all four afresh and let them settle overnight to catch tomorrow's tick. The last flip was lost cleanly — bid at market value, beaten by a rival paying deep into the contested high cluster, at zero cost — which is the mechanism working as designed, not a reason to start raising. Capital is not the constraint on these; the unwind is, because the two planned sales are already fully committed to funding the keeper, so any flip has to pay for its own exit before the lock. Two questions remain open: whether Kickbase caps squad size, which would cap how many flips can run at once, and whether the rising-flag edge decays as rivals crowd in. Re-measured this run on more than twice the sample the prompt was calibrated on, the edge is larger, not smaller, so no decay is visible yet.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "The keeper is out with fluid in the foot and no return date, re-confirmed on same-day dated sources and independently proven from the matchday log, where he missed two of the last three. The long-running date trap around him surfaced again and was correctly rejected: the season-ending fracture story is from the ski accident years ago. Nobody else in the squad is injured, suspended, benched or doubtful on the current league-wide table — the clubs of all ten outfield players list absentees, and not one of them is Georg's.",
+  "sweep": "The squad sweep is clean apart from the known goalkeeper case. Every outfield player carries no injury flag and none appears on the league injury and suspension table last updated this week. The keeper is confirmed out on two independent sources dated the eighteenth: the sporting director describes fluid in the foot, gives no return date, and the understudy is in goal. Wednesday's Champions League match is the fitness verdict and remains the only thing that could reverse the sale. On the buy side, the Mainz keeper is confirmed fit and starting on a dated probable lineup, and the incumbent is still out with a hand injury carrying a multi-week return. No source trap was triggered this run; the known stale-article cluster around both keepers was avoided by checking datelines first.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -552,7 +552,7 @@
  "arithmetic": [
   {
    "k": "Balance",
-   "v": "-15.726.453"
+   "v": "-15.666.453"
   },
   {
    "k": "Squad value",
@@ -560,15 +560,15 @@
   },
   {
    "k": "33% floor",
-   "v": "-0,33 x (162.224.370 + -15.726.453) = -48.344.313"
+   "v": "-0,33 x (162.224.370 + -15.666.453) = -48.364.113"
   },
   {
    "k": "Spending power",
-   "v": "-15.726.453 + 48.344.313 = 32.617.860 — NOT -15.726.453"
+   "v": "-15.666.453 + 48.364.113 = 32.697.660 — NOT -15.666.453"
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=801, -3,62% to +443,38%"
+   "v": "n=802, -3,62% to +443,38%"
   }
  ]
 }
