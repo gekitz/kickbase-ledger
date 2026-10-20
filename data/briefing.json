@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-20T08:54Z",
+ "run": "2026-10-20T10:51Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -13735411,
   "floor": -48523241,
   "spending_power": 34787830,
-  "hours_to_lock": 81.6,
-  "exposure": "A leveraged position is open and has been for some time. It is not yet urgent: the lock is still days away, which is ample room for a single instant sale, and a negative balance costs nothing at all until the instant the matchday locks. The risk is one of drift rather than timing, and the sale deadline on the standing call deliberately sits several hours before the lock so the instant-sale fallback can be executed without pressure. The live Omari bid is the one thing that would make this worse, because winning it deepens the deficit past what the Jeltsch sale alone can clear and forces a second sale that has to come from a starting midfielder.",
+  "hours_to_lock": 79.63,
+  "exposure": "A leveraged position is open and has been for several runs. It is covered — the Jeltsch sale at market value clears it with room to spare — but it is not cleared until that sale is actually executed, and it will not execute by itself while the self-listed ask sits above the band that clears. There is ample time before the lock, so this is not yet urgent, and per the standing notification threshold it does not warrant a push at this distance. It becomes urgent if the sale has not been taken by the final runs before the lock, because a negative balance at matchday start scores zero for the whole matchday regardless of who is in the eleven. The single live flip adds a trivial amount to the deficit and unwinds back to Kickbase at market value after tonight's tick, days before the lock, so it does not change the exposure picture.",
   "must_restore_by": "2026-10-23T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "There is no positional gap. The squad fills three legal formations and the eleven on the pitch is complete. The binding constraint is cash, not shape, and it stays that way until the Jeltsch sale clears.",
+ "binding_gap": "Cash, not a position. The eleven is fillable in three formations and nobody is missing, so there is no points-shaped hole to fill — there is a deficit that has to be cleared before the lock and no slack to do anything else with. The secondary gap is goalkeeper depth: one keeper, no backup, and after the Jeltsch sale no room to add one without going negative again.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 34787830,
@@ -54,9 +54,99 @@
   "listings": 27,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 0
  },
  "squad": [
+  {
+   "name": "Nusa",
+   "pos": "MID",
+   "club": "43",
+   "mv": 29076512,
+   "ap": 159,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Guirassy",
+   "pos": "ATT",
+   "club": "3",
+   "mv": 33253146,
+   "ap": 129,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Schwolow",
+   "pos": "GK",
+   "club": "18",
+   "mv": 8084534,
+   "ap": 124,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Engelhardt",
+   "pos": "MID",
+   "club": "5",
+   "mv": 15396675,
+   "ap": 115,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Brackelmann",
+   "pos": "DEF",
+   "club": "13",
+   "mv": 13052210,
+   "ap": 108,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Gregoritsch",
+   "pos": "ATT",
+   "club": "13",
+   "mv": 14189830,
+   "ap": 107,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Deman",
+   "pos": "DEF",
+   "club": "10",
+   "mv": 10952570,
+   "ap": 94,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Wolf",
+   "pos": "MID",
+   "club": "13",
+   "mv": 7316318,
+   "ap": 93,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "ter Horst",
+   "pos": "DEF",
+   "club": "29",
+   "mv": 7172196,
+   "ap": 82,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
   {
    "name": "Jeltsch",
    "pos": "DEF",
@@ -66,17 +156,37 @@
    "state": "clear",
    "note": "",
    "tag": "keep"
+  },
+  {
+   "name": "Tanaka",
+   "pos": "MID",
+   "club": "8",
+   "mv": 6443561,
+   "ap": 62,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Nakuzola",
+   "pos": "DEF",
+   "club": "18",
+   "mv": 500000,
+   "ap": 27,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
   }
  ],
  "verdict": {
   "action": "act",
-  "headline": "Hold the plan and pull one bid.",
-  "headline_short": "Hold the plan and pull one bid.",
-  "detail": "Hold the plan and pull one bid. The standing Jeltsch sale remains the sole and unconditional unwind leg, and it is the only single sale that both clears the deficit and costs nothing in fielded points, because he is the benched twelfth man. The one thing that needs doing this run is removing the live offer on Omari, which was placed off-ledger and which buys almost no fielded strength while forcing a second unwind leg that would cost a nailed starter. Nothing else on the board survives the unwind test, and the market lock is still far enough away that no deadline presses."
+  "headline": "Hold the line and change nothing structural.",
+  "headline_short": "Hold the line and change nothing structural.",
+  "detail": "Hold the line and change nothing structural. The squad is fit, the eleven is fillable, and the only move that matters is the one already standing: sell Jeltsch back to Kickbase at market value to clear the deficit before the matchday locks. He is currently listed by Georg himself at an ask well above market value with no offers on it after several hours, and this ledger's manager-ask band says it will not clear — so the listing has to come down and the instant sale has to be taken manually. There is no points buy on the board that survives the unwind test, and the single live flip is small enough that it changes nothing either way."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Jeltsch only, and the plan is unchanged. Georg's own manager ask on him sits well above the market value and has drawn no bids since it was posted. The ledger's standing view is that an ask at that premium will not clear, and this run found evidence that qualifies but does not overturn it: a manager-to-manager sale elsewhere in the league cleared at roughly double the highest manager-ask premium this ledger had ever recorded. The right tail is fatter than assumed, so the ask is worth leaving up for now, but it is still far above even that new high. The fallback remains what it has always been: pull the ask and instant-sell to Kickbase, which pays exactly market value every time, comfortably before the lock rather than against it. He is fit, started every matchday so far, posted much the best score of his season last time out, and does not appear on the current injury and suspension table.",
+  "reason": "Jeltsch remains the sole and unconditional unwind leg and nothing this run changes that. He is fit — confirmed absent from Ligainsider's injured-and-suspended table — and he posted the squad's best single return last matchday from the bench, which is irritating but irrelevant: he is not in the eleven and the deficit has to be cleared. The mechanical step is unchanged from the last run: the self-listed offer has to be withdrawn first, because the ask is priced where this ledger has never seen a manager listing clear, and then the instant sale to Kickbase takes exactly market value with no spread. No other sale is recommended, and no other sale is even possible without dropping below eleven.",
   "standing": [
    {
     "name": "Finn Jeltsch",
@@ -91,9 +201,18 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing. Two genuinely attractive board listings appeared since the last run, both posted at exactly market value with a rising trend flag and both fit, and both fail on the same arithmetic. The deficit means any purchase has to be funded by a sale beyond Jeltsch, and every asset large enough to close that gap on its own is a better fielded player than either candidate, so funding them is points-negative by construction. A negative balance at the lock scores zero for the entire matchday, which outranks any points upgrade absolutely. Both are logged as avoids with explicit reversal conditions, because once the Jeltsch sale has cleared and the balance is non-negative, the midfielder in particular is a legitimate target if he is ever relisted at or below market value.",
+  "reason": "Nothing. One new candidate appeared this run — a midfielder listed fresh on the Kickbase board at exactly market value, fit, with a respectable average — and he is killed twice over. He pads a position already covered four deep, displacing only the weakest of the four for a thin gain in average points. More decisively, the arithmetic does not close: after the Jeltsch sale the cash position is barely positive, and buying him then selling the man he displaces still leaves the balance negative at the lock, which scores zero for the entire matchday. Every other board listing worth a second look is already carried as an AVOID from an earlier run and nothing about them has changed. The binding constraint is cash, not a position, and it stays that way until the Jeltsch money lands.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "Rocco Reitz",
+    "pos": "MID",
+    "club": "43",
+    "ask": 10311746,
+    "mv": 10311746,
+    "premium_pct": 0,
+    "why": "NEW Kickbase board listing 2026-10-20T10:06:36Z, prc = mv 10.311.746 exactly, mvt 1, st 0, ap 84, tid 43 (Elversberg), expiry ~2026-10-21T23:04Z. KILLED AS A POINTS BUY ON THE UNWIND TEST, NOT ON MERIT. (1) He pads a position already covered: Georg has four MIDs (Nusa ap 159, Engelhardt ap 115, Wolf ap 93, Tanaka ap 62) and 4-4-2 fields all four. Reitz ap 84 displaces only Tanaka ap 62, a marginal +22 ap. (2) THE UNWIND IS ARITHMETICALLY IMPOSSIBLE. Cash -13.735.411. Jeltsch sale at mv +15.337.983 -> +1.602.572. Buy Reitz -10.311.746 -> -8.709.174. The only funding sale that keeps eleven is Tanaka at mv +6.443.561 -> -2.265.613, STILL NEGATIVE at the 2026-10-23T18:30Z lock = ZERO points for all of MD7. Selling anyone else drops the squad to ten for the -100 penalty. (3) ALSO KILLED AS A FLIP: his expiry is 2026-10-21T23:04Z, AFTER the 21.10 20:00Z tick, so he captures no tick until 22.10 and today's mvt 1 does not predict that tick. Reconsider only if the Jeltsch sale clears ABOVE mv by at least 9M, which this ledger's manager-ask band says will not happen."
+   },
    {
     "name": "Marco Friedl",
     "pos": "DEF",
@@ -111,24 +230,6 @@
     "mv": 14091320,
     "premium_pct": 0,
     "why": "THE BEST-LOOKING LISTING ON THE BOARD THIS RUN, AND IT STILL FAILS. New Kickbase board listing posted 2026-10-20T07:45:33Z, i.e. after the 06:45Z run, so no previous run saw it. MID, tid 43, mv 14.091.320, prc = mv exactly, no u, isn true, mvt 1, st 0, ap 86, exs 124087 at 08:45:51Z so expiry ~2026-10-21T19:14Z. Absent from the Ligainsider injured/suspended table read 20.10. (1) AS A POINTS BUY THE UNWIND KILLS IT. He would displace Tanaka (ap 62) in the fielded four for about +24 ap. But cash is -13.735.411 and the ONLY clean unwind leg is Jeltsch at mv 15.337.983. Buying him takes cash to -27.826.731; Jeltsch brings it back to -12.488.748 at 12 players. Selling Tanaka too (6.443.561) still leaves -6.045.187 at 11 players, and a third sale drops the squad to 10 and triggers the -100. Every asset large enough to close that gap alone -- Engelhardt 15.396.675 (ap 115), Gregoritsch 14.189.830 (ap 107), Brackelmann 13.052.210 (ap 108) -- is a BETTER fielded asset than he is, so funding him is points-negative by construction. A NEGATIVE BALANCE AT THE MD7 LOCK SCORES ZERO FOR THE WHOLE MATCHDAY, which outranks +24 ap absolutely. (2) AS A FLIP HE IS DISQUALIFIED ON TIMING. Expiry ~2026-10-21T19:14Z is after tonight's 20.10 20:00Z tick, so he misses it, and it lands only 46 minutes before the 21.10 20:00Z tick -- far too tight to rely on, and it would require carrying 14,1M of fresh leverage through a tick for one uncertain capture. He is also the second-largest capital absorber on the board. REVERSAL: he is a legitimate points target the moment the balance is non-negative. If he is relisted at or below mv AFTER the Jeltsch sale has cleared, re-derive the marginal-points test against whoever occupies the fourth MID slot at that time, verify a dated Leipzig XI starts him (ap 86 off p 429 over five matchdays is real, not a cameo average), and require the purchase to leave a non-negative balance and at least 11 players at the lock."
-   },
-   {
-    "name": "Warmed Omari",
-    "pos": "DEF",
-    "club": "6",
-    "ask": 4500000,
-    "mv": 4380975,
-    "premium_pct": 2.72,
-    "why": "REMOVE THE LIVE OFFER. Georg has a live bid of 4.500.000 on Omari (uoid 3667000, ofc 1, placed off-ledger), mv 4.380.975, so +2,72% over mv. Kickbase board listing, mvt 1, st 0, expires 2026-10-21T18:05Z (exs 120359 at 08:45:51Z). It fails BOTH tests. (1) AS A POINTS BUY IT IS WORTH ~4 ap. He is a DEF, ap 66. He does not displace anyone except Nakuzola (ap 27), but winning him deepens cash from -13.735.411 to -18.235.411, and the Jeltsch sale (15.337.983) then no longer clears the deficit alone: -2.897.428 at 12 players. Nakuzola at 500.000 only gets to -2.397.428 and leaves 11 players, STILL NEGATIVE, with no body left to sell without dropping to 10 and taking the -100. The only unwind that works is selling TANAKA (6.443.561): -13.735.411 -4.500.000 +15.337.983 +6.443.561 = +3.546.133 at 11 players, 5-3-2 (GK Schwolow; DEF ter Horst, Deman, Nakuzola, Brackelmann, Omari; MID Nusa, Wolf, Engelhardt; ATT Gregoritsch, Guirassy). Fielded ap of that XI = 1104 against 1100 for simply pulling the bid and selling Jeltsch. FOUR ap, for 4,5M, the loss of a nailed starter, and a second unwind leg inside 81h. (2) AS A FLIP IT IS ~ZERO EV. Clearing at 2026-10-21T18:05Z does leave him owned at the 21.10 20:00Z tick, so the post-tick-expiry disqualification that closed Wu9ujky does not apply here — but the premium already paid eats the edge: expected tick +2,93% on mv = +128.362 against a premium of 119.025 = +9.337 net, with the measured mvt-1 worst case at -8,71%. The doctrine is bid EXACTLY mv and never raise; 4.500.000 is not mv. (3) HE IS NOT A NAILED STARTER. Ligainsider profile read 20.10: 3 starts plus 1 substitute appearance in 4 of 6 matchdays, 304 minutes; out from 19.08.2026, shoulder injury noted 09.09.2026, returned to the pitch 13.09.2026 (all dated this season, not traps); most recent club item 08.10.2026 headlines the HSV defence as \"heiss umkaempft\". He is absent from the Ligainsider injured/suspended table read 20.10, so this is a rotation risk, not a fitness one. REVERSAL: only if he is relisted at or below mv with an expiry before a 20:00Z tick, Georg's balance is non-negative with genuine spare capacity, and a dated HSV XI actually starts him."
-   },
-   {
-    "name": "Warmed Omari — WITHDRAW THE LIVE 4.500.000 BID",
-    "pos": "DEF",
-    "club": "6",
-    "ask": 4380975,
-    "mv": 4380975,
-    "premium_pct": 0,
-    "why": "SUPERSEDES Aeg6jt5 (closed), which was right but did not know this: GEORG HAS A LIVE BID ON HIM. Measured 20.10 06:45Z: ofc 1, uop 4.500.000, uoid 3667000 (Georg), the ONLY bid on the listing. No previous run recorded it, so he placed it himself after the 04:45Z run. ACTION: WITHDRAW THE BID. Four grounds, and the first is the one that decides it. (1) HE CANNOT BE KEPT. ap 66 against Nakuzola's ap 27 is a real +39, but the arithmetic kills it: buying at 4.500.000 takes the balance to -18.235.411, and the Jeltsch leg returns ~16,73M at the drift mean, leaving ~-1,5M. Selling Nakuzola adds only 500.000 and still leaves ~-1,0M and eleven players. A NEGATIVE BALANCE AT MATCHDAY START SCORES ZERO FOR THE ENTIRE MATCHDAY. So an Omari win forces a sell-back; he can never become the points buy his ap suggests. (2) AS A FLIP HE IS NEARLY DEAD. exs 127550 at 06:45Z puts expiry at ~2026-10-21T18:10Z, AFTER the 20.10 20:00Z tick and before the 21.10 one. The bid is FIXED at 4.500.000 while mv ticks to ~4.509.336, so he would clear at roughly -0,21% against mv — about break-even, not the +2,93% a pre-tick flip captures. This CORRECTS Wu9ujky on one point worth keeping: a post-tick expiry does not make a bid worthless when the bid is fixed above the pre-tick mv, it makes the capture collapse to the gap between the bid and the post-tick mv. The rule survives; the reasoning is sharper. (3) IT IS DEAD CAPITAL IN THE LEVERAGE ENVELOPE. 4,5M of a 34.694.730 spending power is not scarce, but every unwound body is one more thing to remember in the 6h before an 18:30Z lock with the balance already at -13.735.411. (4) HE IS FIT — st 0, not on the Ligainsider 26/27 Verletzte-und-Gesperrte table read this run — so this is NOT an injury call and no later run may cite it as one. REVERSAL: he becomes buyable only if the balance is non-negative AND he is listed at or below mv with an expiry BEFORE the next 20:00Z tick."
    },
    {
     "name": "Giannis Konstantelias",
@@ -201,17 +302,26 @@
     "mv": null,
     "premium_pct": null,
     "why": "REPLACES A40twjo, whose 19.10T00:00Z deadline lapsed with the premise fully intact. Manager David (1880059) now holds SIX simultaneous listings on the board and EVERY ONE is priced above mv, re-measured from this run's list_market: Banzuzi 15.000.000 vs mv 9.696.347 = +54,70%; Sabitzer 10.000.000 vs 7.037.849 = +42,09%; Romulo 15.000.000 vs 11.807.946 = +27,03%; Eggestein 24.000.000 vs 19.908.819 = +20,55%; Matsima 18.000.000 vs 15.822.886 = +13,76%; Ginter 31.000.000 vs 27.893.760 = +11,14%. Every one of these sits ABOVE the measured manager-ask band (low single digits; widest honest observation +7,34% Gosens), so NONE of them is a benchmark-justified buy and the correct response to a David ask is an offer at mv or nothing. Note the asks have NOT decayed since 18.10 even though mv rose on the 18.10 20:00Z tick — he re-prices upward to hold the spread, which is the same behaviour logged for PhiL95 in Amxmwhm/Avp5csr. TREAT ANY DAVID LISTING AS A SELLER'S-CHOICE HOLDOUT, NOT AN AUCTION. Matsima additionally carries iposl TRUE on this listing. Do not read these premiums into the contested-Kickbase-board cluster when benchmarking a Kickbase listing — they are manager asks that have not cleared and therefore carry no clearing information at all."
+   },
+   {
+    "name": "SOURCE TRAP — absolutfussball \"Personal-Update aus Mainz: Eric Martel vor Comeback, so steht es um Robin Zentner\" is 18.09.2026, ONE MONTH STALE, and wrongly implies Zentner is back",
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
+    "premium_pct": null,
+    "why": "This article ranks high on a plain-language search for Mainz goalkeeper news and reads as current, but its own byline is \"Stand: 18.09.2026, 19:37 Uhr\". It reports Zentner out with a hand injury for the Gladbach away game and then says Mainz HOPED he would be available after the international break: \"Demnach hofft Mainz darauf, dass Zentner nach der Laenderspielpause wieder zur Verfuegung steht.\" That hope did not materialise. Ligainsider 15.10.2026 17:44 — four weeks later — has Zentner still out with the same hand, still bandaged, still not in goalkeeper training, Schwolow starting again, and no return date. Taken as current, the 18.09 piece would kill BUY Btd56q3 and RAISE R0ocybd on a false premise, exactly the failure mode of Azz4y4k (wz.de MD3 19.09) and A642b8o (mainz05.de 13.05.2026). This is now the THIRD dated trap on the Mainz goalkeeper question and the second that points the wrong way on Zentner's return. OPERABLE RULE: on the Mainz GK question, accept NOTHING dated before 15.10.2026, and resolve it against the Ligainsider Zentner player page, which carries the newest club-confirmed line."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "One qualifying flip remains live, the smallest of the candidates seen this cycle, and it expires comfortably before tonight's value update. It is the only board listing that is priced at exactly market value, carries the rising trend flag and expires before the tick, so it is the only one that could be owned when the tick lands. Everything else on the board either carries a falling flag or expires after tonight's update and before the next one, which disqualifies it on timing exactly as Lidberg was disqualified. The measured edge itself was re-read from the event log this run and shows no decay at all. Worth stating plainly, though: bidding exactly at market value has now lost five auctions in a row, including one this morning that cleared well into the high cluster. The doctrine is still right on expected value, since losing costs nothing, but no run should plan around actually winning one of these. The two open questions remain unresolved: whether Kickbase caps squad size, which would cap flip throughput, and the fact that the edge is measured in one league over one period and will decay if rivals crowd in.",
+  "reason": "One qualifying flip, and a new mechanical finding that explains why there is only one. A Kickbase board listing re-prices with market value at every daily tick — four listings in today's market predate yesterday's tick and every one still shows an ask equal to the current market value, to the euro. So holding a bid through a tick does not buy the player below the new value; the ask rises with it. The only way to capture a tick is to own the player when it fires, which means a flip candidate qualifies only if its listing expires before the next one. That cuts today's rising-flagged board listings from six to one: the small Elversberg forward already carried as an open flip, whose listing closes this afternoon, before tonight's tick. The rest all resolve tomorrow and have to be re-read after tonight's tick rather than bid on now. Bid exactly market value and never raise. Separately, worth recording: a rival ran two same-day micro-flips overnight, buying cheap uncontested board listings slightly below market value and selling them straight back to Kickbase at market value within hours. That is not tick capture, it is plain sub-market-value arbitrage on listings nobody else wants, and it is a mechanism this ledger has never priced. The context block's line about there being no manager asks below market value is not evidence that sub-market buying is absent — it happens on the board, routinely. Two open questions stand unresolved: whether Kickbase caps squad size, which would cap flip throughput, and the fact that the measured drift comes from one league over one period and will decay if rivals crowd in. It has not decayed this run.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean sweep. Every squad player carries a clear status flag and none of them appears on the current injury and suspension table. The pending Omari bid is the one fitness-adjacent concern, and it is rotation rather than injury: he is fit and back from a shoulder problem earlier in the season, but he has started only some of the matchdays played and his club's own coverage this month describes the defensive line as hotly contested. That is one more reason to pull the bid rather than the main one. A warning for future runs: the article that ranks first on a search for this matchday's injuries and suspensions is three seasons old and benches one of our own attackers on stale information.",
+  "sweep": "Squad sweep clean. All twelve carry a clear status flag and none of them appears on Ligainsider's current injured-and-suspended table, checked club by club across all nine clubs the squad draws from. Nobody is newly injured, suspended or benched, and there is no dated news suggesting any of them leaves the league. On the market side the check confirmed three existing AVOIDs rather than overturning them: the Dortmund attacking midfielder carried as injured is confirmed out for over a month with the club publicly worried, and two other flagged listings are confirmed muscle injuries. The flip candidate was checked for transfer risk rather than starter status, correctly, and shows fit with no transfer news.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -424,7 +534,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=823, -3,62% to +443,38%"
+   "v": "n=824, -3,62% to +443,38%"
   }
  ]
 }
