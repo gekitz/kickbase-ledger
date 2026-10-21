@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-21T10:50Z",
+ "run": "2026-10-21T13:00Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -13655411,
   "floor": -48719730,
   "spending_power": 35064319,
-  "hours_to_lock": 55.65,
-  "exposure": "A leveraged position is open and must be closed before the matchday locks, or the entire matchday scores zero. It is not close-run: the designated sale covers the deficit on its own, with a day and a half of slack after the manager ask expires, and a fallback that pays market value with no spread. If both flip bids win, the deficit roughly triples and the unwind needs all three sales — still inside the limit, since the squad would carry enough bodies to sell three and stay above the minimum, but the worst-tick margin shrinks to almost nothing. That is why the book must not grow. If both bids lose, which is the likeliest single outcome at a bid of exactly market value, nothing is spent and the position is unchanged. The lock is far enough away that no push notification is warranted on the exposure alone; the threshold is the final hours before the lock.",
+  "hours_to_lock": 53.5,
+  "exposure": "The balance is still negative and the matchday lock is more than two days away, so there is time but no slack. Jeltsch is the sole clean unwind leg and his proceeds are fully committed to clearing the debt; that is why no purchase can be kept this run. If both flips win they add to the exposure temporarily and must be sold back after tonight's update and well before the lock, which leaves a comfortable margin. Under the standing threshold the open leverage does not warrant interrupting Georg until the lock is close or until the last run before it. One pipeline note: the direct ledger database was unreachable again, as at the earlier run today, so it is now a standing condition rather than an incident — it cost this run nothing, because every actionable call renders in full and the market statistics are computed from the same event log.",
   "must_restore_by": "2026-10-23T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "There is no points gap binding this run. The binding constraint is the unwind clock, and it is already covered by a sale with a guaranteed fallback. The largest unexploited gain on the board is not a purchase at all: it is the benched defender who should be in the fielded four ahead of the man currently occupying that slot. That costs nothing and needs no money.",
+ "binding_gap": "The gap is a defender slot: the fielded eleven carries a defender whose average is by a wide margin the worst Georg puts on the pitch, and who is only there because the squad has exactly eleven placeable bodies once Jeltsch is set aside for sale. The upgrade exists and is cheap — Omari, already standing as a flip leg, is a fit starting defender listed at exactly his market value with an average far above the man he would replace. What blocks it is not the price but the deficit: keeping him rather than selling him back leaves the balance still negative at the lock, because Jeltsch is the sole clean unwind leg and his proceeds are already spoken for. The gap is therefore real, priced, and has to wait for the debt to clear. Friedl was re-tested this run as a points buy rather than as a flip — a test no previous run had actually run — and he fails harder: kept rather than flipped he would force two further sales of fielded players, surrendering more average than he brings. His AVOID now stands on points grounds as well as on stake-cap grounds.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 35064319,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 32,
+  "listings": 31,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Hold the line — nothing to change.",
-  "headline_short": "Hold the line — nothing to change.",
-  "detail": "Hold the line — nothing to change. The leveraged position is open but fully covered: the Jeltsch sale alone clears the deficit, and the instant-sale fallback stays executable for a day and a half after the manager ask expires. Both standing flip bids are still live on the board at exactly market value and still expire before tonight's tick. The one free action available right now is a lineup fix, not a trade."
+  "headline": "Quiet run — the position is identical to the last one and every standing call survives re-derivation.",
+  "headline_short": "Quiet run — the position is identical to the last one and every standi",
+  "detail": "Quiet run — the position is identical to the last one and every standing call survives re-derivation. No action changes. The one thing that still needs Georg's hands is unchanged from earlier runs: both flip bids are recommended but NOT PLACED, and the earlier of the two lapses this evening. The leveraged position remains open but the lock is still more than two days out, so it is not yet urgent under the standing notification threshold."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Jeltsch, unchanged, and for money rather than merit — he is fit, started every matchday, and is being sold only because he is the unwind leg. Leave the manager ask standing, but revise the expectation sharply downward. A second manager-to-manager sale cleared this morning at a low single-digit premium, which puts the Da Costa clear from four hours earlier back where it belongs: an outlier, not a new regime. The previous run read that one observation as proof the manager band had re-priced and treated the ask as the expected path. It is not. The ask sits far above every manager clear this ledger has measured bar the outlier, and it has drawn no offers since it went up. Treat it as a free lottery ticket: leaving it standing costs nothing, because the instant sale at market value covers the deficit comfortably and stays available long after the ask lapses. The discipline this demands is the opposite of complacency — plan on executing the instant sale tomorrow, do not drift into assuming the ask will rescue it.",
+  "reason": "One sale is open and it is unconditional: Jeltsch, with the manager ask left standing rather than pulled. It has drawn no offers since it was posted, but the ask band has been broken upward twice in recent days by clears well above anything this ledger had previously measured, so leaving it up costs nothing and the instant sale at market value remains available as the fallback right up to the lock. The listing lapses tomorrow evening; after that the instant sale is forced. Selling him costs zero fielded points at the lock, because he must be gone in every branch and the eleven that scores contains the twelfth-man defender either way. The lineup is correctly set as the hedge and should be left alone — fielding Jeltsch now would buy nothing and would risk an unnoticed ten-man eleven if the ask cleared unexpectedly.",
   "standing": [
    {
     "name": "Finn Jeltsch",
@@ -201,7 +201,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No points buy. This is not a refusal on the ground that the balance is negative — a deficit costs nothing until the lock, and the constraint that actually binds is whether a purchase can be unwound in time. It cannot: the flip book already sits exactly at the unwind ceiling, and the squad has no formation hole to fill. Every board listing worth a look either expires after tonight's tick, is flagged unfit, or is already on the avoid list. Nothing on the market beats a man in the fielded eleven by enough to justify opening a second leveraged leg two days before the lock.",
+  "reason": "No buy this run. Nothing on the board is fundable: the deficit consumes the whole of the Jeltsch proceeds, so any purchase kept rather than unwound leaves the balance negative at the lock, and the only further sale legs available are either too small or cost more average than the purchase brings. This is a funding constraint, not a judgement that the market is empty — the best defender upgrade on the board is sitting there at exactly market value and would be an obvious buy the moment the debt is cleared.",
   "standing": [],
   "killed_this_run": [
    {
@@ -317,11 +317,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The book was re-derived from scratch rather than trusted, and it comes back identical: the two standing bids are the largest pair that survives the worst tick ever measured, and the margin is thin enough to matter. Every alternative was tested and every one fails — swapping the smaller leg for the larger defender, or adding a third leg of any size, all breach the unwind test, and all three of those breaches fit comfortably under spending power. That is the whole lesson: spending power is the wrong cap while the balance is leveraged. Bid exactly market value on both and never raise; losing an auction costs nothing, while chasing a contested board listing into the high cluster destroys ten good flips at once. Two open questions stay open: whether the game caps squad size, which would cap how fast this can be run, and whether the edge decays as rivals crowd in. On the second, be honest about what this run can and cannot show — the drift figures are bit-identical to the previous run because no tick has fallen in between. That is the same sample read twice, not fresh confirmation. The first real test comes after tonight's update.",
+  "reason": "The flip book is unchanged, full, and re-derived rather than trusted: two legs, both Kickbase board listings with no manager ask, both priced at exactly market value, both flagged rising, both clean on status, and both expiring before tonight's update so a winner owns them through it. Bid exactly the market value on each and never raise. Neither bid has been placed yet — both board rows still show zero offers, as they have at every run since the small hours — and the earlier of the two lapses this evening, which makes the late-afternoon run the last one that can still act on it. The book has no room for a third leg: tested against the worst tick this ledger has ever measured, the two legs plus the Jeltsch sale clear the lock with only a sliver to spare. The measured drift was re-derived from the event log this run and shows no decay at all — the rising flag's mean and hit rate are both better than the baseline this routine was written against, so rivals crowding in has not yet shown up in the data. Two new clears landed since the last run, both to the same rival, both from the board, and both slightly BELOW market value — no tick signal in either, since both are low-value keepers on a flat flag, but two more points in the band that says bidding exactly at market value and never above is the right discipline. The two open questions remain open: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that the edge is measured in one league over one period and will decay if enough rivals crowd into it.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean sweep. No squad player appears on the league-wide injured-and-suspended table, none carries a status flag, and the fielded eleven started on the most recent matchday to a man. Among players on the market, the injury table confirms what the status flags already said: Konstantelias, Diehl, Agu, van den Berg, Klaas and Hojlund are all out or doubtful and all are correctly excluded. No flip leg appears anywhere on the table, and no leg faces a transfer risk — the window is shut.",
+  "sweep": "Nothing new. Every squad member is unflagged in-game and nothing dated contradicts that. Both flip candidates were re-checked for departure risk rather than fitness, which is the correct test for a pure value trade: Omari's club exercised its purchase option and he is contracted long-term with no exit rumour, and El Aynaoui's pending-transfer flag is confirmed once more as his arrival on loan from Italy, not a departure. Date traps were handled — several injury items surfaced for squad players from last season and were discarded.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -534,7 +534,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=838, -3,62% to +443,38%"
+   "v": "n=840, -3,62% to +443,38%"
   }
  ]
 }
