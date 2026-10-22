@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-22T16:52Z",
+ "run": "2026-10-22T18:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 1879465,
   "floor": -48867158,
   "spending_power": 50746623,
-  "hours_to_lock": 25.62,
-  "exposure": "None. The balance is positive, the squad is at eleven with all eleven placed, there are no live offers out and no pending bids. Nothing has to happen before the lock in roughly twenty-six hours. If Georg does choose to bid on Sosa tomorrow, that changes — it would open a deficit that must be closed by hand in the two hours before the lock, and that is the whole reason the recommendation is to decide late rather than now.",
+  "hours_to_lock": 23.63,
+  "exposure": "No leverage. The balance is positive and no offer is outstanding, so there is no zero-matchday risk open tonight. The recommended move keeps the balance positive at the lock with a cushion, and the cheap-bench-body idea was rejected partly because it would have eaten that cushion. One operational note for Georg: the ledger database is not reachable from the Cloudflare account this session authenticates to, which holds no databases at all. Earlier runs logged that as a transient outage; it is not, and it will never clear by retrying. It cost nothing this run because the ledger context now prints every actionable call in full and only non-actionable entries are truncated, but it is worth either re-authorising the connector against the right account or dropping that step.",
   "must_restore_by": "2026-10-23T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Left-back-shaped, and it has been for days: Nakuzola is the one fielded body returning near-nothing, and every route to replacing him dies on funding rather than on finding a better player. Selling him raises 500.000 against a six-million upgrade, and a second sale would drop the squad below eleven. Until a mid-value body can be sold without breaking the eleven, this gap stays open by arithmetic, not by oversight.",
+ "binding_gap": "The weakest fielded slot is the defence, where Nakuzola holds a place he does not earn and is not starting for his club. Sosa is the fix and the funding works, but only through the Tanaka leg, which changes the squad shape. Until that lands, the gap stays open and is the single thing worth watching.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 50746623,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 36,
+  "listings": 38,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 3
  },
  "squad": [
   {
@@ -170,20 +170,29 @@
  ],
  "verdict": {
   "action": "none",
-  "headline": "No action this run.",
-  "headline_short": "No action this run.",
-  "detail": "No action this run. The squad is intact at eleven, the balance is positive, every fielded player is fit, and nothing on the board is both affordable and better than what it would replace. One genuine upgrade exists — Borna Sosa, Köln — but his auction resolves barely two hours before the lock, so the decision belongs to the 23.10 14:45Z run, not to this one."
+  "headline": "No action tonight.",
+  "headline_short": "No action tonight.",
+  "detail": "No action tonight. The squad is clean, the balance is positive, nothing qualifies for a flip, and the one real points upgrade on the board is deliberately held until after tonight's market-value tick. The next genuine decision point is the Sosa bid, and the last run that can place it is tomorrow 14:45Z."
  },
  "sell": {
   "recommendation": "none",
-  "reason": "Nothing. The squad is at exactly eleven, so a sale on its own drops Georg to ten bodies and a flat 100-point penalty, which no sale on this board earns back. The only sale worth discussing is a funding leg attached to a buy, and the one buy worth discussing is deliberately deferred.",
+  "reason": "Nothing to sell this run, and no sale is safe on its own. The only sale in play is Tanaka, and it is strictly conditional on the Sosa purchase landing — selling him alone drops the squad to ten and costs the eleven-player penalty. Tanaka is falling in value, so his instant-sale proceeds shrink overnight, but the funding still clears with room. He is in Schalke's probable XI today, so this is a value-and-shape decision, not a fitness one.",
   "standing": []
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Sosa (Köln, defender) is the only listing that is both a real upgrade and priced at market value with no manager markup. His average understates him badly: he sat out three matchdays, came back for two starts and returned 147 and 129, and Ligainsider's Köln page dated 19.10 has him starting at left-back against Schalke. The problem is not the player, it is the shape of the trade. Buying him opens a deficit that exactly one sale must close before the lock, and the only sale that closes it is Tanaka — which buys a smaller edge than the raw averages suggest once his recent form is counted. Worse, the auction resolves two hours and seven minutes before the lock, so winning it hands Georg a leveraged position he has to unwind in person inside that window; missing that window scores zero for the entire matchday. Nothing is lost by waiting: there are no offers on him, the listing runs nearly a full day, and the run at 14:45Z tomorrow sits ninety minutes before it resolves with a fresher team sheet and tonight's market move already priced in. Everything else on the board is logged and rejected — Gruda is a quarter of the gain for four times the money and his auction closes after the lock entirely.",
+  "reason": "One candidate, held on purpose. Borna Sosa, defender at Koeln, is the only genuine points upgrade on the board: he is in Koeln's probable XI dated today, carries no status flag, and does not appear on Ligainsider's league-wide absentee table. He would displace Tanaka in the fielded eleven for a meaningful average-points gain. Two refinements were recorded this run. First, the bid must be placed after tonight's tick, not before: Kickbase board asks reprice to market value, so a bid entered at tonight's figure would simply sit below tomorrow's ask and lose. Second, the funding survives the tick with a comfortable positive cushion at the lock, which means the deferral is safe rather than merely convenient. One check remains for the deciding run: the swap changes the squad shape, and the resulting formation must be confirmed legal before anyone acts on it. Everything else on the board is already logged as avoided, and the cheap bench-body idea was killed this run on points rather than on price.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "THE 500k TWELFTH-MAN IDEA — buying a cheap bench body to escape the eleven-player trap scores ZERO and tightens the Sosa funding (Zingerle, Jung, Millgramm, Conde, Topp)",
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
+    "premium_pct": null,
+    "why": "LOGGED BECAUSE IT IS THE MOST SEDUCTIVE IDEA ON THIS BOARD AND IT IS WRONG ON POINTS. The squad sits at exactly ELEVEN, which is the constraint behind half the open calls: no player can be sold without a replacement landing first or the -100 fires. A 500.000 body looks like the cheap escape — the board carries Zingerle (1225, GK, Leipzig), Jung (1858, DEF, Freiburg), Millgramm (12262, ATT, Paderborn) and Conde (1745, MID, Elversberg) at prc = mv = 500.000 with no u, and selling back to Kickbase pays exactly mv, so the cash looks recoverable rather than spent. REJECT ON THREE GROUNDS. (1) IT SCORES NOTHING. Georg optimises for POINTS. At eleven players in 4-4-2 all eleven are fielded, so a twelfth man sits on a bench that pays zero. He would only earn his place by displacing someone, and the weakest fielded body is Nakuzola at ap 27: Conde is ap 14, and Zingerle, Jung and Millgramm have no points at all. Every one of them is WORSE than the man he would replace. The idea buys flexibility measured in euros and pays for it in points, which is the wrong direction for this manager. (2) IT TIGHTENS THE ONLY MOVE THAT DOES SCORE. The post-tick Sosa plan (see Wez3o9z) leaves roughly +1,09M non-negative at the lock. Spending 500.000 on a bench body cuts that cushion to roughly +594k against a mean tick that is itself a measured estimate with a worst observed case of -8,71%. That is a real chance of a NEGATIVE balance at the 23.10 18:30Z lock, which scores ZERO for the entire matchday. Trading a certain zero-point bench body for a risk of an eleven-player zero is a strictly bad trade. (3) IT DOES NOT EVEN UNLOCK THE THING IT PROMISES. Run the full sequence: body in (12), Sosa in (13), Tanaka out (12), Nakuzola out (11) nets the same cash as the simple Sosa-for-Tanaka swap, but the fielded eleven then contains the 500k body in place of Nakuzola ap 27 — a downgrade, not an upgrade. The flexibility is illusory because the bodies available are worse than the body they would free. REVERSAL: only if the squad falls BELOW eleven for any reason, in which case a 500.000 board body is the correct emergency filler and the points objection is irrelevant — a cheap body beats -100. Note Topp (3166) is separately dead on fitness, not price: st 4, and Ligainsider gives him Meniskus, 6 Monate und 3 Wochen, Aufbautraining. Gayret (14914) likewise st 4, 6 Monate at Paderborn. Millgramm, Conde and Gayret are already carried by Ak9hkbn; this entry supersedes nothing and exists to kill the GENERAL idea rather than the individual names."
+   },
    {
     "name": "Brajan Gruda",
     "pos": "MID",
@@ -282,26 +291,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "New Kickbase board listing 2026-10-19T15:19:28Z at prc = mv 3.090.273. Superficially the best cheap DEF upgrade on the board (ap 57 vs Nakuzola 27, and inside the ~3,58M unwind ceiling). Reject on both legs: (1) p 57 with ap 57 means exactly ONE scoring appearance — the cameo-minutes trap, not a six-matchday average; (2) the Ligainsider injured/suspended table lists him for Dortmund under \"nicht beruecksichtigt\" alongside Filippo Mane, i.e. outside the matchday squad. Also mvt 2, so he fails the flip test as well — the measured mvt-2 next-tick drift is -3,09%, 14,9% rose. Nothing here is a buy on either book. REVERSAL: a dated Dortmund XI starting him plus at least three further matchdays to re-base the ap."
-   },
-   {
-    "name": "Lukas Kübler — FLIP ONLY, NEVER A POINTS BUY",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "His ap 36 looks like a cheap upgrade over Nakuzola (ap 27) and the arithmetic even works (buy 3.057.378 + sell Nakuzola 500.000 + sell Jeltsch ~17,5M leaves +523.666 and exactly eleven). It still FAILS the starter test and must not be bought for points. Dated evidence, 17.10.2026 (ms-aktuell, on the contract extension announced 16.10.2026): \"Der erfahrene Defensivspieler kommt in der laufenden Bundesliga-Saison ueberwiegend als Einwechselspieler zum Einsatz\" and \"Die Entscheidung faellt in einer Phase, in der Kuebler nicht mehr regelmaessig zur ersten Elf gehoert.\" Ligainsider profile: 5 Bundesliga appearances, ONE start, 137 minutes, 310 of 573 minutes on the bench; he is the alternative to Philipp Treu at right-back. The ap 36 is a bench average, not a starter average — this is the exact trap STEP 5 warns about in reverse. He remains a legitimate FLIP (mvt 1, prc = mv, fitness irrelevant to the tick) under FLIP Fzoasqy, and nothing here restricts that. REVERSAL for points: a dated Freiburg XI actually starting him AND a re-based ap above whoever he would displace at that time."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "Skip, and it is structural rather than bad luck. The flip needs the player held across a market-value update. Tonight's update is at 20:00Z and the next one falls an hour and a half after the matchday locks, so tonight is the last update that can be turned into money this matchday. Seven board listings pass the rising-value screen, and not one of them resolves before tonight's update — the earliest is six and a half hours too late. The three that do resolve in time all fail the screen outright. No later run before the lock can change this, so the section can be skipped without re-deriving it. The edge itself is intact and showing no sign of crowding: the rising-value flag still predicts the next update at the same strength it did a month ago, on a sample that has grown by a factor of nearly three. Two open questions stay open — whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in. Worth noting on that second point: two rivals ran instant round-trips today, winning board auctions just under market value and selling straight back for a fraction of a percent, without touching an update at all. Trivial money, but it is the same people competing for the same listings.",
+  "reason": "No flip qualifies, and tonight the window shuts for this matchday by structure rather than by taste. Every board listing with the right shape expires after tonight's market-value update, and anything bought afterwards would not tick again until after the matchday locks. The underlying edge itself is intact and was re-measured from the event log this run with no decay against the September baseline: rising-flagged players continue to rise at the next update in the large majority of cases, falling-flagged players continue to fall. The two open questions stand unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in. Fresh board clears logged this run continue to show the majority settling at or below market value, with occasional sharp overpays.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean sweep. No squad player carries a Kickbase status flag, and none of the eleven appears on Ligainsider's current Bundesliga injured-and-suspended table. Sosa is clear on the same table and named in his club's probable eleven. Nothing newly injured, nothing newly benched, no transfer rumour touching anyone owned.",
+  "sweep": "Clean sweep, nothing to flag. No squad player carries a Kickbase status flag, and Ligainsider's league-wide injured-and-suspended table names not one of them. The only two selection concerns are the pre-existing ones: Wolf benched at Augsburg, Nakuzola out of Mainz's probable eleven. Both are already recorded and both are kept because the squad has no spare body. A club-attribution correction was recorded this run so future sweeps stop resolving clubs from the opponent field, which has been the most expensive repeated error in this step.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -514,7 +514,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=862, -3,62% to +443,38%"
+   "v": "n=863, -3,62% to +443,38%"
   }
  ]
 }
