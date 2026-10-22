@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-22T18:52Z",
+ "run": "2026-10-22T20:54Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -9,13 +9,13 @@
   "played": 6
  },
  "cash": 1879465,
- "squad_value": 146202832,
+ "squad_value": 146430582,
  "leverage": {
   "balance": 1879465,
-  "floor": -48867158,
-  "spending_power": 50746623,
-  "hours_to_lock": 23.63,
-  "exposure": "No leverage. The balance is positive and no offer is outstanding, so there is no zero-matchday risk open tonight. The recommended move keeps the balance positive at the lock with a cushion, and the cheap-bench-body idea was rejected partly because it would have eaten that cushion. One operational note for Georg: the ledger database is not reachable from the Cloudflare account this session authenticates to, which holds no databases at all. Earlier runs logged that as a transient outage; it is not, and it will never clear by retrying. It cost nothing this run because the ledger context now prints every actionable call in full and only non-actionable entries are truncated, but it is worth either re-authorising the connector against the right account or dropping that step.",
+  "floor": -48942316,
+  "spending_power": 50821781,
+  "hours_to_lock": 21.6,
+  "exposure": "No leveraged position is open right now and the balance is positive. The move opens one deliberately and briefly: winning the auction takes the balance negative, and the Wolf sale brings it back positive the same afternoon. The gap between the auction clearing and the lock is just over two hours, and a negative balance at matchday start scores zero for the entire matchday — so that sale is mandatory, not housekeeping. Every figure in the unwind is exact rather than estimated, because the next tick falls after the lock and nothing can move in between. The run scheduled between the clearing and the lock is the safety net, and it will check.",
   "must_restore_by": "2026-10-23T18:30:00Z"
  },
  "counts": {
@@ -43,25 +43,25 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The weakest fielded slot is the defence, where Nakuzola holds a place he does not earn and is not starting for his club. Sosa is the fix and the funding works, but only through the Tanaka leg, which changes the squad shape. Until that lands, the gap stays open and is the single thing worth watching.",
+ "binding_gap": "Not a formation hole — the eleven fill a legal shape before and after the move, and the swap leaves a legal shape too. The binding constraint is that two of the eleven are confirmed non-starters, and only one of them can be funded out of. That is what the Sosa buy fixes, and why the funding leg has to be the benched player rather than the cheapest or the lowest-average one.",
  "surplus": "",
  "run_kind": "scheduled",
- "cash_ceiling_before_md1": 50746623,
+ "cash_ceiling_before_md1": 50821781,
  "daily_bonus": null,
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 38,
+  "listings": 30,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 3
+  "expiring_within_2h": 0
  },
  "squad": [
   {
    "name": "Nusa",
    "pos": "MID",
    "club": "43",
-   "mv": 29271369,
+   "mv": 29366929,
    "ap": 159,
    "state": "clear",
    "note": "",
@@ -71,7 +71,7 @@
    "name": "Guirassy",
    "pos": "ATT",
    "club": "3",
-   "mv": 33275269,
+   "mv": 33293469,
    "ap": 129,
    "state": "clear",
    "note": "",
@@ -81,7 +81,7 @@
    "name": "Schwolow",
    "pos": "GK",
    "club": "18",
-   "mv": 8696315,
+   "mv": 8903884,
    "ap": 124,
    "state": "clear",
    "note": "",
@@ -91,7 +91,7 @@
    "name": "Engelhardt",
    "pos": "MID",
    "club": "5",
-   "mv": 15470657,
+   "mv": 15498770,
    "ap": 115,
    "state": "clear",
    "note": "",
@@ -101,7 +101,7 @@
    "name": "Brackelmann",
    "pos": "DEF",
    "club": "13",
-   "mv": 13392846,
+   "mv": 13498273,
    "ap": 108,
    "state": "clear",
    "note": "",
@@ -111,7 +111,7 @@
    "name": "Gregoritsch",
    "pos": "ATT",
    "club": "13",
-   "mv": 14563337,
+   "mv": 14685358,
    "ap": 107,
    "state": "clear",
    "note": "",
@@ -121,7 +121,7 @@
    "name": "Deman",
    "pos": "DEF",
    "club": "10",
-   "mv": 11343770,
+   "mv": 11471787,
    "ap": 94,
    "state": "clear",
    "note": "",
@@ -131,7 +131,7 @@
    "name": "Wolf",
    "pos": "MID",
    "club": "13",
-   "mv": 7019877,
+   "mv": 6849688,
    "ap": 93,
    "state": "clear",
    "note": "",
@@ -141,7 +141,7 @@
    "name": "ter Horst",
    "pos": "DEF",
    "club": "29",
-   "mv": 6727974,
+   "mv": 6599617,
    "ap": 82,
    "state": "clear",
    "note": "",
@@ -151,7 +151,7 @@
    "name": "Tanaka",
    "pos": "MID",
    "club": "8",
-   "mv": 5941418,
+   "mv": 5762807,
    "ap": 62,
    "state": "clear",
    "note": "",
@@ -169,20 +169,43 @@
   }
  ],
  "verdict": {
-  "action": "none",
-  "headline": "No action tonight.",
-  "headline_short": "No action tonight.",
-  "detail": "No action tonight. The squad is clean, the balance is positive, nothing qualifies for a flip, and the one real points upgrade on the board is deliberately held until after tonight's market-value tick. The next genuine decision point is the Sosa bid, and the last run that can place it is tomorrow 14:45Z."
+  "action": "act",
+  "headline": "One move, and it is a reversal of what the last two runs told you.",
+  "headline_short": "One move, and it is a reversal of what the last two runs told you.",
+  "detail": "One move, and it is a reversal of what the last two runs told you. Bid for Borna Sosa (Köln, DEF) on the board NOW rather than at tomorrow's 14:45Z run, and fund him by selling MARIUS WOLF — not Tanaka. The 20:00Z tick has run, so Sosa's ask is frozen until his listing expires and there is nothing left to wait for. Wolf is a confirmed benching on a 22.10 source; Tanaka is a confirmed starter. The previous plan had you selling the starter to keep the bench body."
  },
  "sell": {
-  "recommendation": "none",
-  "reason": "Nothing to sell this run, and no sale is safe on its own. The only sale in play is Tanaka, and it is strictly conditional on the Sosa purchase landing — selling him alone drops the squad to ten and costs the eleven-player penalty. Tanaka is falling in value, so his instant-sale proceeds shrink overnight, but the funding still clears with room. He is in Schalke's probable XI today, so this is a value-and-shape decision, not a fitness one.",
-  "standing": []
+  "recommendation": "act",
+  "reason": "Wolf, conditionally and only after the Sosa auction is won. Instant sale back to Kickbase pays exactly his market value, no spread. He is absent from Augsburg's probable XI and from the whole preview page, so his season average is not live points for this matchday, and he is falling in value on top of it. Tanaka — the funding leg the last two runs named — stays: he starts for Schalke, and selling a confirmed starter to protect a benched one is the error being corrected here. If the auction is lost, this sale is void. Selling Wolf standalone leaves ten players and the penalty, which is worse than anything the auction can cost you.",
+  "standing": [
+   {
+    "name": "Marius Wolf",
+    "pos": "MID",
+    "club": "13",
+    "mv": 6849688,
+    "ap": 93,
+    "why": "CONDITIONAL FUNDING LEG OF BUY Sosa — FIRES ONLY IF THAT AUCTION IS WON AT 2026-10-23T16:23Z, AND THEN MUST FIRE BEFORE THE 18:30Z LOCK. Instant sale back to Kickbase at exactly mv 6.849.688 (board sales pay mv with no spread, measured). THIS REVERSES Hhz5do1 (\"keep him and field him\") and REPLACES Tanaka as the funding leg (Wez3o9z, closed). Grounds: bundesliga.com 22.10.2026 Augsburg XI is Dahmen - Matsima, Gouweleeuw, Brackelmann - Fellhauer, Massengo, Rieder, Behrens - Kade, Ibrahimovic - Gregoritsch; Wolf is absent from it and from the whole page, so his ap 93 is not live points for MD7. Tanaka by contrast is a CONFIRMED MD7 starter for Schalke on the same page, so selling Tanaka would have burned ~62 ap of real points to protect a bench body. Wolf is also mvt 2 (falling, -830.196 on the day), so the value side agrees. UNWIND ARITHMETIC, all figures frozen because mvud 2026-10-23T20:00:00Z is after the lock: win at 7.900.000 -> cash 1.879.465 - 7.900.000 = -6.020.535; sell Wolf +6.849.688 -> +829.153, non-negative, squad back to eleven (1 GK / 5 DEF / 3 MID / 2 ATT = 5-3-2, legal). A negative balance at matchday start scores ZERO for the whole matchday, so this sale is mandatory, not optional, in the 2h07m between 16:23Z and 18:30Z. If the Sosa auction is LOST, this call is VOID: do not sell him, because a standalone sale leaves ten players and the -100 penalty.",
+    "tag": "sell"
+   }
+  ]
  },
  "buy": {
-  "recommendation": "none",
-  "reason": "One candidate, held on purpose. Borna Sosa, defender at Koeln, is the only genuine points upgrade on the board: he is in Koeln's probable XI dated today, carries no status flag, and does not appear on Ligainsider's league-wide absentee table. He would displace Tanaka in the fielded eleven for a meaningful average-points gain. Two refinements were recorded this run. First, the bid must be placed after tonight's tick, not before: Kickbase board asks reprice to market value, so a bid entered at tonight's figure would simply sit below tomorrow's ask and lose. Second, the funding survives the tick with a comfortable positive cushion at the lock, which means the deferral is safe rather than merely convenient. One check remains for the deciding run: the swap changes the squad shape, and the resulting formation must be confirmed legal before anyone acts on it. Everything else on the board is already logged as avoided, and the cheap bench-body idea was killed this run on points rather than on price.",
-  "standing": [],
+  "recommendation": "act",
+  "reason": "Sosa (2247), Köln, defender, the only genuine points upgrade on the board. Kickbase listing, not a manager ask, so the price is the market value exactly and there is no markup to argue with. Köln's probable XI on the 22.10 preview reads Schwäbe — Sebulonsen, Simpson-Pusey, Lochoshvili, SOSA — Krauß, Jóhannesson — Maina, Moore, El Mala — Bülter, with no absentees named. Benchmark the bid against the contested-board high cluster, never the median, which is diluted by manager asks: the recommended bid sits at the bottom of that cluster and leaves room under the ceiling. The ceiling is hard — cash plus Wolf's frozen value — and a bid above it cannot be unwound before the lock. Sequencing is not optional: bid first, sell Wolf only once he is won. Everything else on the board fails the screen or is already on the avoid list.",
+  "standing": [
+   {
+    "name": "Borna Sosa",
+    "pos": "DEF",
+    "club": "28",
+    "ask": 7900000,
+    "mv": 6756074,
+    "premium_pct": 16.93,
+    "listing": "Kickbase listing",
+    "why": "THE ONLY POINTS UPGRADE ON THE BOARD, AND IT IS NOW ACTIONABLE — PLACE IT NOW, NOT AT THE 14:45Z RUN (supersedes W2pp2ln/Wez3o9z, both closed). Sosa (2247), DEF, 1. FC Koeln (tid 28, club resolved from the dated fc.de/bundesliga.com loan reports, not from os). Kickbase board listing, no u, prc = mv = 6.756.074, mvt 1, st 0, ofc 0, expires 2026-10-23T16:23Z. STARTER CONFIRMED on a 22.10.2026 source: bundesliga.com \"Voraussichtliche Aufstellungen am 7. Spieltag\" gives Koeln as Schwaebe - Sebulonsen, Simpson-Pusey, Lochoshvili, SOSA - Krauss, Johannesson - Maina, Moore, El Mala - Buelter, with no absentees named. PRICE IS FROZEN: mvud is 2026-10-23T20:00:00Z, after both the 16:23Z expiry and the 18:30Z lock, so the ask cannot move again before the auction clears — the only reason to wait is gone. BID 7.900.000 = +16,93% over mv, sitting at the bottom of the measured contested-Kickbase high cluster (Ebnoutalib +16,71%, Campbell +20,96%); benchmark against that cluster, never the +1,26% median, which is diluted by manager asks. HARD CEILING 8.729.153 = cash 1.879.465 + Wolf's frozen mv 6.849.688; a bid above that cannot be unwound to non-negative by the lock. POINTS: Sosa ap 94 replaces Wolf, who is NOT in Augsburg's 22.10 probable XI. SEQUENCING IS NOT OPTIONAL — bid FIRST, sell Wolf ONLY after the auction is won at 16:23Z. Selling Wolf first and then losing the auction leaves ten players and the -100 penalty, which is strictly worse than any price risk here.",
+    "rank": 1,
+    "trigger": "2026-10-23T16:23:00Z"
+   }
+  ],
   "killed_this_run": [
    {
     "name": "THE 500k TWELFTH-MAN IDEA — buying a cheap bench body to escape the eleven-player trap scores ZERO and tightens the Sosa funding (Zingerle, Jung, Millgramm, Conde, Topp)",
@@ -198,8 +221,8 @@
     "pos": "MID",
     "club": "43",
     "ask": 16087526,
-    "mv": 16087526,
-    "premium_pct": 0,
+    "mv": 16304178,
+    "premium_pct": -1.33,
     "why": "LOGGED SO A LATER RUN DOES NOT RE-DERIVE HIM — he is the biggest new name on the board and he fails on arithmetic, not on merit. Listed to the Kickbase board 2026-10-22T10:10:54Z at prc = mv = 16.087.526 exactly, no u, mvt 1, st 0, ofc 0, MID, tid 43, ap 90, p 361. He is NOT an injury case: absent from the ligainsider Bundesliga Verletzte-und-Gesperrte table read this run. REJECT ON THREE INDEPENDENT GROUNDS. (1) HE IS NOT AN UPGRADE ON WHAT HE WOULD DISPLACE. The fielded midfield is Nusa 159, Engelhardt 115, Wolf 93, Tanaka 62. At ap 90 he is BELOW Wolf and barely above nothing else; the only slot he improves is Tanaka's, worth +28, for 16,1M. Compare Sosa (2247) at 6.349.626 for +32 in the same squad — a quarter of the capital for a bigger gain. (2) NO FUNDABLE ROUTE EXISTS. Cash is 1.879.465 with the squad at exactly eleven. Buy Gruda and sell Tanaka: balance -8.266.643, still leveraged with no second lever. Buy Gruda and sell Nakuzola: balance -13.708.061. The only sales that would clear 16,1M are the players who are actually scoring the points — Nusa, Guirassy, Engelhardt, Gregoritsch — and selling any of them to buy a worse midfielder is self-defeating. Spending power 50.746.623 is NOT the binding constraint here and must not be cited as though it were; the binding constraint is that a negative balance at matchday start scores ZERO. (3) HIS EXPIRY IS PAST THE LOCK. The listing resolves 2026-10-23T20:12Z, 1h42m AFTER the MD7 lock at 18:30Z. So even a winning bid cannot be unwound before the lock — it simply cannot be part of any MD7 plan — and as a flip he is worthless too, because the tick he would need (23.10 20:00Z) falls after the lock and he would not even be owned for it. See Wr1l8rc for why that timing kills every board flip this matchday. REVERSAL: only as a post-MD7 points buy, at or below mv, after a dated source establishes he is starting AND his ap has re-based above the midfielder he would replace."
    },
    {
@@ -207,8 +230,8 @@
     "pos": "MID",
     "club": "9",
     "ask": 7273369,
-    "mv": 7273369,
-    "premium_pct": 0,
+    "mv": 7649209,
+    "premium_pct": -4.91,
     "why": "REPLACES A2d1kdt (closed: its price 6.905.174 is stale, mv is now 7.273.369) AND CORRECTS W14o2ev's STATED REASON, WHICH WAS FACTUALLY WRONG. THE CONCLUSION IS UNCHANGED — DO NOT BUY — BUT THE REASON MUST NEVER AGAIN BE THE \"ARTIFACT\" CLAIM. (1) THE OLD REASON IS DEAD. W14o2ev (12:45Z) called ap 123 \"a 2-of-6-appearance artifact\", implying the ap OVERSTATES him. get_player_performance read in full this run says otherwise: 26/27 is MD1-4 st 4 (not in the squad at all), then MD5 165 pts in 94' as a STARTER and MD6 80 pts in 68' as a STARTER. Those are the two most RECENT matchdays, both starts, both near-full games. p 245 / ap 123 is a SMALL sample, not a DISTORTED one — it is a fair read of current form, not a cameo mean. Wi54kym's \"price ceiling, not merit\" was closer but also not the live reason. Both are closed. (2) THE ACTUAL REASON IS ROTATION RISK ON A CONTESTED PIVOT, AND IT IS DATED. Sky 14.09.2026 \"Nach Stiller-Verletzung: Schlaegt jetzt die Stunde von Karazor?\" establishes that Angelo Stiller's knee injury is WHY Karazor got in. Stiller is now back: Ligainsider VfB page, Letzte Aktualisierung 21.10.2026 12:56, lists Stiller with no absence note. The two freshest dated probable-XIs DISAGREE about Karazor for MD7 vs Gladbach — bundesliga.com \"Voraussichtliche Aufstellungen am 7. Spieltag\" dated 22.10.2026 starts him next to Stiller (Seimen; Assignon, Jeltsch, Chabot, Hendriks; KARAZOR, Stiller; Leweling, Undav, Fuehrich; Demirovic), while ComunioMagazin dated 21.10.2026 starts PROEMEL and names Karazor only as the parenthetical alternative. That is a coin flip, not a starter. (3) THE ARITHMETIC KILLS IT EVEN AT THE GOOD ODDS. He would displace Tanaka (ap 62), who is himself a CONFIRMED MD7 starter for Schalke on the same bundesliga.com 22.10 list. Expected: ~55% x 122 (his two-start mean) + ~45% x ~15 (cameo) = ~74 against Tanaka's certain-ish 62, i.e. roughly +12 expected points for 7.273.369 of capital. (4) AND IT WOULD OPEN LEVERAGE FOR THAT +12. Cash is 1.879.465, so the buy puts the balance at -5.393.904, unwindable only by selling Tanaka — whose mv 5.941.418 is mvt 2 with sdmvt -1.603.015 and will tick DOWN ~3,15% at tonight's 20:00Z update to ~5.754.264, leaving only ~360.360 of headroom at the lock. Paying 7,3M and a leveraged unwind for +12 expected points is the trade this ledger exists to prevent. REVERSAL: only if a dated source 23.10.2026 or later puts him in the CONFIRMED XI (not a probable), AND the squad is no longer at exactly 11 so the buy needs no forced same-day sale."
    },
    {
@@ -216,7 +239,7 @@
     "pos": "MID",
     "club": "9",
     "ask": null,
-    "mv": 7273369,
+    "mv": 7649209,
     "premium_pct": null,
     "why": "A48c7n7 is CLOSED this run because its stated reason (\"all fail the points test on cash\") died when the Jeltsch sale cleared the deficit: cash is now +1.879.465 and spending power 50.746.623. The CONCLUSION survives, but on two different and more durable grounds, and a future run must cite THESE, not the cash one. (1) FLIP TIMING, unchanged and arithmetically certain: Weiser expires 2026-10-23T03:13Z, Poulsen 02:41Z, Karazor 03:44Z, Sander 11:49Z, Tigges 12:27Z. All five settle AFTER tonight's 2026-10-22T20:00Z tick, so their first tick as owned players is 2026-10-23T20:00Z, which is AFTER the MD7 lock at 18:30Z. There is no tick to capture before the lock, so none of them is flippable this cycle however good the mvt flag looks. (2) THE POINTS TEST NOW FAILS ON A NEW BINDING CONSTRAINT — CASH AT LOCK, NOT SPENDING POWER. Spending power 50.746.623 is only the floor-based borrowing limit; a NEGATIVE balance at matchday start scores ZERO for the entire matchday. So a buy HELD THROUGH the lock is capped at cash (1.879.465) plus the proceeds of a simultaneous sale, not at spending power. Every one of these five costs 4,87M-9,02M. (3) KARAZOR SPECIFICALLY, the only one of the five that would genuinely upgrade the fielded XI (ap 123 vs Tanaka's ap 62, a +61 swing, Kickbase listing priced at exactly mv 7.273.369, st 0): he is STILL A NO, and the reason is structural rather than a judgement call. His ap 123 is off p 245 = TWO appearances in six matchdays, i.e. he is a returning/rotation body, not a nailed starter. Ligainsider's VfB page dated 21.10.2026 12:56 puts him in the 16-man probable squad for Stuttgart v Gladbach and NOT on the absentee list (Diehl, Malanga, Tomas), but does not resolve starter from bench. AND IT NEVER WILL IN TIME: that match kicks off Fri 23.10 20:30 local, the confirmed XI lands ~19:30 local, while his auction resolves 03:44Z the same morning and the lock is 18:30Z. Starter confirmation is structurally unavailable before the bid must be placed. On top of that the swap needs a second leg — instant-selling Tanaka in a 14.75h overnight window — and failing that leg costs ZERO points for the whole matchday against an upside of +61 ap on one of eleven slots. Do not take that trade on an unconfirmable starter."
    },
@@ -225,17 +248,17 @@
     "pos": "MID",
     "club": "7",
     "ask": null,
-    "mv": 3115395,
+    "mv": 3011358,
     "premium_pct": null,
     "why": "ONE CONSOLIDATED ENTRY so a later run does not re-derive five listings individually. All five are Kickbase board listings (no u) at prc = mv exactly, i.e. they pass the price leg of the MOVERS screen and nothing else. Culbreath (11756, MID tid 7, mv 3.115.395, listed 04:36:49Z) mvt 2 — measured mvt-2 drift is -3,15% with only 14,4% rising, so this is a negative-expectation buy, not a flip. Gendrey (9598, DEF tid 14, mv 3.211.658, listed 02:31:36Z) mvt 2, same kill, and ap 20 on p 40 is two appearances. Gayret (14914, MID tid 29 Paderborn, mv 500.000, listed 03:33:43Z) carries st 4 AND is confirmed on Ligainsider's Paderborn absentee list in Aufbautraining, out six months — the st flag and the news agree, which is unusual and makes this an unambiguous exclusion. Millgramm (12262, ATT tid 29, mv 500.000, listed 00:21:00Z) mvt 0 — measured mvt-0 drift is +0,07% with 1,7% rising, i.e. the tick does not move him at all, so there is no flip and at mv 500.000 no points case either. Conde (1745, MID tid 77, mv 500.000, listed 23:19:29Z) mvt 0 plus ap 14, same double kill. NONE of the five is a points buy either: the fielded eleven's weakest body is Nakuzola at ap 27 and only Gendrey (ap 20) and Conde (ap 14) even have a published average, both BELOW him. Separately, note the timing rule that killed A48c7n7's cohort does not need to be reached here — these die on the flag screen before timing is tested. Reversal: none of these becomes interesting unless it flips to mvt 1 with st 0 and relists with an expiry that falls before a 20:00Z tick which is itself before the next matchday lock."
    },
    {
     "name": "Dennis Seimen",
-    "pos": "GK",
-    "club": "9",
+    "pos": "",
+    "club": null,
     "ask": 15500000,
-    "mv": 11535945,
-    "premium_pct": 34.36,
+    "mv": null,
+    "premium_pct": null,
     "why": "A RIVAL ROUND-TRIP PRICED AS A TRAP, AND A CLEAN MEASUREMENT OF HOW Daggi D. OPERATES. GK, Stuttgart, ap 130 - which reads as an upgrade on Schwolow ap 124 until the price is looked at. Daggi D. bought him OFF THE BOARD at 11.600.999 on 2026-10-21T20:48:25Z against mv 11.535.945, i.e. +0,56%, essentially at mv - and relisted him 4 minutes later at 15.500.000, now +34,37% over mv. That is a pure markup, not a valuation. The measured manager-ask band is +3,06%/+4,35% with one +11,87% outlier; +34,37% is off the scale and nobody in this league has ever paid it for a manager ask. Independently unaffordable: the balance is -13.655.411 and no sequence buys a 15.5M GK and unwinds to non-negative with 11+ players by the 2026-10-23T18:30Z lock. Also note the swap itself is thin - ap 130 vs ap 124 is +6 avg points for 15.5M.\nREVERSAL: Only if the ask drops to at or below mv AND the balance is non-negative with headroom."
    },
    {
@@ -243,8 +266,8 @@
     "pos": "DEF",
     "club": "8",
     "ask": 7000000,
-    "mv": 5366215,
-    "premium_pct": 30.45,
+    "mv": 5652675,
+    "premium_pct": 23.84,
     "why": "THE OBVIOUS-LOOKING NAKUZOLA UPGRADE THAT DOES NOT SURVIVE THE ARITHMETIC. DEF, Schalke (tid 8), ap 81 against Nakuzola ap 27, so on paper a +54 avg-point swap in the one genuinely weak fielded slot. Rejected on two independent grounds. (1) PRICE: manager ask 7.000.000 vs mv 5.366.215 = +30,45%, against a measured manager-ask clearing band of +3,06%/+4,35% with a single +11,87% outlier. Nearly 3x the worst observed manager clear. (2) UNWIND, which is the binding one: buying him takes the balance to -20.655.411; the Jeltsch sale at mv only gets back to -5.210.535, adding Nakuzola at 500.000 only to -4.710.535, and the next sale that would clear it (Tanaka 5.941.418) drops the squad to 10 and triggers the -100 penalty. There is NO sequence that buys him and reaches a non-negative balance with 11+ players by the lock. Logged so the next run does not re-derive the same tempting dead end.\nREVERSAL: Only if the balance is already non-negative with genuine headroom above the floor AND the ask is at or below mv."
    },
    {
@@ -252,8 +275,8 @@
     "pos": "ATT",
     "club": "29",
     "ask": 4870973,
-    "mv": 4870973,
-    "premium_pct": 0,
+    "mv": 5171022,
+    "premium_pct": -5.8,
     "why": "Same kill as AVOID on Sander (2560) this run — logged separately because he is a different position and a later run scanning for an ATT would otherwise re-derive him from scratch. Listed to the Kickbase board 2026-10-21T21:06:04Z, prc = mv = 4.870.973 exactly, no u, mvt 1, st 0, ATT, ap 69, tid 29 HSV. Passes every flip filter except the decisive one: exs 135728s measured at 2026-10-21T22:45Z puts expiry at approximately 2026-10-23T12:27Z, which is 16,5h AFTER the 2026-10-22T20:00:00Z market-value update and 6h BEFORE the 2026-10-23T18:30:00Z lock, while the next update after that is 2026-10-23T20:00:00Z — i.e. after the lock. No tick can be captured, so there is no flip edge, only dead leverage on a balance already at -13.655.411. He is FIT (clean on the Ligainsider Verletzte-und-Gesperrte sweep this run). As a POINTS buy, ap 69 beats only Nakuzola ap 27 among fielded players, but he is an ATT and the two ATT slots are Guirassy ap 129 and Gregoritsch ap 107, so he displaces nobody and the squad does not need a third striker — 4-4-2, 5-3-2 and 5-4-1 are the legal shapes and none wants one. REVERSAL: reconsider only after the MD7 lock with a fresh tick ahead of his expiry, and as a points buy only if the ATT slots change."
    },
    {
@@ -261,8 +284,8 @@
     "pos": "MID",
     "club": "15",
     "ask": 9024376,
-    "mv": 9024376,
-    "premium_pct": 0,
+    "mv": 9231990,
+    "premium_pct": -2.25,
     "why": "LOGGED SO A LATER RUN DOES NOT RE-DERIVE HIM. Listed to the Kickbase board 2026-10-21T19:55:54Z, prc = mv = 9.024.376 exactly, no u, mvt 1, st 0, MID, ap 46, tid 15. On the surface he passes every flip filter — board listing, bid-at-mv, rising flag — and that is exactly the trap. HE FAILS ON EXPIRY TIMING, WHICH IS THE ONE FILTER THAT IS EASY TO SKIP. exs 133438s measured at 2026-10-21T22:45Z puts his expiry at approximately 2026-10-23T11:49Z. The market-value clock is: next update 2026-10-22T20:00:00Z, and the one after that 2026-10-23T20:00:00Z. MD7 locks 2026-10-23T18:30:00Z, which falls BETWEEN those two ticks. So a winner of this auction takes delivery roughly 15,8h AFTER the 22.10 tick and the next tick lands 1,5h AFTER the lock — he cannot capture a single market-value update before the matchday starts. The flip edge is the tick and nothing else, so with no tick there is no edge, and the position would simply sit as dead leverage against a balance that is already -13.655.411. SAME ARITHMETIC KILLS Tigges (2749, A-call this run) and is the standing reason behind AVOID A2d1kdt on Karazor. GENERAL RULE FOR THE REST OF THIS MATCHDAY, worth more than this one name: from now until the 2026-10-23T18:30Z lock, a flip qualifies ONLY if it expires before 2026-10-22T20:00:00Z. Everything expiring after that is unflippable this cycle no matter how good the listing looks. As a POINTS buy he is also no: ap 46 displaces nobody in the eleven. REVERSAL: reconsider only after the MD7 lock, when a fresh tick lies ahead of his expiry, and then only on ordinary merits."
    },
    {
@@ -270,8 +293,8 @@
     "pos": "DEF",
     "club": "6",
     "ask": 8900000,
-    "mv": 5288353,
-    "premium_pct": 68.29,
+    "mv": 5691487,
+    "premium_pct": 56.37,
     "why": "REPLACES W7fspqz (closed this run, resolved at 6.369.999). Omari is BACK ON THE MARKET and must not be chased. Timeline, all measured: PhiL95 cleared him from the Kickbase board at 2026-10-21T18:11:35Z for 6.369.999 against mv 4.821.226 = +32,12%; we had bid exactly mv and lost. He has now been RELISTED by PhiL95 as a manager ask at 8.900.000 against a current mv of 5.288.353 = +68,30%. That is the largest manager-ask premium standing anywhere on this board and roughly double the highest manager ask this ledger has ever seen clear (Da Costa +34,10%). PhiL95 is monetising a spread he overpaid for; this is textbook relist-at-a-markup behaviour, same pattern as David (Neuhaus, Kimmich, Jung). THREE INDEPENDENT REASONS NOT TO BUY: (1) a manager ask above mv has never been a buy at any point in this ledger's history, and +68,30% is not a close call; (2) as a FLIP he is dead — a flip only pays if you own the player through a 20:00Z tick, you would be paying +68,30% to capture a measured +2,99%, and a manager listing has no expiry so there is no auction to win cheaply; (3) as a POINTS buy he is ap 66, which does not displace anyone in the current eleven — Nakuzola ap 27 is the only weaker body and he is the 500.000 filler, so paying 8.900.000 to upgrade a bench slot fails the marginal-points test outright. He is FIT (clean on Ligainsider's Verletzte-und-Gesperrte sweep this run, and the shoulder cluster is 15.08-13.09.2026, stale) — fitness was never the objection and must not be mistaken for the reversal condition. REVERSAL: only if he is relisted AT OR BELOW mv, AND the purchase fits the envelope at that moment, AND he clears the marginal-points test against whoever he would actually displace then. Being the player we lost at +32,12% is not a reason to buy him back at +68,30%."
    },
    {
@@ -297,11 +320,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip qualifies, and tonight the window shuts for this matchday by structure rather than by taste. Every board listing with the right shape expires after tonight's market-value update, and anything bought afterwards would not tick again until after the matchday locks. The underlying edge itself is intact and was re-measured from the event log this run with no decay against the September baseline: rising-flagged players continue to rise at the next update in the large majority of cases, falling-flagged players continue to fall. The two open questions stand unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in. Fresh board clears logged this run continue to show the majority settling at or below market value, with occasional sharp overpays.",
+  "reason": "No flip this run, and for a structural reason rather than a thin shortlist: the next market-value tick falls after the matchday locks, so nothing bought now can capture a tick before the lock, and a flip left open through a lock risks the whole matchday. The mechanism itself is healthy — the rising-flag edge re-measures stronger than the September baseline, with no sign of rivals crowding it out — so this is a timing shutout, not a decayed edge. The window reopens after the lock. Two questions still unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that the edge is measured in one league over one period and will decay if the league's active traders crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean sweep, nothing to flag. No squad player carries a Kickbase status flag, and Ligainsider's league-wide injured-and-suspended table names not one of them. The only two selection concerns are the pre-existing ones: Wolf benched at Augsburg, Nakuzola out of Mainz's probable eleven. Both are already recorded and both are kept because the squad has no spare body. A club-attribution correction was recorded this run so future sweeps stop resolving clubs from the opponent field, which has been the most expensive repeated error in this step.",
+  "sweep": "One new flag, and it contradicts the news rather than confirming it. Engelhardt came back from the squad call with a non-zero status flag for the first time this cycle — the 18:46Z sweep had all eleven clean. Against that, the 22.10 preview puts him in Freiburg's XI and names no Freiburg absentee, Ligainsider's Freiburg page lists only a long-term cruciate case, and an extended search turned up no dated injury item for him. Read it as a knock, not an absence. No action is available either way: he is the second-best outfield scorer in the squad and the cash left after the swap buys nothing. Freiburg play Sunday, so it can still resolve after the lock. Every other squad member is clean.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -493,6 +516,12 @@
    "status": "7349",
    "why": "SOLD AND SETTLED — this supersedes every earlier conditional framing of the Jeltsch block, which is now history rather than a live call. Georg instant-sold him to Kickbase 2026-10-22T05:19:17Z for exactly 15.444.876 = mv, zero spread (feed t:15, t:2, slr Georg Kitz), executing SELL Sh0712y. THE SALE DID ITS JOB AND THE JOB IS DONE: balance moved -13.655.411 -> +1.879.465, so the leveraged position that had dominated every briefing since 2026-10-11 is CLOSED, with 35,7h still to run before the 2026-10-23T18:30Z MD7 lock. The -100 zero-score risk at the lock is gone. Note also that the sale settled at EXACTLY mv, the 14th consecutive confirmation that selling back to Kickbase pays mv with no spread. SIDE EFFECT THAT NOW BINDS EVERYTHING: the squad is at exactly ELEVEN (1 GK / 4 DEF / 4 MID / 2 ATT), all eleven placed in a 4-4-2, so there is no twelfth man. Any sale from here drops the squad below eleven and takes the -100 penalty unless a replacement lands first; and any flip buy is a net addition that must be unwound back to eleven before the lock.",
    "reversal": "Do NOT buy him back before the 2026-10-23T18:30Z MD7 lock under any circumstances. The squad is at exactly eleven and the balance is +1.879.465, so a re-buy at ~15,4M is affordable only by going leveraged again — re-opening the exact position this sale just closed, 35h before the lock. After the lock, reconsider only if ALL of: (1) the ask is AT OR BELOW mv, since Kickbase paid exactly mv and any markup is pure loss; (2) a dated VfB Stuttgart XI at that time actually starts him, because his ap was earned as a squad defender and the stale 25.09.2025 kicker and 21.04.2026 vfb.de injury items (AVOID A2glo2z, Ab7xnd0) must not be reused in either direction; and (3) he clears the marginal-points test against whoever he would actually displace at that moment — which, while Nakuzola ap 27 holds a fielded DEF slot, is a test about THAT slot, not about Jeltsch."
+  },
+  {
+   "name": "Marius Wolf",
+   "status": "1809",
+   "why": "CONDITIONALLY RECOMMENDED FOR SALE 2026-10-22T20:45Z (SELL Sgikr40) at mv 6.849.688 by instant sale back to Kickbase, as the funding leg of BUY Bli9hvy (Sosa, Koeln, board listing expiring 2026-10-23T16:23Z). He is a confirmed MD7 benching: bundesliga.com \"Voraussichtliche Aufstellungen am 7. Spieltag\", 22.10.2026, gives Augsburg as Dahmen - Matsima, Gouweleeuw, Brackelmann - Fellhauer, Massengo, Rieder, Behrens - Kade, Ibrahimovic - Gregoritsch, with Wolf absent from the XI and from the page. He is also mvt 2, falling 830.196 on the day. This REVERSES HOLD Hhz5do1 (\"keep him and field him\"), which was right that a standalone sale is forbidden and wrong that he therefore cannot be the funding leg of a buy that keeps the squad at eleven.",
+   "reversal": "THE SALE IS CONDITIONAL AND HAS NOT HAPPENED. If the Sosa auction is LOST at 2026-10-23T16:23Z, this block carries NO force whatsoever: Wolf stays, is fielded, and no run may cite this entry as a reason to sell him or to leave him out — a standalone sale drops the squad to ten and takes the -100 penalty. If the auction IS won and the sale executes, do not re-buy him before the 2026-10-23T18:30Z MD7 lock under any circumstances, since a re-buy would re-open the exact leveraged position the sale closes. After that lock he may be re-recommended only if ALL of: (a) a DATED Augsburg probable XI, 24.10.2026 or later, actually starts him; (b) the ask is at or below mv; and (c) the buy leaves the squad at eleven or more with a non-negative balance at the next lock. Being cheap, or carrying ap 93, is NOT a reversal — the ap is exactly what misled two previous runs."
   }
  ],
  "arithmetic": [
@@ -502,19 +531,19 @@
   },
   {
    "k": "Squad value",
-   "v": "146.202.832"
+   "v": "146.430.582"
   },
   {
    "k": "33% floor",
-   "v": "-0,33 x (146.202.832 + 1.879.465) = -48.867.158"
+   "v": "-0,33 x (146.430.582 + 1.879.465) = -48.942.316"
   },
   {
    "k": "Spending power",
-   "v": "1.879.465 + 48.867.158 = 50.746.623 — NOT 1.879.465"
+   "v": "1.879.465 + 48.942.316 = 50.821.781 — NOT 1.879.465"
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=863, -3,62% to +443,38%"
+   "v": "n=867, -3,62% to +443,38%"
   }
  ]
 }
