@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-22T12:45:18Z",
+ "run": "2026-10-22T14:53Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 1879465,
   "floor": -48867158,
   "spending_power": 50746623,
-  "hours_to_lock": 29.63,
-  "exposure": "No leveraged position is open and the recommended action does not open one that survives to the lock. The flip does go temporarily negative between the purchase and the sell-back, and that is the only exposure on this page: it must be unwound after tonight's value update and before the lock tomorrow evening. A negative balance at matchday start scores zero for the entire matchday, so the sell-back is not optional and not deferrable. The window to do it is wide - most of a day - but it is manual.",
+  "hours_to_lock": 27.61,
+  "exposure": "No leveraged position is open and none is recommended. The balance is positive and stays positive with no action taken, so there is no unwind deadline to manage before the lock. The only route to leverage this run was the Karazor buy, and it is rejected.",
   "must_restore_by": "2026-10-23T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Squad size, not cash. There is no hole in the formation and no position left unfilled - the gap is that there is no twelfth body, so no sale can be made and no upgrade can be executed as a single move. Any improvement has to be a buy that lands first and a sale that follows it, inside the window before the lock.",
+ "binding_gap": "There is no position gap — the eleven fill 4-4-2 exactly. The binding constraint is squad size itself: at exactly eleven, every sale is blocked by the -100 penalty and every buy must be matched by a same-day sale to unwind, which is what kills the only upgrade on the board. The weakest fielded body remains Nakuzola, but he is worth too little to fund a replacement, so the gap cannot be closed from his side.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 50746623,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 37,
+  "listings": 35,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -170,20 +170,29 @@
  ],
  "verdict": {
   "action": "none",
-  "headline": "One action, and it is the flip: bid exactly market value on the Aseko board listing and never raise.",
-  "headline_short": "One action, and it is the flip: bid exactly market value on the Aseko ",
-  "detail": "One action, and it is the flip: bid exactly market value on the Aseko board listing and never raise. It expires within the hour, so it is the only thing on this page with a clock on it. Nothing else on the board improves the fielded eleven, and nothing can be sold while the squad sits at exactly eleven. The one genuinely new fact this run is a bench risk on Marius Wolf, and it is deliberately NOT being acted on yet - the decision point is the last run before the lock."
+  "headline": "No action needed.",
+  "headline_short": "No action needed.",
+  "detail": "No action needed. The squad is at exactly eleven with every player placed and 4-4-2 the only legal formation, so there is no lineup decision to make and no sale that does not trigger the -100 under-eleven penalty. No buy on the board clears the bar, and the flip window is empty on qualification. The standing Aseko flip resolved against us and — correctly — cost nothing."
  },
  "sell": {
   "recommendation": "none",
-  "reason": "No sale is recommendable. At exactly eleven, selling anyone takes the short-squad penalty outright, and no replacement on the board clears the bar that would justify the two-leg trade. Wolf is the player a sale would logically target, but the case for selling him is not yet made - see fitness.",
+  "reason": "Nothing is sellable. Any sale drops the squad below eleven and costs -100 for the whole matchday, which is worse than anything a sale could recover. That specifically covers Marius Wolf, who is now confirmed out of the Augsburg XI by a third and freshest dated source — bundesliga.com's matchday-7 preview dated 22.10.2026 omits him entirely, and Ligainsider's Augsburg page (updated 19.10.2026) carries 'Startelf offen' against him. He is st 0 and not injured, so this is selection, not fitness. He is kept and fielded anyway on the Widmer precedent: at eleven players a fielded likely-zero costs far less than the penalty. Buying a cheap body first to unlock the sale does not work either — every 500.000 body available before the lock is a non-starter too, so the swap converts one fielded zero into another and is cash-negative. After the lock the arithmetic changes and he becomes the leading sale candidate; he is bleeding value daily and the market has him falling.",
   "standing": []
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No points buy. The board was tested on appearance rate rather than headline average this run, and the whole cohort expiring before the lock fails it. Karazor is the instructive one: his average is the best on the board and it rests on two appearances out of six, which makes it an artifact rather than a forecast. The standing avoid on him is upheld, but on this re-derived reason - availability, not fitness and not merit. He is in his club's probable eleven and on no injury table, and no later run should cite the avoid as a fitness objection. Weiser is out of his club's probable eleven as well. Gruda is the one genuine miss, excluded purely because his listing expires after the lock and he therefore cannot be fielded.",
+  "reason": "Nothing. Atakan Karazor was the only board listing that both beats a fielded body on average points and expires before the lock, and he is AVOIDED — but on a corrected reason, because the last two runs had this wrong. Their claim that his average was a 'two-of-six-appearance artifact' is factually false: his full performance history shows he was not in the Stuttgart squad at all for the first four matchdays, then started the two most recent ones at 94 and 68 minutes. The sample is small, not distorted. The real objection is rotation risk plus price. Angelo Stiller's knee injury is why Karazor got into the side (Sky, 14.09.2026), Stiller is now back and carries no absence note on Ligainsider's page updated 21.10.2026, and the two freshest probable XIs disagree outright — bundesliga.com (22.10.2026) starts Karazor alongside Stiller, ComunioMagazin (21.10.2026) starts Proemel and names Karazor only as the alternative. A coin-flip starter, bought to displace Tanaka — himself a confirmed matchday-7 starter for Schalke on that same 22.10 list — is a marginal expected gain that would also have to be funded by opening a leveraged position and unwinding it into a falling market value before the lock. That is the trade this ledger exists to prevent. Every other board listing either loses to the incumbent on merit, carries a manager ask far above the measured clearing band, or expires after the lock and so cannot score this matchday.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "Atakan Karazor",
+    "pos": "MID",
+    "club": "9",
+    "ask": 7273369,
+    "mv": 7273369,
+    "premium_pct": 0,
+    "why": "REPLACES A2d1kdt (closed: its price 6.905.174 is stale, mv is now 7.273.369) AND CORRECTS W14o2ev's STATED REASON, WHICH WAS FACTUALLY WRONG. THE CONCLUSION IS UNCHANGED — DO NOT BUY — BUT THE REASON MUST NEVER AGAIN BE THE \"ARTIFACT\" CLAIM. (1) THE OLD REASON IS DEAD. W14o2ev (12:45Z) called ap 123 \"a 2-of-6-appearance artifact\", implying the ap OVERSTATES him. get_player_performance read in full this run says otherwise: 26/27 is MD1-4 st 4 (not in the squad at all), then MD5 165 pts in 94' as a STARTER and MD6 80 pts in 68' as a STARTER. Those are the two most RECENT matchdays, both starts, both near-full games. p 245 / ap 123 is a SMALL sample, not a DISTORTED one — it is a fair read of current form, not a cameo mean. Wi54kym's \"price ceiling, not merit\" was closer but also not the live reason. Both are closed. (2) THE ACTUAL REASON IS ROTATION RISK ON A CONTESTED PIVOT, AND IT IS DATED. Sky 14.09.2026 \"Nach Stiller-Verletzung: Schlaegt jetzt die Stunde von Karazor?\" establishes that Angelo Stiller's knee injury is WHY Karazor got in. Stiller is now back: Ligainsider VfB page, Letzte Aktualisierung 21.10.2026 12:56, lists Stiller with no absence note. The two freshest dated probable-XIs DISAGREE about Karazor for MD7 vs Gladbach — bundesliga.com \"Voraussichtliche Aufstellungen am 7. Spieltag\" dated 22.10.2026 starts him next to Stiller (Seimen; Assignon, Jeltsch, Chabot, Hendriks; KARAZOR, Stiller; Leweling, Undav, Fuehrich; Demirovic), while ComunioMagazin dated 21.10.2026 starts PROEMEL and names Karazor only as the parenthetical alternative. That is a coin flip, not a starter. (3) THE ARITHMETIC KILLS IT EVEN AT THE GOOD ODDS. He would displace Tanaka (ap 62), who is himself a CONFIRMED MD7 starter for Schalke on the same bundesliga.com 22.10 list. Expected: ~55% x 122 (his two-start mean) + ~45% x ~15 (cameo) = ~74 against Tanaka's certain-ish 62, i.e. roughly +12 expected points for 7.273.369 of capital. (4) AND IT WOULD OPEN LEVERAGE FOR THAT +12. Cash is 1.879.465, so the buy puts the balance at -5.393.904, unwindable only by selling Tanaka — whose mv 5.941.418 is mvt 2 with sdmvt -1.603.015 and will tick DOWN ~3,15% at tonight's 20:00Z update to ~5.754.264, leaving only ~360.360 of headroom at the lock. Paying 7,3M and a leveraged unwind for +12 expected points is the trade this ledger exists to prevent. REVERSAL: only if a dated source 23.10.2026 or later puts him in the CONFIRMED XI (not a probable), AND the squad is no longer at exactly 11 so the buy needs no forced same-day sale."
+   },
    {
     "name": "THE 23.10-EXPIRY BOARD COHORT — REPLACES A48c7n7 WITH A CORRECTED REASON (Karazor, Weiser, Poulsen, Sander, Tigges)",
     "pos": "MID",
@@ -248,15 +257,6 @@
     "why": "REPLACES W7fspqz (closed this run, resolved at 6.369.999). Omari is BACK ON THE MARKET and must not be chased. Timeline, all measured: PhiL95 cleared him from the Kickbase board at 2026-10-21T18:11:35Z for 6.369.999 against mv 4.821.226 = +32,12%; we had bid exactly mv and lost. He has now been RELISTED by PhiL95 as a manager ask at 8.900.000 against a current mv of 5.288.353 = +68,30%. That is the largest manager-ask premium standing anywhere on this board and roughly double the highest manager ask this ledger has ever seen clear (Da Costa +34,10%). PhiL95 is monetising a spread he overpaid for; this is textbook relist-at-a-markup behaviour, same pattern as David (Neuhaus, Kimmich, Jung). THREE INDEPENDENT REASONS NOT TO BUY: (1) a manager ask above mv has never been a buy at any point in this ledger's history, and +68,30% is not a close call; (2) as a FLIP he is dead — a flip only pays if you own the player through a 20:00Z tick, you would be paying +68,30% to capture a measured +2,99%, and a manager listing has no expiry so there is no auction to win cheaply; (3) as a POINTS buy he is ap 66, which does not displace anyone in the current eleven — Nakuzola ap 27 is the only weaker body and he is the 500.000 filler, so paying 8.900.000 to upgrade a bench slot fails the marginal-points test outright. He is FIT (clean on Ligainsider's Verletzte-und-Gesperrte sweep this run, and the shoulder cluster is 15.08-13.09.2026, stale) — fitness was never the objection and must not be mistaken for the reversal condition. REVERSAL: only if he is relisted AT OR BELOW mv, AND the purchase fits the envelope at that moment, AND he clears the marginal-points test against whoever he would actually displace then. Being the player we lost at +32,12% is not a reason to buy him back at +68,30%."
    },
    {
-    "name": "Atakan Karazor",
-    "pos": "MID",
-    "club": "9",
-    "ask": 6905174,
-    "mv": 7273369,
-    "premium_pct": -5.06,
-    "why": "THE FIRST POINTS BUY IN THIS LEDGER WHOSE UNWIND ARITHMETIC ACTUALLY CLOSES — AND IT IS STILL KILLED, BUT ON EVIDENCE, NOT ON THE UNWIND TEST. Log the distinction: every earlier points buy (Pinckert A8xrrh0, Reitz A2stltr, Kuebler Amnz9pm, Reggiani Aha4s80) died because the only funding legs considered were Jeltsch and Nakuzola (500.000). Karazor is different because he displaces TANAKA, and Tanaka is himself worth 6.176.149 — the replaced man funds the replacement. Facts: Kickbase board listing 2026-10-21T11:13:03Z, no u, prc = mv = 6.905.174 exactly, mvt 1, st 0, MID, tid 9 (Stuttgart), p 245 ap 123, exs 125983 at 16:45Z so expiry ~2026-10-23T03:45Z. THE ARITHMETIC THAT CLOSES: buy 6.905.174 takes cash to -20.560.585 and the squad to 13 (1GK/5DEF/5MID/2ATT); Jeltsch instant-sold to the board at mv 15.397.944 gives -5.162.641 and 12; Tanaka instant-sold at mv 6.176.149 gives +1.013.508 and exactly ELEVEN at 1GK/4DEF/4MID/2ATT, legal 4-4-2. Max survivable clearing price on that path = 7.918.682 = +14,68% over mv. Points effect would be ap 123 replacing ap 62 in the fielded XI = +61 ap per matchday, the largest single-slot upgrade available anywhere on this market. WHY IT IS STILL AVOIDED, three independent legs. (1) STARTER EVIDENCE FAILS. ligainsider vfb-stuttgart/12 read this run shows the MD7 preview for the home match vs Borussia Moenchengladbach Friday 23.10.2026 20:30, page last updated 19.10.2026 15:22. Karazor appears in the 17-man preview block but the starter/bench markers are colour bars carried in no text, so the page CANNOT confirm him as a starter — record this as a page limitation, not as a bench finding, so no later run reads it as either. The zvw.de headline \"Karazor in der Startelf, Fuehrich auf der Bank\" is UNDATED in search results and is therefore stale under the standing date-trap rule. Stuttgart's only dated absentees are Diehl (out long term) and Malanga (stomach muscle); Chabot is back and \"wieder voll belastbar\". Karazor is FIT — he is simply not CONFIRMED STARTING. (2) THE AP IS THE EXACT SHAPE THE PROMPT WARNS ABOUT. ap 123 is p 245 over just TWO appearances in a season already six matchdays old. Those two were full strong games, not cameos, so this is not the cameo trap — but a man with two appearances in six matchdays is a man who has not held the shirt, and mv 6.905.174 against ap 123 is precisely the cheap-price-next-to-a-big-average signal that means the market knows it. Stuttgart also played Atletico Madrid away on 20.10 21:00, three days before MD7, so rotation risk is live. (3) THE CUSHION IS TOO THIN TO SURVIVE THE PRICE. He is mvt 1 and his expiry falls AFTER BOTH the 21.10 and the 22.10 20:00Z ticks, and a Kickbase board price re-bases to mv at every tick — at the re-measured +2,95% twice he costs ~7.318.000 by expiry, leaving only ~600.000 against the 7.918.682 ceiling BEFORE any contested premium. Measured TODAY on this very board: Friedl cleared +11,24% and Chukwuemeka +33,17%; either premium puts him over the ceiling and leaves Georg leveraged into the lock. REVERSAL: reconsider ONLY if a dated Stuttgart XI actually names him a starter AND the Jeltsch manager ask at 18.500.000 clears (which adds 3.102.056 of headroom and lifts the ceiling to ~11.020.000), and even then bid EXACTLY the then-current mv and never raise."
-   },
-   {
     "name": "SOURCE TRAP — flashscore.de \"Bundesliga 7. Spieltag: Verletzungen und Sperren in der Uebersicht\" is YEARS stale and carries NO date",
     "pos": "",
     "club": null,
@@ -297,11 +297,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open and one listing qualifies: a rising-flag Kickbase listing priced at market value, expiring comfortably before tonight's value update, which is what makes the tick capturable. Bid exactly market value and never raise - winning a contested listing into the high premium cluster destroys ten good flips at once. Losing the auction costs nothing. The unwind survives even the worst tick ever measured on a rising-flag player, and selling back to Kickbase pays market value with no spread. The edge itself was re-measured this run and shows no decay - this is the third consecutive reading in the same band, and if anything it has widened against the original baseline. Two open questions remain unresolved and should stay on this page: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
+  "reason": "No qualifying flip, and the reason is worth being precise about: the mechanism is intact, the window is simply empty. Every rising Kickbase listing priced at market value expires AFTER tonight's value update, and by the standing rule a listing that resolves after the tick carries no measured edge. The listings that do expire before the tick are all flat or falling. The edge itself was re-measured from the event log this run and shows no material decay against the last two measurements. On calibration: bidding exactly at market value has now lost three consecutive board auctions in 24 hours — Aseko, Hoeler and Schmahl — and the correct action in all three cases was to lose. Each cleared well above what the next tick can pay, so every winner is expected to be underwater on day one. A future run that reads 0-for-3 as a reason to start raising has inverted the edge. What the losing streak does say is that the chance of winning a listing anyone else wants is low, so the programme's real value is the win rate times the tick, not the tick alone. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that the edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "The squad sweep is clean on injuries and suspensions - none of the eleven appears on the league-wide injured-and-suspended table, and nine of them are in their club's probable eleven in a preview dated today. Two are not. Nakuzola being out of his is already known and changes nothing; he is the weakest fielded body and cannot be replaced at exactly eleven. Wolf is the live one: two dated previews put him outside his club's eleven, one of them naming him explicitly as the substitute rather than as absent. He is on no injury list and carries no status flag. This is being flagged and not acted on, for four reasons: his fixture is Saturday and previews published two days out for a Saturday game are the softest selection evidence there is; he posted his best score of the season last matchday, which argues the previews are lagging rather than leading; he cannot be sold in isolation at exactly eleven; and every replacement that could land before the lock fails the appearance-weighted test. Re-read the Friday pressers at the last run before the lock. His value trend is drifting the same way the previews point, which is worth noting but is not itself evidence of selection.",
+  "sweep": "Squad sweep is clean — no player injured or suspended, all eleven carry a clear status flag. Nine of the eleven are confirmed in their clubs' predicted starting elevens on bundesliga.com's 22.10.2026 matchday-7 preview: Schwolow, Deman, ter Horst, Tanaka, Nusa, Guirassy, Engelhardt, Gregoritsch and Brackelmann. Nakuzola is unmentioned, which is consistent with his being the known weakest fielded body. Wolf is the only negative and is a selection call, not an injury. A standing method warning was confirmed again: three club attributions guessed from the internal team id were wrong this run and the news source corrected them, so clubs must always be resolved from the player record or the source, never from the id.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -514,7 +514,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=859, -3,62% to +443,38%"
+   "v": "n=861, -3,62% to +443,38%"
   }
  ]
 }
