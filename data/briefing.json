@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-23T08:45:00Z",
+ "run": "2026-10-23T10:45:41Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 1979465,
   "floor": -48975316,
   "spending_power": 50954781,
-  "hours_to_lock": 9.62,
-  "exposure": "None. The balance is positive, no leveraged position is open, no offer is outstanding, and nothing expires inside the next two hours. Nothing requires Georg's attention before the lock.",
+  "hours_to_lock": 7.63,
+  "exposure": "None. The balance is positive, so no leveraged position is open and nothing has to be unwound before the lock. Nothing recommended this run would open one either — which is exactly the reason the one upgrade that was available on paper was turned down.",
   "must_restore_by": "2026-10-23T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Defence, specifically the dead slot that has not produced in three matchdays. It is unfixable before tonight's lock because the only upgrade worth having does not resolve until tomorrow, and the only buys that do resolve in time would have to be funded by selling someone who plays. The gap carries into the next matchday, where it is fixable and should be fixed.",
+ "binding_gap": "There is no positional hole — the eleven fill the only legal shape exactly. The binding constraint is not money and not the squad sheet but pre-lock resolvability: a board listing that expires after the lock cannot play this matchday, and a manager ask depends on someone else choosing to accept. Almost the entire market fails one of those two tests, which is why spending power running into the tens of millions buys precisely nothing tonight.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 50954781,
@@ -54,7 +54,7 @@
   "listings": 31,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 3
  },
  "squad": [
   {
@@ -170,18 +170,18 @@
  ],
  "verdict": {
   "action": "none",
-  "headline": "No action.",
-  "headline_short": "No action.",
-  "detail": "No action. The eleven is correct as placed and should be left alone through tonight's lock. This is the third consecutive run to reach that conclusion, and it was re-derived from scratch rather than carried forward. The balance is positive, so nothing has to be unwound before the lock and there is no deadline pressure on Georg at all this cycle."
+  "headline": "No action — the fourth consecutive run to land there, and this time the reasoning is short because nothing moved.",
+  "headline_short": "No action — the fourth consecutive run to land there, and this time th",
+  "detail": "No action — the fourth consecutive run to land there, and this time the reasoning is short because nothing moved. No transfer has settled in the league since the small hours and no new listing has appeared since before the last run, so the board that was already judged unbuyable is the board still standing. Field the 4-4-2 as it is and let the matchday lock."
  },
  "sell": {
   "recommendation": "none",
-  "reason": "Nothing to sell. Every sale that would raise real money costs a player who actually plays, and the squad has no twelfth body to absorb it. The one slot worth vacating, Nakuzola's, raises too little to buy anyone who would start in his place.",
+  "reason": "Nothing. Not one squad player is a sale today, and that is a structural statement rather than a judgement on any of them: the side is at the minimum size, so selling anybody costs the penalty outright unless a replacement arrives first, and the replacement set is empty before the lock. The usual funding bodies stay where they are.",
   "standing": []
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing to buy. The board splits cleanly in two: the listings that resolve before the lock are all either bench bodies, flagged players, or names already logged as avoids, and everything genuinely interesting resolves tomorrow morning, after the lock, so it cannot score a point this matchday. Screen on expiry before merit — it removes two thirds of the board in one pass. Every manager ask currently on the board sits above market value, and none of them is inside the low cluster where manager asks actually clear; the cheapest of them buys a striker who is no better than the one already in the side. The one real idea is Oskar Wojcik, a defender who would genuinely upgrade the weak slot on both price and merit, and who is dead for this matchday purely on timing. He is marked falling, so he should be cheaper after tonight's update. He is the standing idea for the next matchday and the first thing the post-lock run should look at.",
+  "reason": "Nothing buyable. Only a handful of board listings resolve before the lock at all, and every one of them is already on the avoid list, fails the fitness flag outright, or is a token-priced body that scores nothing. Everything else on the board — including the genuinely attractive names — expires after the lock and so cannot play this matchday whatever its merits. The manager asks die on our own calibration: the measured band in which manager-to-manager listings actually clear is low single digits, and today the cheapest ask on the board sits at nearly double the top of that band, with most of them far above it. The one pre-lock upgrade that exists on paper is the full-back on the weakest fielded slot's position, and he was re-derived from scratch again this run: the only body that can fund him is a midfielder we would rather keep, the weak slot stays filled by the same player either way, and winning the auction would leave a negative balance open across a two-hour window before the lock in which a missed unwind scores zero for the entire matchday. Roughly thirty average points of upside against the whole matchday is the wrong side of that trade, and the avoid stands.",
   "standing": [],
   "killed_this_run": [
    {
@@ -297,11 +297,11 @@
  "movers": {
   "recommendation": "none",
   "window": "closed",
-  "reason": "Flip window closed. The lock arrives before the next market-value update, so nothing bought now can be unwound into the tick. The edge itself was re-measured from the event log this run and shows no decay against the previous two measurements, and the falling-flag drift remains the mirror image of it. Two open questions remain unresolved: whether Kickbase caps squad size, which would cap flip throughput; and the fact that this edge is measured in one league over one period and will decay if rivals crowd into it.",
+  "reason": "Flip window closed — the lock is under twelve hours away, and it is shut a second time on mechanism: the next market-value tick falls after the lock, so no tick is capturable inside this matchday at all. The edge itself is healthy, though. Re-measured from the event log this run, the rising-flag cohort still gains on the next tick and still rises nine times in ten, on a sample nearly triple the one the method was calibrated on, and the falling-flag cohort still loses by a similar margin. Against the original baseline that is no decay — marginally stronger, if anything. Two things remain unresolved and are worth stating plainly: we still do not know whether Kickbase caps squad size, which would cap how many flips can run at once, and the edge is measured in one league over one period, so it will erode if enough rivals crowd into it.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player is newly injured, suspended or benched. Engelhardt still carries his flag from the dated hip collision logged yesterday evening, and his side plays Sunday, so tonight's lock commits a doubt that cannot resolve beforehand — he is held by arithmetic, not by preference, since nothing fundable replaces him. Everyone else is clear on the live flags and played the most recent matchday. One warning worth repeating: a widely-ranked article claiming a high-profile Dortmund absence, with Guirassy as its subject, is six months old and belongs to last season. The live data contradicts it outright and he is being marked up, not down.",
+  "sweep": "One flag, and it has hardened without changing anything. The midfielder who took a hip knock in the Conference League on Thursday is now explicitly described as doubtful for Sunday by a source updated this morning, where earlier in the week he was only carried as knocked about. He is not on the live league-wide injured-and-suspended table, and his club's own page leaves him out of the absentee list, which names only a long-term cruciate case. The point that matters is the timing: his club play on Sunday, so the doubt resolves roughly two days after tonight's lock, and he has to be committed now either way. Holding him scores at worst nothing; selling him drops the side to ten and takes the penalty. That is forced, not a choice. Everyone else in the side is clear on the fitness flag and none of them appears on the league-wide table. One player remains fit but unselected — three matchdays without a minute — which is a selection problem no news source will ever flag and one that cannot be fixed before this lock, because his own sale raises almost nothing. Worth noting on the upside: the first-choice keeper at one of our defenders' clubs is carrying a training setback, which supports our own keeper keeping the gloves — he is the squad's largest riser.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
