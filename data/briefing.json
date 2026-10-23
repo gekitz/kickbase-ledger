@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-23T12:51Z",
+ "run": "2026-10-23T14:50Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 1979465,
   "floor": -48975316,
   "spending_power": 50954781,
-  "hours_to_lock": 5.64,
-  "exposure": "No leverage. The balance is positive and no offer is outstanding, so there is nothing that must be unwound before the lock. One calibration point was added: a contested board listing cleared well into the high premium cluster this morning, which vindicates the two AVOIDs covering that cohort and reconfirms that board listings should never be benchmarked against the median. The ledger database remains absent from the Cloudflare account for a second day, so the direct query step is structurally impossible and open calls below the display cap stay unreadable.",
+  "hours_to_lock": 3.66,
+  "exposure": "No leveraged position is open and none would be opened by any recommendation in this briefing. The balance is positive going into the lock, so there is no zero-matchday risk tonight. Housekeeping worth noting: ten superseded calibration run-logs were closed this run and their durable method rules consolidated into a single standing entry, which cuts the open-call pile that had been hiding actionable calls from the display.",
   "must_restore_by": "2026-10-23T18:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The fourth defender's slot. Nakuzola has not appeared in the last three matchdays and his club page has him in the squad but out of the predicted eleven, so that slot is an expected zero tonight. It is the single largest avoidable loss in the side and it is not fixable before the lock: the money to replace him exists only by selling someone who scores more than his replacement would.",
+ "binding_gap": "The binding constraint is not money and has not been money for days. Spending power is comfortable and the balance is positive. What binds is the eleven-player floor combined with the clock: a purchase can only improve the side if it resolves before the lock, and every listing that resolves before the lock has already been rejected on merit. The fourth defender slot is where the points are, and it stays unfixed until a worthwhile defender appears on the board with an expiry on the right side of a lock.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 50954781,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 29,
+  "listings": 30,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -170,20 +170,47 @@
  ],
  "verdict": {
   "action": "none",
-  "headline": "NO ACTION — fifth consecutive run.",
-  "headline_short": "NO ACTION — fifth consecutive run.",
-  "detail": "NO ACTION — fifth consecutive run. The squad sits at exactly eleven with a positive balance and a legal 4-4-2, and nothing on the board can improve the fielded eleven before tonight's lock without costing more points than it adds. The one listing that is both a genuine upgrade and resolvable before the lock is Borna Sosa, and his funding is re-derived from scratch this run and fails on points, not on money."
+  "headline": "NO ACTION before tonight's MD7 lock — the sixth consecutive run to reach that verdict, and it is structural rather than a close call.",
+  "headline_short": "NO ACTION before tonight's MD7 lock — the sixth consecutive run to rea",
+  "detail": "NO ACTION before tonight's MD7 lock — the sixth consecutive run to reach that verdict, and it is structural rather than a close call. The squad sits at exactly eleven, all eleven are placed in a legal 4-4-2, and the balance is positive and unleveraged. No sale is possible without dropping to ten and taking the -100 penalty, and every listing that actually resolves before the lock is already a logged AVOID. Three new listings arrived since the 12:45Z run and all three expire tomorrow, after the lock, so none of them is playable for this matchday whatever their merit. Field the eleven as they stand."
  },
  "sell": {
   "recommendation": "none",
-  "reason": "Nothing. The squad is at exactly eleven, so any sale without a replacement landing first drops the fielded side to ten and takes the hundred-point penalty. That constraint, not sentiment, is what closes this section.",
+  "reason": "Nothing to sell. This is not a judgement about any individual — it is arithmetic. With the squad at exactly eleven, any sale drops the fielded side to ten and costs a flat -100 points, which no realistic upgrade recovers. The standing conditional sale of Wolf is inert: it was the funding leg of the Sosa purchase that was withdrawn, and with that purchase gone there is nothing for it to fund. He stays.",
   "standing": []
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing. The pre-lock resolvable set is exhaustively five listings, and four of them are minimum-value or status-flagged filler already covered by standing AVOIDs. The fifth is Sosa. He is a rotation left-back — three appearances in six matchdays — so his expected return tonight is roughly half his average. Winning him leaves a deficit that exactly one sale may close, because a second sale would drop the squad to ten. The only man whose sale would itself be an upgrade is worth minimum value and cannot close that deficit. Every sale that can close it removes a nailed starter whose expected return is higher than Sosa's. The trade is therefore negative on points and burns most of the free envelope. The AVOID stands — but on this funding ground, not on the withdrawn claim about his number of starts, which remains factually wrong.",
+  "reason": "Nothing to buy before the lock. The three pre-lock resolvers are all open AVOIDs — Sosa expires 16:23Z and was withdrawn on an open left-back rotation, Zingerle is the twelfth-man idea that scores zero, Culbreath sits on the falling side of the tick. The three new listings are all killed: Demirović is an attacker averaging well under half of either incumbent; Nwaneri is a manager ask at thirty-one and a half percent over market value, roughly seven times the measured clearing premium for manager asks, and on merit he beats only Tanaka. Maksimović is the one worth explaining, because he looks like a clean upgrade and is not. His average over Tanaka's is real on paper and his own market value would be fully funded by selling Tanaka, unwinding comfortably before the MD8 lock. He fails on selection: one start in four appearances, more than three times as many minutes on the bench as on the pitch, and no dated source since early September putting him in the eleven. That is the cameo-average trap the method warns about, and it is logged so the next run does not rebuild it.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "Ethan Nwaneri",
+    "pos": "MID",
+    "club": "3",
+    "ask": 18000000,
+    "mv": 13688853,
+    "premium_pct": 31.49,
+    "why": "NEW manager ask, JakobDohr, listed 2026-10-23T14:36:02Z at prc 18.000.000 against mv 13.688.853 = +31,49% over mv. REJECT ON PRICE FIRST, and this is the cleanest illustration of the two-cluster rule in the ledger: a MANAGER ask must be benchmarked against the LOW cluster (measured clears +3,06% and +4,35%), not against the contested-Kickbase high cluster. +31,49% is seven times the low cluster and sits above even the measured Kickbase contested band — paying it would repeat the Onyeka +54,37% error, not the Mokwa/Makengo under-bid error. The correct counter on a manager ask that has gone unsold is an offer at mv, and at mv 13.688.853 he still fails on merit: MID, Dortmund (tid 3), ap 84 on p 421, which is BELOW Nusa (159), Engelhardt (115) and Wolf (93) and beats only Tanaka (62). So the swap he could theoretically make is Tanaka out / Nwaneri in for +22 ap, funded by selling Tanaka at mv 5.762.807 against an 18M ask — a net 12,2M of leverage for 22 points a matchday, against cash of 1.979.465. Unfundable without selling a nailed starter. Reverse only if the ask drops to at or below mv AND a dated Dortmund XI starts him."
+   },
+   {
+    "name": "Ermedin Demirović",
+    "pos": "ATT",
+    "club": "9",
+    "ask": 12685653,
+    "mv": 12685653,
+    "premium_pct": 0,
+    "why": "NEW Kickbase board listing 2026-10-23T14:36:04Z at prc = mv 12.685.653 exactly (no u), mvt 1, st 0, exs 75.457s so it expires 2026-10-24T~11:34Z, AFTER tonight's lock — unplayable for MD7. Killed on merit, not timing, so no later run needs to price him: he is an ATT (Stuttgart, tid 9) with ap 40 on p 237, and Georg's two fielded attackers are Guirassy ap 129 and Gregoritsch ap 107. He is not an upgrade on either — he is roughly a third of Guirassy's output — so buying him can only add a non-fielded twelfth body, which scores ZERO (see AVOID Acoeo5f, the 500k twelfth-man entry; the same arithmetic applies at 12,7M and costs 25x more). He would also absorb 12.685.653 against cash of 1.979.465, i.e. a -10,7M leveraged position unwindable only by selling Deman, Brackelmann, Engelhardt or Gregoritsch — every one of them a fielded starter worth more than he is. No starter check was run and none is needed: the position arithmetic kills it before fitness matters."
+   },
+   {
+    "name": "Andrija Maksimović",
+    "pos": "MID",
+    "club": "43",
+    "ask": 5529787,
+    "mv": 5529787,
+    "premium_pct": 0,
+    "why": "NEW Kickbase board listing 2026-10-23T13:29:03Z at prc = mv 5.529.787 exactly (no u), mvt 1, st 0, exs 74.496s so it expires 2026-10-24T~11:26Z — AFTER tonight's 18:30Z MD7 lock, i.e. unplayable for MD7 on timing regardless of merit. On merit it is the Reggiani/Sosa trap again and it must not be re-derived: ap 83 on p 332 looks like a clean upgrade over Tanaka (ap 62) at a price Tanaka's own mv 5.762.807 would fully fund (win tomorrow -> squad 12, cash -3.550.322; sell Tanaka at mv -> +2.212.485 and eleven, which DOES unwind cleanly before the MD8 lock on 31.10). It fails the starter test outright. Ligainsider profile 26/27 (fetched this run): 4 Bundesliga appearances but only ONE Startelf, 157 minutes played against 512 minutes on the bench, Verletzt/Gesperrt 0%. His ap 83 is therefore a four-appearance mean built mostly on cameos — the exact high-average-off-cameo-minutes inversion the method warns about. His newest dated news item is 10.09.2026 (\"Maksimović bekommt gegen Como seine große Chance\"), six weeks old; there is NO October source putting him in the XI, and the 03.09.2026 \"Demichelis traut Maksimović den Durchbruch zu\" is a coach backing a breakthrough, not a selection. Leipzig's only listed absentees are Ouédraogo and Guiu, so nothing has opened up for him. NO CURRENT INFO FOUND confirming a starting role. Reverse only on a dated October/November Leipzig XI that actually starts him."
+   },
    {
     "name": "Christopher Trimmel",
     "pos": "DEF",
@@ -264,44 +291,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "URL flashscore.de/news/...bundesliga-7-spieltag-verletzungen-und-sperren-in-der-ubersicht/6Zwf14l2/. It ranks first on a search for current matchday absences and shows only \"Aktualisiert\" with no date in body or metadata. It is unusable: it lists Darmstadt 98 and VfL Bochum as Bundesliga clubs, puts Neuer at Bayern, Guirassy at Stuttgart, Deman at Werder Bremen, Gregoritsch at Freiburg and Sabitzer as injured at Dortmund — every one of which contradicts the live Kickbase club ids this run. It is roughly a 2023/24 article re-served under a current-sounding headline. NEVER cite it. The correct squad-wide sweep is ligainsider.de/bundesliga/verletzte-und-gesperrte-spieler/ (note the path — ligainsider.de/verletzte_gesperrte_spieler/ 404s), whose relative \"fehlt seit\" durations are live-rendered and reconcile against today's feed (Skhiri \"seit 1 Woche 1 Tag\" matches his sale today; Banks Knie-Aussenband matches)."
-   },
-   {
-    "name": "Luca Reggiani — ap 57 is ONE appearance, and Dortmund do not count on him",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "New Kickbase board listing 2026-10-19T15:19:28Z at prc = mv 3.090.273. Superficially the best cheap DEF upgrade on the board (ap 57 vs Nakuzola 27, and inside the ~3,58M unwind ceiling). Reject on both legs: (1) p 57 with ap 57 means exactly ONE scoring appearance — the cameo-minutes trap, not a six-matchday average; (2) the Ligainsider injured/suspended table lists him for Dortmund under \"nicht beruecksichtigt\" alongside Filippo Mane, i.e. outside the matchday squad. Also mvt 2, so he fails the flip test as well — the measured mvt-2 next-tick drift is -3,09%, 14,9% rose. Nothing here is a buy on either book. REVERSAL: a dated Dortmund XI starting him plus at least three further matchdays to re-base the ap."
-   },
-   {
-    "name": "Lukas Kübler — FLIP ONLY, NEVER A POINTS BUY",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "His ap 36 looks like a cheap upgrade over Nakuzola (ap 27) and the arithmetic even works (buy 3.057.378 + sell Nakuzola 500.000 + sell Jeltsch ~17,5M leaves +523.666 and exactly eleven). It still FAILS the starter test and must not be bought for points. Dated evidence, 17.10.2026 (ms-aktuell, on the contract extension announced 16.10.2026): \"Der erfahrene Defensivspieler kommt in der laufenden Bundesliga-Saison ueberwiegend als Einwechselspieler zum Einsatz\" and \"Die Entscheidung faellt in einer Phase, in der Kuebler nicht mehr regelmaessig zur ersten Elf gehoert.\" Ligainsider profile: 5 Bundesliga appearances, ONE start, 137 minutes, 310 of 573 minutes on the bench; he is the alternative to Philipp Treu at right-back. The ap 36 is a bench average, not a starter average — this is the exact trap STEP 5 warns about in reverse. He remains a legitimate FLIP (mvt 1, prc = mv, fitness irrelevant to the tick) under FLIP Fzoasqy, and nothing here restricts that. REVERSAL for points: a dated Freiburg XI actually starting him AND a re-based ap above whoever he would displace at that time."
-   },
-   {
-    "name": "SOURCE TRAP — kicker.de \"Nach früher Auswechslung: Jeltsch fehlt dem VfB vorerst - Muskelverletzung im Adduktorenbereich\" is 25.09.2025, TWO SEASONS OLD",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "A SECOND outlet now carries the stale Jeltsch injury story, alongside the vfb.de 21.04.2026 item already logged as Ab7xnd0. This one is kicker.de/nach-frueher-auswechslung-jeltsch-fehlt-dem-vfb-vorerst-1149879/artikel and it ranks top-5 on a plain \"Jeltsch verletzt\" search, so every future run will hit it. It is DEAD: the Ligainsider Krankenakte (finn-jeltsch_36816) dates that Adduktoren absence 25.09.2025-07.10.2025, and his most recent entry of any kind is a Bauchmuskelverletzung 19.04.2026-12.05.2026, i.e. last season. The Krankenakte header shows FIT. Confirmed independently on 19.10 from the live Ligainsider Verletzte-und-Gesperrte table: VfB Stuttgart lists exactly Diehl, Malanga and Zagadou — Jeltsch is absent from it. CLUB ATTRIBUTION, settled: Jeltsch IS at VfB Stuttgart (tid 9, same tid as Zagadou, whom Ligainsider also places at Stuttgart). Do NOT read get_lineup's `os` field as his club — `os` is the MD7 OPPONENT, which is why his row says BMG. Same for Engelhardt (tid 5 Freiburg, os FCB) and Gregoritsch (tid 13 Union, os FCU). A future run that treats `os` as the club will mis-sweep the entire squad."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "closed",
-  "reason": "Flip window closed — the matchday locks in under twelve hours, and a flip left open at the lock risks the whole matchday. Not measured this run. Two questions remain open from previous runs and neither has been resolved: whether Kickbase caps squad size, which would cap flip throughput; and the fact that the rising-tick edge is measured in one league over one period and will decay if rivals crowd into it.",
+  "reason": "Flip window closed — the matchday locks in under four hours, and the market-value tick falls at 20:00Z, after the lock. A flip left open across the lock risks the entire matchday to chase a few percent, which is never the right trade. The edge itself is healthy and worth restating for the next window: the rising-trend flag was re-measured from the event log this run at plus three percent at the next tick across nearly thirteen hundred observations, with ninety-one percent of those players rising. That is above the figure this routine was calibrated on, so rivals have not crowded the edge out yet. Two open questions stay open: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if the other traders pile in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Squad swept clean this run against the live league-wide injured-and-suspended table: not one of the eleven appears on it. Engelhardt is the exception that needs stating. His doubt now has a dated cause — he collided with an opponent in the thirteenth minute at Monaco on Thursday evening, signalled hip pain and was substituted shortly after. His club page still carries him in the squad for Bayern with a doubtful marker and does not list him among the absent, so this is a knock rather than an absence. His match is Sunday, so tonight's lock commits the doubt unresolved. There is no pre-lock resolvable replacement for him at any price, so this is information rather than an action. Schwolow is confirmed in the Mainz starting eleven.",
+  "sweep": "The squad sweep is clean on a dated league-wide source. Ligainsider's injured-and-suspended table, checked this run, lists none of the eleven. Engelhardt still carries a soft Kickbase knock flag from the hip collision on 22.10, but he has missed no matches and does not appear on the league-wide table, and Freiburg's only listed absentee is Muslija. A useful side-confirmation for the goalkeeper slot: Mainz list Zentner as out of the squad on a training backlog, which independently supports Schwolow starting. Nothing is newly injured, nothing is newly suspended, and no squad player carries dated news suggesting he leaves the league.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -520,7 +520,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=872, -3,62% to +443,38%"
+   "v": "n=874, -4,00% to +443,38%"
   }
  ]
 }
