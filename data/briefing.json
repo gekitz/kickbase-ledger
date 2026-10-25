@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-24T22:54Z",
+ "run": "2026-10-25T00:53Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -3018087,
   "floor": -49039716,
   "spending_power": 46021629,
-  "hours_to_lock": 140.6,
-  "exposure": "The balance is negative and has been carried into this run. It costs nothing until the matchday locks, and the lock is far enough away that there is no need to unwind tonight — but it does mean a sale must happen before then, and it means any flip won now stacks on top of an existing deficit rather than starting from zero. If all three open flip legs were won the position would deepen considerably and would need every leg sold back plus one squad body to return to non-negative. That is manageable with the time available, but it is the reason the flip book is downgraded rather than extended.",
+  "hours_to_lock": 138.61,
+  "exposure": "The balance is negative and must be cleared before the matchday locks, because a negative balance at matchday start scores zero for the entire matchday. It is not urgent — the lock is over five days away, and a deficit costs nothing until that instant. What matters is that until this run there was no sale standing against it; there is now. The flip legs deepen the deficit temporarily, which is fine: selling them back plus the named sale returns the balance to positive and the squad to eleven even if the tick goes against us by the worst margin ever recorded.",
   "must_restore_by": "2026-10-30T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no formation hole — three legal shapes are fillable right now with eleven placed. The binding constraint is the negative balance, which must reach non-negative before the matchday locks or the whole matchday scores zero. It is small relative to the squad's value and any one of several bodies clears it, so the constraint is not which sale is affordable but which sale costs the fewest points. That question is decided by the Brackelmann medical, not by the market, which is why no sale is placed tonight.",
+ "binding_gap": "Midfield cover, and it is not yet biting. Engelhardt is the second-highest scorer in the fielded eleven and is doubtful; his only replacement is a thirty-average attacker who is simultaneously the designated funding sale. That is the squeeze to watch, but it cannot be resolved tonight because the board has no midfielder worth buying and the team news does not arrive for days. The correct play is to hold both the body and the cash and decide on the last run before the lock.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 46021629,
@@ -54,7 +54,7 @@
   "listings": 29,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 0
  },
  "squad": [
   {
@@ -179,21 +179,40 @@
   }
  ],
  "verdict": {
-  "action": "none",
-  "headline": "No trade is forced tonight.",
-  "headline_short": "No trade is forced tonight.",
-  "detail": "No trade is forced tonight. The standing instruction to sell Hwang back to Kickbase is REVERSED: his flip leg is complete, but Brackelmann took a head injury in today's MD7 match and was taken to a clinic, which makes Hwang the only bench body standing between the squad and a fielded zero. The deficit that sale was meant to clear is small and the lock is nearly six days away, so the funding decision waits on the Brackelmann medical. Separately, the mvt-1 tick edge looks materially weaker than the ledger's figure and no new flip leg should be opened until it can be re-measured on the full sample."
+  "action": "act",
+  "headline": "Quiet run, one real action.",
+  "headline_short": "Quiet run, one real action.",
+  "detail": "Quiet run, one real action. Both flip legs from the last run were lost — Bülter to a genuine overbid, Heuer Fernandes at a price BELOW our own instructed bid, which means that offer was almost certainly never placed. Two fresh flip legs qualify tonight, Conté being the larger. No points buy on the board clears the bar. The standing negative balance now has a named sale against it for the first time, to be executed late rather than now."
  },
  "sell": {
-  "recommendation": "none",
-  "reason": "Nothing is recommended for sale tonight, and that is a change from the standing call. Hwang's sale is suspended, not cancelled: resume it the moment Brackelmann is cleared for MD8 by a dated Augsburg source, or the moment any other body clears the balance. If Brackelmann is instead ruled out, sell BRACKELMANN rather than Hwang — that clears the deficit with margin, removes a certain zero from the eleven, and still leaves a legal 3-4-3. Engelhardt is explicitly NOT for sale: he is in Freiburg's probable XI for Sunday against Bayern, flagged only as doubtful after a two-day hip knock, and selling an ap-115 starter to fund a three-million deficit would be the worst points trade available.",
-  "standing": []
+  "recommendation": "act",
+  "reason": "Hwang is the designated unwind lever and the call is to sell him LATE, not now. He is the twelfth body and the only squad member not placed in the eleven, so selling him to Kickbase at exactly his market value clears the deficit while leaving the fielded eleven completely untouched — a zero-points unwind, which nothing else on the squad offers. Tanaka would force a 4-3-3 and cost real points; Wolf and ter Horst are both fielded; Nakuzola is too small to cover the gap; and selling Engelhardt stays barred by the standing de-escalation from 24.10. Hold him because his market value is rising, because the lock is days away, and above all because he is the only cover for the two flagged men. If Engelhardt is fit by the lock the sale costs nothing at all; if Engelhardt is out it costs roughly his own average, which is the cheapest loss available.",
+  "standing": [
+   {
+    "name": "Hwang",
+    "pos": "ATT",
+    "club": "8",
+    "mv": 5135514,
+    "ap": 30,
+    "why": "THE DEFICIT HAS NO STANDING SALE AGAINST IT AND THIS FIXES THAT GAP. Balance is -3.018.087 and kb_context now renders ALL actionable kinds in full (the 260 omitted calls are 154 WATCH / 56 AVOID / 50 HOLD — zero SELL), so the absence of an open SELL is real, not a display defect. A negative balance at matchday start scores ZERO for the entire matchday, so this MUST execute before the MD8 lock 2026-10-30T19:30:00Z. WHY HWANG AND NOT ANYONE ELSE: he is the twelfth body, the only squad member with no `lo`, i.e. UNPLACED, so selling him to Kickbase at exactly mv 5.135.514 takes cash to +2.117.427 and leaves the fielded eleven (1075 ap) COMPLETELY UNCHANGED. Every alternative costs real points: Tanaka 5.741.772 forces a 4-3-3 and drops the XI to 1034 nominal / ~919 if Engelhardt is out; Wolf (ap 96) and ter Horst (ap 79) are both fielded; Nakuzola at mv 500.000 does not cover the deficit. Engelhardt (mv 14.871.676) would clear it in one stroke but Wloaueq explicitly kills that idea on the 24.10 de-escalation and that instruction stands. DO NOT EXECUTE EARLY, AND THIS IS THE ACTIVE PART OF THE CALL: lock is 138.7h away, Hwang is mvt 1 with tfhmvt +37.962 and sdmvt +768.670 so holding him earns value, and he is the ONLY cover for Engelhardt (st 2, Hueftprobleme, ligainsider 22.10.2026) and Brackelmann (st 2, head collision v Union, 24.10.2026, hospital, no prognosis). THE COST IS CONDITIONAL: if Engelhardt is fit by the lock the sale costs ZERO fielded points; if he is out, the best XI without Hwang is a forced eleven carrying Engelhardt at ~0 instead of a 4-3-3 benching him, so the sale costs ~30 real points. Therefore sell LATE, on the last run before the lock, once the Freiburg and Augsburg team news has resolved. Supersedes nothing; HOLD Hvpesof on Hwang should be read as subordinate to this deadline.",
+    "tag": "sell"
+   }
+  ]
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No points buy is recommended. The board carries no body that improves a slot already covered, and the manager asks on the market are at the usual markups well above the band that manager asks actually clear at. Nothing on the market is worth opening leverage for with the lock this far out and a squad that already fields a legal eleven.",
+  "reason": "Nothing on the board earns a purchase. Every manager ask is far above the measured manager clearing band — Weiser, Karazor, Assignon and Chiarodia are all absurd, Muheim and Rômulo and Banzuzi are all well clear of any defensible premium, and Eggestein and Dahmen are priced as upgrades that are not upgrades. Among the Kickbase listings priced at market value, the ones with real scoring records are injured: Conté, Capaldo, Nadir and Andrich all carry status flags. That leaves Neuhaus as the only honest candidate, and he is logged as an avoid rather than a buy: Gladbach, fit, four appearances and four starts, but he displaces Tanaka for barely a dozen points of improvement at an indefensible cost per point, his value is falling at the measured rate for a declining flag, and his coach is publicly defending his form, which is the opposite of selection evidence. The one framing in which he looks good is as cover should Engelhardt miss — but his listing expires long before the team news resolves, and buying a conditional before the condition is observable is exactly the error of the reversed Andrich call.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "Florian Neuhaus",
+    "pos": "MID",
+    "club": "15",
+    "ask": 5646106,
+    "mv": 5646106,
+    "premium_pct": 0,
+    "why": "THE ONLY PLAUSIBLE POINTS BUY ON THE BOARD THIS RUN, AND IT STILL FAILS — logged so the next run does not re-litigate it. Kickbase board listing (no u) at EXACTLY mv 5.646.106, exs 110863 from the 00:45Z read so expiry ~2026-10-26T07:32Z. CLUB VERIFIED, NOT OFF THE OPPONENT FIELD: Borussia Moenchengladbach (ligainsider player page), tid 15. FITNESS AND SELECTION ARE GENUINELY GOOD: marked \"Fit\", 4 Bundesliga appearances in 2026/27 and ALL FOUR WERE STARTS, ap 83 on p 331 so the average is off four real appearances, not a cameo (passes the Hurp14i p/ap test). WHY IT IS STILL A NO, THREE REASONS. (1) VALUE: he displaces Tanaka (ap 71) for +12 fielded ap at 5.646.106 = 471k per point, which is far off anything this ledger has paid. The only framing where he looks good is as Engelhardt cover (1075 - 115 + 83 = 1043 vs 990 in the Hwang 4-3-3, so +53 at 107k/point) — but that is CONDITIONAL ON ENGELHARDT BEING OUT, and the listing expires 2026-10-26T07:32Z while the MD8 team news does not resolve until days later. Buying a conditional before the condition is observable is the Andrich error of 24.10 again. (2) VALUE DIRECTION: mvt 2, measured at -3,12% per tick on n=842 with only 14,4% rising, so the asset bleeds while held. (3) FORM: ligainsider 23.10.2026 11:08 \"Neuhaus auf Form-Suche: Blessin gibt Rueckendeckung\" — a coach publicly backing a player is not selection evidence, it is the opposite signal. REVERSAL: only if he reappears at or below mv AFTER Engelhardt is confirmed out for MD8, with mvt back to 1, and with the squad able to unwind to non-negative cash and >= 11 before the lock."
+   },
    {
     "name": "Nicolás Capaldo — and the 90min source trap behind him",
     "pos": "DEF",
@@ -285,15 +304,6 @@
     "why": "SOURCE TRAP, NEW AND DISTINCT FROM THE KNOWN ONE — flashscore.de article id bkCwJoLP, \"Bundesliga 8. Spieltag - Aufstellungen, Verletzungen und Sperren in der Uebersicht\". It LOOKS like the clean matchday-specific counterpart to the already-logged template trap ngjPe6Gj (A6zjcjq), because unlike ngjPe6Gj it does not serve every matchday from one id. IT IS STILL POISON. Fetched 23.10.2026 it carries NO publication date, only an \"Aktualisiert\" label, and its own body says it covers the 8. Spieltag of the \"Bundesliga 2023/24\" for the weekend of \"20. bis 22. Oktober\" — THREE SEASONS STALE. The content proves it: Dortmund absences given as Moukoko, Duranville, Ostrzinski with Bensebaini on a Gelb-Rote-Sperre; Werder as Naby Keita, Niklas Stark, Pavlenka; Freiburg as Guenter, Kyereh, Rosenfelder; Augsburg as Framberger, Oxford, Mbabu, Vargas. Had this run trusted it, it would have reported stale absentees for FOUR clubs Georg is exposed to (Augsburg, Leipzig, Werder, Freiburg) and would have mis-screened Dahmen and Gruda. STANDING RULE REINFORCED: a flashscore \"Verletzungen und Sperren\" page is NOT a usable instrument for this league in either id form — neither the template id nor a matchday-looking id — and an undated flashscore hit is to be assumed last-season or older. Use the club pages and dated ligainsider player pages instead, which is what resolved Gruda, Maksimovic and Wojcik this run."
    },
    {
-    "name": null,
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "AP-INFLATION KILLS, CONSOLIDATED (2) — both are the \"high average off a few cameo minutes\" trap and BOTH ARE NOW KILLED ON DATED STARTER EVIDENCE, not on timing. This replaces the timing leg of Afn4wqy, which is closed. (1) ANDRIJA MAKSIMOVIC (9776), RB Leipzig, prc = mv 5.529.787 exactly, mvt 1, st 0, ap 83 on p 332 = FOUR appearances. He is the ONLY board MID that is both affordable against the Tanaka budget (7.742.272) and an ap upgrade on Tanaka (62), so he is the single most seductive name on this board — and he fails. Ligainsider 10.09.2026 20:59: the Champions League tie against Como was his \"erstmals in einem Pflichtspiel fuer die Sachsen in der Startelf\" and \"der lange ersehnte erste Pflichtspiel-Startelfeinsatz im RB-Trikot\". A 19-year-old whose FIRST competitive start came in mid-September is a rotation/cup player, and an ap of 83 off four appearances is cameo-inflated, not earned as a Bundesliga regular. HONEST LIMIT ON THIS CALL: that source is six weeks old and is the newest dated read found this run. If a later run finds a dated Leipzig Bundesliga XI from late October that actually starts him, this kill should be re-opened — he is cheap and the slot he would fill is the squad's weakest MID. (2) OSKAR WOJCIK (15256), Werder Bremen, prc = mv 3.850.892, mvt 2, st 0, ap 89 on p 177 = TWO appearances. Headline ap 89 would be +62 over Nakuzola, the biggest paper upgrade on the board. Ligainsider 16.09.2026 16:05 kills it: he is a BACKUP centre-back behind Marco Friedl and Amos Pieper, still waiting on his first competitive appearance, carrying muscular problems from pre-season — Niemeyer: \"Oskar braucht deshalb noch ein wenig, um wieder in seinen Rhythmus zu kommen\", and \"Wojcik befindet sich nach dem Abgang von Karim Coulibaly dahinter in der Hierarchie\". NOTE THE INSTRUMENT WARNING: that same ligainsider page's stats box shows two 2026/27 Einsaetze while the article text says he has no playing time — the prose is the reliable field, the box is not. He is also mvt 2 (falling) and unaffordable against the Nakuzola budget of 2.479.465 anyway."
-   },
-   {
     "name": "Hasan Kuruçay",
     "pos": "",
     "club": null,
@@ -307,11 +317,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip book is not closed by the clock — the lock is days away — but it is downgraded on measurement. The realised move across tonight's tick, read off our own squad, is a small fraction of the drift the ledger has been pricing, and the cleanest reading is Hwang himself: bought at exactly market value this morning, held through the tick, and worth only a fraction more now. Four rival round-trips settled today, each bought and sold back within minutes for a tiny gain, say the same thing from the other side: value drifts upward continuously in small increments rather than jumping at the nightly update. The three flip legs recommended at the last run are left standing because a bid placed at exactly market value cannot lose money on the auction itself, but two of them expire within the next two hours and no offer was ever placed on any of the three. No new leg should be opened until the drift can be re-measured on the full sample.",
+  "reason": "The flip window is wide open and two legs qualify tonight: both are Kickbase board listings priced at exactly market value with a rising flag, and both expire before tonight's value update, so a win owns them across the tick. Conté is the larger and carries the bigger expected gain; his club was confirmed directly from the player record rather than the opponent field, his contract and international status make a league exit implausible, and his injury flag is irrelevant here because fitness does not enter the daily tick — rivals in this league flip injured bodies constantly and are right to. His listing also expires hours before his own kickoff, so there is no full-time information worth waiting for. Nadir is the smaller, safer leg and is the call already standing from the previous run. Bid exactly market value on both and never raise: the whole edge dies the moment a contested listing is chased, as Bülter demonstrated tonight by clearing at a double-digit premium to a rival who will now carry it. Both legs together sit comfortably inside spending power, and the unwind survives even the worst tick ever measured. Two caveats stated plainly. First, the previous run warned that the single-tick edge may have decayed hard, and that warning could not be tested this run — the Cloudflare account authorised here holds no databases at all, so the per-tick re-measurement cannot be run and only the server's pooled figure is available, which shows no decay but cannot settle a claim about one tick. Second, the two open questions remain unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Brackelmann is the live problem. He went up for a high ball in the ninth minute of today's home match against Union, hit his head on Uduokhai's shoulder, lay dazed, was helped off and replaced in the twelfth, and was taken to a clinic for examination. His coach said only that he has headaches and that nothing more is known; no concussion has been confirmed and no timeframe given. Augsburg have a cup tie midweek before the matchday, so there is time for a verdict. He is a placed starter and a genuine doubt. Engelhardt is the opposite story: the hip knock from the Monaco tie on Wednesday reads as a two-day problem, he is named in Freiburg's probable eleven for Sunday, and he is the only Freiburg player flagged as doubtful at all. Everyone else in the squad is unflagged.",
+  "sweep": "No new injuries this run. Engelhardt and Brackelmann were both already carried with dated entries from the previous run and nothing has changed since. Conté and Nadir both carry flags and both are flip candidates only — Nadir's hamstring was confirmed by a dated HSV update on 24.10 and Conté was substituted early against Lyon — but neither flag bears on a value trade, and neither is recommended as a points buy. Club attribution was verified directly from player records rather than the lineup opponent field in every case where it mattered.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -519,8 +529,8 @@
   {
    "name": "Hwang",
    "status": "2449",
-   "why": "RECOMMENDED FOR SALE 2026-10-24T10:45Z (SELL Scax60p) as the completed mvt-1 FLIP UNWIND, at post-tick mv by instant sale to Kickbase. Bought at exactly mv 5.097.552 at 2026-10-24T03:21:08Z as a flip leg; he is mvt 1 with sdmvt +691.111 and is held through the 2026-10-24T20:00:00Z tick, then sold back. He is the twelfth man and NOT in the placed eleven, so the sale costs zero fielded points. THIS IS NOT A MERIT OR AVAILABILITY CALL: he is a confirmed Schalke starter on bundesliga.com's dated 23.10.2026 MD7 XI, and his ap 21 is not the reason for the sale.",
-   "reversal": "ORDERING IS A HARD PRECONDITION, NOT A REVERSAL: do not sell him before the 20:00Z tick, and do not sell him before Moeller Wolfe (B9x7rpn) is in the squad and Nakuzola (S6d899r) is gone — out of order the squad reaches ten and costs -100. If the Moeller Wolfe buy is LOST, this sale still stands on its own (squad 12 -> 11, legal 4-4-2) but the Nakuzola sale must then NOT happen. Re-buy only if ALL of: (1) the ask is AT OR BELOW mv, since the instant board sale pays exactly mv and buying back above it is a guaranteed loss; (2) the balance is non-negative with real room above the 33% floor; (3) a re-based ap clears the marginal-points test against the man he would displace — ap 21 off 84 points does not clear it today. A rising mvt flag alone is NOT a reversal; that is the reasoning that cost 1,0M on Ruoppi."
+   "why": "RECOMMENDED FOR SALE 2026-10-25T00:45Z (SELL Stqdzlt) as the designated unwind lever for the standing -3.018.087 deficit, to be executed LATE — on the last run before the MD8 lock 2026-10-30T19:30:00Z, not now. He is the twelfth body and the only squad member with no `lo` field, i.e. UNPLACED, so the sale to Kickbase at exactly mv 5.135.514 takes cash to +2.117.427 while leaving the fielded eleven (1075 ap) untouched. Sold on structure, NOT on availability or on merit decay: st 0, fit, mvt 1 with tfhmvt +37.962 and sdmvt +768.670, so his market value is rising and holding him to the last moment is the value-correct play as well as the information-correct one. His ap 30 is the second-weakest in the squad after Nakuzola 27, which is why he is the cheapest body to lose.",
+   "reversal": "He is FIT and there is no availability case against him, so judge on ordinary merits only. Require ALL of: (1) the sale actually executed — if the deficit was cleared another way and he is still owned, this block is void and he is simply a squad player; (2) an ask AT OR BELOW mv, since he is sold to Kickbase at exactly mv and buying back above it is a guaranteed loss; (3) a squad slot he would genuinely improve — at ap 30 he beats only Nakuzola (27) among current bodies, so he is depth, never an upgrade, and must not be bought ahead of a higher-ap alternative at similar money; and (4) the squad already at 12 or more, so the purchase is a net addition and not merely undoing an under-eleven hole. SPECIFIC TRAP TO REFUSE: do not re-buy him as \"Engelhardt cover\" after having sold him for that reason — if Engelhardt is out, the fix is a MID who can actually start, not a 30-ap attacker bought back at a spread."
   }
  ],
  "arithmetic": [
@@ -542,7 +552,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=898, -4,00% to +443,38%"
+   "v": "n=900, -4,00% to +443,38%"
   }
  ]
 }
