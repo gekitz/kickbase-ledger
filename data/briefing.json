@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-25T22:45:28Z",
+ "run": "2026-10-26T00:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -2918087,
   "floor": -49104149,
   "spending_power": 46186062,
-  "hours_to_lock": 116.55,
-  "exposure": "The balance is negative and stays negative until the Hwang sale executes. That risk outranks everything else, because a negative balance at the moment the matchday locks scores nothing for the whole matchday no matter who is fielded. The deadline is the lock itself, which is still days away, so there is time, but the sale is also what funds the flip book, so delaying it costs the flips too. Do the sale first and everything else follows; skip it and nothing else should be attempted. The flip book is deliberately sized so that even the worst tick ever measured on a rising flag leaves the balance non-negative at the lock.",
+  "hours_to_lock": 114.62,
+  "exposure": "The balance is negative and has been since before this run, so a leveraged position is open — but it costs nothing until the instant the matchday locks, and the lock is still days off, so this is a scheduling item and not an emergency. The Hwang sale closes it outright with room to spare and should be executed first, because it also raises the spending power the flip book draws on. If all three ranked flips are won the position deepens substantially before it unwinds; every flip body must be sold back to Kickbase before the lock, which pays exactly market value with no spread, leaving the balance non-negative and the squad at eleven or better. The German transfer window is shut until January, so none of the flip candidates can leave the league before the unwind — the usual flip-side risk does not apply this cycle.",
   "must_restore_by": "2026-10-30T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The weakest fielded slot is the defender bought at the floor price, whose average is a fraction of every other starter's. Upgrading him is the single biggest points gain available in principle, and it cannot be funded this cycle: after the sale, the cash plus his own value buys only defenders who are either carrying status flags or no better than he already is. He stays, and the gap carries to the next run.",
+ "binding_gap": "The gap is a fit midfielder to replace the injured Engelhardt, and it is binding on sequencing rather than on cash: the replacement must be bought before he is sold, because the squad sits at exactly eleven once Hwang goes. His own sale plus the post-sale cash defines the ceiling under which the swap is fully self-funding and touches no fielded body. Above that ceiling the trade only works by selling points, so it should not be done. Secondary and much weaker is the defensive slot held by Nakuzola, who has started once in five; it is a real upgrade opportunity but there is no cash for it that does not come out of the midfield fix, and fixing the hole beats upgrading a slot already filled.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 46186062,
@@ -51,28 +51,149 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 32,
+  "listings": 34,
   "cheapest": 500000,
   "cheapest_slot_filling": 14000000,
   "expiring_within_2h": 0
  },
- "squad": [],
+ "squad": [
+  {
+   "name": "Nusa",
+   "pos": "MID",
+   "club": "43",
+   "mv": 29677622,
+   "ap": 165,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Guirassy",
+   "pos": "ATT",
+   "club": "3",
+   "mv": 33344705,
+   "ap": 124,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Engelhardt",
+   "pos": "MID",
+   "club": "5",
+   "mv": 14454228,
+   "ap": 115,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Schwolow",
+   "pos": "GK",
+   "club": "18",
+   "mv": 8963604,
+   "ap": 113,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Gregoritsch",
+   "pos": "ATT",
+   "club": "13",
+   "mv": 14912242,
+   "ap": 104,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Wolf",
+   "pos": "MID",
+   "club": "13",
+   "mv": 6837398,
+   "ap": 96,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Brackelmann",
+   "pos": "DEF",
+   "club": "13",
+   "mv": 13516840,
+   "ap": 93,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Deman",
+   "pos": "DEF",
+   "club": "10",
+   "mv": 11693130,
+   "ap": 88,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "ter Horst",
+   "pos": "DEF",
+   "club": "29",
+   "mv": 6788075,
+   "ap": 79,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Tanaka",
+   "pos": "MID",
+   "club": "8",
+   "mv": 5787936,
+   "ap": 71,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Hwang",
+   "pos": "ATT",
+   "club": "8",
+   "mv": 5242760,
+   "ap": 30,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Nakuzola",
+   "pos": "DEF",
+   "club": "18",
+   "mv": 500000,
+   "ap": 27,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  }
+ ],
  "verdict": {
   "action": "act",
-  "headline": "Sell Hwang first, then run the two flips.",
-  "headline_short": "Sell Hwang first, then run the two flips.",
-  "detail": "Sell Hwang first, then run the two flips. Nothing else is actionable. The sale is unconditional, costs no fielded points because he is the unplaced twelfth man, and it is the precondition for everything else: until it lands the balance is negative, and a negative balance at the moment the matchday locks scores nothing for the entire matchday regardless of who is fielded. The flip book is sized to survive the worst tick ever measured on a rising flag, and both listings expire before the next market-value update, so both genuinely capture it. There is no buy this run: the board has nothing that improves the fielded eleven at a price the post-sale balance can carry."
+  "headline": "Three of the eleven fielded players are now doubtful for MD8, each with a dated and verified source, and that — not the market — is what this run is about.",
+  "headline_short": "Three of the eleven fielded players are now doubtful for MD8, each wit",
+  "detail": "Three of the eleven fielded players are now doubtful for MD8, each with a dated and verified source, and that — not the market — is what this run is about. Nothing on the board fixes it today at a defensible price, so the briefing is deliberately short on buys: execute the standing Hwang sale, which clears the deficit at zero cost to the fielded eleven, hold the proceeds, and let the flip book do the earning while the injury picture firms up. The lock is still days away, so there is time to be patient and no reason to pay a premium out of urgency."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Hwang is the only sale, back to the board, which pays exactly market value with no spread. He is unplaced, so the sale cannot touch the fielded eleven, and his average is the weakest in the squad by a wide margin. Read his value once more at the moment of execution rather than trusting any figure written earlier, because the daily update has moved it mid-call before. No other sale is available: every remaining player is in the eleven, and selling any of them drops the squad below a fillable formation with no replacement the balance can fund.",
+  "reason": "Hwang remains the single unconditional sale and the call is unchanged from the previous run, only re-read at the live price. He is the only squad member without a lineup slot, so the sale cannot touch the fielded eleven, and selling back to Kickbase pays exactly the market value with no spread. Read the figure once more at the moment of execution, since it moves at the nightly tick. No second sale is available: Engelhardt is the one who deserves to go on merit, but selling him before a replacement lands would take the squad below eleven, so his sale is logged as a conditional mandate rather than an instruction.",
   "standing": [
    {
     "name": "Hwang",
-    "pos": "",
-    "club": null,
-    "mv": null,
-    "ap": null,
+    "pos": "ATT",
+    "club": "8",
+    "mv": 5242760,
+    "ap": 30,
     "why": "REPLACES Stqdzlt (closed), which was correct in substance and carried a figure the 21:00Z tick has moved. Same call, repriced: instant sale to Kickbase at his POST-TICK mv, measured by get_player at 21:08Z as 5.242.760, up from the pre-tick 5.135.514 (+2,09%). Sale to Kickbase pays exactly mv at the moment of sale with no spread, so read it once more at execution; the figure here is the live one as of this run. WHY HE IS STILL THE RIGHT BODY, re-verified this run rather than inherited: he is the twelfth man and the ONLY squad member with no `lo`, i.e. unplaced, so the sale cannot touch the fielded eleven and cannot break a formation — squad goes 12 -> 11 and 4-4-2 still fills. The points case against keeping him hardened this run: get_player gives smc 1 against ismc 5 and smdc 7, so ONE start in seven matchdays at Schalke, sl false, ap 30 off a ph of 65 / -5 / -19 / 26 / 82. He is a bench forward behind two fielded attackers on ap 104 and ap 124. Nothing is lost by selling him. WHY IT MUST HAPPEN: cash is -2.918.087 and a negative balance at matchday start scores ZERO for the entire matchday, so this must clear before the MD8 lock 2026-10-30T19:30:00Z. It is also the hard precondition for both open flips (F51q837 Tietz, F6bc8m0 Latte Lath): post-sale cash is about +2.217.427 and the pair unwinds non-negative even on the worst measured mvt-1 tick; without the sale the same pair lands near -2.8M at the lock. Execute this BEFORE placing either bid, not alongside. Note he is mvt 1 and would gain roughly +150k by being held one more tick, which is NOT worth delaying the flips for — the flip pair carries about +712k at the measured mean, so the sale goes first.",
     "tag": "sell"
    }
@@ -80,9 +201,18 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing clears, and the two tempting lines both fail on checks rather than on price. Prass carries by far the best average per euro of anything listed, and he is suspended after a second yellow on the last matchday, so he scores nothing on the coming one. The defenders who would genuinely upgrade the weakest fielded slot are all manager asks priced far above market value, well outside the low cluster that manager asks normally clear at. Everything actually affordable is either carrying a status flag or no better than what is already on the pitch. Do not pad a position already covered.",
+  "reason": "No buy this run, and that is a finding rather than an omission. The one real hole is the midfield slot occupied by an injured Engelhardt, and the board's best-fitting body for it is a manager ask priced at roughly four times the measured manager-ask clearing band — the kind of premium that only looks acceptable if you benchmark a manager ask against the contested-Kickbase cluster, which is the most expensive mistake available here. Every other midfielder on the board is either over the ceiling, already on the avoid list, or carries a status flag. A price ceiling for the replacement has been computed and logged, so the next run can act the moment a fit body appears at or below market value.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "Robin Fellhauer",
+    "pos": "MID",
+    "club": "13",
+    "ask": 15000000,
+    "mv": 12992049,
+    "premium_pct": 15.46,
+    "why": "LOGGED SPECIFICALLY BECAUSE HE IS THE BEST-FITTING BODY ON THE BOARD FOR THE ONE HOLE THIS RUN IDENTIFIED, AND HE STILL FAILS ON PRICE — that combination is exactly what a future run will be tempted by. New manager ask from David at 2026-10-25T20:44:54Z, NOT covered by the consolidated ask-board AVOID Atf6y2v (written 25.10 08:45Z, over 36h earlier) nor by the Pinckert WATCH Wkjlosl. THE FIT: pos 3 MID, Augsburg tid 13, st 0, ap 83, p 578 — i.e. precisely the fit mid-price midfielder needed to replace the injured Engelhardt (3209, hip, see the injury WATCH this run), and affordable in principle, since the Engelhardt sale at 14.454.228 plus 2.324.673 of post-Hwang cash funds up to ~16,8M fully unwound. THE KILL IS PURELY THE PREMIUM: prc 15.000.000 against mv 12.992.049 is +15,46%. The measured manager-ask clearing cluster is +3,06% / +4,35%; the HIGH cluster (+16,71% / +20,96%) is for CONTESTED KICKBASE listings and must never be used to benchmark a manager ask — that inversion is the single most expensive error available here. +15,46% from a seller who lists habitually at a markup is roughly four times the band. DO NOT COUNTER-OFFER AT THE ASK. REVERSAL: buy only if the ask drops to AT OR BELOW mv, or if he reappears as a KICKBASE listing at prc = mv; and even then re-verify his Augsburg selection from a source dated at that time, because ap 83 is a season figure and Augsburg lost Brackelmann to a head injury on 24.10, which can move the whole XI."
+   },
    {
     "name": "Alexander Prass",
     "pos": "MID",
@@ -181,26 +311,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "SOURCE TRAP, NEW AND DISTINCT FROM THE KNOWN ONE — flashscore.de article id bkCwJoLP, \"Bundesliga 8. Spieltag - Aufstellungen, Verletzungen und Sperren in der Uebersicht\". It LOOKS like the clean matchday-specific counterpart to the already-logged template trap ngjPe6Gj (A6zjcjq), because unlike ngjPe6Gj it does not serve every matchday from one id. IT IS STILL POISON. Fetched 23.10.2026 it carries NO publication date, only an \"Aktualisiert\" label, and its own body says it covers the 8. Spieltag of the \"Bundesliga 2023/24\" for the weekend of \"20. bis 22. Oktober\" — THREE SEASONS STALE. The content proves it: Dortmund absences given as Moukoko, Duranville, Ostrzinski with Bensebaini on a Gelb-Rote-Sperre; Werder as Naby Keita, Niklas Stark, Pavlenka; Freiburg as Guenter, Kyereh, Rosenfelder; Augsburg as Framberger, Oxford, Mbabu, Vargas. Had this run trusted it, it would have reported stale absentees for FOUR clubs Georg is exposed to (Augsburg, Leipzig, Werder, Freiburg) and would have mis-screened Dahmen and Gruda. STANDING RULE REINFORCED: a flashscore \"Verletzungen und Sperren\" page is NOT a usable instrument for this league in either id form — neither the template id nor a matchday-looking id — and an undated flashscore hit is to be assumed last-season or older. Use the club pages and dated ligainsider player pages instead, which is what resolved Gruda, Maksimovic and Wojcik this run."
-   },
-   {
-    "name": "SOURCE TRAP — flashscore 6Zwf14l2 \"Bundesliga 7. Spieltag Verletzungen und Sperren\" is UNDATED LAST-SEASON content and it names TWO OF GEORG'S OWN PLAYERS as unavailable",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "THE MOST DANGEROUS TRAP SINCE THE GUIRASSY/goal.com ONE, and it is a DISTINCT SLUG from the already-logged flashscore template ngjPe6Gj (A6zjcjq) — logging it separately so a run that correctly avoids ngjPe6Gj still catches this one. URL: flashscore.de/news/fu-ball-bundesliga-bundesliga-7-spieltag-verletzungen-und-sperren-in-der-ubersicht/6Zwf14l2/ . It is the TOP result for the obvious query \"Ligainsider Verletzte und Gesperrte Bundesliga 7. Spieltag Oktober 2026\" and its title matches MD7 exactly, so a run sweeping for tonight's team news will land on it first. WHY IT IS FATAL: it carries NO publication date (only an \"Aktualisiert\" label with nothing attached), and its roster is demonstrably a PREVIOUS SEASON — it puts Guirassy at STUTTGART (he is tid 3, not tid 9), Gregoritsch at FREIBURG (he is tid 13 Augsburg), Wolf at DORTMUND (tid 13 Augsburg), and it lists DARMSTADT 98 and VfL BOCHUM as Bundesliga clubs, plus Neuer and Hummels. HOW IT WOULD HAVE BURNED THIS RUN: it reports \"Gregoritsch — doubtful, muskuläre Probleme\" and \"Deman — krank\" . BOTH ARE SQUAD PLAYERS IN THE FIELDED ELEVEN, and both are st 0 in live Kickbase data this run. Acting on it would have produced a false newly-injured push notification 1.7h before the MD7 lock on two players who are fit, against a squad that has no bench and therefore could not have responded anyway. RULE REINFORCED: a club mismatch between a news source and the Kickbase tid is proof of staleness, and it is the cheapest staleness test available — check two named players' clubs against tid before believing any undated table."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open: the lock is days away, not hours, and both qualifying listings expire comfortably before it and before the next market-value update, so both capture the tick. Bid exactly market value on each and never raise. The edge is the tick, not the auction, and chasing a contested board listing into the high cluster wipes out ten good flips at once. Tietz and Latte Lath are the book. Treu qualifies on the mechanism and is excluded only because adding him overshoots the stake cap, so he is logged to be promoted the moment the cap moves or Tietz is lost. Prass looks like a candidate and is not, because his listing runs past the next update and would be bought at the post-update value, capturing nothing. The measured edge on the rising flag has strengthened rather than decayed since it was last written down, so there is no sign yet of rivals crowding it out. Two questions stay open and neither is answered: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if the other traders crowd in. Unwind both back to the board after the update and well before the lock.",
+  "reason": "The flip window is wide open and the measured edge has not decayed — the re-measured rising-flag drift is slightly stronger than the figure the method was built on, over a larger sample, and the falling-flag mirror image is intact. The trade is unchanged: bid exactly market value on a Kickbase listing carrying the rising flag, never raise, and lose the auction cheerfully when someone else chases it. What matters for timing this run is that tonight's tick falls between the expiry of the near listings and the expiry of the far ones: a listing settling before tonight captures the tick, one settling after it does not and its flag will have been reset by then. Three ranked candidates settle before tonight and together absorb very nearly the whole spending power, so the smallest of them is the marginal leg and the first to drop if the Hwang sale has not cleared. Two open questions still stand: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Three of the fielded eleven carry status flags and all three were re-verified this run against dated current-season sources rather than inherited from the ledger. Brackelmann took a head collision in the home match against Union, was helped off and went to hospital with headaches; no diagnosis and no prognosis have been given, and his club plays a cup tie before the league game that matters. Engelhardt came off early in the Monaco tie with hip trouble and his profile still lists him as missing, with no return date named. Deman was substituted at half time with foot problems and is listed as doubtful rather than ruled out. Beware the Deman search results: the ankle-break coverage that dominates them is from August of the season before last and is a trap. Schwolow was checked and is fine, confirmed as the starting keeper in a dated line-up for the most recent match; an apparent signal that he had been dropped turned out to be an artefact of how the appearance history is laid out, not a lost place.",
+  "sweep": "Brackelmann took a head collision early in Saturday's league game, was substituted within minutes and went to a clinic; his coach said only that he had headaches and knew no more. No diagnosis and no return date have been published anywhere, and a fresh sweep this run found nothing newer than Saturday — so do not invent a return date, which is precisely the error the previous watch entry was written to correct. Engelhardt was forced off a quarter of an hour into Thursday's European tie, missed the weekend league game, and is listed as carrying hip problems with no timeline. He is the only one of the three the market has already marked down, which means waiting on him has a measured cost. Deman left the pitch at half-time with tendon trouble in his foot; his coach said Monday's final session would decide whether he is fit for the cup tie — Monday is today, so a dated answer exists within hours and the next run must go looking for it. He is still flagged as rising, so the market has not priced his problem in at all. One date trap to repeat: his season-ending ankle fracture coverage is from last August, a different injury entirely, and it is the first thing a search returns.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
