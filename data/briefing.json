@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-26T10:55Z",
+ "run": "2026-10-26T12:51Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -2918087,
   "floor": -49104149,
   "spending_power": 46186062,
-  "hours_to_lock": 104.57,
-  "exposure": "The balance is negative and has been for some time. That costs nothing until the instant the matchday locks, and the lock is still days away, so it does not block a bid — but it must be unwound to non-negative before the lock or the entire matchday scores zero. The unwind path is clean: both flips sell back to Kickbase at market value after tonight's tick, which returns the capital plus the tick, and the standing bench sale clears the remaining deficit with room to spare. Each purchase permits exactly one sale, the flips are additions rather than fielded players so no purchase reduces the eleven, and the squad never drops below the minimum on this path. Spending power comfortably covers both live legs with the floor well clear.",
+  "hours_to_lock": 102.64,
+  "exposure": "A leveraged position is open — the balance is negative. It costs nothing today, because a deficit is only punished at the instant the matchday locks, and that is more than four days away. It must be closed before then: a negative balance at matchday start scores zero for the whole matchday. The single sale in this briefing closes it on its own. Flips opened in the meantime deepen the deficit temporarily and must each be unwound after the tick; there is ample slack to do so, but the deadline is hard.",
   "must_restore_by": "2026-10-30T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Defence, and specifically the fielded slot occupied by a player who has not appeared in four matchdays. That is the single largest points hole in the eleven and it is unfunded, not unidentified. The board does contain the right body at the right price, but his listing resolves after two ticks, so the trade is a next-cycle action rather than a now action. The second gap is cover: with three starters doubtful and one bench man who is himself the funding sale, an injury confirmation before the lock leaves a hole with nothing to fill it.",
+ "binding_gap": "A fielded defender whose average is far below every other man in the eleven. The upgrades exist on the board and are priced at exactly market value, but the capacity arithmetic does not reach them while the deficit is open. The gap closes only after the sale executes, and realistically only in a later cycle.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 46186062,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 34,
+  "listings": 31,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Act on the clock, not on the squad.",
-  "headline_short": "Act on the clock, not on the squad.",
-  "detail": "Act on the clock, not on the squad. The biggest flip in the book expires within the hour and the second one shortly after; both are Kickbase listings priced at exactly market value, so the bid is the market value and nothing above it. Everything else on the board is a next-cycle leg because it expires after tonight's tick and any bid written today will be short at resolution. No points buy is executable this cycle: the constraint is not the floor and not cash, it is unwind capacity — the squad sits one body above the minimum, so every purchase has to be matched by a sale that still leaves a legal formation, and there is no such sale that also clears the standing deficit. Run the flips, keep the standing Hwang sale as the deficit clearer, and revisit the points trade after tonight's tick."
+  "headline": "One action, unchanged from the last two runs and still not executed: sell Hwang back to Kickbase.",
+  "headline_short": "One action, unchanged from the last two runs and still not executed: s",
+  "detail": "One action, unchanged from the last two runs and still not executed: sell Hwang back to Kickbase. He is the unplaced twelfth body, so the sale cannot touch the fielded eleven, and it is the only move that clears the open deficit before the matchday locks. Nothing else on the board is affordable. The Tietz flip was lost at auction this morning at a premium well above our mv bid — that is the rule working, not failing, because losing a contested listing costs nothing."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "One standing sale and it is unchanged: the bench attacker, back to Kickbase at market value, before the lock. It is the only sale that clears the negative balance without touching the fielded eleven, and it leaves a legal four-four-two. Do not bring it forward — there is no benefit to selling early, and holding him preserves the only cover available while three starters are doubtful. If the defender swap described under buys lands instead, that sale becomes optional rather than mandatory, because the swap clears the deficit on its own.",
+  "reason": "Hwang, attacker, unplaced, fit (no status flag). Instant sale to Kickbase pays exactly market value, with no spread and no auction risk. This is a points-per-euro and balance call, not an availability call: he starts roughly one game in seven at his club and his average sits far behind both fielded attackers, so the sale costs zero fielded average points. It clears the deficit outright and restores the capacity that everything else in this briefing is waiting on. It has now been the standing call through three consecutive runs without executing.",
   "standing": [
    {
     "name": "Hwang",
@@ -201,9 +201,18 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing to buy outright this cycle. The one genuine points trade on the board is the fit Hamburg centre-back now listed at exactly market value: five starts from five appearances, back in the starting eleven since mid-October, and cheap enough that buying him and selling the doubtful full-back he would replace turns the balance positive on its own while keeping twelve bodies and a legal shape. He is not biddable today, though — his listing runs past two daily ticks, so a bid written now at today's market value will fall short at resolution exactly as a previous leg did. Bid him after tomorrow night's tick at the then-current value, or carry headroom for both ticks. The highest average on the board belongs to his club-mate and is a trap: three appearances, under a third of available minutes, used off the bench, and asked well above the manager clearing band. The season-ending injury stories attached to that name are last season and are not the reason to pass — role and price are. Every other manager ask on the board remains above the measured clearing band and stays rejected.",
+  "reason": "No buy. Two Kickbase listings at exactly market value are large nominal upgrades on the weak defender slot — Bornauw and Günther — and this run computed whether either could be promoted from a value flip to a points buy. Neither can. The only bodies sellable without reducing the fielded eleven are Hwang and the weak defender himself, and even selling both leaves either purchase still leveraged into the lock, which scores zero for the entire matchday. They remain flips, because a flip unwinds into itself after the tick and does not have to be funded down to zero. Every manager ask on the board is rejected on price; the newest, a striker listed this morning, is the widest ask on the board and would upgrade an attacking slot that is already covered rather than the slot that actually binds.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "Maximilian Beier",
+    "pos": "ATT",
+    "club": "3",
+    "ask": 23500000,
+    "mv": 20666752,
+    "premium_pct": 13.71,
+    "why": "NEW MANAGER ASK, listed 2026-10-26T09:07:39Z by PhiL95, so NOT covered by the consolidated board AVOID Atf6y2v (which scoped the eight asks standing at 25.10 08:45Z). Rejected on price AND on marginal points, both independently fatal. PRICE: ask 23.500.000 against mv 20.666.752 = +13,71%. The measured manager-to-manager clearing cluster in this ledger is low single digits (+3,06%, +4,35%); the one counter-example logged this run is Undav, who cleared JakobDohr->Lukas at 32.500.000 against mv 29.470.108 = +10,28% at 11:52:26Z, and even that sits 3,4 points BELOW this ask. A manager ask above mv has never been a buy in this ledger's history and this is the widest ATT ask on the board. MARGINAL POINTS: Beier is pos 4, ap 112. Georg's fielded attackers are Guirassy ap 124 and Gregoritsch ap 104, so Beier displaces Gregoritsch for +8 ap — he does NOT address the binding gap, which is Nakuzola at ap 27 in a fielded DEF slot. Paying 23.500.000 for +8 ap while the -2.918.087 deficit is still open is the exact error H70deao was written to stop. CAPACITY: unaffordable regardless. Sellable bodies that do not reduce the fielded eleven are Hwang 5.242.760 (unplaced) and Nakuzola 500.000 (only if replaced) = 5.742.760 gross; against the open deficit that is a spend ceiling of 2.824.673, i.e. 8,3x short of this ask. REVERSAL: an ask at or below mv AND a non-negative balance with genuine spare capacity."
+   },
    {
     "name": "Miro Muheim",
     "pos": "DEF",
@@ -212,15 +221,6 @@
     "mv": 7510524,
     "premium_pct": 59.78,
     "why": "THE HIGHEST-ap BODY ON THE BOARD AND HE IS A CAMEO TRAP - logged so no later run buys him on the ap alone. David's manager ask is 12.000.000 against mv 7.510.524 = +59,80%, against the measured manager-ask clearing band of +3,06% to +4,35%. That alone kills it. THE ap IS ALSO FAKE: ap 157 sits on p 472 = exactly THREE appearances. ligainsider 2026/27 profile read live this run: 3 Bundesliga appearances, 2 starts, 1 sub, 220 of 762 possible minutes = 29%, and the 13.10.2026 headline is \"Muheim glaenzt als Joker - Perspektive offen\", i.e. HSV use him off the bench. That is the Hurp14i p/ap appearance test failing on a three-game sample, the mirror image of the Juranovic case in Avvqkzk. DATE TRAP CLEARED AND LOGGED SO IT IS NOT RE-LITIGATED EITHER WAY: the \"Saisonaus fuer verletzten Miro Muheim\" / \"Sprunggelenk verletzt: Saison fuer Muheim wohl vorbei\" cluster (ligaportal, SRF, sportschau, hsv.de) is LAST SEASON 25/26. It is NOT a current fitness objection - ligainsider shows a Fit icon and the dated 26/27 comeback sequence 16.09.2026 \"Muheim will beim HSV wieder angreifen\", 04.10.2026 \"Startelf-Comeback im Testspiel\", 10.10.2026 \"Comeback gegen Hoffenheim\". So he is AVOIDED ON ROLE AND PRICE, not on fitness. REVERSAL: only if ALL of (a) the ask drops to AT OR BELOW mv, (b) a dated HSV XI actually starts him in the Bundesliga, and (c) his ap survives re-basing once he has five or more appearances. NOTE FOR CONTRAST: his HSV team-mate Bornauw (2725) is the opposite case and IS live - fit, 5 of 5 starts, 566 of 762 minutes, and on a Kickbase listing at exactly mv rather than a +59,80% manager ask."
-   },
-   {
-    "name": "Phillip Tietz — DATE TRAP, not a transfer risk",
-    "pos": "ATT",
-    "club": "18",
-    "ask": null,
-    "mv": 21766441,
-    "premium_pct": null,
-    "why": "SOURCE TRAP CLEARED, LOGGED SO NO LATER RUN KILLS THE BIGGEST FLIP ON IT. Tietz (2030) is the largest open FLIP in the book (F51q837, mv 21.766.441). The flip rules require a transfer check — never flip a player who might leave the league. A search for Tietz transfer news surfaces ligainsider article 405478, headline \"Tietz ein Abgangskandidat im Winter\", which reads live and would, taken at face value, disqualify a 21,8M flip. IT IS DATED 08.12.2025 — LAST SEASON, and it is not even about his current club: it describes a possible winter departure from FC AUGSBURG, citing Sky, and names Mainz 05, Kaiserslautern, Heidenheim and Toronto FC as interested. THAT MOVE ALREADY HAPPENED: Augsburg confirmed and Mainz announced the transfer on 02.01.2026 (mainz05.de \"phillip-tietz-transfer-020126\", fcaugsburg.de article 22715, getfootballnewsgermany 2026). He is a Mainz 05 player now (Kickbase tid 18 = Mainz 05, confirmed by Schwolow and Nakuzola carrying the same tid and by the ligainsider club table). The headline is therefore RESOLVED HISTORY, not a live rumour, and it is NOT a reason to drop the flip. Note the shape of this trap for future runs: it is NOT caught by the Jan-May 2026 rule, because 08.12.2025 is EARLIER than that window — the rule should read \"anything before the 26/27 season started\", not \"Jan-May 2026\". Separately confirmed this run: Tietz does not appear anywhere on ligainsider's live Verletzte-und-Gesperrte table for 26/27, and his market row carries st 0. NOTE ON MAINZ for any run that reads that table: Mainz absentees are Kohr, Silas, Ruoppi and Zentner (training backlog, not in squad) — Tietz is not among them."
    },
    {
     "name": "Ezechiel Banzuzi",
@@ -317,11 +317,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open — the lock is days away, not hours. The measured next-tick edge was re-computed from the log this run on a far larger sample than the prompt's baseline and has not decayed; if anything it is marginally stronger, with the great majority of rising-flag players ticking up. The mechanism is unchanged: bid exactly market value on a rising-flag Kickbase listing with no manager on the other side, and never raise. Two legs are live right now and both expire today, the larger one within the hour; together they absorb well under spending power and sit comfortably above the floor. Three further legs expire after tonight's tick and must be re-priced before bidding — their logged prices are pre-tick and will be short. Two open questions remain unresolved and should stay on the page: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in. Rivals here flip the daily tick constantly, including on injured players, which for a pure value flip is correct.",
+  "reason": "The flip window is wide open — the lock is more than four days away. The mechanism was re-measured from the log this run rather than trusted: rising-flag players beat the next tick on nearly nine in ten occasions, and across almost three times the previous sample the drift is slightly stronger than the figure the method was built on, not weaker. No crowding-out is visible yet. One qualifying listing expires within the hour and the rest run into tomorrow; all are Kickbase listings, all priced at exactly market value, and the bid is always exactly market value with no raise under any circumstances. Two contested listings were lost this morning at double-digit premiums over market value, both after we bid mv and stopped — that is the discipline paying for itself, since one chase at a high premium erases a long run of good flips. Two questions remain open: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Three of the eleven are doubtful for the coming matchday, all with dated current-season sources re-verified this run, and none of this is new — it was already on the page overnight. The Freiburg midfielder was hurt in Europe late last week, has been missing since, and already sat out the last matchday. The Bremen full-back came off at half time at the weekend with foot trouble. The Augsburg centre-back went to hospital after a head collision at the weekend and his club is still waiting on the diagnosis. A fourth fielded player is fit but has simply not been picked for four matchdays running. Note for later runs: the league-wide injury table lists none of these three, so it does not catch knocks and must not be used on its own to clear a flagged player.",
+  "sweep": "No new injury, suspension or transfer news on any squad player or flip candidate. Ligainsider's league-wide injured-and-suspended table names none of the eleven fielded men, none of the bench, and none of the flip candidates. Three fielded players continue to carry the minor-knock status flag already logged in previous runs; all three remain off the injury table, and the dated club page for one of them shows him starting the most recent matchday and being substituted during it, which is consistent with a knock rather than an absence. No source dated inside the current period changes any recommendation. Beware the date traps already on file — the previous season ran to May, so anything dated January to May is last season.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -552,7 +552,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=918, -4,00% to +443,38%"
+   "v": "n=921, -4,00% to +443,38%"
   }
  ]
 }
