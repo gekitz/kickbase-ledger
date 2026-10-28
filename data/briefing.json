@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-28T08:54Z",
+ "run": "2026-10-28T10:56Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 11697753,
   "floor": -49559704,
   "spending_power": 61257457,
-  "hours_to_lock": 58.58,
-  "exposure": "No leveraged position is open and none needs to be opened. The balance is positive now and stays positive at every step of the recommended sequence, because the Grüll auction resolves well before the Collins listing expires — eight and a half hours earlier — so the two bids never have to be held at the same time. Winning Collins first still leaves the balance comfortably positive before any Grüll charge. The only deficit window in the whole programme sits between winning Grüll and instant-selling Engelhardt, and that is a window Georg controls, with more than a day of margin before the lock. A deficit costs nothing until the lock; what matters is that it can be unwound, and here it can, with the squad never dropping below eleven.",
+  "hours_to_lock": 56.56,
+  "exposure": "This is the item that outranks everything else. Combined live offers now exceed cash, so if both auctions land Georg opens a negative balance and it must be unwound before the lock. The two standing sales do unwind it, with comfortable margin, at the measured drift on both legs — and the measured drift is the right instrument here, read off the last-tick change rather than the multi-day figure, which reads several times larger and would badly misprice the unwind in both directions. Under stress — Engelhardt falling at roughly twice his last-tick rate and Hwang's flag flipping from rising to falling — the unwind still clears at the bid as placed, and fails at the raised bid. That asymmetry is the whole argument. Nothing needs doing today: the sales are instant and can wait for the auctions to resolve. What needs watching is tonight's tick, which reprices both legs and settles whether the margin is as projected.",
   "must_restore_by": "2026-10-30T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Defence, and it is not fixable this run in the way that matters. The need is a twelfth body who is a defender, because that is the only thing that would let a doubtful Deman or a non-playing Nakuzola sit out. The board has a handful of minimum-priced listings and not one of them is a defender — they are all keepers or forwards. Collins improves the quality of the back line but does not add the slack, because he arrives as a replacement rather than an addition. The next run should sweep the market specifically for a cheap defender and treat it as the hedge.",
+ "binding_gap": "No formation hole binds. The binding constraint this run is not a position, it is the unwind ceiling: two buys permit exactly two sales, and the two sales Georg has standing are the only ones that do not cost fielded points. That ceiling, not the floor and not cash, is what prices the Grüll decision.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 61257457,
@@ -51,7 +51,7 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 31,
+  "listings": 30,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
   "expiring_within_2h": 2
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Quiet on execution, loud on the ledger.",
-  "headline_short": "Quiet on execution, loud on the ledger.",
-  "detail": "Quiet on execution, loud on the ledger. Nothing has settled since the last run and the Grüll bid is still live at the old price, so the standing raise remains outstanding and unchanged. The one new action is Collins: he is a Kickbase board listing priced at exactly market value, he is now confirmed fit and starting after the mid-October scare, and he is the only body on the board that is simultaneously a points upgrade and a clean tick flip. He is funded by selling Hwang, not Nakuzola — that choice is arithmetic, not preference, because the Nakuzola route cannot be unwound to a non-negative balance once Grüll lands. Crucially the two auctions resolve sequentially rather than together, so Georg never has to hold both bids at once and no leveraged position needs to be opened at all."
+  "headline": "Georg has now executed both standing buys — bids are live on Grüll and on Collins — and that changes the book from unlevered to levered.",
+  "headline_short": "Georg has now executed both standing buys — bids are live on Grüll and",
+  "detail": "Georg has now executed both standing buys — bids are live on Grüll and on Collins — and that changes the book from unlevered to levered. This run REVERSES the standing instruction to raise the Grüll bid. Hold it where it is and do not raise. The reversal is not on merit: Grüll re-verified fit and unlisted on Werder's current injury page, and he remains the best points asset reachable. It is purely on lock-day solvency. The 08:45Z run priced that raise against a book in which the Collins bid did not yet exist; with both offers live, the extra money on the raise is what turns a comfortable unwind into one that goes negative under a mild adverse-drift stress — and a negative balance at the matchday lock scores zero for the entire matchday. The decision stays reversible: the Grüll auction does not resolve until tomorrow morning and roughly ten runs fall before then, with tonight's tick repricing both unwind legs in between."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Engelhardt stays the sole unwind leg for Grüll and the call is unchanged, but his market value is falling and the flag is pointing down, so the longer the auction runs the less the sale returns. That is a cost of waiting, not a reason to sell early: selling before the auction resolves would drop the squad below eleven and risk giving up a high-scoring midfielder for nothing. Hwang is reversed out of his old role and into a new one. The old instruction made him the second unwind leg behind Engelhardt and fired only if both the Bornauw and Grüll buys landed; Bornauw cleared to another manager overnight, so that trigger is permanently dead. He is now a sale on merit instead — the second-worst points-per-euro in the squad, with two negative returns in his last four — and strictly as the funding leg for Collins. If the Collins auction is lost, the Hwang sale is void: selling him alone would drop the squad to ten and take the penalty.",
+  "reason": "Both standing sales remain correct and both are instant sales back to Kickbase, so they can be executed at any point before the lock and always pay exactly the market value of the moment. Engelhardt is the first leg; his original fitness premise is dead — he is absent from the league-wide injured-and-suspended table and from Freiburg's own absentee list — so he is now a funding leg, not a fitness sale. Hwang is the second leg and the cheaper one in points, which is why he is preferred over Deman despite raising less. Neither should be sold before the outcome of the auctions is known, because selling early while both bids are still live simply shrinks the squad without reducing the exposure.",
   "standing": [
    {
     "name": "Yannik Engelhardt",
@@ -200,8 +200,20 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Collins is the new top move and the fitness question on him is closed rather than open. He went off injured in mid-October, the follow-up examination found no structural damage, and the projected return held — he started and scored at Dortmund on the most recent matchday, and Kickbase carries him clean. The listing is a Kickbase board listing with no manager ask, priced at exactly market value, so the bid is exactly market value and is never raised. Grüll is re-verified fit and sits in Werder's probable eleven on a source updated this morning; the standing raise is unchanged and is simply still waiting to be placed. Schnitzer remains open as cheap squad-count slack but should not be mistaken for defensive cover — he is a midfielder, and the gap is at the back.",
+  "reason": "Two buys are live and need no further action beyond leaving them alone. The third, Schnitzer, is the only item on this run with a deadline inside the next two hours, and this is the last run that falls before his listing expires. He is squad and leverage insurance, not a points buy — he has never played a matchday and carries no points at all, which is precisely the point: he is bought to be sold back, never fielded. What he actually buys is a third sellable body, which is the only thing that would make the Grüll raise survivable if Georg still wants it. Collins was bid above the mv-exact price the call specified; that is fine and inside the measured band, but note it, because the calibration table reads bids against calls.",
   "standing": [
+   {
+    "name": "Marco Grüll",
+    "pos": "MID",
+    "club": "10",
+    "ask": 21000000,
+    "mv": 17183903,
+    "premium_pct": 22.21,
+    "listing": "Kickbase listing",
+    "why": "REVERSES Bnwdqxk (now closed), WHICH CALLED A RAISE 21.000.000 -> 22.500.000. HOLD THE EXISTING BID AT 21.000.000 AND DO NOT RAISE. REPORT THE REVERSAL PLAINLY. The reversal is NOT on merit and the merit must not be re-litigated: Grüll's fitness leg re-verified this run on ligainsider /sv-werder-bremen/2/ last-updated \"Heute | 28.10.2026 03:29\" projecting the 31.10 home match v TSG Hoffenheim — he carries NO injury or doubt marker, and the only Werder absentees are Agu (3 Wochen 5 Tage) and Stage (operiert, 1 Monat 4 Wochen). ap 160 / p 1121 is the best points asset reachable. THE REVERSAL IS PURELY ON LOCK-DAY SOLVENCY, AND IT IS NEW THIS RUN BECAUSE GEORG EXECUTED THE SECOND BID. Row 2864 now reads ofc 1 with ofs [Georg Kitz, uop 7.000.000] at 2026-10-28T04:34:26Z — the Collins buy Bne74vq is LIVE, where the 08:45Z run priced the Grüll raise against a book in which Collins was not yet funded. Combined live exposure is now 21.000.000 + 7.000.000 = 28.000.000 against cash 11.697.753. If both land: balance -16.302.247, squad 13. Two 21:00Z ticks fall before the MD8 lock (28.10 and 29.10; the 30.10 tick is after it). Unwind legs at measured drift (mvt 2 -3,00%, mvt 1 +2,93%): Engelhardt 13.566.791 -> 12.764.236, Hwang 5.530.406 -> 5.859.177, total 18.623.413, leaving +2.321.166 and squad 11 at 4-4-2. WITH the raise exposure is 29.500.000, balance -17.802.247, and the same unwind leaves only +821.166. STRESS CASE IS WHAT DECIDES IT: at Engelhardt -6%/tick (twice his measured tfhmvt of -400.743 = -2,87%) and Hwang flipping to mvt 2, the two legs raise 17.189.280. Without the raise that is +887.033 and SAFE; with the raise it is -612.967, a NEGATIVE balance at the lock, which scores ZERO for the entire matchday. A 1.500.000 raise buying maybe 9pp of win probability is not worth a path to a zero-point matchday. 21.000.000 is +22,21% over the current mv 17.183.903 and already sits at or above the median measured contested-Kickbase clear (+11,81% Ulrich today, +16,71% Ebnoutalib, +16,96% Rohr, +20,96% Campbell; only Mokwa +41,39% and Makengo +60,76% are higher). CONDITIONAL THAT RE-OPENS THE RAISE, AND THE NEXT RUN SHOULD TEST IT AFTER THE 21:00Z TICK: if Georg commits to DEMAN (11.428.307, mvt 2, angeschlagen) instead of Hwang as the second unwind leg, the legs raise 23.516.734 and the raise clears at +5.714.487 — but that costs 58 fielded ap (Deman 88 vs Hwang 30) and is a points loss, so it is a solvency fallback, not an upgrade. The Grüll listing expires ~2026-10-29T09:27Z (exs 81.750 at 10:46Z) and roughly ten runs fall before then, so this decision stays reversible after tonight's tick reprices both legs.",
+    "rank": 1,
+    "trigger": "2026-10-29T09:27:00Z"
+   },
    {
     "name": "Nnamdi Collins",
     "pos": "DEF",
@@ -211,20 +223,8 @@
     "premium_pct": 0,
     "listing": "Kickbase listing",
     "why": "PROMOTES WATCH W85yhjj TO A BUY, AND IT IS THE TOP MOVE OF THIS RUN. New this run: the fitness leg is now CLOSED, not open. (1) FITNESS RESOLVED POSITIVELY. sport1 2026-10-16 22:19 \"Sorgen um Collins\" has him off injured in the 67th v Koeln; ligainsider 419374 dated 19.10.2026 14:40 reports the BILD examination found NO structural injury and projected him back for the Dortmund away game. That projection HELD: get_player 2864 ph (newest-first per Hf7pn6a) reads [32, 100, 42, 16, false] — he PLAYED MD7 at Dortmund 24.10 for 32 points. Kickbase st 0, stl empty. The 19.10 article's \"bleibt offen\" doubt about Elias Baum displacing him is answered by the MD7 start. (2) PRICE IS EXACTLY mv, UNCONTESTED SHAPE. Kickbase board listing, no `u`, prc 6.647.419 = mv 6.647.419, mvt 1, listed 2026-10-28T04:34:26Z. Bid EXACTLY mv and never raise (Hknon8b). (3) HE IS SIMULTANEOUSLY THE POINTS BUY AND THE FLIP — mvt 1 at 6,6M sits in the 3-10M band Hlmygrb identifies as where an mv-exact bid actually wins uncontested, so the +2,93% tick (n=1395, 90,8% rose) is captured on the same ticket. (4) FUNDING LEG IS HWANG, NOT NAKUZOLA, AND THIS IS LOAD-BEARING ARITHMETIC. Collins-via-Nakuzola looks better on ap (+66 vs +63 total) but BREAKS the Gruell unwind: 11.697.753 - 6.647.419 - 22.500.000 + 500.000 + 13.566.791 = -3.381.875, i.e. NEGATIVE AT THE LOCK = zero matchday. Collins-via-Hwang: 11.697.753 - 6.647.419 + 5.530.406 = +10.580.740, then -22.500.000 + 13.566.791 = +1.647.531. Non-negative at every step, squad 11 throughout, ending 1GK/4DEF/4MID/2ATT = 4-4-2 (legal). Net XI gain -30 Hwang -115 Engelhardt +48 Collins +160 Gruell = +63 ap. (5) SEQUENCING REMOVES THE STACK RISK ENTIRELY. The Gruell auction resolves 2026-10-29T09:33Z; this listing expires ~2026-10-29T18:10Z, EIGHT AND A HALF HOURS LATER. Georg does not need to hold both bids at once. Bidding now is ~194.000 cheaper than bidding post-tick, and winning now still leaves +5.050.334 cash before any Gruell charge, so there is no leveraged moment either way. (6) ap 48 understates him: played-match mean is 47,5 against Hwang's 29,6, and he displaces an ATT who returned -5 and -19 in two of his last four.",
-    "rank": 1,
-    "trigger": "2026-10-29T18:00:00Z"
-   },
-   {
-    "name": "Marco Grüll",
-    "pos": "MID",
-    "club": "10",
-    "ask": 22500000,
-    "mv": 17183903,
-    "premium_pct": 30.94,
-    "listing": "Kickbase listing",
-    "why": "REPLACES Bajft74 AND RAISES 21.000.000 -> 22.500.000. REPORT AS A CHANGE TO A STANDING INSTRUCTION. FIRST EXECUTION IN FIVE RUNS: row 7721 now reads ofc 1 with ofs [Georg Kitz, uop 21.000.000] at 2026-10-28T06:46Z, after four consecutive runs reading ofc 0. Georg placed the bid exactly as called. THE RAISE IS ON NEW, DATED EVIDENCE INGESTED THIS RUN, NOT ON RE-REASONING: feed 13206306956 at 2026-10-28T05:27:24Z shows Onyeka (7463) clearing from the Kickbase board to Borussia Rumpelfuss at 5.500.000 against mv 4.372.984 = +25,77%. That is a board clear 80 minutes before this run and it sits ABOVE the standing bid's +22,21%. Grüll's OWN prior clear (block entry, 2026-09-13T04:17:22Z to Daggi D.) was 11.745.899 vs mv 9.117.718 = +28,82%. 22.500.000 against mv 17.183.903 is +30,94%, which clears both marks. Every contested Kickbase listing this ledger has lost was lost by bidding a band computed from older, cheaper clears (Makengo +60,76% vs our +13,03%; Banks +30,43% vs +15,01%; Mokwa +41,39% vs +31,01%). ofc 1 is a snapshot, not a forecast — Hws3l8h. BLOCK REVERSED, EXPLICITLY: the 7721 block entry says \"he is owned and off the market\". That premise is factually dead — he is a Kickbase board listing (no u), dt 2026-10-27T10:09:12Z, prc = mv exactly, expiring 2026-10-29T09:30Z. MERIT: ap 160 on p 1121 = seven appearances in seven matchdays, st 0, mvt 1; the best points asset on the board by a distance. Ligainsider club page 2, updated 26.10.2026 15:25, carries Grüll in the probable XI pool for Hoffenheim with NO injury or suspension note. AVOID As9qjtt still holds: the \"Grüll erleidet Fussblessur\" item is 21.10.2024. AFFORDABILITY, NO LEVERAGE REQUIRED: cash 11.697.753 - 528.543 (Schnitzer) = 11.169.210; the clear at 22.500.000 takes it to -11.330.790 at 29.10 09:32Z, and the Engelhardt sale immediately after (post-tick mv ~13,16M) restores it to ~+1,83M with 34h still to the lock. Unwindable in every branch.",
     "rank": 2,
-    "trigger": "2026-10-29T09:30:00Z"
+    "trigger": "2026-10-29T18:00:00Z"
    },
    {
     "name": "Tim Schnitzer",
@@ -353,11 +353,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The tick edge has not decayed. Re-measured from the log this run on a sample roughly three times larger than the one the standing method was written against, the rising-flag drift came in slightly stronger than before and the hit rate slightly higher, so there is no sign yet of rivals crowding it out. The falling flag remains the mirror image and is the reason Engelhardt and Deman are both losing value. The ranking rule in the standing brief still overstates the big names: the largest listings carry the biggest theoretical capture but are exactly the ones that get contested into the high clearing cluster, where a single overpay wipes out a long run of good flips. The practical band is the mid-sized listings, and Collins sits inside it — which is why the flip and the points trade collapse into the same ticket this run rather than competing. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if the other active traders crowd in.",
+  "reason": "The flip window is open and the measured edge is not decaying — it has strengthened. Re-measured from the log this run, the rising-flag next-tick drift is higher and the hit rate better than the figures the standing brief quotes, on a sample that has roughly tripled. Rivals crowding in has not yet cost anything measurable. Several qualifying board listings are live, the largest two by absolute capture being Dōan and Ryerson, with Ryerson expiring within the hour. All of them are DECLINED this run, and on one ground only: leverage. Every flip adds to an exposure that already exceeds cash, and the unwind ceiling binds before the floor does — Georg has only two or three sellable bodies, and they are already committed to unwinding the two real buys. A second clearing premium was recorded on a flip-grade board listing this run, confirming that the mv-exact bid is low-win-rate; it remains zero-cost and therefore still correct, but no run should treat a flip as probable. Two questions stay open: whether Kickbase caps squad size, which would cap flip throughput, and whether the edge decays as rivals crowd in — this run's re-measurement says not yet.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Deman is the standing worry and he was re-checked this morning on a source dated today: Werder's projected eleven for the Hoffenheim match carries him with the doubtful icon, and Kickbase carries the matching status flag. He is not in the ruled-out group — the two players actually ruled out are Agu and Stage. This confirms what was already logged rather than adding anything new, so it is not a fresh injury. The sting is that he cannot be benched: with exactly eleven players he starts regardless, and nothing currently on the board changes that. Grüll, Engelhardt and Collins all re-verified fit on dated current-season sources.",
+  "sweep": "Clean sweep, no new injury among the eleven. The league-wide injured-and-suspended table names none of Gregoritsch, Wolf, Engelhardt, Guirassy, Nusa, Schwolow, Nakuzola or Collins, and its sections for all of their clubs are present and complete. That table cross-validates Kickbase's own status flag exactly on the board — every flagged listing appears in it with a matching absence — so an unflagged squad player absent from it is genuinely clear. Its promoted-club sections are cut off, leaving ter Horst, Tanaka and Hwang unresolved on that instrument; all three carry no status flag. Deman is unchanged: still doubtful on Werder's own page, updated early today for the matchday-eight home fixture, with the club's only hard absentees being Agu and Stage. He stays fielded — there is still no cheap defender on the board to insure him.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -606,7 +606,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=952, -4,00% to +443,38%"
+   "v": "n=954, -4,00% to +443,38%"
   }
  ]
 }
