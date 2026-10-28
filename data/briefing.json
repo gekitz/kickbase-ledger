@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-28T00:54Z",
+ "run": "2026-10-28T02:51Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 11597753,
   "floor": -49526704,
   "spending_power": 61124457,
-  "hours_to_lock": 66.6,
-  "exposure": "No leveraged position is open right now and no offer is pending, so there is nothing to unwind today. The sequence does open a deficit on the Grüll clear tomorrow morning if the flip is also taken, and that deficit has a single named unwind: selling Ulrich back to the board before the lock, after two ticks have been captured. Every branch has been checked and every one closes non-negative at the lock with at least eleven players — including the branch where Grüll is lost at auction, and the branch where neither morning buy lands and the Engelhardt sale has to run behind the Grüll clear instead. The one branch that carries real leverage is that last one, and it is the fallback, not the plan.",
+  "hours_to_lock": 64.65,
+  "exposure": "No leveraged position is open — the balance is positive and has not moved. The recommended book would open one, briefly, between winning the Gruell auction and settling the Engelhardt sale, and it unwinds comfortably within the envelope well before the lock. This is unchanged from what was already reported, not a new exposure. The rule that matters: a negative balance costs nothing until the instant the matchday locks, so a deficit is never by itself a reason to kill a buy — what constrains a buy is whether it can be unwound in time, and here it can.",
   "must_restore_by": "2026-10-30T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Squad size, not position quality. At exactly eleven with one legal formation, the binding constraint is having a twelfth body before the sale, and the cheapest guarantee of that is the Schnitzer buy. The top move is therefore the cheap insurance purchase rather than the expensive upgrade, because without it the Engelhardt sale either slips a day at a real cost in falling market value, or has to run leveraged through the lock. Of the two morning windows, Ulrich closes first and Schnitzer second, and either one alone is enough to unlock tonight's sale.",
+ "binding_gap": "Midfield, and specifically the ordering inside it. The squad carries exactly four midfielders and one of them is injured and due to be sold today. The gap binds as a sequencing problem rather than a shopping problem: the cheap insurance body has the earlier expiry, so it has to be won before the sale, and the real upgrade resolves tomorrow morning. Get the order wrong and the squad drops under eleven and takes the penalty.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 61124457,
@@ -51,139 +51,28 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 31,
+  "listings": 32,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 2
  },
- "squad": [
-  {
-   "name": "Nusa",
-   "pos": "MID",
-   "club": "43",
-   "mv": 29942787,
-   "ap": 165,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Guirassy",
-   "pos": "ATT",
-   "club": "3",
-   "mv": 33378292,
-   "ap": 124,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Schwolow",
-   "pos": "GK",
-   "club": "18",
-   "mv": 8655606,
-   "ap": 116,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Engelhardt",
-   "pos": "MID",
-   "club": "5",
-   "mv": 13566791,
-   "ap": 115,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Gregoritsch",
-   "pos": "ATT",
-   "club": "13",
-   "mv": 14996133,
-   "ap": 102,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Wolf",
-   "pos": "MID",
-   "club": "13",
-   "mv": 7157966,
-   "ap": 98,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Deman",
-   "pos": "DEF",
-   "club": "10",
-   "mv": 11428307,
-   "ap": 88,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "ter Horst",
-   "pos": "DEF",
-   "club": "29",
-   "mv": 7250230,
-   "ap": 79,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Tanaka",
-   "pos": "MID",
-   "club": "8",
-   "mv": 6076650,
-   "ap": 71,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Hwang",
-   "pos": "ATT",
-   "club": "8",
-   "mv": 5530406,
-   "ap": 30,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Nakuzola",
-   "pos": "DEF",
-   "club": "18",
-   "mv": 500000,
-   "ap": 27,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  }
- ],
+ "squad": [],
  "verdict": {
   "action": "act",
-  "headline": "Nothing moved in the last two hours.",
-  "headline_short": "Nothing moved in the last two hours.",
-  "detail": "Nothing moved in the last two hours. Cash, team value and the squad are identical to the previous run, no transfer settled in the league, and every one of the four standing calls still shows no offer placed — the Grüll bid is now unplaced for the fourth consecutive observation. So this run changes nothing and invents nothing. The plan is the same plan, and it is now a sequence with two windows that close this morning while Georg is asleep. Order matters more than anything else today: a body has to land before Engelhardt can legally go, and Engelhardt has to go before tonight's tick takes another bite out of him."
+  "headline": "A second static two hours.",
+  "headline_short": "A second static two hours.",
+  "detail": "A second static two hours. Nothing in the squad moved, the balance is unchanged, and none of the three standing instructions has been placed — the Gruell bid now reads as unplaced for the fourth consecutive observation. The book is unchanged and still correct; what it needs is execution, not revision. One thing did happen on the board: Scheller cleared from the Kickbase listing at roughly nineteen percent over his market value, the fourth high-cluster clear on the log, and it is direct evidence for pricing the Gruell bid well above market value rather than at it."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Engelhardt is the only sale, and he is the same sale that has now been re-recommended three times without being executed. The fitness case is dated and current-season and has not improved: his Ligainsider profile still carries Angeschlagen and Fehlt seit 5 Tagen, the Monaco item is 22.10.2026, and Rotowire ruled him out of the Bayern game on 25.10.2026. His value flag is falling and he has shed a large chunk since the matchday began. Sell back to Kickbase, which pays exactly market value with no spread, in tonight's window before the tick — but only after Ulrich or Schnitzer has landed. Hwang is NOT a sale this cycle: his block made him the second unwind leg only if both the Bornauw and Grüll buys landed, and Bornauw is gone to a rival, so that condition is void and the Engelhardt sale alone funds the book.",
+  "reason": "Engelhardt remains the one sale, and the window on it is today before the evening tick. Ligainsider still carries him as angeschlagen with no return item, and rotowire ruled him out of the Bayern game; nothing dated since suggests he is back for the Augsburg fixture. He is on a falling market-value flag and gave back value again at the last tick, so every tick he is held is a realised loss, not a paper one — selling back to Kickbase pays market value exactly, with no spread. The sale must not happen until a midfield body has landed, or the squad drops under eleven.",
   "standing": [
    {
     "name": "Yannik Engelhardt",
-    "pos": "MID",
-    "club": "5",
-    "mv": 13566791,
-    "ap": 115,
+    "pos": "",
+    "club": null,
+    "mv": null,
+    "ap": null,
     "why": "REPLACES Sbmgc67, WHOSE 2026-10-27T21:00Z WINDOW WAS MISSED AND WHOSE PRICE IS NOW STALE. MEASURED COST OF THE MISS: mv fell 13.967.534 -> 13.566.791 at tonight's tick, exactly -400.743, and selling back to Kickbase pays exactly mv with no spread, so that is a realised loss, not a paper one. THE SALE IS STILL RIGHT. Fitness, dated and current-season: ligainsider profile 20278 carries status Angeschlagen and \"Fehlt seit 5 Tagen\", on top of the 22.10.2026 21:22 item \"Engelhardt muss gegen Monaco frueh runter\" and rotowire 542057 of 25.10.2026 ruling him out of the Bayern game; no return timeline anywhere. Kickbase still reads st 0, which LAGS the news — do not take st 0 as fitness. Value side: mvt 2 with sdmvt -1.869.079, steeper than the -1.429.141 this morning, so the slide is accelerating, and this run measured the mvt-2 cohort at mean -2,31% with 0 of 6 rising. CLUB CORRECTION, RECORD IT: he plays for SC FREIBURG (Kickbase tid 5), NOT Augsburg. Sbmgc67 and its predecessors said Augsburg; Augsburg is merely Freiburg's MD8 opponent on 31.10.2026, and the os field in get_lineup is the OPPONENT, per Wfz763a. NEW DEADLINE AND SEQUENCING: sell in the window 2026-10-28T12:32Z (after the Schnitzer auction Bmk0gc4 settles and the squad is safe at 11 with a legal 3-4-3) to 2026-10-28T20:55Z (before the next tick takes another ~390.000). Do NOT sell before Schnitzer settles: the squad is exactly 11 and only 3-4-3 is legal, so an unreplaced sale is a straight -100 at the lock. He is already on the blocked list, so no run can buy him back by accident.",
     "tag": "sell"
    }
@@ -191,7 +80,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Grüll is the points trade and the only one on the board worth having. He is the single listed midfielder with a season average above Engelhardt's, and the fitness check is as clean as it gets: Ligainsider shows him fit with zero injured-or-suspended minutes this season, starting every Bundesliga match and playing virtually all available league minutes, and Werder's own absentee list for the Hoffenheim fixture does not name him. His block's reversal required an ask at or below market value, and the Kickbase board asks exactly market value, so the reversal condition is met. The premium sits in the bid, not the ask, and it must be benchmarked against the high cluster — he himself cleared well above this level to a rival in September, and the standing bid is deliberately pitched below that mark but far above the median clear. Schnitzer is the second buy and it is not a points buy at all: he is squad-count insurance, a fringe Augsburg prospect by the club's own words, bought purely so the Engelhardt sale is legal tonight. Bid him at exactly the asking price. Everything else on the board is excluded: the manager asks from David and JakobDohr sit far outside anything ever measured as clearing, and Scheller, Baack, Beier, Muheim and Fellhauer are already logged as avoids.",
+  "reason": "Gruell first and unchanged. Re-verified this run: Ligainsider shows him fit, starting the overwhelming majority of his club's minutes, and in the probable eleven for the Hoffenheim fixture, with no exit news and a contract running on. The only caveat is managed training load, which is load management and not an injury. The listing is a Kickbase board listing priced at market value, and contested board listings on this log clear in the high cluster, not near the median — the Scheller clear tonight is the fourth data point saying so, which is why the bid sits well above market value and should not be trimmed back to it. Schnitzer second and sooner: he is squad-count insurance, not a points buy, and his listing dies around midday. If the Engelhardt sale goes through before either body has landed, the eleven breaks.",
   "standing": [
    {
     "name": "Marco Grüll",
@@ -256,15 +145,6 @@
     "why": "TWO TRAPS, ONE OF THEM NEW IN KIND AND MORE DANGEROUS THAN THE USUAL JAN-MAY RULE. (1) THE ITEM: ligainsider.de/marco-gruell_26702/sv-werder-bremen-zweifach-scorer-marco-gruell-erleidet-fussblessur-365209/ reports Grüll cutting his foot against Wolfsburg, needing stitches, training individually, with no return date. Its date line reads verbatim \"21.10.2024 - 16:47 Uhr\". That is TWO SEASONS AGO. It surfaces at the top of a plain search for Grüll + Oktober + verletzt, and acting on it would have killed a live 18.999.210 bid on a confirmed starter. The existing Jan-May rule does NOT catch it: 21 October sits squarely inside a normal season window, so only reading the year saves you. (2) THE GENERALISABLE LESSON, WHICH IS THE REASON THIS ENTRY EXISTS: a HIGHER ligainsider article id does NOT mean a NEWER article. In the same search, 363728 (\"Grüll winkt Bewährungsprobe in der Startelf\") and 365209 (the 2024 foot injury) differ by under 1.500 in id, yet 365209 is two seasons older. Never order ligainsider items by id, never treat the highest id in a result set as the current one, and never infer recency from id proximity to a known-current article. Open it and read the date line. THE CORRECT CURRENT READ ON GRÜLL, same run: profile 26702 status box FIT, 0% time injured or suspended, newest item 20.10.2026; team page /sv-werder-bremen/2/ updated 26.10.2026 15:25 carries him in the projected XI v Hoffenheim."
    },
    {
-    "name": "Tjark Scheller",
-    "pos": "DEF",
-    "club": "29",
-    "ask": 8911131,
-    "mv": 9199517,
-    "premium_pct": -3.13,
-    "why": "AVOID AS A POINTS BUY. FLIP-ELIGIBLE ONLY. He looks like the bargain of the board and that is exactly the trap this prompt warns about: a cheap mv next to a big average. Row 7320, newly listed 27.10 11:18Z, is a Kickbase BOARD listing (no u), prc = mv = 8.911.131, mvt 1, ofc 0, st 0, pos 2 DEF, VfB Stuttgart (tid 29), p 700 on ap 100 — nominally a +73 ap upgrade on Nakuzola for under 9M. THE SELECTION CHECK FAILS. The only dated Stuttgart XI found this run is ligainsider 419624, published 23.10.2026 19:25, and it gives the starting eleven explicitly rather than as a projection: Seimen; Jeltsch, Hendriks, Mittelstädt; Assignon, Karazor, Stiller, Führich; Demirović, Sauer; Pejčinović. SCHELLER IS NOT IN IT AND IS NOT MENTIONED ANYWHERE IN THE ARTICLE. Under the standing rule — with a points history, recommend only if news CONFIRMS still fit and starting — an unconfirmed starter is excluded, and the ap 100 on p 700 (seven appearances) is not evidence of selection for MD8, only of past minutes. A FUTURE RUN MAY REVERSE THIS CHEAPLY, so do not inherit it blind: if a Stuttgart XI dated 27.10.2026 or later actually starts him, he becomes a genuine candidate at or below mv for the Nakuzola slot and should be re-rated on the spot. Until then he is a value row, not a points row: he does qualify as an mv-exact mvt-1 flip at about 261.000 expected tick capture, ranked second behind Ryerson, and fitness and selection are irrelevant to that because they do not enter the 21:00Z market-value tick. Do not let the flip case leak into a points case on a later run."
-   },
-   {
     "name": "Tom Baack",
     "pos": "MID",
     "club": "29",
@@ -326,17 +206,26 @@
     "mv": null,
     "premium_pct": null,
     "why": "NEW TRAP, AND IT IS DANGEROUS FOR THE SAME REASON THE GUIRASSY/goal.com ONE WAS (Aacxqr5): its subject is a FIELDED squad player — Antonio Nusa (9507), mv 29.463.907, ap 159, the highest-scoring body Georg owns. URL ligainsider.de/antonio-nusa_37124/nusa-droht-ausfall-gegen-st-pauli-406485/. It is the TOP ligainsider hit for any \"Nusa Verletzung\" search and the headline reads perfectly current, because Leipzig's MD7 opponent this season (tid 77) makes \"gegen St. Pauli\" look like TODAY'S fixture, 2026-10-24T13:30Z. IT IS NOT. Fetched and dated this run: published 06.01.2026 11:31 CET, i.e. LAST SEASON, and it describes a syndesmosis ankle injury with individual training at a Portugal winter camp — a January winter-break story, which the \"Portugal camp\" detail alone should flag. The page carries NO newer dated item on him. LIVE DATA CONTRADICTS IT OUTRIGHT: st 0, mvt 1, sdmvt +664.866/day, tfhmvt +96.978 — the market is marking him UP hard, which is not what a squad-doubt tick looks like. VERDICT: Nusa is clean, no current adverse information exists, and this slug must never be read as a reason to sell or downgrade him. GENERAL RULE THIS SHARPENS: a fixture name in a headline matching THIS week's opponent is not evidence of recency — the same two clubs meet every season. Date the article before trusting the opponent."
+   },
+   {
+    "name": null,
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
+    "premium_pct": null,
+    "why": "SOURCE TRAP, NEW AND DISTINCT FROM THE KNOWN ONE — flashscore.de article id bkCwJoLP, \"Bundesliga 8. Spieltag - Aufstellungen, Verletzungen und Sperren in der Uebersicht\". It LOOKS like the clean matchday-specific counterpart to the already-logged template trap ngjPe6Gj (A6zjcjq), because unlike ngjPe6Gj it does not serve every matchday from one id. IT IS STILL POISON. Fetched 23.10.2026 it carries NO publication date, only an \"Aktualisiert\" label, and its own body says it covers the 8. Spieltag of the \"Bundesliga 2023/24\" for the weekend of \"20. bis 22. Oktober\" — THREE SEASONS STALE. The content proves it: Dortmund absences given as Moukoko, Duranville, Ostrzinski with Bensebaini on a Gelb-Rote-Sperre; Werder as Naby Keita, Niklas Stark, Pavlenka; Freiburg as Guenter, Kyereh, Rosenfelder; Augsburg as Framberger, Oxford, Mbabu, Vargas. Had this run trusted it, it would have reported stale absentees for FOUR clubs Georg is exposed to (Augsburg, Leipzig, Werder, Freiburg) and would have mis-screened Dahmen and Gruda. STANDING RULE REINFORCED: a flashscore \"Verletzungen und Sperren\" page is NOT a usable instrument for this league in either id form — neither the template id nor a matchday-looking id — and an undated flashscore hit is to be assumed last-season or older. Use the club pages and dated ligainsider player pages instead, which is what resolved Gruda, Maksimovic and Wojcik this run."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open with more than two days to the lock, and the edge has not decayed — re-read from the event log this run, the rising-flag drift is slightly wider and the hit rate slightly higher than the figures the method was written with, so no crowding-out from rivals is visible yet. Ulrich is the one flip worth taking and he is already the standing call at an unchanged price, because no tick has occurred since yesterday evening. He qualifies on the mechanic that matters: his listing closes before tonight's tick, so winning him means owning him through it. He sits in the mid-size band where absolute capture peaks, rather than at the big-market-value end the old ranking rule pointed at. He is on loan from Stuttgart to Paderborn, so the only recall risk is the January window and the transfer check clears for a flip that unwinds before the lock. Bid exactly market value and never raise — losing the auction costs nothing. Two open questions stay open: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period. One further caveat on the figures themselves: the tick now lands about an hour later than the worker's bucketing assumes, so the direction and the spread are reliable but the last decimal is not.",
+  "reason": "The flip window is wide open — the lock is more than two days out. Three board listings qualify: they are Kickbase listings priced at market value, on a rising flag, and they expire before tonight's tick, which is what the capture depends on. Doan and the Gruell listing both run past the tick and are disqualified as flips for that reason alone. Ranked by absolute capture rather than by market value times drift, Ulrich leads, Yamamoto is second, and Ryerson is pushed down despite the bigger headline number because he sits above the band where capture actually peaks. Yamamoto is logged as a watch rather than a flip: the book already commits a large share of the envelope and carries a prospective negative leg, and stacking a second simultaneous flip onto instructions that have not been executed adds unwind obligation without adding points. Bid market value exactly on any of them and never raise; losing costs nothing, and chasing one into the high cluster wipes out ten good flips. Two open questions stay open: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in. It has not decayed yet — this run's re-measurement came back stronger than the figures the method was written on.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Deman is the live worry and he is not new. Kickbase carries a status flag on him, Werder's own page marks him Angeschlagen without a date, and the tendon item from his coach is dated 27.10.2026. He is a fielded defender and there are only three defenders in the squad, so he cannot be dropped without breaking the formation — this is a risk to absorb, not one to trade out of. Engelhardt is covered under the sale. Nobody else in the squad carries a flag. Minjae Kim was the most tempting body on the board this run and was declined, not on merit but on two failed conditions: no dated Bayern eleven actually starting him could be found, with live sources flatly contradicting each other on whether he is a starter or a back-up, and his purchase collides head-on with the capital already committed to Grüll. His listing closed in the small hours regardless.",
+  "sweep": "Deman is the live concern and it is a re-verification, not a new flag. Ligainsider dates a foot problem to a half-time substitution on the twenty-fifth and still shows him missing; he remains in his club's probable lineup block but carries the doubtful icon, and Kickbase has him flagged and on a falling value. He is fielded in a back three with no defensive cover on the bench, so there is nothing to do about it this run except watch for a dated ruling before the lock. Engelhardt is confirmed still out. Everyone else in the squad is clean. Note for the record: Deman and Gruell are both Werder Bremen, not HSV, correcting an earlier run's phrasing.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -585,7 +474,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=946, -4,00% to +443,38%"
+   "v": "n=947, -4,00% to +443,38%"
   }
  ]
 }
