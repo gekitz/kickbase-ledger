@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-27T22:45:00Z",
+ "run": "2026-10-28T00:54Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 11597753,
   "floor": -49526704,
   "spending_power": 61124457,
-  "hours_to_lock": 68.61,
-  "exposure": "No leverage is open right now — the balance is positive and nothing is bid. The recommended structure WOULD open a leveraged position, deliberately and temporarily, and that is the thing to watch. Buying Grüll before Engelhardt is sold puts the balance under water, and if the flip is run as well the trough is deeper still. None of that costs anything until the moment the matchday locks, and the brief's standing correction applies: a negative balance is not by itself a reason to kill a buy. What matters is whether it can be unwound in time, and it can — the sale back to Kickbase is instant, needs no counterparty, and pays market value exactly. The sequence ends positive with room to spare. The one unacceptable outcome is holding a negative balance into the lock, which scores zero for the entire matchday, so the Engelhardt sale and, if taken, the flip sell-back must both be done before then. Treat the sale as the non-negotiable half of the trade, not the optional one.",
+  "hours_to_lock": 66.6,
+  "exposure": "No leveraged position is open right now and no offer is pending, so there is nothing to unwind today. The sequence does open a deficit on the Grüll clear tomorrow morning if the flip is also taken, and that deficit has a single named unwind: selling Ulrich back to the board before the lock, after two ticks have been captured. Every branch has been checked and every one closes non-negative at the lock with at least eleven players — including the branch where Grüll is lost at auction, and the branch where neither morning buy lands and the Engelhardt sale has to run behind the Grüll clear instead. The one branch that carries real leverage is that last one, and it is the fallback, not the plan.",
   "must_restore_by": "2026-10-30T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The binding constraint is not money and it is not the floor — spending power is far larger than anything on the table. It is the unwind ceiling, and it is unusually tight because the squad sits at exactly eleven in the only legal formation. Every buy must be matched by a sale that still leaves a fillable 3-4-3, and only one squad player satisfies that: Engelhardt. One legal sale means the whole cycle supports one real buy plus trivial filler, which is precisely why the keeper upgrade cannot be taken even though it is the best-priced ask on the board. The gap itself is in midfield, where Engelhardt's slot is held by a player who is both unavailable and losing value, and Grüll is the body that fills it.",
+ "binding_gap": "Squad size, not position quality. At exactly eleven with one legal formation, the binding constraint is having a twelfth body before the sale, and the cheapest guarantee of that is the Schnitzer buy. The top move is therefore the cheap insurance purchase rather than the expensive upgrade, because without it the Engelhardt sale either slips a day at a real cost in falling market value, or has to run leveraged through the lock. Of the two morning windows, Ulrich closes first and Schnitzer second, and either one alone is enough to unlock tonight's sale.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 61124457,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 29,
+  "listings": 31,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "One thing matters this run and it is not new information, it is an un-executed action: the Grüll bid is still not on the board.",
-  "headline_short": "One thing matters this run and it is not new information, it is an un-",
-  "detail": "One thing matters this run and it is not new information, it is an un-executed action: the Grüll bid is still not on the board. Row 7721 has now read ofc 0 at three separate observations across two runs, so the offer a previous run believed was live is gone for good and has to be re-placed from scratch. The auction resolves early on the 29th. Alongside that, the price on the Grüll buy has been RAISED — the old call priced him at market value exactly, which is the flip rule wrongly carried onto a points buy on a contested board listing, and this ledger's own history is a record of losing points auctions by underbidding. The structure is otherwise unchanged and sound: buy Grüll, buy the cheap Augsburg body as squad-count insurance, instant-sell Engelhardt back to Kickbase as the sole legal unwind leg, and be flat and legal before the lock."
+  "headline": "Nothing moved in the last two hours.",
+  "headline_short": "Nothing moved in the last two hours.",
+  "detail": "Nothing moved in the last two hours. Cash, team value and the squad are identical to the previous run, no transfer settled in the league, and every one of the four standing calls still shows no offer placed — the Grüll bid is now unplaced for the fourth consecutive observation. So this run changes nothing and invents nothing. The plan is the same plan, and it is now a sequence with two windows that close this morning while Georg is asleep. Order matters more than anything else today: a body has to land before Engelhardt can legally go, and Engelhardt has to go before tonight's tick takes another bite out of him."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Engelhardt is the sale and the case has hardened rather than softened. Ligainsider's profile carries him as Angeschlagen with 'Fehlt seit 5 Tagen' and its newest item is the 22.10.2026 report that he had to come off early against Monaco; there is no dated source putting him back in training or in a squad. Kickbase still shows his status flag clear, which is exactly the stale-flag trap this ledger has been caught by before — trust the dated club-news source, not the flag. He is also the one squad player whose market value is falling, and selling back to Kickbase pays market value exactly with no spread, so every tick he is held is a realised loss rather than a paper one. A previous run already ate one such tick by missing its window. Sell him in the window after the Augsburg body lands and before the next evening tick; do not let it slip a second time. If he is somehow back and confirmed starting, that is the only thing that changes this.",
+  "reason": "Engelhardt is the only sale, and he is the same sale that has now been re-recommended three times without being executed. The fitness case is dated and current-season and has not improved: his Ligainsider profile still carries Angeschlagen and Fehlt seit 5 Tagen, the Monaco item is 22.10.2026, and Rotowire ruled him out of the Bayern game on 25.10.2026. His value flag is falling and he has shed a large chunk since the matchday began. Sell back to Kickbase, which pays exactly market value with no spread, in tonight's window before the tick — but only after Ulrich or Schnitzer has landed. Hwang is NOT a sale this cycle: his block made him the second unwind leg only if both the Bornauw and Grüll buys landed, and Bornauw is gone to a rival, so that condition is void and the Engelhardt sale alone funds the book.",
   "standing": [
    {
     "name": "Yannik Engelhardt",
@@ -191,7 +191,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Grüll is the points trade and the only one worth doing this cycle. His profile reads Fit with zero injured or suspended minutes this season, seven starts from eight appearances and no bench time; the two most recent items are Werder load-management notes, not absences, and there is no transfer item on him. He is a nailed starter and the upgrade he represents over Engelhardt in the same midfield slot is the largest available anywhere on the board. The reprice is the substantive change: his listing is a Kickbase board listing, not a manager ask, and the standing method says to benchmark those against the high end of the measured clearing band and never against the median. Grüll himself cleared well into that high band the last time he was auctioned, and three board clears settled in the last few hours all landed above market value, two of them far above. A bid at market value on a fit, high-scoring, mid-price winger loses. The new price sits inside the measured winning cluster and still leaves real headroom under the hard affordability ceiling — do not go past that ceiling for any reason, because a buy that cannot be unwound by the lock scores nothing for the entire matchday. The cheap Augsburg midfielder is the second buy and is insurance, not points: he resolves well before the Grüll auction, costs almost nothing, tracks market value so he can be sold back without loss, and is the thing that makes the Engelhardt sale independent of whether Grüll lands. Nothing else on the board earns a bid. The best keeper ask is well priced by this market's standards but is killed outright by unwind capacity — buying him as well would end the matchday on a negative balance, and that is disqualifying. Every manager ask on the board other than that one is priced far enough above market value to be rejected on sight.",
+  "reason": "Grüll is the points trade and the only one on the board worth having. He is the single listed midfielder with a season average above Engelhardt's, and the fitness check is as clean as it gets: Ligainsider shows him fit with zero injured-or-suspended minutes this season, starting every Bundesliga match and playing virtually all available league minutes, and Werder's own absentee list for the Hoffenheim fixture does not name him. His block's reversal required an ask at or below market value, and the Kickbase board asks exactly market value, so the reversal condition is met. The premium sits in the bid, not the ask, and it must be benchmarked against the high cluster — he himself cleared well above this level to a rival in September, and the standing bid is deliberately pitched below that mark but far above the median clear. Schnitzer is the second buy and it is not a points buy at all: he is squad-count insurance, a fringe Augsburg prospect by the club's own words, bought purely so the Engelhardt sale is legal tonight. Bid him at exactly the asking price. Everything else on the board is excluded: the manager asks from David and JakobDohr sit far outside anything ever measured as clearing, and Scheller, Baack, Beier, Muheim and Fellhauer are already logged as avoids.",
   "standing": [
    {
     "name": "Marco Grüll",
@@ -219,6 +219,15 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "Minjae Kim",
+    "pos": "DEF",
+    "club": "2",
+    "ask": 10622470,
+    "mv": 10622470,
+    "premium_pct": 0,
+    "why": "NOT BOUGHT THIS RUN, AND THE REASON IS CAPITAL PLUS AN UNMET REVERSAL CLAUSE, NOT MERIT. He is the single most tempting body on the board at 00:45Z: Kickbase board listing (no u), prc 10.622.470 = mv EXACTLY, mvt 1, st 0, ap 110, pos 2 — an +83 ap upgrade on Nakuzola (ap 27), which is larger than the +45 ap the Gruell buy gains over Engelhardt. His block (Syab961) sets FOUR reversal conditions and requires ALL of them. Two hold: the ask is at mv (b), and ap 110 clears the defender he would displace (d). TWO DO NOT. (a) \"non-negative balance with GENUINE SPARE CAPACITY\": cash is 11.597.753 and the standing BUY Bajft74 commits 21.000.000 of it to Gruell on 29.10; buying Minjae leaves 975.283 and makes the Gruell clear a -9,6M position needing a third unwind leg that does not exist — the full stack (Schnitzer + Minjae + Gruell, funded by Engelhardt + Nakuzola + Hwang) prices at -960.000 at the lock, i.e. it does not close. (c) \"a DATED Bayern XI actually STARTING him\": NOT FOUND. The search returns directly contradictory undated pieces — t-online \"beim FC Bayern nur Back-up\" against absolutfussball \"Kim ploetzlich als Stammspieler gesetzt\" and ran.joyn \"Gewinner des Saisonstarts\" — and the block already records ligainsider/minjae-kim_27022 as STALE (content stops 17.08.2026). p 440 / ap 110 = four appearances in seven matchdays, which is rotation, and the block names \"the third-centre-back rotation\" as the entire reservation. This is also the exact trap the method warns about: a cheap mv next to a big average. EXPIRY MAKES IT MOOT ANYWAY — exs 10382s at 00:45:24Z puts the close at ~2026-10-28T03:38Z, i.e. 04:38 CET, with Georg asleep and four standing bids still unplaced. FOR THE NEXT RUN: this is a decline on THIS listing, not a permanent one. If he relists while the balance is clear of the Gruell commitment, re-test condition (c) against a dated Bayern XI at that time and condition (a) against live figures; do not reuse this entry as a reason to avoid him."
+   },
    {
     "name": "SOURCE TRAP — ligainsider 413238 Engelhardt \"Schlag auf den Fuss\" is 12.05.2026, LAST SEASON",
     "pos": "",
@@ -317,26 +326,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "NEW TRAP, AND IT IS DANGEROUS FOR THE SAME REASON THE GUIRASSY/goal.com ONE WAS (Aacxqr5): its subject is a FIELDED squad player — Antonio Nusa (9507), mv 29.463.907, ap 159, the highest-scoring body Georg owns. URL ligainsider.de/antonio-nusa_37124/nusa-droht-ausfall-gegen-st-pauli-406485/. It is the TOP ligainsider hit for any \"Nusa Verletzung\" search and the headline reads perfectly current, because Leipzig's MD7 opponent this season (tid 77) makes \"gegen St. Pauli\" look like TODAY'S fixture, 2026-10-24T13:30Z. IT IS NOT. Fetched and dated this run: published 06.01.2026 11:31 CET, i.e. LAST SEASON, and it describes a syndesmosis ankle injury with individual training at a Portugal winter camp — a January winter-break story, which the \"Portugal camp\" detail alone should flag. The page carries NO newer dated item on him. LIVE DATA CONTRADICTS IT OUTRIGHT: st 0, mvt 1, sdmvt +664.866/day, tfhmvt +96.978 — the market is marking him UP hard, which is not what a squad-doubt tick looks like. VERDICT: Nusa is clean, no current adverse information exists, and this slug must never be read as a reason to sell or downgrade him. GENERAL RULE THIS SHARPENS: a fixture name in a headline matching THIS week's opponent is not evidence of recency — the same two clubs meet every season. Date the article before trusting the opponent."
-   },
-   {
-    "name": null,
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "SOURCE TRAP, NEW AND DISTINCT FROM THE KNOWN ONE — flashscore.de article id bkCwJoLP, \"Bundesliga 8. Spieltag - Aufstellungen, Verletzungen und Sperren in der Uebersicht\". It LOOKS like the clean matchday-specific counterpart to the already-logged template trap ngjPe6Gj (A6zjcjq), because unlike ngjPe6Gj it does not serve every matchday from one id. IT IS STILL POISON. Fetched 23.10.2026 it carries NO publication date, only an \"Aktualisiert\" label, and its own body says it covers the 8. Spieltag of the \"Bundesliga 2023/24\" for the weekend of \"20. bis 22. Oktober\" — THREE SEASONS STALE. The content proves it: Dortmund absences given as Moukoko, Duranville, Ostrzinski with Bensebaini on a Gelb-Rote-Sperre; Werder as Naby Keita, Niklas Stark, Pavlenka; Freiburg as Guenter, Kyereh, Rosenfelder; Augsburg as Framberger, Oxford, Mbabu, Vargas. Had this run trusted it, it would have reported stale absentees for FOUR clubs Georg is exposed to (Augsburg, Leipzig, Werder, Freiburg) and would have mis-screened Dahmen and Gruda. STANDING RULE REINFORCED: a flashscore \"Verletzungen und Sperren\" page is NOT a usable instrument for this league in either id form — neither the template id nor a matchday-looking id — and an undated flashscore hit is to be assumed last-season or older. Use the club pages and dated ligainsider player pages instead, which is what resolved Gruda, Maksimovic and Wojcik this run."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open with plenty of room before the lock, and the edge has NOT decayed — the re-measured next-tick drift on rising-flag listings came out higher than the figure the standing brief quotes, with the win rate essentially unchanged, so there is no sign yet of rivals crowding the trade out. The standing Ulrich flip survives this run unchanged and correctly priced: he is a Kickbase listing tracking market value exactly, carries the rising flag, and expires comfortably before tomorrow evening's tick, so a bid placed now is at the right price and he would be held across exactly one tick before being sold straight back. Bid market value exactly and never raise — losing the auction costs nothing, and chasing one contested listing into the high band wipes out ten good flips. He also sits in the three-to-ten-million band where this ledger has measured absolute capture to peak, which is why he ranks ahead of the two larger rising-flag listings on the board; those are bigger but land outside the band, and the cheapest qualifying bodies capture too little to be worth an auction slot. Two other in-band candidates are excluded by existing entries on the blocked and avoid lists. A warning on sequencing: the flip stacks on top of two buys, and at peak the position would be meaningfully leveraged before anything is sold back. The flip must never be allowed to put the points trade at risk. If only two actions get executed this cycle, they are the Grüll bid and the Engelhardt sale — the flip is the first thing to drop. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this drift edge is measured in one league over one period and will decay if the other traders crowd in.",
+  "reason": "The flip window is open with more than two days to the lock, and the edge has not decayed — re-read from the event log this run, the rising-flag drift is slightly wider and the hit rate slightly higher than the figures the method was written with, so no crowding-out from rivals is visible yet. Ulrich is the one flip worth taking and he is already the standing call at an unchanged price, because no tick has occurred since yesterday evening. He qualifies on the mechanic that matters: his listing closes before tonight's tick, so winning him means owning him through it. He sits in the mid-size band where absolute capture peaks, rather than at the big-market-value end the old ranking rule pointed at. He is on loan from Stuttgart to Paderborn, so the only recall risk is the January window and the transfer check clears for a flip that unwinds before the lock. Bid exactly market value and never raise — losing the auction costs nothing. Two open questions stay open: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period. One further caveat on the figures themselves: the tick now lands about an hour later than the worker's bucketing assumes, so the direction and the spread are reliable but the last decimal is not.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Deman continues to carry an injury flag and dated Dutch-language club reporting about a tendon complaint; he is still in the fielded eleven and there is no replacement for him, so he stays, but he is the standing risk to the matchday. Engelhardt is covered above and is the sale. Nobody else in the squad is newly flagged — no new injury, suspension, benching or departure story landed on any of the eleven since the last run. On the board, the keeper and the Augsburg winger both carry status flags and both are excluded on that basis regardless of price. The clearest fitness lesson of the run came from a rival: an injured Hamburg defender who had left the pitch hours earlier still cleared the board at a premium. That is a reminder that other managers in this league buy flagged bodies without checking, which is correct for a pure value flip and wrong for anything that has to score.",
+  "sweep": "Deman is the live worry and he is not new. Kickbase carries a status flag on him, Werder's own page marks him Angeschlagen without a date, and the tendon item from his coach is dated 27.10.2026. He is a fielded defender and there are only three defenders in the squad, so he cannot be dropped without breaking the formation — this is a risk to absorb, not one to trade out of. Engelhardt is covered under the sale. Nobody else in the squad carries a flag. Minjae Kim was the most tempting body on the board this run and was declined, not on merit but on two failed conditions: no dated Bayern eleven actually starting him could be found, with live sources flatly contradicting each other on whether he is a starter or a back-up, and his purchase collides head-on with the capital already committed to Grüll. His listing closed in the small hours regardless.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
