@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-28T22:55Z",
+ "run": "2026-10-29T00:54Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 11697753,
   "floor": -49449884,
   "spending_power": 61147637,
-  "hours_to_lock": 44.58,
-  "exposure": "This is the figure that matters most and it is the one to watch. The two live bids together commit substantially more than the cash on hand. If both land, the balance goes deeply negative and the squad goes to thirteen; clearing it means executing both sales, which restores a small positive balance and returns the squad to eleven. If only the midfielder lands, one sale clears it and the defender's sale becomes void. If only the defender lands, the other sale clears it and the midfielder's sale becomes void — selling both would drop the squad to ten. The estimates behind every branch assume one market-value tick before the lock, and both sale candidates are falling, so their proceeds will be slightly lower by then; every branch still clears with margin, but the margin is not large and a missed unwind means a zero-point matchday across the whole eleven. Nothing is leveraged right now — the balance is positive — but it will be within a day if the auctions go the way the bids intend.",
+  "hours_to_lock": 42.6,
+  "exposure": "No leveraged position is open right now; the balance is positive and nothing has settled since the last run. But two bids are live and if both land the balance goes sharply negative on an oversized squad, and that is the position that has to be unwound before the lock. It is unwindable: selling both funding legs restores a positive balance at a legal eleven, with room to spare. What is not unwindable is adding Castañeda on top of both wins — that branch cannot be brought back to a positive balance without dropping to ten players, which costs the matchday outright, and it gets worse rather than better because both funding legs are falling in value and tonight's tick shrinks them. That is the whole reason the Castañeda recommendation changed. The flip legs are a different matter: each sells back for more than it cost, so they add to the unwind rather than threatening it, and the only limit on them is the spending floor during the holding window.",
   "must_restore_by": "2026-10-30T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no positional hole. The binding constraint is the eleven-man floor itself, combined with the three-defender minimum. Nothing can be sold before something is bought, and the weakest fielded body is a sub-thirty-average defender who cannot be sold at all without a defender landing first. The upgrade targets are therefore the two weakest midfield and defensive returns, not a gap in the shape.",
+ "binding_gap": "The binding constraint is not money and not the floor. It is that the squad sits at exactly eleven, so every sale needs a purchase to land first, and the two sales are tied to different purchases. The second constraint is the unwind clock: a negative balance at the matchday start scores zero for the entire matchday, so every position opened today has to be closed before the lock. There is no formation hole to fix and no empty slot to fill — the gap is a quality gap in the fielded eleven, not a structural one.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 61147637,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 31,
+  "listings": 32,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 0
  },
  "squad": [
   {
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Stand pat.",
-  "headline_short": "Stand pat.",
-  "detail": "Stand pat. Both board bids are live and untouched, and this run's news work confirmed both premises rather than changing either — so there is nothing new to place. The only work left is the unwind, and that is also the only thing that can cost the whole matchday: the two bids together commit more than the cash on hand, so if both land, the balance goes deeply negative and must be cleared by the lock. One genuinely new opportunity appeared on the board an hour ago and is logged as conditional, decided by tomorrow afternoon's run once both auctions have resolved."
+  "headline": "Hold both live bids and bid nothing else until the Querfeld auction resolves this afternoon.",
+  "headline_short": "Hold both live bids and bid nothing else until the Querfeld auction re",
+  "detail": "Hold both live bids and bid nothing else until the Querfeld auction resolves this afternoon. Grüll and Querfeld are the matchday; everything else on the board is either a value leg that must never be fielded, or a fallback that only exists if one of the two auctions is lost. The one correction this run makes is on Castañeda: the previous run recommended him outright, and that recommendation was made without testing him against the two live auctions. Tested, he fails in two of the four branches, so he is now conditional and must not be bid before the Querfeld auction resolves. Nothing else changes. Do not pull either bid and do not raise either bid."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Two sales stand, both already logged on earlier runs, both still conditional and neither to be fired yet. The midfielder is the cleaner one and its premise has changed character: he is now fit, confirmed by a dated club-page item from the twenty-seventh, so this is no longer an availability sale — it is a value and price-per-point sale, and he is the fastest-bleeding asset in the squad by a wide margin, shedding more per day than anyone else owns in absolute terms. Fire it only once the midfield buy has actually landed. The defender is the harder one: he is genuinely doubtful, carrying an injury flag, an Angeschlagen marker on his club's dated page, a missed cup tie and a coach whose best case is a return to the matchday squad rather than the eleven. His average is real but not collectable. His sale remains hard-void if the defensive buy is lost, because selling him without a defender arriving leaves two defenders and no legal formation at all — that is a minus-hundred trap, not a judgement call.",
+  "reason": "Neither sale is a fitness call and neither should be reported as one. Engelhardt was cleared this run on a Freiburg source updated three hours before the run — in the probable lineup, no doubt marker, not in the missing list — so the earlier injury premise is dead and stays dead. He is sold because Grüll is a materially better scorer and because the purchase has to be funded. Deman is genuinely compromised, carrying a doubt marker at his club and an unfit flag in Kickbase while occupying a fielded defensive slot, so replacing him with Querfeld is an upgrade on points as well as a funding move. Fire each sale only after its matching purchase has actually landed, and never before.",
   "standing": [
    {
     "name": "Yannik Engelhardt",
@@ -200,17 +200,17 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Both live bids are confirmed and must be left exactly as they are — not raised, not pulled. The midfielder is fit on his own dated profile page with zero minutes missed all season and seven starts in eight, and he sits in his club's probable eleven for the weekend; he is the squad's biggest single points upgrade and the bid sits right at the top of the measured contested-listing band, which is defensible but leaves no room to go higher. The defender's case got stronger this run, not weaker: his club's own statement confirms the rival centre-back is banned for two league matches, the dated club page lists that ban against the weekend fixture, and the two other centre-backs are out for months. A headline suggesting the ban did not apply turned out to predate the verdict and to refer to the cup, so it is a date trap and is logged as one. His market value also rose at the tick, which quietly improved the standing of a bid that was placed when the value was lower. The third name is new, landed on the board an hour before this run, and is the best points-per-euro on the market: a seven-appearance average well above the midfielder he would replace, a confirmed place in his club's probable eleven on a dated page, and a listing priced exactly at market value so the bid never needs to exceed it. He is affordable only in the branches where capacity frees up, and both auctions resolve before he expires, so the decision belongs to tomorrow afternoon. Excluded on price or availability: the high-average full-back whose ask is more than forty per cent over value and who has played only three of eight; the injured defender relisted by the manager who took him yesterday; and the midfielder asked at a sixteen per cent premium.",
+  "reason": "Grüll survived a scare this run and came through it. His club page renders him outside the projected eleven, which on a bid of this size reads alarming, but two independent dated sources — a lineup article from the same outlet and a separate match preview updated the following day — both start him. The club page's name ordering is a broken instrument in the same way its omissions already were: only the colour-coded bars carry starter status, and those do not survive text extraction. Never settle a starter question on a club page's ordering again. Querfeld is confirmed in his club's projected eleven, and the suspension that opened the slot for him is now visible directly on the source rather than inferred. Castañeda is the one that changed: the merit is unchanged and if anything stronger, with seven appearances in eight matchdays and a clean starter read on a club page whose doubt markers demonstrably work, but he is affordable only if Querfeld lands and Grüll does not, or if both auctions are lost. If both are lost he is the best buy on the board, and the body to sell for him is Hwang, not Engelhardt — against Engelhardt the swap is a wash, against Hwang it is the entire gain.",
   "standing": [
    {
     "name": "Santiago Castañeda",
     "pos": "MID",
     "club": "29",
-    "ask": 11192016,
+    "ask": 13000000,
     "mv": 11192016,
-    "premium_pct": 0,
+    "premium_pct": 16.15,
     "listing": "Kickbase listing",
-    "why": "NEW LISTING, APPEARED 2026-10-28T21:48:08Z — 58 MINUTES BEFORE THIS 22:45Z RUN AND AFTER THE 20:50Z RUN, SO NO PREVIOUS RUN HAS SEEN HIM. Row 8292, SC Paderborn (tid 29), pos 3 MID. KICKBASE listing, no u, prc = mv = 11.192.016 exactly, ofc 0, mvt 1, st 0, expires 2026-10-29T22:53Z. ap 117 on p 818 = SEVEN appearances of eight matchdays, so the average is NOT a cameo artefact and NOT a stale-last-season figure. NEWS CONFIRMED THIS RUN: ligainsider SC Paderborn page 1249, last updated 26.10.2026 18:15, carries him in the voraussichtliche Aufstellung for the away match at Borussia Mönchengladbach on 31.10.2026 15:30 (MD8), with NO angeschlagen flag — Vidović is the only flagged name in that block, and the only absentees are Batista Meier (injury, 1w6d) and Gayret (Aufbautraining, 6m1w). Jano ter Horst, Georg's own squad defender, is in the same list, which cross-validates the page. THE BID IS mv-EXACT 11.192.016 AND MUST NOT BE RAISED: he is a Kickbase listing, 49,7% of board purchases clear at or below mv, and chasing into the high cluster (measured Ebnoutalib +16,71%, Campbell +20,96%) destroys the edge. CONDITIONAL — THIS IS THE WHOLE CALL, AND IT IS ARITHMETIC, NOT PREFERENCE. He is affordable ONLY in the branches where the Grüll (Bgob3b4, resolves 29.10 09:29Z) and Querfeld (But3xt4, resolves 29.10 14:54Z) auctions have freed capacity. Both auctions resolve BEFORE his 22:53Z expiry, so the decision belongs to the 29.10 16:45Z run (fallbacks 18:45Z, 20:45Z). Estimated 30.10 sale values, one tick at 29.10 21:00Z, lock 30.10 19:30Z is before the 30.10 tick: Engelhardt 13.343.119 x 0,9701 = ~12,94M (mvt 2), Deman 10.766.442 x 0,9701 = ~10,44M (mvt 2), Tanaka 6.253.055 x 1,0288 = ~6,43M (mvt 1). BRANCH 1, BOTH AUCTIONS WON: cash 11.697.753 - 32.500.000 = -20.802.247 at squad 13; sell Engelhardt + Deman = +2,59M at squad 11. Adding Castañeda needs a fourth sale and every combination lands negative at the lock. DO NOT BUY. BRANCH 2, GRÜLL ONLY: sell Engelhardt leaves +3,64M at squad 11; adding Castañeda and selling Tanaka = -1,12M NEGATIVE, and selling Deman instead leaves 2 DEF (1/2/6/3) which has NO legal formation. DO NOT BUY. BRANCH 3, QUERFELD ONLY: sell Deman leaves +10,64M at squad 11; buy Castañeda and sell Tanaka = +5,88M at squad 11, shape 1/3/4/3 legal. BUY. BRANCH 4, NEITHER WON: buy Castañeda and sell Tanaka = +6,94M at squad 11, shape 1/3/4/3 legal. BUY. POINTS: he replaces Tanaka (ap 71) in midfield for +46 fielded ap per matchday at a net cost of ~4,76M after the Tanaka sale — the best points-per-euro on the board, better than Grüll (+45 over Engelhardt for 21,0M). He is NOT a flip: his 22:53Z expiry falls AFTER the 29.10 21:00Z tick, and the following tick lands 30.10 21:00Z, after the MD8 lock. Buy him for points or not at all.",
+    "why": "SUCCESSOR TO Bi4e8fr (now closed on a STALE ENVELOPE, not a dead premise). Bi4e8fr recommended the buy without testing it against the two live auctions. This run tested it and it FAILS in two of four branches, so the call is now BRANCH-CONDITIONAL AND MUST NOT BE PLACED BEFORE 14:55Z. MERIT IS UNCHANGED AND STRENGTHENED: row 8292, SC Paderborn (tid 29), pos 3 MID, Kickbase listing, no u, prc = mv = 11.192.016 exactly, ofc 0, mvt 1, st 0, expires 2026-10-29T22:53:54Z. ap 117 on p 818 = seven appearances of eight matchdays, not a cameo artefact. STARTER VERIFIED THIS RUN on ligainsider /sc-paderborn-07/1249/, last updated 26.10.2026 18:15, projecting Paderborn v Bor. Moenchengladbach 31.10 15:30: Castaneda is 7th in the probable XI list with NO injury or doubt marker (page's own doubt markers work - it flags Vidovic \"Angeschlagen\" and lists Batista Meier out 2 weeks, Gayret 6 months, so the absence of a marker on Castaneda is informative, not a null read). THE ENVELOPE TEST, the whole point of this successor. Cash 11.697.753, floor -49.449.884, spending power 61.147.637, squad exactly 11 (1GK/3DEF/4MID/3ATT), lock 2026-10-30T19:30Z. Live bids: Gruell 21.000.000 resolving 09:30Z, Querfeld 11.500.000 resolving 14:55Z. (A) BOTH AUCTIONS WON -> VOID, DO NOT BID. Cash would be -31.994.263 on a squad of 14. The largest LEGAL unwind is Engelhardt 13.343.119 + Deman 10.766.442 + Hwang 5.649.857 = 29.759.418, leaving -2.234.845 at eleven players (1/3/5/2). Still negative = ZERO for the whole matchday, and a fourth sale is ten players = -100. Worse, Engelhardt and Deman are both mvt 2, so tonight's 21:00Z tick shrinks those two legs by ~3% rather than growing them. (B) GRUELL WON, QUERFELD LOST -> VOID, DO NOT BID. Deman cannot be sold in that branch (DEF falls to two), so the unwind is Engelhardt + Hwang only: -20.494.263 + 13.343.119 + 5.649.857 = -1.501.287 at eleven. Negative. (C) QUERFELD WON, GRUELL LOST -> BUY. 197.753 after Querfeld on a squad of 12; -Castaneda at 13.000.000 = -12.802.263 on 13; sell Deman 10.766.442 -> -2.035.821 on 12; sell Engelhardt 13.343.119 -> +11.307.298 on eleven (1/3/4/3). (D) BOTH LOST -> BUY, AND THIS IS THE BEST BRANCH. 11.697.753 - 13.000.000 = -1.302.247 on a squad of 12; FUND IT BY SELLING HWANG 5.649.857, NOT ENGELHARDT -> +4.347.610 on eleven = 1/3/5/2 = 3-5-2, legal. Hwang's ap is 30; Castaneda's is 117; that is +87 ap on the fielded eleven. Against Engelhardt (ap 115) the swap is a wash and is NOT the trade. PRICE 13.000.000 = +16,15% over mv, deliberately in the measured HIGH cluster for contested Kickbase listings (Ebnoutalib +16,71%, Campbell +20,96%) and NOT at the +0,95% median, because the median mixes uncontested clears with contested ones. This is the direct lesson of the three calibration misses - Makengo lost at +60,76% against our +13,03%, Mokwa at +41,39% against our +31,01%, Banks at +30,43% against our +15,01% - every one lost by pricing off an older, cheaper band. The 1,81M premium over mv is a real cost paid for win probability on a +87 ap upgrade, and it is affordable in both live branches as shown. TIMING IS FREE: Querfeld resolves 14:55Z and this listing not until 22:54Z, so the branch is known with eight hours to spare. Bidding before 14:55Z is pure risk with zero gain. DO NOT BID BEFORE 14:55Z.",
     "rank": 1,
     "trigger": "2026-10-29T22:53:00Z"
    },
@@ -241,13 +241,13 @@
   ],
   "killed_this_run": [
    {
-    "name": "Nnamdi Collins",
-    "pos": "DEF",
-    "club": "4",
-    "ask": 6647419,
-    "mv": 6951642,
-    "premium_pct": -4.38,
-    "why": "SUCCESSOR TO Aszc0wu (now closed on a dead premise). Aszc0wu priced him at 7.000.000; that ask no longer exists. Row 2864 is now a KICKBASE listing at prc = mv = 6.647.419 exactly, ofc 0, expiring 2026-10-29T18:13Z, and Georg's own offer on it has been REMOVED (ofc 0, no ofs). THE AVOID STANDS AS A POINTS BUY AND ONLY AS A POINTS BUY: ap 48 is below every defender already in the squad except Nakuzola, and well below Querfeld ap 129, so he is not a squad upgrade at any price and must not be bought to fill the pos-2 hole. This does NOT block the separate FLIP call on the same row — a flip never enters the eleven and is judged on the mvt-1 tick alone."
+    "name": "Christian Kofane",
+    "pos": "ATT",
+    "club": "7",
+    "ask": 4274620,
+    "mv": 4274620,
+    "premium_pct": 0,
+    "why": "EXCLUDED FROM THE FLIP BOOK ON AN UNREAD STATUS FLAG, NOT ON PRICE. Row 11513, tid 7 (Bayer Leverkusen), pos 4 ATT, Kickbase listing, no u, prc = mv = 4.274.620 exactly, ofc 0, mvt 1, expires 2026-10-29T16:53:05Z. On every mechanical test he qualifies for the book: mv-exact Kickbase listing, mvt 1, inside the 3-10M absolute-capture band, resolving before tonight's 21:00Z tick, capture ~125k - the same profile as Hofmann (F56lb6r), who IS recommended. HE IS EXCLUDED BECAUSE st = 4 AND THIS LEDGER HAS NEVER DECODED st = 4. The values this ledger has seen and understood are st 0 (fit), st 1 and st 2 (not fit, in the Kickbase sense, both observed on players ligainsider independently flags angeschlagen or injured). st 4 is new and unexplained. The one flip rule that is absolute is NEVER FLIP A PLAYER WHO MIGHT LEAVE THE LEAGUE, because a departure strands the capital past the lock, and an undecoded status flag is exactly the shape a departure or a non-squad registration would take. The cost of the exclusion is ~125k of expected capture, the smallest in the book; the cost of being wrong about st 4 is the capital locked at the matchday with a negative balance = zero points for the entire matchday. ACTION FOR A LATER RUN: get_player on 11513 reads stl and the full status detail for ~1 call and would settle this permanently. Do it when there is no live auction competing for attention. REVERSAL: decode st = 4 as a benign flag (suspension, rotation, or an unregistered-for-this-matchday marker) on a dated source or on get_player's stl array, and he returns to the flip book at mv-exact with no further argument needed."
    },
    {
     "name": "Sebastiaan Bornauw",
@@ -353,11 +353,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open — the lock is comfortably more than twelve hours away — and the edge has not decayed. Re-measured this run over the full event log, the rising-flag cohort now averages a stronger next-tick gain on a larger sample and rises more often than the September baseline; the falling flag mirrors it almost exactly in the opposite direction. Selling back still pays market value with no spread, so a bid placed exactly at market value is a free option: win and capture the tick, lose and pay nothing. Several listings qualify on mechanism, but only one of them resolves after both auctions have settled, which is the timing test any flip has to pass while the auctions are unresolved. The flip book nonetheless stays closed this run, and the reason is capacity rather than mechanism: almost three times the cash on hand is already committed to the two live bids, and in the branches where capacity does open, the new midfielder is worth far more in points than the flip is in money. Points beat value, and this section never overrides the main move. Two questions remain open and are restated once, as they have been every run: whether the platform caps squad size, which would cap how many flips can be run at once, and the fact that this edge is measured in one league over one period and will erode if rivals crowd into it. This run it moved up, not down.",
+  "reason": "The flip window is wide open and the edge was re-measured this run and has not decayed — it is slightly stronger than the original baseline on roughly three times the sample, with no sign yet of rivals crowding it out. The mechanism is unchanged and is not arbitrage: bid exactly the market value on a rising Kickbase listing, never raise, lose most of them at no cost, and capture tonight's tick on the ones that land. Three legs are recommended, all of them resolving before tonight's tick and all of them inside the capture band where the absolute return peaks. Every leg sells straight back to Kickbase at market value with no spread, so a flip adds cash rather than consuming it and cannot break the unwind. Two much larger captures were available and both are excluded — not on merit, purely because stacking them on top of the two live auctions would breach the spending floor. A fourth leg of any real size would do the same, so stop the book at three. Every leg must be sold back after tonight's tick and before the lock, and none of them may ever be fielded.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Every news check this run was dated and current. The two buy premises were confirmed against club statements and dated club pages from the twenty-sixth, twenty-seventh and twenty-eighth. One contradicting headline was caught and dated to the day before the verdict it appeared to contradict, and is now logged as a trap so no later run walks into it. The new candidate and one existing squad defender both appear on the same dated club page, which cross-validates it. The one squad fitness concern is unchanged from six hours ago: the doubtful defender is still in the eleven because at eleven players there is no bench to move him to, and the only fix is landing the defensive buy. The league-wide injury table could not be fetched this run, so the squad-wide sweep rests on platform status flags, which show no other player flagged.",
+  "sweep": "No squad player is newly injured, suspended or benched this run. Deman remains the one compromised body, carrying a doubt marker at his club and an unfit flag in Kickbase while occupying a fielded slot — which is exactly what the Querfeld purchase is for. Engelhardt is cleared on a source three hours old. The goalkeeper situation is unchanged and still unactionable: he started the last matchday and is neither injured nor dropped, but there is no second keeper and no way to react if he is rested. The league-wide injury sweep was unavailable this run — that page failed at its own site — so the fitness checks were done club by club instead, which is slower but covered every name that mattered.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -606,7 +606,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=963, -4,00% to +443,38%"
+   "v": "n=964, -4,00% to +443,38%"
   }
  ]
 }
