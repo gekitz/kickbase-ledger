@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-30T16:49Z",
+ "run": "2026-10-30T18:49Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -1759128,
   "floor": -48138382,
   "spending_power": 46379254,
-  "hours_to_lock": 2.67,
-  "exposure": "A leveraged position is open right now and the lock is close. A negative balance at matchday start scores zero for the entire matchday, so this outranks every other consideration on the page. The board sale closes it instantly and leaves a comfortable positive balance with no further action needed. Do not place any offer afterwards: the post-sale balance is smaller than the cheapest manager ask on the board, so a buy would re-open the exposure with no time left to unwind it.",
+  "hours_to_lock": 0.67,
+  "exposure": "Leveraged and unwound only by the sale. The deficit is live right now and the lock is close. The unwind is a single board sale that pays market value instantly, so the risk is entirely execution risk rather than market risk — there is no counterparty to wait on and no auction to lose. If the sale does not happen before the lock, the entire matchday scores zero regardless of how the eleven perform. The lesson for the next run, recorded in the ledger: clear a negative balance on the run it appears, while replacement bodies are still buyable, not on the run before the lock when the only remaining move is forced.",
   "must_restore_by": "2026-10-30T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The binding constraint is not a position at all this run — it is the placed count. The squad covers every position for a legal 3-4-3 the moment the sale goes through, provided the bench keeper is moved into the eleven. If he is not, the gap is in goal and it costs the under-eleven penalty. Beyond that, the weakest fielded body is the cheap Mainz defender, and the whole sub-four-million defender field has already been checked and offers no upgrade that can be won before this lock.",
+ "binding_gap": "The binding constraint is not a position, it is the clock. The keeper slot is the gap that opens the moment Schwolow is sold, and Zentner fills it — that is the whole of it, and it closes in one sitting. The deeper gap is at the back: two of three defenders are expected to contribute nothing, and the squad is too thin to cover either. That gap is not fixable before the lock; it is the first thing to fix after it.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 46379254,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 29,
+  "listings": 27,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 4
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "One act, and it is now overdue by three runs: sell Alexander Schwolow to the board, then immediately place Robin Zentner in goal.",
-  "headline_short": "One act, and it is now overdue by three runs: sell Alexander Schwolow ",
-  "detail": "One act, and it is now overdue by three runs: sell Alexander Schwolow to the board, then immediately place Robin Zentner in goal. The sale alone clears the negative balance that would otherwise score zero for the whole of MD8. But Schwolow is the PLACED keeper and Zentner is the unplaced twelfth man, so selling without re-placing leaves a hole in the eleven and swaps a zero-points matchday for the under-eleven penalty. Both halves must happen in the same sitting, and both must be done before the lock. Nothing else on the board is worth touching."
+  "headline": "One act, and it is mandatory: sell Schwolow to the board and place Zentner in the vacated keeper slot, in the same sitting, before the lock.",
+  "headline_short": "One act, and it is mandatory: sell Schwolow to the board and place Zen",
+  "detail": "One act, and it is mandatory: sell Schwolow to the board and place Zentner in the vacated keeper slot, in the same sitting, before the lock. The balance is negative, and a negative balance at matchday start scores zero for the entire matchday. This has now been called by four consecutive runs and is still undone. The board sale is instant and pays exactly market value, which is more than enough to clear the deficit on its own. Nothing else this run matters next to it."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Alexander Schwolow, keeper, Mainz. Sell to the board, which is instant and pays exactly market value, and which is the only sale that can be relied upon to settle before the lock. Comunio's probable XI dated 29.10.2026 returns Zentner to the Mainz starting eleven and names Schwolow only as the bracketed alternative; his matchday history shows him out of the side already, and his value is falling while Zentner's rises. This is no longer the blind fallback earlier runs called it. The sale drops the squad to eleven, which is a legal 3-4-3, and the replacement keeper is already owned, so nothing needs to land first.",
+  "reason": "Schwolow, and only Schwolow. The earlier runs picked him as a blind fallback between the two Mainz keepers; this run has the actual team sheet and it confirms the choice rather than merely guessing it right. He is Mainz's second keeper, he did not play last matchday, his market value is falling, and he is the single body whose sale both clears the deficit and leaves a legal eleven. Do not sell Zentner instead — that was briefly the standing fallback and today's confirmed lineup reverses it.",
   "standing": [
    {
     "name": "Alexander Schwolow",
@@ -201,7 +201,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No buy clears its cost, and the reason is structural rather than a matter of price. This close to a lock only a manager ask can be accepted on demand; a Kickbase board listing runs its timer out and resolves when it expires, which for every listing worth having is after the matchday has already started. Every manager ask currently on the board sits far above the measured manager-ask clearing band, several of them absurdly so. On top of that, any purchase before the lock re-opens the deficit the sale just closed, because the cheapest useful ask costs more than the sale releases. The Robin Koch listing is the one genuine temptation, since it is pitched at market value and resolves before the lock, but winning it would force a forced unwind of a large leveraged position inside two hours and would mean selling a high-scoring midfielder to fund a defender who scores less. It stays on the avoid list, as does the Danny da Costa ask, which the 29.10 preview itself describes as a candidate for the bench.",
+  "reason": "Nothing. No purchase can help this matchday. Only one listing on the board expires before the lock at all, and he is a backup defender who has barely played; swapping one near-certain zero for another, at a cost, is not an upgrade. Every other listing clears after the lock, so it belongs to the next matchday, not this one. The right order is also worth stating: sell first, then consider buying — buying before the sale deepens the deficit the sale exists to clear.",
   "standing": [],
   "killed_this_run": [
    {
@@ -224,11 +224,11 @@
    },
    {
     "name": "Robin Koch",
-    "pos": "DEF",
-    "club": "4",
+    "pos": "",
+    "club": null,
     "ask": 25069754,
-    "mv": 25140004,
-    "premium_pct": -0.28,
+    "mv": null,
+    "premium_pct": null,
     "why": "NEW LISTING THIS RUN AND A TRAP A LATER RUN WILL BE TEMPTED BY — LOG IT SO IT IS NOT RE-DERIVED. Row 2144, Eintracht Frankfurt (tid 4), pos 2 DEF, Kickbase listing, no u, prc = mv = 25.069.754 exactly, ofc 0, mvt 1, st 0, isn true, posted to the board 2026-10-29T09:53:34Z. ON PAPER HE IS EXACTLY WHAT THE SQUAD LACKS: a genuine defender at ap 117 against a back line of ter Horst (79), the doubtful Deman (88) and Nakuzola (27, four straight non-appearances). HE IS STILL A NO, FOR TWO INDEPENDENT REASONS, EITHER OF WHICH IS SUFFICIENT. (1) THE EXPIRY IS THE DISQUALIFIER. exs 111.801 read at 2026-10-29T10:45Z puts resolution at roughly 2026-10-30T17:48Z. THE MD8 LOCK IS 2026-10-30T19:30:00Z — ONE HOUR AND FORTY-TWO MINUTES LATER. Winning a 25.069.754 listing at that moment, on a balance that is leveraged until the Engelhardt and Deman sales clear, leaves under two hours to raise 25M by selling into a market with no time to react. That is precisely the open-leveraged-position-into-the-lock pattern that outranks every other consideration, and a negative balance at matchday start scores ZERO for the entire matchday. (2) THE ENVELOPE DOES NOT REACH HIM ANYWAY. Spending power is 38.954.455 against a floor of -48.256.702, so he is nominally affordable, but the post-unwind position in the Querfeld-wins branch is +3.307.314 at EXACTLY 11 players — there is no bench body to sell and no way back to non-negative after a 25M purchase without dropping to 10 and taking -100. REVERSAL CONDITION: re-open only if he is relisted with an expiry giving at least 12h of clearance before the then-current lock AND the squad has at least 25M of saleable bench above the 11-player floor at that moment. Do NOT re-open him on the strength of the defensive gap alone — the gap is real and is logged separately, and it is still not worth resolving 1,7h before a lock."
    },
    {
@@ -317,11 +317,11 @@
  "movers": {
   "recommendation": "none",
   "window": "closed",
-  "reason": "Flip window closed — the matchday locks too soon for any flip to be opened and unwound safely. The measured next-tick edge on rising-value listings is intact and, if anything, slightly stronger than the figure the playbook quotes, so there is no sign of the edge decaying yet. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap flip throughput; and the fact that the edge is measured in one league over one period and will erode if rivals crowd into it.",
+  "reason": "Flip window closed — the matchday locks well inside the twelve-hour cutoff, and a flip left open across the lock risks the whole matchday for a single daily tick. The measured edge itself is intact and, if anything, slightly stronger than when it was first calibrated: the rising-flag cohort still rises at the next update in roughly nine cases out of ten, and the falling-flag cohort still falls, both on large samples drawn from the event log. So the mechanism has not decayed and rivals have not yet crowded it out. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will erode if the other active traders in this league start bidding market value on the same listings.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Olivier Deman carries a fitness flag, is doubtful for this matchday and was omitted from Werder's probable eleven, but with the squad down to eleven after the sale he is a forced starter and there is no affordable replacement that can land before the lock, so the flag is noted rather than acted on. Nakuzola is likewise absent from Mainz's probable eleven and is likewise unreplaceable this matchday; he did at least play the last one. No other squad member carries a status flag. On the opposition side, Mainz are without Kohr and Silas, with Amiri doubtful.",
+  "sweep": "The Mainz lineup published shortly before this run and it carries one piece of bad news beyond the keeper question: Nakuzola is not in it. He is a fielded defender and will score close to nothing. Deman is the same story from the other direction — he carries an injury flag, his value is falling hard, and he was left out of Werder's probable eleven. Both are locked in. After the Schwolow sale the squad is exactly eleven, so neither can be benched, and no replacement at either position clears the market before the lock. Two likely-zero defenders go into this matchday and nothing can now be done about it.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -588,7 +588,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=989, -4,00% to +443,38%"
+   "v": "n=992, -4,00% to +443,38%"
   }
  ]
 }
