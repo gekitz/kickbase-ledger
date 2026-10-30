@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-30T04:45:25Z",
+ "run": "2026-10-30T06:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 4140872,
   "floor": -48184638,
   "spending_power": 52325510,
-  "hours_to_lock": 14.53,
-  "exposure": "No leveraged position is open and none should be opened before the evening. The balance is positive and the squad is legal, so there is nothing to unwind. The recommended sequence does open a brief deficit — the keeper is bought before the old one is sold, and the defender before the defender — but each is closed within the same minute by the sale that follows it, roughly an hour before the lock. A negative balance costs nothing until the lock instant; what matters is that the two legs are executed back to back and never left split. Order is not optional in either pair: buy first, sell second. Selling first leaves no keeper, or two defenders, in an eleven-man squad — unfillable, for minus one hundred.",
+  "hours_to_lock": 12.62,
+  "exposure": "No leverage is open. Cash is positive, every player is placed, and nothing on the book would open a negative position if executed as written: the two sales raise more than the two buys cost, so the package lands with the balance still positive and the squad still at eleven. The only route to a negative balance at the lock would be funding a flip, which this run rules out for exactly that reason. Both buys are manager asks and so can be accepted in the minutes between the team sheet and the lock; both sales are instant. The sequencing risk is small but real — land the defender before releasing Deman, or the squad dips under eleven.",
   "must_restore_by": "2026-10-30T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The binding gap is the keeper, and it is a decision rather than a shortage. Schwolow and Zentner cannot both be held: a twelfth body cannot be afforded without a sale, and every sale that restores a non-negative balance breaks the only legal formation — selling a defender leaves two, selling a midfielder or a forward leaves a shape that does not exist. So one keeper must be chosen, blind, unless the choice is deferred to the confirmed XI. That is the entire argument for waiting. After the keeper, the second gap is the third defender: with only one replacement affordable, one dead defensive slot survives into the matchday whatever happens.",
+ "binding_gap": "The binding gap is the keeper, not the defence. If Zentner is named this evening, the keeper slot scores nothing unless he is bought, and there is no way to sit the matchday out. The defensive hole behind Deman is real but second in line, because the only replacement that fits within the capital the sales raise is now itself doubtful, and leaving Deman in place costs the same as replacing him with a bench player. Fix the keeper first, then the defender, and only if the sheet supports it.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 52325510,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 34,
+  "listings": 38,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Do nothing yet — and that is an active call, not a quiet run.",
-  "headline_short": "Do nothing yet — and that is an active call, not a quiet run.",
-  "detail": "Do nothing yet — and that is an active call, not a quiet run. Mainz kick off AT the lock, so the official Elversberg–Mainz XI publishes about an hour before it. Four of the five decisions on the book are Mainz decisions, and every one of them resolves on certainty at ~18:35Z instead of on a Thursday-night projection. The previous book pre-committed to selling Schwolow once any 1.000.000 keeper body landed; that is now closed, because it throws away the hour that makes the choice free. Set an alarm for 18:30Z. Until then the squad is legal, the balance is positive, and nothing needs touching."
+  "headline": "Hold everything until the official Mainz XI publishes about an hour before the lock, then execute in one block.",
+  "headline_short": "Hold everything until the official Mainz XI publishes about an hour be",
+  "detail": "Hold everything until the official Mainz XI publishes about an hour before the lock, then execute in one block. Elversberg v Mainz is the Friday evening game, so its team sheet lands just before the deadline — and all four live decisions (sell Schwolow, buy Zentner, sell Deman, buy da Costa) are Mainz decisions that the sheet resolves at a stroke. Both buys are manager asks, which can be accepted instantly, and both sells go back to Kickbase, which is instant too. Nothing is gained by pre-committing this morning and a great deal is lost by guessing wrong. The balance is positive, the squad fields its only legal formation, and no deadline bites before this evening. The decisive run is the one that fires shortly before the lock, after the sheet is out."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Deman replaces Nakuzola as the funding leg, and this reverses the standing book. Both are certain zeros for matchday 8 — Deman injured, Nakuzola unselected — and only one can go, so the points outcome is identical whichever it is. The cash outcome is not: one realises 9,86M, the other 0,5M. Sell the expensive zero, not the cheap one, and shed an asset currently bleeding about 1,6M a day while the 500k body is already at the floor and cannot fall further. Gate is absolute: a replacement defender must be in the squad FIRST, because two defenders has no legal formation at all. Schwolow's sale stands too, but only once the official XI names Zentner — not before. He is not blocked on merit; ap 116 is the best keeper Georg has owned this season.",
+  "reason": "Deman is the clear sale and the premise has not weakened. Two separate 29.10 sources name his replacement rather than him: the Comunio preview lists him under the walking-wounded with a tendon irritation in the foot and says Schmetgens should replace him at left-back, and the Bundesliga.com matchday page gives Werder's back four with Schmetgens in that slot and no mention of Deman at all. Kickbase agrees — he carries an injury flag, his value is falling and the daily and three-hour moves are both negative. But he is a fielded defender, so the sale cannot fire until a defender has landed. Schwolow is the conditional second sale and he is not a sale on merit — he has started the last four matchdays and is the best keeper this squad has owned this season. He only becomes a zero if Zentner is actually named, which is precisely what the evening team sheet settles. If Zentner is not named, keeping Schwolow is the correct outcome, not a failure.",
   "standing": [
    {
     "name": "Olivier Deman",
@@ -200,7 +200,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Zentner is reversed from AVOID to a conditional buy. He was killed earlier on a +38,9% premium while the keeper slot was being treated as a body slot to be filled with a 1.000.000 zero. That framing was wrong — if he starts he is the only points-scoring keeper obtainable before the lock, and the premium buys points rather than a body. All three zero-keeper buys are closed. Open at mv; if it is accept-or-nothing at 18:35Z, pay the ask, because a permanent value loss against roughly 72 points is a trade worth making and the asset still resells at mv. Da Costa stays the defender leg at a bid of mv, never the ask — that ask is four to six times the measured manager-to-manager clearing band and has now stood unsold for 31,5 hours, which by this ledger's own rule invites an offer at mv instead. Two dated sources put him at bench risk, but he has appeared in all five recent matchdays while the man projected to displace him has not played in two — the player with the unbroken run is the better bet.",
+  "reason": "Zentner first, and this run does not disturb the earlier reversal that turned him from a do-not-buy into a conditional buy — the premium is being paid for points, not for a body, and he is the only keeper who both scores and can be obtained before the lock, since the one comparable keeper listing on the board runs its timer out after the deadline. The sources remain hedged in his favour and no further: Comunio has him returning to the starting eleven and back in training, Bundesliga.com says he could return in goal after a long absence, and the agency preview on 29.10 says he may return after recovering from a hand injury. Probable, not confirmed — so wait for the sheet. Da Costa is the defender leg and his bench risk hardened overnight, which is the one real change this run. Bundesliga.com's Mainz eleven now gives the back three without him and with Gruber in that slot, where Comunio keeps him but warns he is a candidate for the bench after shaky recent outings. The tiebreak is the market: a rival bought Gruber outright in the small hours of matchday morning. His place is only eleven days old — he had lost it entirely in late September and was openly discussing a substitute's role before winning it back in mid-October. The bid stays at market value rather than at the ask, because the ask has sat unsold for four days and manager asks in this league clear in the low single digits over value. If the sheet names Gruber, do not buy him: he is then a bench zero, and swapping one zero for another costs capital for nothing. The fallback is to keep Deman and accept the hole — no other defender works, because the only serious alternative ask would push the combined outlay past what the two sales raise and leave the balance negative at the lock.",
   "standing": [
    {
     "name": "Danny da Costa",
@@ -341,11 +341,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip is recommended, and the reason is capital, not mechanism. The mvt-1 edge is intact and has not decayed — measured again this run at +2,90% with 91% of cases rising on a sample of 1.447, above the +2,50% previously recorded, so rivals have not yet crowded the trade out. What kills it today is that the lock falls before the tick. Capturing the tick means holding through it, which means holding through the lock, which means the balance must be non-negative at the lock with the flip capital already spent. So the flip budget on a lock day is cash-at-lock, not spending power. The cheapest listing that qualifies on both mechanism and timing costs more than the cash that will be left after the matchday moves. Four other qualifying listings expire after the tick entirely and could capture nothing at any price. Two open questions stand unresolved: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period.",
+  "reason": "No flip this run, and the reason is capital rather than mechanism. The re-measured tick edge has not decayed — if anything it has strengthened, on a far larger sample than the figure this routine was built on, with rising-flagged players overwhelmingly rising again at the next update and falling-flagged ones falling. The mechanism is intact. What kills it is the lock-day funding rule: the next value update lands after the matchday locks, so a flip would have to be funded from positive cash and held straight through the lock, and the cash on hand does not cover any qualifying listing. Of the board listings that are rising-flagged and priced at market value, most resolve after the update and so capture nothing; the one that resolves in time is far beyond what the cash will fund, and buying it would leave the balance negative at the lock — which scores zero for the entire matchday, not merely a bad trade. The highest-value qualifying listing on the board is in any case already on the do-not-buy list. Two open questions stand, unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will erode if rivals crowd into it. Rivals here already flip the daily tick constantly, injured players included — which for a pure value trade is correct, since fitness does not enter the tick.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Deman is out — a foot tendon irritation, with his replacement named by both dated sources from the 29th, and the market concurring through a sharp markdown. His match falls after the lock, so no official XI will ever confirm it before Georg must act; Werder's Friday training is today and a dated Friday source could still overturn it. Call it 85 percent. The Mainz goal is the opposite case: three sources all lean the same way and not one confirms, and the freshest of the three is the most hedged of all — possibly returns, after a healed hand injury. That hedging matters more than usual here, because the swap is not the near-free trade the earlier book assumed. Da Costa carries a flagged bench risk from two sources, undercut by his own unbroken run of appearances. A rival bought the defender projected to displace him in the small hours, slightly below market value — one manager's read, not evidence.",
+  "sweep": "No squad player is newly injured this run. Deman's injury flag is unchanged and already priced into the standing sale. The one fitness-adjacent change runs in Georg's favour: Bundesliga.com's matchday page puts Hwang in Schalke's probable eleven, contradicting the standing note that had him fit but out of it, which came from a Comunio preview of the same date that simply does not mention him. Neither source flags him unfit and Kickbase is marking his value up. The contradiction cannot be settled before the lock — Schalke play on the Saturday, so their sheet publishes long after the deadline — and the slot could not be changed in any case, so it is irreducible variance rather than a decision. Marius Wolf remains a genuine coin-flip at Augsburg: the 29.10 preview puts Fellhauer ahead of him on the right with the coach to choose between the two, though a rival sold Fellhauer last night, which cuts the other way. Like Hwang he is fielded and unreplaceable, so there is nothing to do.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
