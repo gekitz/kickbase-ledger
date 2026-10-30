@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-30T00:45:00Z",
+ "run": "2026-10-30T03:06Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 4140872,
   "floor": -48184638,
   "spending_power": 52325510,
-  "hours_to_lock": 18.46,
-  "exposure": "No leverage is open and none should be opened. The balance is positive now and stays positive at every step of the ladder if the order is respected. The one way this run goes wrong is Bensebaini clearing without the Schwolow sale behind it, which would leave the balance negative at the lock and score nothing for the entire matchday. That is why the Bensebaini offer must be pulled if Mueller is not won.",
+  "hours_to_lock": 16.39,
+  "exposure": "No leveraged position is open and none is left open by this plan. Buying before selling does open a temporary deficit at the worst point in the sequence, which is amply covered by the floor and unwinds to positive cash even if the defender has to be paid at the full asking price rather than at market value. The one rule that outranks everything: a negative balance when the matchday starts scores zero for the entire matchday, so if any leg fails, stop and reverse rather than pressing on.",
   "must_restore_by": "2026-10-30T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The binding gap is not a position, it is the twelfth body. At exactly eleven players every weak slot is a forced start, so the squad cannot route around a benching, an injury or a disciplinary problem — and it currently has three of those at once. Buying any legal outfield body converts the worst of them into a benching decision. That is the whole argument for paying market value for a player who may not start.",
+ "binding_gap": "The defensive slot held by Nakuzola. He is a floor-value body who has not played in four matchdays, sat on the bench for the cup tie on the twenty-seventh, and appears in neither expected eleven for this match. He is a certain zero that the squad is forced to field. Every other weak slot is contested; this one is not, which is why the entire available budget goes to fixing it and nothing else.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 52325510,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 35,
+  "listings": 33,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 4
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "One action matters before the lock, and it is a cheap one that expires while Georg is asleep: the Florian Mueller offer, due early morning UTC.",
-  "headline_short": "One action matters before the lock, and it is a cheap one that expires",
-  "detail": "One action matters before the lock, and it is a cheap one that expires while Georg is asleep: the Florian Mueller offer, due early morning UTC. He is the only keeper listing on the board that resolves before the matchday locks, and he is the leg that makes the Schwolow sale legal, which in turn is the only thing that funds anything else. Nothing from last night's run has been executed yet — both listings are still open and no offer is showing. The bigger change this run is a reversal: Bensebaini is not a confirmed starter and is no longer the matchday move. The bid stays exactly at market value, but the reason for it has changed from upgrade to bench option, and if Mueller is lost the Bensebaini offer has to be pulled rather than left to clear."
+  "headline": "One structure, four legs, in a fixed order: get a goalkeeper body in, get Da Costa in, then sell Schwolow, then sell Nakuzola.",
+  "headline_short": "One structure, four legs, in a fixed order: get a goalkeeper body in, ",
+  "detail": "One structure, four legs, in a fixed order: get a goalkeeper body in, get Da Costa in, then sell Schwolow, then sell Nakuzola. Sells go last, always — the squad is at exactly eleven, so anything sold before its replacement lands leaves a hole that costs the hundred-point penalty. Three things changed since the last run and all three reverse it. Bensebaini is no longer the defender leg: Ligainsider carries him as angeschlagen with a thigh contusion from the twenty-fifth, and both Comunio and Ligainsider's own club page leave him out of Dortmund's expected eleven. Florian Mueller is demoted from linchpin to free lottery ticket: he is a timed board listing, and this ledger already measured that sub-million filler bodies clear at extreme premiums, so the mv-exact bid is expected to lose. And Da Costa is to be bid at market value, not at the ask — that ask has stood unsold for four days and sits several times above the measured manager-to-manager clearing band. If no defender is in the squad by late afternoon, do nothing at all: keep Schwolow, keep Nakuzola, eat the zero. A sold keeper with no defender landed is the one outcome strictly worse than inaction."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Schwolow is still the right sale and two sources dated yesterday agree on why: Zentner is back and the probable Mainz eleven puts Schwolow behind him. He is a benched keeper on a falling market value, so he bleeds a little every day he is held. The sale is still conditional on a replacement keeper actually being in the squad first — that order is the whole call and it has not changed. Nakuzola is also still a sale, but only once Bensebaini is genuinely in the squad; selling him before that drops the eleven and takes the penalty. Since his market value is at the floor and flat, that sale can wait until after the lock without costing anything.",
+  "reason": "Schwolow first, but only once both the keeper body and the defender are actually in the squad. He is not sold on merit — his scoring average is the best of any keeper in the squad this season and he is fit. He is sold because Zentner has reclaimed the Mainz goal: four dated sources from the twenty-ninth and thirtieth name Zentner and not one names Schwolow, and the one piece of counter-evidence, Fischer saying the first step back would be onto the bench, was discharged by the cup tie on the twenty-seventh in which Schwolow started and Zentner sat on the bench exactly as described. His sale is purely the funding leg for the defender; it buys no points by itself, because his replacement is a certain zero too. Nakuzola goes last, after the defender has landed. The board pays exactly market value with no spread, confirmed fourteen straight times in this ledger.",
   "standing": [
    {
     "name": "Alexander Schwolow",
@@ -184,7 +184,7 @@
     "club": "18",
     "mv": 7875318,
     "ap": 116,
-    "why": "SELL BACK TO THE BOARD AT mv, BUT ONLY AFTER A REPLACEMENT KEEPER IS ACTUALLY IN THE SQUAD. THE ORDER IS THE WHOLE CALL. (1) WHY HE GOES: three dated sources today put Zentner back in the Mainz goal — ligainsider /1-fsv-mainz-05/17/ \"Letzte Aktualisierung Heute 29.10.2026 10:04\" lists Zentner first with Schwolow behind him; magazin.comunio.de \"SV Elversberg - 1. FSV Mainz 05: Voraussichtliche Aufstellungen\", published 29.10.2026 09:30Z and modified 12:16Z, prints the XI as \"Zentner (Schwolow) - da Costa (Gruber), Posch, Potulski - Caci, Lee, Sano, Amiri (Nebel), Mwene - Becker, Tietz\" with the note \"Zentner ist wieder im Training und duerfte in die Startelf zurueckkehren\"; and bundesliga.com \"Voraussichtliche Aufstellungen und Ausfaelle am 8. Spieltag\", 29.10.2026 laufend aktualisiert, names Zentner and does not name Schwolow. He is also mvt 2 with sdmvt -436.609, so holding him costs value as well as points. (2) THE GATE, NON-NEGOTIABLE: the squad is exactly ELEVEN and he is the ONLY goalkeeper. Selling him before a keeper lands leaves ten players and an empty mandatory slot — the -100 penalty plus a dead GK position. He is a FUNDING LEG, and the funding leg moves second. (3) IF NO KEEPER LANDS BY THE 19:30Z LOCK, DO NOT SELL. A benched Schwolow scores about zero; ten men with no keeper scores about minus one hundred. Keeping him is the correct fallback, not a failure. (4) PRICE: the board pays exactly mv with no spread, and after the 29.10 21:00Z tick mv is FROZEN until 30.10 21:00Z, which is after the lock — so from 21:00Z tonight the sale price is a known, fixed number, not a moving one.",
+    "why": "SUPERSEDES S6bn0fp, WHICH IS CLOSED. Same sale, but the GATE IS TIGHTENED AND THE ROUTE TO THE GK BODY HAS CHANGED. INSTANT-SELL TO THE BOARD AT mv 7.875.318, BUT ONLY AFTER BOTH (a) a GK body is ACTUALLY in the squad (Blaswich Bb1oo4e, Grahl B0ljl2f, or Mueller Biqrjx5) AND (b) the replacement DEFENDER is ACTUALLY in the squad (Da Costa Bgger9t). S6bn0fp required only a keeper; that was too loose — selling Schwolow buys ZERO points by itself, because his replacement is a certain zero too. The sale is nothing but the FUNDING LEG for the Nakuzola upgrade, so if the defender never lands the sale must never fire. (1) WHY HE GOES: four dated sources now put Zentner back in the Mainz goal for MD8 and NOT ONE names Schwolow — comunio 29.10.2026 09:30/mod 12:16 Zentner ist wieder im Training und duerfte in die Startelf zurueckkehren with the line reading Zentner (Schwolow); bundesliga.com 8. Spieltag preview 29.10.2026; dpa via news.de 29.10.2026 17:33; and the bundesliga.com LIVETICKER predicted XI for Elversberg-Mainz read 30.10.2026, which is the newest source available. (2) THE COUNTER-EVIDENCE IS DISCHARGED, AND THIS IS THE PART A LATER RUN MUST NOT RE-OPEN: sport1.de 26.10.2026 11:50 quoted Fischer on Zentner's comeback as Ich glaube schon, dass der erste Schritt der auf die Bank ist. That first step HAPPENED — ligainsider 27.10.2026 16:50 gives the actual Bochum cup XI as Schwolow - da Costa, Posch, Potulski; Widmer, Nebel, Kaishu, Lee, Mwene; Tietz, Becker with Bank: Zentner. Zentner sat on the bench in the cup exactly as described; the return path is therefore COMPLETE and MD8 is the return. The Fischer quote is no longer a reason to keep Schwolow. (3) HE IS NOT BLOCKED ON MERIT: ap 116 is the best of any keeper Georg has owned, ph most-recent-first 86/177/66/102/did-not-play, and he is FIT. He is sold on selection only. (4) RESIDUAL RISK, STATED PLAINLY: the CONFIRMED Mainz XI publishes about 60 minutes before the 20:30 CET kick-off, i.e. roughly 18:30Z — about one hour BEFORE the 19:30Z lock. That is too late to buy a defender by auction but NOT too late to abort: if a 30.10 source names Schwolow in the XI before the sale has fired, kill this call. Put P(Schwolow starts) at about 0,20. (5) MECHANICS: the board pays EXACTLY mv with no spread, confirmed 14 consecutive times in this ledger. He is already on the BLOCKED list and the existing reversal conditions stand.",
     "tag": "sell"
    },
    {
@@ -193,26 +193,50 @@
     "club": "18",
     "mv": 500000,
     "ap": 27,
-    "why": "INSTANT-SELL TO THE BOARD AT mv 500.000, BUT ONLY AFTER BENSEBAINI (BUY Brjv7kx) IS ACTUALLY IN THE SQUAD. THE ORDER IS THE WHOLE CALL — this supersedes SELL S6d899r, whose Moeller Wolfe condition never fired. (1) WHY HE GOES: mv 500.000 at the floor, mvt 0, ap 27, and his ph array (most-recent-first per HOLD Hf7pn6a) reads false/false/false/false/31 — four consecutive matchdays not played, one appearance all season. He is Mainz's non-playing body and in an eleven-man squad he is a FORCED fielded zero, exactly as WATCH Wdzy30z warned. (2) WHY NOT BEFORE: selling him first takes the squad to ten and triggers the -100 penalty. (3) PROCEEDS: 500.000 is trivial on its own; the sale matters because it is the slot Bensebaini occupies, not because of the cash. (4) IF BENSEBAINI IS LOST at 12:38Z, this call is VOID — keep Nakuzola, because a ten-man squad costs far more than his zero.",
+    "why": "SUPERSEDES Sks3njx, WHICH IS CLOSED BECAUSE ITS CONDITION NAMED THE WRONG PLAYER. Sks3njx gated this sale on BENSEBAINI landing; Bensebaini is now reversed to an AVOID on dated injury evidence, so that gate can never fire and the call had to be re-specified. INSTANT-SELL TO THE BOARD AT mv 500.000, BUT ONLY AFTER THE REPLACEMENT DEFENDER (Da Costa, Bgger9t) IS ACTUALLY IN THE SQUAD. HE IS THE LAST LEG OF THE FOUR AND MUST NOT MOVE EARLIER — the squad is at exactly ELEVEN and selling him before a defender lands leaves TEN players and a 3-x-x that cannot be filled, for -100. (2) WHY HE GOES, UNCHANGED AND NOW BETTER SOURCED: mv 500.000 at the floor, mvt 0, sdmvt 0, ap 27, ph most-recent-first false/false/false/false/31 — four straight matchdays not played, one appearance all season. New dated confirmation this run: ligainsider 27.10.2026 16:50 lists him on the BENCH for the Bochum cup tie (Bank: Zentner - Nakuzola, Gruber, Caci, Martel, ...), and he appears in NEITHER 29.10 probable XI (comunio, bundesliga.com). wochenblatt-reporter 15.10.2026 18:39 has him signing his first professional contract after coming up from the RW Essen U19 in summer, with Fischer saying Frueher oder spaeter wird er sicher seine Chance bekommen — that chance is not MD8. He is FIT; this is pure squad depth, and in an eleven-man squad he is a FORCED fielded zero exactly as WATCH Wdzy30z warned. (3) HE IS ALREADY ON THE BLOCKED LIST; existing reversal conditions stand. (4) THE 500.000 IS NOT THE POINT — the point is that the slot stops scoring zero. Do not weigh this sale on the cash.",
     "tag": "sell"
    }
   ]
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Mueller first, and the only reason he is worth buying is that he unlocks the Schwolow money — he is a third-choice keeper who will score nothing, and that is the point, because Schwolow will score nothing either. Bensebaini second, at exactly market value and never above it. The case for him is no longer that he scores: yesterday's Dortmund preview leaves him out of the probable eleven and flags a thigh contusion, and Kickbase carries no injury flag at all, so the data alone would have walked into it. The case now is that owning him lets Georg bench a player who is certain to score nothing, with the upgrade coming free if a fresher source puts Bensebaini back in the side, since the lineup is not fixed until the lock. Koch was the one genuinely strong defender resolving in time and he is out of reach on cash. Everything else on the board either expires after the lock, sits above market value as a manager ask, or is a bench player in its own right.",
+  "reason": "The keeper body first, and it should be a manager ask rather than the board auction, because a manager listing has no timer while a board listing runs to expiry and resolves only then. Blaswich and Grahl are both listed by the same manager at the same price, so offer on both — if both land, sell one straight back at market value and treat the loss as the price of certainty. Keep the Mueller bid running as well; it costs nothing if lost. Then the defender: Da Costa, bid at market value rather than the asking price. His starter case is genuinely contested and should be reported as such — Comunio starts him but flags him as a bench candidate after shaky performances, the live matchday page names him, Fischer publicly explained his return to the eleven ten days ago, but the league's own matchday preview omits him and puts Gruber in the back three instead. Call it a little better than a coin flip, which against a certain zero is still a clear gain. Koch is the best defender reachable before the lock and remains unaffordable by a wide margin; Stanisic appears in neither expected Bayern eleven; Gadou is a confirmed starter but costs more than the whole budget; Zentner and Bornauw stay on the avoid list.",
   "standing": [
    {
-    "name": "Ramy Bensebaini",
+    "name": "Danny da Costa",
     "pos": "DEF",
-    "club": "3",
-    "ask": 6246313,
-    "mv": 6246313,
-    "premium_pct": 0,
-    "listing": "Kickbase listing",
-    "why": "SAME BID AS Brjv7kx, DIFFERENT REASON — HE IS A 12TH-MAN OPTION AND A TICK CAPTURE, NOT A POINTS UPGRADE, AND THE ORDER IS THE WHOLE CALL. Bid EXACTLY mv 6.246.313 on the Kickbase board listing (prc=mv, no u, mvt 1, expires 12:38Z). NEVER RAISE — per the measured band a contested Kickbase listing clears +12% to +26% and chasing it destroys the case entirely, which at these odds is the whole trade.\n(1) WHAT IT IS NOT: not a starter buy. comunio 29.10 12:16Z leaves him out of the BVB XI with a thigh contusion (see closed Brjv7kx). Do not field him on this call alone.\n(2) WHY IT IS STILL WORTH mv: (a) LINEUP OPTION — the squad is exactly 11, so Nakuzola (ap 27, ph false/false/false/false/31, a CERTAIN fielded zero) is a FORCED starter. Owning a 12th outfield body lets Georg bench a certain zero for a doubtful, which is strictly positive however small; and if a 30.10 source puts Bensebaini back in the XI, the upgrade is large and free, because the lineup is only fixed at 19:30Z and the auction resolves at 12:38Z. (b) TICK — mvt 1 with the measured next-tick drift at +2,90% (n=1447, 91% rose), and his expiry 12:38Z falls BEFORE the 21:00Z tick, so holding him through the lock captures roughly +181.000 at zero points cost on the bench.\n(3) THE HARD DEPENDENCY, WHICH OVERRIDES EVERYTHING: cash is 4.140.872. The buy is ONLY fundable after Schwolow's 7.875.318 lands, which is ONLY legal after Florian Mueller (BUY Biqrjx5, 500.000) clears at 07:05Z. If Mueller is NOT won, THIS OFFER MUST BE PULLED BEFORE 12:38Z. Winning Bensebaini without the Schwolow sale puts the balance at -2.105.441 and a negative balance at the 19:30Z lock scores ZERO FOR THE ENTIRE MATCHDAY. That risk outranks every point of upside in (2).\n(4) IF IT ALL LANDS: cash 5.269.877 positive, squad 12, fielded 11 in 3-4-3 with Nakuzola benched. Only then is SELL Nakuzola (Sks3njx) safe, and it can wait until after the lock since his mv is 500.000 flat at mvt 0 and the tick cannot erode it.",
+    "club": "18",
+    "ask": 8400000,
+    "mv": 8359305,
+    "premium_pct": 0.49,
+    "listing": "manager ask",
+    "why": "THE POINTS LEG, AND THE BID IS 8.400.000 — NOT THE 10.000.000 ASK. BID AT mv, DO NOT PAY THE ASK. Row 1540, Mainz (tid 18), pos 2 DEF, mv 8.359.305, mvt 1, st 0, ap 75. MANAGER ask by JakobDohr at prc 10.000.000 = +19,63% over mv. (1) WHY NOT THE ASK: the measured manager-to-manager clearing cluster is low single digits (+3,06%, +4,35%); +19,63% is four to six times that band and is the Kickbase-listing cluster applied to the wrong game. Decisive supporting fact: the listing has stood since 2026-10-26T21:16:57Z — FOUR DAYS unsold. JakobDohr's whole book is round-number fishing above mv (Da Costa 10M/8,36M, Neuhaus 10M/7,28M, Reitz-equivalents, Nkunku 29M/26,16M, Gadou 30M/23,63M) and nothing has cleared. A four-day-stale ask is an invitation to offer at mv. 8.400.000 is +0,49% over mv. (2) WHAT HE IS FOR: he replaces NAKUZOLA (ap 27) in the fielded back three. Nakuzola is a certain zero — ligainsider 27.10.2026 16:50 has him on the BENCH for the Bochum cup tie, he is in neither 29.10 probable XI, and his ph is false/false/false/false/31. Any starter is a pure gain on that slot. (3) STARTER EVIDENCE, AND IT IS CONTESTED — REPORT IT AS SUCH: FOR — comunio 29.10.2026 09:30 (mod 12:16) starts him, Zentner - da Costa, Posch, Potulski - ...; bundesliga.com LIVETICKER predicted XI read 30.10.2026 names him; ligainsider started him in the 27.10 cup XI; ligainsider 23.10.2026 headline Fischer erklaert da Costas Startelf-Rueckkehr, and Fischer 19.10.2026 12:14 Ich wollte mit da Costa und Poschi in der Mitte etwas mehr Erfahrung auf den Platz bekommen. AGAINST — bundesliga.com 8. Spieltag preview 29.10.2026 OMITS him and puts Gruber in the back three; comunio itself flags him as ein Kandidat fuer die Bank after zuletzt wackeligen Auftritten. Call it roughly 60/40 to start. (4) FITNESS CLEAN: ligainsider profile Fit, 2026/27 0% Verletzt/Gesperrt, absent from the league-wide table (Mainz entries only Kohr and Silas), contract to 2027, no transfer rumour. Note the quarantined trap: ligainsider da Costa items dated 10.05. and 14.05.2026 carry Angeschlagen icons and are LAST SEASON. (5) ORDER IS THE WHOLE CALL: he must be IN THE SQUAD before Schwolow or Nakuzola is sold. See SELL calls. (6) IF THE OFFER IS NOT ACCEPTED BY ~17:00Z: do nothing else. Keep Schwolow, keep Nakuzola, take the zero on the Nakuzola slot. A sold Schwolow with no defender landed is the one outcome that is strictly worse than inaction.",
     "rank": 1,
-    "trigger": "2026-10-30T12:38:00Z"
+    "trigger": "2026-10-30T19:30:00Z"
+   },
+   {
+    "name": "Jens Grahl",
+    "pos": "GK",
+    "club": "4",
+    "ask": 1000000,
+    "mv": 500000,
+    "premium_pct": 100,
+    "listing": "manager ask",
+    "why": "SECOND GK BODY, RUN IN PARALLEL WITH BLASWICH — REDUNDANCY IS DELIBERATE, NOT A DUPLICATE CALL. Row 357, Eintracht Frankfurt (tid 4), pos 1 GK, mv 500.000, MANAGER ask prc 1.000.000 = +100,00%, mvt 0, st 0, seller Borussia Rumpelfuss, listed 2026-10-29T11:08:49Z. Identical economics to BUY Blaswich. (1) WHY TWO: the whole Schwolow structure is gated on a GK body actually landing, and every route to one has counterparty or auction risk — Mueller is a timed board auction expected to lose per H7ma3ou, and a manager ask needs the seller to accept. Both bodies are listed by the SAME manager (Borussia Rumpelfuss), so one acceptance decision may well carry both; that is a reason to offer on both, not a reason to pick one. (2) IF BOTH LAND: sell the surplus body back to the board at mv 500.000 immediately. Cost 500.000. Do NOT let a surplus body sit at the lock — it is a twelfth man that costs nothing in points but does consume balance headroom. (3) HE IS A CERTAIN ZERO: ligainsider eintracht-frankfurt/3 page (26.10.2026 17:55) has Grahl in the squad only and NOT in the probable XI, with Atubolu in goal; bundesliga.com 29.10.2026 gives SGE as Atubolu - Baum, Koch, Brassier, Kosugi with Grahl unmentioned; he is absent from the ligainsider league-wide Verletzte-und-Gesperrte table (Frankfurt's only entry is Ngankam). (4) INSTRUMENT WARNING FOR A LATER RUN: Grahl's ligainsider PLAYER PROFILE (jens-grahl_727) renders LAST SEASON — its newest items are 21.04. to 13.05.2026, and a 30.04.2026 comunio preview carries a Grahl Oberschenkelverletzung line. That injury is NOT current. This is AVOID Afx3o02's failure mode hitting a second player; use the CLUB page and the league-wide table, never the profile.",
+    "rank": 2,
+    "trigger": "2026-10-30T19:30:00Z"
+   },
+   {
+    "name": "Janis Blaswich",
+    "pos": "GK",
+    "club": "7",
+    "ask": 1000000,
+    "mv": 500000,
+    "premium_pct": 100,
+    "listing": "manager ask",
+    "why": "GK BODY, AND IT REPLACES THE MUELLER AUCTION AS THE PRIMARY ROUTE — THIS IS THE LEG THAT MAKES THE SCHWOLOW SALE LEGAL. (1) WHAT IT IS: MANAGER ask, row 4, Bayer Leverkusen (tid 7), pos 1 GK, mv 500.000 (the floor), prc 1.000.000 = +100,00%, mvt 0, st 0, seller Borussia Rumpelfuss, listed 2026-10-29T11:08:42Z so 15,6h unsold at this run. (2) WHY HE REPLACES Biqrjx5 AS PRIMARY: Mueller (1910) is a KICKBASE board listing, and per WATCH Wm6cnm8 a board listing cannot be won on demand — it runs its timer to 07:05Z and only then resolves. Worse, HOLD H7ma3ou measured that SUB-1M FILLER BODIES CLEAR AT EXTREME PREMIUMS (Schnitzer 12263 cleared 1.300.000 against mv 528.543 = +145,96%), so the mv-exact 500.000 bid on Mueller is EXPECTED TO LOSE by this ledger's own measurement. A manager ask has no timer and can resolve the moment the seller accepts. Keep the Mueller bid open — it costs nothing if lost — but do not plan around it. (3) WHY THE +100% IS NOT A REASON TO REFUSE: H7ma3ou establishes 1.000.000 IS the clearing price for a floor-value body; the premium band for real players does not apply to filler. The 500.000 of burn is the insurance premium on the entire four-leg structure. (4) HE IS A CERTAIN ZERO AND THAT IS THE POINT: ligainsider janis-blaswich_1685 Fit icon, 2026/27 ZERO Bundesliga appearances and 7 times on the bench; Flekken is the league keeper (profile news 28.08.2026 and 15.09.2026); bundesliga.com 8. Spieltag preview 29.10.2026 gives B04 as Flekken - Quansah, Tapsoba, Medina, Gutierrez - ... with Blaswich unmentioned. He is not on the ligainsider league-wide Verletzte-und-Gesperrte table and has no departure news. (5) PARALLEL LEG: offer on Grahl (357) at the same 1.000.000 too — see the companion call. If BOTH land, sell one straight back to the board at mv 500.000 for a 500.000 loss; that is the correct price of certainty here and must not be treated as an error. (6) NOTE THE COUNTERPARTY RISK HONESTLY: a manager ask resolves when the SELLER accepts, which is not instant and not guaranteed. It is strictly better than a timed auction, not a sure thing.",
+    "rank": 3,
+    "trigger": "2026-10-30T19:30:00Z"
    },
    {
     "name": "Florian Müller",
@@ -223,11 +247,20 @@
     "premium_pct": 0,
     "listing": "Kickbase listing",
     "why": "GK BODY, NOT A POINTS BUY — THIS IS THE LEG THAT MAKES THE SCHWOLOW SALE LEGAL. (1) WHAT IT IS: Kickbase board listing, pid 1910, Freiburg (tid 5), prc 500.000 = mv = the floor, mvt 0, st 0, expires 2026-10-30T07:05Z. He is Freiburg's third keeper — bundesliga.com's 8. Spieltag piece (29.10.2026) projects Backhaus in the Freiburg goal — so he scores ZERO. That is the point: Schwolow also scores zero now that Zentner has reclaimed the Mainz goal, so swapping a benched 7.875.318 keeper for a benched 500.000 keeper converts 7.375.318 of dead, FALLING capital (Schwolow mvt 2, sdmvt -1.028.566/day) into cash at no points cost. (2) WHY IT IS A PREREQUISITE, NOT AN OPTION: the squad is at exactly eleven, so SELL S6bn0fp (Schwolow) may only fire once a replacement keeper is actually in the squad, and without the Schwolow proceeds the Bensebaini buy (BUY Brjv7kx) cannot be unwound to a non-negative balance by the lock. (3) EXPECT TO LOSE THIS AT mv. HOLD H7ma3ou is explicit that sub-1M filler bodies clear at extreme premiums and that an mv-exact bid cannot win them. Bid mv anyway — it costs nothing — but treat the loss as the base case and fall back to the 1.000.000 manager asks from Borussia Rumpelfuß on Blaswich (pid 4) or Grahl (pid 357). At 1.000.000 the whole structure still clears positive. (4) IF NO SUB-1M GK CAN BE SECURED AT ALL by roughly 17:00Z, do NOT sell Schwolow. Fund Bensebaini by selling Deman (7282, mv 9.858.342) instead — balance +7.752.901, squad 11, back line ter Horst / Nakuzola / Bensebaini, still a legal 3-4-3.",
-    "rank": 2,
+    "rank": 4,
     "trigger": "2026-10-30T07:05:00Z"
    }
   ],
   "killed_this_run": [
+   {
+    "name": "Ramy Bensebaini",
+    "pos": "DEF",
+    "club": "3",
+    "ask": 6246313,
+    "mv": 6246313,
+    "premium_pct": 0,
+    "why": "REVERSES BUY Bex5myi AND BUY Brjv7kx, BOTH NOW CLOSED. REPORT THE REVERSAL PLAINLY — he was the designated defender leg on the 00:45Z book and he is now a do-not-buy. (1) THE NEW DATED EVIDENCE, WHICH NO PREVIOUS RUN HAD: ligainsider ramy-bensebaini_7791 carries the ANGESCHLAGEN status icon with Muskelprellung Oberschenkel and an out-6-days window, from a 25.10.2026 item saying he finished the Frankfurt match carrying the injury; comunio 29.10.2026 lists him among BVB's injured with Muskelprellung im Oberschenkel and gives the XI as Kobel - Gadou, Anton, Schlotterbeck - Ryerson, Veerman, Nmecha, Svensson - Sabitzer, Beier - Guirassy, i.e. WITHOUT him; and the ligainsider borussia-dortmund/14 club page, last updated 29.10.2026 14:53, has him in the squad but NOT in the probable XI, with Gadou in his place. Only bundesliga.com's 29.10.2026 preview starts him, and it is the outlier of three same-day sources. Note his Kickbase st is 0 — the Kickbase status flag MISSED this one, which is itself worth logging: a clean st is not evidence of fitness. (2) THE ROTATION PROBLEM, INDEPENDENT OF THE INJURY: ligainsider gives him 3 Bundesliga appearances in 2026/27 — ONE start, two as sub, 124 minutes in seven matchdays. His Kickbase ap 90 sits on p 269 over three appearances and is not a starter's sample. He was ruled out on 04.09.2026 and his role was called unklar on 10.09.2026. (3) THE TICK-CAPTURE RATIONALE IS ALSO DEAD, AND SEPARATELY SO: the listing resolves at 12:38Z but the next market-value update is mvud 2026-10-30T21:00:00Z, AFTER the 19:30Z lock. Capturing it means holding him THROUGH the lock, which means 6.246.313 of positive balance tied up at matchday start — and that balance is exactly what the Da Costa leg needs. So even a free mv-exact bid is now ACTIVELY HARMFUL: winning it breaks the points structure. DO NOT PLACE IT. (4) NO TRANSFER RISK FOUND and he is not blocked on merit for a later cycle — re-open only on a dated source clearing the thigh injury AND a dated BVB XI that actually starts him."
+   },
    {
     "name": "Robin Zentner",
     "pos": "GK",
@@ -236,15 +269,6 @@
     "mv": 5759830,
     "premium_pct": 38.89,
     "why": "REVERSES BUY B6x5myj, WHICH IS NOW CLOSED. He was the fallback leg of a keeper ladder whose first leg (Heuer Fernandes) no longer exists, so the ladder would ordinarily promote him. It must not. (1) THE PRICE: PhiL95 asks 8.000.000 against mv 5.759.830 = +38,90%. The measured manager-ask clearing band in this league is +3,06% to +4,35%, so this is roughly NINE TIMES the band. Per the briefing rule, a manager ask is benchmarked against the LOW cluster, never the Kickbase high cluster, and this one fails it by an order of magnitude. (2) THE REAL OBJECTION IS CAPACITY, NOT MERIT: he genuinely is the keeper displacing Schwolow and he genuinely would start. But unwind capacity is cash 4.140.872 plus the only two sellable dead slots, Schwolow 7.875.318 and Nakuzola 500.000 = 12.516.190. Zentner 8.000.000 plus Bensebaini 6.246.313 = 14.246.313, which lands at -1.730.123 AT THE LOCK. A negative balance at matchday start scores ZERO for the entire matchday, so the pair is forbidden and one of them must go. (3) WHY BENSEBAINI AND NOT ZENTNER: Bensebaini ap 90 replacing a forced zero is a larger swing than Zentner ap 72 replacing a forced zero, he is priced at exactly mv rather than +38,90%, and he leaves 5.769.877 on the balance instead of 4.016.190. On points per euro it is not close. (4) REVERSAL: only if the Bensebaini auction is LOST at 12:38Z AND the ask drops to at or below roughly mv +5%. At 8.000.000 he is never the move, even keeperless."
-   },
-   {
-    "name": "Fabio Gruber",
-    "pos": "DEF",
-    "club": "18",
-    "ask": 6863632,
-    "mv": 6666753,
-    "premium_pct": 2.95,
-    "why": "REVERSES WATCH Wefyb53, WHICH DESIGNATED HIM \"THE FALLBACK DEFENDER IF THE COLLINS AUCTION IS LOST AT 18:08Z\". REPORT THE REVERSAL PLAINLY. HE IS NOT A STARTER AND THE ap 94 IS STALE. (1) THE ap IS BUILT ON MATCHDAYS HE NO LONGER PLAYS: row 10122 ph, read most-recent-first per HOLD Hf7pn6a, is dnp / dnp / 0 / 118 / 34. HE DID NOT APPEAR ON MD7 OR MD6. The 94 average is carried entirely by a 118 on MD4. (2) CORROBORATED EXTERNALLY: ligainsider /fabio-gruber_26579/ shows him FIT (0 minutes verletzt/gesperrt in 26/27, no cards) with 5 Bundesliga starts AND TWO BUNDESLIGA BENCH APPEARANCES - those two bench games are MD6 and MD7 and they line up exactly with the ph gap. magazin.comunio.de \"SV Elversberg - 1. FSV Mainz 05\", 29.10.2026 09:30Z mod 12:16Z, gives the Mainz XI as Zentner; da Costa, Posch, Potulski; Caci, Lee, Sano, Amiri, Mwene; Becker, Tietz and puts GRUBER IN PARENTHESES BEHIND DA COSTA - a bench option. ligainsider /1-fsv-mainz-05/17/, updated 29.10.2026 10:04, leaves his status open and does not place him in the XI. (3) THE MARKET SAYS THE SAME: mvt 2 (falling), tfhmvt -238.188, cv 7.300.000 ABOVE mv 6.863.632. A cheap value next to a big average is the exact trap STEP 5 names - the market knows he lost his place. (4) THE NAME TRAP IS REAL BUT IRRELEVANT TO THE VERDICT: the BLOCKED list carries row 10122 as \"Leon Gruber - SOLD AND SETTLED\", Kickbase now renders him \"Fabio Gruber\", and both are pid 10122, the same man. That block's hard bar (\"do NOT buy back before the 2026-10-16T18:30Z lock\") has expired, so the block no longer stops a re-buy - but this AVOID does, on starter grounds, which is a different and stronger reason. (5) HE IS FIT, so a pure value flip on him is not barred by fitness - but he is mvt 2, the wrong side of the measured tick (mean -2,99%, 14,9% rose), so he is not a flip either. REVERSAL: a dated Mainz XI from 30.10.2026 or later that actually starts him, AND an ask at or below mv."
    },
    {
     "name": "Robin Koch",
@@ -341,11 +365,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window stays shut on the tick-versus-expiry test, not the twelve-hour rule. Every rising board listing other than Bensebaini either resolves after tonight's market-value update, costs more than the funding ladder can raise, or is on the blocked list. Bensebaini is the single exception and he is being bought for the lineup anyway, so he is not a separate trade — the rising flag simply means holding him past tonight's update adds a little on top at no cost on the bench. The measured next-tick edge on rising players has not decayed since it was first measured; if anything it firmed as the sample grew, which is worth re-checking each run rather than assuming. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will erode if the other managers crowd into it.",
+  "reason": "No qualifying candidate, but the standing reason was wrong and has been corrected in the ledger. Previous runs held that a tick landing after the lock closes the flip window outright. It does not — it only removes leverage, because a position held through the lock must be funded entirely from cash on hand rather than unwound beforehand. Holding a cash-funded buy through the lock is legal, keeps the squad above the minimum, and captures the tick in full. Applied here the answer is still no, but on affordability: only three rising board listings resolve before the next tick and every one of them costs more than the cash on hand, while everything cheap enough to fund is flat or falling. The measured edge itself has not decayed — the rising-flag drift has strengthened slightly on a sample roughly three times larger than the figure this task was originally calibrated on, and the falling flag remains a mirror-image loss. Two questions stay open: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will erode if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Three fielded slots are now selection risks and none of them can be fixed, because there is no bench. Nakuzola has not played in four straight matchdays and is a certain zero. Hwang is fit but absent from the probable Schalke eleven on both current sources, with a disciplinary story from yesterday about pushing the fourth official and a physio aside after the cup defeat — no sanction announced, consequences open. Wolf is a straight coin flip with Fellhauer for the right-hand slot and the newest source leans against him. Deman is still the Friday question: he trained with the team on Thursday in pain and the final session decides whether he returns to the squad at all, which at best makes him an option rather than a starter. Gregoritsch is in his eleven but bracketed with Ribeiro. Nusa, Tanaka, ter Horst and Gruell are all confirmed in their probable elevens and need no further checking this cycle.",
+  "sweep": "Five of the eleven forced starters are selection risks, the worst concentration this season, and only one of them can be fixed. Nakuzola is a certain zero. Schwolow is roughly one chance in five to start. Hwang is fit but contested — Comunio leaves him out of Schalke's eleven while the league preview starts him, and there is a new dated item: he lost his temper at the cup exit, shoved the fourth official and pushed a physiotherapist away, and his coach has announced a talk with him. No sanction has been announced, so treat it as a selection risk and not a suspension. Wolf is fit but leaning towards the bench, with the preview calling it an open decision between him and Fellhauer. Deman trained at reduced intensity and his coach expects him back in the squad as an option rather than in the eleven, with a replacement named at left back in both previews. Clean and confirmed starters, needing no further checking: ter Horst, Gruell, Nusa, Tanaka, Gregoritsch and Guirassy. One timing note that matters more than it looks: the confirmed Mainz eleven publishes about an hour before the lock, which is too late to buy a defender by auction but not too late to abort — if it names Schwolow, kill the sale.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -606,7 +630,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=980, -4,00% to +443,38%"
+   "v": "n=983, -4,00% to +443,38%"
   }
  ]
 }
