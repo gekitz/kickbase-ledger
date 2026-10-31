@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-31T02:54Z",
+ "run": "2026-10-31T04:54Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 6116190,
   "floor": -48213914,
   "spending_power": 54330104,
-  "hours_to_lock": 160.59,
-  "exposure": "No leveraged position is open. The balance is positive and the squad is at the minimum legal size, so nothing is at risk at the next lock as things stand. Both open calls would open a deficit if they land, and both are unwindable: the flip sells back to the market at value after the tick, and the funding sale covers the purchase with cash to spare, leaving a legal shape and the minimum body count. There is a long runway to the next lock, far more than needed, so the sequencing is comfortable rather than tight. The one thing to protect is the order — the purchase must land before the funding sale is made, and that sale must wait for tonight's match to finish.",
+  "hours_to_lock": 158.59,
+  "exposure": "The balance is positive right now and nothing is leveraged. That changes tonight if the bid lands. A winning auction opens a deficit that must be closed before the next matchday locks, and if the flip also lands the deficit is larger still and sits very close to the spending floor with almost no headroom left until the unwind begins. This is the single thing that outranks every other consideration on the page: a negative balance when the matchday starts scores zero for the entire matchday. The unwind is two sales, both available well inside the window — the funding sale from the moment the auction resolves, the flip sale once it has captured the tick it was bought for. Neither is tight on time. The discipline required is simply not to spend the headroom on anything else in the meantime.",
   "must_restore_by": "2026-11-06T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Defence, and specifically the defensive slot held by a player who has never appeared. That is what the Upamecano purchase is aimed at, even though the funding structure means it relieves the gap rather than closing it. Removing the non-playing body outright is a separate and currently unfunded problem — it needs an extra real defender bought and held, which this balance cannot carry until the funding sale has settled. Deman's doubt makes the same gap thinner still.",
+ "binding_gap": "Defence, and it is not close. The eleven fields three defenders, of whom one is nursing a tendon problem and one has never played a minute. The open bid is the direct fix and it is the only one on the board at this quality. Nothing else in the squad needs money spent on it — the midfield is the strongest line and the attack is covered even after the funding sale, because the squad reshapes to a four-at-the-back formation and drops the lowest-scoring forward rather than a defender.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 54330104,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 21,
+  "listings": 23,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -170,18 +170,28 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Nothing has changed in the two hours since the last run, and that is the finding: both open calls are still live, still unexecuted, still correctly priced.",
-  "headline_short": "Nothing has changed in the two hours since the last run, and that is t",
-  "detail": "Nothing has changed in the two hours since the last run, and that is the finding: both open calls are still live, still unexecuted, still correctly priced. The Upamecano bid stands and its premise was re-verified tonight against two fresh dated sources. The El Khannouss flip stands and still fits beside it. The one genuinely new item is medical, not financial — Deman."
+  "headline": "Hold the course and execute tonight.",
+  "headline_short": "Hold the course and execute tonight.",
+  "detail": "Hold the course and execute tonight. Nothing in the live data contradicts the standing plan, and the one piece of evidence that was missing has now arrived: a dated Bundesliga XI putting Upamecano in Bayern's back four for today's Klassiker. The bid on him stays, the single sized flip stays, and the funding sale is now written down as an actual SELL call rather than a footnote. No reversals this run."
  },
  "sell": {
-  "recommendation": "none",
-  "reason": "No sale is recommended for execution right now, and that is deliberate rather than passive. Guirassy remains the designated funding leg and nothing else in the squad is both large enough to clear the deficit a purchase would open and expendable without collapsing the formation. Two conditions gate him and both are still shut: he starts the Klassiker for Dortmund this evening, so selling before that match finishes forfeits his matchday outright, and the standing rule is that he may only go after the Upamecano purchase has actually landed, not merely after it is bid. Those two gates open in the right order on their own — the match ends first, the auction resolves afterwards. If the purchase lands, sell him then; if it does not, keep him and the question disappears.",
-  "standing": []
+  "recommendation": "act",
+  "reason": "One conditional sale, and it is conditional on three things at once: the Upamecano auction clearing in our favour, Dortmund's Klassiker being over so his points are banked, and tonight's market-value tick having landed so the board pays the higher figure. All three are satisfied the moment the auction resolves, which is the correct and earliest execution window. He is fit and starting — this is a price-per-point sale, not an availability sale, and he is the only body on the roster large enough to unwind the deficit on his own inside the single sale the squad minimum permits. If the auction is lost, this call is void and he is kept; selling him alone would leave the side a player short.",
+  "standing": [
+   {
+    "name": "Serhou Guirassy",
+    "pos": "ATT",
+    "club": "3",
+    "mv": 33440788,
+    "ap": 124,
+    "why": "MAKES THE GUIRASSY FUNDING LEG AN ACTUAL SELL CALL. Until now it existed only inside WATCH notes (Wzqqgrf, sharpened by Wxxspfe), and because kb_context ranks SELL first, a note was the one place it could not be seen. CONDITIONAL — DO NOT EXECUTE UNLESS ALL THREE HOLD: (1) the Upamecano bid Bzm1g4f actually WINS at the 2026-10-31T22:14Z expiry; if it loses, this call is void and Guirassy is kept, because selling him without the replacement drops the squad to TEN and costs -100; (2) MD8 is over for Dortmund — they play Bayern TODAY 2026-10-31 at 17:30Z, so a sale before that forfeits his whole Klassiker return (Wxxspfe); (3) the 21:00Z tick has landed — he is mvt 1 with sdmvt +130.968, instant sale to Kickbase pays EXACTLY mv (Matsima, Bernardo, Jeltsch, Gruber all confirm it), so selling after the tick is free money against selling before it. EARLIEST CORRECT MOMENT: 2026-10-31T22:14Z, immediately after the auction resolves in our favour — all three conditions are satisfied at that instant. WHY HIM AND ONLY HIM: a 38.000.000 clear puts the balance at -31.883.810 and the squad at TWELVE, so exactly ONE sale is permitted before the MD9 lock (11-player minimum) and it must raise at least 31.883.810 on its own. Guirassy at 33.440.788 is the ONLY squad body that clears that bar alone — Nusa is 30.326.365 and falls short, and he is also the highest-ap player on the roster (165). POINTS MATH (W6i8opb): Upamecano ap 176 in, Guirassy ap 124 out = +52 ap/MD, and Nakuzola SURVIVES the swap because the squad reshapes 1GK/4DEF/4MID/2ATT = 4-4-2, dropping Hwang (ap 30) from the XI rather than Nakuzola. NEWS VERIFIED THIS RUN: thefalse9 29.10.2026 15:11 names Guirassy leading the line in Kovac's predicted XI at Bayern, no injury doubt — he is fit and starting, which is precisely why the sale waits for his points.",
+    "tag": "sell"
+   }
+  ]
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Upamecano is the buy and the case is now stronger than when it was written. Two independent sources dated inside the last forty-eight hours put him at centre-back beside Tah for the Klassiker, and he is absent from the league-wide injury table. The Ligainsider graphic that benches him is the rotated cup side, exactly as the ledger already warned. The bid is held where the last run set it, above every contested board clear this ledger has measured except the three outliers. One correction to the case, and it matters: buying him does not evict Nakuzola. Because the funding sale is Guirassy and the resulting shape still requires four defenders, Nakuzola keeps his slot and the real exchange is Upamecano in for Guirassy out. That is still clearly worth doing over the rest of the season, and it swaps a striker for a Bayern centre-back with a steadier floor, but it is a smaller gain than the raw comparison against Nakuzola implies and no future run should quote the larger number. There is a raise window worth knowing about: the market value tick lands before the auction expires, which lifts team value and therefore spending power, so if the flip has already resolved by then the bid can be lifted in that last hour with headroom that does not exist right now.",
+  "reason": "The primary buy is unchanged and the case for it is now affirmative rather than merely trap-free. Previous runs defended it by disarming two bad sources — a cup rotation XI read as a benching, and an injury item from the same date two years earlier. This run has a dated Bundesliga preview naming him as a starting centre-back, with the only doubts in the piece attached to other players. He replaces the non-playing defender in the eleven by arithmetic and lifts the weakest line on the team. The bid sits well above market value, deliberately: this is a contested board listing for a marquee defender, and the low end of the premium band belongs to manager asks, not to rows like this one. The honest counterweight is our own bidding record, which shows a habit of overpaying on exactly this kind of row. The second-most tempting row on the board remains an explicit avoid and nothing has changed about it.",
   "standing": [
    {
     "name": "Dayot Upamecano",
@@ -310,11 +320,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip mechanism is intact and was re-measured from the log this run rather than assumed; the rising-flag edge is holding at close to its long-run level with the same strong hit rate, and the falling flag continues to predict the opposite. Two listings cleared every gate tonight. Chabot is the larger of the two and expires before the tick, so he would capture it — but he does not fit under spending power alongside the standing Upamecano bid, and taking him would force that bid down below every contested clear on record. He is correctly declined, and the rule is worth stating plainly: rank flips only among those that fit under spending power minus the standing points bid, because the value trade never reprices the points trade. El Khannouss fits with room to spare, resolves well before the tick, is not on the injury table, and carries no transfer risk — his move to Stuttgart was made permanent and the winter window is not open. He remains the right flip. Both open questions stay open: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
+  "reason": "Two listings clear every flip gate, and only one of them fits beside the points trade — the same one the last run sized, for the same reason. The larger of the two is the better flip on its own merits and is still correctly declined, because taking it would breach spending power with the main bid live. The bid is exactly market value and must not be raised: the whole edge is that losing the auction costs nothing, and chasing a contested row into the high premium band destroys ten good flips at once. The gate that matters is expiry against tonight's tick — a listing that resolves after it cannot capture the move the rising flag predicts. One caution carried forward: a single tick measured live two nights ago held its direction but delivered a fraction of the log-wide magnitude on the upside, so treat the expected gain as a ceiling rather than a forecast.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Deman is the new item and it reverses a previous conclusion. An earlier run judged the whole Deman news cluster to be last-season material and treated his Kickbase injury flag as stale. That judgement is wrong. His club beat reported, two days ago and quoting the coach directly, that he has a tendon problem under the foot severe enough that he could not run properly, that he was substituted at halftime in Mainz because of it, and that he missed the cup tie at Dortmund entirely because playing him was judged too risky. His availability for today's match is an open late call decided by a training test. The instruments were not noise after all — his injury flag is accompanied by a single-day market value collapse many times the normal falling-flag move, and a drop that size is the market pricing a real absence. Note also that the league-wide injury table does not list him at all, so sweeping that table clean is not sufficient to clear a squad player who is carrying an injury flag. None of this is actionable today, because the matchday is locked and there is no bench, but it needs re-checking before the next lock: he is one of only three defenders and one of the other two does not play. Everyone else in the squad is clear of the injury table, and Guirassy and Upamecano are both confirmed starting this evening.",
+  "sweep": "The injured defender in the eleven is the live concern. The newest dated source has him training with the team for the first time but at low load and still in pain, with the coach saying plainly that he will not be pain-free and that a squad return is the best case — a substitute appearance, not a start. His market value is being marked down harder than anyone else's in the squad, which is the market agreeing. He stays in the eleven today because there is no bench to move him to, not because he is judged fit. He is not a sale today: selling forfeits whatever he scores and leaves the side short. Re-check him once this matchday closes; if he did not appear at all he becomes the leading sale candidate for the next cycle, and only behind a replacement that lands first. Everyone else in the squad is clean. Both sides of the Klassiker check out: the defender we are bidding on starts, the striker we intend to sell starts.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -478,12 +488,6 @@
    "reversal": "Do NOT buy him back before the 2026-10-16T18:30Z lock under any circumstances. The squad is at exactly ELEVEN: a re-buy is a net addition fundable only from 154.435 of cash, i.e. only by going leveraged again, which re-opens the exact zero-matchday risk this sale just closed; and funding it with a sale drops the squad to TEN for -100. He is NOT blocked on merit and no future run may cite this block as a fitness or selection objection — he was a funding leg, nothing more. After the lock, reverse ONLY if ALL of: (a) the ask is AT OR BELOW mv, since the instant sale paid exactly mv and buying back above it is a guaranteed loss; (b) a dated Schalke XI at that time actually starts him; (c) his ap still clears the marginal-points test against the defender he would displace in the fielded four; and (d) the balance is non-negative with genuine room above the 33% floor after the purchase."
   },
   {
-   "name": "Serhou Guirassy",
-   "status": "1920",
-   "why": "THE VOID CONDITION OF THE 2026-10-15T18:45Z ENTRY HAS FIRED — SELL Syvz0x1 IS DEAD AND GUIRASSY IS NOT FOR SALE. That entry made the sale CONDITIONAL on winning the Upamecano board auction (expiry 2026-10-15T19:27Z) and said in terms: if that auction is LOST, the block carries NO force and Guirassy stays. get_squad at 2026-10-15T22:45Z shows Upamecano is NOT in the squad and Guirassy IS, so the auction was lost and the condition is discharged. He is a fielded ATT, st 0, ap 146, mv 33.179.164, mvt 1, sd +230.498, and he is NOT on the 15.10 Ligainsider injured/suspended table. Note also AVOID Ass1gel: the goal.com Guirassy injury story is 07.08.2024 and must not be read as current. He is the second-highest ap in the squad behind Nusa 193 and the squad is at exactly ELEVEN, so selling him would drop the squad to ten and cost -100 unless a matching buy lands first — and the 22:45Z sweep (AVOID Akgz6sj) establishes that no buy is possible before the MD6 lock.",
-   "reversal": "THIS BLOCK CARRIES NO FORCE AS A SELL INSTRUCTION — it exists only to cancel the stale conditional sale, and no future run may cite it as a reason to sell him or as a reason not to re-buy him. He is owned, fit and kept. If he ever does leave the squad, judge any re-purchase on ordinary merits: an ask AT OR BELOW mv, a dated Dortmund XI at that time that starts him, and a purchase that unwinds to a non-negative balance and at least 11 players before the lock."
-  },
-  {
    "name": "Manuel Neuer",
    "status": "237",
    "why": "RECOMMENDED FOR SALE as the near unwind leg of a -24.116.453 leveraged position (SELL Sh4uvn9, instant-sell at mv 9.636.042 before the 2026-10-19T20:00Z tick). He is a pure funding asset, not a points loss: ap 121 equals Schwolow's ap 121, only one GK is ever fielded, Schwolow is the confirmed Mainz starter with Zentner in Aufbautraining for a further month, and Neuer is the doubtful one. He is also mvt 2 with sdmvt -3.499.218, i.e. a falling asset, and OUT injured with no return date (fcbinside.de 18.10.2026: missed MD6 and the Viking Stavanger tie, \"bisschen Fluessigkeit im Fuss\", Eberl non-committal about the 21.10 Arsenal tie). Buying him back would re-open the exact zero-matchday risk the sale exists to close.",
@@ -560,6 +564,12 @@
    "status": "620",
    "why": "Recommended for sale to the board (SELL Sgsq63r, re-affirmed 30.10 16:45Z) at mv 7.875.318 to clear the -1.759.128 deficit before the MD8 lock. He is Mainz's SECOND keeper as of MD7: his ph for MD7 reads hp false (did not play) while Zentner's reads hp true p 40, and comunio's 29.10.2026 probable XI names Zentner with Schwolow only as the bracketed alternative. His mv is falling (mvt 2, sdmvt -1.028.566, tfhmvt -384.388) while Zentner's is rising. Buying him back would re-open the deficit and add a non-playing body.",
    "reversal": "Reverse only if a source dated AFTER 30.10.2026 names Schwolow as Mainz's starting keeper (an official XI, not a probable one), or Zentner (1590) is confirmed injured, suspended or dropped. A rising mvt alone is NOT sufficient."
+  },
+  {
+   "name": "Serhou Guirassy",
+   "status": "1920",
+   "why": "RECOMMENDED FOR SALE 2026-10-31T04:45Z under SELL S1xtw32 as the sole funding leg of the Upamecano package (BUY Bzm1g4f, 38.000.000, expiring 2026-10-31T22:14Z). He is NOT sold yet and the sale is CONDITIONAL on that bid winning. He is the only squad body whose mv (33.440.788) clears the -31.883.810 deficit a 38M clear would open, on its own, inside the one sale the 11-player minimum permits. He is fit and starting — thefalse9 29.10.2026 names him leading Kovac's line at Bayern — so this is a price-per-point sale, not an availability sale, and the swap is +52 ap/MD on the XI (Upamecano 176 in, Guirassy 124 out, Hwang ap 30 dropped as the squad reshapes to 4-4-2).",
+   "reversal": "VOID IMMEDIATELY AND KEEP HIM if the Upamecano bid LOSES at 2026-10-31T22:14Z — selling him alone drops the squad from eleven to TEN and costs -100, and there is no second body that funds anything. Also void if MD8 has not finished for Dortmund (kickoff 2026-10-31T17:30Z) or if the 21:00Z tick has not yet landed; both must be past before any sale. If he IS sold, do not buy him back unless ALL of: (1) the ask is AT OR BELOW mv, since he was sold to the board at exactly mv and any premium is a straight loss on the round trip; (2) the XI after the re-buy still has an ATT slot filled by someone below his ap; (3) the balance is non-negative with genuine spare capacity after the re-buy, not merely above the 33% floor."
   }
  ],
  "arithmetic": [
@@ -581,7 +591,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=999, -4,00% to +443,38%"
+   "v": "n=1000, -4,00% to +443,38%"
   }
  ]
 }
