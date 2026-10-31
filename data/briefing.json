@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-10-31T08:50Z",
+ "run": "2026-10-31T10:50Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 6216190,
   "floor": -48246914,
   "spending_power": 54463104,
-  "hours_to_lock": 154.66,
-  "exposure": "Unlevered right now — the balance is positive and nothing is at risk this weekend. If both bids win tonight the position goes sharply negative, well inside the floor but negative, and that must be unwound before the matchday lock next Friday evening or the entire matchday scores zero. The unwind is already mapped and has slack: selling the striker after Dortmund play clears most of it, and selling the flip back to Kickbase at value after the tick clears the rest and returns the squad to eleven. Nothing about that sequence is tight — there are days of margin, not hours — but it is the one thing in this plan that can cost a whole matchday if it is forgotten.",
+  "hours_to_lock": 152.65,
+  "exposure": "Winning both bids opens a leveraged position, deliberately and within the floor, with room to spare. That is acceptable only because the unwind is real and has a week to run: the striker sale plus selling the flip back at market value covers it and lands positive with the squad still above eleven. The rule that governs it is absolute — a negative balance when the matchday starts scores zero for the entire matchday, so the deficit must be closed before the lock regardless of how attractive anything on the market looks at that point. There is no lock today, which is exactly why the flip gate is open at all; the deficit itself costs nothing until that instant. One instrument note worth carrying: the ledger database could not be queried directly from the cloud connector this run, which is a known condition rather than a new fault, and the computed figures were used instead.",
   "must_restore_by": "2026-11-06T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The gap is centre-back quality, and it is the gap the live bid is aimed at. The back line is carrying a sub-value filler body who contributes almost nothing and cannot be dropped without going short, so the only way to improve the defence is to add above him rather than replace him. That is exactly the shape of the Upamecano trade, and it is why the sale leg has to be the striker rather than a defender.",
+ "binding_gap": "Defence, and it is structural rather than marginal. The squad is exactly eleven in a 3-4-3, which means every body is fielded and one of the three defenders is a 500k filler on an ap of 27 while another is carrying an injury flag. Upamecano is the fix: he is the only board listing in the league that both plugs that slot and upgrades it outright. The swap is not the headline number it looks like — he comes in, Guirassy goes out, the shape moves to 4-4-2 and the filler survives into the fielded eleven, so the honest net is the difference between the two of them, not Upamecano's ap in isolation. That is still the largest single points gain available and it is the reason the capital is committed where it is.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 54463104,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 24,
+  "listings": 31,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Nothing has moved since the 06:45Z run.",
-  "headline_short": "Nothing has moved since the 06:45Z run.",
-  "detail": "Nothing has moved since the 06:45Z run. The plan stands exactly as it was: the Upamecano bid is live on the board until late tonight, the Guirassy sale is its funding leg and stays conditional, and the El Khannouss flip is the one value trade that fits alongside. The only genuinely new fact this run is a calibration point, not an action: Chabot, a premium centre-back off a contested Kickbase board listing, cleared this morning at a premium well below what the standing Upamecano bid is offering. That does not change the recommendation — it tells Georg what the bid is actually buying, which is certainty rather than value. No squad player picked up new news, no deadline has passed, and the position is unlevered as it sits."
+  "headline": "Two bids need placing today and the market data suggests neither is on the board yet.",
+  "headline_short": "Two bids need placing today and the market data suggests neither is on",
+  "detail": "Two bids need placing today and the market data suggests neither is on the board yet. The flip leg expires inside the hour; the points leg expires tonight. Nothing else on the market is worth capital, and no sale fires until the Klassiker is over."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Guirassy remains the funding leg and remains conditional on all three gates, none of which have cleared yet. He must not be sold before Dortmund have finished playing this afternoon, because a sale now forfeits a matchday that is already locked and in which he is the confirmed starter. He must not be sold at all unless the Upamecano bid actually wins tonight, because selling the striker without the defender landing leaves ten players. The two resolve within hours of each other tonight, so the correct posture until then is to do nothing. No other sale is recommended: nobody else in the squad is both expendable and replaceable at this count.",
+  "reason": "One sale is live and it is conditional on two things, both of which resolve tonight rather than now. It funds the defender and it must not be executed a minute early: Dortmund play Bayern this evening, so selling before that match forfeits a full matchday from the squad's second-highest scorer. The second condition is the bid actually winning — if it loses, the sale is void, because selling the striker without the replacement landed leaves ten players and a penalty that dwarfs anything the cash could buy back. Nothing else should be sold. The injured defender looks like the obvious cut and is not: he is a body the formation needs, there is no affordable replacement while the capital is committed, and his market value falling is a reason to dislike owning him, not a reason to drop below a legal eleven.",
   "standing": [
    {
     "name": "Serhou Guirassy",
@@ -191,7 +191,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Upamecano is the whole trade and the bid is already placed. He is confirmed in the Bayern starting eleven by a dated preview from this week, carries no injury or suspension entry in the league-wide table, and is the highest-scoring body available anywhere on the market. He replaces the striker in the fielded eleven at a clear upgrade in average points per matchday, and the weakest defender survives the swap rather than being displaced, which is why the net gain is smaller than the raw difference between the two men suggests. The bid is deliberately pitched above every contested board clear this ledger has measured, including this morning's. That is an insurance premium against losing him, paid knowingly: Kickbase charges the winner his own bid, so if he wins he will almost certainly win by a visible margin. The alternative has been tested and it failed — the one time this ledger bid exactly market value on a contested defender, the auction went to someone paying a double-digit premium and the squad got nothing. Bellingham stays on the avoid list and the two manager asks on the board, both well above market value, stay ignored: a manager ask above value has never been a buy here.",
+  "reason": "The defender is the call and the price stands. He is a confirmed starter, seven starts from eight, and the most recent comparable — a contested board centre-back that cleared this morning — went for materially less than the standing bid, so the bid is well clear of the band rather than stretching for it. The listing shows no offers counted, which is the reason this is being flagged rather than assumed: that reading is good evidence the bid is not currently placed, and it is emphatically not evidence the listing is uncontested. This ledger has lost three players by reading an empty offer count as safety and declining to pay for win probability; the bid does not come down. Everything else on the market fails. One manager dumped seven players in a five-minute window this morning and every single ask sits above market value, several of them far above the cluster where manager asks actually clear — one of them he had bought off the board at market value eleven hours earlier and simply marked up. That is a seller testing the room, not an opportunity. A striker this ledger lost at auction in September is back on the board at exactly market value for the first time since, which satisfies the first clause of his block, but the capital does not stretch to him and the block holds on arithmetic alone. His listing outlives tonight's resolution, so he is the first thing to re-test if the defender bid loses.",
   "standing": [
    {
     "name": "Dayot Upamecano",
@@ -207,6 +207,15 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "David's seven-listing batch 31.10 09:53-09:57Z — every one a manager ask ABOVE mv, none chaseable",
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
+    "premium_pct": null,
+    "why": "ONE MANAGER DUMPED SEVEN PLAYERS ONTO THE MARKET INSIDE FIVE MINUTES AND EVERY SINGLE ASK IS ABOVE mv, SO THE WHOLE BATCH IS NOISE AND NO RUN SHOULD SPEND A NEWS CHECK ON IT. Manager David (u id 1880059) posted, all dated 2026-10-31T09:53-09:57Z: Obermair (2015) mv 7.598.771 ask 10.000.000 = +31,6%; Collins (2864) mv 7.305.882 ask 8.500.000 = +16,3%; Chiarodia (3063) mv 5.849.207 ask 8.500.000 = +45,3%; Bischof (3120) mv 18.484.944 ask 20.000.000 = +8,2%; Itakura (3129) mv 5.270.600 ask 8.500.000 = +61,3%; Muheim (3277) mv 8.946.645 ask 12.000.000 = +34,1%; Matsima (9642) mv 17.270.657 ask 25.000.000 = +44,8%. BENCHMARK THEM AGAINST THE RIGHT CLUSTER, WHICH IS THE LOW ONE: these are manager-to-manager asks, and the measured manager-ask clearing cluster is low single digits (+3,06%, +4,35%). Six of the seven sit five to twenty times above that. The high cluster (+16% to +21%, Ebnoutalib +16,71%, Campbell +20,96%, Chabot +13,59%) applies ONLY to contested KICKBASE BOARD listings and MUST NOT be imported here to make these asks look reasonable — that import is exactly the error pattern this ledger has already paid for three times. BISCHOF IS THE TELL AND IS WORTH REMEMBERING AS A MECHANISM, NOT JUST A PRICE: David bought him off the board at 2026-10-30T22:19:22Z for 18.470.055 against mv 18.484.944, i.e. -0,08%, a clean mv-exact clear, and relisted him eleven hours later at 20.000.000. That is a pure markup flip with no information in it, and it confirms the mv-exact board bid is the right instrument and the manager ask is the wrong side of it. MATSIMA IS SEPARATELY BLOCKED and his ask at +44,8% fails reversal clause (a) outright, which requires AT OR BELOW mv — do not re-litigate him on this listing. COLLINS AT +16,3% IS THE ONLY ONE WORTH A SECOND LOOK AND HE STILL FAILS: the ledger already measured him clearing at +12,51% when a rival took him off the board, so 8.500.000 is above even that, and the DEF slot he would fill is the slot the Upamecano call fills far better. STANDING RULE FROM THIS ENTRY: an ask that has sat unsold for days is an invitation to offer at mv, but an ask posted MINUTES ago at +30% or more is a seller testing the room, and the correct response is to ignore it and let it go stale."
+   },
    {
     "name": "SOURCE TRAP — ligainsider Bayern club page 419936 (28.10.2026 19:48) BENCHES Upamecano, but it is the DFB-POKAL ROTATION XI, not the Bundesliga MD8 XI",
     "pos": "DEF",
@@ -305,26 +314,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "SOURCE TRAP, NEW AND DISTINCT FROM THE KNOWN ONE — flashscore.de article id bkCwJoLP, \"Bundesliga 8. Spieltag - Aufstellungen, Verletzungen und Sperren in der Uebersicht\". It LOOKS like the clean matchday-specific counterpart to the already-logged template trap ngjPe6Gj (A6zjcjq), because unlike ngjPe6Gj it does not serve every matchday from one id. IT IS STILL POISON. Fetched 23.10.2026 it carries NO publication date, only an \"Aktualisiert\" label, and its own body says it covers the 8. Spieltag of the \"Bundesliga 2023/24\" for the weekend of \"20. bis 22. Oktober\" — THREE SEASONS STALE. The content proves it: Dortmund absences given as Moukoko, Duranville, Ostrzinski with Bensebaini on a Gelb-Rote-Sperre; Werder as Naby Keita, Niklas Stark, Pavlenka; Freiburg as Guenter, Kyereh, Rosenfelder; Augsburg as Framberger, Oxford, Mbabu, Vargas. Had this run trusted it, it would have reported stale absentees for FOUR clubs Georg is exposed to (Augsburg, Leipzig, Werder, Freiburg) and would have mis-screened Dahmen and Gruda. STANDING RULE REINFORCED: a flashscore \"Verletzungen und Sperren\" page is NOT a usable instrument for this league in either id form — neither the template id nor a matchday-looking id — and an undated flashscore hit is to be assumed last-season or older. Use the club pages and dated ligainsider player pages instead, which is what resolved Gruda, Maksimovic and Wojcik this run."
-   },
-   {
-    "name": "SOURCE TRAP (consolidated, 2 new) — ligainsider \"7. Spieltag Last-Minute-Update zu den Aufstellungen\" 403524 is 17.10.2025, and flashscore ngjPe6Gj is a TEMPLATE URL serving every matchday",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "TWO TRAPS THAT BOTH SIT AT THE TOP OF THE OBVIOUS SEARCH, logged together because a run hunting MD7 team news will meet both in the same result set. (1) ligainsider.de/mobile/amp/ligainsider_1381/7-spieltag-last-minute-update-zu-den-aufstellungen-403524/ — the title is a perfect match for what this task needs every run (\"7. Spieltag\", \"Last-Minute-Update\", \"Aufstellungen\") and the body is credible and detailed. Fetched date: 17.10.2025, by Bennet Stark, covering matchday 7 of 2025/26 — EXACTLY ONE SEASON STALE, which is the hardest offset to catch because the matchday number matches. Tell: its content is about Leverkusen/Vazquez/Quansah/Tillman, Koeln/Buelter, Stuttgart/Leweling, St. Pauli/Hountondji, Heidenheim/Conteh, and it lists Nusa as a Leipzig winger competing with Diomande. Nusa is tid 43 this season, NOT Leipzig. A club attribution in a source that disagrees with get_player tn is the fastest stale-source detector available. (2) flashscore.de/news/fu-ball-bundesliga-bundesliga-7-spieltag-aufstellungen-verletzungen-und-sperren-in-der-ubersicht/ngjPe6Gj/ — the SAME id ngjPe6Gj is served for the 2., 6., 7., 19., 21., 23. and 32. Spieltag in one search result page. It is a template URL with no per-matchday content and no date, a sibling of the already-logged 6Zwf14l2 (A4plw6a). Both flashscore ids are unusable; treat the whole flashscore \"Verletzungen und Sperren in der Uebersicht\" series as a dead source and stop opening it. STANDING RULE REINFORCED: a matchday number in a headline is not a date. Require an explicit publication date inside the body, and cross-check one club attribution against get_player tn before trusting any lineup source."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open — the matchday lock is nearly a week away, today is not a lock day, and the daily tick lands tonight well before anything binds. El Khannouss is the one qualifying candidate and the bid is market value exactly, never a cent more. He is a rising-flag board listing with a clean status, the listing resolves comfortably before tonight's tick so a win captures it, and he is sized specifically so he cannot crowd out the Upamecano bid even if both land. This is the nearest deadline on the board: he expires late this morning, which is tighter than the next scheduled run leaves comfortable. Losing the auction costs nothing, which is the entire point — the discipline is to bid value and walk away, because one chased listing at a high-cluster premium wipes out a long run of good flips. The measured edge on the rising flag has not decayed this run; if anything it reads slightly stronger than the figure this routine was built on, and the proportion of rising-flag players that actually rose at the next tick remains overwhelming. Two open questions stay open: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one stretch and will erode if the other traders crowd into it. The four most active flippers here were the top four finishers last season, so that crowding is a live risk rather than a theoretical one.",
+  "reason": "The flip window is open and one listing qualifies on every gate. It is a board listing priced at exactly market value, flagged rising, fit, and — the gate that actually matters — it resolves well before tonight's revaluation, so winning it captures the full tick rather than missing it. The drift was re-measured from the log this run rather than taken on trust, and it has not decayed: the rising flag still predicts the next revaluation strongly, with the overwhelming majority of rising players actually rising. The bid is exactly market value and it is never raised. Losing the auction costs nothing; chasing it into the contested band destroys the entire edge, since one bad clear wipes out ten good flips. Sized deliberately so it fits alongside the points trade rather than competing with it. Two open questions remain unresolved and both bear on how far this can be pushed: whether the game caps squad size, which would cap how many flips can run at once, and the fact that the measured edge comes from one league over one period and will decay if enough rivals crowd into it. The most active traders in this league flip on the tick constantly, including on injured players, which for a pure value trade is correct — fitness does not enter the revaluation.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean sweep. No squad player appears in the league-wide injured-and-suspended table, and no new dated item turned up for anyone. Guirassy is confirmed fit and starting this afternoon. Upamecano is confirmed fit and in the probable eleven on a preview dated this week, with no entry against him in the injury table. Deman keeps the Kickbase fitness flag and the pain note from Thursday's training report — that is carried forward, not new, and it sits on a player who is fielded and whose club plays this weekend. The previously logged source traps all held: nothing this run required reversing a dated check, and one expired trap entry covering a two-matchday-old injury roundup was closed out.",
+  "sweep": "The defender being bought is fit and starting: no status flag, seven starts from eight, and his side plays this evening. The injured squad defender is the live concern and the picture got no better. A dated club report has him with a tendon problem under the foot, missing the cup tie, with his coach explicitly refusing to rule out another absence; a follow-up has him training in pain and not expected to be pain-free. His side play today, so this is a fielded player who may contribute nothing. He stays anyway, because the formation needs the body and there is no funded replacement — that is a constraint, not an endorsement. No other squad player carries a status flag and no dated news suggests any of them is leaving the league.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
