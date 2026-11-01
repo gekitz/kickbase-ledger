@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-01T18:52Z",
+ "run": "2026-11-01T20:54Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -3683810,
   "floor": -47988068,
   "spending_power": 44304258,
-  "hours_to_lock": 120.62,
-  "exposure": "The balance is negative and has been for several runs. It is harmless until the matchday locks, at which point a negative balance scores zero for the whole matchday, so it is the single thing on this page that can cost everything at once. The lock is five days out, which is why this run does not force the sale today. Bidding on the flips deepens the deficit temporarily, which is also fine on the same reasoning, but every flip must be unwound to a non-negative balance and at least eleven bodies before the lock, and selling back to Kickbase pays exactly market value, so the unwind is always available at a known price. Watch the gap close in both directions: the repriced Hwang ask clears most of it, and each held tick closes a little more.",
+  "hours_to_lock": 118.6,
+  "exposure": "The balance is negative right now and has been all day. That costs nothing yet, because a deficit only matters at the instant the matchday locks, and the lock is still days away. It is not a reason to kill a buy, and it has not been used as one here. The sale removes the exposure entirely rather than merely surviving it, which is why it is the move. If flips are bid after the sale, each one re-opens exposure that must be unwound to a non-negative balance and at least eleven players before the lock; the board sell-back pays market value on demand, so the unwind is reliable, but it has to actually be done.",
   "must_restore_by": "2026-11-06T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Cash, not a position. The squad fills every formation it is allowed to field and is short nowhere. What is missing is a non-negative balance at the lock, and the only lever that reaches it without touching the fielded eleven is the Hwang sale, with flip profit as the second route.",
+ "binding_gap": "The binding constraint is not the lineup, it is the deficit, and the sale closes it. After the sale the gap becomes attacking depth: two strikers and no cover, at exactly eleven players with no slack. The board holds the body that would fill it at a fair price, but the envelope cannot fund keeping him through the lock, so the gap stays open by choice rather than for want of a candidate. It costs nothing this matchday and should be revisited the moment the balance supports carrying a twelfth player.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 44304258,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 26,
+  "listings": 24,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 3
+  "expiring_within_2h": 0
  },
  "squad": [
   {
@@ -82,7 +82,7 @@
    "pos": "DEF",
    "club": "6",
    "mv": 9094945,
-   "ap": 156,
+   "ap": 133,
    "state": "clear",
    "note": "",
    "tag": "keep"
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Two things need doing before tonight's market-value update, and both are things Georg has already been told and has not yet done.",
-  "headline_short": "Two things need doing before tonight's market-value update, and both a",
-  "detail": "Two things need doing before tonight's market-value update, and both are things Georg has already been told and has not yet done. First, bid exactly market value on the two Kickbase board listings that expire this evening — Jae-Sung Lee and Janik Bachmann — because both resolve shortly before tonight's tick and a won body is therefore held through it. Second, lower the Hwang ask. Nothing else changes. There is no points buy available this run, and the squad is clean on fitness."
+  "headline": "Sell Hwang straight to the Kickbase board at market value, and do it before tonight's tick.",
+  "headline_short": "Sell Hwang straight to the Kickbase board at market value, and do it b",
+  "detail": "Sell Hwang straight to the Kickbase board at market value, and do it before tonight's tick. This is a route change, not a new sale: the standing instruction was to reprice his manager ask downward, and that reprice only sits inside the measured clearing band until the tick lands. After it, the repriced ask is above the ceiling that nothing in this ledger has ever cleared, and his value is falling, so the ask gets worse every day it sits. The board pays exactly market value instantly, with no spread and no waiting, and the proceeds clear the entire deficit outright with nothing left to unwind before the lock. Pull the standing offer first, then sell. Nothing else this run is worth an action."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Hwang is repriced, not newly condemned. The standing sale call was right that the clear is not needed today — the lock is five days out and a deficit costs nothing until the instant it bites — but it left an ask standing that cannot clear. The ask has now sat unsold for nine hours with no offers, at a premium several times the ceiling of the band where manager asks in this league actually change hands. Worse, he turned sharply negative today, so every day the dead ask stands burns real proceeds and ends in an instant sale at a lower value anyway. Lower the ask into the measured manager band and take the instant sale to Kickbase as the fallback by Thursday midday. The sale costs the same points whenever it happens — it forces Nakuzola, who has not played a minute all season, into the eleven in Hwang's place — and since the balance must be clean at the lock, Hwang cannot both play matchday nine and fund the clear. Earlier therefore dominates on cash and ties on points. One conditional stands: if won flips carry the balance non-negative before Thursday, pull the listing and keep him.",
+  "reason": "Hwang is the only sale, and the merit was settled by earlier runs and is not re-opened here. What changes is the route and the price. The manager ask he listed this morning has sat all day with not one offer against it, priced far above the band where manager asks in this league actually clear. Repricing it is still correct in principle but has a hard expiry at tonight's tick, after which the new price is itself out of band. He is fit and unflagged, so this is a price-per-point sale on a falling value, not an availability sale. The board route is guaranteed and instant; the ask route is neither. Remove the offer, then sell to the board.",
   "standing": [
    {
     "name": "Hee-chan Hwang",
@@ -194,14 +194,14 @@
     "club": "8",
     "mv": 4834079,
     "ap": 28,
-    "why": "REPRICE, NOT A NEW SALE — supersedes S2mj8l7, which is closed for PRICE ONLY; its merit and its deadline are unchanged and must not be re-litigated. S2mj8l7 correctly said the clear is not needed today (lock 2026-11-06T19:30Z, 120.7h out; Hfbknqv: a deficit costs nothing until the lock). What it did NOT price is that the ask it left standing cannot clear. MEASURED: the ask is 5.400.000 against mv 4.834.079 = +11,71%, placed 2026-11-01T09:45:44Z and now NINE HOURS unsold at ofc 0. The manager-ask band in this ledger clears at +3,06% and +4,35% and NOTHING above +6,13% has ever cleared; Jóhannesson and Inácio sat unsold for days as proof. So +11,71% is not a stretch ask, it is a dead one. SECOND AND DECISIVE: Hwang is mvt 2 with tfhmvt -612.305/day (sdmvt -301.435/week — the daily figure is larger because he turned sharply negative TODAY). Every day the dead ask stands costs roughly 612k of eventual proceeds, so holding to the 05.11 deadline at 5.400.000 burns ~2,26M and ends in an instant-sale at a lower mv anyway. ACTION: lower the ask to 5.000.000 = +3,43% over mv, inside the measured clearing band. Instant-sale to Kickbase at exactly mv is the fallback, to be taken by 2026-11-05T12:00Z at the latest. THE SALE COSTS THE SAME POINTS WHENEVER IT HAPPENS, so earlier is strictly better: squad 12 -> 11 forces Nakuzola (ap 27, ph hp FALSE on all five matchdays) into the eleven in Hwang's place, and because the deficit must be ZERO at the 06.11 19:30Z lock, Hwang cannot both play MD9 and fund the clear. Earlier dominates on cash and ties on points. STANDING CONDITIONAL — PULL THE LISTING IF: won flips carry cash non-negative before 2026-11-05T12:00Z. A 44M flip basket at the measured +2,87% returns ~1,27M per tick, so two clean ticks plus the existing 1,15M of headroom can cover the -3.683.810 without him. In that single case keep Hwang for MD9 (ap 28 beats Nakuzola's 27 on nothing much, but his ph is hp TRUE five times out of five and Nakuzola's is false five out of five). NEWS, DATED 2026-11-01: he is FIT AND SELECTED — not on Ligainsider's Verletzte-und-Gesperrte table read this run, Kickbase st 0, ph hp TRUE on all five matchdays. He is at Schalke 04 (tid 8, confirmed again this run) ON LOAN FROM WOLVES UNTIL THE END OF THE SEASON, so there is no leave-the-league risk before January. This is an OUTPUT and FUNDING sale, not a fitness sale: last five 19, 64, -5, -19, 26 for ap 28, the worst fielded return in the squad. No future run may cite this call as evidence of an injury.",
+    "why": "ROUTE CHANGE, NOT A NEW SALE — supersedes Scwviof (closed for PRICE/ROUTE ONLY); merit and deadline inherited from S2mj8l7 and NOT re-litigated. Scwviof said reprice the manager ask 5.400.000 -> 5.000.000. That instruction has a hard expiry Scwviof did not price: the 21:00Z tick on 2026-11-01. MEASURED at 20:45:37Z: mv 4.834.079, mvt 2 (FALLING), sdmvt -301.435, tfhmvt -612.305. Measured mvt-2 drift is -2,93% mean with only 14,5% rising, so post-tick mv is about 4.692.000. Pre-tick, 5.000.000 = +3,43% and sits inside the measured manager-ask clearing band (+3,06%, +4,35%). POST-TICK, 5.000.000 = +6,56%, ABOVE the +6,13% ceiling that nothing in this ledger has ever cleared. So the reprice only works if executed before 21:00Z, and Georg has not touched the listing since he placed it at 09:45:44Z (now ELEVEN hours, ofc 0, prc still 5.400.000 = +11,71%). THEREFORE the robust route is INSTANT-SELL TO THE KICKBASE BOARD at exactly mv: measured rule, selling back to the board pays EXACTLY mv with no spread, confirmed again today (Lee 11.159.887, Pieringer 3.657.892, Stark, Amiri, Omari, Jóhannesson all t:2 at mv). He must first REMOVE the standing 5.400.000 offer (iotm true). PROCEEDS CLEAR THE WHOLE DEFICIT: cash -3.683.810 + 4.834.079 = +1.150.269 positive, with no unwind left outstanding before the MD9 lock 2026-11-06T19:30Z. POINTS COST IS ZERO: Hwang ap 28 is placed (lo 10) in the 3-4-3; dropping him leaves 11 players, 1GK/4DEF/4MID/2ATT, which fields EXACTLY 4-4-2 with Nakuzola (ap 27) entering. XI average points goes 1128 -> 1127, i.e. unchanged inside noise. WARNING TO THE NEXT RUN: that leaves ZERO squad margin at 11 players — any further sale triggers the -100 penalty, so no sale may be recommended after this one without a buy landing first. Each further tick costs about 3% of the sale proceeds, so sooner is strictly better; the inherited 2026-11-05T12:00Z deadline is the outer bound, not the target. Hwang is st 0 and fit (Schalke 04 — tid 8 is Schalke, not Hoffenheim, per Hyvblwv; Hoffenheim/TSG is the MD9 opponent); this is a price-per-point sale, not an availability sale.",
     "tag": "sell"
    }
   ]
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No buy. This is not caution, it is arithmetic. A purchase has to be unwound to a non-negative balance and at least eleven bodies by the lock, and with the squad at twelve the only two sales that do not touch the fielded eleven are Hwang and Nakuzola. That pair, net of the existing deficit, leaves an unwind ceiling in the low millions, and nothing on the board at that price improves on anyone currently fielded. The two cheap rows that come close on average are both carrying a non-zero status flag, which the news confirms. Stepping up to a genuine upgrade — Potulski or Nathaniel Brown would both be real additions to the eleven on average alone — would need a third sale, and a third sale drops the squad to ten and takes the hundred-point penalty. The binding constraint this run is the deficit, not a positional hole: every formation the squad can field is legal, and no position is short.",
+  "reason": "No buy clears the envelope, so none is recommended. The board does hold one real upgrade: Mokwa is back on it at exactly market value after the manager who outbid us in September dumped him at a heavy loss, and he would fill the attacking slot Hwang vacates and lift the fielded eleven. His old block rested on him not being on the market, which is no longer true, and the condition that a repurchase be at or below market value is satisfied in the strongest form available. He fails on the envelope instead: buying him re-opens a deficit that must be non-negative by the lock, and the only assets that could unwind it are the eleven themselves. Selling the midfielder who would fund it gives back almost exactly what the buy gains, and selling Mokwa again before the lock just forfeits the points he was bought for. So he is a flip, not a buy. Campbell is likewise back on the board, but his average is identical to the midfielder he would replace, so he improves nothing. Every other listing is a manager ask priced far above market value, which this ledger has never bought at any point in its history.",
   "standing": [],
   "killed_this_run": [
    {
@@ -317,11 +317,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open — the lock is five days away, so there is no lock constraint on any of this — and the measured edge has strengthened rather than decayed since it was first established. The mechanism is unchanged and was demonstrated end to end by a rival today: David bought Pieringer off the Kickbase board in the morning and sold him back in the afternoon, which pins his market value exactly and shows the board buy cleared slightly below market value. That is the fifth settled board buy in the log and it sits inside the measured band, with three of the five at or below market value — which is the whole case for bidding exactly market value and never raising. David also gave the edge back by unwinding four hours before the tick and capturing only intraday drift. The hold through the update is the part that pays, and it is the part still going begging. Twelve flip calls are open and not one of them has a single offer against it. Two expire tonight and both resolve before the update, so they are the ones that matter in the next two hours; the rest resolve tomorrow and can be bid in rank order until committed capital reaches spending power, which it will well before the list runs out — the qualifying rows are roughly twice what can be funded. Musiala is the largest row and carries a status flag that Ligainsider does not corroborate; fitness does not enter the tick, so he stays eligible as a pure value trade, but he is the one row where the flag and the news disagree. Two questions remain open and neither has been answered: whether Kickbase caps squad size, which would cap how many flips can run at once, and whether the edge survives rivals crowding in — it is measured in one league over one period, and today's feed shows at least one rival running the same trade.",
+  "reason": "The window is wide open, with days to the lock. Ten rows qualify on the measured rule: Kickbase board listings, no manager behind them, asking price exactly market value, value flagged rising. The edge was re-measured from the log this run and has not decayed against the September baseline, though it has eased very slightly since this morning. Musiala is the largest qualifying row and stays a valid pure flip despite being injured, because fitness does not enter the daily tick and the board buys him back at market value regardless; he is not a points buy at any price. Brown is next and his transfer check is clean, since his move was within the league and is long since done. El Mala is excluded on the one rule that still binds a pure flip, that we never flip a player who might leave the league. The qualifying rows together ask for well over the available spending power, so this is a choice, not a shopping list, and the two largest alone absorb most of it. The harder fact is execution: every one of the standing flip calls still shows not a single bid placed. Today the ledger named a midfielder to bid on at market value, and a rival won that exact listing for less than the number we published, then sold him back to the board twelve minutes later for a clean risk-free margin. A second rival ran the same round trip on another player this morning. The mechanism is not theoretical and it is not ours yet. Two questions stay open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and whether this edge decays as more managers crowd into it.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean sweep. Ligainsider's injured-and-suspended table, read this run and current rather than one of the last-season traps the block list catalogues, names not one player from the squad. Kickbase agrees: every squad status flag is zero. Nothing is newly injured, suspended, or benched, and no squad player has dated news suggesting he leaves the league — Hwang in particular is on loan for the season, so he cannot go anywhere before January. On the market side the table did catch two things worth logging: Bachmann is genuinely hurt, which matters not at all for a pure value flip, and Tella is hurt as of yesterday on top of a manager ask priced in the contested-auction cluster, which is now blocked on both counts.",
+  "sweep": "Nobody in the squad carries an injury or suspension flag, and nobody is newly flagged this run. Hwang is fit, which matters because his sale is about price per point rather than availability. Outside the squad, the dated check confirms Musiala is injured and missed the last matchday, with no return date given; the sources are from the last two weeks and are not the last-season trap this ledger has been caught by before. That confirmation reinforces the standing warning that his headline average rests on a single appearance and must never be read as a points case.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -565,8 +565,8 @@
   {
    "name": "Hee-chan Hwang",
    "status": "2449",
-   "why": "RECOMMENDED FOR SALE TO THE BOARD 2026-11-01T09:41Z (SELL Sv91eri) at mv 4.834.079 as the mandatory clear of the -3.683.810 deficit opened by the Muheim purchase at 10.000.000. He is the weakest fielded body in the squad after Nakuzola: last five 19, 64, -5, -19, 26 = 17,0 per matchday against ap 28. He is also the only squad member actively losing value — mvt 2, tfhmvt -612.305, sdmvt -301.435, against a measured mvt-2 next-tick drift of -2,93% with only 14,5% rising. He is NOT blocked on fitness: Kickbase st 0, no status flags, and he played all five of the last five matchdays. He is blocked on form plus structure — buying him back would re-open the deficit and re-add the squad's second-weakest body.",
-   "reversal": "Do NOT buy him back before the 2026-11-06T19:30Z MD9 lock under any circumstances: after this sale the squad sits at exactly ELEVEN, so a re-buy is a net addition fundable only by going leveraged again — which re-opens the exact zero-matchday risk this sale exists to close — or by a sale that drops the squad to TEN for -100. After the lock, reverse ONLY if ALL FOUR hold: (a) the ask is AT OR BELOW mv, since the instant board sale pays exactly mv and buying back above it is a guaranteed loss; (b) his mvt has turned to 1, since selling a faller and re-buying it mid-fall is the worst version of this trade; (c) his trailing-five mean has re-based above the fielded body he would displace, which today means beating Wolf's 27,2, not his stale ap 28; and (d) the balance is non-negative with genuine room above the 33% floor after the purchase. Note for any run that re-reads the old file: he was previously the subject of a CLOSED sell call (Sw4gkra) that was reversed in favour of Nakuzola on the ground that Nakuzola was the worse body. That reasoning was correct on merit and is NOT contradicted here — Nakuzola is still the worse body, but at mv 500.000 he cannot clear a 3.683.810 deficit, and only one sale is available from twelve."
+   "why": "RE-RECOMMENDED FOR SALE 2026-11-01T20:45Z as SELL S5nlqqi, ROUTE CHANGED to an instant sell to the Kickbase board at exactly mv 4.834.079 (supersedes Scwviof's 5.000.000 manager-ask reprice, which expires out of band at the 21:00Z tick). This block supersedes the entry Ws86sni called inert — that entry's premise (Nusa sold) was false; Nusa 9507 is in the squad at 20:45:37Z and is not for sale. Hwang is the deficit clear: cash -3.683.810 + 4.834.079 = +1.150.269. He is st 0 and FIT; this is a price-per-point sale at ap 28 on a FALLING market value (mvt 2, tfhmvt -612.305), not an availability sale. Do not buy him back to fill the ATT slot he vacates.",
+   "reversal": "Reverse only if ALL THREE hold: (a) a dated Schalke 04 source from 2026-11-02 or later starting him AND a matchday return that actually re-bases the ap 28; (b) the ask is at or below mv, since he is sold to the board at exactly mv and buying back above it is a guaranteed loss; and (c) the squad is at 12 or more players, because after this sale it sits at exactly 11 and a re-buy must not be the thing that funds itself. A rising mvt alone is NOT sufficient. Being the player we sold is not a reason to buy him back at any price."
   }
  ],
  "arithmetic": [
@@ -588,7 +588,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1019, -4,00% to +443,38%"
+   "v": "n=1021, -4,00% to +443,38%"
   }
  ]
 }
