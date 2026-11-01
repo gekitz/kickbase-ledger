@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-01T06:54Z",
+ "run": "2026-11-01T08:45:00Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -8,14 +8,14 @@
   "locks": "2026-11-06T19:30:00Z",
   "played": 8
  },
- "cash": 6216190,
+ "cash": 6316190,
  "squad_value": 140007254,
  "leverage": {
-  "balance": 6216190,
-  "floor": -48253737,
-  "spending_power": 54469927,
-  "hours_to_lock": 132.6,
-  "exposure": "No leverage is open. The balance is positive, the floor is well clear, and nothing recommended here opens a deficit — the Muheim bid is funded outright and the flips are bid at market value from spare capacity. The lock is far enough away that every flip has room to be unwound after the tick it captures, with the squad staying above the eleven-player floor throughout. The only hard constraint to respect is the ordering: Muheim lands first, the Nakuzola sale second, never the other way round. ONE INSTRUMENT FAILURE TO REPORT: the direct ledger query is still unreachable. The Cloudflare connector reached the account successfully and the account contains no databases at all, which confirms the root cause already on file rather than any outage. It cost nothing this run, because the context block rendered every actionable call kind in full and hid nothing — but it will cost something the moment the open-call list grows past what the block can show, so it is worth fixing before then.",
+  "balance": 6316190,
+  "floor": -48286737,
+  "spending_power": 54602927,
+  "hours_to_lock": 130.59,
+  "exposure": "No leveraged position is open right now, and the matchday lock is more than five days away, so leverage is cheap and fully unwindable — a negative balance costs nothing until the instant the lock arrives. If the buy lands it opens a modest deficit with ample room above the floor and ample time to clear it. The live risk worth naming is contention rather than leverage: if the full flip basket and the buy were all to settle, committed capital would overrun spending power, and Kickbase would block whichever purchase breaches the floor without regard to which one matters. That could sacrifice the binding-gap fix to protect a flip. The protection is not to shrink the basket, since a lost auction costs nothing, but to treat cumulative flip wins approaching the headroom left after reserving the full buy price as a tripwire and pull the remaining flip offers at that point. At the measured win rate the chance of reaching it is well under one percent.",
   "must_restore_by": "2026-11-06T19:30:00Z"
  },
  "counts": {
@@ -43,10 +43,10 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Defence, and specifically the inability to bench a non-playing body. Landing Muheim takes the squad to twelve and opens a second legal formation, which lets the three-four-three stand with Nakuzola on the bench rather than in the eleven. That single substitution is worth more than any other action available this run, because it replaces a player whose true expectation is zero with one who is currently starting. The HSV case is not a points-history case and should not be sold as one: his average rests on very few appearances. It is an absence case. HSV's central midfield is gutted — a cruciate plus four separate muscle and thigh items, all dated within the last three weeks — and a nominal defender is playing in central midfield as a result, having scored a late winner against Stuttgart in that role in mid-October on a dated, in-season report. Treat the case as live only while those absences last.",
+ "binding_gap": "A defender who actually plays. Three defenders fill three slots in the only legal shape, but one of them has not played a minute all season, so the fielded eleven is effectively ten men plus a passenger. Replacing that passenger with a confirmed starter is by a wide margin the largest points swing available, it is the reason the open buy exists, and it outranks every upgrade to a slot that is already genuinely filled and every flip on the page.",
  "surplus": "",
  "run_kind": "scheduled",
- "cash_ceiling_before_md1": 54469927,
+ "cash_ceiling_before_md1": 54602927,
  "daily_bonus": null,
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Place the Muheim offer.",
-  "headline_short": "Place the Muheim offer.",
-  "detail": "Place the Muheim offer. It is the only move that changes the fielded eleven, it clears outright on spending power with no sale required first, and it needs no leverage. This run also REVERSES the standing Hwang sale: Hwang stays, Nakuzola goes instead, and only after Muheim has actually landed. The flip window is wide open — the lock is five days out and tonight's tick is the next one — so bid exactly market value on every qualifying board row and never raise."
+  "headline": "Hold.",
+  "headline_short": "Hold.",
+  "detail": "Hold. The whole points trade is already in flight and correct: the standing bid on Miro Muheim is placed, it is the only bid on the listing, and the news check this run strengthened it rather than merely surviving it. No new action is required on the squad. Do not raise the Muheim bid — it already sits inside the measured manager-ask clearing band, and David has a documented habit of dumping his own inflated asks back to the board at market value rather than holding out. Everything else on the page is the value trade, which never overrides this."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "THIS CONTRADICTS WHAT THE LAST RUN TOLD YOU. The standing conditional sale of Hwang is closed. It compared Hwang only against ter Horst and never against Nakuzola, and that omission inverts the answer. With Muheim landed the squad carries a spare body, and the best eleven benches Nakuzola while keeping Hwang. Sell Hwang instead and the squad falls back to eleven in a shape that FORCES Nakuzola back into the fielded eleven — so the sale swaps a player who starts every week for one who does not play at all. Selling Nakuzola instead leaves the fielded eleven completely unchanged, because he was going to be the benched man anyway. It is therefore the only sale available that costs nothing in points. The second error in the old call was treating the sale as the funding leg for Muheim: it never was. The buy clears on spending power several times over. The only thing the condition ever protected was the eleven-player floor, and that still binds — do NOT sell anyone until Muheim has actually landed, or the squad drops to ten and takes the penalty. Priority is low either way: at the floor the sale raises almost nothing. Place the offer first; the sale can wait until the offer settles.",
+  "reason": "One sale, and it is strictly conditional. The Mainz youth defender is the only body worth removing, and he must not be sold until the Muheim purchase has actually landed. The squad sits at exactly eleven: selling first drops it to ten and triggers the heavy under-strength penalty, which would cost far more than the slot is worth. Buy first, then sell. The second-weakest body is the attacker whose last five returns average in the teens and whose value is falling fastest over the past day, but he cannot be sold at all — the only legal formation needs exactly three attackers and there is no replacement in hand. He is a watch, not a sale.",
   "standing": [
    {
     "name": "Rael Nakuzola",
@@ -191,7 +191,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Muheim is the call and the bid does not change. David's ask sits far above market value, in the band where contested board listings clear, not where manager asks clear — and this ledger has already measured David dumping his own inflated asks straight back to the board at market value rather than holding out, most recently with Bischof. So never chase the ask. The standing bid sits modestly above market value, which is inside the measured manager band and strictly better for David than what the board would pay him, and that is the whole argument for it. No offer is currently placed on him, so this is an action, not a confirmation. Beyond Muheim the board holds one genuine points upgrade rather than a pure flip: Jae-Sung Lee is a regular starter whose average beats both Tanaka and Wolf, he is listed by the board at exactly market value, and he is clean on the latest injury table. If the market-value bid wins him, KEEP him and bench Tanaka — do not sell him back. If it loses, it costs nothing. The bid must stay at market value in both cases; this is a contested board listing where the high cluster applies, and chasing it destroys the edge in the points case as surely as in the value case. The rest of David's batch remains noise, and the blocked list stands.",
+  "reason": "Miro Muheim, already bid, nothing further to do. The one open objection to him was that his headline average rested on a cameo. That objection is now answered from the matchday record rather than from a preview: his two most recent appearances were genuine starts, one of them a full ninety-plus minutes, on top of the high-scoring substitute appearance that inflated the average. The role change behind it is now visible too — a dated probable eleven published this morning puts him in central midfield rather than at left-back, which is why the competition at left-back that previously kept him out no longer decides his selection. He is a defender by Kickbase classification and a midfielder by deployment, which is the best of both for a squad whose defensive slot is empty. No other listing on the board is worth a points bid. The large defender ask that cleared overnight went at a far smaller premium than this ledger had been benchmarking, which is worth remembering, but he is gone.",
   "standing": [
    {
     "name": "Miro Muheim",
@@ -207,6 +207,15 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "Mert Can Ayhan",
+    "pos": "DEF",
+    "club": "8",
+    "ask": 501433,
+    "mv": 501433,
+    "premium_pct": 0,
+    "why": "THE ONE NEW QUALIFYING FLIP ROW THIS RUN, AND IT IS LOGGED AS AN AVOID RATHER THAN A FLIP SO THE NEXT RUN DOES NOT RE-DISCOVER IT AND BID. Row 10916, tid 8, pos 2 DEF, listed to the Kickbase BOARD at 2026-11-01T08:22:11Z (feed 13243014530), prc = mv = 501.433 EXACTLY, no `u`, st 0, mvt 1, ap 8. On the face of it it passes every flip gate: board listing, mv-exact, rising flag, exs 141872 read at 08:45Z = expiry about 2026-11-03T00:10Z, which is after the 02.11 tick and before the 03.11 one, so it is held through a tick, and MD9 locks 2026-11-06T19:30Z so there is no lock constraint. IT FAILS ON THE ONE GATE THAT IS NOT ABOUT TIMING: H7ma3ou, measured from feed 13209033266, found that SUB-1M FILLER BODIES CLEAR AT EXTREME PREMIUMS — Tim Schnitzer (12263) cleared to JakobDohr at 1.300.000 against mv 528.543, roughly +146%. Ayhan at 501.433 sits within 1.433 of the hard 500.000 floor and is the same kind of body. An mv-exact bid on a row like this has a win probability close to zero, so the expected capture is not the headline 501.433 x 2,87% = about 14.000, it is that figure multiplied by a win rate near zero. THE BID STILL COSTS NOTHING IF LOST, so this is not a prohibition on placing it — it is a ranking instruction: do not spend a run's attention or any capital headroom on sub-1M board rows while real flip rows such as Brown at 17.883.978 are open, and do not let one appear in the MOVERS table as though it were comparable. Note for symmetry that Bachmann (3307) at 1.011.973 sits just ABOVE the 1M line and is kept as an open FLIP (Fifgcil) for that reason, but carries the same depressed win probability and should be ranked last of the real rows, not dropped."
+   },
    {
     "name": "SOURCE TRAP — comunio.de \"Eintracht Frankfurt - HSV voraussichtliche Aufstellungen\" is 30.04.2026 (32. Spieltag) and lists Muheim ANKLE-INJURED; the CURRENT page of nearly the same URL is 31.10.2026 and STARTS him",
     "pos": "DEF",
@@ -305,26 +314,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "MEASURED THIS RUN, AND IT NEARLY PRODUCED A FALSE SELL ON A SECOND SQUAD PLAYER. The ligainsider club page /rb-leipzig/1311/, last update 26.10.2026 19:29, projecting RB Leipzig at Schalke 31.10.2026, contains NEITHER Ao Tanaka NOR Hee-chan Hwang anywhere — not in the probable XI, not in the squad list, not in the missing table. Tanaka's Kickbase record flatly contradicts that: MD2-MD7 all st 5, and MD7 on 2026-10-24 was 100 minutes for 113 points. He is a nailed-on starter who simply is not rendered on the page. THE RULE: ABSENCE FROM A LIGAINSIDER CLUB PAGE CARRIES NO INFORMATION. Only a POSITIVE marker counts — a name in the probable XI, an angeschlagen icon, or a row in the \"fehlen\" table. This is the same defect class as the Mokwa graphic, which omitted him while simultaneously starting Sirch on ap 18 and 0 starts, and it is now confirmed twice on two different clubs, so treat it as a property of the instrument rather than a one-off. CONSEQUENCE FOR THIS RUN, STATED SO A LATER RUN DOES NOT OVER-READ IT: Engelhardt is likewise absent from /fc-augsburg/21/, and that absence was correctly given ZERO weight. The Engelhardt sale rests entirely on two independent positive instruments — rotowire 542057 dated 25.10.2026 reporting him forced off at Monaco and ruled out v Bayern, and his own Kickbase MD7 line mp 0' st 4. Had only the page omission existed, there would have been no case."
-   },
-   {
-    "name": "SOURCE TRAP — ligainsider 365209 \"Grüll erleidet Fussblessur\" is 21.10.2024, and ligainsider article IDs are NOT chronological across seasons",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "TWO TRAPS, ONE OF THEM NEW IN KIND AND MORE DANGEROUS THAN THE USUAL JAN-MAY RULE. (1) THE ITEM: ligainsider.de/marco-gruell_26702/sv-werder-bremen-zweifach-scorer-marco-gruell-erleidet-fussblessur-365209/ reports Grüll cutting his foot against Wolfsburg, needing stitches, training individually, with no return date. Its date line reads verbatim \"21.10.2024 - 16:47 Uhr\". That is TWO SEASONS AGO. It surfaces at the top of a plain search for Grüll + Oktober + verletzt, and acting on it would have killed a live 18.999.210 bid on a confirmed starter. The existing Jan-May rule does NOT catch it: 21 October sits squarely inside a normal season window, so only reading the year saves you. (2) THE GENERALISABLE LESSON, WHICH IS THE REASON THIS ENTRY EXISTS: a HIGHER ligainsider article id does NOT mean a NEWER article. In the same search, 363728 (\"Grüll winkt Bewährungsprobe in der Startelf\") and 365209 (the 2024 foot injury) differ by under 1.500 in id, yet 365209 is two seasons older. Never order ligainsider items by id, never treat the highest id in a result set as the current one, and never infer recency from id proximity to a known-current article. Open it and read the date line. THE CORRECT CURRENT READ ON GRÜLL, same run: profile 26702 status box FIT, 0% time injured or suspended, newest item 20.10.2026; team page /sv-werder-bremen/2/ updated 26.10.2026 15:25 carries him in the projected XI v Hoffenheim."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The gate is open, and this is the cleanest window in some time: the lock is five days away, so nothing here risks a matchday, and tonight's tick is the next one. The drift has been re-measured from the event log this run, not assumed, and it has RISEN rather than decayed — the rising-flag sample is now roughly three times the size it was when this mechanism was first written down, and the share of rising players that actually rose went up with it. Rivals have not yet crowded the edge out. The mechanic is unchanged: bid EXACTLY market value on a rising board listing with no manager ask attached, and never raise. Winning captures the tick; losing costs nothing; one chased listing in the high cluster wipes out ten good flips. Three rows resolve before tonight's tick and capture it cleanly. The rest resolve tomorrow and capture tomorrow's tick instead, which is equally fine with the lock this far out — but their flags must be re-read tomorrow, because today's flag only predicts tonight. Bid every qualifying row rather than only the biggest; the market-value bid wins roughly one contest in three, so the capital actually absorbed will be a fraction of the headline, and it fits inside spending power even after the Muheim bid. Two things remain unresolved and should be said plainly rather than quietly assumed: it is still not known whether Kickbase caps squad size, which would cap how many flips can run at once; and the edge is measured in one league over one stretch, so it will decay if rivals crowd in, even though this run's re-measurement shows the opposite.",
+  "reason": "The flip mechanism is open and the measured edge has strengthened rather than decayed — the rising-flag arm now rests on more than three times the sample the task prompt was written against, with both the mean next-tick move and the hit rate higher than the figure hard-coded there. Future runs should trust the freshly computed number, not the prompt. Eight qualifying board rows are open, all priced exactly at market value with no manager attached, and the bid on every one of them is exactly market value with no raise under any circumstances — chasing one contested listing into the high premium cluster wipes out many good flips. Two of the eight resolve before tonight's tick, so a win on either captures a tick this run has actually measured; the other six resolve after it and rely on the rising flag persisting through tonight, which is a weaker claim and should be re-checked once tonight's tick lands. One new qualifying row appeared this morning but sits within a whisker of the hard price floor, and the measured behaviour of those filler bodies is that they clear at extreme premiums, so a market-value bid on it has a win probability close to zero. It is logged as an avoid so the next run does not rediscover it.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player is newly injured, suspended or benched this run. Ten of the eleven are clean on the Bundesliga injury table last updated the thirty-first, and none of them carries a Kickbase status flag. Deman is the one standing caveat and it is NOT new — he was already flagged and is still carrying a foot problem from late October, listed as doubtful, and his market value is falling hard in both trackers, which is the market agreeing. He has nonetheless played each of the last five. Watch him rather than act on him. On the buy side, Muheim is clean on the same table and his club's absences are precisely what creates his role. Lee is clean, with his club's listed absences falling on three other players. No source trap was triggered this run; the last-season Muheim cluster remains closed and remains wrong.",
+  "sweep": "Nothing in the squad carries an injury or suspension flag, and the one open doubt closed favourably. The Werder left-back had been a genuine concern — a painful tendon problem under the foot, a half-time withdrawal, a cup tie missed, and a coach who would say only that the pain had eased somewhat and that he might again be unavailable. The matchday eight team sheet settles it: he started, played into the final quarter of an hour, and his side kept a clean sheet. His steep slide in value is therefore backward-looking, pricing a doubt that has since been disproved, and must not be read as a sell signal. The other Werder body also started and was not substituted. A separate correction worth carrying forward: the two squad players sharing one club id are not at the club their opponent field names — neither appeared in that club's eleven, confirming once more that the opponent field is the opponent and never the player's own club.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -575,7 +575,7 @@
  "arithmetic": [
   {
    "k": "Balance",
-   "v": "6.216.190"
+   "v": "6.316.190"
   },
   {
    "k": "Squad value",
@@ -583,11 +583,11 @@
   },
   {
    "k": "33% floor",
-   "v": "-0,33 x (140.007.254 + 6.216.190) = -48.253.737"
+   "v": "-0,33 x (140.007.254 + 6.316.190) = -48.286.737"
   },
   {
    "k": "Spending power",
-   "v": "6.216.190 + 48.253.737 = 54.469.927 — NOT 6.216.190"
+   "v": "6.316.190 + 48.286.737 = 54.602.927 — NOT 6.316.190"
   },
   {
    "k": "Clearing premium band (measured)",
