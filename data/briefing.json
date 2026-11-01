@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-01T12:56Z",
+ "run": "2026-11-01T14:53Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -3683810,
   "floor": -47988068,
   "spending_power": 44304258,
-  "hours_to_lock": 126.55,
-  "exposure": "The leveraged position is open and this run could not find anything clearing it. The previous run closed the deficit sale on the stated ground that the squad's most valuable midfielder had been sold. He has not been: he is still owned, not listed, his value is rising, and the activity feed shows no transfer for him. The real-world transfer noise around him points at the January window, not now, and the item suggesting he had already agreed a move elsewhere is three months old and must not be read as current — so there is no matchday risk from him, but equally no sale from him to lean on. That leaves the deficit with a hard deadline at the lock and no mechanism in place, which is why the backstop sale now carries an explicit date. One instrument note for the record: the direct ledger database could not be reached this run, so open calls were reconciled from the computed context alone. That turned out to be sufficient — the display defect this task was built around has been fixed, and every actionable call is now rendered in full.",
+  "hours_to_lock": 124.61,
+  "exposure": "The balance is negative and has been since this morning's purchase. That is leverage, and it is survivable only because the lock is still five days away — a negative balance at matchday start scores zero for the entire matchday, and nothing else on this page outranks that. The unwind is already identified and does not need to fire yet. What does need watching is interaction: every flip won adds to the deficit, so the flip basket must be sized against the remaining room above the floor and not against the full qualifying list, and the whole position — flips plus the existing deficit — has to be unwound to a non-negative balance and at least eleven bodies before the lock. The ledger's direct database access is still unavailable this run, which was probed cheaply and confirmed to be an account binding rather than a transient fault; it costs the full text of stored reasoning but not the position, the actionable calls or the calibration.",
   "must_restore_by": "2026-11-06T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no positional gap — every formation Georg can field is legal and the squad is above the minimum. The real gap is quality in one defensive slot, occupied by a player who has not taken the field in five matchdays, and it closes for free at the next lineup change rather than with money. The constraint that actually binds is the unwind ceiling: it is what rules out every buy on the board today, and it is tighter than spending power by a wide margin.",
+ "binding_gap": "The binding gap is not a position — every line is covered and three formations are legal. It is a wasted slot in the eleven, occupied by a defender who has never appeared while a far better one sits outside the lineup. It closes with a lineup change and no money. The secondary gap is goalkeeping depth: exactly one keeper is owned, so a late absence there has no cover at all and would have to be solved on the board under time pressure.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 44304258,
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Quiet points market, busy value market, and one loose thread.",
-  "headline_short": "Quiet points market, busy value market, and one loose thread.",
-  "detail": "Quiet points market, busy value market, and one loose thread. Nothing in the squad is injured, suspended or doubtful, no buy on the board clears the bar once the unwind ceiling is applied, and the matchday lock is still days away. Two things from the previous run do not survive contact with live data, and both are corrected below. The leveraged position is still open and nothing credible is clearing it, so it is the one item that has to stay on the radar until it is closed."
+  "headline": "The highest-value action this run costs nothing and involves no trade: the fielded eleven still carries Nakuzola, who has never played a minute, while Muheim sits outside the lineu",
+  "headline_short": "The highest-value action this run costs nothing and involves no trade:",
+  "detail": "The highest-value action this run costs nothing and involves no trade: the fielded eleven still carries Nakuzola, who has never played a minute, while Muheim sits outside the lineup entirely. A current dated source puts Muheim in HSV's matchday-eight starting eleven and does not list him among the club's absences, so the swap is weakly dominant — Nakuzola's expected return is zero whatever happens. This contradicts the previous run's conclusion that no action was needed, and it is said out loud. Nothing else has changed: the market has produced no new qualifying row and no settled transfer since the last run, so the rest of this briefing is maintenance."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "No sale should be executed today. The standing clear of the deficit is the weakest fielded attacker, who is also the only squad member actively losing value, but executing it now drops the squad to eleven and forces the never-played defender into the fielded side, buying a points loss for no benefit, because spending power is derived from the floor and does not improve when cash turns positive. Georg's own ask on that player is sitting well above the measured manager-ask clearing band with no offers against it, so it is very unlikely to sell — but an unsold ask costs nothing and a sale at that price would be a good one, so leave it up. The backstop is recorded: if the deficit is still open on the fifth, pull the ask and sell to the board at exactly market value, which is instant and pays market value with no spread.",
+  "reason": "The standing sale remains the backstop clear of the deficit and is deliberately NOT today's action. Georg listed Hwang to the market himself rather than instant-selling to the board, and the ask is now five hours unsold at a premium roughly triple the top of this ledger's measured manager-ask clearing band, on a player whose market value is itself drifting down. It will most likely not clear. That costs nothing yet, because the deficit is harmless until the instant the matchday locks, and selling today would drop the squad to eleven and force the non-playing defender permanently into the eleven. The decision point is later in the week: if the ask has not cleared by then, pull it and instant-sell to the board at market value, which pays exactly that with no spread. Certainty beats the upside when the downside is a zero-point matchday.",
   "standing": [
    {
     "name": "Hee-chan Hwang",
@@ -201,9 +201,18 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No points buy is recommended. The board has several genuine starters available at exactly market value with no premium to pay, and a straight read of spending power suggests the biggest of them is affordable. It is not. The binding constraint is the unwind ceiling, not spending power: each buy permits exactly one extra sale before the squad falls below eleven, and the only bodies Georg would actually part with do not raise enough to cover both the existing deficit and a purchase of that size. Once that arithmetic is applied, every buy still affordable is worse than the player it would have to displace, so the honest answer is to pass and let the value trade fund a real upgrade later.",
+  "reason": "No buy is recommended. Every position is covered, the one genuine weakness in the eleven is a selection error rather than a missing player, and the board has produced nothing since the last run that improves on what is already owned. Padding a covered position while a deficit is open and a free upgrade sits unused would be the wrong order of operations. The manager asks on the board are all priced above market value and none of them clears the marginal-points test against the man he would displace.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "SOURCE TRAPS — two NEW dated Muheim items (blick.ch 27.04.2026 season-ending, ligainsider 416500 19.08.2026 pre-season), plus a POLARITY CORRECTION to Afkh2lg",
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
+    "premium_pct": null,
+    "why": "THREE FINDINGS, ALL FETCHED AND DATE-VERIFIED 2026-11-01T14:45Z, ALL SITTING ON THE SQUAD'S 9,1M DEFENDER. (1) NEW, LETHAL POLARITY, NOT COVERED BY A0syzzl (srf.ch + sportschau), A8g8q8p (4-4-2.com) OR Afkh2lg (comunio): blick.ch/sport/fussball/international/bundesliga/nati-spieler-muheim-spricht-mit-hsv-zu-verletzung-und-wm/k7lbsxy — dateline fetched verbatim 27 April 2026, 16:38. It reports a TORN ANTERIOR SYNDESMOSIS in the right ankle from the Nordderby v Werder and says his club season is likely over. That is LAST SEASON (25/26 ran to May 2026). Acted on, it would bench or sell a fit starter. (2) NEW, STALE-NOT-DEAD: ligainsider.de/miro-muheim_26094/hsv-muss-gegen-verl-auf-muheim-verzichten-416500/ — dateline fetched verbatim 19.08.2026, 18:26. Adductor trouble, misses the CUP tie at SC Verl, Louis Lemke deputises, no return date. That is PRE-SEASON, 2,5 months old, and is not evidence about MD8 or MD9. (3) CORRECTION TO Afkh2lg, WHICH HAS THE TWO COMUNIO URLS THE WRONG WAY ROUND. Afkh2lg records the SHORTER url (.../eintracht-frankfurt-hsv-voraussichtliche-aufstellungen/) as the 30.04.2026 trap and the near-identical longer one as the current 31.10.2026 page that STARTS him. FETCHED THIS RUN: magazin.comunio.de/eintracht-frankfurt-hsv-HAMBURGER-SV-voraussichtliche-aufstellungen/ returns dateline 30 April 2026 and lists Muheim OUT with a Sprunggelenksverletzung alongside Dickes, Poulsen and Otele. So the LONGER url is the stale one, the opposite of what Afkh2lg says. DO NOT rely on Afkh2lg's url mapping. THE CLEAN CURRENT SOURCE, use this one instead: bundesliga.com article 39769, dateline 30.10.2026, which starts Muheim and does not list him among HSV's absences."
+   },
    {
     "name": "Said El Mala",
     "pos": "MID",
@@ -212,15 +221,6 @@
     "mv": 22230728,
     "premium_pct": 0,
     "why": "THE SINGLE LARGEST QUALIFYING FLIP EVER TO APPEAR ON THIS BOARD, AND IT IS EXCLUDED ON THE ONE RULE THAT STILL BINDS A PURE VALUE FLIP: NEVER FLIP A PLAYER WHO MIGHT LEAVE THE LEAGUE. Row 8274, tid 28 Köln, pos 3 MID, Kickbase BOARD listing (no `u`), prc = mv = 22.230.728 EXACTLY, st 0, mvt 1, ap 79, listed 2026-11-01T09:26:09Z (feed 13243445774). On the mechanism alone it would rank FIRST at mv x drift = 638.022, ahead of Brown's 513.270. IT IS REJECTED ANYWAY. MEASURED 2026-11-01T10:45Z from dated CURRENT-SEASON sources, not last season: ran.de reports Premier League clubs pursuing him; eurosport.de reports PSG hunting a Kvaratskhelia replacement with El Mala on the list; come-on-fc.com reports Galatasaray interest; sport.de carries \"BVB? England? El Mala pocht beim 1. FC Köln auf Wechsel\" — the player himself pushing for a move; geissblog.koeln (2026/10) and footy.de (2026/10/15) both frame the open question as WINTER OR SUMMER exit, and fussballeuropa reports Köln opening the door to a sale. Three of the four named destinations are OUTSIDE the Bundesliga, so an exit is a Kickbase delisting, not a transfer within the game. The flip is only lossless because the board buys back at exactly mv; a player who leaves the league cannot be sold back at all, and 22,2m is HALF the 44,3m spending power — this is the largest single-line exposure the ledger has ever been offered. REVERSAL: reverse only if a source dated 2026-11-01 or later states that El Mala will NOT move in the winter window, or the winter window closes with him still at Köln. Do not reverse on the mechanism (mvt 1, prc = mv) alone — the mechanism is exactly what makes him look attractive and it is not the thing in doubt."
-   },
-   {
-    "name": "Mert Can Ayhan",
-    "pos": "DEF",
-    "club": "8",
-    "ask": 501433,
-    "mv": 501433,
-    "premium_pct": 0,
-    "why": "THE ONE NEW QUALIFYING FLIP ROW THIS RUN, AND IT IS LOGGED AS AN AVOID RATHER THAN A FLIP SO THE NEXT RUN DOES NOT RE-DISCOVER IT AND BID. Row 10916, tid 8, pos 2 DEF, listed to the Kickbase BOARD at 2026-11-01T08:22:11Z (feed 13243014530), prc = mv = 501.433 EXACTLY, no `u`, st 0, mvt 1, ap 8. On the face of it it passes every flip gate: board listing, mv-exact, rising flag, exs 141872 read at 08:45Z = expiry about 2026-11-03T00:10Z, which is after the 02.11 tick and before the 03.11 one, so it is held through a tick, and MD9 locks 2026-11-06T19:30Z so there is no lock constraint. IT FAILS ON THE ONE GATE THAT IS NOT ABOUT TIMING: H7ma3ou, measured from feed 13209033266, found that SUB-1M FILLER BODIES CLEAR AT EXTREME PREMIUMS — Tim Schnitzer (12263) cleared to JakobDohr at 1.300.000 against mv 528.543, roughly +146%. Ayhan at 501.433 sits within 1.433 of the hard 500.000 floor and is the same kind of body. An mv-exact bid on a row like this has a win probability close to zero, so the expected capture is not the headline 501.433 x 2,87% = about 14.000, it is that figure multiplied by a win rate near zero. THE BID STILL COSTS NOTHING IF LOST, so this is not a prohibition on placing it — it is a ranking instruction: do not spend a run's attention or any capital headroom on sub-1M board rows while real flip rows such as Brown at 17.883.978 are open, and do not let one appear in the MOVERS table as though it were comparable. Note for symmetry that Bachmann (3307) at 1.011.973 sits just ABOVE the 1M line and is kept as an open FLIP (Fifgcil) for that reason, but carries the same depressed win probability and should be ranked last of the real rows, not dropped."
    },
    {
     "name": "SOURCE TRAP — comunio.de \"Eintracht Frankfurt - HSV voraussichtliche Aufstellungen\" is 30.04.2026 (32. Spieltag) and lists Muheim ANKLE-INJURED; the CURRENT page of nearly the same URL is 31.10.2026 and STARTS him",
@@ -317,11 +317,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "This is where the run earns its keep. The next-tick edge was re-measured from the event log and has strengthened rather than decayed, on a sample more than three times larger than the figure hard-coded in the task. Rising-flag rows remain the trade and falling-flag rows remain the mirror image of it. The board is unusually thick with qualifying rows, and three of them were missed entirely by the previous run despite being listed well before it, including the largest qualifying row this ledger has ever seen. The bid is exactly market value on every qualifying row and never a cent more — the measured record is that contested board rows clear far above that, and one such clear wipes out a long run of good flips. Capital, not opportunity, is the limit: the full qualifying set would absorb well over twice the available spending power, so the rows are ranked by expected capture and bid down the list until Kickbase refuses. One large row carries a flag and is deliberately ranked below its size: its rising trend is running on comeback speculation rather than minutes, and that kind of trend can invert on a single dated setback story in a way a starter's cannot. The lock is far enough away that the flip window is wide open and every win can be unwound comfortably. The two open questions stand: it is still unknown whether Kickbase caps squad size, which would cap how many flips can run at once, and the edge is still measured in one league over one period and will decay if rivals crowd in — no crowding is visible yet.",
+  "reason": "The flip window is wide open — the lock is five days away, not hours. The measured edge has not decayed: the rising-flag rows still carry a clearly positive expected move at the next tick with a high hit rate, and the falling-flag rows the opposite, so the mechanism stands. Every qualifying row on the board was already logged by earlier runs; this run found no new one, and it closed a contradiction where the same tiny row carried both an avoid and a flip call of opposite sign — the newer flip stands and the older avoid is closed. The binding constraint is capital, not opportunity: the qualifying rows together ask for roughly twice the available spending power, so they cannot all be bid. Bid the rows whose expiry falls before a tick, at exactly market value, and never raise — chasing a contested listing into the high cluster destroys the edge outright. Two rows resolve before tonight's tick and are the cleanest captures of the day. The largest row by expected value belongs to an injured player, which does not disqualify a pure value flip, but its own call text omitted the status flag and must never be read as a points case. One large row stays excluded on the only rule that still binds a value flip: never flip a player who might leave the league. Two open questions remain unresolved for Georg: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "A full squad-wide sweep came back clean. Not one of the twelve appears on the league-wide injured, suspended or doubtful table read today, and Kickbase carries no status flag against any of them. The new defender's starter status was confirmed on a source dated today, which puts him in his club's probable starting eleven — note the date trap that caused the earlier doubt, an article about him losing his place that is two matchdays old and now superseded. Among the value targets, one carries an injury flag and is long-term absent with a repeatedly delayed comeback, and one carries a short-term cup absence; neither matters for a pure value flip, because fitness does not enter the daily tick, but the first is flagged because its price trend is speculative.",
+  "sweep": "Muheim was the one real question and he checks out on a current dated source that starts him and omits him from the club's absence list. Three separate stale items on him were fetched and date-stamped this run, two of them new to the ledger, one of them a last-season season-ending report that would have benched or sold a fit starter had it been believed. A standing source-mapping entry on him also turned out to have two near-identical URLs the wrong way round, and that is now corrected. His own appearance history shows him missing the most recent matchday and no dated source explains it, so that is logged as no current info found rather than guessed at. One instrument error worth more than any single player: this ledger has been labelling a club identifier as the wrong club entirely, which means a news check on any of those rows would fetch the wrong team sheet. Proven three ways and corrected.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
