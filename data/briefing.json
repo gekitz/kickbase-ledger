@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-02T10:53Z",
+ "run": "2026-11-02T12:58:00Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -3583810,
   "floor": -48323927,
   "spending_power": 44740117,
-  "hours_to_lock": 104.61,
-  "exposure": "The position is leveraged now and goes far deeper if both pending offers win. The lock is still four days out, so the deficit itself costs nothing yet, and no buy should be killed merely because the balance is negative. What matters is whether it can be unwound by Friday evening. On the corrected legs it can, comfortably and without relying on any forecast. On the legs named last run it cannot, and the shortfall only closes if several daily ticks land as predicted on a single large asset. That is an avoidable bet and it is being made for one point of fielded strength.",
+  "hours_to_lock": 102.38,
+  "exposure": "A leveraged position is open and will roughly double today. Two live offers are out, Scherhant closing early this afternoon and Petkov this evening, and if both land the balance goes sharply negative against an already negative starting balance. That is NOT a reason to pull them: a negative balance costs nothing until the instant the matchday locks, and the lock is more than four days out. What matters is that the unwind is arithmetically sufficient, and with the Hwang sale done today it is, with the Nusa sale providing the bulk of it. Without the Hwang sale the preferred branch becomes unreachable at any plausible drift and the squad is forced into the weaker eleven. There is no urgency before the lock itself, but there is urgency on the Hwang sale, because his value decays on every tick he sits unsold and the threshold moves with it.",
   "must_restore_by": "2026-11-06T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no positional hole. The squad fields a legal eleven today and will field one on every branch considered here. The binding constraint is not selection, it is the unwind: whether the balance can be brought non-negative before the lock while keeping at least eleven bodies. Everything else is subordinate to that.",
+ "binding_gap": "After both buys land and the unwind completes, the squad sits at exactly eleven with a thin back line and only two attackers. That is legal and it is the best available shape, but it leaves no slack: any further sale drops below eleven and triggers the penalty, and there is no cash at the lock to replace a body. The gap is therefore structural rather than something to buy into this week. The one genuine upgrade on the market is a defender asking well above value from a manager who has just demonstrated he will pay a high premium himself, and he is unaffordable against cash-at-lock regardless of merit.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 44740117,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 26,
+  "listings": 25,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 3
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -180,28 +180,37 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Two buy offers are live and both were bid ABOVE market value, against the standing instruction to bid exactly mv.",
-  "headline_short": "Two buy offers are live and both were bid ABOVE market value, against ",
-  "detail": "Two buy offers are live and both were bid ABOVE market value, against the standing instruction to bid exactly mv. That premium is the whole problem: at mv the structure unwound cleanly with the cheap legs; at the prices actually bid it does not, and the unwind legs the ledger named last run (Hwang plus Nakuzola) leave the balance NEGATIVE at the matchday lock, which scores zero for the entire matchday. The legs are corrected this run: the third leg must be Tanaka, not Nakuzola. Nusa has still not been sold an hour and a half after the forced sale was reported."
+  "headline": "One action decides roughly thirty fielded points, and it is not a buy.",
+  "headline_short": "One action decides roughly thirty fielded points, and it is not a buy.",
+  "detail": "One action decides roughly thirty fielded points, and it is not a buy. Georg listed Hwang as a manager ask at a contested-board premium instead of instant-selling him to the Kickbase board, and that ask has now sat over twenty-seven hours with zero offers while his market value falls on an mvt-2 flag. Withdraw it and instant-sell to the board today, before tonight's 21:00Z tick. That sale is what decides whether the post-unwind eleven comes out at the high branch or the low one — not because of the one lineup point it costs, which the ledger already priced correctly, but because of what it does to the cash at the moment the forced Nusa sale has to clear. The second action is timing: do NOT sell Nusa today. He rises on the daily tick, and holding him until the fifth or sixth is what lifts the proceeds over the threshold that lets Tanaka be kept. Everything else this run is noise by comparison."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Three legs, in this order and no other. Nusa goes back to the board at market value under the league MVP rule. Hwang goes back to the BOARD at market value, not via the manager ask that has sat unsold for over a day and will not clear at that premium. The third leg is Tanaka, and this reverses last run's instruction to use Nakuzola. Nakuzola simply does not raise enough to clear the balance, and the squad hits exactly eleven at that point so nothing further can be sold. Tanaka is the lowest-scoring body that raises enough; Wolf would do the same job and cost materially more fielded points. One timing lever is worth taking if the MVP rule permits it: the later Nusa is sold, the more he is worth, and holding him past midweek removes the need to sell Tanaka at all and keeps the stronger eleven.",
+  "reason": "Hwang is the sale and it is today, to the board at market value, not as a manager ask. Withdraw the existing listing first. The ask is priced where contested board listings clear, not where manager asks clear, and twenty-seven hours with no offers is the market's answer. Nusa is forced under the league MVP rule and is not a judgement call, but its timing is: sell him as late as the rule permits, on the fifth or the sixth before the lock, never today. The third and final leg is conditional and should be decided from the live market value at the moment the Nusa sale goes through, not from a projection. If Nusa realises above the threshold, sell Nakuzola and keep Tanaka for the stronger eleven; if he falls short, sell Tanaka instead and accept the weaker shape. Read the real number and apply the rule to it — a negative balance at matchday start scores zero for the entire matchday and outranks every point of upside on this page.",
   "standing": [
    {
-    "name": "Tanaka (unwind leg 3, REPLACES Nakuzola)",
+    "name": "Antonio Nusa — forced MVP sale, EXECUTE ON 05.11 OR 06.11 BEFORE 19:30Z, NOT TODAY; threshold 32.450.405 decides the third leg",
     "pos": "MID",
+    "club": "43",
+    "mv": 30587435,
+    "ap": 186,
+    "why": "SUPERSEDES THE TIMING HALF OF THE CLOSED SELL Sl3d1f4 AND PUTS AN EXACT, CHECKABLE NUMBER ON THE BRANCH THAT CALL LEFT AS PROSE. The sale itself is not optional — Georg reported it live 2026-11-02T09:15Z as forced under the league MVP rule, same mechanism as the 31.08.2026 Suzuki sale, and the BLOCKED entry carries it. ONLY THE TIMING AND THE PARTNER LEG ARE LEVERS. (1) TIMING. Nusa is mvt 1, mv 30.587.435, sdmvt +909.813, and the re-measured mvt-1 drift is +2,89% per tick on n=1510 with 91,1% rising. The 21:00Z ticks still available before the 2026-11-06T19:30Z lock are 02.11, 03.11, 04.11 and 05.11 — FOUR, not five, because the 06.11 tick fires after the lock. Compounded: 31.471.412 / 32.380.896 / 33.316.604 / 34.279.454. Note the clock change already logged in W0av5rl — the tick is 21:00Z, not 20:00Z. (2) THE THRESHOLD, AND IT IS THE WHOLE POINT. With Hwang sold to the board today and both pending buys landing, cash is -32.950.405 at a squad of 13 and exactly two sales remain to reach 11. Sell Nusa + Nakuzola (500.000) and the eleven is a 3-5-2 at 1129 fielded ap, but it needs Nusa to realise >= 32.450.405. Sell Nusa + Tanaka (6.937.145) and it needs only >= 26.013.260, but the eleven is a 4-4-2 at 1099. SO: IF NUSA'S mv AT THE MOMENT OF SALE IS >= 32.450.405, SELL NAKUZOLA AND KEEP TANAKA. OTHERWISE SELL TANAKA AND KEEP NAKUZOLA. The threshold is first cleared by the 04.11 21:00Z tick (33.316.604 projected), so selling on 05.11 or on 06.11 before 19:30Z takes the 1129 branch with real margin; selling TODAY at 30.587.435 forfeits it and costs 30 fielded ap for nothing. (3) RISK. A negative balance at matchday start scores ZERO for the whole matchday and outranks every other consideration, so READ THE LIVE mv AT THE MOMENT OF SALE AND APPLY THE THRESHOLD TO THE REAL FIGURE — do not price the branch off the projected drift. The 8,7% of mvt-1 rows that fall are exactly the case this guard exists for.",
+    "tag": "sell"
+   },
+   {
+    "name": "Hee-chan Hwang — WITHDRAW THE 5.400.000 MANAGER ASK AND INSTANT-SELL TO THE BOARD AT mv TODAY, BEFORE THE 21:00Z TICK",
+    "pos": "ATT",
     "club": "8",
-    "mv": 6937145,
-    "ap": 57,
-    "why": "REPLACES SELL Sh7l3bt, WHICH IS CLOSED, AND CORRECTS ITS LEGS OUTRIGHT. Sh7l3bt named Hwang + Nakuzola as the unwind of the two pending buys. MEASURED 2026-11-02T10:45Z: those legs DO NOT CLEAR THE BALANCE AND PRODUCE A ZERO MATCHDAY. Arithmetic, all at live mv: cash -3.583.810; Georg's two LIVE offers are Scherhant 20.000.009 (exp 15:16Z) and Petkov 14.000.066 (exp 20:24Z) = -34.000.075, taking cash to -37.583.885 if both land. Sh7l3bt legs: Nusa 30.587.435 + Hwang 4.633.480 + Nakuzola 500.000 = 35.720.915 -> cash -1.862.970, STILL NEGATIVE at the 2026-11-06T19:30Z lock, squad exactly 11 so nothing further can be sold = ZERO POINTS FOR THE WHOLE OF MD9. CORRECTED legs: Nusa 30.587.435 + Hwang 4.633.480 (instant to BOARD at mv, NOT the 5.400.000 manager ask that has sat unsold since 01.11 09:45Z) + TANAKA 6.937.145 = 42.158.060 -> cash +4.574.175, squad 11 (1GK/4DEF/4MID/2ATT), legal 4-4-2, fielded 1099. Tanaka is the right leg because he is the lowest-ap body (57) that raises enough; Nakuzola at 500.000 raises too little and Wolf (ap 82) costs 25 more fielded points for the same job (4-4-2 with Wolf = 1074). THE 1129 FIGURE IN Sh7l3bt IS NOT WRONG, IT IS UNAFFORDABLE: it is the 3-5-2 that keeps Tanaka, and it comes with cash at -1.862.970. 1099 scoring beats 1129 scoring zero. ALTERNATIVE THAT KEEPS 1129: delay the Nusa sale until AFTER Wednesday's 21:00Z tick. Nusa must reach 32.950.405 (+7,72%) for Nusa+Hwang alone to clear; at the re-measured mvt-1 drift of +2,89%/tick that is ~3 ticks, i.e. sell Thursday, squad 12 (1GK/4DEF/5MID/2ATT), 3-5-2 = 1129, cash ~+0,1M. Only take that branch if the MVP-rule sale can be timed; if it is forced today, sell Tanaka.",
+    "mv": 4633480,
+    "ap": 28,
+    "why": "THE SINGLE HIGHEST-VALUE ACTION THIS RUN, AND IT IS A CORRECTION TO WHAT GEORG ACTUALLY DID RATHER THAN A NEW IDEA. MEASURED 2026-11-02T12:58Z from list_market: row 2449 carries u = Georg Kitz, prc 5.400.000 against mv 4.633.480 = +16,54% over mv, listed 2026-11-01T09:45:44Z, ofc 0. That is a MANAGER ASK priced in the CONTESTED-KICKBASE-BOARD cluster, and the measured manager-to-manager band is low single digits (+3,06%, +4,35%). It has sat 27h15m with ZERO offers. It is dead, and the ledger already knew it: W9jd1pm says board-at-mv beats a dead manager ask. (1) THE DECAY IS NOT COSMETIC, IT MOVES THE WHOLE STRUCTURE. Hwang is mvt 2 with sdmvt -609.280 and tfhmvt -200.599. Selling to the board pays EXACTLY mv at the moment of sale, so every 21:00Z tick he sits unsold costs ~609k of funding. (2) WHAT THAT 609k BUYS. Arithmetic at live mv, Hwang sold today: cash -3.583.810 +4.633.480 = +1.049.670; Scherhant lands 15:16Z -20.000.009 = -18.950.339; Petkov lands 20:24Z -14.000.066 = -32.950.405, squad 13. Two further sales take the squad to 11. The optimal pair is Nakuzola (ap 27) + Hwang-already-gone, leaving a 3-5-2 of Zentner 83 / Deman 86 / ter Horst 76 / Muheim 133 / Wolf 82 / Tanaka 57 / Gruell 162 / Scherhant 118 / Petkov 97 / Gregoritsch 109 / Guirassy 126 = 1129 fielded ap, ONE ABOVE today's 1128. It requires the Nusa sale to realise at least 32.450.405. If Hwang is NOT sold, the same branch needs Nusa at 37.083.885, which is unreachable before the 2026-11-06T19:30Z lock at any drift, and the squad is forced into the Tanaka or Hwang branch at 1099 or 1100. THE HWANG SALE IS THEREFORE WORTH EXACTLY +29 TO +30 FIELDED ap, not the 1 ap that Wbxgwpb correctly priced the lineup change at. Wbxgwpb is not contradicted — it measured the lineup cost; this measures the cash consequence, and they are different quantities. (3) NO FITNESS CASE IS NEEDED OR CITED: he is a sale to the board at a fixed price, st 0, and he is already BLOCKED with the Sd0wnax entry. DO NOT accept a lower ask or relist; withdraw and instant-sell.",
     "tag": "sell"
    }
   ]
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Nothing new is recommended. Both targets are genuine every-week starters with no fitness question whatever, and neither buy case fails on merit. Scherhant is the better of the two on every measure that matters and his premium is small. Petkov carries nearly three quarters of the combined overpayment for the weaker player. Both rows were uncontested, with no rival bidder on either, so neither premium bought any extra chance of winning. That is the mirror image of the losses this ledger has recorded before: those were lost by underbidding contested rows, this is overpaying on rows nobody else wanted. One structural warning on any big buy made this week: the league MVP rule fires again on whoever tops the coming matchday, so a high scorer bought now can be forced straight back out.",
+  "reason": "No new buy. The two pending offers already in the market are the buy list, both were verified as confirmed starters this morning with full start records, and both were bid above market value against the ledger's own instruction to bid exactly at value — that premium is already paid and cannot be recovered, so there is nothing to do but let them clear. Nothing else on the board clears both tests. The biggest points name listed is a defender excluded on price and selection grounds in an earlier run, the second biggest is flagged as a transfer risk, and the one real upgrade is a manager ask at a premium that the same manager's own trading today suggests will not decay. Budget is the hard constraint and it is not the headline balance: a points buy is budgeted by cash at the lock, which after the unwind is barely above zero.",
   "standing": [
    {
     "name": "Lukas Emanuel Petkov (2928) — MID replacement leg 2, bid exactly mv",
@@ -342,11 +351,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open and the edge was re-measured from the event log this run rather than inherited. It has not decayed; if anything it is marginally stronger than the figure carried in the task prompt, and the rise rate on rising-flagged rows remains very high. The crowding worry is still not real. But the capital is spoken for: the two pending offers commit most of the available headroom, and only small rows both fit what is left and expire before tonight's tick. Those are not worth chasing while a potential zero-matchday is open. Note also the standing execution gap: every flip this ledger has ever called shows no offer was placed, so the limiting factor here has been execution, not the edge. Two open questions stand unchanged: whether Kickbase caps squad size, which would cap flip throughput, and that the measured edge comes from one league over one period and will decay if rivals crowd in.",
+  "reason": "The flip window is open — the lock is far enough away — and the measured edge has not decayed; if anything the re-measurement off the event log is slightly stronger than the baseline carried in the brief, with the overwhelming majority of rising-flag rows rising again at the next tick. Bid exactly at market value on rising-flag board rows and never raise. The constraint this run is capital, not opportunity: the two pending buys consume most of the room above the floor, so the largest edge on the board is NOT takeable. Its auction closes about half an hour before the Petkov auction, and taking it would push the balance through the floor at that moment. The next largest fits but would leave almost no margin while thirty-four million of buys are still in flight. What is left is a small basket of cheap rising rows worth a couple of hundred thousand on the tick, and the largest of those expires within the hour of this run, which is the same execution gap the ledger has flagged before: by the time a two-hourly run reports a short-dated board row, it is usually gone. A rival demonstrated the extreme version of this today, buying a player off the board and selling him straight back for a risk-free spread inside two minutes — and that player is injured, which confirms once more that fitness has no bearing on a pure value flip. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap flip throughput, and whether the edge decays as rivals crowd in. The second was re-measured this run and has not decayed yet.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean sweep, dated today. Not one of the twelve squad players appears on Ligainsider's current injured-and-suspended table, and every Kickbase squad row carries a clear status flag. Both buy targets have started every single matchday of the season and carry no flag; the Freiburg and Elversberg absentee lists do not include them. One new source trap logged: a widely-surfacing 'bad news on Muheim' article is dated mid-August, pre-season, and is not about the current period — dated October items run the opposite way and match his live scoring. Muheim's missing slot in last matchday's eleven is a selection absence, not an availability flag.",
+  "sweep": "No squad player is injured, suspended or flagged. The full sweep run this morning cleared all twelve plus both buy targets against the league-wide injured and suspended table, and nothing has changed in the two hours since: no Bundesliga match has been played, the next matchday is not until the sixth. A direct re-fetch of that table failed at the source this run, so the morning sweep stands as the dated reference. Targeted checks on the two names that decide money today found nothing current — the Scherhant search surfaces only his former club's injury archive and an older return-to-training item, neither of which bears on now, and the Nusa results are all transfer speculation with no dated fitness item. Both carry a clean status flag and full start records. Treat anything undated as stale, and remember the long list of dated traps this ledger has already caught: several of them are last-season items that read as current.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -613,7 +622,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1026, -4,00% to +443,38%"
+   "v": "n=1030, -4,00% to +443,38%"
   }
  ]
 }
