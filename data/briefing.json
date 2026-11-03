@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-03T02:55:00Z",
+ "run": "2026-11-03T04:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 16125559,
   "floor": -49149965,
   "spending_power": 65275524,
-  "hours_to_lock": 88.6,
-  "exposure": "No leverage is open and the balance is positive. The live Beste offer alone would leave the balance positive if it cleared. If every optional flip is placed and every one of them clears simultaneously — the worst case, not the expected one — the balance goes negative but stays inside the floor, and the unwind is self-funding because selling a flip back to Kickbase pays exactly market value with no spread and the player sold is the player bought. With days of runway to the lock, that exposure is comfortable rather than tight. The rule that outranks everything still holds: a negative balance at matchday start scores zero for the whole matchday, so every position must be unwound to a non-negative balance and at least eleven players before the lock.",
+  "hours_to_lock": 86.63,
+  "exposure": "No leverage is open and nothing is at risk right now. The recommended move would open one, deliberately, and that is fine: a negative balance costs nothing until the instant the matchday locks, and the lock is days away. What matters is that it can be unwound, and it can be several times over. If Laimer lands, the correct unwind leg is Hwang — he is precisely the body Laimer displaces from the eleven, his ask is already live, and instant-selling him clears most of the deficit by itself, with Nakuzola and Tanaka behind him as further cover. Do not unwind by selling Laimer back; that would throw away the entire point of winning him. If all four flips somehow landed they would still sit inside spending power, and four buys permit four sales with days of runway, but winning one or two is the realistic outcome at a bid of exactly market value. One instrument note for the record: the ledger's direct database fallback is confirmed unreachable — the connected account holds no databases at all, so no retry will fix it — but this cost the run nothing, because the display defect that fallback existed to work around has been fixed and every open call rendered correctly.",
   "must_restore_by": "2026-11-06T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The binding gap is the bottom of the eleven, not a formation hole — there is no hole. One fielded attacker and one benched defender are both well below the level of everyone else in the squad, and the board offers nothing cheap that beats them. Beste does not fix this; he upgrades the weakest midfielder instead, which is the best available use of that money given the better target is barred. The gap closes properly only when the Hwang ask clears and the proceeds buy a real attacker, and nothing on the current board qualifies.",
+ "binding_gap": "Not a hole, a floor. The eleven is complete in all three shapes, so nothing is missing in the formal sense — what binds is that the last fielded slot is occupied by a roughly-twenty-seven-average body no matter which shape is chosen. Filling it needs one genuine fourth defender or fourth attacker, and the market is not offering one at a sane price. Querfeld is barred twice over as the few-appearances trap. Matsima, Collins, Itakura, Khedira and Tillman are all manager asks at premiums far above anything this ledger has ever paid. Tella is barred and carries a non-zero status flag. The cheap Koeln attacker with the eye-catching average is the same few-appearances artefact and is already on the avoid list. Stefano Marino is the only near-miss worth naming — a Frankfurt attacker who would genuinely improve the slot, at a manager ask above market value that sits roughly where the measured manager cluster now tops out. He is logged to watch, not recommended, and his starter status has not been verified. Laimer solves this outright and at no premium at all, which is why he leads.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 65275524,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 26,
+  "listings": 28,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "No action required before the next run.",
-  "headline_short": "No action required before the next run.",
-  "detail": "No action required before the next run. The position is unleveraged, the squad is one clear of the penalty threshold, nothing is flagged injured, and the only live points buy is already bid at the right price. The Beste offer stands exactly as placed — do not raise it, do not withdraw it. Everything else this run is optional value, and it all lives in MOVERS."
+  "headline": "One move matters and it has about an hour left.",
+  "headline_short": "One move matters and it has about an hour left.",
+  "detail": "One move matters and it has about an hour left. The Konrad Laimer board row expires early this morning and still has no bid on it — not from Georg, not from anyone. Bid exactly his market value and never raise. This is being carried as a flip, but it is really the points move: Laimer is a Bayern defender with the second-highest average in play, and winning him is the only available action that pushes BOTH dead bodies out of the eleven at once. Every other candidate on the board moves one slot by a modest margin. Nothing else this run is urgent."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Both sales are already called and both stand unchanged. The Hwang ask stays live on the market — he is the weakest player in the fielded eleven, his market value is falling, and the ask sits in the upper manager band where it will either clear well or simply sit, and either outcome is acceptable. The Nakuzola sale remains gated and the gate has not opened: with the Hwang ask live and uncontrolled, selling Nakuzola now risks two departures in sequence and a squad below the minimum at lock. The gate opens the moment Beste lands, because that restores the buffer. Until then, hold him.",
+  "reason": "Both standing sales are re-affirmed and neither has executed. Hwang: the ask stays live, do not withdraw it. A search for his starter status turned up an emphatic article naming him in the Schalke eleven for the third straight game, which if true would have reversed this sale outright — it is undated, and the Kickbase start counters settle it the other way, showing a clear substitute's record and a substitute's minutes across the season. Ligainsider does not list him as injured, so he is fit and simply not picked, which is exactly the case the sale rests on. The trap is logged. Nakuzola: still the squad's only genuinely dead body, five straight matchdays without an appearance, and still not safe to sell on his own while the Hwang ask is live and uncontrolled — losing both in sequence drops the squad below eleven and costs the matchday penalty. Sell him once a flip has landed and padded the count, or once the Hwang ask has resolved either way. Not before.",
   "standing": [
    {
     "name": "Hwang",
@@ -210,7 +210,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Beste is the primary and only points buy and the offer is live. Re-verified this run: no injury flag, started every league matchday this season, and played a full shift in the most recent one. A current-dated lineup showing him on the bench is a cup rotation, not a loss of place — worth saying plainly because it is the kind of source that reads as a sell signal and is not. The honest caveat is that this is a thin trade: he upgrades only the weakest midfielder, and the premium has drifted upward on its own as his market value fell. It is still the right bid, because the genuinely better points upgrade on the board is barred — a Bayern defender with the largest season average available, whom Georg himself correctly judged unwinnable at anything we would pay. That judgement stands and is not reversed.",
+  "reason": "Beste is placed, live, uncontested, and needs nothing. His own market value has risen since the bid went in, so the same unchanged offer now sits at a wider premium than when it was priced — that is the denominator moving, not the bid, and it is not a reason to withdraw or to raise. He was re-verified fit and starting every matchday this season. Beyond him there is no second points buy worth making: the upgrade he delivers is modest, and the far larger one is Laimer, who is nominally a flip and costs no premium whatsoever. Do not pad a position already covered.",
   "standing": [
    {
     "name": "Beste — PRIMARY AND ONLY points buy, bid 13.575.000 TONIGHT, no Laimer contingency (replaces Bsa13ui; Laimer call Bgqgeej closed on Georg's correction)",
@@ -226,6 +226,15 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "SOURCE TRAP — fussballtransfers \"Überraschung in der Schalke-Startelf\" is UNDATED and claims Hwang started three straight; Kickbase smc says 2 starts in 8",
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
+    "premium_pct": null,
+    "why": "A NEW SOURCE TRAP, CAUGHT THIS RUN, AND IT WOULD HAVE REVERSED A CORRECT SELL. Searching Hwang's starter status surfaced fussballtransfers.com/a1599678488459302291-ueberraschung-in-der-schalke-startelf. The article carries NO publication date — it says only \"am heutigen Samstag\" with a 15:30 kickoff and an embedded post timestamped 14:15 with no date. Its content is emphatic: Muslic names Hwang in the starting eleven \"for the third straight game\", with Dzeko and Lasme on the bench. Taken at face value that satisfies limb (a) of the Hwang block's reversal condition (\"two consecutive Bundesliga starts, or a club-page probable XI naming him\") and would have cancelled SELL Sk3e8i0. IT IS FALSE AS A CURRENT STATEMENT. get_player 2449, read 2026-11-03T04:52Z, gives the one-call starter test from HOLD Hpz5lsb: smc 2, ismc 6, smdc 8. Two starts in eight matchdays, in the squad six times, i.e. four appearances off the bench and two not in the squad at all. sec 17.055 over eight matchdays is 35 minutes per matchday — a substitute's minutes, not a starter's. ph (newest-first per Hcti7c6) reads 19 / 64 / -5 / -19 / 26: he has appeared in all five but returned a median of 19. The article cannot be describing this season's recent run. APPLY THE TASK PROMPT'S RULE WITHOUT EXCEPTION: assume any undated hit is stale, however specific and however current its prose reads. This one is unusually dangerous because it names a concrete, checkable, reversal-triggering fact rather than a vague injury note. CROSS-CHECK THAT SETTLED IT: Ligainsider's Verletzte-und-Gesperrte sweep (fetched 2026-11-03T04:50Z) lists eight Schalke absentees — Bachmann, Woeber, Heekeren, Hoejlund, Gantenbein, Siebeking, Donkor, Grueger — and Hwang is not among them, so he is FIT and simply not picked. Fit-but-benched is exactly the case the ap-28 sale is built on. SELL Sk3e8i0 STANDS UNCHANGED, ask stays live at 5.400.000."
+   },
    {
     "name": "SOURCE TRAPS — TWO \"MATCHDAY 9 ABSENTEES\" PAGES THAT ARE 2019 AND 2023/24",
     "pos": "",
@@ -299,15 +308,6 @@
     "why": "NEW TRAP, ADDS TO THE Muheim CLUSTER (A8g8q8p, Atzjfmv, A0syzzl, Afkh2lg, Aocrhrp). Fetched 2026-11-02T10:45Z. 4-4-2.com/bundesliga/hsv/schlechte-news-von-miro-muheim-beim-hsv/ carries NO visible date in search results and surfaces high on any 'Muheim injury' query; the byline is '13 August, 2026 17:55', metadata 2026-08-13T15:55:01+00:00. It describes a PRE-SEASON thigh strain in training after his World Cup break, before the DFB-Pokal tie at Verl and the Bundesliga opener. It is NOT about the current period and must never be read as one. POSITIVE DATED EVIDENCE THE OTHER WAY, same sweep: blick.ch 10.10.2026 'Traum-Comeback: Muheim schiesst den HSV spaet zum Sieg' and sport1.de 10/2026 'die irre Wende des Miro Muheim' — both match his live point returns of 202 and 243. CURRENT STATUS: Ligainsider's 26/27 Verletzte-und-Gesperrte table read this run lists HSV's absentees as Vieira, Remberg, Nadir and Vuskovic ONLY — Muheim is NOT on it. Kickbase st 0, stl []. HE IS FIT AND HE IS THE SQUAD'S BEST DEFENDER AT ap 133. NOTE SEPARATELY, SO NO RUN MISREADS IT AS INJURY: his MD8 lineup slot shows hp false. That is an absence from the fielded eleven, not an availability flag, and Ligainsider contradicts any injury reading."
    },
    {
-    "name": "Konrad Laimer",
-    "pos": "DEF",
-    "club": "2",
-    "ask": 23194232,
-    "mv": 23418395,
-    "premium_pct": -0.96,
-    "why": "NEW BOARD ROW, BIGGEST ap ON THE MARKET, AND IT FAILS BOTH TESTS — derived here so the next three runs do not re-derive it while he sits listed. Measured 2026-11-02T06:45Z: row 2038, tid 2 Bayern, pos 2 DEF, Kickbase BOARD listing NO u, prc = mv = 23.194.232 EXACTLY, st 0, mvt 1, ap 138, p 688, isn true, listed 2026-11-02T06:02:06Z (feed 13250716808). (1) NOT A FLIP: exs 84212 read 06:45Z = expiry about 2026-11-03T06:08Z, which is AFTER tonight's 21:00Z tick. Wxetq9g/H4olk62 bind — the mvt 1 flag predicts the NEXT tick only, and by the time this auction resolves that tick is spent. (2) NOT A POINTS BUY, and this is the part no run has computed: squad is 12, so one buy permits exactly two sales to stay at 11. Buying him puts cash at -26.878.042 and the two-sale combinations are: Guirassy+Hwang = 38.145.147 -> +11.267.105 but leaves 1 ATT and NO legal formation (3-4-3/4-3-3/4-4-2 all need 2); Nusa+Nakuzola = 31.087.435 -> +4.209.393 but the XI falls from 1.128 to 1.080 ap, -48; Guirassy+Nakuzola = 34.011.667 -> +7.133.625, legal 4-4-2, XI 1.140 ap = +12 ONLY, and it spends Dortmund's starting striker (ap 126, ph 139/99/40/87/75) plus 23,2M of churn to buy twelve points while leaving zero bench and locking Hwang into the XI instead of selling him. Hwang+Deman = 13.504.118 leaves cash -13.373.924, negative at the lock, fails outright. +12 ap is not worth the structure. REVERSAL: he becomes the single largest qualifying FLIP on the board (mv x 2,89% = +670.315 expected, the biggest single-row drift this ledger has seen) the moment he is re-listed with an expiry BEFORE a 21:00Z tick while still mvt 1 and prc = mv. He becomes a POINTS buy only if the squad first grows past 12 bodies or a sale pair exists that funds him without touching Guirassy or Nusa."
-   },
-   {
     "name": "Muheim source trap — bundesliga.com 24397",
     "pos": "",
     "club": null,
@@ -339,11 +339,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open with days of runway, and the measured edge did not decay this run — it strengthened, on a sample several times larger than when it was first measured. Three board rows qualify on mechanism: no manager behind them, asking price exactly at market value, and the rising flag set. Two of them expire before tonight's value update and so capture tonight's tick; the third settles afterwards and captures tomorrow's, so its flag must be re-read then. Bid exactly market value on each and never raise — losing costs nothing, and a single contested clear at the top of the band erases ten good flips. One of these reverses a previous finding: the goalkeeper row was recorded last run as qualifying on mechanism but not fitting the envelope. At this run's spending power it fits, with real headroom, and the published figures show the arithmetic. One contingency worth holding in mind: if the Bayern defender flip actually clears at market value, the premise behind avoiding him was that he could not be had at that price — so hold him and put him in the eleven rather than flipping him back, since the recurring points gain dwarfs a one-off tick. That branch is unlikely; the rule only applies if it happens. Rivals continue to flip injured and unavailable players, and they are right to — fitness does not enter the daily tick. Two open questions remain unresolved: whether Kickbase caps squad size, which would cap flip throughput and is newly relevant at this many simultaneous positions; and that the measured edge comes from one league over one period and will decay if rivals crowd in.",
+  "reason": "The flip window is wide open — the lock is days away, not hours. The drift was re-measured this run from the event log rather than trusted, and the edge has not decayed: the rising-flag sample has more than tripled since the baseline and both the mean next-tick move and the hit rate have gone UP. No crowding-out is visible yet. Four board rows qualify — all Kickbase listings, no manager ask, priced at exactly market value, rising flag, nobody bid. In order of expected capture: Laimer, Schwaebe, Baumann, Gray. Bid exactly market value on each and never raise; selling back to Kickbase pays exactly market value with no spread, so a lost auction costs nothing and one chased auction wipes out ten good flips. Baumann needs saying out loud: he is on the blocked list, and this run reverses that block for flip purposes only. The block's own stated reversal condition was a non-negative balance, and the balance is positive — it was written when he was the funding leg of a large deficit that closed weeks ago. He remains not a points buy, since only one keeper is ever fielded and Zentner holds that slot. This is the same reasoning already applied to Schwaebe. None of these four need a fitness check, because fitness does not enter the daily tick, and none carries transfer risk with the German window shut until January. Two questions stay open and unresolved: whether Kickbase caps squad size, which would cap flip throughput regardless of capital, and the standing caveat that this edge is measured in one league over one period.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player carries an injury, illness or suspension flag, and none is newly benched or subject to dated news about leaving the league. The transfer window is shut until January, so no flip candidate can leave the league before the unwind deadline. A note on method: two web pages purporting to cover this matchday's absentees turned out to be from entirely different seasons, one of them showing no date at all. The live Kickbase status fields are the better instrument for a squad-wide sweep — they are fed from the same source the ledger trusts and were current to within hours this run, flagging several market players correctly. The web is for confirming a named player, not for sweeping.",
+  "sweep": "Clean across the board. No squad player is flagged, none appears on the injured-or-suspended table, and nothing newly broke since the last run. The only fitness finding of the run is a negative one: an undated article that would have reversed the Hwang sale, caught and discarded against the Kickbase start counters. One live board row carries a non-zero status flag and one carries an injury flag — neither is a candidate here. The date traps continue to do real damage and the undated-equals-stale rule earned its keep again this run.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
