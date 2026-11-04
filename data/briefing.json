@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-04T04:53Z",
+ "run": "2026-11-04T06:55Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 16225559,
   "floor": -49589665,
   "spending_power": 65815224,
-  "hours_to_lock": 62.61,
-  "exposure": "Two bids are live and neither is under control once placed. Together they exceed the cash balance, so if both clear the balance goes negative — and a negative balance when the matchday locks scores zero for the entire matchday, which outranks every other consideration here. The lock is far enough away that an unwind is possible in either branch, so this is not yet an emergency; it becomes one only if both auctions are allowed to settle and the unwind is then run with the wrong legs. Withdrawing the smaller bid removes the problem entirely and costs nothing, because that bid was a points downgrade in the first place. If it is not withdrawn and it clears, the unwind must use Hwang, Wolf and Deman — the package built around Nakuzola does not raise enough and leaves the balance negative at the lock, which is the zero-score outcome.",
+  "hours_to_lock": 60.57,
+  "exposure": "A leveraged position is open and it is the reason the first action is a withdrawal. Two bids are live, neither is under control once placed, and together they exceed the cash behind them. If both clear, the deficit can only be unwound by sales that cost more fielded points than the second buy adds — the arithmetic favours keeping the defender and dropping the midfielder by a clear margin. Withdrawing one of them resolves it completely: the remaining bid plus the Hwang proceeds lands positive with no forced sale at all. The deadline on that withdrawal is this afternoon. A negative balance when the matchday starts scores zero for the whole matchday, so this outranks everything else on the page, and the flip book layered on top of it is safe only in the order described above.",
   "must_restore_by": "2026-11-06T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The binding gap is the fourth defender. Nakuzola occupies a defensive slot in the fielded eleven on an average that is barely above nothing, and he is the player Makengo displaces. That is why Makengo is the one buy worth paying a contested premium for and why the Beste bid, which fills no gap at all and downgrades a slot that is already filled better, is the one to pull. Nothing else in the eleven is a gap; it is a shortage of bodies, not of quality, everywhere else.",
+ "binding_gap": "The defence is the gap and the live Makengo bid closes it. Behind that, the real binding constraint is not money but shape: two attackers leaves exactly one legal formation and no slack anywhere, so any further sale has to be matched position for position or the eleven cannot be fielded at all.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 65815224,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 30,
+  "listings": 29,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 3
+  "expiring_within_2h": 0
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Withdraw the Beste bid before it resolves this afternoon.",
-  "headline_short": "Withdraw the Beste bid before it resolves this afternoon.",
-  "detail": "Withdraw the Beste bid before it resolves this afternoon. That is the whole run. Every previous justification for the withdrawal was a balance argument, and a balance argument is contestable — an earlier run already showed a three-leg unwind that clears it. This run makes the case on points instead, which is not contestable: Beste's season average is below Wolf's, so he never upgrades the midfield slot he would fill, and the squad shape that follows from winning both auctions forces Nakuzola into the fielded eleven while dropping Deman and Wolf. The eleven that comes out of withdrawing Beste is materially stronger than the eleven that comes out of keeping him, before any consideration of the balance at all. Keep the Makengo bid: he is the one large points gain on the board and his premium buys headroom that survives the daily tick."
+  "headline": "Three things, in order.",
+  "headline_short": "Three things, in order.",
+  "detail": "Three things, in order. Withdraw the Beste bid before it expires early this afternoon — not on fitness, Beste is fit and in Freiburg's XI, but because the two live bids together cannot both be unwound without breaking the formation. Accept the standing Hwang offer: it is above market value, selling back to the board would pay less, and Hwang is falling. Leave the Makengo bid alone — he is the single best thing in play this run and he is confirmed fit on a new dated source. Do those three and the position lands positive, at twelve players, in a legal 4-4-2, with the best eleven this squad has fielded all week."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Accept the standing manager bid on Hwang. It was worth taking yesterday and the overnight tick has made it better, because his market value fell while the bid did not — the premium over value has roughly doubled. He is a Schalke rotation sub whose last five returns are poor and whose value is falling hard; selling back to the board would pay strictly less. Nakuzola stays listed but must not clear until Makengo resolves: selling both him and Hwang while the Makengo auction is still open would leave the squad a body short of the minimum if that auction is lost. The Wolf sale is withdrawn this run, and that is a reversal of a standing recommendation. The points case against him is unchanged — he is out of the current Augsburg probable eleven — but once Makengo lands and Hwang and Nakuzola go, Wolf is one of exactly four midfielders in the fielded eleven, so selling him triggers the squad-size penalty. There is no midfield replacement to land first and no envelope to buy one. He is unsellable this cycle at any price. Note for later: the Augsburg page retrievable today is older than the one the bench case rests on and does start Wolf; an older render never overrides a newer one, so this is not a reversal of the bench finding.",
+  "reason": "Hwang is the only sale and it is a good one. The incoming offer sits above his market value, and the board pays exactly market value with no spread, so the offer is strictly better than the instant sale — the margin is small but it is free. He is also the squad's fastest faller and contributes nothing to the eleven, so the sale costs no fielded points at all. The ask that sits above the offer stays live; accepting the offer is what ends the listing. Nothing else should be sold. Deman looked like a candidate on the flag he carried a week ago, but that flag has cleared and he is back in the fielded four.",
   "standing": [
    {
     "name": "Hwang",
@@ -205,21 +205,12 @@
     "ap": 28,
     "why": "A LIVE INCOMING BID APPEARED AND IT IS THE FIRST ACTIONABLE DEADLINE THIS RUN. Measured 2026-11-03T20:45Z: market row 2449 now carries ofs [{u 3665490, unm reafix, uop 4567898}] against Georg's 5.400.000 ask. This was not present at the 18:45Z run. ACCEPT IT. (1) PRICE: 4.567.898 is +2,41% over mv 4.460.445, and selling back to Kickbase pays EXACTLY mv with no spread (re-proven this run: Van den Bosch 14917 sold back at trp 8.474.613 = mv to the euro, feed 19:20:48Z). So the bid beats the floor by 107.453 today. (2) DIRECTION: Hwang is mvt 2 and falling hard — sdmvt -908.914 on the day, tfhmvt -173.035 in three hours. At the measured mvt-2 drift of -2,91% per tick and three ticks to the MD9 lock, mv is ~4.08m by Friday, so holding costs ~490.000 against this bid. (3) POINTS: ap 28 on ph [19, 64, -5, -19, 26] — he is the weakest man in the fielded eleven by a factor of two and the next weakest is Tanaka at 57. (4) SQUAD SAFETY: squad is TWELVE with eleven placed; one sale takes it to ELEVEN, which is the minimum, not a breach — the penalty fires at TEN (Mokwa entry). The cost is that Nakuzola (ap 27, ph all false, has not played a minute) is forced into the eleven until Beste or Makengo lands, i.e. roughly 17-28 points of MD9 exposure. Beste resolves 2026-11-04T13:28Z and Makengo 2026-11-05T08:57Z, both well inside the 2026-11-06T19:30Z lock, so the hole is temporary by design. THE HARD GATE THAT FOLLOWS: once this clears, Nakuzola must NOT be sold (Stlxn7v) until a buy lands, or the squad hits TEN and MD9 scores -100.",
     "tag": "sell"
-   },
-   {
-    "name": "Nakuzola",
-    "pos": "DEF",
-    "club": "18",
-    "mv": 500000,
-    "ap": 27,
-    "why": "RE-ISSUE OF Snwf5d6, CLOSED BECAUSE ITS TRIGGER NAMED AN EVENT THAT WILL NO LONGER HAPPEN. Snwf5d6 read \"ONLY after the Hwang 5.400.000 ask is withdrawn\". This run has reversed that withdrawal and the ask now stays live, so the old trigger can never fire and the call would have sat open forever. THE CORRECTED TRIGGER, and the reason is pure squad-count arithmetic: squad is TWELVE. Selling Nakuzola takes it to ELEVEN, which is safe on its own. But the Hwang ask is live and uncontrolled, and if it clears after Nakuzola is gone the squad is TEN and MD9 scores the -100 penalty. Twelve survives one uncontrolled sale; eleven does not. SO: SELL NAKUZOLA TO THE BOARD AT MV 500.000 ONLY AFTER one of these two has happened — (a) the Beste bid executes, taking the squad to thirteen, or (b) the Hwang ask clears or is withdrawn, removing the uncontrolled leg. Until then HOLD HIM, even though he is worthless on points. He is worthless on points and that is not in dispute: ap 27, mv 500.000 at the Kickbase floor, mvt 0, and ph is hp FALSE on all five matchdays — zero minutes all season. He is correctly UNPLACED as of this run (no lo field) and the fielded eleven does not contain him. He is being kept purely as the twelfth body that absorbs the Hwang ask. The proceeds are 500.000 and are irrelevant to the decision; the squad count is the whole decision.",
-    "tag": "sell"
    }
   ]
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Makengo is the only points buy and the bid is already live and unresolved. He replaces Nakuzola in the fielded back four, which is the single largest per-slot upgrade available anywhere in the squad. The premium is high and sits in the contested-board cluster rather than the manager-ask cluster, which is the right benchmark for a board listing — and on a listing that runs well past the next daily tick, premium headroom is not pure waste, because a bid pitched at value alone falls below the asking price as soon as the value moves and loses by construction. Freiburg's lineup page is unchanged since it was last checked and still carries him; the muscular-problems headline on it remains the spent item logged earlier and must not be re-read as current. No other buy is recommended — every other plausible row is either on the avoid list, a few-appearances artefact, or a position already covered.",
+  "reason": "Makengo is the buy and he is the only one. He fixes the defence rather than upgrading a slot already covered, which is the right order of preference, and he is the largest single points addition available. His fitness question is now closed rather than merely unrefuted: a dated item from the end of last month has him starting after the muscle problem that produced the headline still carried on his club page, the league-wide injury table updated yesterday omits him, and Kickbase carries no flag. Curda is the one that hurts to pass on — a defender with a real record, on the board at exactly market value, who would meaningfully improve the fielded four. He is logged as unbuyable rather than unwanted: with the Makengo bid live there is no sale that funds him without stranding the formation or dropping below the penalty line. If the Makengo bid is ever lost, he is the first place to look.",
   "standing": [
    {
     "name": "Jordy Makengo",
@@ -235,6 +226,24 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "Serge Gnabry",
+    "pos": "MID",
+    "club": "2",
+    "ask": 14041599,
+    "mv": 14041599,
+    "premium_pct": 0,
+    "why": "NEITHER A POINTS BUY NOR A FLIP — HE IS OUT UNTIL JANUARY AND THE BOARD LISTING MAKES HIM LOOK LIVE. Row 1961 sits on the Kickbase board at prc = mv = 14.041.599 with ap 64 on p 320, which reads like a mid-price Bayern winger going cheap. IT IS NOT. Kickbase itself flags him st 1, and soccernews.com's Bundesliga injuries-and-suspensions table, page-dated 03.11.2026, gives \"Serge Gnabry (hamstring): early Jan 2027\". He will not play MD9, MD10 or anything before the winter break, so the ap 64 is dead weight. HE ALSO FAILS THE FLIP TEST INDEPENDENTLY, and this is the part a future run will get wrong: fitness genuinely does not enter the 20:00Z tick, so the instinct is that an injured player is still flippable. He is mvt 2, not mvt 1 — the measured next-tick drift for mvt 2 is -2,91% with only 14,1% rising (n=942), so the expected capture is NEGATIVE 408.611, not positive. The two reasons are separate and either alone is sufficient. REVERSAL: a source dated after 01.01.2027 confirming him back in the Bayern XI, AND mvt back to 1."
+   },
+   {
+    "name": "Laurin Curda",
+    "pos": "DEF",
+    "club": "29",
+    "ask": 11879413,
+    "mv": 11879413,
+    "premium_pct": 0,
+    "why": "AVOID AS A POINTS BUY ONLY — he is simultaneously a VALID FLIP under F4elzhi, and the distinction is the whole entry, exactly as Aqm7rm4 does for Veerman. HE IS GENUINELY GOOD AND THAT IS WHY THIS IS LOGGED: row 6197 is a Paderborn DEF with ap 97 on p 773 over 8 matchdays, st 0, stl empty, mvt 1, board listing at exactly mv 11.879.413, ofc 0, and soccernews.com's Bundesliga injury table page-dated 03.11.2026 gives Paderborn's absentees as Gayret, Klaas, Awortwie-Grant, Hoffmeier and Batista Meier only — Curda is not among them. He would displace ter Horst (ap 76, the same club) in the fielded four for +21 fielded ap. A FUTURE RUN WILL WANT TO KEEP HIM AND MUST NOT: THE UNWIND DOES NOT CLEAR. Post-Makengo the balance is 1.293.457 at squad 12 (1 GK / 5 DEF / 4 MID / 2 ATT), where ONLY 4-4-2 is legal because there are just two attackers. Buying Curda to keep puts the balance at -10.585.956. Selling ter Horst at mv 8.012.084 leaves -2.573.872 at squad 12; selling Nakuzola at 500.000 as well leaves -2.073.872 at squad 11, still negative with no body left to sell, and the next sale takes the squad to TEN for the -100 penalty. The deficit is 2.073.872 and there is nothing left to raise it with. The +21 ap is therefore unbuyable at this balance and the attempt would cost the whole matchday. REVERSAL AS A POINTS BUY: only if the Makengo bid is lost or withdrawn (which frees 19.500.000 and makes him trivially affordable), or a third attacker is in the squad so that a DEF can be sold without stranding the formation."
+   },
    {
     "name": "Jan-Niklas Beste — WITHDRAW THE LIVE 13.575.000 BID",
     "pos": "MID",
@@ -324,35 +333,17 @@
     "mv": 881954,
     "premium_pct": -43.31,
     "why": "THE CAMEO-AVERAGE TRAP IN ITS PUREST MEASURED FORM, and it is worth logging precisely because the surface numbers are the most tempting on the board: ap 94 at a price of 500.000, the Kickbase floor. get_player 8273 settles it in one call via the Hpz5lsb starter test: smc 0, ismc 1, smdc 8. He has STARTED ZERO of eight matchdays, appeared ONCE, and sec is 1.231 — twenty-one minutes of football all season. He scored 94 in that single cameo because he got a goal (g 1) in twenty-one minutes, and tp 94 = ap 94 is arithmetic on a denominator of one, not a form reading. ph confirms it: hp TRUE once, hp FALSE on the other four. mv 500.000 with mvt 0 and tfhmvt 0 is the market agreeing — a player the market prices at the absolute floor and will not move is not a player anyone expects to start. DO NOT CONFUSE HIM WITH pid 8274. The activity feed shows an \"El Mala\" bought by Borussia Rumpelfuß at 2026-11-02T17:55:40Z for 22.302.040; that is pid 8274, a different player at the same club (tid 28, Köln). A run that matches these two by surname will conclude a 22,3M player is available for 500.000 and bid into a worthless row. They are brothers and the ids are adjacent, which is exactly how that error gets made. REVERSAL: only if smc rises above zero — that is, he actually starts a Bundesliga match — and a dated source confirms he has a regular place. A second cameo, however many points it scores, does not reverse this."
-   },
-   {
-    "name": "Querfeld — ap 129 is the few-appearances trap exactly as the task prompt describes; he has played 2 of the last 5 matchdays and is fighting for his place",
-    "pos": "DEF",
-    "club": "40",
-    "ask": null,
-    "mv": 10798695,
-    "premium_pct": null,
-    "why": "THE BEST-LOOKING ROW ON THE BOARD TONIGHT AND IT IS A TRAP, CAUGHT ONLY BECAUSE THE PROMPT SAYS TO CHECK APPEARANCES BEHIND AN AVERAGE. On the numbers alone Querfeld (7723, Union Berlin, pos 2 DEF) looked like the biggest upgrade available: manager ask by JakobDohr at 12.000.000 against mv 10.510.418 = +14,18%, which is BELOW both manager clears measured today (+17,20% Wcvwk0x, +36,40% Wd5bmw5), so the ask looked fair to cheap; ap 129 against ter Horst's 76 implied +53 ap, beating the Beste leg; and the unwind was comfortable at +12.576.146 with squad 11 under 3-4-3. WHAT KILLS IT. get_player 7723 read 2026-11-02T20:50Z: tp 514 over ap 129 means FOUR scoring appearances in eight matchdays, and ph is false, TRUE (82), false, false, TRUE (63) — he has played TWO of the last FIVE. sec 22.678 is 6,3 hours, about 4,2 full matches out of a possible 8. The average is high precisely BECAUSE the sample is the handful of games he played well in; it is not a per-matchday expectation. Ligainsider's Einsatzhistorie for 26/27, fetched this run, agrees: Startelf on matchdays 1, 3 and 4, substitute from the 25th minute on matchday 7, and no start recorded on 2, 5, 6 or 8. Berliner Zeitung carries the headline \"Reality-Check: Querfeld kaempft beim 1. FC Union Berlin um seinen Stammplatz\" — fighting for his starting place, which is the opposite of what ap 129 implies. DATE-TRAP NOTE: the plpt Ligainsider note attached to this player carries dt 2026-04-09, which is LAST SEASON under the prompt's Jan-May 2026 rule, so it must not be read as current team news. A defender who starts two matchdays in five scores zero on the others whatever his average says. He is not a replacement for ter Horst, who is ph TRUE 5-of-5. REVERSAL: only if a source dated 2026-11-03 or later names him in Union's starting eleven for a specific fixture AND he records starts in two consecutive matchdays to re-base the average."
-   },
-   {
-    "name": "SOURCE TRAP — ligainsider 375146 \"Schuster über Beste-Situation\" is 07.04.2025, TWO seasons old; Beste is 8-of-8 this season",
-    "pos": "MID",
-    "club": "5",
-    "ask": null,
-    "mv": 11581528,
-    "premium_pct": null,
-    "why": "A NEW CLASS OF DATE TRAP, AND THE WORST YET, BECAUSE IT IS TWO SEASONS STALE RATHER THAN ONE AND IT SITS ON AN ACTIVE BUY TARGET. Searching \"Jan-Niklas Beste Ligainsider 2026/27 fit Startelf\" on 2026-11-02T18:52Z returns as its TOP hit ligainsider.de/niklas-beste_14520/sc-freiburg-bdquo-andere-machen-es-gut-ldquo-schuster-ueber-beste-situation-375146/. The headline reads \"Die anderen machen es gut\" — Schuster on the Beste situation — and the body says Beste is NOT a starter, has only come on as a substitute since joining, has two men ahead of him performing well, and had stomach trouble that week. Taken at face value it kills BUY Be30cs1 outright. FETCHED AND DATE-VERIFIED: the article is 07.04.2025, 12:11 CEST. That is the 24/25 season — not last season, the one BEFORE last season. The task prompt's date-trap rule says anything dated Jan-May 2026 is last season; this one is a year older than that and the URL slug carries no date at all. The article id 375146 is HIGHER than the transfer-announcement id 371431, so id order is NOT a reliable recency proxy on ligainsider either. GROUND TRUTH, read 2026-11-02T18:51Z from get_player_performance 2125, season 2026/2027: MD1 st 5 (47'), MD2 st 5 (75'), MD3 st 5 (82'), MD4 st 5 (73'), MD5 st 5 (71'), MD6 st 5 (81'), MD7 st 5 (67'), MD8 st 5 (84', 2026-10-31). EIGHT STARTS IN EIGHT MATCHDAYS, including the most recent one. p 602, ap 75, st 0. Beste is a nailed-on starter and Be30cs1 STANDS. Rule carried forward: on ligainsider, never trust a player-page news item without opening it and reading the date line, and never rank by article id."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open with the lock far away. Four board listings qualify on the strict test — Kickbase listing, no manager ask, price exactly at market value, rising flag, clean status, nobody bidding — and all four carry exactly the prices the previous run recorded, which confirms market values have not moved since the last daily tick and means none of the calls needs re-issuing at a new price. Rank them by value times the measured drift and bid exactly the asking price on whichever ones fit the cash timeline, never raising. The drift re-measures with no decay at all; it is, if anything, running slightly ahead of the figure this task was first calibrated on, so there is no sign yet of rivals crowding the edge out. The binding constraint on flips is not capital but cash timing: the Makengo bid is already committed against the cash balance, so a flip won today has to be unwound after tonight's tick and before that auction settles tomorrow morning. Sized that way the sequence stays non-negative throughout. Two questions remain open and neither has been resolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and whether the measured edge survives contact with the other traders in this league, since it is one league over one period and the four most active flippers here were the top four finishers last season.",
+  "reason": "The flip window is open and the edge has not decayed — if anything it has widened on a sample three times larger than when it was first measured. Rising players still rise at the next tick the large majority of the time, and the board still pays exactly market value on the way out, so a bid placed at market value on a rising board listing is a free option: win it and the tick is captured, lose it and it cost nothing. Never raise. The important finding this run is that the book is bigger than it looks, because the legs do not overlap in time. Four of them expire before tonight's tick and one expires after it, so summing the outlays overstates the exposure badly and would wrongly rule the largest leg out. Sequenced properly the whole book clears with room to spare and lands positive at the lock. There is exactly one way to get it wrong, and it is not price: if the pre-tick legs are still held when the late one settles, the floor breaks and there is no recovery inside the matchday. Sell the pre-tick legs back as soon as tonight's tick has run, before the late leg lands, or skip the late leg entirely. Two open questions stand unresolved: whether Kickbase caps squad size, which would cap how many flips can be in flight at once; and that this edge is measured in one league over one period and will decay if the rivals here crowd into it — the four most active traders in this league were last season's top four finishers, and they flip the tick constantly, injured players included, which for a pure value flip is correct.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player carries an injury or suspension flag, and none was added overnight. Freiburg's page is unchanged since the last check and lists no new absence relevant to the bid. The Augsburg absence list is stable. Nothing in the squad is newly injured, suspended or benched, and no dated item suggests any squad player may leave the league — the transfer window is shut until January, which also removes transfer risk from every flip candidate.",
+  "sweep": "A clean sweep, which is worth stating plainly because it is the thing that cannot be reconstructed later. Every squad player is unflagged in Kickbase and none appears on the league-wide injured-and-suspended table updated yesterday. The one change is favourable: the defender who missed the last matchday with a foot complaint has had his flag cleared and is back in the fielded four. One standing caveat is a selection risk rather than a fitness one — the midfielder confirmed on the bench at his club is still in the eleven only because there are exactly four midfielders to choose from. On the other side of the ledger, a Bayern winger sitting on the board at market value is out until the new year and should not be touched as a points buy; he also fails the flip test independently, because he is falling rather than rising, so the expected tick is negative. A warning about sources for the next run: the short form of the Freiburg club page served a render two months old this run, presented as current, while the long canonical form served yesterday's. That is worse than a stale headline on a live page — it is a stale page.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -625,7 +616,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1054, -4,00% to +443,38%"
+   "v": "n=1056, -4,00% to +443,38%"
   }
  ]
 }
