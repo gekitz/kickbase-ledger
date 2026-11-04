@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-04T06:55Z",
+ "run": "2026-11-04T08:53Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 16225559,
   "floor": -49589665,
   "spending_power": 65815224,
-  "hours_to_lock": 60.57,
-  "exposure": "A leveraged position is open and it is the reason the first action is a withdrawal. Two bids are live, neither is under control once placed, and together they exceed the cash behind them. If both clear, the deficit can only be unwound by sales that cost more fielded points than the second buy adds — the arithmetic favours keeping the defender and dropping the midfielder by a clear margin. Withdrawing one of them resolves it completely: the remaining bid plus the Hwang proceeds lands positive with no forced sale at all. The deadline on that withdrawal is this afternoon. A negative balance when the matchday starts scores zero for the whole matchday, so this outranks everything else on the page, and the flip book layered on top of it is safe only in the order described above.",
+  "hours_to_lock": 58.61,
+  "exposure": "Two bids are live and neither is under Georg's control once placed, and together they exceed cash on hand. That is the leveraged position and it is why the Beste withdrawal is the lead action rather than a preference: with it withdrawn, the Makengo settlement alone leaves the balance non-negative as soon as Hwang is sold, with no other sale required. With both landing, the shortfall reaches past the bench and into the fielded eleven. A negative balance when the matchday locks scores zero for the entire matchday, so this risk outranks everything else on the page. The lock is still comfortably clear, which is why the flip book is open at all, but the first deadline that matters is this afternoon's, not the lock.",
   "must_restore_by": "2026-11-06T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The defence is the gap and the live Makengo bid closes it. Behind that, the real binding constraint is not money but shape: two attackers leaves exactly one legal formation and no slack anywhere, so any further sale has to be matched position for position or the eleven cannot be fielded at all.",
+ "binding_gap": "The gap is at the back and the bid that fills it is already placed. The current eleven fields three defenders because the fourth available defender is a bench-level player; Makengo landing converts the shape and displaces the weakest fielded defender outright. Midfield is not a gap — it is four deep with the fourth man comfortably clear of what a new signing would add once the cost of unwinding him is counted. Attack thins to two once Hwang is sold, which is the reason the optimal shape after settlement is the flat one rather than the three-forward one.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 65815224,
@@ -51,14 +51,14 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 29,
+  "listings": 33,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 3
  },
  "squad": [
   {
-   "name": "Grüll",
+   "name": "Gruell",
    "pos": "MID",
    "club": "10",
    "mv": 18580702,
@@ -180,37 +180,28 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Three things, in order.",
-  "headline_short": "Three things, in order.",
-  "detail": "Three things, in order. Withdraw the Beste bid before it expires early this afternoon — not on fitness, Beste is fit and in Freiburg's XI, but because the two live bids together cannot both be unwound without breaking the formation. Accept the standing Hwang offer: it is above market value, selling back to the board would pay less, and Hwang is falling. Leave the Makengo bid alone — he is the single best thing in play this run and he is confirmed fit on a new dated source. Do those three and the position lands positive, at twelve players, in a legal 4-4-2, with the best eleven this squad has fielded all week."
+  "headline": "One thing has to happen today and it has a clock on it: withdraw the standing bid on Beste before it resolves this afternoon.",
+  "headline_short": "One thing has to happen today and it has a clock on it: withdraw the s",
+  "detail": "One thing has to happen today and it has a clock on it: withdraw the standing bid on Beste before it resolves this afternoon. Georg is the sole bidder on a Kickbase board listing, so leaving it live is not a bid, it is a purchase. Winning him forces an unwind that reaches a fielded player, and every candidate the unwind would sell is worth more than Beste brings. Withdrawing him and letting the Makengo bid settle tomorrow morning is the points-optimal path by a clear margin, recomputed from scratch this run across all three legal formations rather than carried over from the last one. The Makengo bid itself stays exactly where it is: do not withdraw it, do not raise it."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Hwang is the only sale and it is a good one. The incoming offer sits above his market value, and the board pays exactly market value with no spread, so the offer is strictly better than the instant sale — the margin is small but it is free. He is also the squad's fastest faller and contributes nothing to the eleven, so the sale costs no fielded points at all. The ask that sits above the offer stays live; accepting the offer is what ends the listing. Nothing else should be sold. Deman looked like a candidate on the flag he carried a week ago, but that flag has cleared and he is back in the fielded four.",
+  "reason": "The Hwang ask is repriced, not withdrawn. The single incoming bid that the previous run ordered accepted has vanished from the board, and the daily tick has taken his market value down again, which leaves the standing ask far outside the band in which manager asks have ever actually cleared in this ledger. It has sat unsold for three days. Repriced into the measured clearing band it still beats selling back to Kickbase, which pays market value exactly and nothing more. The deeper reason to move him is that he is the unwind lever for the Makengo settlement: selling him is what keeps the balance non-negative tomorrow morning without touching anyone who plays. He is falling on the tick, so the lever shrinks every day he is held. Hard backstop: if the repriced ask has not cleared by the Makengo settlement, pull the listing and sell back at market value that same hour. Points cost today is nil, and once Makengo lands the optimal eleven does not field Hwang in any case.",
   "standing": [
    {
-    "name": "Hwang",
+    "name": "Hee-Chan Hwang",
     "pos": "ATT",
     "club": "8",
     "mv": 4337183,
     "ap": 28,
-    "why": "REVERSES Stngs8r, WHICH SAID \"WITHDRAW THE 5.400.000 ASK NOW\". DO NOT WITHDRAW IT. KEEP IT LIVE. Stngs8r's hazard was the -100 penalty from an uncontrolled sale. That hazard does not exist at the current squad size and the arithmetic is simple: squad is TWELVE (1GK/4DEF/4MID/3ATT, 11 placed). One uncontrolled sale takes it to ELEVEN. Eleven is the minimum, not a breach — the ledger's own Mokwa entry states the penalty fires at TEN. So the Hwang ask cannot by itself cause -100, and Stngs8r's premise was carried over from the 18:45Z position when the squad was ELEVEN, where it WAS correct. Petkov landed 20:25:12Z and that premise died with it. THE ASK IS WORTH REAL MONEY. Measured 2026-11-02T22:45Z after the 21:00Z tick: row 2449 mv has FALLEN to 4.460.445 (was 4.633.480 at 20:45Z, -3,73% on the tick), mvt 2, sdmvt -908.914 over 7 days. The ask of 5.400.000 is now +21,07% over mv, up from +16,55%, because the ask is fixed and mv is sinking. Selling to the board instead pays EXACTLY mv 4.460.445, so holding the ask is worth +939.555 against the board alternative. Wd5bmw5 measured Onyeka clearing MANAGER-TO-MANAGER at +36,40% today and Wcvwk0x measured +17,20%, so +21,07% is comfortably inside the band that actually clears in this league — the task prompt's \"manager asks clear in low single digits\" rule is dead and both those entries say so. THE ONLY BINDING CONDITION: Nakuzola must NOT be sold while this ask is live (see the re-issued Nakuzola call) — that is the single path from twelve to ten. WITHDRAW AND INSTANT-SELL TO BOARD AT MV ONLY IF the ask is still unsold at 2026-11-05T19:30:00Z, 24h before the MD9 lock, so the sale is never left uncontrolled into the lock itself. Hwang is a clear sell on points regardless: ap 28, ph newest-first 19/64/-5/-19/26, all five hp TRUE, so he is a nailed starter at Schalke who simply does not score, and he occupies a fielded ATT slot at lo 10.",
-    "tag": "sell"
-   },
-   {
-    "name": "Hwang",
-    "pos": "ATT",
-    "club": "8",
-    "mv": 4337183,
-    "ap": 28,
-    "why": "A LIVE INCOMING BID APPEARED AND IT IS THE FIRST ACTIONABLE DEADLINE THIS RUN. Measured 2026-11-03T20:45Z: market row 2449 now carries ofs [{u 3665490, unm reafix, uop 4567898}] against Georg's 5.400.000 ask. This was not present at the 18:45Z run. ACCEPT IT. (1) PRICE: 4.567.898 is +2,41% over mv 4.460.445, and selling back to Kickbase pays EXACTLY mv with no spread (re-proven this run: Van den Bosch 14917 sold back at trp 8.474.613 = mv to the euro, feed 19:20:48Z). So the bid beats the floor by 107.453 today. (2) DIRECTION: Hwang is mvt 2 and falling hard — sdmvt -908.914 on the day, tfhmvt -173.035 in three hours. At the measured mvt-2 drift of -2,91% per tick and three ticks to the MD9 lock, mv is ~4.08m by Friday, so holding costs ~490.000 against this bid. (3) POINTS: ap 28 on ph [19, 64, -5, -19, 26] — he is the weakest man in the fielded eleven by a factor of two and the next weakest is Tanaka at 57. (4) SQUAD SAFETY: squad is TWELVE with eleven placed; one sale takes it to ELEVEN, which is the minimum, not a breach — the penalty fires at TEN (Mokwa entry). The cost is that Nakuzola (ap 27, ph all false, has not played a minute) is forced into the eleven until Beste or Makengo lands, i.e. roughly 17-28 points of MD9 exposure. Beste resolves 2026-11-04T13:28Z and Makengo 2026-11-05T08:57Z, both well inside the 2026-11-06T19:30Z lock, so the hole is temporary by design. THE HARD GATE THAT FOLLOWS: once this clears, Nakuzola must NOT be sold (Stlxn7v) until a buy lands, or the squad hits TEN and MD9 scores -100.",
+    "why": "REPLACES Sk3e8i0, WHICH SAID \"KEEP THE 5.400.000 ASK LIVE\". The ask is not withdrawn on a penalty argument — Sk3e8i0 was right that 12->11 is no breach — it is REPRICED on new data, and the new data is two things measured 2026-11-04T08:45Z. (1) THE ONLY BID IS GONE. Market row 2449 now reads ofc 0 with no ofs array. The reafix bid of 4.567.898 that Smpvaz1 ordered accepted at the 06:45Z run has expired or been pulled; Smpvaz1 is resolved MISSED. That bid was the market's actual price for Hwang and it was +2,41% over the then-mv. (2) THE ASK IS NOW ABSURD AGAINST A FALLING mv. The 21:00Z tick took mv 4.460.445 -> 4.337.183, so the standing 5.400.000 ask is +24,51% over mv. The measured manager-ask clearing band in this ledger is LOW SINGLE DIGITS (+3,06%, +4,35%); no manager ask above mv has ever cleared in this ledger's history at anything like +24%. The ask has sat unsold since 2026-11-01T09:45Z — three days — which is itself the invitation-to-offer-at-mv signal the task prompt names. 4.500.000 is +3,75% over mv, inside the measured band, and still beats selling back to Kickbase (which pays EXACTLY mv, re-proven on Van den Bosch and again this run on Nebel 2895: Daggi D. sold back at trp 8.450.984). (3) WHY IT MATTERS BEYOND 162.817 OF PREMIUM: Hwang is the unwind lever for the live Makengo bid. Cash is 16.225.559 against a 19.500.000 Makengo bid settling 2026-11-05T08:52Z; selling Hwang at 4.500.000 takes the post-settlement balance to +1.225.559, NON-NEGATIVE, with no other sale required. He is mvt 2 with tfhmvt -123.262/day (the measured mvt-2 drift is -2,91%), so every day held shrinks that lever by roughly 123k. (4) POINTS COST IS ZERO TODAY AND NEGATIVE-COST BY THE LOCK: computed this run, squad-12 3-4-3 fields 1040 ap with Hwang at ap 28 as ATT3; selling him forces 4-4-2 at 1039 ap (-1), and once Makengo lands the optimum is 4-4-2 at 1126 ap, which does not field Hwang in any case. HARD BACKSTOP: if 4.500.000 has not cleared by the Makengo settlement at 2026-11-05T08:52Z, pull the listing and sell back to Kickbase at mv that same hour — do not hold a falling mvt-2 asset past the point where it is needed as the unwind lever. GEORG EXECUTES; THIS RUN PLACES NOTHING.",
     "tag": "sell"
    }
   ]
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Makengo is the buy and he is the only one. He fixes the defence rather than upgrading a slot already covered, which is the right order of preference, and he is the largest single points addition available. His fitness question is now closed rather than merely unrefuted: a dated item from the end of last month has him starting after the muscle problem that produced the headline still carried on his club page, the league-wide injury table updated yesterday omits him, and Kickbase carries no flag. Curda is the one that hurts to pass on — a defender with a real record, on the board at exactly market value, who would meaningfully improve the fielded four. He is logged as unbuyable rather than unwanted: with the Makengo bid live there is no sale that funds him without stranding the formation or dropping below the penalty line. If the Makengo bid is ever lost, he is the first place to look.",
+  "reason": "Makengo is the whole buy list and the bid is already live, so the action is to leave it alone. He fills the binding gap at the back, he is the largest single points upgrade available, and he is confirmed in the probable eleven on a club page updated two days ago with no status symbol against his name. The stale muscular-problem headline that page still carries is the known trap the ledger identified; it is spent and it is not a reason to pull the bid. Nothing else on the board earns a points buy: the manager asks are all well above market value at positions Georg already covers, and the one large new listing is priced for its seller, not its buyer.",
   "standing": [
    {
     "name": "Jordy Makengo",
@@ -339,11 +330,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open and the edge has not decayed — if anything it has widened on a sample three times larger than when it was first measured. Rising players still rise at the next tick the large majority of the time, and the board still pays exactly market value on the way out, so a bid placed at market value on a rising board listing is a free option: win it and the tick is captured, lose it and it cost nothing. Never raise. The important finding this run is that the book is bigger than it looks, because the legs do not overlap in time. Four of them expire before tonight's tick and one expires after it, so summing the outlays overstates the exposure badly and would wrongly rule the largest leg out. Sequenced properly the whole book clears with room to spare and lands positive at the lock. There is exactly one way to get it wrong, and it is not price: if the pre-tick legs are still held when the late one settles, the floor breaks and there is no recovery inside the matchday. Sell the pre-tick legs back as soon as tonight's tick has run, before the late leg lands, or skip the late leg entirely. Two open questions stand unresolved: whether Kickbase caps squad size, which would cap how many flips can be in flight at once; and that this edge is measured in one league over one period and will decay if the rivals here crowd into it — the four most active traders in this league were last season's top four finishers, and they flip the tick constantly, injured players included, which for a pure value flip is correct.",
+  "reason": "The tick edge is intact and has widened rather than decayed, now measured on roughly triple the sample the standing figures were built on, with more than nine in ten rising players rising again at the next update. Four board listings qualify cleanly: no manager behind them, asking price sitting exactly at market value, rising flag, nobody else bidding yet. Bid exactly market value on each and never raise; losing costs nothing and chasing one into the contested band wipes out ten good flips. One correction to the previous run, and it is a rule as much as a price: its largest leg, Karl, expires after tonight's tick rather than before it, so a bid struck at today's value becomes a below-value bid by the time the auction resolves and loses by construction. That leg is closed and should be re-priced after tonight's tick, not before. Future runs should filter legs on expiry before ranking them by size, not after. Sizing: taking all four alongside the live Makengo bid clears the floor, but only barely, and the floor moves with team value. Dropping the smallest leg restores a real buffer at the cost of the smallest expected capture on the board, which is the trade to take. Every leg must be unwound to a non-negative balance and at least eleven players before the lock, and the sells pay market value exactly. Two questions remain open: whether Kickbase caps squad size, which would cap how many flips can run at once, and whether this edge survives rivals crowding into it. The budget endpoint does carry what look like minimum and maximum squad-size fields, which would answer the first, but the ledger has never seen the cap enforced, so it stays a question rather than a fact.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "A clean sweep, which is worth stating plainly because it is the thing that cannot be reconstructed later. Every squad player is unflagged in Kickbase and none appears on the league-wide injured-and-suspended table updated yesterday. The one change is favourable: the defender who missed the last matchday with a foot complaint has had his flag cleared and is back in the fielded four. One standing caveat is a selection risk rather than a fitness one — the midfielder confirmed on the bench at his club is still in the eleven only because there are exactly four midfielders to choose from. On the other side of the ledger, a Bayern winger sitting on the board at market value is out until the new year and should not be touched as a points buy; he also fails the flip test independently, because he is falling rather than rising, so the expected tick is negative. A warning about sources for the next run: the short form of the Freiburg club page served a render two months old this run, presented as current, while the long canonical form served yesterday's. That is worse than a stale headline on a live page — it is a stale page.",
+  "sweep": "Full squad sweep clean: every one of the twelve reads fit with no status list. On the buy side, Makengo is in the probable eleven on a club page dated two days ago with no status symbol, which closes out the stale injury headline that same page still displays. Beste is also clean and in that same probable eleven, which is worth stating plainly because it is the evidence that pointed against withdrawing him and the withdrawal survives it anyway: he is being passed on for squad shape and unwind cost, not for fitness. No other squad or shortlist player carries dated news suggesting a move or an absence.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
