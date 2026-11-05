@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-05T00:52Z",
+ "run": "2026-11-05T02:53Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 16325559,
   "floor": -49964958,
   "spending_power": 66290517,
-  "hours_to_lock": 42.63,
-  "exposure": "No leveraged position is open right now and the balance is comfortably positive. One opens by itself if the Makengo auction is won in the morning, and it is modest and fully covered by the Hwang board sale on its own. It becomes materially larger only if a flip is also won, and in that case the unwind needs both legs — the flipped player back to the board after tonight's tick, and Hwang — executed before the lock, not on the day. The headroom in that worst case is real but thin, so treat the unwind as the first task of Friday rather than the last. The floor is nowhere near binding; spending power, not cash, is the constraint on size, and it is not the thing to watch here. What to watch is the clock: a negative balance standing at the lock scores the entire matchday at zero, and that risk outranks every point of upside discussed above.",
+  "hours_to_lock": 40.61,
+  "exposure": "No leveraged position is open right now. One opens conditionally mid-morning if the Makengo bid wins, and it must be closed before the lock or the entire matchday scores zero. The unwind is covered with margin in every branch. If only Makengo lands, the Hwang sale alone clears it and leaves cash positive. If the flip is taken as well, the two sales together still cover the combined deficit with headroom, and the squad falls back to twelve, comfortably above the eleven-player line. Both unwinds can be executed a full day before the deadline, so neither needs to be left late. Sequencing is favourable: the bid resolves before the flip expires, so Georg will know his position before committing any further capital.",
   "must_restore_by": "2026-11-06T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The gap is a fourth defender good enough to field, and it is already being closed by the pending settlement rather than by anything you need to do now. The current eleven runs a back three precisely because the fourth defender in the squad has never played; the pending purchase is a full-back with a starting record, and he is the body that both fills the slot and pushes the weakest attacker out of the lineup. Until he settles there is no second gap worth money — the midfield and the goalkeeper are covered, and the attack cannot be upgraded at any price the board is currently offering.",
+ "binding_gap": "Not a formation hole. Every legal shape is fillable and the squad is above the eleven-player penalty line with a body spare. The binding constraint is the unwind deadline, not the floor and not cash: spending power is far larger than anything contemplated here, and a negative balance costs nothing until the instant the matchday locks. What matters is whether every position opened today can be closed before that moment. On the quality side, the gap is the worst fielded attacker, and the live bid already addresses it.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 66290517,
@@ -51,7 +51,7 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 35,
+  "listings": 36,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
   "expiring_within_2h": 1
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "No new order to place that you can realistically act on tonight, and nothing to withdraw.",
-  "headline_short": "No new order to place that you can realistically act on tonight, and n",
-  "detail": "No new order to place that you can realistically act on tonight, and nothing to withdraw. The live Makengo bid stands and settles on its own in the morning; the standing Hwang sale is its unwind and is correctly sized. The one genuinely new fact since the last run is a dated Kovac quote on Guirassy that post-dates it: a cautious all-clear, not a ruling-out, with no scan result yet. The one thing that is time-critical is the Lennart Karl flip, whose board row expires in the middle of the night Austrian time and will almost certainly time out unacted; a smaller flip has been logged that is still live in daylight."
+  "headline": "One decision this morning, and it is conditional.",
+  "headline_short": "One decision this morning, and it is conditional.",
+  "detail": "One decision this morning, and it is conditional. The standing Makengo bid resolves mid-morning; everything else follows from whether it wins. If it wins, Georg is leveraged and must sell Hwang back to the board to close the deficit before the matchday locks. If it loses, he does nothing and holds Hwang through the Friday presser. No new points buy is warranted — the one candidate that looked right on the board failed its news check. The single value flip from the last run is still live and still clean."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "The standing sale is Hwang, to the Kickbase board rather than to a manager, and it remains correct on arithmetic rather than on sentiment. He is the lowest-return outfield body in the fielded eleven, his market value is falling, and he is the only sale that clears the deficit a won Makengo auction opens while leaving the eleven stronger rather than weaker. The alternative funding leg, Tanaka, was re-checked this run and is worse: selling him forces a shape that costs the eleven real points, while selling Hwang costs it almost nothing. Note that his manager ask has now sat unsold since the first of the month at a premium far above the measured manager-ask clearing band — it will not clear, so pull it and take the board price the moment Makengo settles. Do not sell him before that settlement: if the auction is lost there is no deficit to clear and the sale is pure loss.",
+  "reason": "Hwang, and only after the Makengo bid settles. This run adds the branch the previous call was missing. If Makengo wins, the sale is mandatory rather than optional: it is what closes the leveraged position, and selling back to the board pays market value instantly with no spread, which the ledger has now measured on ten consecutive sales. Do not hold out for the manager ask — it has sat four days without a single offer and his market value is flagged falling, so tonight's tick makes waiting strictly worse. If Makengo loses, do not sell at all. With no leverage to unwind there is nothing the cash buys before the lock, and with Guirassy doubtful, spending the last attacking body to swap one average for a near-identical one is a bad trade dressed up as tidiness.",
   "standing": [
    {
     "name": "Hee-Chan Hwang",
@@ -194,14 +194,14 @@
     "club": "8",
     "mv": 4222238,
     "ap": 28,
-    "why": "REPLACES S67rimv. ITS CONDITION (sell only once Makengo settles) SURVIVES AND IS NOW STRONGER, BUT IT WAS MISSING THE LOSING BRANCH, WHICH TONIGHT'S GUIRASSY INJURY MAKES THE DANGEROUS ONE. Measured 2026-11-04T22:45Z. IF MAKENGO WINS at 08:55Z: cash 16.325.559 - 19.500.000 = -3.174.441, a leveraged position that must be closed before the 06.11 19:30Z lock or the whole matchday scores ZERO. With 13 players the only benchable bodies are Nakuzola (mv 500.000) and Guirassy (mv 33.698.551), and 500.000 does not cover 3.174.441 - so a fielded player must go, and Hwang (ap 28) is by far the cheapest. Sell Hwang to the board at mv 4.222.238 plus Nakuzola at 500.000 => cash +1.547.797, squad 11 = 1GK/4DEF/4MID/2ATT = 4-4-2 exactly. ACCEPT that this leaves Gregoritsch + Guirassy as the front two and a dead slot if Guirassy is ruled out: a dead slot costs roughly 100 points, a negative balance at the lock costs the entire matchday. IF MAKENGO IS LOST at 08:55Z: there is no deficit, and with Guirassy st 2 Hwang becomes the only fit second striker - PULL THE 5.400.000 ASK, do not sell him at all. THE ONE THING THAT CAN FIRE WITHOUT GEORG: that ask has sat unsold since 01.11 09:45Z at +27,90% over mv on a player whose mv is FALLING (mvt 2, sdmvt -1.427.619), so a clearance is unlikely - but if it clears before 08:55Z and Makengo is then lost, the squad is 11 with BOTH Nakuzola and Guirassy forced into a 4-4-2 and TWO dead slots. If Georg wants that tail closed, pull the ask now and relist after the bid resolves.",
+    "why": "REPLACES Sann35s, WHICH CARRIED ONLY THE WINNING BRANCH. Measured 2026-11-05T02:44:40Z. BOTH BRANCHES NOW EXPLICIT, resolve at Makengo expiry 08:55:28Z. (A) MAKENGO WINS: cash 16.325.559 - 19.500.000 = -3.174.441, leveraged, must close before the 06.11 19:30Z lock or MD9 scores ZERO. SELL HWANG BACK TO KICKBASE AT mv 4.222.238 (board pays exactly mv, instantly) -> cash +1.047.797. Squad 13->12 = 1GK/5DEF/4MID/2ATT, field 4-4-2, Makengo (ap 114) replaces Hwang (ap 28) in the XI: +86 ap. DO NOT WAIT FOR THE 5.400.000 MANAGER ASK — it has been listed since 01.11 with ofc 0, four days, zero offers, and Hwang is mvt 2 so mv FALLS at tonight's 21:00Z tick (mvud 2026-11-05T21:00:00Z). (B) MAKENGO LOSES: DO NOT SELL. HOLD HWANG THROUGH THE FRIDAY BVB PRESSER. This is the branch Sann35s was missing. With no leverage to unwind there is nothing the cash buys before the lock, and Guirassy (st 2, thigh, see the replacement WATCH) is doubtful for MD9. Selling Hwang in branch B forces Nakuzola (ap 27) into the XI in place of Hwang (ap 28) — a ONE-POINT gain that spends the only remaining attacking body while the squad's second-best scorer is unresolved. Reconsider only after the presser.",
     "tag": "sell"
    }
   ]
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Nothing new to place. The Makengo bid is already live, uncontested on the latest snapshot, and resolves in the morning without any further action; the same-day source that argues against him starting was weighed two runs ago and the bid was held, and nothing has arrived since to reopen that. Do not raise it — the escalating-bid experiment was run twice yesterday and failed twice, and the standing rule is back to bidding and holding. The attack was screened for a Guirassy replacement and there is none worth having: the one high-return striker on the board carries a manager ask far outside the clearing band and would be unaffordable alongside the pending settlement anyway, and the cheaper options are either already on the avoid list for injury or score barely better than the body you are selling.",
+  "reason": "Hold the live Makengo bid and do not withdraw it. The block on him from September is formally reversed, and the reversal condition is met rather than waived: he has been relisted, his fitness and Freiburg selection were re-verified from scratch this run on sources dated after the late-October doubt, and the ask is justified by his current average rather than the stale one the block warned against. His matchday fixture falls inside this matchday. He would be the second-best scorer in the eleven and replaces the worst. Honest caveat, because it is material and Georg has hours to act on it: the bid sits well above market value but still inside the contested-board band, and the two largest clears ever measured in this league are Makengo himself in September and Karl a few hours ago. The offer count on the row is a snapshot, not a forecast. The standing call is to hold the bid as placed — raising is Georg's option, not a recommendation, and it costs nothing until the row clears. Beyond that, no second buy. Querfeld was the best-looking candidate on the board and is now an explicit avoid: his average rests on a handful of early starts and a dated source has him benched behind the established centre-back pairing under the new coach. He was also unaffordable alongside the live bid without selling a fielded defender. Do not pad a position already covered.",
   "standing": [
    {
     "name": "Jordy Makengo",
@@ -217,6 +217,15 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "Leopold Querfeld",
+    "pos": "DEF",
+    "club": "40",
+    "ask": 10833429,
+    "mv": 10833429,
+    "premium_pct": 0,
+    "why": "THE BEST-LOOKING POINTS BUY ON THE BOARD THIS RUN, KILLED BY THE NEWS CHECK — A TEXTBOOK STALE-AVERAGE TRAP, EXACTLY THE PATTERN THE BRIEF WARNS ABOUT. Measured 2026-11-05T02:44:40Z: row 7723 is a MANAGER ask by JakobDohr, prc 12.000.000 vs mv 10.833.429 = +10,77%, listed 2026-11-02T11:30:40Z, ofc 0, st 0, mvt 1, DEF, ap 129. ap 129 against a 10,8M mv is the cheap-value-next-to-big-average signal. p 514 / ap 129 = FOUR appearances, so the average rests on almost nothing. CONFIRMED BENCHED: laola1.at \"Querfeld droht bei Union Berlin weiter die Reservistenrolle\", published 16.10.2026 15:33 CEST, modified 16:19 — he is NOT first choice under new coach Mauro Lustrinelli, started three league games all season, did not convince defensively, and sat on the bench for the Elversberg win when Union kept their first clean sheet. Lustrinelli at the 16.10 presser: \"Wir werden im naechsten Spiel nicht viele Wechsel machen, das ist klar.\", praising the centre-back pairing Felix Uduokhai and Zeno van den Bosch: \"Sie haben es sehr gut gemacht. Sie passen sehr gut zusammen.\" SECOND, INDEPENDENT REASON HE WAS NEVER ACTIONABLE TODAY: alongside the live 19.500.000 Makengo bid he costs 30,3M against 16,3M cash, a 14M deficit that cannot be unwound by the 06.11 19:30Z lock without selling a FIELDED defender. The premium is also wrong for the band: a manager ask clears in the LOW cluster (+3,06%, +4,35%), and an ask unsold for 2,6 days is an invitation to offer at mv, never at +10,77%. REVERSAL: requires BOTH (1) a source dated at that time putting him in Union's starting XI — the absolutfussball piece \"Einsatz von Felix Uduokhai fraglich\" hints the pairing could break up, but it is UNDATED in the search result and was not opened, so it is not evidence yet; and (2) an ask at or below mv. Re-base his ap at that moment; do not reuse the 129."
+   },
    {
     "name": "Dejan Ljubicic — SECOND QUALIFYING mvt-1 BOARD ROW THAT FAILS THE SAME TIMING GATE AS HANSEN. THE GATE IS NOW GENERAL AND SHOULD BE APPLIED BEFORE RANKING, NOT AFTER.",
     "pos": "MID",
@@ -315,26 +324,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "A NEW SOURCE TRAP, CAUGHT THIS RUN, AND IT WOULD HAVE REVERSED A CORRECT SELL. Searching Hwang's starter status surfaced fussballtransfers.com/a1599678488459302291-ueberraschung-in-der-schalke-startelf. The article carries NO publication date — it says only \"am heutigen Samstag\" with a 15:30 kickoff and an embedded post timestamped 14:15 with no date. Its content is emphatic: Muslic names Hwang in the starting eleven \"for the third straight game\", with Dzeko and Lasme on the bench. Taken at face value that satisfies limb (a) of the Hwang block's reversal condition (\"two consecutive Bundesliga starts, or a club-page probable XI naming him\") and would have cancelled SELL Sk3e8i0. IT IS FALSE AS A CURRENT STATEMENT. get_player 2449, read 2026-11-03T04:52Z, gives the one-call starter test from HOLD Hpz5lsb: smc 2, ismc 6, smdc 8. Two starts in eight matchdays, in the squad six times, i.e. four appearances off the bench and two not in the squad at all. sec 17.055 over eight matchdays is 35 minutes per matchday — a substitute's minutes, not a starter's. ph (newest-first per Hcti7c6) reads 19 / 64 / -5 / -19 / 26: he has appeared in all five but returned a median of 19. The article cannot be describing this season's recent run. APPLY THE TASK PROMPT'S RULE WITHOUT EXCEPTION: assume any undated hit is stale, however specific and however current its prose reads. This one is unusually dangerous because it names a concrete, checkable, reversal-triggering fact rather than a vague injury note. CROSS-CHECK THAT SETTLED IT: Ligainsider's Verletzte-und-Gesperrte sweep (fetched 2026-11-03T04:50Z) lists eight Schalke absentees — Bachmann, Woeber, Heekeren, Hoejlund, Gantenbein, Siebeking, Donkor, Grueger — and Hwang is not among them, so he is FIT and simply not picked. Fit-but-benched is exactly the case the ap-28 sale is built on. SELL Sk3e8i0 STANDS UNCHANGED, ask stays live at 5.400.000."
-   },
-   {
-    "name": "SOURCE TRAPS — TWO \"MATCHDAY 9 ABSENTEES\" PAGES THAT ARE 2019 AND 2023/24",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "Both retrieved 2026-11-03T02:50Z while doing the STEP 5 squad fitness sweep, and both are undated or misleadingly dated at the top, exactly the failure mode the task prompt warns about. (1) bundesliga.com/de/bundesliga/news/ausfalle-verletzungen-sperren-9-spieltag-7725 — the slug says \"9. Spieltag\" and the footer says \"© 2026\", but the article is dated 25.10.2019 and the giveaway is the club list: Paderborn, Fortuna Duesseldorf and Hertha BSC are in it. Useless. (2) flashscore.de/news/.../SjR9D6ME/ — shows NO publication date at all, only an \"Aktualisiert\" label with no timestamp and a 2006-2026 copyright range, and it actually covers matchday 9 of 2023/24. Its giveaways are decisive and worth memorising because they invert current facts: it has Guirassy at STUTTGART with a thigh muscle fiber tear (he is at Dortmund and fit, st 0), Jan-Niklas Beste at HEIDENHEIM and doubtful (he is at Freiburg, tid 5, st 0, 8-of-8 starts), Zentner doubtful with illness, and Darmstadt and Bochum in the division. A page with no date is not neutral evidence — assume it is stale, as the prompt says. RULE CONFIRMED FOR FUTURE RUNS: for a squad-wide fitness sweep the live Kickbase st/stl/stxt fields are the better instrument than any aggregator page, because Kickbase sources them from Ligainsider (plpt \"Ligainsider\") and the per-player dt timestamps show the feed current to within hours — this run Musiala carried dt 2026-11-02T11:35:37Z with st 4 and an accurate stxt, while Tella st 2, Sauer st 1, Eichhorn st 4 and Lerma st 1 all flagged correctly. Use the web only to confirm a specific named player, never to sweep."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip mechanism is intact and the measured edge has not decayed — the rising-value drift re-measures exactly where it sat two days ago, on a larger sample. What has sharpened this run is the gate, and it is now general rather than one player's special case: a board row is only a flip if its expiry falls before the next market-value tick, because a row that expires after tonight's tick and before the lock is held across zero ticks and earns exactly nothing. Four rows on the board qualify on the usual tests; only two survive the gate. The big one, Lennart Karl, expires in the small hours Austrian time and is worth several times the other combined — if you happen to be awake, bid the ask exactly and do not raise. The smaller one is still open in daylight and is logged so the value trade is not lost entirely when Karl times out. Both unwind to the board at the prevailing value after tonight's tick, with a full day in hand before the lock. The two open questions remain open: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if the rivals here crowd into it.",
+  "reason": "The flip window is open with comfortable margin. The drift measurement was refreshed from the event log this run and is flat against the prior baseline, with the sample now more than three times larger and the hit rate slightly higher. No sign of rivals crowding the edge out yet. One row qualifies: Okon-Engstler, a board listing priced exactly at market value with a rising flag, clean status flag, expiring late morning. Bid exactly the ask, never raise. He clears the transfer check — he joined Koeln permanently in the summer and the window is shut, so there is no league-exit risk. The timing works with room to spare: win it before the evening tick, hold through it, sell back the following morning well ahead of the lock. The other two rising board rows both fail the timing gate for the same reason as last run — they expire so close to the lock that the next tick would fall after it, leaving capital stranded through the matchday. Both stay avoided. One sharpening from tonight's loss: Karl cleared at by far the largest premium this ledger has recorded, and the lesson is a selection rule rather than a bidding rule. The drift pays the same percentage on any row, but a large-value row draws far more contest than a small one, so prefer cheap board rows for flips. The two open questions are unchanged: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals pile in. Re-measured this run, it has not decayed.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Guirassy is the whole fitness story and he is doubtful rather than out. He came off early in the Champions League with thigh trouble; the head coach's own words, published late last night and so after the previous run had already closed its measurement window, are that he felt his thigh, that it is probably no more than a pulled muscle, and that they did not want to take a risk. No scan result exists yet. The sting is in the second half of the quote: if he cannot play, the hope is to have him back only after the international break, so his matchday is binary with no middle. The timing is the real problem and it has not been stated before — Dortmund kick off a day and a half after the lock, so the eleven must be set without knowing. The last information that lands before the lock is the Friday press conference, and a run inside that window must check it. Until then, hold: he has started every matchday, his return is the second-best in the squad, and selling to dodge at most one blank costs that return every week thereafter. The other eleven read clean on the platform's own flags this run; no external injury table was reachable, both of the usual pages failing at their own end.",
+  "sweep": "Guirassy is the one flag and it is unresolved rather than new. He came off injured in the Champions League holding his thigh, and the previous run already caught it. What this run changes is the reading, not the verdict: the earlier call recorded a cautious all-clear, which was too generous. Two sources dated that evening were read in full. The coach does not believe it is more than a strain, but the sporting director called it a muscle injury of unknown severity, the medical department was still running diagnostics, and one source says plainly that he could miss Saturday's league game. Nothing newer has published since. Do not panic-sell: his market value is still flagged rising, the tick has not priced an absence, his club does not play until Saturday, and dumping the squad's most valuable asset into a Friday-evening market is the worst available timing. The decision point is the Friday press conference, which lands before the lock. The only thing to do today is keep an attacking body, which is exactly why the Hwang sale is conditional. Every other player in the squad is clean on status flags.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -607,7 +607,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1069, -4,00% to +443,38%"
+   "v": "n=1070, -4,00% to +443,38%"
   }
  ]
 }
