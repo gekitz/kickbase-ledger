@@ -1,12 +1,12 @@
 {
  "schema": 1,
- "run": "2026-11-06T18:50Z",
+ "run": "2026-11-06T20:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
-  "number": 9,
-  "locks": "2026-11-06T19:30:00Z",
-  "played": 8
+  "number": 10,
+  "locks": "2026-11-20T19:30:00Z",
+  "played": 9
  },
  "cash": 4125559,
  "squad_value": 143680760,
@@ -14,9 +14,9 @@
   "balance": 4125559,
   "floor": -48776085,
   "spending_power": 52901644,
-  "hours_to_lock": 0.66,
-  "exposure": "No leverage is open and none will be open at tonight's lock. The balance is positive, every live listing expires after the lock, and nothing settles before it, so the zero-matchday risk is not live for MD9. The basket does open a deficit if taken in full, but it opens it after the matchday has already started, which costs nothing, and it is well inside the floor. The deficit must be fully unwound before the MD10 lock on the twentieth, and that date — not the twenty-first — is the one to work back from.",
-  "must_restore_by": "2026-11-06T19:30:00Z"
+  "hours_to_lock": 334.62,
+  "exposure": "No leverage is open right now and the balance is positive, so nothing is at risk going into the live matchday. The recommended buy deliberately opens a small deficit, because the post-sale cash falls just short of the repriced value — that is permitted, it sits far inside the floor, and it unwinds in a single click by selling the player back to the board at value. The unwind deadline is the next lock, a fortnight out, which is an enormous margin by this ledger's standards. The rule that still binds absolutely: the balance must be non-negative and the squad at least eleven when that lock arrives. If the two pure flips are taken as well, the deficit grows by roughly an order of magnitude and the unwind becomes a three-click job rather than a one-click job — still safe, but it must be done deliberately and not left to the last run before the lock.",
+  "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
   "gk": 1,
@@ -43,7 +43,7 @@
    "4-5-1 (needs 5 MID)"
   ]
  },
- "binding_gap": "There is no binding gap tonight. The eleven is fielded, legal and fully staffed, and after the two sales it is still legal at exactly eleven. The real gap is an attacking one that opens for MD10: the post-sale shape leans on a reserve attacker who is injured and a defender with almost no scoring history, and the fortnight before that lock is the window to fix it. That is a problem for a later run with the sale proceeds in hand, not a reason to pay a premium tonight.",
+ "binding_gap": "Midfield, and it only appears once the two sales land. Selling Wolf takes the midfield to three, which forces a single shape and therefore forces the flagged Guirassy into the eleven. Buying Burger makes it four, which opens the one-striker shape and lets Guirassy sit out the next matchday if he is not ready. That is the whole argument for the buy, and it is why fixing the shape outranks the pure flips: the alternative is fielding a man who may not play. The attack remains thin behind that — one fit striker and one recovering one — and is the next thing to solve, but there is a fortnight to do it and nothing on the board today is worth paying a premium for.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 52901644,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 26,
+  "listings": 27,
   "cheapest": 500000,
   "cheapest_slot_filling": 6912847,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -190,13 +190,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "One window matters tonight and it is short: between the MD9 lock and the 21:00Z market-value tick.",
-  "headline_short": "One window matters tonight and it is short: between the MD9 lock and t",
-  "detail": "One window matters tonight and it is short: between the MD9 lock and the 21:00Z market-value tick. In that window, sell Hwang to the board first, then Wolf, in that order. The condition the Wolf call was gated on has been satisfied — the Hansen bid landed and the squad is thirteen — so both sales fire rather than one. Nothing else needs to happen before the lock, and nothing should: the balance is positive, the eleven is fielded and legal, and no offer is live. Everything else on this page is post-lock."
+  "headline": "MD9 is locked and a short, hard-edged window is open: the two standing board sales must fire before tonight's tick, Hwang first and Wolf second.",
+  "headline_short": "MD9 is locked and a short, hard-edged window is open: the two standing",
+  "detail": "MD9 is locked and a short, hard-edged window is open: the two standing board sales must fire before tonight's tick, Hwang first and Wolf second. The Hansen bid landed at exactly our offer, which makes the squad thirteen and releases BOTH sales rather than just one. After them the squad is exactly eleven and fieldable, so nothing is at risk — but both players are falling, so every minute past the tick is money given away. The one genuinely new thing on the board is Wouter Burger: a Kickbase row at zero premium who is simultaneously the best points addition available, the fix for the shape the sales leave behind, and the largest carrier in the flip basket. He is the move, and he is to be bid AFTER the tick at the repriced value, never before and never above it."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Hwang first, Wolf second, both to the board at market value, both inside the post-lock window and neither before it. The ordering is binding and so is the lower bound: both are in the fielded eleven right now, so selling either before the lock breaks the eleven for the whole matchday. The manager ask on Hwang that the standing call told you to pull is already gone from the market, so that leg is done and the sale is a clean board sale. Neither is being sold on fresh news — Hwang carries the squad's weakest average by a wide margin and is not in his club's probable eleven, and Wolf is the falling-value leg that funds the post-lock basket.",
+  "reason": "Two sales, in a fixed order, both to the board, both inside the window that closes at tonight's tick. FIRST Hee-Chan Hwang: the manager ask has already come off the market, so only the board sale remains. He is not in his club's probable XI, his average is the lowest of any outfield body, and he is falling. SECOND Marius Wolf: same window, same method, and strictly second so the eleven-player floor is never breached mid-sequence. Both are falling on the daily tick, so selling before it is worth roughly a matchday's worth of a cheap player across the pair. Do NOT add a third sale: after these two the squad is exactly eleven and one more drops it under the penalty line. Guirassy is explicitly NOT a sale despite being flagged — his value is still rising, the market has not repriced him, and he is one of only two attackers.",
   "standing": [
    {
     "name": "Marius Wolf",
@@ -219,9 +219,22 @@
   ]
  },
  "buy": {
-  "recommendation": "none",
-  "reason": "Nothing to buy for points tonight, and that is a conclusion rather than an omission. The midfield hole that would justify a purchase does not open until MD10, which is a fortnight away, so paying a premium now buys nothing but carrying cost. The two attacking rows on the market that could have been argued for are both closed out: Marino's whole case was that he was a confirmed starter for this matchday, which dies at the lock, and the arithmetic said he made the eleven worse in any case; Massengo is a confirmed starter but sits behind a double-digit manager premium for a slot that is not yet empty. Baku's ask was pulled by its own seller and dumped to the board at market value, which vindicates having avoided it.",
-  "standing": [],
+  "recommendation": "act",
+  "reason": "Wouter Burger is the single buy. He sits on the board at exactly market value, which is rare for a player of his quality and the cheapest entry this ledger has priced in weeks — our measured band says contested board rows usually clear well above value, so a bid at value is free optionality. The starter check passes cleanly: seven starts in eight matchdays this season, all of them long shifts, the most recent at the end of October, and his club page lists him fit with no minutes lost. The injury items on that page are from last April and belong to last season — a future run must not kill this buy on them. The bid is EXACTLY the repriced value after the tick, placed only while the row still reads as rising, and NEVER raised. Losing the auction costs nothing. Everything else on the board stays excluded: the attacking rows are either average-traps, flagged unfit, or manager asks carrying double-digit premiums, and two of the asks this ledger was guarding against were dumped to the board at value by their own owners today rather than find a buyer.",
+  "standing": [
+   {
+    "name": "Wouter Burger",
+    "pos": "MID",
+    "club": "14",
+    "ask": 16939097,
+    "mv": 16939097,
+    "premium_pct": 0,
+    "listing": "Kickbase listing",
+    "why": "PROMOTED FROM WATCH Wqy544v AND FROM FLIP F2uin7o — he is the one row on this board that is a points buy and a tick carrier at the same time, and he is the only thing that fixes the post-sale shape. (1) THE ROW. Measured 2026-11-06T20:45Z: 11631 is a Kickbase BOARD listing (no u field), prc = mv = 16.939.097, i.e. ZERO premium, against a measured board-buy band whose contested clears sit in the high cluster. mvt 1, st 0, ap 92, p 647, Hoffenheim (tid 14), exs 67.227s => expiry 2026-11-07T15:26Z. (2) STARTER CHECK PASSED, AND THE OBVIOUS TRAP AVOIDED. get_player_performance season 42: MD1 63 (97'), MD2 58 (82'), MD3 93 (101'), MD4 131 (94'), MD5 92 (103'), MD6 st 4 / 0', MD7 91 (72'), MD8 119 (96'). Seven starts in eight, all 70-103 minutes, most recent 2026-10-31 at 96 minutes. ligainsider.de/wouter-burger_22632/ shows Fit with zero minutes missed to injury or suspension, and he is NOT among the Hoffenheim absentees. THE DATE TRAP: that page carries \"Burger verletzungsbedingt vom Platz\" and \"Hoffenheim muss vorerst auf Burger verzichten\" — both are 18.04.2026 and 2025/26, i.e. LAST SEASON, and a future run must not kill this buy on them. His MD9 is 2026-11-08T18:30Z, his MD10 2026-11-21T14:30Z. (3) WHY HE IS THE BINDING FIX. After the two standing board sales the squad is eleven at 1 GK / 5 DEF / 3 MID / 2 ATT, which forces 5-3-2 and therefore forces the injured Guirassy into the XI. Burger makes it twelve with four midfielders, which opens 5-4-1 and lets Guirassy sit. He also displaces Tanaka (ap 57) on merit. (4) TIMING IS NOT OPTIONAL: do NOT bid at 16.939.097 tonight. Bid AFTER the 21:00Z tick (mvud 2026-11-06T21:00:00Z) at the repriced mv, and only while the row still shows mvt 1 — same gate as Wpmwi8h/F2xhjkh. Bid EXACTLY mv and NEVER raise. (5) EXPOSURE: at a post-tick mv near 17,4M against post-sale cash near 15,8M this opens a deficit of roughly 1,6M. That is permitted — it sits far inside the floor, MD10 does not lock until 2026-11-20T19:30Z, and it unwinds in one click by selling him back to the board at mv. Per Hfbknqv, a negative balance is not itself a reason to kill a buy.",
+    "rank": 1,
+    "trigger": "2026-11-07T15:26:00Z"
+   }
+  ],
   "killed_this_run": [
    {
     "name": "Han-Noah Massengo — a confirmed Augsburg starter listed by Goran1992 at +13,0%, and the midfield hole he would fill does not exist until 21.11",
@@ -240,15 +253,6 @@
     "mv": 5198027,
     "premium_pct": 0,
     "why": "THE ONLY ATTACKER ON THE BOARD THAT LOOKED LIKE IT COULD FILL THE POST-TRADE ATT HOLE, AND IT IS A CLEAN ap TRAP OF EXACTLY THE KIND STEP 5 WARNS ABOUT. The row is superficially perfect: Kickbase BOARD listing (no u field), prc = mv = 5.198.027, mvt 1, st 0, ap 63, Koeln (tid 28), exs 73.503s measured 2026-11-06T10:45Z => expiry 2026-11-07T07:10Z, i.e. POST-LOCK, so it carries no MD9 risk and the post-lock cash (~15,8M after the two board sales) covers it four times over. IT FAILS ON SELECTION, read straight off get_player and not from news: smc 2 against smdc 8 — two starts in eight matchdays — and ph, read NEWEST-FIRST per Hcti7c6, is [false, false, false, false, true(104)]. He has not appeared in the last FOUR matchdays. The ap 63 is carried entirely by one 104-point cameo five matchdays ago; this is the reverse ap trap the task names (a high average off a few minutes). ismc 4 vs smc 2 confirms he is in and out of the eighteen, not in the XI. Two dated-news sweeps (2026-11-06T10:45Z) returned nothing current on him — every hit was 2024-era 2.Bundesliga material — so there is no source that overturns the selection data either. DO NOT re-rank him next run on ap alone. REVERSAL: require smc to advance (an actual start in MD9, Koeln v tid 7 on 2026-11-08T14:30Z), ph newest entry hp true with real minutes, AND an ask at or below mv."
-   },
-   {
-    "name": "Ezechiel Banzuzi",
-    "pos": "",
-    "club": null,
-    "ask": 14000000,
-    "mv": null,
-    "premium_pct": null,
-    "why": "NEW LISTING THIS RUN (dt 2026-11-06T05:23:39Z, isn true) AND IT IS A CLEAN AVOID ON THE LEDGER'S OWN MANAGER-ASK RULE, logged so the next run does not re-price him. Row 11008: JakobDohr asks 14.000.000 against mv 12.215.812 = +14,61%. The measured bands make this unambiguous: manager-to-manager asks in this league clear at LOW single digits (+3,06%, +4,35%), and the high cluster (+13% to +21%) belongs exclusively to CONTESTED KICKBASE BOARD rows, which this is not. +14,61% from a manager is therefore benchmarked against the wrong game by roughly 10 percentage points. JakobDohr is also a habitual markup lister (Mwene, A9g24te). On merit he is not nothing — RB Leipzig midfielder, ap 93, p 740, st 0, mvt 1 — but merit is not the binding objection. Two more kill it independently: (1) TIMING — a manager ask settles only when the seller accepts, which is not controllable, so it cannot be relied on to land before the 2026-11-06T19:30Z MD9 lock and is not an MD9 points buy at all; (2) FUNDING — with the live 12.400.000 Hansen offer settling at 13:33Z, cash falls to about 4.025.559, so 14.000.000 would open a leveraged position of roughly -10.000.000 that must be unwound before the lock, and the only unwind legs are Wolf and Hwang, both of whom are needed IN the eleven until 19:30Z (San1vz7, S80cj8y). REVERSAL: only if the ask drops to at or below mv 12.215.812, the squad still has an unfilled midfield slot at that time, and the purchase fits the envelope without leverage across a lock."
    },
    {
     "name": "Manuel Neuer",
@@ -314,15 +318,6 @@
     "why": "DO NOT MEET THE 10.000.000 ASK, AND DO NOT RE-BID ABOVE 8.900.000. The points case is NOT the problem — Marino is a 7-of-8 starter at Frankfurt and that stands. The price is. Borussia Rumpelfuss has now declined TWO offers in under five hours: 8.500.000 at 2026-11-03T15:08:27Z (+7,14% over the mv of the time) and 8.900.000 at 2026-11-03T19:50:09Z (+12,18%), both feed t=27. mv has ticked to 7.933.592, so his standing ask is +26,06% over mv. The highest manager-to-manager clear this ledger has ever measured is Kade at +12,07% (Wsnkpzu), and the second decline landed almost exactly on that number — this seller is anchored on the ask, not negotiating. Paying +26,06% to a manager would be the single worst premium in this ledger's history and the capital is better spent on the Makengo board row at +0,00% (B9s6n9m). REVERSAL: re-open only if the ask drops to 8.900.000 or below, or if Marino moves to a Kickbase board row where prc = mv."
    },
    {
-    "name": "Ridle Baku",
-    "pos": "",
-    "club": null,
-    "ask": 19200000,
-    "mv": null,
-    "premium_pct": null,
-    "why": "THE BEST-LOOKING UNEXAMINED ROW ON THE BOARD TONIGHT AND IT IS THE SAME FEW-STARTS ARTEFACT AS QUERFELD (A3lhso7). Logged so no future run re-derives him. Row 2141, manager ask by Goran1992 at prc 19.200.000 against mv 16.653.021 = +15,30%. On surface numbers he is the one genuine DEF upgrade available: ap 116 beats Georg's fielded Deman (86) and ter Horst (76) and is second only to Muheim (133). get_player 2141 kills it in one call. (1) smc 4 / ismc 6 / smdc 8 — he has STARTED ONLY 4 OF 8 MATCHDAYS. (2) ph is NEWEST-FIRST per Hcti7c6 and reads [54, hp false, hp false, 94, 13]: he DID NOT PLAY AT ALL on MD6 and MD7 and returned on MD8 for 54. The ap 116 is carried by two good older matchdays on a four-start base, exactly the trap the task prompt describes. (3) CLUB CORRECTION FOR FUTURE RUNS, it will otherwise waste a search: tid 43 is RB LEIPZIG, not Wolfsburg — get_player 2141 tn \"Leipzig\". Leipzig host Augsburg MD9, 2026-11-07T14:30Z. (4) PRICE: +15,30% is above EVERY measured manager-to-manager clear in this ledger, including the Kade outlier at +12,07% (Wsnkpzu) and Van den Bosch at +1,31% measured this run; the low cluster is +1,31%/+3,06%/+4,35%. REVERSAL: only on a dated Leipzig XI starting him in two consecutive matchdays AND an ask at or below mv. He is st 0 and not injured — this is a selection and price objection, not a fitness one."
-   },
-   {
     "name": "SOURCE TRAP — ligainsider 414955 \"Marino Doppelpack sichert Sieg gegen 96\" is 11.07.2026",
     "pos": "ATT",
     "club": "29",
@@ -330,17 +325,35 @@
     "mv": 8549221,
     "premium_pct": null,
     "why": "Measured 2026-11-03T10:45Z. Searching for a current Marino source surfaces ligainsider.de/sc-paderborn-07/1249/marino-doppelpack-sichert-sieg-gegen-96-414955/ with no date in the search snippet. Fetched: published 11.07.2026 14:06 by Lukas Heyer, a 3:2 win over Hannover 96 — i.e. SECOND DIVISION, four months before MD9 of the 26/27 Bundesliga season. It also does NOT show him starting: Paderborn made a wholesale change at minute 61 and Marino appears only in the second-half 3-4-3. Do NOT cite it as evidence of current form or starter status. This joins Ab31mv2 (the 14.08.2026 Top-Elf-Prognose 414089 pre-season trap) — BOTH Marino sources that rank highly in search are stale, and the only sound current evidence is the Kickbase instrument: get_player 3336 at 10:45Z reads smc 7 / ismc 8 / smdc 8, st 0, stl [], ph newest-first 51/41/117/21/144. Seven starts in eight. Use that, not the articles."
+   },
+   {
+    "name": "SOURCE TRAP — ligainsider Paderborn Top-Elf-Prognose 414089 is 14.08.2026 PRE-SEASON and leaves Marino out of the XI",
+    "pos": "ATT",
+    "club": "29",
+    "ask": null,
+    "mv": 8549221,
+    "premium_pct": null,
+    "why": "A NEW DATE TRAP, AND IT WOULD HAVE KILLED A CORRECT BUY WITH A LIVE OFFER ON IT. Retrieved 2026-11-03T08:55Z while doing STEP 5 on BUY B81557r. ligainsider.de/sc-paderborn-07/1249/top-elf-prognose-sc-paderborn-07-im-check-414089/ publishes a Paderborn predicted XI in a 3-4-2-1 that does NOT contain Stefano Marino, lists him only as \"erste interne Alternative\" up front, and judges that a step up to undisputed Bundesliga starter \"erscheint noch etwas gross\". Read cold that is a flat exclusion of the ATT3 fix. IT IS DATED 14.08.2026 19:07 — written BEFORE a ball was kicked this season, and it is a PREVIEW, not a report. The in-season record contradicts it on every point: ligainsider 27339 shows Fit, 0% time injured, 2026/27 7 appearances / 6 starts / 3 goals overall and 6 BL apps / 5 BL starts; dated items 21.09.2026 \"Marino trifft\", a Doppelpack match report (ligainsider 414955), and 16.10.2026 \"Kettemann sehr happy mit Marinos Bundesliga-Adaption\". NOTE ALSO THE CLUB TRAP SITTING NEXT TO IT: Kickbase tid 29 is SC PADERBORN, not Eintracht Frankfurt. The get_lineup field os is the OPPONENT short name, not the club — ter Horst reads os SGE because Paderborn HOST Eintracht on MD9 (Sa 07.11.2026 15:30), not because he plays for them. Searching \"Marino Eintracht Frankfurt\" returns the Frankfurt squad page, he is correctly absent from it, and that absence means nothing. THE RULE: a pre-season Top-Elf-Prognose is worthless by matchday 9 and must never outrank in-season appearance counts; and never infer a Kickbase club from os."
+   },
+   {
+    "name": "SOURCE TRAP — fussballtransfers \"Überraschung in der Schalke-Startelf\" is UNDATED and claims Hwang started three straight; Kickbase smc says 2 starts in 8",
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
+    "premium_pct": null,
+    "why": "A NEW SOURCE TRAP, CAUGHT THIS RUN, AND IT WOULD HAVE REVERSED A CORRECT SELL. Searching Hwang's starter status surfaced fussballtransfers.com/a1599678488459302291-ueberraschung-in-der-schalke-startelf. The article carries NO publication date — it says only \"am heutigen Samstag\" with a 15:30 kickoff and an embedded post timestamped 14:15 with no date. Its content is emphatic: Muslic names Hwang in the starting eleven \"for the third straight game\", with Dzeko and Lasme on the bench. Taken at face value that satisfies limb (a) of the Hwang block's reversal condition (\"two consecutive Bundesliga starts, or a club-page probable XI naming him\") and would have cancelled SELL Sk3e8i0. IT IS FALSE AS A CURRENT STATEMENT. get_player 2449, read 2026-11-03T04:52Z, gives the one-call starter test from HOLD Hpz5lsb: smc 2, ismc 6, smdc 8. Two starts in eight matchdays, in the squad six times, i.e. four appearances off the bench and two not in the squad at all. sec 17.055 over eight matchdays is 35 minutes per matchday — a substitute's minutes, not a starter's. ph (newest-first per Hcti7c6) reads 19 / 64 / -5 / -19 / 26: he has appeared in all five but returned a median of 19. The article cannot be describing this season's recent run. APPLY THE TASK PROMPT'S RULE WITHOUT EXCEPTION: assume any undated hit is stale, however specific and however current its prose reads. This one is unusually dangerous because it names a concrete, checkable, reversal-triggering fact rather than a vague injury note. CROSS-CHECK THAT SETTLED IT: Ligainsider's Verletzte-und-Gesperrte sweep (fetched 2026-11-03T04:50Z) lists eight Schalke absentees — Bachmann, Woeber, Heekeren, Hoejlund, Gantenbein, Siebeking, Donkor, Grueger — and Hwang is not among them, so he is FIT and simply not picked. Fit-but-benched is exactly the case the ap-28 sale is built on. SELL Sk3e8i0 STANDS UNCHANGED, ask stays live at 5.400.000."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
-  "window": "closed",
-  "reason": "The flip window is nominally shut — the matchday locks inside the hour — but the hazard that rule exists to prevent is a flip still open when the matchday starts, and this basket is deliberately placed after the lock, so the rule does not bite. Treat the timing gate as absolute: place nothing before the lock. The basket is Burger first on size, then Timo Becker, then Gouweleeuw, newly promoted from watch to a live call. All three are board rows asking exactly market value with a rising flag and a clean status, all expiring well after the lock. Bid exactly market value on each and never raise — the entire thesis is the overnight tick, and a single contested clear into the board premium cluster measured today wipes out the gain from several good flips. Re-confirm the rising flag and that the ask still equals market value after the 21:00Z tick before leaving a bid standing. Unwind by selling back to the board, which pays market value with no spread. Two things are now known that were not: the unwind deadline is the MD10 lock on the twentieth, not the twenty-first — a previous entry had this wrong by nineteen hours in the dangerous direction, and every deadline computed off it was too generous; and the manager-ask discount this ledger has leaned on for weeks no longer exists. Seven clears priced today put manager asks and board rows in completely overlapping ranges, with the single steepest premium of the day paid on a manager ask that had sat unsold. Do not treat a manager ask as structurally cheap again, and do not offer market value on one merely because it is stale. The two open questions stand: it is still unknown whether Kickbase caps squad size, which would cap how many flips can run at once, and the tick edge is measured in one league over one period and will decay if rivals crowd in. It has not decayed this run — the re-measured rising-flag drift is slightly better than the figure carried in the brief, on a much larger sample.",
+  "window": "open",
+  "reason": "The flip window is wide open — the next lock is a fortnight away, so there is no lock risk on a flip at all. The re-measured next-tick drift is slightly STRONGER than the figure this routine was calibrated on, not weaker, and the proportion of rising rows that actually rose is higher too, so the edge has not yet been crowded out. The basket, ranked by size times that drift: Burger first (and he is being bought on points anyway, so he is a flip that does not need unwinding), Timo Becker second, Gouweleeuw third. Neuer qualifies mechanically but expires in the narrow gap between this run and the next, so he is unreachable in practice and remains a no on points regardless. THE TIMING GATE BINDS: every one of these rows reprices at tonight's tick, so bids belong after it, at the new value, and only while the row still reads rising. Taking the two pure flips on top of Burger roughly ten-folds the deficit; that is still comfortably inside the floor with a fortnight of runway, but it is a deliberate choice and not a free one. Two open questions stand unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player is newly flagged. Every owned row reads a clean status except Guirassy, who is already benched, already blocked and not a new development. The live injury sweep returned nothing dated to this matchday that touches the squad, and the general searches surfaced only last-season material of the kind this brief already catalogues as date traps, so nothing was taken from them. The flip candidates were checked for the only risk that matters to a value flip, which is leaving the league rather than fitness: the largest of them extended his contract with his club earlier this year, and the winter window is not open.",
+  "sweep": "Guirassy is the only squad player carrying a flag, and today's news is BETTER than the ledger previously had it. Dated this afternoon, his coach names the injury a strain, rules him out of this matchday only, and says he hopes to have him available again after the international break — which is exactly the matchday after next. No return date is confirmed, and the coach said so explicitly. He therefore stays, and the run before the next lock must re-check him on a source dated at that time. No other squad player is injured, suspended, or newly flagged, and nothing in today's news suggests any of them is leaving the league. Burger was verified fit and starting as part of the buy case.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
