@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-06T06:52Z",
+ "run": "2026-11-06T08:50Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -8,14 +8,14 @@
   "locks": "2026-11-06T19:30:00Z",
   "played": 8
  },
- "cash": 16425559,
+ "cash": 16525559,
  "squad_value": 135645006,
  "leverage": {
-  "balance": 16425559,
-  "floor": -50183286,
-  "spending_power": 66608845,
-  "hours_to_lock": 12.63,
-  "exposure": "No leverage, now or planned. Cash comfortably covers the live Hansen offer and the balance stays positive after it settles, so there is no unwind obligation before the lock and the zero-score penalty for a negative balance at matchday start is not in play. The two post-lock sales add to the balance rather than drawing on it. The flip basket is the only thing that would consume real capital, and it sits entirely on the far side of the lock with thirteen days of room before the next one. One instrument problem persists and is worth stating plainly: the direct ledger database is not reachable from this scheduled run's connector, so the second mandatory reconciliation query could not be executed and the open sell and watch calls can only be read through the computed context, which truncates them. This is a known, already-logged defect rather than a new failure, and every figure used in this briefing was computed by the ledger rather than by hand.",
+  "balance": 16525559,
+  "floor": -50216286,
+  "spending_power": 66741845,
+  "hours_to_lock": 10.66,
+  "exposure": "No leveraged position, now or at any point in the recommended sequence. The balance stays positive through the Hansen settlement, and both board sales add cash after the lock rather than before it, so there is no path here to a negative balance at matchday start. The only non-trivial exposure is the squad-count one: both sales executed without Hansen landing leaves the squad one body short of the floor, with thirteen days and ample cash to repair it before the next lock.",
   "must_restore_by": "2026-11-06T19:30:00Z"
  },
  "counts": {
@@ -43,10 +43,10 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The gap is a dead attacking slot, not a missing position. Guirassy occupies a starting berth and will score nothing, and with only twelve bodies the only replacement available today is a defender who has never played. Hansen closes it by arithmetic rather than by position: he is a fit, confirmed Paderborn starter, and adding a fifth defender is what makes 4-4-2 legal with a real player in it instead of Nakuzola. That is the whole case for paying up — the premium buys a lineup, not just a body.",
+ "binding_gap": "The weak slot is the third attacking place. It is currently held by a forward who is absent from his club's dated probable XI, and the slot behind it is held by an injured striker who is doubtful rather than ruled out. Hansen is the fix, and he fixes it by changing the shape rather than the position — a fourth defender lets the shape drop to two forwards and quietly deletes the worst slot in the eleven. That is why the lineup change, not a further purchase, is the move.",
  "surplus": "",
  "run_kind": "scheduled",
- "cash_ceiling_before_md1": 66608845,
+ "cash_ceiling_before_md1": 66741845,
  "daily_bonus": null,
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
@@ -54,7 +54,7 @@
   "listings": 31,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Hold the line and let the clock do the work.",
-  "headline_short": "Hold the line and let the clock do the work.",
-  "detail": "Hold the line and let the clock do the work. The 12.400.000 offer on Mattes Hansen is live and uncontested and settles at 13:33Z, comfortably before the lock; nothing this run argues for touching it. Once he lands, the one action that matters is a lineup change: switch to 4-4-2 and bench Guirassy. After the lock there is a tight 90-minute window for two sales and, after tonight's tick, a post-lock flip basket with a new leader. No notification was warranted — nothing here has a deadline inside two hours, nothing reverses a previous call, and the balance stays positive throughout."
+  "headline": "One conditional action decides the matchday, and it is a lineup change, not a trade.",
+  "headline_short": "One conditional action decides the matchday, and it is a lineup change",
+  "detail": "One conditional action decides the matchday, and it is a lineup change, not a trade. Georg's bid on Mattes Hansen is already placed and settles early this afternoon, well before the MD9 lock. If it lands, set a 4-4-2 before the lock: Hansen comes into the back four and Hwang drops to the bench. That single swap replaces a forward who is confirmed out of his club's probable XI with a defender two dated sources start, and it is comfortably the largest points move available today. If the bid misses, leave the eleven exactly as it stands — there is nothing to change and nothing to buy. Everything else today is post-lock housekeeping."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Nothing sells before the lock. Both standing sales — Wolf and Hwang — are now pinned to the same narrow window between the 19:30Z lock and the 21:00Z market-value tick, and the reasoning is symmetrical. Selling either one early hands his shirt to Nakuzola and costs real points; selling either one late eats a falling-market tick, since both carry mvt 2 and the measured drift for that flag is negative. Selling back to the board pays exactly market value with no spread, so the window captures the full matchday and the pre-tick price at once. Hwang needs one extra step first: his 5.400.000 manager ask has to come off. It is a third above his market value, it has sat untouched for five days, and a live ask blocks a board sale. Beyond those two there is nothing to sell — ter Horst and Deman also carry falling flags, but both are confirmed starters and a starter is not worth sacrificing for a quarter of a million in paper value.",
+  "reason": "Both standing board sales remain correct on merit and on timing: both players carry the falling flag, and the re-measured falling-flag drift this run still points clearly down, so selling to the board at market value between the lock and tonight's tick beats holding into the tick. What neither call stated, and what this run adds, is that executing both of them drops the squad below the eleven-player floor unless Hansen lands first. Hansen landing makes both sales clean. Hansen missing makes them a two-week obligation to buy a replacement body before the next lock, which the post-sale cash covers easily but which no open call had written down.",
   "standing": [
    {
     "name": "Marius Wolf",
@@ -210,7 +210,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "One buy is already in flight and it is the only one worth making today. Everything else on the board that could still settle before the lock is already on the avoid list, and the new arrival since the last run — a Leipzig midfielder offered by another manager — fails on three counts at once: the ask sits far above where manager-to-manager deals actually clear in this league, a manager listing settles only when the seller chooses to accept so it cannot be relied on to land in time, and funding it after Hansen would open a leveraged position with no unwind legs available before the lock. The one genuinely interesting new board listing, a Hoffenheim midfielder, expires after the lock and so cannot help this matchday at all; he belongs in the value trade, not here.",
+  "reason": "Hansen is verified fit and starting by two independently dated sources, one of them updated continuously through today, and he is the only purchase recommended. The bid is already live and uncontested, and it sits high in the measured contested band — deliberately so, after three documented losses from bidding at a band computed from older, cheaper clears. That premium is real money and worth naming: because a board auction is pay-your-own-bid, an uncontested win costs the full premium rather than market value. The call nonetheless stands rather than being re-cut a fourth time inside two days, because the downside of losing him is the binding gap staying open for the whole matchday and the upside of shading is capped at the premium. Nothing else on the board clears its cost: the manager asks are all above market value, and every board row that qualifies on merit is already carried as an AVOID for the timing gate or for funding.",
   "standing": [
    {
     "name": "Mattes Hansen",
@@ -338,12 +338,12 @@
  },
  "movers": {
   "recommendation": "none",
-  "window": "open",
-  "reason": "The window is open — the lock is still more than twelve hours out — but there is nothing to do yet, by design. The flip is a post-lock basket: bid exactly market value, never raise, and only on rising-flag board listings that expire after tonight's tick, so the tick is captured and no position is left open across the lock. The basket has a new leader this run, a Hoffenheim midfielder listed after the last run finished, who outranks the previous top candidate purely on size and has the useful side-property of being a real points body for the next matchday rather than pure inventory. The timing rule still binds and is the easiest thing to get wrong: the market values quoted now will all be stale at settlement, so the bid must be placed after the tick using the refreshed figure, and only if the rising flag survives it. Unwind room is unusually generous — thirteen days until the next lock — which is what makes a basket of this size tolerable at all. The measured edge itself is unchanged from the last run, with no sign of decay. Two questions remain open and neither has been resolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that the edge is measured in one league over one period and will erode if rivals crowd into it.",
+  "window": "closed",
+  "reason": "Flip window closed — the matchday locks in under twelve hours, so no flip is opened today. The two standing post-lock flips are unaffected and stay open: both targets are still listed, both still carry the rising flag, and both expire tomorrow, so they are actionable after the lock and conditional on the flag surviving tonight's tick. The re-measured rising-flag drift has not decayed — it came in slightly stronger this run than the figure the standing instructions cache, on a larger sample, so the crowding risk the ledger flags has not yet materialised in this league. The two questions behind the flip programme remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that the edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Verified this run against dated sources. Guirassy is the only squad player carrying an injury flag — a thigh problem from Wednesday's Champions League tie, still without a public diagnosis as of Thursday morning, and his club's probable eleven for Saturday now names another striker in his place. The club's Friday press conference falls after this run and before the lock, so the formal resolution lands with the next briefing; the practical conclusion does not depend on it, because the lineup instruction is the same either way once Hansen settles. Wolf and Hwang are both fit but both out of their clubs' probable elevens, which is a selection problem rather than a fitness one and is handled in the sell window. Every other squad member is confirmed in his club's probable eleven: the goalkeeper, both Werder players, the Hamburg defender, the Paderborn defender, the Schalke midfielder, the Elversberg midfielder and the Augsburg striker. One stale-source trap caught and discarded: a widely-syndicated preview still listing Guirassy as a starter was last modified before the injury occurred.",
+  "sweep": "A full sweep of the eleven against today's updated matchday preview turns up no new problem. Every fielded player other than the injured striker and the two sale candidates appears in his club's probable XI. The injured striker is the only squad fitness item, he was already known, and the key detail is that he is described as doubtful with the club waiting on scans — not ruled out. Both sale candidates are confirmed absent from their clubs' probable XIs, which is what makes them the right two to sell. Ligainsider's league-wide injured-and-suspended table could not be retrieved this run; the matchday preview and the club-level sources covered the same ground.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -600,7 +600,7 @@
  "arithmetic": [
   {
    "k": "Balance",
-   "v": "16.425.559"
+   "v": "16.525.559"
   },
   {
    "k": "Squad value",
@@ -608,11 +608,11 @@
   },
   {
    "k": "33% floor",
-   "v": "-0,33 x (135.645.006 + 16.425.559) = -50.183.286"
+   "v": "-0,33 x (135.645.006 + 16.525.559) = -50.216.286"
   },
   {
    "k": "Spending power",
-   "v": "16.425.559 + 50.183.286 = 66.608.845 — NOT 16.425.559"
+   "v": "16.525.559 + 50.216.286 = 66.741.845 — NOT 16.525.559"
   },
   {
    "k": "Clearing premium band (measured)",
