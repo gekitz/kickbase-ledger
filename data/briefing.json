@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-07T04:56Z",
+ "run": "2026-11-07T06:51Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 4225559,
   "floor": -48797410,
   "spending_power": 53022969,
-  "hours_to_lock": 326.56,
-  "exposure": "Nothing leveraged is open right now and the balance is positive. The Burger bid would open leverage deliberately, and that is acceptable only because the lock is nearly two weeks out and the unwind is fully specified: Nakuzola at any time, Hwang on Sunday night, Tanaka late. The one soft spot is that those three legs land just short of clearing the position at today's prices and depend on Tanaka drifting up a few per cent before he is sold; the backstops are flip profit or substituting ter Horst for Nakuzola in the triple. The hard constraints are unchanged and both bind: the squad must not drop below eleven, which caps the unwind at three sales, and the balance must be non-negative when MD10 locks or the whole matchday scores zero. If the Burger bid loses, none of this applies — sell Wolf as originally called and the book stays flat.",
+  "hours_to_lock": 324.64,
+  "exposure": "No leveraged position is open right now — the balance is positive and nothing is pending. Buying Burger opens one deliberately, and it is comfortable rather than tight: the three standing sales, with the rising one held a couple of market updates, clear it with a week and a half of slack, and the thirty-three percent floor is nowhere near binding. Add flips on top and the deficit grows, but each flip unwinds itself by selling back to the board for more than it cost. The one rule that outranks everything else still binds: the balance must be non-negative and the squad at least eleven when the matchday locks on the twentieth, because a negative balance at matchday start scores zero for the whole matchday.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "4-5-1 (needs 5 MID)"
   ]
  },
- "binding_gap": "For MD9 the gap is the forced attacker: Guirassy is knocked and Hwang takes his place in the fielded two, which is the weakest slot on the pitch and cannot be fixed because the lineup is locked. For MD10, with Guirassy back, the gap moves to central midfield, where Tanaka is the weakest fielded body. Burger is precisely that fix — he displaces Tanaka in the fielded four and lifts the eleven, and he does it without touching the back four. That is why Burger ranks ahead of any flip and ahead of any upgrade to a slot already covered.",
+ "binding_gap": "There is no formation hole. Every legal shape is fillable and the eleven is placed. The gap is therefore a quality gap, not a structural one, and it sits in central midfield, where the fourth-best body is the weakest point-scorer in the fielded eleven. That is precisely the slot the top move fills.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 53022969,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 28,
+  "listings": 27,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 3
  },
  "squad": [
   {
@@ -190,13 +190,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "MD9 is being played right now and the lineup is already locked, so nothing bought today scores until MD10.",
-  "headline_short": "MD9 is being played right now and the lineup is already locked, so not",
-  "detail": "MD9 is being played right now and the lineup is already locked, so nothing bought today scores until MD10. That turns this into a pure positioning run, and the whole run comes down to one bid and one reversal. Bid exactly mv on Wouter Burger before his listing expires this afternoon — he is a Kickbase board row at zero premium, mvt 1, and a genuine starter. If that bid wins, do NOT sell Marius Wolf tonight: the standing Wolf sale and the Burger buy cannot both execute without either leaving the position un-unwindable or dropping the eleven into a formation that forces a non-playing defender into the fielded five. Satoshi Tanaka, not Wolf, is the funding leg. The two resolve in sequence — the Burger auction closes before the Wolf window opens — so the branch is always known in time."
+  "headline": "One thing changed this run, and it changes every bid on the page: bid one euro over market value, not exactly market value.",
+  "headline_short": "One thing changed this run, and it changes every bid on the page: bid ",
+  "detail": "One thing changed this run, and it changes every bid on the page: bid one euro over market value, not exactly market value. Timo Becker — the rank-one flip the last run told you to bid on at exactly mv — was taken by Borussia Rumpelfuss at 05:23Z for mv plus one euro. The standing rule 'bid exactly mv and never raise' was written to stop us chasing contested rows into the high premium cluster, and that purpose still stands, but it also made us lose every tie, and on a zero-premium board row the field is full of bidders sitting at exactly mv, so ties are the normal case. One euro cannot carry you into the high cluster and it wins the tie. Every bid below has been re-priced to mv+1 and every affected call re-written in the ledger. Be honest about the evidence: this is one clean observation, not a law. Three board rows cleared at or below mv seven hours earlier, so uncontested rows still settle at mv and the extra euro is simply wasted there. mv+1 is the right bid in both branches, which is why it is worth making the change on a single data point. Everything else is unchanged from the 04:45Z run and the position is comfortable: the matchday lock is nearly two weeks out, so nothing here is time-pressured except the auction clocks themselves."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Three legs, and the order matters. Nakuzola goes to the board at any time; he is at the floor so there is no tick to time. Hwang stays until after Schalke have played on Sunday evening and goes straight afterwards, before that night's tick — he is fielded this matchday, so selling him early forfeits points for a saving smaller than the points are worth, but he is mvt 2 and every further tick bleeds him. Tanaka goes LAST, as late as the lock permits: he is mvt 1 and rising, so each tick held makes the sale bigger, and the structure needs him to grow a few per cent to clear the balance comfortably. Wolf is now CONDITIONAL and only sells if the Burger bid loses, in the window after Augsburg's game and before tonight's tick. His merit is not in question either way — he is a starter, he is fit, and he is absent from the injured-and-suspended table — but he is the bleeding asset and the only reason to keep him is that his average beats Tanaka's in the fielded four.",
+  "reason": "Three standing sales, all unchanged, and the ordering between them matters more than the merits, which are not in question. Nakuzola first and whenever you like: he is pinned at the Kickbase floor, so holding him cannot appreciate and selling him cannot be mistimed. Hwang next, but only after Schalke have played their matchday-nine game tomorrow evening — selling before then forfeits his points for a matchday that is already running, which is the correction the ledger made two runs ago. Tanaka last and latest: he is the one of the three whose value is rising, there are thirteen market updates between now and the lock, and every one you hold him through makes the sale bigger. Do not pull that one forward to tidy the balance sheet; a negative balance costs nothing until the instant the matchday locks, and that instant is almost two weeks away.",
   "standing": [
    {
     "name": "Satoshi Tanaka",
@@ -238,17 +238,17 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Burger is the one buy and he is the binding fix. He is a Kickbase board listing with the ask set at exactly market value — zero premium — he is mvt 1 and rising, his status flag is clean, he has started seven of nine matchdays, and he is absent from Ligainsider's injured-and-suspended table read this morning; Hoffenheim's listed absentees are Wimmer, Gendrey, Hajdari, Hranac and De Cat, none of them him. The four alarming Burger headlines this ledger logged earlier are all last season and must not be re-litigated. Bid exactly mv and never raise. One caveat worth carrying: Ligainsider's dated last-minute piece calls Hoffenheim's whole starting eleven a coin flip for this weekend, which is a reason not to expect anything from him in MD9 — he cannot be fielded anyway — but not a reason to doubt a man with seven starts in nine. Everything else on the board is already refused: Diaz is now confirmed by a dated source to be in rehab training, which settles the standing avoid; Massengo, Kofane, Sirch, Moffi and Abraha are manager asks at double-digit premiums over value.",
+  "reason": "Burger is the move and the only one on points. He is a board listing at zero premium, fit, and a genuine ever-present starter rather than an average-of-stale-data trap — the Kickbase start counters say he has started every matchday he was available for, and his Ligainsider page carries a fit badge with nothing newer than a contract extension in August. The wall of injury headlines that search throws up for him is all from last spring, which the ledger already logged as a source trap. He enters the eleven ahead of Tanaka and, with Hwang's sale returning the attacking slot to Guirassy, lifts the fielded side by a wide margin — the largest single points upgrade on this board. Bid one euro over market value and never raise. The auction closes early this afternoon, before tonight's market update, so the winner also collects that night's rise. One thing to say plainly rather than bury: running the full unwind leaves you at exactly eleven players with no cover, where a fresh injury means a zero in the eleven. If you want a spare body, hold Tanaka and fund the last slice of the deficit from a flip instead.",
   "standing": [
    {
-    "name": "Wouter Burger",
+    "name": "Wouter Burger — RE-PRICED TO mv+1, bid 17.115.383 and never raise",
     "pos": "MID",
     "club": "14",
-    "ask": 17115382,
+    "ask": 17115383,
     "mv": 17115382,
     "premium_pct": 0,
     "listing": "Kickbase listing",
-    "why": "REPLACES Bs20q5x AT THE POST-TICK PRICE. BID EXACTLY 17.115.382 AND NEVER RAISE. (1) THE ROW, measured 2026-11-06T22:45Z: 11631 is a Kickbase BOARD listing (no u field), prc = mv = 17.115.382, i.e. ZERO premium; mvt 1, st 0, ap 92, p 647, tid 14 Hoffenheim, exs 60.021s => expiry 2026-11-07T15:25Z. (2) STARTER, VERIFIED DATED: ligainsider.de/tsg-hoffenheim/10/aufstellung-von-tsg-hoffenheim-420393/, published 05.11.2026 17:33, names Burger in central midfield (Baumann; Abraha, Kabak, Machida, Rots; Avdullahu, Burger; Kramaric, Prass; Asllani, Lemperle). get_player agrees: smc 7, ismc 7, smdc 9, st 0, recent 119 / 91 / 92. His player page shows the Fit icon and no injury item since 18.04.2026. (3) WHY HE IS THE BINDING-GAP FIX, not a luxury: after the Wolf and Hwang sales the squad is ELEVEN at 1GK/5DEF/3MID/2ATT, which forces 5-3-2 with Nakuzola (ap 27, zero appearances) and the injured Guirassy both in the XI. Burger takes the squad to twelve at 1/5/4/2, which restores 4-4-2 and benches Nakuzola. The marginal gain is Burger 92 against Nakuzola 27, i.e. ~+65 ap per matchday — far larger than the Burger-minus-Wolf comparison a lazier read would make. (4) FUNDING AND EXPOSURE: cash 4.125.559, spending power 52.889.969, so the bid is inside the floor. It opens a deficit of ~12.990.000. Per Hfbknqv that costs NOTHING until a matchday locks, and MD10 locks 2026-11-20T19:30:00Z — 13 days out. MD9 already started at 19:30Z 06.11 with a POSITIVE balance, so MD9 scoring is untouched whatever happens now. Unwind: Wolf 7.331.710 + Hwang 4.043.466 on Saturday leaves ~-1.615.000, cleared by any one further sale (ter Horst 7.552.725, mvt 2, ap 76, is the obvious one) with twelve days to spare. (5) PREMIUM DISCIPLINE: this is a BOARD row, so the high-cluster benchmark applies to contested clears, NOT to our bid. Measured 06.11: Neuer cleared -0,23% over mv on a board row the same evening. Bid mv, lose it if someone overpays, and lose nothing.",
+    "why": "REPLACES Bf1sl2s (now closed) AT mv+1. THE MERIT IS UNCHANGED AND NOT IN QUESTION — ONLY THE LAST EURO MOVES, per WATCH Wewslu6 (Timo Becker lost 2026-11-07T05:23:01Z at exactly mv+1 to Borussia Rumpelfuss, with our call sitting at exactly mv). BID 17.115.383. NEVER RAISE BEYOND IT. (1) THE ROW, re-measured 2026-11-07T06:45Z: 11631 is a Kickbase BOARD listing (no u field), prc = mv = 17.115.382, ZERO premium, mvt 1, st 0, ofc 0 (no rival offer visible yet), exs 31.266s => expiry 2026-11-07T15:25Z, i.e. BEFORE the 21:00Z tick, so the winner also collects ~498.000 of mvt-1 drift on the night. (2) STARTER, RE-VERIFIED THIS RUN, TWO WAYS. get_player 11631 at 06:45Z: tn \"Hoffenheim\" (tid 14 confirmed, not a Hyvblwv mislabel), st 0, stl [] empty, smc 7 / ismc 7 / smdc 9 — he has started every single matchday he was available for, and the two he missed he was not in the squad for. ap 92 on p 647, ph newest-first [MD9 unplayed, 119, 91, unplayed, 92]. ligainsider.de/wouter-burger_22632/ fetched 06:50Z carries the \"Fit\" badge and its NEWEST item is 04.08.2026 \"Offiziell: Burger verlaengert bei der TSG\" — a contract extension, which also settles the transfer check. Every injury headline on that page is 18.04.2026 or older, i.e. LAST SEASON, exactly as AVOID Av01wef warned. (3) FIXTURES: MD9 Hoffenheim v Schalke 2026-11-08T18:30Z (he is live for it if bought today); MD10 Mainz v Hoffenheim 2026-11-21T14:30Z, after the MD10 lock at 2026-11-20T19:30:00Z. (4) WHAT HE BUYS IN POINTS: he enters the fielded eleven at ap 92 and displaces Tanaka at ap 57. Combined with the standing Hwang sale (ap 28) releasing the ATT slot to Guirassy (ap 126, currently benched), the fielded eleven goes 1016 ap -> 1149 ap, i.e. +133 ap per matchday. That is the largest single points upgrade available on this board. (5) FUNDING, RE-CHECKED AT 06:45Z: cash 4.225.559 against 17.115.383 opens -12.889.824. Spending power is 53.022.969 and the 33% floor is -48.797.410, so the floor does NOT bind. Squad goes 13 -> 14, the 11-player floor permits THREE sales, and the three standing sales are Nakuzola 500.000 (S57pbum, pinned at the Kickbase floor, costless), Hwang ~3.927.000 (Secrdnk, sell after Schalke's MD9 game 08.11 18:30Z so his MD9 points are not forfeited per Wej13eo) and Tanaka 7.952.901 rising (Sj6qh7d, mvt 1, sell LATE). At today's values those three raise 12.496.367, which is 393.457 SHORT — but Tanaka is mvt 1 and there are THIRTEEN 21:00Z ticks before the lock, so two ticks at +2,91% put him at ~8.422.000 and close the gap with ten days to spare. The unwind is not tight; it is comfortable. (6) RESIDUAL SQUAD AFTER THE FULL UNWIND is exactly 11: Zentner; ter Horst, Deman, Muheim, Hansen; Wolf, Gruell, Petkov, Burger; Gregoritsch, Guirassy = a legal 4-4-2 with ZERO cover. Flag that to Georg rather than hiding it: at 11 bodies a single new injury means a zero in the eleven, though not the -100 under-11 penalty. If he wants cover, hold Tanaka and fund the last ~400k from one flip instead.",
     "rank": 1,
     "trigger": "2026-11-07T15:25:00Z"
    }
@@ -367,11 +367,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open — the lock is nearly two weeks away — and the board is unusually generous. Five Kickbase listings qualify on the full test: board rows with no manager ask, priced at exactly market value, flagged rising. The measured next-tick drift re-ran this morning and came in UP, not down, on a much larger sample than the original measurement, so the edge has not decayed yet. Bid exactly mv on each and never raise; win and you capture the tick, lose and it costs nothing. Rank them by size, because the drift is a percentage: Timo Becker first, Gouweleeuw second, Ache third, Philippe fourth, Rosenfelder fifth. Becker's listing expires within the hour and Ache's shortly after, so those two are decide-now or forget. Everything that resolves before tonight's tick captures it; Philippe resolves after it and captures tomorrow's instead. Separately, and this is the sharper finding: three board purchases settled overnight and every one cleared at or below market value, because half the league dumped players to the board in the three hours after last night's tick. That contradicts the high-cluster benchmark this ledger has been using since September. It does not retire it — it dates it, and it should be re-measured once MD9 finishes and buyers return for MD10. Two things still unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and whether the edge survives rivals crowding in.",
+  "reason": "The flip window is wide open — the lock is more than thirteen days out, so no flip here can threaten a matchday. The mechanism re-measured unchanged this run: rising-flag rows beat the next market update nine times in ten, falling-flag rows do the opposite, and selling back to the board pays market value exactly with no spread. No decay yet, and no sign rivals have crowded the edge out. Gouweleeuw is rank one and Rosenfelder rank two: both are zero-premium board rows whose auctions close this afternoon, before tonight's update, which is the shape you want — win it and you own him when the tick lands. Philippe and the newly listed Machino are the same trade with worse timing, because their auctions close after tonight's update, so the rise is already inside the price you would pay and the first tick you actually capture is a day or two out. Fund the pre-tick pair first. Ache is still live but his clock runs out within the hour, so treat him as gone unless you are already awake and looking at this. All of them are value trades only — none would improve the eleven, and none needs a fitness check, because fitness does not enter the market-value tick. Two questions remain open and neither has moved: whether Kickbase caps squad size, which would cap how many flips you can run at once, and the fact that this edge is measured in one league over one period and will decay if the other traders crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "One squad man is flagged and he was flagged already. Guirassy carries an injury status and Ligainsider has Dortmund listing him as badly knocked with Kovac hoping for a quick return; he is out for MD9 and expected back for MD10, which is exactly what the standing watch predicted. He is on the bench this matchday so the absence costs nothing directly. Nobody else in the squad appears on the injured-and-suspended table: Wolf, Hwang, Tanaka, Muheim, Hansen, Deman, ter Horst, Grull, Petkov, Gregoritsch, Zentner and Nakuzola are all clear, and Mainz's suspensions are Mwene and Posch, neither of them ours. Source caveat worth carrying: the Ligainsider injured-and-suspended page carries NO date of its own and reports durations rather than return dates, so it confirms absence from the list but cannot by itself date a clearance; the probable-lineups piece used alongside it is dated the evening before this run. The flip candidates need no starter check by construction, and the transfer check is trivially satisfied — the winter window does not open until January, so nobody is leaving the league before the lock.",
+  "sweep": "Guirassy is the only squad concern and he is not a new one. Kickbase now carries the club's own wording — a thigh strain, missing the cup tie, hoping to return after the international break — which means matchday ten is live for him but not promised. He has started every matchday he was available for and has lost no minutes to injury all season, so this reads as a short absence rather than a reason to sell a hundred-and-twenty-six-point striker into a falling market. Hold him and re-check after the break. Nobody else in the squad carries a status flag. Burger, the one buy, was re-verified two ways this run and is clean.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -644,7 +644,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1097, -4,00% to +443,38%"
+   "v": "n=1099, -4,00% to +443,38%"
   }
  ]
 }
