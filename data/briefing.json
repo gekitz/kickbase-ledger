@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-08T00:55Z",
+ "run": "2026-11-08T02:55Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -15074774,
   "floor": -47947087,
   "spending_power": 32872313,
-  "hours_to_lock": 306.57,
-  "exposure": "The balance is negative and the squad sits at thirteen, so exactly two sales are legal before the ten-man penalty bites. The pair the ledger had already called — Hwang now, Tanaka late — does not cover the deficit at today's prices, and only covers it at the lock if Tanaka's rising-flag drift holds for twelve consecutive ticks with almost no margin. That is a coin-flip on the rule that zeroes an entire matchday, and the rule outranks every points consideration on this page. The fix added this run is a conditional second leg: on the last tick before the lock, read Tanaka's value against the remaining deficit and sell whichever of Tanaka or Petkov actually clears it. Both outcomes leave a legal four-four-two and exactly eleven bodies, and the fallback costs a known, bounded number of fielded points rather than risking all of them. Do not pre-empt it — every day held is value accruing on a rising asset, and the test cannot fail until the nineteenth. A third sale does not exist, and buying a cheap filler body to unlock one is worse, not better: at exactly eleven bodies the filler is fielded.",
+  "hours_to_lock": 304.58,
+  "exposure": "The balance is negative and must be back at or above zero before the MD10 lock. The important correction this run: the standing two-leg unwind in the open calls does not work. Selling Hwang and Tanaka together does not cover the deficit, takes the squad down to exactly eleven, and forces the injured Guirassy into the fielded eleven as a near-certain zero. Market-value drift does not rescue it either; Tanaka's rise over the remaining ticks and Hwang's decay still leave the pair short. The answer that does work is Guirassy on his own. He is not in the eleven, so selling him costs nothing in fielded points, and he alone clears the whole deficit with room to spare and a free squad slot left over. That is one sale instead of two, and it leaves the eleven exactly as it stands. The reason not to do it today is that a negative balance is free until the lock, and the only cost of waiting is his daily decay, which is a fair price for keeping the option on a striker who starts every match he is fit for. The decision point is the eighteenth of November, not today. If no dated Dortmund source by then puts him fit or in the XI for MD10, sell him. If he is confirmed fit, he goes into the eleven and the fallback leg is Petkov, not Tanaka, because Tanaka at projected drift arrives just short of the residual while Petkov clears it.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no positional hole. Every legal formation is fillable and the eleven is already placed. The binding constraint is money, not shape: the deficit, and the fact that only two bodies can leave without dropping below eleven.",
+ "binding_gap": "There is no formation hole to fill. The real thinness is at goalkeeper, where the squad carries exactly one. He is fit, started the last two matchdays and scored well in both, so this is not urgent, but a single keeper means an injury or a dropping there would leave no legal eleven at all. Worth watching rather than spending on, especially with the balance where it is. The board does carry a keeper with a better season average, but he is on a falling market value and the premium of buying cover while leveraged is not worth paying today.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 32872313,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 31,
+  "listings": 30,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -190,13 +190,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Two time-boxed actions today, both inside one window, and one structural fix to the unwind.",
-  "headline_short": "Two time-boxed actions today, both inside one window, and one structur",
-  "detail": "Two time-boxed actions today, both inside one window, and one structural fix to the unwind. First, before the Hoffenheim v Schalke kickoff this evening, swap Burger into the eleven for Hwang. Second, once Hwang is out of the eleven and before tonight's market tick, sell him to the board. Then leave the second unwind leg alone until the day of the lock. The leveraged position is the only thing on this page that can cost a whole matchday, and it is not yet safely closed."
+  "headline": "Two things to do today, both before tonight's kickoff, and one decision to defer.",
+  "headline_short": "Two things to do today, both before tonight's kickoff, and one decisio",
+  "detail": "Two things to do today, both before tonight's kickoff, and one decision to defer. Put Burger into the eleven in place of Hwang before the Hoffenheim-Schalke kickoff, then sell Hwang to the board once he is out of the eleven. Nothing else needs acting on. The negative balance is real but it does not bite until the MD10 lock, which is still almost thirteen days away, so there is no reason to crystallise a bad sale today. The leveraged position is open and remains the single thing that could cost a whole matchday, but it now has a clean answer that no previous run had costed."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Hwang goes today, in that order: out of the eleven first, then sold to the board before the evening tick. He is falling, he is not in Schalke's dated probable eleven, and holding him to the lock burns value for nothing. Tanaka stays for now — he is in that same dated Schalke eleven, he is the only rising asset in the unwind, and selling him today would lock the worst price available between now and the lock. Petkov is listed as a conditional fallback only and must not be sold unless the test on the last tick fails; he is owned, fielded and not for sale today.",
+  "reason": "Hwang is the sale, and the dated evidence now makes it free rather than merely sensible. A probable-XI preview updated the day before the match puts him on Schalke's bench, not in their starting eleven, so once Burger replaces him the sale costs nothing in points at all. He is the worst points-per-euro body in the squad, his market value is falling and has been falling all week, so every day held is money lost. Sequence matters: move Burger into the eleven first, then sell, never the other way round, or the fielded eleven drops to ten. Tanaka should not be sold today under any circumstances. The same dated preview has him starting tonight, and he is the only rising asset among the sale candidates, so selling now would both forfeit his matchday and lock in the worst price of the next fortnight. His sale call stays open for later in the window. Petkov stays a conditional fallback only, to be used if Guirassy is confirmed fit and therefore kept.",
   "standing": [
    {
     "name": "Petkov — CONDITIONAL FALLBACK LEG ONLY, DO NOT SELL HIM UNLESS THE TEST BELOW FAILS",
@@ -229,7 +229,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "No points buy this run. Nothing on the board would improve the fielded eleven at a price the deficit can carry, the affordable rows are manager asks well above value, and the one genuinely strong defender listed is priced far above the band anything has ever cleared at. Adding a points buy now would also deepen a deficit that is already the binding problem. The next real buy window is after the unwind resolves.",
+  "reason": "No buy this run, and that is a considered answer rather than an empty one. The eleven is filled, the balance is negative, and every genuinely tempting row on the board fails on either price or availability. The two biggest names are both carrying availability flags and one of them is beyond spending power anyway. The manager asks on the board are all priced well above where manager-to-manager listings actually clear, several of them at two to five times the measured clearing premium for that kind of listing, and the defender with the eye-catching season average has been out for weeks and is the textbook stale-average trap. The one row with a genuinely striking average is a single cameo matchday carrying the whole number, which is the same trap in reverse. Nothing here improves the fielded eleven, so nothing is recommended.",
   "standing": [
    {
     "name": "LINEUP — place Burger in the eleven for Hwang BEFORE 2026-11-08T18:30:00Z (MD9 is still running)",
@@ -358,11 +358,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "One qualifying flip, and it reverses this run's own standing no-flip call — say so plainly rather than quietly. That call was measured on last night's board and found every rising-flag Kickbase row had actually fallen at the tick; Baum was listed after that measurement and does not share the defect, because his realised last tick was positive. Bid exactly his market value and never raise: the edge lives entirely in winning at value, and one contested clear into the high cluster wipes out a long run of good flips. His red card is not an objection and must not be read as one — the sending-off was public before the tick that moved him up, so the market has already priced it, and availability does not enter the daily tick at all. He is a fourteenth body, so the fielded eleven is untouched, and the transfer window is shut. Unwind him to the board any day after tonight's tick. Note what the flip does not do: each purchase permits exactly one more sale, so the body returns what it cost and it creates no slack against the deficit beyond its own profit. The two open questions stand — whether Kickbase caps squad size, which would cap flip throughput, and that this edge is measured in one league over one period and will decay if rivals crowd in. Re-measured this run, the rising-flag drift has not decayed; it is slightly stronger than the September baseline.",
+  "reason": "The flip window is open; the lock is far away. The tick edge was re-measured this run from the event log and has not decayed at all. The rising flag still predicts the next update with the same mean and the same hit rate as the last reading, on a slightly larger sample, so the mechanism stands: bid exactly the market value on a rising Kickbase board row with no manager ask, and never raise. Two rows qualify. The stronger of the two is the Frankfurt defender already carried as an open flip, but two facts need attaching to him. He was sent off in his last match and is suspended for the next, which under this ledger's own rule is not an objection to a pure value flip, and the evidence is unusually direct here: the sending-off happened in the afternoon and the update that same evening still moved him up. The second fact is the one that actually matters: his auction resolves after tonight's update, not before, so a winning bid captures the following day's tick rather than tonight's, and the flag to trust is the one he carries after tonight's update rather than the one on the board now. The other qualifying row is the M'gladbach forward, who doubles as the only affordable attacking cover in the squad, so he should not be flipped back blindly if bought. Taken together the two would absorb roughly half of spending power and deepen the leverage considerably against an unwind ceiling that is already the dominant problem, so this section flags them and does not displace the exposure fix. Calibration note worth carrying forward: three board listings in a row have just cleared at or below market value, with only one clearing high. That cuts against the belief that contested board rows must be chased into a high premium, and supports bidding exactly at market value and letting the auction go. Two questions remain open and unresolved. Whether Kickbase caps squad size is still unknown, and a cap would cap flip throughput directly. And the edge is measured in one league over one period; it will decay if rivals crowd in, so it needs re-measuring every run rather than trusting any stored figure.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Guirassy is a thigh strain from the Betis tie, with the coach publicly hoping for a quick return and examinations pending; he missed the weekend and the expectation remains that he is back for the next matchday, after the international break. He is not a sale. Grüll carries a status flag but played the full weekend fixture and scored well, and his market is being bid up — the alarming search result for him is from August of the year before last and has been logged as a source trap so no future run walks into it. No squad player is newly injured, suspended or dropped this run. The dated preview for tonight's fixture leaves both Hwang and Burger out of their clubs' probable elevens, which weakens the case for the swap without overturning it: the man coming out has a bench ceiling far below the man going in, who has started most of the season.",
+  "sweep": "Guirassy has a thigh strain picked up in midweek European football. The manager confirmed on the sixth that he would miss the weekend and hopes he is fit after the international break; no return date has been given and he is not expected to join his national team, which at least removes that risk. Grüll came off hurt in the last match with a calf muscle problem and his profile now reads as missing since the day before, with no return date given. He is the squad's second-best points asset and sits in the fielded eleven, so this is the fitness item most worth watching over the break; his matchday is already played, so nothing is lost now, but a calf problem unresolved by the lock would mean a fielded zero. Gregoritsch carries no injury flag but was benched for his fixture, which is a selection risk rather than a fitness one and matters because he is the only recognised forward left in the eleven after the swap. Burger and Zentner are both clean, both fit, and both evidenced as starters by dated sources this run.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -641,7 +641,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1106, -4,00% to +443,38%"
+   "v": "n=1107, -4,00% to +443,38%"
   }
  ]
 }
