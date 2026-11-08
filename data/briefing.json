@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-08T18:54Z",
+ "run": "2026-11-08T20:54Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -8,52 +8,52 @@
   "locks": "2026-11-20T19:30:00Z",
   "played": 9
  },
- "cash": -15074774,
- "squad_value": 160368976,
+ "cash": -11008813,
+ "squad_value": 156403015,
  "leverage": {
-  "balance": -15074774,
-  "floor": -47947087,
-  "spending_power": 32872313,
-  "hours_to_lock": 288.6,
-  "exposure": "The leveraged position is open and unchanged since the last run. It has to be closed before the MD10 lock on 2026-11-20T19:30:00Z, and that is twelve days away, so there is no emergency tonight beyond the price window. The structure is unchanged and still holds: exactly two sales are legal before the squad falls to ten and takes the hundred-point penalty. Hwang is the first leg and fires tonight. Tanaka is the second and is deliberately NOT sold yet, because he is the only rising asset in the unwind and every day held is worth more than the day before. Petkov stays a conditional fallback only, to be used if and only if Tanaka falls short after the 19.11 tick. Do not sell Petkov on the strength of that call existing.",
+  "balance": -11008813,
+  "floor": -47980087,
+  "spending_power": 36971274,
+  "hours_to_lock": 286.58,
+  "exposure": "The balance is negative and stays negative until a sale clears it. A negative balance at the moment MD10 locks scores zero for the entire matchday, so this outranks everything else on the page. There is no danger in carrying it for now — nearly twelve days remain and five separate squad members could clear it single-handed — but it must not be left to the final hours, and it cannot be cleared by flip profit, only by selling a real asset.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
   "gk": 1,
   "def": 4,
   "mid": 5,
-  "att": 3,
-  "total": 13
+  "att": 2,
+  "total": 12
  },
- "placed": 11,
+ "placed": 10,
  "penalty_open": false,
  "formations": {
   "legal": [
-   "3-4-3",
    "3-5-2",
-   "4-3-3",
    "4-4-2",
    "4-5-1"
   ],
   "blocked": [
+   "3-4-3 (needs 3 ATT)",
    "3-6-1 (needs 6 MID)",
    "4-2-4 (needs 4 ATT)",
-   "5-2-3 (needs 5 DEF)",
+   "4-3-3 (needs 3 ATT)",
+   "5-2-3 (needs 5 DEF, 3 ATT)",
    "5-3-2 (needs 5 DEF)",
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no positional hole. Every slot is covered and five formations are legal, so nothing in the squad forces a purchase. The binding constraint this run is cash, not a position — the deficit against the two-sale ceiling is what shapes every other decision. One genuine uncertainty sits underneath all of it and has never been measured in this ledger: the standing rule that a negative balance at matchday start scores zero for the whole matchday. The balance was already negative when MD9 began, so if that rule is literally true, MD9 was forfeit before today's runs started and the missed lineup swap cost nothing. MD9 finishes tonight, which makes this checkable for the first time. The next run should read the MD9 total and either harden the rule or retire it, and until then it is being treated as true because that is the cautious side of the error.",
+ "binding_gap": "The eleventh lineup slot is empty. Burger is fit, unplaced, and scores above two players who are already in the side; putting him in costs nothing, needs no cash, and is the single highest-value action available this run.",
  "surplus": "",
  "run_kind": "scheduled",
- "cash_ceiling_before_md1": 32872313,
+ "cash_ceiling_before_md1": 36971274,
  "daily_bonus": null,
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
   "listings": 32,
   "cheapest": 500000,
-  "cheapest_slot_filling": 1145581,
+  "cheapest_slot_filling": 500000,
   "expiring_within_2h": 1
  },
  "squad": [
@@ -176,27 +176,17 @@
    "state": "clear",
    "note": "",
    "tag": "keep"
-  },
-  {
-   "name": "Hwang",
-   "pos": "ATT",
-   "club": "8",
-   "mv": 3965961,
-   "ap": 28,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
   }
  ],
  "verdict": {
   "action": "act",
-  "headline": "ONE ACTION TONIGHT, IN A THIRTY-MINUTE WINDOW.",
-  "headline_short": "ONE ACTION TONIGHT, IN A THIRTY-MINUTE WINDOW.",
-  "detail": "ONE ACTION TONIGHT, IN A THIRTY-MINUTE WINDOW. MD9 is still running: the Schalke away fixture kicked off at 18:30Z and is the last MD9 game on the board, so the matchday completes at roughly 20:20-20:25Z with stoppage. Sell Hwang back to Kickbase in the window between that final whistle and 20:55Z, before the 21:00Z market-value update. Earlier in the window is not better and is actively worse: he is a fielded player in a live fixture, and selling before the whistle forfeits whatever he contributes to MD9. Later is worse too, because he is marked falling and crossing tonight's tick gives the money away. This replaces the previous Hwang instruction, which told you to take him out of the eleven first. That route is closed — the lineup swap it depended on was not made before kickoff, and Hwang is now locked into the eleven for the rest of MD9. The merit of the sale has not changed at all; only its timing floor has."
+  "headline": "The Hwang leg executed tonight and the deficit shrank accordingly, but the sale left the eleventh lineup slot empty and nothing filled it.",
+  "headline_short": "The Hwang leg executed tonight and the deficit shrank accordingly, but",
+  "detail": "The Hwang leg executed tonight and the deficit shrank accordingly, but the sale left the eleventh lineup slot empty and nothing filled it. The one free action of this run is to place Burger into that slot; until it is done, a slot of the fielded side scores nothing on MD10. No sale should fire today — the lock is nearly twelve days out and the information that decides which player funds the unwind has not arrived yet."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Hwang first and tonight, in the post-whistle window. He is not an injury sale — he is fit and was available for the live fixture. He is sold because he is the worst points-per-euro body in the squad on a re-based sample, has started only two of nine matchdays, and is marked falling with a week of negative drift behind him. He was in the eleven at all only because Burger has been sitting unplaced. Tanaka is the called second leg and stays put for now. Petkov is insurance, not a recommendation. Nothing else in the squad should be sold: the remaining bodies are either the fielded core or the only keeper.",
+  "reason": "Nothing today. The deficit must be gone before the MD10 lock or the whole matchday scores zero, and exactly one sale is legal before the eleven-player floor, so that single sale has to cover the gap on its own. Tanaka cannot: he reaches the number only on twelve consecutive good ticks, which the re-measured drift puts at roughly a coin flip, so treat the Petkov fallback as likely rather than remote. The better answer is to let the injuries resolve — whichever of Gruell or Guirassy is ruled out of MD10 becomes the funding leg, because selling a man who would have scored nothing costs nothing and clears the deficit with room to spare. If both recover, sell Petkov and field the two-striker shape.",
   "standing": [
    {
     "name": "Petkov — CONDITIONAL FALLBACK LEG ONLY, DO NOT SELL HIM UNLESS THE TEST BELOW FAILS",
@@ -215,21 +205,12 @@
     "ap": 57,
     "why": "REPLACES Sqjqj5s (now closed) AND REVERSES ITS TIMING. The merit is unchanged and not in question: ap 57, the fifth of five fielded midfielders, zero points cost to sell. WHAT CHANGES IS WHEN, and for two independent reasons, both measured this run 2026-11-07T20:45Z. (1) HE IS THE ONLY RISING ASSET IN THE UNWIND AND SELLING HIM TODAY LOCKS THE WORST PRICE OF THE NEXT 13 DAYS. Tanaka is mvt 1 with a REALISED last tick of +44.723 and sdmvt +1.410.873, i.e. about +21,6% over seven days — a realised rate that matches the re-measured mvt-1 flag drift (n=1655, mean +2,87%, 89,9% rose). The MD10 lock is 2026-11-20T19:30Z, 310h away, and a negative balance costs NOTHING until that instant (Hfbknqv). Selling to the board pays exactly mv whenever it fires, so every tick he is held raises the proceeds at zero points cost. Sell him at 7.952.901 today and the unwind is 7,95M short of itself; hold to 19.11 at even half his realised rate and he is worth 9,5-11M. (2) THE SQUAD CANNOT AFFORD TO BE AT ELEVEN WITH TWO FLAGGED PLAYERS. After the Hwang sale the squad is 12 and Tanaka is the ONLY bench body. Grüll (7721) went off injured in MD9 today with calf trouble (st 2, stxt \"Stricken - substituted against VFB (A)\", ligainsider 07.11.2026 20:02 \"Muskuläre Probleme Wade, fehlt seit heute\") and Guirassy (1920) is st 2 with a thigh strain (Wisj1sk). Selling Tanaka now takes the squad to exactly eleven, at which point an unfit Grüll or Guirassy MUST be fielded for a near-zero return with no alternative. Holding Tanaka keeps one substitution available for free. FIRE THE SALE when BOTH hold: the residual deficit is covered, and Grüll and Guirassy are confirmed fit for MD10 on dated sources. HARD DEADLINE 2026-11-19T20:00Z — 24h before the lock, sell to the board regardless, because a negative balance at matchday start scores ZERO for the whole matchday. FITNESS IS NOT AN OBJECTION AND NO RUN MAY CITE ONE: st 0, smc 7 starts of smdc 9, and Schalke's MD9 is 2026-11-08T19:30Z vs Hoffenheim, so his ph[0] hp false means NOT YET PLAYED, not dropped (ligainsider /fc-schalke-04/13/ read 07.11, he is in the lineup block with no status icon).",
     "tag": "sell"
-   },
-   {
-    "name": "Hee-Chan Hwang — sell in the window between MD9 FULL TIME (~20:25Z) and 20:55Z",
-    "pos": "ATT",
-    "club": "8",
-    "mv": 3965961,
-    "ap": 28,
-    "why": "REPLACES Se3dtr8 (now closed) BECAUSE ITS FLOOR BECAME UNSATISFIABLE AS WRITTEN, NOT BECAUSE THE MERIT CHANGED. Se3dtr8 said \"sell ONLY after he is out of the eleven\". The way out of the eleven was Rppfz94 (swap Burger in for Hwang before 18:30Z). MEASURED THIS RUN 2026-11-08T18:45Z: Rppfz94 was NOT executed — get_lineup still has Hwang at lo 10 and Burger with no lo at all — and get_player 2449 mdsum now reads day 9, t1 14 v t2 8, md 2026-11-08T18:30:00Z, cur TRUE, mdst 1, score 1:0. The fixture is LIVE. Hwang is locked into the fielded eleven for the remainder of MD9 and cannot be taken out of it. Rppfz94 is resolved MISSED. WHY THE SALE STILL FIRES TONIGHT, AND WHY THE FLOOR WAS ABOUT POINTS RATHER THAN ABOUT THE WORD \"ELEVEN\": the floor existed to stop the sale forfeiting his live MD9 contribution. Once the fixture is complete that contribution is banked and the floor has done its job. tid 14 v tid 8 kicked off 18:30Z and is the LAST MD9 fixture (Grüll's get_player mdsum has the 07.11 game at mdst 2, Höler's 08.11 16:30Z game at mdst 2 — this 18:30Z game is the only one still at mdst 1). So MD9 completes at roughly 20:20-20:25Z WITH STOPPAGE, and the correct window is FULL TIME to 20:55Z. WHY NOT WAIT FOR TOMORROW: he is mvt 2 with tfhmvt -77.505 and sdmvt -868.118 over seven days, against a re-measured mvt-2 drift of -2,88% per 20:00Z tick (n=992, only 13,7% rose). Carrying him across tonight's 21:00:00Z tick costs about 114.000, and carrying him to the MD10 lock on 2026-11-20 costs far more. THE MERIT IS UNCHANGED AND IS NOT IN QUESTION: ap 28, smc 2 of smdc 9, st 0 and stl [] so this is NOT a fitness call, he is simply the worst points-per-euro body in the squad and the cheapest of the two legal sales. ARITHMETIC: cash -15.074.774; this sale leaves -11.108.813 and the squad at 12, so ONE further sale remains legal before the ten-man -100 penalty. Tanaka (Sdpv6qb) is that leg and is deliberately held because he is mvt 1 and rising. THE NEXT SCHEDULED RUN IS ABOUT 20:45Z AND WOULD LEAVE TEN MINUTES, WHICH IS WHY THIS CALL IS PUSHED RATHER THAN LEFT ON THE PAGE.",
-    "tag": "sell"
    }
   ]
  },
  "buy": {
   "recommendation": "act",
-  "reason": "No points buy this run, and that is a finding rather than a gap. The board carries nothing that improves the fielded eleven at a price worth paying. The one defender listed at a serious ask is a manager listing well into the high premium cluster, in a position already covered four deep. Every other candidate that would genuinely upgrade a slot is already on the blocked list for reasons that still hold, and none of their reversal conditions is met. Padding this section with a name that loses on price would be worse than leaving it empty.",
+  "reason": "Nothing. The board carries no attacker who would improve on what is already owned, and the rows with a respectable average are manager asks at premiums the measured clearing band does not justify. Midfield and defence are covered, and the attacking thinness is an injury problem rather than a squad-composition problem, so it will not be fixed by spending deeper into the deficit for a marginal body.",
   "standing": [
    {
     "name": "LINEUP MD10 — Burger must be IN the eleven; he has been unplaced through MD9 and is the second-best unfielded body",
@@ -358,11 +339,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open — the lock is nearly twelve days out, so there is no risk of a flip being caught by it. The measured edge has not decayed: the rising-flag drift re-reads slightly stronger than the figure this strategy was built on, with nine in ten rising players going up at the next update. All five previously called flip targets are still listed, all still priced at exactly market value, all still Kickbase listings rather than manager asks, and all still carrying the rising flag. Two things are worth saying plainly. First, none of them has a single bid on it — not from you, not from a rival. Five consecutive flip calls have now gone unplaced, so either MOVERS is not reaching you or you are choosing to skip it; if it is the former, that is worth fixing, and if it is the latter, these calls can stop being written. Second, the five together ask for more capital than spending power allows, so one has to be dropped — drop the smallest expected gain and the remaining four fit with room to spare. The discipline is unchanged and is the whole edge: bid exactly market value, never raise. Chasing one contested listing into the high cluster wipes out ten good flips. One of the five now carries a status flag; for a pure value flip that is correctly ignored, because fitness does not enter the daily tick, and the most active traders in this league flip unavailable players deliberately. The two open questions stand: it is still unknown whether Kickbase caps squad size, which would cap how many flips can run at once, and the edge remains measured in one league over one period and will decay if rivals crowd in. A new observation this run, worth watching but not yet worth trading: two uncontested board listings were bought below market value today and sold straight back for a small fixed gain, which suggests the board can fill under market value rather than exactly at it. Two cases from one rival on one day is an anecdote, not a mechanism.",
+  "reason": "The flip window is wide open and the measured tick edge has held, slipping only marginally against the last run and still comfortably above the September baseline. Four Kickbase board listings qualify cleanly: priced at exactly market value, flagged rising, with no manager ask behind them. Bid exactly market value on each and never raise — losing costs nothing, and chasing one into the contested band destroys the gains of ten good flips. None of them can settle before tonight's update, so they capture tomorrow's tick onward rather than this one. Each flip bought also restores a second legal sale, which helps rather than hurts here, but every flip must still be unwound to a non-negative balance and at least eleven players before the lock. Two open questions remain unresolved: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Two squad players carry injury flags and neither is new tonight. Gruell is in the fielded eleven with a calf problem that forced him off on Saturday; he has an MRI on Monday and is already ruled out of his international fixtures in midweek. Earlier runs today put a dated primary source on this and concluded hold, and that still reads correct — MD10 is after the international break, which gives him a fortnight. Monday's scan is the next real decision point. Guirassy is injured and already benched, and two separate runs today examined selling him as a single-sale way out of the deficit and rejected it on the basis of his diagnosis and return timeline. That question is settled and should not be reopened without new dated evidence. Hwang carries no status flag at all, so nothing in tonight's sale is a fitness judgement. One housekeeping note: the open-call pile has grown past four hundred hidden entries, almost all of them watch items. That is the same unbounded growth that broke call visibility once before, simply relocated, and it should be consolidated before it hides something actionable.",
+  "sweep": "Two of the three highest-scoring players in the squad are hurt and neither has a diagnosis. Guirassy pulled a thigh muscle, missed the Elversberg match, and has been withheld from international duty so he can rehabilitate at the club. Gruell came off after an hour at home to Stuttgart with a calf problem, was pulled from the Austria squad, and his club says only that his availability after the international break is uncertain. Both have the full break to recover and both are plausible for MD10, which is precisely why no sale should be forced today. One detail is tradeable: Gruell's market value has not yet caught up with his injury — he is still flagged rising — so if the examination comes back badly he should be sold immediately, before the market reprices him. Wolf did not play at all on MD9 and his value is falling hard; he is the weakest genuine link in the fielded side, but he is too cheap to fund the unwind alone.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -625,19 +606,19 @@
  "arithmetic": [
   {
    "k": "Balance",
-   "v": "-15.074.774"
+   "v": "-11.008.813"
   },
   {
    "k": "Squad value",
-   "v": "160.368.976"
+   "v": "156.403.015"
   },
   {
    "k": "33% floor",
-   "v": "-0,33 x (160.368.976 + -15.074.774) = -47.947.087"
+   "v": "-0,33 x (156.403.015 + -11.008.813) = -47.980.087"
   },
   {
    "k": "Spending power",
-   "v": "-15.074.774 + 47.947.087 = 32.872.313 — NOT -15.074.774"
+   "v": "-11.008.813 + 47.980.087 = 36.971.274 — NOT -11.008.813"
   },
   {
    "k": "Clearing premium band (measured)",
