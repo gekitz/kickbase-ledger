@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-09T12:52Z",
+ "run": "2026-11-09T14:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10908813,
   "floor": -48214901,
   "spending_power": 37306088,
-  "hours_to_lock": 270.62,
-  "exposure": "The balance is negative and has been since the last unwind, but it costs nothing until the instant the matchday locks, and the lock is still more than eleven days away. That is ample room: the designated sale clears the deficit comfortably on its own and leaves spare capacity behind it, and it does not have to fire today or tomorrow. The risk to watch is not the deficit itself but the combination of it with the flip book — anything bought on the tick must be sold back before 20 November, and the position must be non-negative with at least eleven players at that moment. Nothing bought at tonight's tick would be anywhere near that deadline, so the exposure is comfortable for now and simply needs re-checking on each run as the lock approaches.",
+  "hours_to_lock": 268.63,
+  "exposure": "The leveraged position is open and unchanged since the previous run. It costs nothing until the instant the matchday locks, and the lock is still well over a week away, so it constrains what can be bought but it is not a reason to kill a buy outright. The designated single sale leg clears it outright with room left over, and that leftover room is the entire budget for any purchase before the lock. No live offer is outstanding and no pending offer sits on a player whose starting place is in doubt. One open item on the plumbing: the direct ledger query could not run this time because the Cloudflare connector needs reconnecting, which has been the case since the small hours. It did not blind this run — the context block rendered the sale, watch and flip calls in full — but it should be fixed. Two questions remain unresolved from earlier runs: whether the game caps squad size, which would cap flip throughput, and the fact that the measured edge comes from one league over one period and will decay if rivals crowd in.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no formation hole. Twelve players fill eleven shirts in three legal shapes, so no position is short and no buy is forced. The binding constraint is not a gap but the single legal sale: with the squad one body above the minimum and the balance negative, exactly one player can leave before the ten-man penalty applies, and that one leg is already committed. Every flip won adds a body and so buys one more unit of sale headroom, which is the only sense in which the flip book interacts with the points book — and it must be unwound before the lock regardless.",
+ "binding_gap": "A single fit striker in the fielded eleven, with the second one flagged and benched. That is the only real hole, and it may close on its own if Guirassy returns as expected — which is precisely why it does not justify spending into the deficit at any price. The deeper constraint is not a position at all but unwind capacity: with the squad at twelve, exactly one sale is legal before the penalty bites, so the designated sale leg has to clear the whole deficit by itself, and that single figure is what caps any purchase made between now and the lock.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 37306088,
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Place nothing before tonight's 21:00Z market-value tick, and sell nothing today.",
-  "headline_short": "Place nothing before tonight's 21:00Z market-value tick, and sell noth",
-  "detail": "Place nothing before tonight's 21:00Z market-value tick, and sell nothing today. Two things changed since the 10:50Z run and neither one asks for a trade right now. Muheim was flagged injured by Kickbase at 11:27Z — after the last run's snapshot — and he is in the fielded eleven on the squad's highest season average. The dated club source says the problem is muscular and explicitly not structural, he misses only the Switzerland internationals, and HSV's next competitive game is at Werder on 22 November. He therefore loses no club football at all, and the lineup decision falls on the 20 November lock with two more days of news in hand. The headline that would have panicked this run — t-online's 'Muheim faellt fuer den Rest der Saison aus' — was date-checked and is 21 April 2026, last season, and describes an ankle syndesmosis rather than this muscle problem. It is logged as a source trap. The second change is Goto: he was bought out from under the standing flip bid at a seventeen per cent premium, which resolves that call as missed at no cost, exactly as bidding at market value is designed to do."
+  "headline": "No trade to place right now.",
+  "headline_short": "No trade to place right now.",
+  "detail": "No trade to place right now. The entire board is gated: every qualifying listing is priced off a market value that the daily re-price will overwrite this evening, so a bid placed before the tick simply falls below the new value and is rejected. The correct action at this hour is to place nothing and let the tick land. The one thing this run adds is a timing defect worth knowing about in advance — Lemperle's listing dies inside the same hour the tick lands, giving a window roughly half an hour wide that falls squarely between two scheduled runs. Automation cannot reach it. If Georg wants him, he bids manually in that window, at whatever value the tick prints, and never above it."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "No sale today. The conditional sale of Gruell remains the designated single unwind leg and stays unfired, because the squad is at twelve and the balance is negative, which makes exactly one sale legal before the ten-man penalty bites — so the one leg available must not be spent on the wrong man. His MRI was scheduled for today and no result has been published as of this run; the club's coach was cautiously optimistic on 8 November and said he hoped the absence would be short. Until a dated result lands, the sale stays conditional. Muheim is explicitly not the alternative leg even though he is also flagged: he is the squad's best asset per point of average, his injury is non-structural, and selling him would surrender the eleven's highest scorer to clear a deficit that has eleven days left to run.",
+  "reason": "The standing sale on Grüll remains conditional and remains unfired, and this run deliberately re-dated it rather than letting it stand on yesterday's evidence. The scan he was due to have has still produced no published result — the fastest of the trusted outlets carries nothing at all from today, and the club paper's piece has not been touched since yesterday afternoon. His status reads hampered, not injured. The coach is on record expecting a short absence. Selling the joint-highest scorer in the fielded eleven on an injury flag that has no diagnosis behind it, with the lock still eleven days away, would be trading on noise. Fire it only on a dated structural diagnosis or a stated absence running past the derby — otherwise carry him to the lock. Note the hard constraint behind all of this: exactly one sale is legal before the squad drops under eleven and takes the penalty, so whichever leg is used has to be the right one.",
   "standing": [
    {
     "name": "Grüll",
@@ -201,9 +201,18 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing to buy. No board row improves the eleven on points: the best defender available sits two average points above the weakest defender in the squad and is on a falling value flag, the best forward and the best midfielder on offer are both well below the men they would replace. The three manager asks on the board are all priced far above market value, the largest at roughly three times it, and the one genuinely useful manager listing is already ruled out in the ledger on both premium and on the fact that the midfield hole it would fill does not exist. The negative balance is not the reason for holding off — nothing here is worth owning at any price.",
+  "reason": "One name is worth having on the radar, and only one. Lemperle is the single board listing that is simultaneously a clean rising-flag row priced exactly at market value with no manager premium, at a position the squad is genuinely thin in, and inside the only affordability window that exists — which is set not by cash but by what a single-leg unwind leaves once the deficit is cleared. Rots fails that window and duplicates a position already four deep. Everything else on the board is either a falling flag or too small to matter. The honest caveat: the points case is contingent. Guirassy is expected back for this matchday, and if he returns the striker gap closes by itself and Lemperle is a bench body. Treat him as insurance against that return not happening, not as an upgrade. The three manager asks on the board today are all from one seller dumping, all priced far above anything the measured band supports, and all at positions Georg already covers — none is a bid at any price, and the problem with them is the scoring average, not the ask, so do not revisit them if the ask is cut.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": null,
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
+    "premium_pct": null,
+    "why": "AVOID THE WHOLE BORUSSIA RUMPELFUSS ASK BLOCK, 09.11 14:45Z — three manager listings, all from user 3678454, all priced far above the high cluster and all at positions Georg does not need. (1) Vitalie Becker (8277) DEF Schalke, ask 8.500.000 against mv 4.341.125 = +95,8%, ap 25. (2) Mert Can Ayhan (10916) DEF Schalke, ask 8.000.000 against mv 2.641.822 = +202,8%, ap 15. (3) Terem Moffi (17203) ATT Bremen, ask 8.000.000 against mv 5.687.349 = +40,7%, ap 35. BENCHMARK, APPLIED CORRECTLY PER THE STANDING RULE: these are MANAGER asks, not Kickbase board rows, so they benchmark against the LOW cluster, and even the two recent outliers that stretched that cluster upward (Sirch +23,83%, Goto +17,00%) sit nowhere near +40%, let alone +96% or +203%. The measured median clearing premium across n=1125 is +1,07%. Moffi is the only one with even a surface case — he is an ATT and Georg fields one fit striker — but ap 35 against Lemperle's 67 at 7,33M with ZERO premium makes him strictly dominated by a row already on the board. Becker and Ayhan are fifth and sixth defenders behind four incumbents. NOTE FOR LATER RUNS: this manager has been dumping all day (he also bought Ullrich and Wöber off the board, both injured, both mvt 2) and his asks have sat unsold since 11:57Z. The standing rule on a stale manager ask is to offer at mv, not at the ask — but none of these three is worth mv either, so there is no bid to make at any price. Do not re-surface them as \"cheaper now\" if he cuts the ask; the ap is the problem."
+   },
    {
     "name": "SOURCE TRAP 09.11 12:50Z — t-online id_101222710 \"Muheim faellt fuer den Rest der Saison aus\" is 21.04.2026 and is LAST SEASON",
     "pos": "",
@@ -302,26 +311,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "THIRD page of this shape, after the two logged under A55gw4w (2019 and 2023/24). Fetched 2026-11-04T18:50Z while sweeping squad fitness for MD9. The page carries NO publication date and its footer copyright reads 2026, which is what makes it dangerous — the copyright is the site's, not the article's. It is definitively 2023/24 on internal evidence: it names Sebastian Rode (Eintracht, long retired), Naby Keita and Jiri Pavlenka at Werder, Manu Koné suspended at Gladbach (left for Roma in 2024), Willi Orban and El Chadaille Bitshiabu at Leipzig, and — the clincher — it lists GUIRASSY AS INJURED AT VFB STUTTGART with a Muskelfaserriss. Guirassy has been a Dortmund player since 2024 and is tid 3 in Kickbase, st 0, fit. Its \"9. Spieltag\" weekend is given as 27.-29. October, which is not the 2026/27 MD9 date (06.-08.11.2026). IT CONTRIBUTED NOTHING TO THIS RUN'S SWEEP and must never be read as current. Any future run that fetches a flashscore \"N. Spieltag Verletzungen und Sperren\" URL must first find a player whose club affiliation it can date-check (Guirassy at Stuttgart = stale) before using a single line of it. The squad sweep this run therefore rests on Kickbase st flags (all twelve st 0, stl empty) plus the Ligainsider table read at 16:45Z under Wnonz7c, not on this page."
-   },
-   {
-    "name": "Serge Gnabry",
-    "pos": "",
-    "club": null,
-    "ask": 14041599,
-    "mv": null,
-    "premium_pct": null,
-    "why": "NEITHER A POINTS BUY NOR A FLIP — HE IS OUT UNTIL JANUARY AND THE BOARD LISTING MAKES HIM LOOK LIVE. Row 1961 sits on the Kickbase board at prc = mv = 14.041.599 with ap 64 on p 320, which reads like a mid-price Bayern winger going cheap. IT IS NOT. Kickbase itself flags him st 1, and soccernews.com's Bundesliga injuries-and-suspensions table, page-dated 03.11.2026, gives \"Serge Gnabry (hamstring): early Jan 2027\". He will not play MD9, MD10 or anything before the winter break, so the ap 64 is dead weight. HE ALSO FAILS THE FLIP TEST INDEPENDENTLY, and this is the part a future run will get wrong: fitness genuinely does not enter the 20:00Z tick, so the instinct is that an injured player is still flippable. He is mvt 2, not mvt 1 — the measured next-tick drift for mvt 2 is -2,91% with only 14,1% rising (n=942), so the expected capture is NEGATIVE 408.611, not positive. The two reasons are separate and either alone is sufficient. REVERSAL: a source dated after 01.01.2027 confirming him back in the Bayern XI, AND mvt back to 1."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open, but the correct action between now and the tick is to place no bid at all. Seven board rows qualify on every leg — a Kickbase listing rather than a manager ask, priced at exactly market value, on the rising flag and with no injury status — yet every single one of them expires after tonight's market-value update, the earliest by only thirty-six minutes. A bid placed now would therefore be a stale pre-tick number against a listing Kickbase is about to re-price. Wait for the update, then bid the new market value exactly and never raise; losing an auction costs nothing, whereas chasing one into the contested band is what destroys the edge, as today's Goto clear shows. Ranked by expected tick gain the order is Leweling, Rots, Lemperle, Hack, Karaman, Imeri and Hojlund, with the last of those too small to be worth the slot. The top four together fit inside available spending power with a little to spare; all seven do not. Two open questions stand, as they have since the mechanism was measured: whether Kickbase caps squad size, which would cap how many flips can run at once, and whether the edge decays as rivals crowd in. On the second there is now evidence in both directions — the re-measured drift this run came in above the figure the routine was built on rather than below it, so no decay is visible yet, but a rival ran the complete buy-and-sell-back cycle on Seimen inside a hundred and ten minutes this morning without crossing a tick at all, and another bought Woeber from the board for less than the board itself pays back. That is a sub-market-value gap on board rows, not manager asks, and it would pay inside a single run rather than overnight. It is worth instrumenting.",
+  "reason": "The flip window is wide open on time — the lock is still well over a week away — but shut on mechanics until the evening re-price. Seven qualifying rising-flag listings are open and every one of them expires after the tick, which means every one of them must be bid after the tick, at the new value, never before. Re-measured this run from the full event log: the rising-flag edge into the next re-price is unchanged from the previous run, both in mean drift and in the share that rose, so there is no sign yet of the decay that would come from rivals crowding in. Two fresh board clears were captured today, both a hair under market value and both on players who are long-term injured — which confirms again that rivals trade purely on the tick and ignore fitness, correctly so for a value flip. But note what flag they bought: the falling one, which is the measured edge in reverse. A rival's purchase is not a reason to bid. The rule stands unchanged — rising flag only, bid exactly market value, never raise, and let a contested listing go.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Muheim is the new flag and the headline of this run: Kickbase marked him at 11:27Z today with muscular problems and a withdrawal from international duty, and he is fielded. The club-side source dated the same hour calls it neither serious nor structural and states plainly that the effect on HSV's coming competitive fixtures is not yet known. Because those fixtures resume on 22 November, after the lock, he has two clear weeks. Gruell remains flagged with a calf problem, substituted at Stuttgart on 7 November and withdrawn from the Austria squad on 8 November; his MRI was set for today and no result is published yet — searched again this run and nothing current was found. Guirassy stays flagged and benched, with a dated expectation of a return for the coming matchday. One date trap was caught and logged this run, and it was an expensive one: the top-ranking search result for Muheim's current injury is a season-ending story from April 2026 about a different injury entirely.",
+  "sweep": "Grüll: scan result still unpublished a full day after it was due, status reads hampered rather than injured, coach expects a short absence, only the derby is in doubt — and that derby falls after the lock, so the decision has to be made from the diagnosis alone and never from a team sheet. Muheim: today's dated reporting actively downgrades the alarm, describing the problem as muscular and explicitly not structural, with the effect on club fixtures not yet known. He carries the squad's best scoring average and the market is still marking him up, which is not how a structural injury prices. Not a sale. Guirassy: still flagged, still unplaced, but expected back for this matchday. All three absences are international-break absences during a two-week break — there is ample runway for all of them to clear before the league resumes. No squad player was newly flagged between this run and the last.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -600,7 +600,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1124, -4,00% to +443,38%"
+   "v": "n=1125, -4,00% to +443,38%"
   }
  ]
 }
