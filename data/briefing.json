@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-10T08:51Z",
+ "run": "2026-11-10T10:50Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10030813,
   "floor": -48677968,
   "spending_power": 38647155,
-  "hours_to_lock": 250.64,
-  "exposure": "A leveraged position is open and has been since before this run. It costs nothing until the instant the matchday locks, and the lock is still well over a week out, so it constrains nothing today — but at matchday start a negative balance scores zero for the entire matchday, which outranks every other consideration on this page. One sale clears it with room to spare on either leg. If all three flips land, the position deepens substantially for the day and then largely unwinds itself at the sell-back after tonight's tick; the mandatory sale clears the remainder. Squad count never falls below the legal minimum on that path.",
+  "hours_to_lock": 248.66,
+  "exposure": "The balance is negative and must be positive at matchday start or the whole matchday scores zero. The unwind deadline is the lock, which is still more than a week out, so nothing is urgent today — but the sale is not optional, and the window for it narrows with every run. If all three flips are placed they deepen the deficit further and each needs its own unwind sale on top of the mandatory one; the squad has the room for that, and the deadline for every leg of it is the same lock.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no formation hole today — twelve players, several legal shapes, eleven placed. The gap is the one that opens the moment the mandatory sale lands: at eleven players exactly one formation is legal, and which one depends entirely on whether the sold leg is the attacker or the midfielder. That makes the leg decision a lineup decision, not a cash decision, and it is why it is worth waiting for the team news rather than firing early to tidy the balance.",
+ "binding_gap": "There is no binding gap in the sense of a slot that cannot be filled — every formation the squad is allowed to field is available, and the eleven is complete. The real constraint is depth rather than shape: the squad sits one player above the minimum, so exactly one sale is legal before the ten-man penalty bites, and that one sale is already spoken for by the deficit.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 38647155,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 26,
+  "listings": 28,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Hold the line and work the flips.",
-  "headline_short": "Hold the line and work the flips.",
-  "detail": "Hold the line and work the flips. Nothing in the squad changed overnight, no buy on the board clears the bar, and the one mandatory action — the single unwind sale — is correctly still waiting on evidence that does not exist yet. The live work this run is three tick flips, all expiring today before the 21:00Z market-value update. Cloudflare D1 is disconnected this run, so the ledger was read through kb_context only; the drift re-measurement came from the event-log stats block instead of the SQL, which computes the same statistic."
+  "headline": "Nothing has changed since the last run and nothing needs doing in the next two hours.",
+  "headline_short": "Nothing has changed since the last run and nothing needs doing in the ",
+  "detail": "Nothing has changed since the last run and nothing needs doing in the next two hours. The mandatory unwind sale is still open and still correctly timed to the MD10 team news, which does not exist yet. The three tick flips logged overnight are all still sitting on the board at exactly market value, all still flagged rising, all still expiring before tonight's update, so they remain placeable today in rank order at unchanged prices. The one thing that did break this run is the ledger database: the direct D1 query tool was not available in this session, so open calls were reconciled from the rendered context block alone and the long reasoning bodies of older calls could not be read in full."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "The standing call stands unchanged: exactly one sale, and the leg is still genuinely open. Today's evidence moved it, but not far enough to fire. Kovac's dated diagnosis is a thigh strain with an explicit expectation that Guirassy is available again after the international break — which is precisely when this matchday falls. If that holds, selling Petkov and fielding two up front is the better eleven by a clear margin; if it does not, the same move fields a zero and is far worse than selling Guirassy. A four-day-old 'hopes to be fit' is not confirmation. Wait for the team news. The cost of waiting is value, not points: Guirassy is falling and will shed roughly a million at tonight's update, but spending power is ample and no buy is being blocked by capital, so the erosion does not cost a single point.",
+  "reason": "The standing instruction is unchanged and the reasoning behind it still holds: exactly one sale must land before the lock to clear the deficit, and with the squad one above the minimum exactly one is legal before the ten-man penalty. The default leg is the injured striker, and this run strengthens rather than weakens that choice — he is the only squad member who is both flagged unavailable and outside the fielded eleven, so selling him costs no fielded points at all. The alternative leg is a fit, fielded midfielder, and selling him would cost real points. Do not act yet. The team news that would settle whether the striker is back is still more than a week away, and selling early forfeits that option for nothing.",
   "standing": [
    {
     "name": "Guirassy (default leg) OR Petkov (if Guirassy is cleared) — ONE sale, not before the MD10 team news",
@@ -201,7 +201,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No buy this run, and padding one would make the eleven worse. The board's only genuinely strong row is blocked on transfer risk and a covered position. The manager asks are uniformly unbuyable: the headline one is a same-day markup, relisted seven hours after its owner bought the player on the board, at well over half again the market value — against a measured manager-ask clearing band in low single digits. Two more sit at similar or worse premiums. On the points side nothing on offer displaces anyone currently fielded; the weakest fielded body still outranks every attacker available. Correct answer is to buy nothing.",
+  "reason": "No buy is recommended. The best-looking row on the board by scoring average is the Leipzig defender, and he was logged as an avoid earlier today on transfer-link and covered-position grounds; this run upholds that call, with one honest dissent recorded — judged purely on points he would be a genuine upgrade on the weakest defender in the eleven. What kills him is price mechanics rather than merit: his listing is a contested board row with more than a day still to run, and every contested board row this ledger has chased was lost at market value and only winnable deep inside the high premium cluster, which is exactly where the measured edge is destroyed. Every other row is either a manager ask priced far above the measured manager band, or a player whose scoring average does not beat the man he would displace.",
   "standing": [],
   "killed_this_run": [
    {
@@ -317,11 +317,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open and the edge has not decayed — if anything it firmed, on a much larger sample than the original measurement. Three board rows qualify on every gate: no manager attached, priced exactly at market value, rising flag, fit, and expiring before tonight's update. Bid exactly market value on each and never raise. Losing the auction costs nothing; chasing one into the contested high cluster destroys ten good flips at once, and today's feed is a reminder of how high that cluster runs — one clear came in at nearly four times market value. Win all three and they unwind for a small profit after the tick, well inside spending power and never touching the fielded eleven. New this run: a rival executed two sub-market-value board buys and instant-flipped both back within minutes. The margins are tiny next to the tick edge so it does not displace it, but it contradicts a mechanism this ledger had recorded as absent and is now logged for testing. Two questions remain unresolved: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
+  "reason": "The flip window is wide open — the lock is more than a week away, so there is no risk of a flip being caught open at matchday start. All three qualifiers logged overnight survived the night unsold and unchanged: each is a board listing with no manager attached, priced at exactly market value, flagged rising, with a clean injury flag and an expiry that falls before tonight's update. That is the full gate, and all three pass it. Bid exactly market value on each and never raise. They rank by size, because the expected return is a percentage of the capital committed. A second and quite separate mechanism surfaced this run and has been logged: a rival ran three risk-free instant flips in the last few hours, winning board rows at a bid below market value and selling them straight back to the board at market value within minutes. That is arbitrage rather than a tick bet, and it is invisible to the sub-market-value counter in the context block, because that counter watches manager asks only. It does not change today's instruction, but it is the first hard evidence in this ledger that board rows can be won below market value here.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Grüll is the unquantified hole and it got worse by waiting. The scan was done Monday morning and the result is still unpublished — now the better part of two days. Public sources have him at 'hampered, muscular calf problem', withdrawn from international duty, with his coach expecting a short absence and the derby participation called doubtful. The market has not priced an absence at all: he is still rising. The trap is structural, not medical — Werder's fixture is the last of the matchday, two days after the lineup locks, so the lineup must be set before any team news for that game exists. Guirassy is the better-sourced case and points the other way: strain, missed last matchday, expected back after the break. Muheim's withdrawal was already sourced as not structural. The old injury items circulating on all three are last-season or two-season-old and are logged as date traps; do not let any of them back in.",
+  "sweep": "The striker's injury is a muscle strain picked up in the European tie at the start of the month; he missed the last league game, and his coach confirmed he stays home through the international break for treatment, with no return date published. The winger's scan was carried out on Monday as the ledger expected, and the result is still not public — his coach has said he hopes the absence is short, and availability for the derby depends on what it shows. The full-back's international withdrawal is confirmed, dated, and explicitly not structural. All three are unresolved rather than ruled out, and all three have more than a week to resolve before the lock. None of the three flip candidates needs a starter check, because fitness does not enter the daily tick, and the largest of them has publicly committed his future to his club, so none carries league-exit risk.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -600,7 +600,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1134, -4,00% to +443,38%"
+   "v": "n=1135, -4,00% to +443,38%"
   }
  ]
 }
