@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-10T14:45:29Z",
+ "run": "2026-11-10T16:51Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10030813,
   "floor": -48677968,
   "spending_power": 38647155,
-  "hours_to_lock": 244.68,
-  "exposure": "A leveraged position is open. The balance is negative and has been since the deficit was taken on, and it will score zero for the entire matchday if it is still negative when matchday ten starts. The lock is more than ten days away, so the position is not yet dangerous, but it is not self-correcting either: it closes only when the mandatory sale fires. The two live flips would deepen the deficit if both win, and both unwind the same evening by selling back to the board at market value, well before the lock, so neither changes the unwind arithmetic materially. Spending power, not cash, is what caps the flips, and they sit comfortably inside it.",
+  "hours_to_lock": 242.64,
+  "exposure": "A leveraged position is open: the balance is negative and must be non-negative at the matchday-10 lock or the entire matchday scores zero. The runway is long — more than a week — so this is not urgent today, and it is emphatically not a reason to refuse the flips. A deficit costs nothing until the instant the matchday locks; what constrains a buy is whether it can be unwound by then, and both flips unwind tonight after the revaluation, long before the lock. Running both would deepen the deficit temporarily and that is fine and intended. The single sale is what actually clears it, and it has ten days to land.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no positional gap. Every legal formation is fillable from the current twelve and the eleven is placed. The binding constraint is financial and calendar-bound rather than structural: one sale must clear the deficit before the matchday-ten lock, and the squad size permits exactly one. That is what caps every other ambition this run.",
+ "binding_gap": "Attack, and it tightens rather than loosens. Only two strikers are on the books and one of them is the player who must be sold. After that sale the attacking line is a single fit striker with no cover anywhere on the bench, and the squad sits at the bare minimum that avoids the ten-man penalty. This does not block the sale — the remaining squad still fills a legal formation, so nothing recommended here drops below a fillable eleven — but it does mean the next buy should be a striker, and it means there is no margin left for a second departure until one lands.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 38647155,
@@ -51,7 +51,7 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 27,
+  "listings": 31,
   "cheapest": 500000,
   "cheapest_slot_filling": 1984916,
   "expiring_within_2h": 1
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Quiet run.",
-  "headline_short": "Quiet run.",
-  "detail": "Quiet run. Nothing in the squad changed since the previous briefing, and the one action that resolved resolved exactly the way the rulebook predicted: the Leweling flip bid at market value lost the auction to David in the high contested-board cluster, and losing it cost nothing. No points move is available or needed today. The mandatory funding sale stays open and stays deferred until the matchday-ten team news, because the evidence that picks the leg still does not exist. The only live actions are two value flips already on the board, and the earlier of the two expires before the next scheduled run has comfortable margin, so it is the one thing worth acting on now."
+  "headline": "Two value flips are live and neither has an offer on it.",
+  "headline_short": "Two value flips are live and neither has an offer on it.",
+  "detail": "Two value flips are live and neither has an offer on it. Mats Rots is the bigger one and expires within the hour; Kastriot Imeri expires this evening. Both are Kickbase board rows priced at exactly market value with a rising tick flag, and both expire before tonight's revaluation, which is the whole mechanism. Bid exactly market value on each and never raise — a single contested clear in the high premium cluster wipes out ten good flips. Beyond that, nothing has changed: the one mandatory sale still has ten days of runway and the right move is still to wait for the matchday-10 team news before firing it."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Exactly one sale must land before the matchday-ten lock, because a negative balance at matchday start scores zero for the whole matchday and the squad sits at twelve, so one sale is the most that is legal before the ten-man penalty. The leg is still a genuine choice between the striker and a midfielder, and the deciding evidence is the matchday-ten team news. There is no reason to fire it today: the lock is more than a week away, and selling the striker before his fitness is settled would be selling the squad's highest market value on an injury that three independently dated sources describe as a simple strain. Hold the call open, revisit when the team news lands.",
+  "reason": "The standing call is unchanged and still mandatory: exactly one sale must land before the matchday-10 lock, because a negative balance at matchday start scores zero for the entire matchday. Guirassy remains the default leg and the evidence for it got stronger rather than weaker. He is flagged unavailable, he is not in the fielded eleven, he carries the largest market value in the squad, and selling him therefore costs zero fielded points while clearing the deficit several times over. Petkov stays as the alternate leg only if Guirassy is cleared fit. The timing instruction also stands — do not fire before the matchday-10 team news — but note that his market value is now falling rather than rising, so waiting has a real and growing cost. Squad size permits exactly one sale: a second would drop the squad to ten and trigger the ten-man penalty, so a Guirassy sale and any other sale are mutually exclusive unless a buy lands first.",
   "standing": [
    {
     "name": "Guirassy (default leg) OR Petkov (if Guirassy is cleared) — ONE sale, not before the MD10 team news",
@@ -201,7 +201,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No buy is recommended. The binding gap is not a missing position — every legal formation can be filled from the current squad — so a purchase would be an upgrade, not a repair, and an upgrade bought on a negative balance has to be unwound by a second sale that the squad size does not permit alongside the mandatory one. The manager asks on the board are all well above market value, which the measured band says is the wrong side of the trade, and the one genuinely attractive board row fails the flip gate on expiry and fails the buy test on both a covered position and transfer speculation. Nothing here beats doing nothing.",
+  "reason": "No buy this run, and this is a deliberate refusal rather than an empty market. The binding gap is attack and the market has attacking options, but every one of them is a manager ask sitting far above the low cluster where manager asks actually clear — these are asks in the contested-board range attached to players whose season averages are well below what the squad already fields. None of them would improve the eleven and several would cost a large premium for the privilege. The correct sequence is the reverse of the usual one: let the Guirassy sale land first, then buy a striker with the proceeds when a row appears that is worth the money. Pay nothing for attacking cover today.",
   "standing": [],
   "killed_this_run": [
    {
@@ -317,11 +317,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "Two qualifying tick flips remain live, both Kickbase board rows priced exactly at market value with the rising flag, both expiring before tonight's market-value update. Bid market value exactly on each and never raise. The earlier of the two is the urgent one: it expires with only a narrow margin beyond the next scheduled run, so it needs the bid placed now rather than later. Together they absorb well under a third of available spending power, and both unwind the same evening by selling back to the board, which has now paid exactly market value ten times out of ten. The Leweling clear this run is the calibration that matters: the winner paid a premium squarely in the high contested-board cluster, and paying that premium to capture a tick worth a fraction of it would have been a guaranteed loss. The edge lives entirely in the auctions nobody contests. Two things remain unresolved and are restated here: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that the measured tick edge comes from one league over one period and will decay if rivals crowd in. Re-read from the event log this run, the rising-flag drift and its hit rate are unchanged from the previous briefing, so there is no decay signal yet.",
+  "reason": "Two qualifiers, both already carried as open calls from the previous run and both still unexecuted. Rots ranks first by expected capture and expires within the hour; Imeri ranks second and expires this evening. Each is a board row with no manager attached, priced at exactly market value, flagged rising, carrying no status flag, and — critically — expiring before tonight's revaluation. Bid exactly market value on both and never raise; losing the auction costs nothing, which is the entire point of the design. The capital both would absorb sits comfortably inside spending power, the resulting deficit unwinds by selling back at the new market value after tonight's tick, and the unwind deadline is the matchday-10 lock, which is more than a week away — so there is no lock risk on either. Neither flip touches the fielded eleven, since both are additions. Several other rising board rows were checked and rejected on the tick-versus-expiry gate alone: they expire after tonight's revaluation, which kills the mechanism. On transfer risk, neither player has any dated exit story; both are recent arrivals at their clubs and no window is open. The re-measured drift is the headline here and it is reassuring: the rising flag still predicts a rise in the large majority of observations, over a sample several times larger than the one this strategy was first calibrated on, and the mean capture has not decayed — if anything it has drifted slightly upward. Two things remain genuinely unresolved and should not be forgotten. First, it is still unknown whether Kickbase caps squad size, which would cap how many flips can be run at once. Second, this edge is measured in one league over one window, and it will decay if rivals crowd in. The feed shows that crowding is already underway — four separate managers ran instant flips today, including the most active traders in the league — so this is worth re-checking every run rather than assuming.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Checked this run against dated sources. The winger's MRI was performed on Monday and the result is still unpublished; the club's own account, dated Sunday evening, has the coach saying only that he does not expect a long absence and that the scan images were still awaited. That remains the largest unquantified hole in the fielded eleven, but it is unchanged since the previous run rather than newly worse. The striker's absence is a thigh strain confirmed by several separately dated current-season reports, not a structural injury, and that is what leans the mandatory sale away from him. No squad member is newly injured, newly suspended, or newly benched, and no dated report suggests any of them may leave the league. The flip targets were checked for transfer risk only, which is correct for a pure value trade; the transfer window is shut, so neither can leave.",
+  "sweep": "No squad player is newly injured, newly suspended, newly benched, or newly linked with leaving the league. The three carrying status flags all have dated entries already in the ledger. The one that moved today is Grüll, and it moved the wrong way: a source dated this afternoon confirms the scan was performed but its result is still unpublished, and that he is training individually rather than with the team. Treat the absence of a result as the result not having been published, not as a clean scan — he is the single largest unhedged availability risk in the fielded eleven and a bad outcome would force a sale that competes directly with the Guirassy leg. Guirassy himself has a muscular thigh injury that nobody has yet graded publicly and no named return fixture; the club judged him unfit even to travel for international duty. Muheim's withdrawal was already sourced and explicitly described as non-structural. One squad defender sat out team training today for load management with no injury described, which is worth noting but is not an injury flag. Every date-trap already logged against these players still applies — several widely carried injury stories about this squad are from last season or the season before.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -600,7 +600,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1138, -4,00% to +443,38%"
+   "v": "n=1139, -4,00% to +443,38%"
   }
  ]
 }
