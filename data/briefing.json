@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-12T22:53Z",
+ "run": "2026-11-13T00:51Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10030813,
   "floor": -49249880,
   "spending_power": 39219067,
-  "hours_to_lock": 188.61,
-  "exposure": "A leveraged position is open, but it is comfortable: the lock is more than a week out and the Guirassy sale alone covers the deficit several times over. If all three outstanding bids win, the position deepens to its peak and the envelope still holds with room to spare — the flips unwind back to the board for their market value within a day of the tick, and the Guirassy sale closes the rest. The sequence that must not be broken: flips are sold back after tomorrow evening's tick, Guirassy goes before the lock, and the squad must finish non-negative with at least eleven bodies and a legal shape. On the numbers that holds with margin. No bid placed tonight can be stranded, because every leg unwinds through the board, which always clears instantly at market value.",
+  "hours_to_lock": 186.65,
+  "exposure": "A leveraged position is open and has been for several runs. It is not dangerous at this distance — the lock is more than a week away and the standing Guirassy sale covers the deficit many times over — but it must be unwound before the matchday starts, because a negative balance at matchday start scores zero for the entire matchday, and that risk outranks everything else here. Flips add to the deficit while they are held and are self-unwinding: each one sells back to the board at market value after the tick, which recovers the capital plus the tick. None of them touches the fielded eleven, so no flip can cost points. The one discipline to hold is the capital ceiling: the open Engelhardt bid reserves most of the spending power, and stacking every qualifying flip on top would overrun it.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Central midfield, and it is the slot Engelhardt fills. The fielded eleven's weakest body by a distance is Tanaka, whose value flag is falling and whose recent returns have been slight; Engelhardt beats him on average, on recent form and on starter security at once. The second gap is forward cover, which the Guirassy sale opens and which Gregoritsch's benching makes real rather than theoretical — but it cannot be funded until the Engelhardt and Guirassy legs have both settled, so it is next run's problem, not tonight's.",
+ "binding_gap": "The binding gap is attacking depth, and it is latent rather than live. Today the eleven fills and three formations are legal. The moment the Guirassy sale fires, the squad sits at exactly eleven with one attacker, one legal formation, and no margin for any further sale without the hundred-point penalty. The market offers no cure — every attacker listed is a manager ask priced far above market value, and none of them beats what is already fielded. So the gap is not something to buy out of this run; it is a sequencing constraint to respect when the sale is fired. The second-order gap is goalkeeping: a single keeper, with no replacement on the board worth owning.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 39219067,
@@ -51,7 +51,7 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 40,
+  "listings": 39,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
   "expiring_within_2h": 2
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Hold the course — nothing in the last two hours changes the plan, but two flip bids had to be re-priced after last night's tick and the Engelhardt listing still shows no offers at ",
-  "headline_short": "Hold the course — nothing in the last two hours changes the plan, but ",
-  "detail": "Hold the course — nothing in the last two hours changes the plan, but two flip bids had to be re-priced after last night's tick and the Engelhardt listing still shows no offers at all. The run is one move: win Engelhardt off the Kickbase board tomorrow, then sell Guirassy to the board before the lock. The lock is more than a week away, so the open deficit is comfortable rather than urgent — the Guirassy sale covers it several times over. One caveat on the ledger side: the Cloudflare D1 connector is disconnected this run, so the direct call-table query could not be made. It did not bite, because the context block rendered every SELL, BUY, RAISE and FLIP in full and withheld only WATCH, AVOID and HOLD rows."
+  "headline": "Quiet run.",
+  "headline_short": "Quiet run.",
+  "detail": "Quiet run. Nothing executed, nothing missed, and nothing reversed — all four actionable calls carried over from the 22:45Z run are still live and still correct, so this run adds rather than amends. The one decision that matters today is the Engelhardt board listing, which resolves early this afternoon UTC and is the only points upgrade available anywhere on the market. Everything else is value trade or housekeeping. The deficit remains open but is not pressing: the matchday lock is more than a week away, and the standing Guirassy sale clears it several times over whenever Georg chooses to fire it."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Guirassy, unchanged and price-independent: instant-sell to the Kickbase board at whatever the market value reads at the moment of sale. The board pays exactly that with no spread — re-confirmed again tonight when David sold Tapsoba back at precisely his market value. He is out with a thigh strain; Kovac said on 6 November it is only a strain and he hopes to have him available after the international break, with the club's own injury table giving mid-November. So the sale is not urgent on fitness grounds, and his value flag is still rising, which argues for selling as late as the unwind allows rather than tonight. Nothing else in the squad is a sale: every other body is either in the fielded eleven or is the fielded eleven's only cover at its position.",
+  "reason": "Only the standing Guirassy instruction, and it is unchanged. It is price-independent by design: sell to the Kickbase board at whatever market value reads at the moment of sale, since the board pays exactly that with no spread. It is not urgent today. The injury is a strain, the dated club line is that he is hoped fit after the international break, and his rising flag is rising in name only — the measured drift on him is close to nothing, so holding costs almost nothing and gains almost nothing. Fire it when convenient before the lock; there is no timing edge either way.",
   "standing": [
    {
     "name": "Serhou Guirassy",
@@ -201,7 +201,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Engelhardt is the move and his block is now properly reversed, with every one of the four reversal gates met on live data rather than on argument. He has scored above a hundred in each of the last two matchdays with the stale outlier finally out of his window, his value flag has turned upward, Ligainsider carries a fit icon with a return item dated 27 October that supersedes the October knock, and he has started eight of nine matchdays. He displaces Tanaka, who is the weakest body in the fielded eleven by a wide margin and whose own most recent return was negligible. This is a Kickbase board listing, not a manager ask, so the listing price is the market value and the bid above it is an auction premium under highest-bid-wins — which is exactly the distinction the block's own wording was drawn against. Do not raise the bid: it already sits above the middle of the measured contested-board cluster, and the standing finding that clearing premiums scale with the price band means chasing this one higher destroys the trade. The listing currently shows no offers, but that is a snapshot and not a forecast — the Makengo loss was taught by exactly that mistake, so bid now rather than waiting to see whether a rival appears. Nothing else on the board is a points buy: the manager asks are all well above market value, which has never once been a buy in this ledger, and the cheap board rows are cameo-average traps or injured.",
+  "reason": "Engelhardt is the whole buy list and he is already an open call from the previous run. His merit was verified yesterday evening and re-confirmed this run against Ligainsider's Freiburg page, updated late on 12.11: he is in the probable eleven, carries no injury icon, and is absent from the club's missing list, which names only one player with a cruciate injury. He is a Kickbase board listing rather than a manager ask, so the high clearing cluster applies and the standing bid sits inside it — do not benchmark him against the median, and do not re-litigate the price, which the previous run already raised once after the contested band moved underneath it. Buying him displaces the weakest man in the fielded midfield by a wide margin on season average, which is the single largest points gain available. Nothing else on the board is a points buy: the manager asks are uniformly fantasy prices, and the cheap board rows are flip material, not starters. Mokwa is listed again and is still blocked — the ask is far above market value, which is exactly the condition his reversal forbids.",
   "standing": [
    {
     "name": "Yannik Engelhardt",
@@ -330,11 +330,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "Both standing flips survive on merit but both had to be re-priced: last night's tick moved each market value up, so the stored bids would now sit below the market and lose outright. Both are re-issued price-independent — bid exactly the market value as read at the moment of bidding, and never raise. Claude-Maurice ranks ahead of Maluze on expected capture and both expire before tomorrow evening's tick, so a win captures that tick. Neither needs a starter check, because fitness does not enter the daily value tick, and neither carries transfer risk with the window shut. A third candidate, Brackelmann, qualifies on the flag but does not fit the envelope once the Engelhardt bid is committed, so he is noted and skipped — the points buy has priority over any flip. Maluze remains explicitly not a points buy: his average is built on two cameo matchdays and that avoid stands. The re-measured tick edge came in slightly stronger than last run, not weaker, so there is no sign yet of rivals crowding it out. Two questions Georg still has not resolved: whether Kickbase caps squad size, which would cap how many flips can run at once; and that this edge is measured in one league over one period and will decay if the other traders pile in.",
+  "reason": "The flip window is open with plenty of room before the lock, and the edge re-measured BETTER than the baseline this run, not worse — the rising-flag drift and its hit rate both came in above the figures this task was calibrated on, off a much larger sample. No sign of rivals crowding it out yet. Five board rows qualify: a Kickbase listing priced at market value, rising flag, expiring before tonight's tick. Two are the standing calls from last night, Claude-Maurice and Maluze, both still priced at exactly market value and both still valid. Three are new: Brackelmann, the largest expected absolute gain on the board; Uduokhai, with the second-steepest intraday climb; and Futkeu, whose intraday climb is the steepest of all in percentage terms and who is the only new row that survives into Georg's morning. The rule is unchanged and absolute — bid exactly market value and never raise. The capital does not stretch to everything: honouring the Engelhardt bid reserves most of the spending power, which leaves room for the two standing flips and Futkeu, but not for Brackelmann and Uduokhai on top. Those two expire in the small hours of the European morning and will most likely lapse unactioned; they are logged for calibration. Injury flags on flip candidates are deliberately ignored, because fitness does not enter the daily market-value tick. Two questions remain unresolved and should stay on the record: whether Kickbase caps squad size, which would cap how many flips can be run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Guirassy: thigh strain, Kovac on 6 November says a strain only and hopes for availability after the break. Gruell: calf, substituted at Stuttgart on 7 November, withdrawn from the Austria squad, scan taken on the Monday — searched again tonight and no newer dated result has been published, so the Nordderby remains open. Muheim: the standing all-clear holds, expected back for that same derby, so his flag reads stale against the news. Zentner: all-clear holds, back in the Mainz eleven. Engelhardt: fit, started eight of nine. New this run: Gregoritsch did not play the last matchday, and the dated team news shows it was a selection call and not an injury — Ribeiro was preferred for pace, and Augsburg's absentee list named only Banks, Brackelmann and a suspension. That matters because he becomes the only attacker once Guirassy goes, and his club plays after the lock, so the eleven will be set blind. Also logged as a source trap: the Austria captain injury cluster around him is from late September and is dead, but it will resurface at the top of any German search while Austria are in camp this week.",
+  "sweep": "No squad player is newly flagged. Three carry flags, all of them already known and all re-checked against dated November sources. Guirassy has a strain and is hoped fit after the break. Muheim's flag is stale relative to the news, which has him back for the Nordderby. Grüll is the one worth watching: the previous run rested on a coach's cautiously optimistic line from 08.11, but the scan has since happened, and a source dated 10.11 has him on individual training only with no published diagnosis and no return date. That is less reassuring than what the ledger carried, not more. He is fielded, he is one of the two best point-scorers in the squad, and Werder's matchday-ten fixture falls after the lock closes — so the right move is to re-check him on a source dated 17.11 or later, not to act now. Every source used this run was date-checked against the last-season trap band; nothing undated was relied on.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -613,7 +613,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1169, -4,00% to +443,38%"
+   "v": "n=1171, -4,00% to +443,38%"
   }
  ]
 }
