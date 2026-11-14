@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-14T10:53Z",
+ "run": "2026-11-14T12:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10030813,
   "floor": -49297579,
   "spending_power": 39266766,
-  "hours_to_lock": 152.62,
-  "exposure": "The balance is negative and has been for days, but it is not an emergency and should not be treated as one — a deficit costs nothing until the instant the matchday locks, and that is more than six days away. The Guirassy sale clears it outright on its own, with room to spare even after both bids land. The sequencing that actually matters is the body count, not the cash: at eleven players the Tanaka sale becomes illegal and would cost a hundred points, which is why the re-issued call spells out all three branches. If both bids lose, Tanaka must not be sold at all. Every flip on top of this must still unwind to a non-negative balance and at least eleven bodies before the lock, and on the current programme it does, with two spare sale legs untouched.",
+  "hours_to_lock": 150.63,
+  "exposure": "A leveraged position is open and it is the one thing on this page that can cost an entire matchday. The balance is negative and a negative balance at matchday start scores zero for the whole matchday — not a deduction, the whole matchday. The unwind deadline is the MD10 lock, six days out, which is comfortable rather than tight, and this run adds no urgency to it. The planned route out is tested and works on the arithmetic: both buys plus the one recommended flip stay inside the spending floor, and selling Guirassy then Tanaka afterwards returns the balance to positive with the squad still above eleven. The flip unwinds itself within a day by selling back to the board, which pays market value with no spread. The order is what protects it — buys land first, then sells. Nothing here needs doing today except the one flip that expires tonight. LEDGER CAVEAT FOR THIS RUN: the Cloudflare connector that holds the event-log database is signed out, so the direct queries that normally cross-check the open calls and re-measure the drift could not be run; everything above was derived from the context block and live reads instead. The context block reported every actionable call in full with only watch, avoid and hold entries omitted, so no sell or buy was hidden — but a future run should reconnect it rather than keep relying on that.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Attack, but not in the usual sense — it is a fragility rather than a hole. Georg has two attackers today and one the moment Guirassy is sold. Every legal Kickbase formation requires at least one, so a single knock to Gregoritsch between now and the lock would leave no fieldable eleven at all and force a panic buy into a contested board auction, where the measured clearing cluster runs well above market value. The defensive upgrade is the better points-per-euro call and still ranks first; the attacking cover is the one that stops a cheap problem becoming an expensive one.",
+ "binding_gap": "Attacker depth, and it binds through the unwind rather than through the lineup. The eleven that takes the field is complete today. The problem is what the eleven looks like after the forced sale: a single attacker, one knock away from being unable to field eleven at all and taking the under-eleven penalty, with only one legal formation left. That is why the attacking buy leads this run ahead of any value trade, and why the buy must land before the second sale rather than after it.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 39266766,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 38,
+  "listings": 37,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 0
  },
  "squad": [
   {
@@ -68,7 +68,7 @@
    "tag": "keep"
   },
   {
-   "name": "Grüll",
+   "name": "Gruell",
    "pos": "MID",
    "club": "10",
    "mv": 19497914,
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Quiet run with one real change.",
-  "headline_short": "Quiet run with one real change.",
-  "detail": "Quiet run with one real change. Nothing executed since 08:46Z — the squad, the balance and all five actionable calls are exactly as they were, so Georg has not yet placed the Gruber bid or sold Guirassy. One new board listing appeared seven minutes before this run and it is good enough to act on: Fábio Silva of Dortmund, at exactly market value, uncontested. He is added as a second BUY. The consequence worth reading is that the Tanaka sale is no longer the leg that makes the balance legal — it never was, and the old call's hard sequencing was wrong in one branch. It has been re-issued with all three branches spelled out. The Guirassy sale is unchanged and still clears the deficit on its own."
+  "headline": "A confirmation run, not a new one.",
+  "headline_short": "A confirmation run, not a new one.",
+  "detail": "A confirmation run, not a new one. Nothing in the two hours since the last run changed the plan: all eight actionable calls — two sells, two buys, four flips — survive reconciliation unchanged, every named player is still on the board, and the squad is untouched. The single job this run did was verification, and it found three things worth keeping. First, the dated 26/27 prognosis on Guirassy says thigh strain, back mid-November, fit after the international break — so selling him genuinely does forfeit a matchday from a top striker, and the sale is still right, because it is forced by the balance and not by the thigh. That trade-off is now stated plainly in the ledger instead of hiding behind an injury flag. Second, Gruber's starter check passed on hard evidence: his three missed matchdays ended with a full ninety and a top-quartile return at MD9. Third, two more year-stale source clusters were caught and logged before they could do damage. TOP MOVE is unchanged: buy Fabio Silva at exactly the asking price, which equals market value, because it is the attacker-depth body that makes the Guirassy unwind safe. The lock is six days out, so nothing here is urgent."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Guirassy first and it is the whole of the deficit clear. He is flagged, unplaced, and therefore costs zero fielded points to sell, and the board pays exactly market value with no spread. Timing is the only lever left: he is still marked as rising, so holding him through tonight's update and selling after it captures the tick on the largest asset in the squad. There is no reason to sell before then — the lock is six days away and a negative balance costs nothing until the moment it arrives. A five-day-old Dortmund projection does list him in the probable lineup for the 21.11 Gladbach game and leaves him out of the absentee table, which reads like a clearance; it has been weighed and rejected, because his live status flag is five days newer than the page and the block is fifteen names with no starters marked. Tanaka ranks last and is optional in every branch — he is a decay capture, not a funding leg, and at eleven bodies he must not be sold at all.",
+  "reason": "Both sells stand and neither is a fitness judgement. Guirassy is the structural one: he is the only single body whose sale clears the whole deficit in one move, and the honest cost is now on the record — the dated 06.11 source has him back mid-November with Kovac hoping he is fit after the break, and MD10 falls after that, so he is likely available and the sale forfeits him anyway. It is still correct, because a negative balance at matchday start scores zero for the entire matchday and that dwarfs one striker. Tanaka is the second leg and the easy one: falling value, the weakest average in the fielded eleven, and no case for keeping him. SEQUENCING, which is the only thing that can go wrong here: Tanaka must not be sold until a buy has landed, because after the Guirassy sale the squad sits at exactly eleven and a second sale from there costs the under-eleven penalty. Buy first, then sell, in that order.",
   "standing": [
    {
     "name": "Serhou Guirassy",
@@ -210,7 +210,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Gruber stays the better call and should be bid first: he walks straight into the fielded back four, displaces the weakest defender there, and his cost per marginal point is less than two thirds of Silva's. His listing expires first too. Silva is the second bid and the case for him is honest rather than flattering. He is a rotation player — three league starts in eight appearances — and the points he adds depend almost entirely on whether Guirassy misses the matchday. Starting, he returns well over a hundred; off the bench, he returns about what the defender he displaces already returns, which is to say nothing. That is a coin flip and it is priced as one. What is not a coin flip is the depth: buying him at exactly market value on a rising asset costs no spread at all, since the board buys back at the same price, so the real cost is capital tied up against the floor rather than money lost. His average is not the usual cameo artefact — his median matchday return is higher than his mean, which is the opposite of the trap. Bid both at exactly market value and never raise; chasing either into the contested cluster destroys the whole case. Two names on the board look tempting and are not: Dallinga, whose enormous points-per-euro figure is a three-appearance mean on a player pinned at the price floor with a status flag, and Conté and Suzuki, both still flagged and both already on the avoid list.",
+  "reason": "Both buys verified clean this run and both are uncontested board listings at exactly market value, so the instruction is bid the asking price and never raise. Fabio Silva is the structural one and is bought for depth before points — say that honestly rather than dressing it up as a bargain. He is fit, he has appeared in every one of the last five matchdays, and the transfer test was run specifically and passed: every story suggesting he might leave is from the previous calendar year, and he is still in the Dortmund squad. Gruber is the points buy and his check is the more interesting one. The raw shape of his record looks exactly like the benched-player trap the ledger killed Capaldo for — three straight non-appearances — but his latest matchday is a full ninety minutes with a strong return, corroborated by a dated 26/27 report of his comeback. A gap that ends in a start is a recovered player; a gap that runs to the present is a dropped one, and that distinction is now written down. Caveat stated plainly: we are inside the international break, no probable XI exists for MD10 yet, and none will before the lock — so both buys rest on MD9 evidence by necessity, not by sloppiness.",
   "standing": [
    {
     "name": "Fábio Silva",
@@ -238,6 +238,24 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "SOURCE TRAP 14.11 12:55Z — the ENTIRE \"Fabio Silva Winter-Abgang\" cluster is NOVEMBER/DECEMBER 2025, not 2026",
+    "pos": "ATT",
+    "club": "3",
+    "ask": null,
+    "mv": 12579722,
+    "premium_pct": null,
+    "why": "CHECKED THIS RUN SPECIFICALLY BECAUSE \"never buy or flip a player who might leave the league\" is a binding rule, AND THE ANSWER IS THAT THERE IS NO CURRENT EXIT STORY. Every hit on a Silva transfer search is a year old and the URLs give it away: bvbwld.de/2025/11/26/ \"Silva vor dem Blitz-Abgang? BVB mit klarer Ansage\", bvbwld.de/2025/11/27/ \"BVB-Star vor dem Abgang? Was hinter den Transfer-Geruechten steckt\", tribuna.com/de/news/2025-12-31- \"Keine Trennung im Winter: Fabio Silva verlaesst Borussia Dortmund im Januar nicht\", plus absolutfussball and fussballtransfers items from the same window. The ligainsider Silva/Guirassy pair logged as Abny6cn is the same vintage. The pattern is now unmistakable and should be the default assumption for this player: SILVA GENERATES AN EXIT RUMOUR EVERY NOVEMBER, AND THE NOVEMBER ON THE PAGE IS 2025 UNLESS THE URL SAYS OTHERWISE. He did not leave in January 2026 and he is in the Dortmund squad now — get_player 9698 read 12:52Z returns tid 3, tn \"Dortmund\", st 0, and ph newest-first hp TRUE on all five of MD5-MD9 (114, 147, 83, 25, 55). CONCLUSION FOR BUY Bh6z39i: the transfer test is PASSED, not waived — no dated 26/27 source says he may leave, and the only sources that say so are from the previous calendar year. A future run must not kill this buy on a 2025 rumour, and must not treat the absence of a 2026 rumour as unchecked. WARNING ABOUT get_player dt: Silva's dt field reads 2025-09-26, which is the Ligainsider snapshot marker and NOT evidence about the current season; it is stale metadata on a live row."
+   },
+   {
+    "name": "SOURCE TRAP 14.11 12:50Z — the ligainsider Silva/Guirassy \"Pause verschafft Silva Einsatz\" cluster is DECEMBER 2025, a full year stale",
+    "pos": "ATT",
+    "club": "3",
+    "ask": null,
+    "mv": 12579722,
+    "premium_pct": null,
+    "why": "TWO SOURCES THAT A FUTURE RUN WILL FIND AT THE TOP OF ANY \"Fabio Silva Startelf\" SEARCH AND MUST NOT USE. (1) ligainsider/serhou-guirassy_10454/guirassy-pause-verschafft-silva-bdquo-verdienten-ldquo-einsatz-405270/ — fetched this run, publication date 03.12.2025 13:03. It reads as a perfect fit for today's situation (Guirassy rested, Kovac praising Silva, Silva making his first start) and it is ONE YEAR OLD: it describes the 25/26 Pokal tie against Leverkusen, not anything in 26/27. (2) ligainsider/borussia-dortmund/14/aufstellung-von-borussia-dortmund-405244/ — dated 02.12.2025 19:46, starts Silva with Guirassy on the bench. Same trap, same date range, and its XI (Kobel, Emre Can, Anton, Schlotterbeck, Ryerson, Jobe, Nmecha, Svensson, Adeyemi, Chukwuemeka, Silva) is a 25/26 side. NEITHER IS EVIDENCE FOR OR AGAINST BUY Bh6z39i. The Silva buy stands on its own stated ground — depth first, points second, bought at prc = mv with no premium — and must not be re-derived as \"Silva starts because Guirassy is out\" on the strength of a December 2025 page. The 26/27 dated facts are separately logged: Guirassy picked up a thigh strain v Real Betis, missed MD9 at Elversberg, prognosis mid-November (90min, 06.11.2026). ADDING TO THE STANDING DATE-TRAP FAMILY: Bernardo 08.02.2026, Lokonga 09.02.2026, Widmer April 2026, Suzuki May 2026, Matsima 09.01.2026, Fellhauer 09.05.2026, Muheim April 2026 — and now a cluster from 2025 entirely. ASSUME ANY LIGAINSIDER ARTICLE URL IN THE 40xxxx ID RANGE IS 2025."
+   },
    {
     "name": "Thijs Dallinga",
     "pos": "ATT",
@@ -327,35 +345,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "SOURCE TRAP 13.11 08:50Z — ligainsider article 404467 \"BVB-Stamm-Duo verzichtet auf Laenderspielreise\" is dated 10.11.2025 - 11:18 Uhr, i.e. A FULL YEAR STALE, and it ranks high on a search for Guirassy's current November situation because its content (skipping the Guinea friendlies, preparing at Dortmund, ready when the league resumes on 22 November) reads exactly like a plausible 2026 item. It reports NO injury. A run that trusts it would conclude Guirassy is fit and merely rested, and would therefore kill SELL Sjjj2n8 on a false premise. The live, correct status is Kickbase's own stxt dated 2026-11-06T11:38:19Z: \"Thigh strain - misses SVE (H), hopes to return after international break\", corroborated by beinsports \"Guirassy ruled out of Dortmund's Bundesliga clash with Elversberg\" dated 2026-11-06 and volksstimme \"Zerrung: Guirassy fehlt Dortmund gegen Elversberg\". Note the year trap specifically: 10.11.2025 and 10.11.2026 differ by one character on the page and both sit in a November international break."
-   },
-   {
-    "name": "SOURCE TRAP 13.11 06:50Z — ligainsider 419080 \"Füllkrug und Grüll trainieren dosiert\" is 13.10.2026, a MONTH stale",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "Fetched and date-verified this run: ligainsider.de/marco-gruell_26702/fuellkrug-und-gruell-trainieren-dosiert-419080/ is stamped 13.10.2026, 12:33 Uhr — ONE MONTH OLD — and it says Grüll trains only partially for BELASTUNGSSTEUERUNG, explicitly NOT an injury, with no risk flagged for the home game against Paderborn. Read undated it would clear Grüll outright and kill WATCH Wtjha4k. It is dead: the live chain is 07.11 calf injury, substituted after 67 minutes at Stuttgart; 08.11 withdrawn from the Austria squad; 09.11 MRI; and 90min 10.11.2026 \"Werder blickt schon aufs Nordderby\" which re-fetched this run reads \"weniger schlimm als befürchtet\", club to assess how far he can be reintegrated at the start of this week, and sporting director Clemens Fritz quoted \"Ob Marco im Derby gegen den HSV dabei sein kann, steht noch nicht fest.\" A 13.10 load-management note does not override a 07.11 injury. Note the search engine ranks 419080 above the 10.11 item, so it will resurface."
-   },
-   {
-    "name": "SOURCE TRAP 12.11 22:45Z — the Gregoritsch \"OEFB-Kapitaen verletzt raus\" cluster is 24.09.2026 and is dead",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "heute.at \"Schock fuer OEFB-Kapitaen: Gregoritsch verletzt raus\" is dated 24.09.2026 21:33 (ankle caught in the turf v Israel in Linz, Kalajdzic on). fussballdaten.de carries the same story. BOTH ARE STALE AND MUST NOT BE READ AS CURRENT: he played MD6, MD7 and MD8 afterwards (ph newest-first [did not play, 155, 69, 98, -4]) and Kickbase row 493 is st 0 with stl []. Austria are in camp again during this November break, so this cluster will resurface at the top of any German-language search — check the date before acting on it."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open — the lock is more than six days out — and the measured edge has not decayed. Re-read from the event log this run, the rising flag still predicts the next update strongly and remains above the baseline measured in September, with the great majority of rising players going up. Falling players do the mirror image, so the flag is doing real work in both directions. The three existing flip calls all survive: their listings are live, still uncontested, still priced at exactly market value, still flagged rising. One new candidate is worth noting because it resolves soonest of anything on the board — a goalkeeper listing that expires shortly before tonight's update, which means the auction settles while the player is still owned across the tick. That is the clean case, and it sidesteps the open timing question about listings that expire after an update rather than before it. The real constraint is not opportunity, it is room: the two buys plus the three standing flips together ask for more than the floor currently allows. Selling Guirassy tonight restores far more than enough and everything fits; without that sale, the order of precedence is the two buys first and then the flips by capture size. Two questions remain unresolved and both now matter more than they did: whether Kickbase caps squad size, which would cap how many flips can run at once, and whether this edge survives rivals crowding in. The four most active traders in the league were last season's top four finishers, so crowding is the live risk, not a theoretical one.",
+  "reason": "The flip window is wide open — the lock is six days away, nowhere near the twelve-hour cutoff. The measured edge was re-read from the event log this run and has not decayed: the rising-flag cohort still predicts a clear positive move at the next daily update on a large sample, comfortably above the baseline measured in September, with the falling-flag cohort predicting the mirror image. No crowding yet. Four flips remain qualifying and all four are board listings at exactly market value with no premium and no competing manager ask. Heuer Fernandes is the pick of them and the reason is timing, not size: his auction resolves only minutes before tonight's update, so the capital is exposed for minutes rather than hours to capture the same move. Stanisic is the largest absolute capture but resolves two days out, which means more ticks of drift risk on the flag itself. Koehn and Schmied are the small clean ones. Sizing is the real constraint: the two buys plus Heuer Fernandes consume almost the entire envelope, so this run recommends that combination and leaves Stanisic, Koehn and Schmied as flagged-not-taken rather than pretending all four fit. One new listing appeared since the last run and it carries the falling flag, so it does not qualify. Two open questions stay open and neither has moved: whether squad size is capped, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in. A separate calibration finding this run: a manager-to-manager sale cleared far above market value, well inside what the ledger calls the contested high cluster. That is the second time the low-single-digit manager band has been broken and it should not be quoted as a rule again.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Nothing new in the squad this run. The three flagged players are all known and all already carry their own ledger entries, and no fresh flag appeared in the two hours since the last run. On the buy side, Silva is confirmed fit by a dated club page read today showing no missed minutes at all this season and no injury item, and he is absent from Dortmund's absentee table. Nothing newer than the ledger already holds has emerged on Guirassy; the freshest manager quote found this run is older than what was already recorded and carries no timeline. Grüll remains the one genuine fitness risk inside the fielded eleven and that is unchanged from this morning.",
+  "sweep": "No squad player was newly flagged this run and nothing worsened. The three existing flags — Guirassy, Gruell, Muheim — are all under standing watches and all were checked rather than assumed. Guirassy is the one with new dated information and it is mildly good news: a strain, not a tear, with a mid-November return. Gruell remains the worst of the three, with his post-scan status having worsened to individual training on a dated source. Muheim's flag was already established as benign. On the buy side both targets carry a clean flag and both played the most recent matchday. THE RECURRING HAZARD, and it bit twice this run: searches for current team news keep returning articles from the previous calendar year that read as a perfect fit for today's situation. Two fresh clusters were caught and logged — one pairing Silva and Guirassy that is a full year old, and the entire Silva winter-exit story, which is also a year old. The working rule is now that an undated or ambiguously dated hit is stale until the URL proves otherwise.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -634,7 +634,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1193, -4,00% to +443,38%"
+   "v": "n=1195, -4,00% to +443,38%"
   }
  ]
 }
