@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-15T16:55Z",
+ "run": "2026-11-15T18:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10030813,
   "floor": -49247781,
   "spending_power": 39216968,
-  "hours_to_lock": 122.58,
-  "exposure": "The balance is negative and has been for several runs. It costs nothing until the instant the matchday locks, and the lock is five days away, so this is not yet urgent and must not be used as a reason to kill a buy. What matters is that the position can be unwound in time, and it comfortably can: the sale of the injured striker alone clears the deficit several times over and is scheduled for tonight. The discipline to keep is that every flip taken on top of this must also be unwound — back to a non-negative balance and at least eleven bodies — before the lock, and the flips must never eat the money reserved for the striker who fixes the eleven.",
+  "hours_to_lock": 120.62,
+  "exposure": "A leveraged position is open and has been since before this run. It is not urgent on the clock — the lock is five days out and there is ample room to unwind — but it is real, and the Guirassy sale is what closes it. The important point, and the one a run reading a negative balance tends to get wrong, is that the deficit is not itself a reason to kill the buy: a negative balance costs nothing until the instant the matchday locks, and what constrains a purchase is whether it can be unwound in time, which here it comfortably can. The sequencing risk is the one worth watching, not the deficit. Two secondary exposures sit inside the fielded eleven in the shape of Grüll and Muheim, neither resolvable before the lock. The Cloudflare connector remains signed out, so the direct database reconciliation could not run for the fifth consecutive time and the ledger context was again the sole source for open calls and for the drift measurement; it covered everything actionable, but Georg should reconnect it.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Attack. The squad fields one fit attacker, and the second attacking body is injured, unplaced and on the way out. The Leipzig striker fills exactly that hole, which is why he outranks every value trade on the board this run — fixing a formation hole beats upgrading a slot that is already covered, and beats a flip.",
+ "binding_gap": "The binding gap is attack. The eleven currently fields a single forward because the second one is injured and unplaced, and the chain fixes exactly that — it fills the empty attacking slot with the highest-average player available on the board and simultaneously removes the weakest midfielder. That is why the Nkunku buy leads the briefing rather than any flip, and why fixing this hole outranks upgrading a slot that is already covered.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 39216968,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 41,
+  "listings": 40,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 3
+  "expiring_within_2h": 0
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "The plan is unchanged in shape and sharper in detail: sell the injured striker to the board after tonight's tick, win the Leipzig striker tomorrow, then sell the weakest fielded bo",
-  "headline_short": "The plan is unchanged in shape and sharper in detail: sell the injured",
-  "detail": "The plan is unchanged in shape and sharper in detail: sell the injured striker to the board after tonight's tick, win the Leipzig striker tomorrow, then sell the weakest fielded body. That sequence fixes the attacking hole, clears the deficit well before the lock, and upgrades the eleven by roughly a hundred points of per-matchday expectation. Nothing in this run argues against it. Two things did change. The Dortmund flip target was lost at auction this afternoon to a rival who paid a premium over market value, which retires that call and, more usefully, exposes that the clearing band this ledger has been quoting is far too high. And the Werder winger, who is in the fielded eleven, is on newer and worse evidence than the ledger had: still training individually, not with the team. He is not a sale, but he is now the thing most likely to cost a matchday if nobody rechecks him before the lock."
+  "headline": "One move matters tonight and it has a hard order to it.",
+  "headline_short": "One move matters tonight and it has a hard order to it.",
+  "detail": "One move matters tonight and it has a hard order to it. After the 21:00Z tick, instant-sell Guirassy to the board first — that single unconditional step clears the deficit and leaves a legal eleven with no auction risk anywhere in it. Only then bid Nkunku at the post-tick market value, exactly at it, never above. Only if Nkunku actually lands does Tanaka get sold. Every flip on the board is subordinate to that chain and none of them should be allowed to compete with it for capital."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "The injured Dortmund striker goes first and goes to the board, which pays market value with no spread. Sell him after tonight's tick, not before: he is flagged rising, so the tick pays Georg to wait a few hours. His club plays after the lock anyway, so the sale costs no fielded points, and there is still no dated evidence of a return — the newest item on him is over a week old, and a club-league piece that reads like a comeback report is two seasons stale and has been logged as a trap. The weak Schalke midfielder is the second sale and stays gated: he is the worst body in the eleven by a wide margin and is bleeding value every tick, but selling him before a replacement lands would drop the squad under eleven and trigger the penalty. He is flagged falling, so once the gate opens he should be sold promptly rather than at leisure — every tick he sits costs money.",
+  "reason": "Guirassy goes first and goes after the tick. He is injured, unplaced, scoring nothing, and he is the largest block of dead capital on the books; he is also still rising, so selling into the tick rather than ahead of it is worth real money on a position that size. Tanaka is the second sale and it is strictly gated — he is falling, and the measured rule says sell a falling asset before the tick, but taking him first would make the Guirassy sale conditional on winning an auction that may well be lost, and the branch where both sales land and the buy does not leaves ten players and a flat hundred-point penalty. Paying the Tanaka tick decay is the deliberate price of never standing in that position.",
   "standing": [
    {
     "name": "Serhou Guirassy",
@@ -210,7 +210,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "One buy matters and it is the Leipzig striker. He fills the only hole in the eleven, his scoring average is roughly three times that of the man he lets Georg sell, and his fitness is verified on current dated evidence: his club's probable-lineup page, updated four days ago, names only two absentees and he is not among them, and he started the last matchday with a goal and an assist. His listing is a board listing at exactly market value with no offers against it, and it runs through tonight's tick, so any figure quoted today is dead on arrival as a bid — bid at market value as it reads after the tick. One honest caveat, and it is new: the standing instruction to bid at market value and never raise was built for flips, where losing costs nothing. This is not a flip. The last two contested board listings cleared meaningfully above market value, and a bid at market value lost both. Georg should decide deliberately whether he is willing to lose this one for free, because on the measured record that is roughly a coin flip.",
+  "reason": "Nkunku is the single biggest points move available and the case for him is unchanged: Kickbase's own fitness flag is clean, he is listed by the board rather than by a manager, and his fitness was cleared on dated evidence earlier today. Two more stale injury items surfaced on him this run, both from late October and both previewing a fixture three weeks gone, and a club page served a three-week-old probable eleven flagging him doubtful — all three are logged as traps and none of them is current. The honest caveat is on price, not fitness. Bidding exactly at market value has now lost three consecutive contested board auctions inside thirty-six hours, and if Nkunku draws any competition at all the same rule loses him too. That rule was measured on flips, where the entire margin is one tick and any premium destroys it; a points buy that lifts the fielded eleven for the rest of the season does not have the same arithmetic. The standing instruction is not reversed and Georg executes, but the tension is now on the record with the figures behind it rather than inherited silently from the flip rule.",
   "standing": [
    {
     "name": "Christopher Nkunku",
@@ -226,6 +226,15 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "Nkunku",
+    "pos": "ATT",
+    "club": "43",
+    "ask": null,
+    "mv": 27866434,
+    "premium_pct": null,
+    "why": "SOURCE TRAP 15.11 18:45Z — TWO MORE stale Nkunku injury items, both dated 23.10.2026 and both surfacing at the top of a current-sounding search. (1) sports.yahoo.com/articles/leipzig-face-nkunku-injury-scare-202956481.html \"Leipzig Face Nkunku Injury Scare Ahead Of Elversberg Clash\", published 23.10.2026: adductor problem, missed Friday training, decision due Saturday morning. (2) rotowire.com/soccer/headlines/christopher-nkunku-injury-missing-training-questionable-saturday-541567 \"Missing training, questionable Saturday\", published 23.10.2026, same adductor, names Gomis/Romulo as replacements. BOTH PREVIEW LEIPZIG v ELVERSBERG, a fixture three weeks gone, and BOTH PRE-DATE the 30.10.2026 \"Nkunku Returns\" item that Axjm0ia already logged as stale-with-wrong-fixture. This extends the Nkunku trap cluster from one item to three and they now span two different outlets with two different fixtures, so a future run searching his name will hit a wall of plausible-looking injury copy that is all October. THE CURRENT POSITION IS UNCHANGED AND IS CARRIED BY Wdxagpr: cleared on dated evidence 15.11 12:45Z, Kickbase row 2687 st 0 with stl [], listed to the board by Kickbase itself. SEPARATELY, a third instrument failed this run and should be logged with these: ligainsider.de/rb-leipzig/1311/ served a page stamped \"Letzte Aktualisierung 26.10.2026 19:29\" naming Schalke as the next fixture and flagging Nkunku \"Angeschlagen\" — the ligainsider club page is itself capable of being three weeks stale, so no run may treat an unstamped ligainsider probable XI as current without reading its Letzte-Aktualisierung line."
+   },
    {
     "name": "SOURCE TRAP 15.11 16:50Z — bundesliga.com \"BVB: Guirassy vor dem Comeback\" is 12.09.2024, TWO seasons stale",
     "pos": "",
@@ -324,26 +333,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "LOGGED BEFORE IT COSTS ANYTHING, because it ranks on the first page of a German search for Fellhauer's current status and it reads exactly like a fresh benching. URL: ligainsider.de/robin-fellhauer_24864/fellhauer-nach-krankheit-zunaechst-nur-auf-der-bank-413083/. FETCHED AND DATE-VERIFIED THIS RUN: stamped 09.05.2026, 14:57 Uhr CEST. The 25/26 season ran to May 2026, so this is LAST SEASON and it concerns Augsburg's final HOME game of that season against Borussia Moenchengladbach, under coach Manuel Baum, after an infection in the training week. It has nothing to do with 26/27. Two current instruments contradict it outright: the ligainsider profile read 13.11 22:52Z carries the Fit icon with 0 minutes Verletzt/Gesperrt and 8 Bundesliga Startelf appearances this season, and the dated 07.11.2026 14:21 Augsburg XI starts him. ALSO ON THE SAME PROFILE AND EQUALLY STALE: a March 2026 \"Muskelprobleme\" item and a July 2026 \"tritt angeschlagen kuerzer\" item. None of the three is a reason to drop BUY B7irj4i. SEPARATE INSTRUMENT FINDING WORTH KEEPING: ligainsider's CLUB page /fc-augsburg/21/ served a cached projection stamped 26.10.2026 18:03 for the 31.10 Freiburg game when fetched this run, i.e. the club landing page can be two weeks behind while the dated /aufstellung-...-NNNNNN/ article under it is current. Always prefer the dated article URL over the club page."
-   },
-   {
-    "name": "Ragnar Ache (9.000.000 ask v mv 6.510.159)",
-    "pos": "ATT",
-    "club": "28",
-    "ask": 9000000,
-    "mv": 6939857,
-    "premium_pct": 29.69,
-    "why": "THE TRAP MOST LIKELY TO CATCH THE NEXT RUN, because the squad's binding gap is ATT and Ache is the only non-injured striker on the board that looks like a real player. He is not one. Ache (2855, 1. FC Köln — get_player tn \"Köln\", tid 28). Listed by Borussia Rumpelfuß since 2026-11-10T15:18Z at 9.000.000 against mv 6.510.159 = +38,2% over mv. THE KILLER IS ph: newest-first it reads [false, false, false, false, false] — he has NOT PLAYED A SINGLE MINUTE in the last five matchdays. The starter counters say the same (Hpz5lsb): smc 2 / ismc 4 / smdc 9 — two starts all season, in the squad for only four of nine. sl false. EVERY CHEAP SIGNAL SAYS BUY AND EVERY ONE OF THEM IS NOISE: st 0 with an empty stl (so no Verletzte table will flag him and no injury search will return anything — he is simply not picked); mvt 1 and tfhmvt +275.263 (rising, because the market is trading him, not because he is playing); ap 63, which is a CAMEO AVERAGE off four appearances, the same shape as Awpokzq/Maluze. This is the Capaldo pattern (Auhnytb) in a striker's shirt, and worse — Capaldo had three straight non-appearances, Ache has five. DO NOT offer at mv either: the ask being stale is only a reason to bid low on a player you actually want, and a man who has not played since September is not that player. REVERSAL: a dated source showing him in a Köln starting XI, plus smc rising."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open — the lock is five days out — and the mechanism is unchanged and re-measured this run with no decay: listings flagged rising almost always rise at the next daily tick, selling back to the board pays market value exactly, so bidding at market value and never raising captures the drift and costs nothing when it loses. Five board listings qualify right now, which is more than the capital can take, so this is a queue and not a shopping list. The ordering problem is new and is the thing to get right: four of the five auctions resolve before the Leipzig striker's does, and flip bids are live commitments. A good night on flips could leave the one buy that actually fixes the eleven unfunded. So reserve the striker's money first and fill flips only from what is left above it, largest edge first. Every one of these expires after tonight's tick, so every bid waits for the tick. Two questions stay open and neither is resolved: whether the game caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
+  "reason": "The flip mechanism is intact — the re-measured drift is identical to this morning's and the rising flag still predicts the next tick strongly. The constraint is capital, not opportunity. Every qualifying listing is a Kickbase board row at exactly market value with no manager ask, and the rule is unchanged: bid exactly market value at the moment of bidding, never raise, and never before tonight's tick, because every one of these listings runs past it and any figure quoted now is dead on arrival. The ordering problem is the real risk: four of the five flips expire before Nkunku's auction does, so winning them strands the buy that actually moves the points. El Ouahdi is new this run and is the natural residual — he is the only listing that survives two ticks and sits well past Nkunku's expiry, so there is never a reason to take him first. A separate and previously unmeasured edge turned up in today's feed: a rival bought three players below market value on uncontested board listings and sold them straight back at market value within the hour, with no tick involved. It is small per trade, it costs a squad slot, and it is not quantified — flagged for measurement once the points chain is closed, not acted on now.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "The Leipzig striker is clear on current evidence and that is the leg the big buy rested on. The Werder winger is the problem: substituted with a calf complaint, call-up cancelled, and as of the newest dated report he is training individually only with no return date — he is in the fielded eleven and must be rechecked at the club's pre-match press conference before the lock, and unplaced if he is still apart from the squad. The HSV left-back has improved: he trained individually but his coach expects him fit for the derby, which is his matchday. Against that, an undated headline suggests he may be suspended for one match, which is a different failure mode that fitness news will never clear — somebody has to settle that on a dated source before the lineup locks. The Dortmund striker remains doubtful by default with nothing current either way.",
+  "sweep": "No squad player is newly injured, suspended or benched this run, and no dated item suggests anyone may leave the league. Grüll is the live concern: the most recent dated evidence has him training individually after an MRI with no return timeline given, and nothing newer has appeared since. He is a large fielded body who may well score nothing. Muheim is trending the other way — he withdrew from international duty but has since been quoted looking ahead to the derby, and his coach expects him fit during derby week. Neither fixture happens before the lock, so neither will be resolved by a teamsheet in time. Guirassy's flag has dated provenance and is precisely why he is the sale rather than a selection problem.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -622,7 +622,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1210, -4,00% to +443,38%"
+   "v": "n=1213, -4,00% to +443,38%"
   }
  ]
 }
