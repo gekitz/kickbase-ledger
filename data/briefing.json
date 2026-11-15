@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-15T20:53Z",
+ "run": "2026-11-15T22:44:00Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -9,13 +9,13 @@
   "played": 9
  },
  "cash": -10030813,
- "squad_value": 159266513,
+ "squad_value": 159041748,
  "leverage": {
   "balance": -10030813,
-  "floor": -49247781,
-  "spending_power": 39216968,
-  "hours_to_lock": 118.62,
-  "exposure": "The balance is negative and that is the open leveraged position. It costs nothing until the instant MD10 locks on Friday evening, at which point a negative balance scores zero for the entire matchday. The unwind is fully funded and then some: the Guirassy sale alone covers most of the deficit and the Tanaka sale clears the rest, and both are already called. The buy deepens the deficit before the sales close it, which is fine with five days of runway but is the reason the sequence is not optional.\n\nThe real exposure is not the deficit, it is the ORDERING. Selling Tanaka before Nkunku is confirmed strands the squad at ten players for a hundred-point penalty, and that branch is reachable by doing two individually-correct things in the wrong order. Guirassy first, Nkunku's auction second, Tanaka only on confirmation.\n\nFlips add leverage on top of this. Each one must be unwound to a non-negative balance and at least eleven players before the lock, and none may be allowed to compete with the Nkunku reservation for budget.\n\nOne operational note, and it is a real gap rather than a nuisance: the Cloudflare connector carrying the ledger database is still unreachable, so the direct database query that normally cross-checks the open calls could not be run for the second day running. The context block substitutes fully for the actionable calls — sell, buy, raise and flip are rendered in full and were reconciled from it — so nothing in this briefing is running blind. But the connector needs reconnecting.",
+  "floor": -49173609,
+  "spending_power": 39142796,
+  "hours_to_lock": 116.61,
+  "exposure": "The balance is negative and a leveraged position is open, but it costs nothing until the instant the matchday locks, and the lock is still the better part of a week away. The recommended sequence deepens it before it clears it: the Guirassy sale lands first and lifts spending power well clear, the buy and the flip then draw it back down, and the flip unwinds by instant sale to the board after tomorrow evening's tick, with the Tanaka sale behind it. Every leg can be unwound to a non-negative balance and at least eleven bodies long before the lock, and no flip ever displaces a placed player. There is no flip open at the lock and no unwind deadline inside the next day.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
@@ -43,35 +43,35 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no unfillable position right now — the squad fills three legal shapes. The gap that binds is quality in attack, not count. The eleven currently runs a lone striker because the second attacker is injured and benched, and the upgrade both fixes that and lifts the weakest slot in the eleven at the same time. After the sequence completes the shape is a 4-4-2 with no spare body anywhere, so eleven is a floor to defend rather than a number to trade against.",
+ "binding_gap": "There is no formation hole. Every legal shape is fillable now and stays fillable through the whole recommended sequence, so the binding constraint is not the squad but capital and sequence — specifically whether Guirassy is sold before the overnight flip auctions resolve, because they resolve before the Nkunku auction does. The gap to close is a points gap in attack, not a structural one.",
  "surplus": "",
  "run_kind": "scheduled",
- "cash_ceiling_before_md1": 39216968,
+ "cash_ceiling_before_md1": 39142796,
  "daily_bonus": null,
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 42,
+  "listings": 41,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 1
  },
  "squad": [
   {
    "name": "Muheim",
    "pos": "DEF",
    "club": "6",
-   "mv": 11250019,
+   "mv": 11324045,
    "ap": 149,
    "state": "clear",
    "note": "",
    "tag": "keep"
   },
   {
-   "name": "Grüll",
+   "name": "Gruell",
    "pos": "MID",
    "club": "10",
-   "mv": 19514176,
+   "mv": 19529819,
    "ap": 148,
    "state": "clear",
    "note": "",
@@ -81,7 +81,7 @@
    "name": "Guirassy",
    "pos": "ATT",
    "club": "3",
-   "mv": 33514841,
+   "mv": 33519861,
    "ap": 126,
    "state": "clear",
    "note": "",
@@ -91,7 +91,7 @@
    "name": "Gregoritsch",
    "pos": "ATT",
    "club": "13",
-   "mv": 16271850,
+   "mv": 16331030,
    "ap": 108,
    "state": "clear",
    "note": "",
@@ -101,7 +101,7 @@
    "name": "Petkov",
    "pos": "MID",
    "club": "77",
-   "mv": 13203957,
+   "mv": 13149612,
    "ap": 98,
    "state": "clear",
    "note": "",
@@ -111,7 +111,7 @@
    "name": "Burger",
    "pos": "MID",
    "club": "14",
-   "mv": 18716723,
+   "mv": 18782888,
    "ap": 97,
    "state": "clear",
    "note": "",
@@ -121,7 +121,7 @@
    "name": "Zentner",
    "pos": "GK",
    "club": "18",
-   "mv": 10159272,
+   "mv": 10236618,
    "ap": 96,
    "state": "clear",
    "note": "",
@@ -131,7 +131,7 @@
    "name": "Hansen",
    "pos": "DEF",
    "club": "29",
-   "mv": 10280750,
+   "mv": 10307927,
    "ap": 88,
    "state": "clear",
    "note": "",
@@ -141,7 +141,7 @@
    "name": "Wolf",
    "pos": "MID",
    "club": "13",
-   "mv": 4917710,
+   "mv": 4794521,
    "ap": 82,
    "state": "clear",
    "note": "",
@@ -151,7 +151,7 @@
    "name": "Deman",
    "pos": "DEF",
    "club": "10",
-   "mv": 10052462,
+   "mv": 10220007,
    "ap": 81,
    "state": "clear",
    "note": "",
@@ -161,7 +161,7 @@
    "name": "ter Horst",
    "pos": "DEF",
    "club": "29",
-   "mv": 5617230,
+   "mv": 5419709,
    "ap": 77,
    "state": "clear",
    "note": "",
@@ -171,7 +171,7 @@
    "name": "Tanaka",
    "pos": "MID",
    "club": "8",
-   "mv": 5767523,
+   "mv": 5425711,
    "ap": 53,
    "state": "clear",
    "note": "",
@@ -180,19 +180,19 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "One leveraged position is open and it is the lead item: the balance is negative and must be back to non-negative, with at least eleven players, before MD10 locks on Friday evening.",
-  "headline_short": "One leveraged position is open and it is the lead item: the balance is",
-  "detail": "One leveraged position is open and it is the lead item: the balance is negative and must be back to non-negative, with at least eleven players, before MD10 locks on Friday evening. There is no emergency — the lock is roughly five days out and the unwind is fully funded by sales already called — but nothing else in this briefing outranks it.\n\nThe plan is unchanged from the last run and the sequence is the whole of it: bid on Nkunku, sell Guirassy, and sell Tanaka LAST and only once Nkunku is confirmed in the squad. Taken in that order the squad lands on exactly eleven in a legal 4-4-2 and the balance clears. Taken in any order that puts Tanaka before Nkunku lands, the squad falls to ten and the matchday costs a hundred points. That is the single most expensive mistake available this week.\n\nTonight's market-value tick is the other thing that shapes execution. Every price quoted to you now is a pre-tick price and will be stale within minutes of this run. Guirassy and Nkunku are both rising, so both are transacted AFTER the tick, not before."
+  "headline": "The nightly market-value tick has fired, and that is the whole story of this run.",
+  "headline_short": "The nightly market-value tick has fired, and that is the whole story o",
+  "detail": "The nightly market-value tick has fired, and that is the whole story of this run. Every figure on the board is now post-tick and final until tomorrow evening, which lifts the 'wait for the tick' gate that every previous run attached to the Nkunku bid and to four of the five flips. Tonight is the bidding window, and three of the listings resolve overnight. The order matters and is not optional: instant-sell Guirassy to the board first, then bid Nkunku at exactly his market value, then bid Gadou. Nothing else changed — no new injury inside the fielded eleven, no reversal of a previous recommendation, and the lock is still the better part of a week away."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Guirassy first. He is the benched body, he is the largest single asset on the books, and he is the one sale that does the real work on the deficit. The news supports it rather than merely permitting it: the thigh injury is from the fifth of November, he was ruled out of the Elversberg fixture, and the newest item anyone has — a Bild-sourced 'vorsichtige Entwarnung' — is a cautious all-clear with no return date attached. Dortmund's own sporting director said on the fifth that the grade could not yet be assessed. Nothing dated since gives a comeback. A striker who may or may not be fit, sitting on the bench, is dead capital, and selling to the board pays exactly market value with no spread. Sell him AFTER tonight's tick: he is rising, and the tick is free money for waiting an hour.\n\nTanaka second, and strictly last of the three moves. He is the weakest body in the eleven by a wide margin on points-per-appearance and his value is decaying, but understand why he is being sold: this is a POINTS sale, not a decay sale. The ledger already records that a decay case is a profit case and never on its own justifies selling a fielded body. Tanaka goes because he is the body that has to go to get back to eleven once Nkunku lands, and because he is the one the upgrade actually replaces. He is falling, so the tick works against waiting — but the hundred-point penalty outranks the tick by orders of magnitude, so he waits for Nkunku regardless. If the Nkunku auction is lost, DO NOT SELL TANAKA.",
+  "reason": "Guirassy is the sale, by instant sale to the Kickbase board, which pays exactly market value with no spread. Treat the price as whatever the board reads at the moment of sale rather than any figure written down earlier. The honest caveat, logged rather than buried: Kovac's dated diagnosis calls the thigh problem only a strain and puts his return at mid-November, which is inside the MD10 window, so this is not a write-off striker. The sale still stands because it is a points upgrade rather than a funding sale — a confirmed starter with a materially higher average replaces him in the same slot — and because he is carrying a fitness flag and is not in the placed eleven today, so he is scoring nothing as things stand. Tanaka is the second sale and stays gated: execute only once Nkunku is confirmed in the squad.",
   "standing": [
    {
     "name": "Serhou Guirassy",
     "pos": "ATT",
     "club": "3",
-    "mv": 33514841,
+    "mv": 33519861,
     "ap": 126,
     "why": "REPLACES S3xed8u, closed this run for a STALE PRICE ONLY — merit intact. PRICE-INDEPENDENT FROM NOW ON, so no future run need close-and-re-add it: THE INSTRUCTION IS instant-sell to the Kickbase board at WHATEVER mv READS AT THE MOMENT OF SALE (selling to the board pays exactly mv, with no spread — re-confirmed this run by Honorat 6319, sold to the board 2026-11-11T20:03:26Z for 4.948.754 and bought 16 minutes earlier at 4.940.000). 33.484.658 is mv as read 2026-11-11T22:47Z after the 11.11 21:00Z tick (was 33.466.568); mvt 1, sdmvt -213.893, tfhmvt +18.090. TIMING — AND THIS IS THE POINT OF THE CALL: DO NOT SELL TONIGHT. The deadline is the MD10 lock, 212,6h away, and a negative balance costs nothing until that instant. The decision point is AFTER 17.11.2026, when a dated BVB source can settle whether he plays MD10. FITNESS AS OF THIS RUN: st 2, stl [2]. Kovac 06.11.2026 (90min, bvb.de) — thigh Zerrung from the Real Betis CL tie 04.11, \"nur eine Zerrung\", missed Elversberg, expected return \"Mitte November\", Kovac hopes available after the international break: \"Wann das genau sein wird, werden wir sehen.\" BVB also told him not to travel to the national team (ms-aktuell 08.11.2026). So MD10 (BVB at Gladbach, os BMG) is live but unconfirmed. ARITHMETIC: he is the 12th man and is NOT placed (no lo field), so he scores ZERO right now whatever happens; selling costs 0 points today and leaves exactly 11 (1GK/4DEF/5MID/1ATT = 4-5-1, legal, no -100 penalty). If he IS fit for MD10 the measured XI cost of having sold him is 73 ap/matchday (ledger Wnrgyr9, W7c5r4g), which is why the sale is NOT forced and must NOT be executed early. WHAT THE SALE IS FOR: it is the unwind leg for BUY Brqourv (Keidel) and for any flip opened this cycle. 33,5M against a worst-case post-flip deficit of ~36,9M needs ONE more leg (the flipped player sold back post-tick), which the flip provides by construction. DATE TRAP LOGGED SEPARATELY THIS RUN: a Yahoo Sports \"Kovac gives Guirassy update\" item that ranks high on this exact query is 24.04.2026, LAST SEASON, and describes a CONCUSSION, not this thigh strain. Do not use it.",
     "tag": "sell"
@@ -201,7 +201,7 @@
     "name": "Satoshi Tanaka",
     "pos": "MID",
     "club": "8",
-    "mv": 5767523,
+    "mv": 5425711,
     "ap": 53,
     "why": "REPLACES S6iclzi, CLOSED THIS RUN BECAUSE ITS SEQUENCING IS WRONG IN ONE BRANCH — merit intact, and the correction is the point of the re-issue. PRICE-INDEPENDENT: instant-sell to the Kickbase board at WHATEVER mv READS AT THE MOMENT OF SALE; 6.107.964 is mv as read 2026-11-14T10:44Z. THE CORRECTION: S6iclzi hard-coded \"execute ONLY after BUY Fabio Gruber is confirmed in the squad\" on the arithmetic that the squad is 12 with 11 placed, so that after the Guirassy sale it is EXACTLY ELEVEN and this sale would drop it to TEN for -100. That arithmetic assumed Gruber is the ONLY buy. With BUY Bh6z39i (Fábio Silva) added this run there are TWO pending bids, and the branches now differ — read the branch before acting. BRANCH ONE, BOTH BIDS WIN: squad goes 12 -> 14, Guirassy sale takes it to 13, and this sale takes it to 12. LEGAL AT ANY TIME, no sequencing constraint at all, and the -100 trap is GONE. BRANCH TWO, EXACTLY ONE BID WINS: squad 12 -> 13 -> 12 after Guirassy, and this sale takes it to 11. Legal, but it leaves NO bench — execute only once the winning bid is confirmed in the squad. BRANCH THREE, BOTH BIDS LOSE: squad 12 -> 11 after Guirassy, and this sale is ILLEGAL. DO NOT EXECUTE IT; at eleven bodies Tanaka stays, unfielded, because ten costs -100 and his bench seat costs nothing. THIS SALE IS NOT REQUIRED FOR CASH IN ANY BRANCH AND NO FUTURE RUN MAY TREAT IT AS THE DEFICIT CLEAR: the Guirassy sale alone takes -10.030.813 to +23.474.860, or to +671.352 after both bids. It is a pure value capture and nothing more. ITS ONLY MERIT IS DECAY: he is mvt 2 with tfhmvt -336.463 and sdmvt -1.844.937 against a measured mvt-2 drift of -2,76% per tick, so holding him to the lock costs roughly 1M across the remaining ticks. HE IS FIT AND HE IS A STARTER AND NO FUTURE RUN MAY CITE THIS AS A FITNESS OBJECTION: st 0, stl empty at 2026-11-14T10:44Z. He is sold because he is the fifth of five midfielders at ap 53 behind Grüll 148, Petkov 98, Burger 97 and Wolf 82, so he is never in the fielded eleven. RANK HIM LAST of this run's actions — behind both bids and behind the Guirassy sale.",
     "tag": "sell"
@@ -210,28 +210,46 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Nkunku is the buy and it is not close. He is a Kickbase board listing with no manager behind it, priced at exactly market value, with no status flag, and his points-per-appearance is the highest of anything available — far ahead of the man he displaces in the eleven. The fitness question is settled on current dated evidence: he started for Leipzig in the win over Augsburg on the eighth of November and contributed a goal and an assist. The two injury stories that rank highly on any search for him are both from the twenty-third of October, and the 'wieder einsatzbereit' piece naming a Schalke fixture is from the thirtieth of October and names the wrong opponent entirely. All three are logged as traps; do not let them re-open this.\n\nThe price instruction has a wrinkle that matters tonight. His listing runs through tomorrow lunchtime, so it straddles tonight's tick. The quoted figure is the PRE-tick market value and bidding it after the tick would be bidding under the new market value. Bid exactly the market value as it reads at the moment you bid, and do not raise.\n\nOne honest tension, flagged rather than resolved. The never-raise rule was measured on flips, where losing an auction costs nothing. This is a points buy, where losing costs the upgrade. The measured clearing band says bidding exactly market value wins roughly half of contested board auctions — and it is how the Fabio Silva auction was lost this week. The rule is still the recommendation, because the band's median clear is barely above market value and chasing destroys the edge over many auctions. But on this one listing, losing has a real cost, and that is a judgement call that belongs to you, not to the rule.\n\nNothing else on the board is worth a points bid. The high-average names are all manager asks carrying premiums far above what manager asks actually clear at, and several of them sit on the blocked list.",
+  "reason": "Nkunku is the single biggest points move available and the only buy worth making. He started the most recent matchday for Leipzig on dated evidence, carries no fitness flag, and holds the highest average on the entire board. He is a Kickbase board listing with no manager ask, priced exactly at market value, and his listing expires before the next tick — so the post-tick figure is final for the remaining life of the auction and is safe to bid verbatim. Bid exactly market value and never raise. The measured clearing band is the reason: contested board listings here have been clearing far below the inflated high cluster this ledger used to quote, and the last four uncontested board clears all went below market value. Spending power covers him outright even without the Guirassy sale, so a negative balance is no reason to hold off — what constrains a buy is whether it can be unwound by the lock, and at this distance it comfortably can.",
   "standing": [
    {
     "name": "Christopher Nkunku",
     "pos": "ATT",
     "club": "43",
-    "ask": 27866434,
-    "mv": 27866434,
+    "ask": 27960833,
+    "mv": 27960833,
     "premium_pct": 0,
     "listing": "Kickbase listing",
-    "why": "REPLACES BUY Btsij9p (Proemel, closed this run). THE SINGLE BIGGEST POINTS MOVE AVAILABLE, and it also fixes the unwind SHAPE. Listed to the BOARD 2026-11-15T09:16:24Z, isn true, prc = mv = 27.866.434, no manager u, ofc 0, mvt 1, st 0, stl empty. PRICE-INSTRUCTION: bid EXACTLY mv AND NEVER RAISE — but NOT at 27.866.434. His listing runs to ~2026-11-16T13:16Z, i.e. THROUGH tonight's 21:00Z tick, so a bid quoted now is invalidated exactly as W0zttn2 measured on 14.11. BID AFTER THE 21:00Z TICK AT WHATEVER mv THEN READS (expect ~28,7M on the measured mvt-1 drift of +2,96%). SELECTION, checked under Hcmn9ba rather than on ap: smc 5 / ismc 7 / smdc 9 looks like rotation but is NOT — the missing matchdays are a dated nine-day injury absence (rblive, Aktualisiert 30.10.2026 16:18, Demichelis \"Der 27-Jaehrige fehlte neun Tage\"), and he went straight back into the XI: ligainsider RB Leipzig Startelf published 07.11.2026 14:19 names him, and he returned 409 points in Leipzig 5-2. Season ap 155 is the highest on the board by 47. POINTS ARITHMETIC: the fielded eleven today sums ap 1077. Buy Nkunku, sell Guirassy, sell Tanaka and it sums 1179 (+102) in 1GK/4DEF/4MID/2ATT = 4-4-2, a LEGAL shape. The Proemel branch reaches only 1106 (+29) in 4-5-1. SEQUENCING, which is binding: do NOT sell Guirassy until Nkunku is confirmed in the squad — Guirassy's sale is an instant board sale available at any moment, Nkunku is an auction that can be lost. Capital: after selling Tanaka the balance is -4.263.290; Nkunku at ~28,7M takes it to ~-33,0M against a floor of -49.247.781, then the Guirassy sale at ~34,5M post-tick returns it to roughly +1,9M, positive and well inside the 2026-11-20T19:30Z lock. CAVEAT RECORDED HONESTLY: D1 is unreachable this run (Cloudflare connector needs_reconnect), so the 114 hidden AVOID entries could not be screened and Nkunku has NOT been checked against them. He appears in no visible AVOID or BLOCKED entry.",
+    "why": "REPLACES By8rb8t (closed this run for a stale price only). STILL THE SINGLE BIGGEST POINTS MOVE AVAILABLE, and the gate it carried has now lifted. THE TICK HAS FIRED: market reports mvud 2026-11-16T21:00:00Z, so the 15.11 21:00Z update is already in the figures. Nkunku mv 27.866.434 -> 27.960.833, prc = mv exactly, NO manager u (Kickbase board), ofc 0, mvt 1, st 0, stl empty, exs 52269 at the 22:44Z read so he expires ~2026-11-16T13:15Z — BEFORE the next tick. THAT IS THE WHOLE POINT: 27.960.833 is his FINAL mv for the remaining life of the listing, so the pre-tick \"dead on arrival\" objection (W0zttn2) no longer applies and the figure is safe to bid verbatim. PRICE INSTRUCTION UNCHANGED: bid EXACTLY 27.960.833 and NEVER raise. The measured board-clearing band (Wstvsdw: Gruber +0,60%, Silva +8,54%) says a contested board listing clears far below the old \"+16-21% high cluster\" this ledger used to quote, and four of the last four uncontested board clears this run went BELOW mv (Guenther -0,12%, Assignon -0,53%, Sylla -0,52%, Latte Lath -0,56%) — so mv is the right bid and a raise destroys the edge. FITNESS/STARTER, current dated evidence: he STARTED MD9 for Leipzig v Augsburg on 07.11.2026 (whoscored confirmed lineup cng112-20261107; headline \"Nkunku und Gruda beginnen\"), st 0 on the Kickbase row, ap 155 — the highest average on the entire board. The 30.10.2026 ligainsider \"zurueck im Kader / unlikely to start\" item is the known trap Axjm0ia and is now 16 days stale and superseded by the 07.11 start. POINTS CASE: ap 155 replaces Guirassy's ap 126 in the ATT slot, +29 ap, and Guirassy is st 2 and currently NOT in the placed eleven while Nkunku is fit and starting. FUNDING: spending power 39.142.796 covers him outright with 11.181.963 left over, so this bid does NOT require the Guirassy sale to land first — but selling Guirassy first (SELL Sjjj2n8, instant-sell at mv, pays exactly mv) lifts spending power to roughly 62M and is what makes the Gadou flip fit alongside him. SQUAD ARITHMETIC: squad 12 / placed 11, Guirassy unplaced. Sell Guirassy -> 11 squad (1GK/4DEF/5MID/1ATT, legal 4-5-1), buy Nkunku -> 12 (1/4/5/2, legal 3-5-2, 4-4-2, 4-5-1). No -100 exposure at any point in that order. FUNDING REMAINS SACROSANCT (W8uojy3): Koehn 02:21Z, Stanisic 05:48Z and Gadou 06:41Z all RESOLVE BEFORE this auction, so do not let flips consume the 27.960.833 — size them against spending power AFTER reserving his price.",
     "rank": 1,
-    "trigger": "2026-11-16T13:16:00Z"
+    "trigger": "2026-11-16T13:15:00Z"
    }
   ],
   "killed_this_run": [
+   {
+    "name": "Derrick Koehn",
+    "pos": "DEF",
+    "club": "40",
+    "ask": null,
+    "mv": 4997986,
+    "premium_pct": null,
+    "why": "SOURCE TRAP 2026-11-15T22:44Z, and a live caveat on the open FLIP F4zqwu2. The ligainsider piece \"Koehn bleibt im Kader von Union fest eingeplant\" — the one hit that appears to CLEAR his transfer check — is dated 09.04.2026, LAST SEASON, and quotes Baumgart on a possible SUMMER departure being \"aktuell kein Thema\" plus a contract to 2029. It cannot clear him for the current period. The competing hits are worse: the Sky \"Union Berlin und Galatasaray verhandeln\" item and the \"offiziell: Union verpflichtet Koehn\" cluster are his 2025 ARRIVAL at Union, and the Roma and Juventus links are undated, so stale by default. NET: no current-dated transfer evidence either way — write \"no current info found\" rather than claiming he is cleared. This does not kill the flip (he is listed, active, st 0, and the January window is nine weeks out against a flip that unwinds in under 24h) but it is the reason he is the CAVEATED flip, not the headline one: his expected capture is only ~146.000, the smallest of the six qualifying candidates, so he is not worth resolving at length and not worth taking ahead of Gadou."
+   },
+   {
+    "name": "Miro Muheim",
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
+    "premium_pct": null,
+    "why": "SOURCE TRAP 2026-11-15T22:44Z — the 90min article \"Nach Rot gegen Augsburg: So lange fehlt Muheim dem HSV\" (www.90min.de/nach-rot-gegen-augsburg-so-lange-fehlt-muheim-dem-hsv) is dated 07.04.2026, LAST SEASON, and so is the HSV club tweet it rests on about the DFB-Sportgericht Notbremse ban. Both surface high in a plain \"Muheim Sperre November 2026\" search with no visible date and read as current. The ban was one match, served at Stuttgart in April 2026, with Muheim eligible again for the 18.04.2026 Nordderby. This is the third dated trap on this player after Afm7pgc (the \"Saisonaus\" cluster, April 2026) and Alnk8aa (hsv.de's own Verletzungsupdate, 21.04.2026): EVERY high-ranking Muheim injury or suspension story is last-season unless it carries a visible 2026-11 date. The only current item is nurdieraute/footy 09.11.2026 on muscular problems."
+   },
    {
     "name": "Nkunku",
     "pos": "ATT",
     "club": "43",
     "ask": null,
-    "mv": 27866434,
+    "mv": 27960833,
     "premium_pct": null,
     "why": "SOURCE TRAP 15.11 18:45Z — TWO MORE stale Nkunku injury items, both dated 23.10.2026 and both surfacing at the top of a current-sounding search. (1) sports.yahoo.com/articles/leipzig-face-nkunku-injury-scare-202956481.html \"Leipzig Face Nkunku Injury Scare Ahead Of Elversberg Clash\", published 23.10.2026: adductor problem, missed Friday training, decision due Saturday morning. (2) rotowire.com/soccer/headlines/christopher-nkunku-injury-missing-training-questionable-saturday-541567 \"Missing training, questionable Saturday\", published 23.10.2026, same adductor, names Gomis/Romulo as replacements. BOTH PREVIEW LEIPZIG v ELVERSBERG, a fixture three weeks gone, and BOTH PRE-DATE the 30.10.2026 \"Nkunku Returns\" item that Axjm0ia already logged as stale-with-wrong-fixture. This extends the Nkunku trap cluster from one item to three and they now span two different outlets with two different fixtures, so a future run searching his name will hit a wall of plausible-looking injury copy that is all October. THE CURRENT POSITION IS UNCHANGED AND IS CARRIED BY Wdxagpr: cleared on dated evidence 15.11 12:45Z, Kickbase row 2687 st 0 with stl [], listed to the board by Kickbase itself. SEPARATELY, a third instrument failed this run and should be logged with these: ligainsider.de/rb-leipzig/1311/ served a page stamped \"Letzte Aktualisierung 26.10.2026 19:29\" naming Schalke as the next fixture and flagging Nkunku \"Angeschlagen\" — the ligainsider club page is itself capable of being three weeks stale, so no run may treat an unstamped ligainsider probable XI as current without reading its Letzte-Aktualisierung line."
    },
@@ -258,7 +276,7 @@
     "pos": "ATT",
     "club": "43",
     "ask": null,
-    "mv": 27866434,
+    "mv": 27960833,
     "premium_pct": null,
     "why": "A DOUBLE TRAP, AND THE MOST DANGEROUS SHAPE YET ON THIS REGISTER, because it is stale AND it names a fixture that looks like the right one. URL: rblive.de/news/rb-leipzigs-goalgetter-nkunku-wieder-einsatzbereit-startet-er-gegen-schalke-4347869. It carries NO datePublished metadata — only \"Aktualisiert: 30.10.2026, 16:18\" — so an undated read of it looks current, and the headline question \"Startet er gegen Schalke?\" reads exactly like an MD10 preview. IT IS NOT. (1) It is 30.10.2026, which is BEFORE MD9. (2) Leipzig's MD10 fixture is AWAY AT TID 40, and tid 40 is UNION BERLIN, verified this run from get_player 12763 (Latte Lath, tn \"Union Berlin\", tid 40) — not Schalke. The article's verdict is explicitly NEGATIVE: Demichelis, \"Ich bin kein Freund davon, dass jemand, der so lange nicht mit dem Team trainiert hat, gleich von Anfang an beginnt\", i.e. bench. A run that used it would kill BUY By8rb8t on \"the coach says he will not start\". WHAT ACTUALLY HAPPENED NEXT: he started the following matchday and scored 409 — ligainsider RB Leipzig Startelf published 07.11.2026 14:19 names him in the XI. USE THE 07.11 SOURCE, NEVER THE 30.10 ONE. The article is still USEFUL for one thing only: it dates and explains the nine-day absence behind his smc 5 / smdc 9, which is why that low start count is not rotation risk."
    },
@@ -267,8 +285,8 @@
     "pos": "ATT",
     "club": "7",
     "ask": 1794301,
-    "mv": 1794301,
-    "premium_pct": 0,
+    "mv": 2014812,
+    "premium_pct": -10.94,
     "why": "NEW mvt-1 board listing 15.11 03:42:15Z that PASSES the mechanical flip screen and MUST STILL BE REFUSED — logged so no future run buys it on the screen alone. The screen: Kickbase BOARD listing, no manager u, prc 1.794.301 = mv exactly, ofc 0, mvt 1, st 0, exs 99.481 (expires ~16.11 08:23Z, i.e. ~11,4h AFTER the 15.11 21:00Z tick — clean auction-lag timing), and the STRONGEST relative 24h riser on the whole board: tfhmvt +246.335 on a 1.794.301 value = +13,7%. On the ranked-by-drift arithmetic alone he qualifies. THE DISQUALIFIER IS THE STANDING RULE 'never flip a player who might leave the league', and it is met with dated primary evidence, not a rumour-of-a-rumour: pulse.ng published 14.11.2026 (URL stamp 2026111415123828136 = 14.11 15:12) reports Boniface is ACTIVELY PUSHING to leave Bayer Leverkusen in the JANUARY window, TWO clubs have made formal enquiries, Leverkusen would accept a permanent sale OR a loan and is willing to negotiate without an upfront fee; Plettenberg is cited as considering the move concrete. Corroborated same-day by ghanamma.com 14.11.2026 ('Two Clubs Show Interest Ahead of January Window') and Yahoo Sports ('Boniface Pushes For January Exit As Leverkusen Receive Two Transfer Enquiries'); Rolfes had already publicly answered exit rumours in 10/2026 (fussballeuropa). SECOND, INDEPENDENT REASON the tfhmvt signal is untrustworthy here: the same article states he is THIRD-CHOICE striker behind Schick and Kofane, has played FIFTEEN MINUTES of senior football all season, and was left OUT of the Europa League squad. That is what a 1,79M mv on an ap 25 attacker means. So the +13,7% spike is NOT the ordinary tick trend the mvt-1 edge is measured on — it is a one-off transfer-rumour repricing, and rumour spikes mean-revert the moment a club denies them, which is the one way an mvt-1 bid at mv can actually lose money rather than merely fail to win. Expected value at the measured drift would have been only ~53.000 anyway, the smallest of any qualifying listing, so there is nothing given up. REVERSAL: re-measure only if the January window closes with him still at a Bundesliga club AND he returns to the matchday squad."
    },
    {
@@ -315,35 +333,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "TWO SOURCES THAT A FUTURE RUN WILL FIND AT THE TOP OF ANY \"Fabio Silva Startelf\" SEARCH AND MUST NOT USE. (1) ligainsider/serhou-guirassy_10454/guirassy-pause-verschafft-silva-bdquo-verdienten-ldquo-einsatz-405270/ — fetched this run, publication date 03.12.2025 13:03. It reads as a perfect fit for today's situation (Guirassy rested, Kovac praising Silva, Silva making his first start) and it is ONE YEAR OLD: it describes the 25/26 Pokal tie against Leverkusen, not anything in 26/27. (2) ligainsider/borussia-dortmund/14/aufstellung-von-borussia-dortmund-405244/ — dated 02.12.2025 19:46, starts Silva with Guirassy on the bench. Same trap, same date range, and its XI (Kobel, Emre Can, Anton, Schlotterbeck, Ryerson, Jobe, Nmecha, Svensson, Adeyemi, Chukwuemeka, Silva) is a 25/26 side. NEITHER IS EVIDENCE FOR OR AGAINST BUY Bh6z39i. The Silva buy stands on its own stated ground — depth first, points second, bought at prc = mv with no premium — and must not be re-derived as \"Silva starts because Guirassy is out\" on the strength of a December 2025 page. The 26/27 dated facts are separately logged: Guirassy picked up a thigh strain v Real Betis, missed MD9 at Elversberg, prognosis mid-November (90min, 06.11.2026). ADDING TO THE STANDING DATE-TRAP FAMILY: Bernardo 08.02.2026, Lokonga 09.02.2026, Widmer April 2026, Suzuki May 2026, Matsima 09.01.2026, Fellhauer 09.05.2026, Muheim April 2026 — and now a cluster from 2025 entirely. ASSUME ANY LIGAINSIDER ARTICLE URL IN THE 40xxxx ID RANGE IS 2025."
-   },
-   {
-    "name": "SOURCE TRAP 14.11 00:50Z — the Muheim \"Saisonaus\" cluster is APRIL 2026, last season",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "LOGGED BECAUSE IT NEARLY FORCED THE SALE OF THE SQUAD'S BEST PLAYER. Muheim (3277, HAMBURGER SV — tid 6 confirmed this run: his get_lineup os reads SVW and Grüll/Deman at tid 10 read os HSV, so tid 6 is HSV and tid 10 is Werder) carries st 2 stl [2] as of 2026-11-14T00:45Z, which the previous run's ledger has NO record of. A search on the flag surfaces two prominent hits that both read as season-ending: sportschau.de \"Saisonaus droht: Miro Muheim fehlt dem HSV im Abstiegskampf\" and flashscore.at \"Saisonaus fuer HSV-Verteidiger Muheim\". BOTH ARE LAST SEASON. The sportschau page metadata is 2026-04-21T16:43:02. The flashscore page is UNDATED, says only \"am Dienstag\", and describes an anterior-syndesmosis injury to the right ankle suffered in a Nordderby AT Werder lost 1:3 with HSV 14th — that is the 25/26 fixture and the same April injury, which resolved. Per the standing date-trap rule, an undated hit is stale; this one is the textbook case because it reads as a current diagnosis and names a real, verifiable injury. DO NOT ACT ON EITHER PAGE. THE ACTUAL, DATED NOVEMBER FACTS, and they are benign: 09.11.2026 nurdieraute.de and rotowire both report he withdrew from the SWITZERLAND squad for the Nations League games against Slovenia and Scotland with MUSCULAR problems, with BILD reporting the issue is \"neither serious nor structural\"; 12.11.2026 12:30 footy.de \"Noch viele Fragezeichen: Der vorsichtig formulierte HSV-Plan fuer das Derby\" has Polzin expecting him \"in der Derbywoche voll belastbar\", with individual training on Thursday 12.11. The market agrees: mvt 1, tfhmvt +93.931, sdmvt +929.454 — a rising value, which is not what a season-ending injury does. He is a HOLD and he stays at lo 3. NOTE FOR THE NEXT RUN THAT SEES st 2 ON HIM: HSV's MD10 is the Nordderby at Werder on 22.11, which falls AFTER the 20.11T19:30Z lock, so the fitness question must be settled on 20.11 evidence and cannot wait for the teamsheet. Same structural trap as Grüll (7721), who is the same fixture from the other side."
-   },
-   {
-    "name": "SOURCE TRAP 13.11 22:52Z — ligainsider \"Fellhauer nach Krankheit zunaechst nur auf der Bank\" is 09.05.2026, LAST SEASON",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "LOGGED BEFORE IT COSTS ANYTHING, because it ranks on the first page of a German search for Fellhauer's current status and it reads exactly like a fresh benching. URL: ligainsider.de/robin-fellhauer_24864/fellhauer-nach-krankheit-zunaechst-nur-auf-der-bank-413083/. FETCHED AND DATE-VERIFIED THIS RUN: stamped 09.05.2026, 14:57 Uhr CEST. The 25/26 season ran to May 2026, so this is LAST SEASON and it concerns Augsburg's final HOME game of that season against Borussia Moenchengladbach, under coach Manuel Baum, after an infection in the training week. It has nothing to do with 26/27. Two current instruments contradict it outright: the ligainsider profile read 13.11 22:52Z carries the Fit icon with 0 minutes Verletzt/Gesperrt and 8 Bundesliga Startelf appearances this season, and the dated 07.11.2026 14:21 Augsburg XI starts him. ALSO ON THE SAME PROFILE AND EQUALLY STALE: a March 2026 \"Muskelprobleme\" item and a July 2026 \"tritt angeschlagen kuerzer\" item. None of the three is a reason to drop BUY B7irj4i. SEPARATE INSTRUMENT FINDING WORTH KEEPING: ligainsider's CLUB page /fc-augsburg/21/ served a cached projection stamped 26.10.2026 18:03 for the 31.10 Freiburg game when fetched this run, i.e. the club landing page can be two weeks behind while the dated /aufstellung-...-NNNNNN/ article under it is current. Always prefer the dated article URL over the club page."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open — the lock is days away, not hours — and the mechanism is intact. The drift was re-measured this run from the event log and the rising-flag edge is essentially unchanged from the last reading and still comfortably above the figure the standing instructions quote. The trade is the same as it has been: bid exactly market value on a rising Kickbase board listing with no manager behind it, never raise, capture the overnight tick, sell back to the board at market value.\n\nSix listings qualify right now, which is more than the capital can take. That is the constraint this section lives under, and it has a hard ordering rule attached: NKUNKU FUNDING IS SACROSANCT. Three of the flips expire before his auction resolves, and a bid reserves budget. Reserve Nkunku first; flips are sized to whatever is left, and what is left grows substantially once Guirassy's sale clears.\n\nRanked by expected tick capture, Gadou is the largest and the natural first call on residual capital — and his transfer check was done this run and passed, which is what makes him takeable at all. Stanišić is second. Prömel is third and is the natural residual because his listing outlives Nkunku's auction, so he can absorb capital that frees up late. El Ouahdi, Köhn and a newly-listed Ito fill out the tail. Boniface passes the mechanical screen and must still be refused — that refusal is already on the register and is not a bug.\n\nEvery flip unwinds by selling back to the board at market value after the tick it captures, which leaves days of margin before the lock. The binding rules do not bend: a flip may never reduce the fielded eleven, never involve a player who might leave the league, and every one must be unwound to a non-negative balance and at least eleven players before Friday evening.\n\nTwo things remain open and should stay open until they are actually answered. Whether Kickbase caps squad size is still unknown, and if it does it caps how many flips can run at once. And the edge itself is measured in one league over one period; the most active traders in this league flip the same tick, and if they crowd in it decays. It has not decayed yet — this run's reading is a hair below the last one and well above the baseline — but that is a thing to watch, not a thing to assume.",
+  "reason": "Six listings qualify on the mechanism — board listing, no manager ask, price exactly at market value, rising flag, no fitness flag — and the tick has just split them into two groups. Five expire before the next update, so their current figures are final and can be bid verbatim tonight: Koehn first, then Stanisic, Gadou, Nkunku's own auction, and Proemel last. Two expire after the next update, so tonight's figures are dead on arrival for them and the bid must wait until after tomorrow evening's tick and then be placed at whatever reads at that moment. Gadou is the flip to take: the largest absolute tick edge on the board by a wide margin, roughly five times the next best, transfer-checked clear on dated evidence, and resolving overnight. He only fits alongside Nkunku if Guirassy is sold first, and he resolves before the Nkunku auction does, so an unsold Guirassy means Gadou eats the funding the buy depends on. Koehn is the caveated second flip: the smallest edge of the six, and no current-dated transfer source could be found either way on him — the piece that appears to clear him is from last season. Take him only after Nkunku's price is reserved. The drift was re-measured this run and is marginally stronger than the last reading, on both the mean and the hit rate, so there is no decay signal yet. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will erode if the rivals crowd in — and the four most active traders here were last season's top four finishers.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Grüll is the one that matters, because he is the only one of the three flagged bodies who is actually in the eleven. The record is from the tenth of November: he came off against Stuttgart with calf trouble, withdrew from the Austria squad, and after an MRI was training individually rather than with the team. Werder's sporting director said on the record that his availability for the HSV derby was not settled and that they would judge how much training he can handle early in the coming week before deciding. That decision lands inside the MD10 window. A targeted search for anything dated the thirteenth to the fifteenth turned up nothing newer. He is a large fielded asset whose availability is genuinely unresolved, and he is the first thing the next run should check.\n\nMuheim is trending the right way and needs no action. He withdrew from the Swiss squad with muscular discomfort that looks precautionary, no structural damage was found, and an item from the tenth of November has him expected back for the Bremen derby with growing optimism. The alarming 'Saisonaus' headlines on him — including one on the club's own site — are from April and are last season. They are logged as traps.\n\nGuirassy is covered under the sell. He is benched, so his fitness costs nothing while he sits there, which is exactly why the sale is clean.\n\nNo squad player is NEWLY flagged this run. All three flags were already tracked.",
+  "sweep": "Three squad players carry a Kickbase fitness flag, and two of them are in the fielded eleven. Muheim is the one that moved: the undated suspension headline that has been hanging over him for several runs is now dated and dead — it is from last season, and the ban it describes was served in April. What is live is a muscular problem reported on current dated evidence, not structural, which kept him out of international duty; his club's next league game falls after the lock, so re-check him around the eighteenth and bench him if he is not back in full team training. Grüll is unchanged and still the one genuinely unresolved risk inside the eleven: his club said the decision on him comes at the start of this week, and that decision has not yet surfaced. Guirassy carries a flag but is not placed. No squad player is newly injured, suspended or benched this run.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -610,15 +610,15 @@
   },
   {
    "k": "Squad value",
-   "v": "159.266.513"
+   "v": "159.041.748"
   },
   {
    "k": "33% floor",
-   "v": "-0,33 x (159.266.513 + -10.030.813) = -49.247.781"
+   "v": "-0,33 x (159.041.748 + -10.030.813) = -49.173.609"
   },
   {
    "k": "Spending power",
-   "v": "-10.030.813 + 49.247.781 = 39.216.968 — NOT -10.030.813"
+   "v": "-10.030.813 + 49.173.609 = 39.142.796 — NOT -10.030.813"
   },
   {
    "k": "Clearing premium band (measured)",
