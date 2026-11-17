@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-17T18:53Z",
+ "run": "2026-11-17T20:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10030813,
   "floor": -49087695,
   "spending_power": 39056882,
-  "hours_to_lock": 72.6,
-  "exposure": "A leveraged position is open and has not moved in two hours. It costs nothing until the instant the matchday locks, and then it costs everything — a negative balance at matchday start scores zero for the whole matchday. There is time, but the sale is a single click and there is no reason left to defer it. Spending is in any case capped by the 33% floor rather than by cash. The Cloudflare connector that holds the D1 ledger is still signed out, confirmed directly this run rather than inferred from a failure: it is listed as needing reconnection, which matches the standing diagnosis that this is a lapsed sign-in and not a server fault. That makes eleven consecutive runs without direct ledger queries. The substitute held — the open-call display is rendering every actionable kind in full, including the sell that clears this deficit, and the drift re-measurement came through the context block — so nothing was lost this run, but a reconnection would restore the direct view.",
+  "hours_to_lock": 70.62,
+  "exposure": "A leveraged position is open and has been for several runs. The balance is negative, the unwind has not been executed, and a negative balance at matchday start scores zero for the entire matchday — that risk outranks every other consideration on this page, including anything in the movers section. The lock is just under three days away, so there is room, but the sale is a single click against the board with no auction and no counterparty and there is no reason whatsoever to carry this any further. There is no live offer outstanding and no pending bid on anyone, so the exposure is entirely the deficit itself. One instrument gap to disclose: the direct ledger database could not be queried this run — the sign-in on that connector has lapsed and needs reconnecting — so the open calls and the measured statistics on this page were read from the context block instead, which computes them from the same event log and now renders the actionable calls in full. Nothing on this page is weaker for it, but the second, independent check on the call list was unavailable for an eleventh consecutive run.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no positional gap. Every legal formation is fillable now and remains fillable after the sale. The binding constraint is not a hole in the squad but the floor beneath it: at twelve bodies exactly one sale sits above the eleven-man minimum, and that sale is already spoken for by the unwind. That single fact is what rules out both the buy and the flip this run.",
+ "binding_gap": "There is no points gap to fill, because there is no capacity to fill one. The binding constraint is not a position and not the balance — it is the unwind ceiling: the number of bodies that can be sold before the squad falls under eleven. There is exactly one spare sale in the squad and it is already committed to clearing the deficit. Until that sale settles, every slot is effectively frozen, and the honest answer to what should be bought is nothing. Once it settles the squad sits at exactly eleven with zero slack, and from there the first purchase of any kind buys back optionality rather than points.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 39056882,
@@ -54,7 +54,7 @@
   "listings": 44,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 2
+  "expiring_within_2h": 0
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "One action, and it is the same one as two hours ago: instant-sell Deman to the Kickbase board.",
-  "headline_short": "One action, and it is the same one as two hours ago: instant-sell Dema",
-  "detail": "One action, and it is the same one as two hours ago: instant-sell Deman to the Kickbase board. The leveraged position is still open and still untouched — the balance has not moved since the last run, so the sale has not been made. Everything else this run is a reason not to do anything else: no points buy clears the unwind ceiling, and no flip on the board can reach tonight's tick. The one thing that changed is the deadline on the Deman call, which was set at tonight's 21:00Z tick and is wrong; the real backstop is the Friday lock, and the call has been reissued accordingly. Do not wait for the tick — the reasoning is in the sell note."
+  "headline": "One move matters and it has not been made: instant-sell Deman to the Kickbase board.",
+  "headline_short": "One move matters and it has not been made: instant-sell Deman to the K",
+  "detail": "One move matters and it has not been made: instant-sell Deman to the Kickbase board. The board pays exactly market value with no spread, that single sale clears the whole deficit on its own, and until it settles the squad is carrying a negative balance into a matchday that scores ZERO if it is still negative at the lock. Nothing else on this board is worth a cent before that is done. The flip book was deliberately emptied this run — not abandoned, emptied — because every open flip would have settled after tonight's value tick and two of them carried pre-tick prices that were about to be wrong. The measured tick edge itself is intact and, if anything, slightly stronger than the figure this routine was built on."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "DEMAN, to the board, now. The board pays exactly mv with no spread, re-confirmed yet again this run — Prates and Hajdari both cleared back to Kickbase this evening at precisely their market value, as Jaquez, Gruber and Rots did earlier today. His value clears the deficit outright with a margin to spare, and today's dated Bremen reporting puts him on limited training participation on day one of derby week, which only strengthens the case. Note that his Kickbase status flag is still clean — the flag is lagging the news, not contradicting it. On timing: he carries a rising flag, so waiting for tonight's tick is worth roughly three hundred thousand at the measured drift. Take it anyway. The fielded eleven at lock time is identical whether the sale happens tonight or Thursday, so that money buys exactly zero points before MD10, while the cushion over the deficit is only three and a half percent and a flag flip that takes him under it breaks the single-sale unwind. Free upside of nothing, against a tail risk on the one thing that costs a hundred points, is a bad trade. Nothing else in the squad is a sell. Grüll was also limited in training today, but a limited Tuesday in derby week is not a ruling-out, and he is the second-best scorer in the eleven.",
+  "reason": "Deman is the call and it is unchanged from the last three runs. He is the smallest sale that clears the deficit by itself, he goes to the board at exactly market value with no auction risk and no counterparty, and he can be executed at any moment between now and the lock. His flag is rising, which means the proceeds should be slightly larger after tonight's tick than before it — but this is a backstop-versus-target distinction, not an invitation to wait: the deadline on the call is hours before the lock precisely because it is a backstop. Execute it. The Tanaka sale stays open and stays inert; its gate requires twelve or more bodies at the moment of acting, and after the Deman sale there will be eleven, so firing it would drop the squad under the floor and cost far more than it raises. Do not fire it. One thing to re-check at the next run: the Deman sale only clears the deficit while his market value stays above it, and his flag, though rising, is not a guarantee. If tonight's tick moves him the wrong way the single-leg unwind breaks and the fallback becomes selling the flagged striker instead, which is a much worse trade on season-long points and should only be reached for if the arithmetic actually forces it.",
   "standing": [
    {
     "name": "Olivier Deman",
@@ -210,7 +210,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing. And the reason is the unwind ceiling, not the deficit — a negative balance by itself never kills a buy. One buy would permit two sales back to the eleven-man floor, which caps the affordable purchase at about five and a half million and restricts it to a defender or midfielder, since a third attacker fits none of the legal shapes. The points test is what actually fails: that three-leg sequence has to beat Tanaka merely to break even, and the only board listing under the cap that does so beats him by a single point of average, on a falling flag. Three transactions executed into a hard lock for one point of average is not a trade. Logged so the next run does not redo the arithmetic, with a note to re-run it the moment the squad reaches thirteen or the balance turns positive.",
+  "reason": "No buy clears the unwind ceiling, and the ceiling is the reason — not the deficit. A negative balance costs nothing until the instant the matchday locks; what constrains a purchase is whether it can be unwound by then. With only two realistic sale legs and the second one gated shut by the eleven-man floor, any purchase on this board large enough to improve the fielded eleven would leave a balance that cannot be brought back to non-negative without dropping under eleven bodies. So the answer is none, and it is none for a structural reason that will not change until the Deman sale settles. Worth recording for the next run: the Bornauw block has now met its own reversal condition — his Kickbase flag is back to clear and he is sitting on the board at exactly market value with a rising flag and a respectable average. He is a genuine candidate the moment there is headroom; there is no headroom today. The two large asks on the board, the Bayern midfielder and the Leverkusen goalkeeper, both remain on the avoid list and neither has done anything this run to earn a reversal.",
   "standing": [],
   "killed_this_run": [
    {
@@ -326,11 +326,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "Flagged and declined, on measurement rather than on the retired sub-mv test. The tick edge itself is healthy and has not decayed — this run's re-measurement from the event log puts rising-flag players ahead of their next update by a wider margin, on a larger sample, than the September baseline, and with a higher hit rate. The problem is purely one of timing. Of the forty-four listings on the board, exactly two expire before tonight's update, and both are disqualified: one is on a falling flag, the other sits at the value floor where the drift does not pay for the click. Every open flip candidate therefore settles after tonight's tick and would have to ride tomorrow's flag, which is not observable now — and there is no fixed-price arbitrage across the tick, because every board listing's price tracks its market value exactly. A second and binding reason to sit still regardless: with one sale available above the floor and that sale already committed to the unwind, every flip stacked on top deepens a deficit that has to reach non-negative by Friday, and the payoff is cash that buys no points before the matchday. The edge is not going anywhere; the penalty is. Two open questions remain unresolved, as they have for some weeks: whether Kickbase caps squad size, which would cap flip throughput outright, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in. The four most active traders here were last season's top four finishers.",
+  "reason": "The flip mechanism is measured, alive, and has not decayed — the re-measurement this run came in a touch above the figure the routine was built on, with the proportion that rose essentially unchanged. Rivals have not crowded it out yet. What killed the flips this run was timing, not merit. The value tick was fifteen minutes away at run time and not one listing on the board expired before it, so every bid placed now would have settled afterwards and ridden tomorrow's flag, which is unknown and unmeasurable at bid time. That is not the measured trade; it is a coin flip wearing the measured trade's clothes. On top of that, two of the five carried prices written before their market values rose, and a call carrying a wrong price corrupts the bid-calibration table, which is the one artefact that makes the next bid sharper. All five were therefore closed rather than carried — closing the call is not a verdict on the player, and all five are still on the board and still worth re-testing once the new flags are visible. The next run re-derives the whole book from post-tick values: board listings only, no manager asks, rising flag, asking price exactly at market value, bid exactly at market value and never raised, preferring the ones that expire before the following tick. Two clears this run reinforce the calibration rule that matters most: a contested board listing cleared deep in the high cluster and a second cleared in the low single digits — the band genuinely is two different games, and benchmarking a contested board listing against the median is how good money gets burned. The two open questions are unresolved and stay on the record: it is still unknown whether Kickbase caps squad size, which would cap how many flips can run at once; and the edge is measured in one league over one period, so it will decay if the league's active traders crowd into it.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Four dated sources today, and three of the fielded eleven ride the same Sunday fixture. Deman and Grüll were both limited in Werder's first derby-week session; Muheim returned to HSV team training for about an hour after pulling out of the Swiss squad with muscle problems, with his coach calling it a photo finish; and Guirassy, whose thigh strain cost him the last matchday, is reported as having most likely recovered fully over the international break, which keeps him above the bar and keeps the Deman branch of the unwind live. That concentration — two Werder players and one HSV player all in the Nordderby — is a structural exposure worth naming, but it is not a reason to sell any of them on a Tuesday. Three fresh source traps were logged this run, all of them stale Guirassy comeback stories. The dangerous one names Gladbach, the real opponent this matchday, prints a full predicted eleven with Guirassy in it and no fitness concern, and is eighteen months old. A recurring fixture makes a right-opponent, wrong-season hit the sharpest trap in this family. A useful general rule also went into the ledger: this outlet's article IDs rise monotonically with time, so an ID dates an article before it is even fetched.",
+  "sweep": "Three of the twelve carry Kickbase flags and all three were checked against sources dated today. The striker is the important one: the newest item, published this evening and newer than anything the previous run saw, has him close to rejoining team training but not yet in it, with the club optimistic about the coming days and his availability for Saturday explicitly unclear. Read that precisely — it is not a confirmation, and it does not strengthen the earlier reading that he had cleared the bar, but it is not a deterioration either, so the unwind was not reversed back off Deman on the strength of it. The HSV left-back is the good news: back in a large part of Tuesday's session after pulling out of international duty with muscle trouble, with his coach calling it a close-run thing. Improved, still not a confirmed starter, still flagged. The two Werder men, the sale candidate and the winger, could both only train with restrictions on day one of derby week — unchanged from the last run. One instrument note worth keeping: the sale candidate carries a clear Kickbase flag despite his club's own source saying he is restricted, so the flag is lagging the club here and a clear flag must not be read as a fitness confirmation for him. Nothing undated was used anywhere in this check.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -609,7 +609,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1245, -4,00% to +443,38%"
+   "v": "n=1247, -4,00% to +443,38%"
   }
  ]
 }
