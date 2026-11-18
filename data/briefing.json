@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-18T00:52Z",
+ "run": "2026-11-18T02:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10030813,
   "floor": -49030113,
   "spending_power": 38999300,
-  "hours_to_lock": 66.62,
-  "exposure": "The balance is negative and nothing has been unwound. This costs nothing until the instant the matchday locks, and the lock is still comfortably more than a day away, so this is not yet an emergency — but it is the only thing on the board that can cost the entire matchday. One sale clears it outright. Note that the player earmarked for that sale is on a rising market-value flag, so every tick he is held raises what the sale brings in; waiting until the Friday press conference is not a cost, it is a small gain plus better information. The deadline on the sale call is a backstop, not a target.",
+  "hours_to_lock": 64.62,
+  "exposure": "The balance is negative and must be back to non-negative before the matchday locks, or the entire matchday scores zero. That is the only hard constraint in play and it outranks everything else in this briefing. The single sale that clears it is identified, it covers the deficit on its own with margin, and there are more than two and a half days of runway — so this is leverage with a plan, not leverage adrift. If the flip lands, sell the full-back immediately afterwards rather than waiting, so the remaining deficit is carried by the flip alone and unwinds at tonight's update.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Attack. The squad carries only two attackers and the better of the two is the injured striker, so the fielded eleven runs a single attacker. Nothing on the market fills this gap: the attackers available are either filler bodies at the floor price, or carry a status flag, or are asks priced well above market value by managers. Filling it properly would need a sale first, and the sale that funds it is the one already on the book.",
+ "binding_gap": "None. The squad covers a legal shape with exactly one body to spare, and that spare is the one being sold to clear the deficit. There is no position hole to fill and no buy is required to field eleven.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 38999300,
@@ -51,7 +51,7 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 40,
+  "listings": 38,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
   "expiring_within_2h": 2
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Nothing has moved since the last run: the squad is unchanged, the balance is unchanged, and the leveraged position is still open.",
-  "headline_short": "Nothing has moved since the last run: the squad is unchanged, the bala",
-  "detail": "Nothing has moved since the last run: the squad is unchanged, the balance is unchanged, and the leveraged position is still open. The one action that must happen before the lock is the standing Deman sale, and there is still plenty of room to make it. No buy earns its place, and the two flips the last run put on the book are both still live and still unbid — one of them for only a few more minutes."
+  "headline": "One action, and it is the same one the ledger has carried for several runs: instant-sell Deman back to the Kickbase board and clear the deficit.",
+  "headline_short": "One action, and it is the same one the ledger has carried for several ",
+  "detail": "One action, and it is the same one the ledger has carried for several runs: instant-sell Deman back to the Kickbase board and clear the deficit. It is a single leg, it covers the shortfall on its own with margin, and it leaves exactly eleven bodies in a legal three-five-two. The overnight flip on Posch was lost — a rival took him deep into the contested band while our bid sat at market value. That is the rule working, not failing: losing a board auction at exactly market value is free, and chasing it would have cost real principal to capture a small tick. Nothing else on the board earns a points buy this run."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "The unwind call stands and is unchanged on merit. Selling back to the Kickbase board pays exactly the market value with no spread, re-confirmed again by last night's board clears. The second, gated sale of the weakest midfielder remains inert: its gate requires the squad to still hold twelve or more bodies at the moment of acting, and it does not, so it must not be fired. The sensitivity worth watching is this: the choice between selling the defender and selling the injured striker turns entirely on the striker's probability of starting relative to the defender's. The decision rule is already written into the ledger and no run should re-derive it, but if the striker is formally ruled out at Friday's press conference the better unwind flips back to him. Nothing found this run changes that picture either way.",
+  "reason": "Deman is the unwind and nothing about it has changed except that it got slightly safer at last night's tick. He is flagged fit on Kickbase and his absence from Tuesday's Werder session was explicitly load management, stated as such by the club — so that is not a fitness objection and no future run should read it as one. Sell him back to the board, which pays market value with no spread, and do it BEFORE tonight's update rather than after. Holding him through one more tick has a small expected gain and a small but real chance of a downward move that would leave him short of the deficit, force a second sale, drop the squad to ten and cost a hundred points for the whole matchday. The asymmetry is not close. The Tanaka sale stays open but is inert: its own gate counts the squad at the moment of acting, and once Deman goes that count is eleven, so it must not be fired.",
   "standing": [
    {
     "name": "Olivier Deman",
@@ -210,7 +210,7 @@
  },
  "buy": {
   "recommendation": "none",
-  "reason": "No buy this run, and the reason is the unwind ceiling rather than the negative balance. The binding gap is attack: the only shape available after the sale fields two attackers and one of them is injured. The market offers no attacker who improves the eleven — the cheapest ones are filler bodies with no points, and the one with a real scoring average carries a non-zero status flag and a falling market-value flag at once. The defender whose block was reversed yesterday is genuinely buy-eligible again and would add points on paper, but checked independently this run he fails the unwind arithmetic: one buy permits exactly one additional sale, and no pair of sales that keeps eleven bodies gets the balance back to non-negative without giving up more points than the buy brings in.",
+  "reason": "No points buy clears the test this run, and the binding reason is the unwind ceiling rather than the mere existence of a deficit. Everything cheap enough to finance alongside the Deman sale is a marginal body on a falling market value, and nothing in that range beats the weakest man already in the eleven by enough to matter. The one board listing with a genuine points case is a defender who would only be affordable by selling the squad's best scorer — which trades a season-long asset for one matchday of certainty and is the wrong trade for a points optimiser. Every manager ask on the board is well above market value, and this ledger has never bought one.",
   "standing": [],
   "killed_this_run": [
    {
@@ -326,11 +326,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open — the lock is far enough away that a flip can be opened and unwound safely. The edge was re-measured from the event log this run and has not decayed; on a sample roughly four times the size of the original measurement the rising-flag drift is slightly stronger than the figure this method was built on, and the share of rising-flag players that actually rose is higher too. The falling flag remains the mirror image and is the reason the expensive attacker on the board is an anti-flip rather than a bargain. Two candidates qualify, both board listings priced exactly at market value with no bids against them, and the bid is exactly market value in each case, never raised. The nearer one expires within minutes of this run and is realistically gone. A new eligibility rule was written into the ledger this run and it matters: a listing only qualifies if it expires BEFORE the next market-value update, because on the board you acquire the player at expiry, not at bid time. Two otherwise perfect candidates — both clean on listing type, price and rising flag, and both of which would outrank one of the qualifiers on size — are excluded on that rule alone, because they settle after the tick they would need to capture. That is also why yesterday's flip book held only two names, which was correct. Rivals are visibly running the same trade: a cluster of board dumps landed within minutes of last night's tick, which is precisely its unwind leg. Two questions remain open and unresolved. First, whether Kickbase caps squad size, which would cap how many flips can run at once. Second, the edge is measured in one league over one period and will decay if rivals crowd in — it has not decayed yet, but that is a statement about the past, not a guarantee.",
+  "reason": "The tick edge is intact and, re-measured from the log this run, slightly stronger than when it was first established — the rising-flag cohort still goes up roughly nine times in ten and the mean move has not fallen. One listing qualifies: an uncontested board listing on a rising flag, priced at market value, expiring before tonight's update. It has drawn no offers at all, which on the measured record is precisely the case that clears at market value rather than into the contested band. The bid is exactly market value and must never be raised. It expires in the small hours of the morning, so realistically it needs acting on tonight or not at all, and the gain if it lands is modest. Two listings that look superficially similar fail on timing alone — they expire after tonight's update, and the flag predicts that one update and nothing beyond it. Two questions remain open and neither is answered: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if the rivals here crowd into it. The four most active traders in this league were the top four finishers last season.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No new injury anywhere in the squad. One genuine upgrade: the left-back is confirmed back in team training on Tuesday, taking part in most of the session, with the coach calling his derby availability a close call. The Kickbase status flag still shows him as injured — the flag lags the club source here, and no future run should cite it alone against him. The two Werder players, the winger and the defender, both trained only with restrictions on day one of derby week, unchanged from yesterday. The injured striker is still described only as hampered, is still not confirmed in team training, and nothing newer than yesterday evening's source exists. The old season-ending stories about the left-back resurfaced in search again and remain last season's; they directly contradict this week's training report.",
+  "sweep": "Three of the squad carry a flag. The one new piece of information this run is that the winger's flag now has a named cause — a calf problem picked up in the last match, a cancelled international call-up, and an individual indoor session instead of team training, all from a dated club-beat source. He is not ruled out, and the derby falls several days after that session, so treat him as genuinely uncertain rather than absent. The striker is unchanged and still described only as hampered, with his availability posed as an open question in the newest dated source; nothing newer exists anywhere. The full-back is confirmed back in team training. Two sources that might have settled the striker returned site errors and could not be read — retry them next run. The search results around the striker remain thick with stale comeback items naming the wrong opponent; anything not naming this matchday's opponent is not about this matchday.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -609,7 +609,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1248, -4,00% to +443,38%"
+   "v": "n=1250, -4,00% to +443,38%"
   }
  ]
 }
