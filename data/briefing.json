@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-18T08:50Z",
+ "run": "2026-11-18T10:46:23Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10030813,
   "floor": -49030113,
   "spending_power": 38999300,
-  "hours_to_lock": 58.66,
-  "exposure": "A leveraged position is open right now and has survived at least two runs without being acted on. It is not yet urgent on the clock — the lock is still more than two days away — but it is the one state that can cost an entire matchday, and the fix takes a single instant-sell. If the flip is taken as well, it deliberately opens a second, smaller leveraged position which must be unwound by selling the flipped player back to the board after tonight's value update. That unwind has a wide margin before the lock, but it is a second thing to remember and it only makes sense once the first sale has cleared.",
+  "hours_to_lock": 56.62,
+  "exposure": "A leveraged position is open and has now survived at least one run without action. It costs nothing until the instant the matchday locks, at which point a negative balance scores ZERO for the entire matchday. The lock is still comfortably far off, so this is not yet urgent in hours — it is urgent in the sense that the fix takes one click and keeps being deferred. The instant-sell to the Kickbase board pays exactly market value with no spread, re-confirmed again this run by two fresh board clears that landed marginally below mv, so there is no price argument for waiting. Because the unwind has stalled, the Bischof flip has been re-issued this run WITH the gate it previously lacked: firing it on an unexecuted unwind would roughly triple the deficit for a small expected gain, which is the wrong trade to hand a manager who is not acting between runs.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The binding constraint is not a position hole, it is the open deficit. The eleven is legal and fillable as it stands, so no replacement has to land before the sale — the man being sold is the one nobody is fielding, which is exactly why this sale is free of points cost. After the sale the gap becomes attack cover: a single attacker with no backup, where nothing on the market is an upgrade on average. The honest answer is to carry that risk rather than spend points-neutral money on insurance.",
+ "binding_gap": "There is no formation hole. The squad fields a legal eleven now and still fields the same legal eleven after the Guirassy sale, because he is the benched twelfth man and the only player whose sale costs zero fielded points. Every other asset large enough to clear the deficit is in the eleven, so selling any of them would drop the fielded side below eleven and trigger the penalty. The real gap is bench depth: after the sale the squad sits at exactly eleven with no cover at all, which is uncomfortable given the fitness picture below. That, not points, is the strongest argument for the Aouchiche buy.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 38999300,
@@ -54,7 +54,7 @@
   "listings": 43,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "The leveraged position is still open and nothing has moved since the last run: the Guirassy sale has not been executed, so the balance is still negative — and a negative balance at",
-  "headline_short": "The leveraged position is still open and nothing has moved since the l",
-  "detail": "The leveraged position is still open and nothing has moved since the last run: the Guirassy sale has not been executed, so the balance is still negative — and a negative balance at matchday start scores zero for the entire matchday. That sale remains the only move that matters, and this run reinforces it rather than weakening it: Guirassy was still on individual training per a BVB source timed early on 18.11, he carries the injury flag, and he is the benched twelfth man who scores nothing where he sits. Selling him to the Kickbase board pays exactly market value with no spread, clears the deficit outright, and does not touch the fielded eleven. Everything else this run is gated behind it."
+  "headline": "Unchanged from the last run, and that is the problem.",
+  "headline_short": "Unchanged from the last run, and that is the problem.",
+  "detail": "Unchanged from the last run, and that is the problem. The balance is still negative and byte-identical to the previous reading, which means the Guirassy unwind has not been executed across a full run cycle. Nothing else on this page matters until it is. Sell Guirassy to the board now; everything else is gated behind that sale."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Guirassy is the one sale, and it is an instant-sell to the board rather than a listing — the board pays exactly market value every time, re-confirmed by fresh board clears landing at and below market value. The deadline on the standing call is a backstop set well before the lock, not a target: execute now. His season average still looks strong, but he has not been fielded, so that average buys nothing. A trap was caught this run and is worth knowing: a correctly dated, current-season article reads as a recovery all-clear, but it is written in the conditional mood and is contradicted nineteen hours later by an actual training report. A correct date is necessary but not sufficient.",
+  "reason": "Guirassy, striker, Dortmund — the only sale on the board and the whole of this run's required action. He is benched, carries a fitness flag, and his premise was re-confirmed on the freshest source available: a piece published under an hour before this run, citing Ruhr Nachrichten, has him still training individually, not with the team, with his availability for the weekend explicitly open and dependent on load tests. Selling him costs zero fielded points, clears the deficit outright, and leaves a healthy positive balance. He is already on the blocked list, so no run can buy him back by accident. No other sale is recommended and none should be: every alternative is in the eleven.",
   "standing": [
    {
     "name": "Serhou Guirassy",
@@ -201,7 +201,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Aouchiche is the buy, gated strictly behind the Guirassy sale settling — until it does, the bid would only deepen the leverage it is meant to follow. He is a Kickbase board listing priced at exactly market value with no manager ask, so bid exactly market value and never raise: roughly half of all measured board clears land at or below market value, and losing the auction costs nothing. His starter status was re-confirmed this run from current-season match data rather than from press, which sidesteps every stale-article trap in the ledger: every matchday played this season, and a full ninety-plus minutes at the last one for a strong return. He would displace Tanaka in the fielded five, a real per-appearance upgrade in the one slot carrying dead weight. No attacker on the board beats Gregoritsch on average, so there is no attacking upgrade to chase.",
+  "reason": "Aouchiche, midfield, Stuttgart — gated on the Guirassy sale settling first. A Kickbase board listing priced exactly at market value, so bid exactly that and never raise; roughly half of all measured board clears land at or below mv, and chasing a contested listing into the high cluster is what has cost this ledger its three worst misses. His starter status was re-confirmed this run from current-season match data read in full, not from a club page: he has appeared in every league match this season, started all but one, and played the full distance in the most recent. He displaces the weakest midfielder in the fielded eleven and restores a bench at the same time. One timing trap recorded this run and not previously noted anywhere: his listing runs past tonight's market-value update, so the quoted bid figure goes stale at the tick. If the bid has not been placed by then, re-read the market value and re-issue the number rather than re-typing the old one. Lee at Mainz is logged as a cheaper board alternative with a nominally similar points gain, but he is NOT recommended: no dated source could confirm he is starting, and his value is falling, which is the classic signature of a man who has lost his place. The next run should settle him from match data rather than another web search. Everything else on the market is excluded — the manager asks all sit far above the low cluster where manager asks actually clear, and the one genuinely strong points upgrade among them is a goalkeeper listed by the league's habitual markup merchant at a premium this ledger has never paid.",
   "standing": [
    {
     "name": "Adil Aouchiche — bid EXACTLY mv 9.004.822, never raise",
@@ -217,6 +217,15 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "AVOID SOURCE TRAP 18.11 10:46Z — second instance of the Ax0njuk class in six hours: a headline promising a return over a body that says individual training",
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
+    "premium_pct": null,
+    "why": "EXTENDS Ax0njuk WITH A SECOND, DIFFERENT OUTLET, WHICH TURNS A ONE-OFF INTO A PATTERN WORTH A RULE. The item: bvbwld.de/2026/11/18/rueckkehr-rueckt-naeher-bvb-hofft-auf-guirassy-und-anton, headline \"Rueckkehr rueckt naeher: BVB hofft auf Guirassy und Anton\", published 18.11.2026 09:50 CET. It passes EVERY date test this ledger uses: correctly dated, today, current season, no Jan-May 2026 contamination, named author, named upstream source (Ruhr Nachrichten). A run that checked only the date and the headline would read \"return approaching\" and kill the SELL. THE BODY SAYS THE OPPOSITE OF THE HEADLINE: the two players \"haben in den vergangenen Tagen individuell trainiert\" — still individual training, still not in team training; Gladbach is \"noch offen\"; he \"koennte\" feature; the decision waits on load tests; and there is NO quote from Kovac on his condition at all, only the reporter's observation that he could use them. THE RULE, written once: on a fitness check, the headline is not the datum. Read for the TRAINING NOUN — individuell / Teamtraining / Mannschaftstraining — and for whether a named person is quoted saying it. \"Rueckkehr rueckt naeher\", \"Hoffnung\", \"Hoffnungsschimmer\", \"koennte\", \"noch offen\" are the reporter's framing and carry no fitness information. Ax0njuk caught this at 08:45Z on a different outlet; six hours later a second outlet does it again, so expect roughly one of these per run for as long as Guirassy is out. DO NOT reverse the Guirassy sale Shv9ksp on any item of this shape. Reverse it only on a source that says he trained WITH THE TEAM, or on a named coach quote naming him in the matchday squad. NOTE the same heuristic flagged a true positive this run and must not be read as blanket scepticism: nurdieraute 17.11 on Muheim survives it, because it reports a concrete observed fact (~60 minutes on the pitch Tuesday) plus a direct named Polzin quote, and it still stops short of claiming a start."
+   },
    {
     "name": "AVOID SOURCE TRAP 18.11 08:45Z — a CORRECTLY-DATED, current-season Guirassy item that is still wrong: speculation written as recovery. Fails on MODALITY, not date",
     "pos": "",
@@ -315,26 +324,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "NEW TRAP and the most dangerous class yet, because it is a PROBABLE-XI page, which is exactly the source type STEP 5 tells this task to trust. URL magazin.comunio.de/borussia-moenchengladbach-bvb-voraussichtliche-aufstellungen-2/. Fetched in full: published 05.12.2024 14:36 UTC. It previews Gladbach v BVB — the SAME fixture pairing as MD10 on 21.11.2026 — and names Guirassy in the probable starting XI (Kobel, Ryerson, Suele, N. Schlotterbeck, Bensebaini, Nmecha, Sabitzer, Brandt, Beier, Gittens, Guirassy). Its tell is the absentee list: Emre Can suspended, Filippo Mane, Waldemar Anton torn groin, Adeyemi/Malen/Ryerson angeschlagen — a 2024/25 squad. The comunio magazin URL pattern carries a bare \"-2\" suffix with NO season or date, so the same slug is reused across seasons and the page looks current. RULE: never accept a comunio magazin voraussichtliche-Aufstellungen page without reading its published date off the page body, and prefer the ligainsider club page, which prints \"Letzte Aktualisierung\" with an explicit date. Same discipline as Asn903k and Alsxrbj."
-   },
-   {
-    "name": "SOURCE TRAP 17.11 02:45Z — ligainsider \"Guirassy meldet sich wieder zum Dienst\" is 24.04.2026, LAST SEASON",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "NEW TRAP, fourth distinct stale-Guirassy item now logged (joins Axw0d7x 18.07.2026, Acgbffe 26.11.2024 dpa, Aj1p4qq 14.07.2026). URL ligainsider.de/serhou-guirassy_10454/guirassy-meldet-sich-wieder-zum-dienst-412352/. Fetched in full this run; its own byline reads verbatim \"24.04.2026 - 13:28 Uhr Gemeldet von: Kristian Dordevic\" and page metadata agrees (13:28 +02:00). It describes Kovac saying Guirassy \"hatte eine Gehirnerschuetterung nach dem Spiel gegen Hoffenheim\" and had trained with the squad for the first time since — a CONCUSSION return in APRIL 2026, i.e. last season, and nothing whatever to do with the current thigh Zerrung suffered v Real Betis on ~05.11.2026. It surfaces as a top-3 hit on the query \"BVB Guirassy Rueckkehr Training November 2026\" and reads as a live all-clear. It is not. Do NOT let it, or any undated \"zurueck im Training\"/\"wieder einsatzbereit\"/\"meldet sich zurueck\" Guirassy headline, soften SELL Sjjj2n8. The ONLY current-period Guirassy sources verified this run are: 90min \"Kovac verkuendet Guirassy-Diagnose\" dated 06.11.2026 (thigh Zerrung, injury table return \"Mitte November\") and the ligainsider BVB club page last updated 09.11.2026 (listed with the Angeschlagen icon, not in the fehlen list)."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "One listing qualifies and only one: Bischof, a board listing at exactly market value, flagged rising, and — crucially — expiring before tonight's value update, which is the eligibility test every flip must pass. He fails the points test and remains an avoid as a squad addition; this is a pure value trade and nothing more. The re-measured drift is the real news: the rising-flag edge has not decayed, it has strengthened slightly against the September baseline on a far larger sample, so rivals crowding in has not yet eroded it. Bid exactly market value and never raise — chasing a contested board listing into the high cluster destroys the edge, and a single bad overpay wipes out ten good flips. The flip must fire only after the sale settles, and must be unwound back to the board after the tick, well clear of the lock. Two questions stay open: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
+  "reason": "The flip window is open. Exactly one listing on the entire board qualifies: Bischof, a Kickbase listing priced at market value, rising, uncontested, and — critically — the only one that expires BEFORE tonight's market-value update, which is what the eligibility rule requires. Every other rising board listing expires after the tick and captures nothing. The drift edge was re-measured from the event log this run rather than trusted from the prompt, and it has NOT decayed: the rising flag still predicts a gain at the next tick on a very large sample, with a hit rate slightly better than the figure the task prompt quotes from September. The trade is to bid exactly market value and never raise — losing the auction costs nothing, while one contested clear into the high cluster wipes out ten good flips. The transfer check was done and is clean: no current-season departure story exists, only his move into the league last year. He must never be fielded; this is a pure value trade and his average is below every midfielder already in the eleven. The unwind is straightforward — sell back to the board after the tick, which pays exactly market value with no spread, well clear of the lock. Two open questions remain unresolved and are restated here rather than rediscovered: whether Kickbase caps squad size, which would cap how many flips can run at once; and that this edge is measured in one league over one period and will decay if rivals crowd in. The league's four most active traders were last season's top four finishers, so crowding is a live risk even though the re-measurement shows none yet.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Guirassy still on individual training per a source dated this morning, matching his injury flag and his place on the bench. Aouchiche confirmed a regular starter from current-season match data. Muheim and Gruell both still carry the injury flag but both are fielded and neither has new negative news. Gregoritsch is fit but was benched at the last matchday, which is the quiet risk in an attack about to become a single man. No squad player is newly injured, suspended, or carrying dated news that he may leave the league; the squad-wide sweep found nothing new.",
+  "sweep": "This is the largest risk of the matchday and it got sharper this run, not softer. Three of the eleven fielded players — two from one club, one from the other — all play the same derby, which kicks off two days AFTER the lock. Georg therefore commits to all three blind. What is new is that all three now carry dated limited-training reports rather than merely a scheduling note. The two highest season averages in the entire squad are among them: one has an MRI on a calf and has been training individually or indoors since being substituted off, and was reported only partially participating on day one of derby week; the other was described by his coach as a close call, back on the pitch for about an hour but not confirmed in full team training and not confirmed to start; the third was likewise limited on day one. None is ruled out and none is confirmed. There is no hedge available: selling any of them drops the fielded side below eleven. The correct response is to restore bench depth, which is what the recommended buy does. Separately, a source trap was logged this run — a correctly dated, current-season, named-author article whose headline promised a return while its body said the player is still training alone. That is the second instance of this exact shape in six hours from two different outlets. The rule recorded for future runs: read for the training noun and for a named quote, never the headline, and do not reverse the sale on anything less than a report of training with the team.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
