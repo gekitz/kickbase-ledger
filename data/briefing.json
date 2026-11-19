@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-19T08:52Z",
+ "run": "2026-11-19T10:54Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10030813,
   "floor": -48987304,
   "spending_power": 38956491,
-  "hours_to_lock": 34.63,
-  "exposure": "THE LEVERAGED POSITION IS STILL OPEN AND UNCHANGED SINCE THE LAST RUN. The deficit must be cleared before the MD10 lock or the entire matchday scores zero — this outranks every other consideration on this page. The fix is clean and costs nothing in points: Guirassy is the ONLY body in the squad that is not in the fielded eleven, so instant-selling him to the Kickbase board removes the deficit without touching a single fielded player. The board pays exactly mv with no spread. Doing this leaves the squad at eleven with 4-5-1 still legal and Gregoritsch the lone attacker. There is no cheaper unwind: every other sellable body is one of the eleven.",
+  "hours_to_lock": 32.6,
+  "exposure": "Negative balance, open, with the lock inside a day and a half. One instant sale to the Kickbase board clears it completely and leaves the squad legal with every remaining body fielded. The board pays exactly market value with no spread — re-confirmed this run by a rival buying a player and selling him back hours later at precisely his market value. Do not treat the deadline on the sell call as a target; it is a backstop.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "No positional gap binds this run. The squad fills 4-5-1 as fielded, and 3-5-2 and 4-4-2 remain legal. What binds is the negative balance, not a formation hole — which is why the top move is a sale rather than a purchase. After the Guirassy sale the squad sits at exactly eleven with one attacker, so any further sale that is not immediately replaced would drop below a fillable eleven and trigger the -100 penalty. That is precisely why the Tanaka sale is gated behind a confirmed midfield arrival and must stay gated.",
+ "binding_gap": "There is no positional gap. The binding constraint is the balance, not the shape of the squad — the formation is legal before and after the sale, and the upgrade available is a quality upgrade in midfield rather than a hole that must be filled. Do not let the single-attacker structure after the sale be read as a gap that justifies an overpriced attacking buy; the two attacking options on the board were both ruled out on price and on starter status in earlier runs and nothing has changed.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 38956491,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 27,
+  "listings": 26,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 3
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Two things need doing and one of them is on a clock.",
-  "headline_short": "Two things need doing and one of them is on a clock.",
-  "detail": "Two things need doing and one of them is on a clock. The balance is still negative and the Guirassy unwind that was called at 06:45Z has NOT been executed — a negative balance at matchday start scores ZERO for the whole matchday, and the lock is now inside 35 hours. Separately, the Lee bid expires at 09:31Z, inside the hour. Sell Guirassy to the board; bid exactly mv on Lee and never raise; if Lee lands, instant-sell Tanaka. Nothing else on the board earns an action this run."
+  "headline": "The leveraged position is STILL OPEN and it is the only thing that matters before the lock.",
+  "headline_short": "The leveraged position is STILL OPEN and it is the only thing that mat",
+  "detail": "The leveraged position is STILL OPEN and it is the only thing that matters before the lock. Selling Guirassy back to the board clears it outright and costs nothing in points, because he is the benched twelfth man and is injured anyway. Execute it now rather than against the backstop deadline — a negative balance at matchday start scores zero for the entire matchday, and nothing else on this page outranks that. The second finding of this run is an execution gap rather than a market event: the Lee buy recommended at the last run cleared BELOW the recommended bid, meaning the exact-mv bid would have won and was not placed. That cost the only pre-lock midfield upgrade on the board."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "GUIRASSY — execute now, not at the deadline. He is not in the fielded eleven, so the sale costs zero fielded points, and dated news supports the exit rather than contradicting it: the BVB beat on 18.11.2026 has him in individual training with Anton and says plainly that whether it is enough for Saturday at Gladbach is still open. One 17.11 item reads him as recovered, but that is speculation written as recovery — the modality trap this ledger has now logged three times — and the later, more specific club-beat item contradicts it. Even on the optimistic reading he scores nothing while benched, and fielding him would mean dropping a fielded man for a player in individual training. TANAKA — still correct, still GATED, and the gate is the whole call: fire only once Lee is actually IN the squad, never on a placed bid. He is the weakest body in the eleven by a wide margin and his market value is bleeding, but until a midfielder lands he is one of the eleven and selling him first would drop the fielded side.",
+  "reason": "Guirassy is the whole sell list and it is mandatory, not optional. He is injured, benched, and sold purely to clear the deficit — the points cost of the sale is zero because he was never going to be fielded. Tanaka remains the right exit afterwards on points-per-euro: he is the weakest body in the fielded eleven by a wide margin and his market value is falling. But his sale is GATED on the Amiri buy actually landing, and because that buy settles after the lock, Tanaka must be fielded for this matchday. Selling him early is the single most expensive mistake available this run.",
   "standing": [
    {
     "name": "Serhou Guirassy",
@@ -198,40 +198,58 @@
     "tag": "sell"
    },
    {
-    "name": "Satoshi Tanaka — GATED: only after a MID buy is CONFIRMED in the squad",
+    "name": "Satoshi Tanaka — GATED: only after Amiri 1639 is CONFIRMED in the squad",
     "pos": "MID",
     "club": "8",
     "mv": 4730879,
     "ap": 53,
-    "why": "THE GATE IS THE WHOLE CALL AND IT IS BINDING. Instant-sell to the Kickbase board at mv 4.730.879, which pays exactly mv with no spread. Fire ONLY once Lee 2476 (or Johannesson 7219) is actually IN the squad — not once a bid is placed. Until then Tanaka is one of the eleven fielded bodies and selling him first drops the fielded eleven, which no value argument justifies. WHY HE IS THE EXIT: ap 53 on p 422, tp 422 over smdc 9 = 47/matchday, the weakest body in the fielded eleven by a wide margin; and he is mvt 2 with tfhmvt -96.940 and sdmvt -2.044.488, so at the measured -2,70% mvt-2 drift he costs roughly -128k every 21:00Z tick he is held. HE IS NOT SOLD ON FITNESS AND NO FUTURE RUN MAY CITE THIS AS A FITNESS OBJECTION: Kickbase 12297 is st 0 with stl [], ph newest-first [21, -24, 113, 48, 4] is five played matchdays out of five, and the standing ledger finding has him fit with 0 minutes missed in 2026/27 for FC SCHALKE 04 (tid 8 — NOT Stuttgart; the os field \"VFB\" is the NEXT OPPONENT). No new dated item found this run; nothing contradicts the 14.11 reading. NOT NEEDED FOR THE UNWIND: the Guirassy sale alone clears the -10.030.813 deficit, so this sale is a pure points upgrade and must never be used as the deficit clear at the cost of firing early.",
+    "why": "REPLACES Sd38rl3, closed this run because its gate named Lee 2476 (taken by Daggi D. at 09:30:51Z) and Johannesson 7219 (now AVOIDed on the median test this run). THE GATE IS THE WHOLE CALL AND IT IS BINDING, and it has moved: fire ONLY once Amiri 1639 is actually IN the squad, which cannot happen before 2026-11-21T02:23Z, i.e. AFTER the MD10 lock. CONSEQUENCE, AND IT IS THE POINT: Tanaka MUST BE FIELDED FOR MD10. Do not sell him before the 2026-11-20T19:30Z lock under any circumstance — after the Guirassy sale the squad is exactly ELEVEN and every one of them is fielded, so selling Tanaka drops it to ten for the -100 penalty. The deadline on this call is deliberately set past MD10 and before the first MD11 fixture (2026-11-27T19:30Z). WHY HE IS STILL THE EXIT once the gate opens: ap 53 on p 422, tp 422 over smdc 9 = 47/matchday, the weakest body in the fielded eleven by a wide margin; ph newest-first [21, -24, 113, 48, 4], median 21. He is mvt 2 with tfhmvt -96.940 and sdmvt -2.044.488, so at the measured -2,70% mvt-2 drift holding him costs roughly 128k per 21:00Z tick. Instant-sell to the Kickbase board at mv, which pays exactly mv with no spread. HE IS NOT BLOCKED ON FITNESS AND NO RUN MAY CITE THIS AS ONE: st 0, stl [], and he is an available fielded body.",
     "tag": "sell"
    }
   ]
  },
  "buy": {
   "recommendation": "act",
-  "reason": "LEE is the one live buy and he expires inside the hour. It is a Kickbase board listing at exactly market value with no offers on it, so the correct bid is exactly mv and the correct response to being outbid is nothing at all. He is a clear upgrade on Tanaka in the one slot that is weak, and he has started seven of nine matchdays. Two honest caveats. First, his market value has turned downward after a poor matchday nine, so he will probably tick down tonight — that is a value cost, not a points cost, and this squad is optimised for points. Second, Bornauw cleared this morning at more than twenty percent over mv, so if this listing is contested we lose it. Losing it is the strategy working, not failing. Nothing else on the board earns a bid: the attacker options are a manager ask twenty percent over mv and a body that fails the starter test outright, both already on the avoid list, and no attacker is needed while 4-5-1 is legal.",
+  "reason": "Amiri is the buy, and he replaces the dead Lee call. He is an ever-present starter who has started every matchday this season, his recent returns are consistent rather than carried by one outlier, and he displaces the weakest man in the eleven for a large per-matchday gain. Bid exactly market value and never raise. The structural point that makes this unusually safe: his listing expires several hours AFTER the lock, so he cannot be fielded this matchday, and equally the purchase cannot touch this matchday's balance. It needs no pre-lock unwind and carries no matchday-zero risk — it is a buy for the matchday after. Nothing expiring before the lock is worth owning: the one cheap midfielder that fits the timing fails the median test, his mean being manufactured by two outliers over three near-zero returns, and he is rotated as well. A dated-source trap was caught on Amiri this run and logged: the top organic hit on his name is a last-season injury story that reads as current, and acting on it would have killed a correct buy.",
   "standing": [
    {
-    "name": "Jae-Sung Lee — bid EXACTLY mv 6.402.547, never raise",
+    "name": "Nadiem Amiri — bid EXACTLY mv 26.953.696, never raise",
     "pos": "MID",
     "club": "18",
-    "ask": 6402547,
-    "mv": 6402547,
+    "ask": 26953696,
+    "mv": 26953696,
     "premium_pct": 0,
     "listing": "Kickbase listing",
-    "why": "PROMOTED FROM WATCH Wdmebsk NOW THAT AOUCHICHE IS GONE. Aouchiche 13448 expired unbought at 2026-11-18T22:46:14Z, so Lee is no longer the cheaper alternative, he is the only live MID upgrade. THE LISTING: Kickbase BOARD listing (no manager u), prc 6.402.547 = mv EXACTLY, ofc 0, st 0, stl [], exs 38732 at the 22:45Z read, i.e. expiry 2026-11-19T09:30:32Z. Bid exactly mv, never raise. THE POINTS CASE: he displaces Tanaka in the fielded eleven. Lee tp 602 over smdc 9 = 67/matchday on ismc 8 of 9; Tanaka tp 422 over 9 = 47/matchday. That is the single largest marginal-points gain available on the board, roughly +20/matchday, and it is measured per MATCHDAY, not per appearance, so it survives the Fabio Gruber test. He is also the MID cover for Gruell (st 2, calf, missing from team training per Kickbase dt 2026-11-18T12:55:22Z). VERIFICATION IS HONEST BUT THINNER THAN BORNAUW'S, RECORD THAT: Kickbase has him st 0 stl [] and ph newest-first [-25, did not play, 149, 112, 6] so he played MD9; ligainsider's Mainz club page last updated 09.11.2026 12:43 carries him in the lineup block with no injury or suspension icon and lists Kohr as Mainz's only absentee. BUT ligainsider's dedicated Lee profile is dated 10.05.2026 and is LAST SEASON — its \"8 appearances, 7 starts\" happens to match this season's smc 7 / ismc 8 and must NOT be cited as current-season confirmation. No dated item from 10.11.2026 or later naming him in an XI was found. CAVEAT ON VALUE, NOT ON POINTS: he is mvt 2 with tfhmvt -87.663, so he bleeds roughly -173k per 21:00Z tick at the measured -2,70% mvt-2 drift. That is a price worth paying for +20/matchday but it means he is a POINTS buy and never a flip. FALLBACK IF LOST: Johannesson 7219, board, prc = mv 4.436.881, expiry 2026-11-20T09:30Z, 61/matchday — unverified on news this run.",
+    "why": "REPLACES THE DEAD LEE CALL B7vroul (Lee taken by Daggi D. at 09:30:51Z). Amiri is now the only genuine MID upgrade on the board and the best one seen this week. THE LISTING: Kickbase BOARD listing, no manager u, prc 26.953.696 = mv EXACTLY, ofc 0, st 0, stl [], mvt 1, exs 142.668 at the 10:45:34Z read, i.e. expiry 2026-11-21T02:23Z. Bid exactly mv, never raise. THE CRITICAL STRUCTURAL FACT, written out so no run mistakes this for an MD10 buy: the listing expires roughly SEVEN HOURS AFTER the MD10 lock (2026-11-20T19:30Z). He therefore CANNOT be fielded in MD10, and equally the purchase CANNOT touch the MD10 balance — it settles after the lock, so this buy needs NO pre-lock unwind and carries ZERO matchday-zero risk. That asymmetry is what makes it the right buy despite the size. THE POINTS CASE: ap 103, tp 923, smc 9 / ismc 9 / smdc 9 — started every single matchday, 891 of 959 possible minutes per ligainsider. ph newest-first [88, 52, 101, 77, 182]: mean 100, median 88, so the mean is NOT carried by one outlier and he passes the median test outright. He displaces Tanaka (tp 422 over smdc 9 = 47/matchday) for a gain of roughly +56 points per matchday from MD11 onward, at a net cost of 26.953.696 - 4.730.879 = 22,2M, i.e. about 397k per point per matchday. FITNESS VERIFIED 19.11: ligainsider's league-wide Verletzte-und-Gesperrte table read this run does NOT list him; the only injury items on his ligainsider profile are 27.10.2026 \"Knieprobleme: Amiri fehlt im Pokal\" and 29.10.2026 \"Amiri bleibt vor Elversberg ein Wackelkandidat\", and BOTH are settled by the record: he started MD9 on 07.11 and his start count is 9 of 9. A profile fitness icon reading \"Fit\" was NOT relied on. AFFORDABILITY AT SETTLEMENT: after SELL Shv9ksp (Guirassy) cash is +23.509.792; Amiri takes it to -3.443.904, which is legal (floor -48.987.304) and is NOT a matchday-zero risk because the first MD11 fixture is 2026-11-27T19:30Z, six days later. Clearing it needs only the gated Tanaka sale.",
     "rank": 1,
-    "trigger": "2026-11-19T09:30:00Z"
+    "trigger": "2026-11-21T02:23:00Z"
    }
   ],
   "killed_this_run": [
    {
-    "name": "SOURCE TRAP 19.11 06:45Z — the \"Lee faellt verletzt aus\" cluster is LAST SEASON and outranks the true story on a plain search",
+    "name": "AVOID SOURCE TRAP 19.11 10:45Z — the Amiri \"Comeback rückt näher\" item is 24.03.2026 and is the TOP organic hit on his name",
     "pos": "MID",
     "club": "18",
     "ask": null,
-    "mv": 6402547,
+    "mv": 26953696,
+    "premium_pct": null,
+    "why": "A new instance of the date-trap class, caught this run on a player the ledger is actively recommending, which is why it is logged rather than discarded. THE TRAP: absolutfussball.com, URL slug \"fsv-mainz-05-nadiem-amiri-comeback-rueckt-naeher-nach-verletzung-star-glaubt-seine-wm-kader-chance\", ranks FIRST on a plain German-language search for Amiri fitness. It reads as a live injury story — adductor problems, a persistent heel injury, four missed Mainz matches, \"zurück in den nächsten Tagen\". It is dated 24.03.2026, 13:20 Uhr, i.e. LAST SEASON, exactly the Jan-May 2026 window STEP 5 warns about. Acting on it would have killed a correct 27M buy. THE CORRECT INSTRUMENT ON THIS PLAYER, recorded so the next run does not repeat the search: his ligainsider profile carries only two genuine current-season fitness items (27.10.2026 \"Knieprobleme: Amiri fehlt im Pokal\" and 29.10.2026 \"Amiri bleibt vor Elversberg ein Wackelkandidat\"), and BOTH are settled by the Kickbase record rather than by another article — smc 9 / ismc 9 / smdc 9 means he started MD9 on 07.11 after the knee scare. A SECOND INSTRUMENT NOTE: the same ligainsider profile simultaneously displayed a \"Fit\" icon while carrying \"angeschlagen\" news items, so the icon and the news disagreed; the start count, not the icon, is what resolved it."
+   },
+   {
+    "name": "Ísak Jóhannesson (7219) — the obvious cheap MID fix after Lee was taken, and he fails the median test",
+    "pos": "MID",
+    "club": "28",
+    "ask": 4436881,
+    "mv": 4436881,
+    "premium_pct": 0,
+    "why": "Written so the next run does not re-promote him. He was named as the fallback inside the old Tanaka gate Sd38rl3 and he looks right on the headline number — Kickbase board listing, no manager u, prc 4.436.881 = mv exactly, ofc 0, st 0, stl [], exs 82.954 at the 10:45Z read (expiry 2026-11-20T09:48Z, roughly ten hours BEFORE the MD10 lock, so the timing works), and ap 61 against Tanaka's 53. HE FAILS ON THREE COUNTS. (1) THE MEDIAN TEST, which is the test this ledger adopted precisely for this shape: ph newest-first [-7, 10, 144, -4, 190] gives a MEDIAN of 10 against Tanaka's median of 21. His ap 61 is manufactured by two outliers (190, 144) sitting on top of three near-zero returns. On the statistic that actually predicts a matchday he is WORSE than the man he would replace. (2) ROTATION: smc 6 of ismc 9 over smdc 9 — he appeared in all nine matchdays but STARTED only six, so roughly a third of his matchdays are cameo minutes. He is tid 28 = 1. FC Köln, not Düsseldorf; do not re-derive that. (3) He is mvt 2 with tfhmvt -73.781, so on the measured -2,70% drift he also loses value while held. He is NOT blocked on fitness and no run may cite this entry as a fitness objection: ligainsider's league-wide Verletzte-und-Gesperrte table read 19.11 does not list him. REVERSAL: a re-based median after MD10 or later that actually beats the median of the man he would displace, plus mvt no longer falling. Cheapness is not a reversal."
+   },
+   {
+    "name": "SOURCE TRAP 19.11 06:45Z — the \"Lee faellt verletzt aus\" cluster is LAST SEASON and outranks the true story on a plain search",
+    "pos": "",
+    "club": null,
+    "ask": null,
+    "mv": null,
     "premium_pct": null,
     "why": "ADDS A NEW DATE-TRAP CLUSTER TO THE LEDGER, on a player this run was actively buying, i.e. the trap sits directly in the decision path. A plain search for \"Jae-Sung Lee Mainz verletzt\" returns, high and above the current material: (1) merkurist.de \"Mainz 05: Lee und Leitsch fallen auf unbestimmte Zeit verletzt aus\" — fetched and dated 09.04.2026 20:22, LAST SEASON; (2) ligainsider \"Lee nach Verletzung zurueck auf dem Feld\" — fetched and dated 10.05.2026 21:15, LAST SEASON, and it is a RETURN item, so it reads as reassuring while being equally stale; (3) mainz05.de servicecenter \"05ER Presseinfo - Jochbeinbruch bei Lee\" and absolutfussball \"Lee fehlt verletzt - droht Saison-Aus\", both undated in the result and therefore to be assumed stale per the standing rule; (4) a flashscore \"Lee mit Muskelverletzung zurueckgekehrt\" item, likewise undated. FIVE items, none current, all of them about a player Kickbase correctly carries at st 0 with an empty stl. THE INSTRUMENT THAT BROKE THE TIE, and the one to reach for first next time: the club's own official matchday lineup page (fcbayern.com's Mainz v Bayern 07.11.2026 Aufstellung) put him in the XI at shirt 7, subbed 63'. An official XI page is dated by the fixture itself and cannot be stale, which makes it strictly better than any news item for the starter test. GENERALISE THIS: when a player's news is a pile of undated or spring-dated injury items, go straight to the last completed matchday's official lineup rather than trying to date the news."
    },
@@ -315,35 +333,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "ADDS TWO TRAPS NOT YET IN THE LEDGER. Both surfaced high in a search for current Guirassy fitness this run and both read as current until the date is checked. (1) fussballtransfers.com/a2886628168433926332-bvb-und-kovac-fitten-guirassy-erneut-fraglich — headline 'Guirassy erneut fraglich' with a Kovac quote 'Es kann sein, dass Serhou ausfaellt'. PUBLISHED 02.10.2025 16:21, updated 03.10.2025 11:00. It concerns a Leipzig fixture, not Gladbach. This is the SAME DOMAIN that carries the genuinely current 17.11.2026 20:18Z item, so domain reputation is NOT a date check — read the stamp every time. (2) flashscore.de '...bundesliga-10-spieltag-aufstellungen-verletzungen-und-sperren...' (nVYTRQC5) — matches MD10 by name and carries no visible publication date; its own meta description reveals 'den 10. Spieltag der Bundesliga 2023/24', three seasons stale. It lists Guirassy as a VfB STUTTGART player, which is the tell, and it lists Deman in a Werder XI against Wolfsburg. The '2006-2026' in its footer is a copyright notice, NOT a date — do not read a footer range as a publication date. ALSO NOTED: bvbwld.de serves both a 2025/11/17 and a 2026/11/17 Guirassy article; the year lives in the URL path, so check the path. The standing rule holds and is re-confirmed: anything dated Jan-May 2026 is LAST SEASON, anything undated is stale until proven otherwise."
-   },
-   {
-    "name": "SOURCE TRAP 17.11 18:45Z — THREE more stale Guirassy \"comeback\" items, one of them naming Gladbach, the real MD10 opponent",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "why": "All three rank highly on a plain German search for Guirassy's current fitness and all three are dead. (1) ligainsider \"Borussia Dortmund: Serhou Guirassy gibt Comeback im BVB-Training\", article 362514, is dated 27.08.2024 11:45 — TWO SEASONS stale, and it concerns the 2024 knee outer-ligament tear, not the current thigh strain. USEFUL GENERAL RULE, worth more than the single entry: ligainsider article IDs increase monotonically with time, so an ID can date an article before fetching it. The known traps are 336044 and 347476 (2023), 362514 (Aug 2024), 402162, 412197 and 415057 (14.07.2026, pre-season); anything below roughly 420000 on this player is older than this season. (2) bundesliga.com \"Serhou Guirassy steps up injury comeback by joining Dortmund training\", article 28667, is dated 28.08.2024 — same 2024 knee episode, and it even mentions a trip to Werder Bremen, which makes it read like current derby-week copy. (3) THE WORST ONE: leinetal24 \"BVB-Aufstellung gegen Gladbach: Vertraut Kovac den Barca-Besiegern?\" (zr-93690707) is dated 21.04.2025 with a first report of 18.04. It names GLADBACH — the actual MD10 opponent on 21.11.2026 — and prints a full predicted XI with Guirassy in it and no fitness concern. A run that takes it as current would read a confirmed, fully fit Guirassy start off an eighteen-month-old page. The Gladbach fixture recurs every season, so a right-opponent/wrong-season hit is the sharpest trap in this family. WHAT ACTUALLY HELD UP THIS RUN: Fruehes-Tor.de 17.11.2026 11:30Z and ruhrnachrichten 17.11.2026 18:35Z. kicker, sport.de, fussballdaten and ligainsider's club pages all returned client errors to the fetcher this run, so a fetch failure is not evidence of anything."
-   },
-   {
-    "name": "Nahuel Noll (2977) — GK upgrade that is real on ap but wrong on every other axis",
-    "pos": "",
-    "club": null,
-    "ask": 18000000,
-    "mv": null,
-    "premium_pct": null,
-    "why": "NEW LISTING 2026-11-17T14:06:11Z, i.e. in the 81 minutes after the 12:45Z run read the market, which is why no earlier run has him — logged so a later run does not re-derive the same dead end. Nahuel Noll, Bayer Leverkusen keeper (tid 29), pos 1, listed by DAVID at prc 18.000.000 against mv 16.214.210, a markup of +11,01%. THE POINTS CASE IS GENUINE AND THAT IS WHY THIS NEEDS LOGGING RATHER THAN IGNORING: ap 127 on p 1145, against Georg's incumbent Zentner (1590) at ap 96 on p 385. That is +31 ap at a position Georg fills with his weakest regular scorer, and it is the single largest per-slot ap gain available anywhere on the current board. IT STILL FAILS, ON FOUR INDEPENDENT GROUNDS, ANY ONE OF WHICH IS SUFFICIENT. (1) PREMIUM AGAINST THE RIGHT BENCHMARK: this is a MANAGER ask, not a board listing, so it benchmarks against the LOW cluster — measured manager-to-manager clears sit at +3,06% and +4,35%, and kb_context reports zero manager asks below mv right now. An ask at +11,01% is roughly triple the low-cluster clear and is not a price to meet. (2) THE FLAG IS AGAINST IT: mvt 2 with tfhmvt -95.546, and the drift re-measured from the event log this run says mvt 2 means n=1122, mean -2,73% at the next update with only 12,9% rising. Paying a markup over mv for an asset the flag says will be worth less tomorrow is paying twice. (3) IT IS NOT THE BINDING GAP. The binding constraint is a -10.030.813 deficit that must reach non-negative by the 2026-11-20T19:30Z lock, and a squad of twelve where the ATT slot goes to ONE body once the Guirassy branch fires. GK is the one position Georg already covers with a fit, unflagged, starting incumbent (Zentner st 0, mvt 1, rising). Spending 18M on a slot that is filled, while the deficit is open, is the textbook case the HOLD instrument Hpk52gt warns about in reverse. (4) THE SELLER. David relists same-day at a markup as a matter of habit — the Rohr entry on the blocked list records exactly this pattern — and he has ALSO just instant-sold Gruber to the board at exactly mv (12:15:04Z today). A manager who takes mv from the board when selling and asks +11% when listing is not a counterparty to meet at the ask. REVERSAL: reconsider ONLY if ALL of (a) the ask comes down to AT OR BELOW mv, (b) the balance is non-negative with genuine spare capacity above the 33% floor, and (c) a dated source shows Zentner has actually lost the Mainz gloves, since the whole +31 ap case assumes Noll keeps starting and Zentner keeps his ap 96 — neither is checked here and the ap gap alone is not a reason."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No flip this run, and for an unusually clean reason. The flip window itself is open — tonight's tick is twelve hours out and the lock is nearly thirty-five — but not one listing on the board qualifies. Six board listings sit at exactly market value on a rising flag, and every single one of them expires AFTER tonight's tick, so winning any of them would buy the player a day too late to capture it. Omari misses by roughly six minutes for the second run running. Lee sits at exactly mv on a board listing but has flipped to a falling flag, so he fails the flip test while remaining the right points buy — the two trades must not be conflated. The edge itself is intact: re-measured from the event log this run, the rising flag still predicts a touch under three percent at the next tick with just over ninety percent of players rising, identical to the last three runs and showing no sign of decay. The instructive event is Bornauw, who was the single qualifier at the last run and was taken at twenty-two and a half percent over market value. Our exactly-mv bid lost him, which is exactly right — one clear at that premium wipes out eight good flips. Rivals continue to flip aggressively and continue to buy players who are flagged unavailable, which for a pure tick trade is correct play, since fitness does not enter the daily tick. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in a single league over a single period and will compress if enough rivals crowd into it.",
+  "reason": "No qualifying flip, for the fifth run running. The flip window is technically open, and seven board listings pass every leg of the test except the last — all of them expire after tonight's value update rather than before it, so none of them captures the tick. Omari is the near miss by a matter of minutes, re-measured independently this run and unchanged from the earlier read. Every manager ask on the board is priced above market value and sub-market arbitrage remains absent. The measured tick edge itself is flat for the fifth consecutive run, with no sign yet of rivals crowding it out. Two open questions remain unresolved and are restated rather than answered: whether Kickbase caps squad size, which would cap flip throughput, and the fact that the edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "One genuine improvement and one standing risk. MUHEIM has been upgraded: the 18.11 injury round-up has him back in full team training with his coach sounding optimistic about the derby. That reverses the call from last night that had both him and Gruell doubtful, which is now closed. Kickbase still carries a doubt flag on him; here the dated club news is the better source, though note that this only works in the direction of clearing a player, never in the direction of ignoring a flag. GRUELL is now the only real fitness exposure in the fielded eleven, and he is an expensive one. His club had him training indoors on 17.11, the 18.11 round-up has him missing training at the start of the week with his availability depending on how the rest of it goes, and his club's own 18.11 squad update names other returnees but not him. His match falls after the lock, so there is no substitution to make inside the window — this is a carry risk to be aware of, not an action. DEMAN is back in training and clear. LEE is clear, and worth saying plainly because the search results are actively misleading: every injury and comeback item on his profile is from April and May of last season, and his profile today shows him fit with no missed minutes.",
+  "sweep": "Grüll is the one fielded fitness risk and he has not improved. A dated report from two days ago has him still training individually indoors with calf trouble and missing the start of derby preparation; his club's sporting director has said publicly that his availability is unresolved. He is in the squad, so a non-appearance costs his slot's points and nothing more — there is no penalty exposure and no pre-lock replacement worth buying, since insuring a high-scoring slot with a journeyman body is not value. Muheim remains upgraded to full team training and is no longer a concern. An instrument warning was logged this run: the league-wide injury table named in the process lists none of the three squad players that Kickbase independently flags as unfit, and carries no last-updated timestamp. Treat it as a positive signal only — a name on it means something, a name missing from it means nothing.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -622,7 +622,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1269, -4,00% to +443,38%"
+   "v": "n=1272, -4,00% to +443,38%"
   }
  ]
 }
