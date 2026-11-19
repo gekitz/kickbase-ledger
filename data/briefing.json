@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-19T16:49Z",
+ "run": "2026-11-19T18:51Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10030813,
   "floor": -48987304,
   "spending_power": 38956491,
-  "hours_to_lock": 26.67,
-  "exposure": "Open and unwound, with the lock now inside the final day. This is the only thing on the page that can cost the entire matchday rather than a few points, and it is fixed by one sale that costs nothing in points. The sale also leaves real spare capacity afterwards, so nothing downstream - the midfield buy, the gated Tanaka exit - is prejudiced by executing it immediately. Execute now, not at the deadline.",
+  "hours_to_lock": 24.63,
+  "exposure": "The leveraged position is OPEN and unchanged since the previous run. The standing instant-sell to the board pays exactly market value with no spread, confirmed repeatedly in the ledger, and the deadline on that call is a backstop set hours before the lock, not a target. Execute it now rather than near the deadline: the market-value tick tonight moves the proceeds, and leaving the unwind to the last run before the lock is how a matchday gets zeroed. Looking past the lock, the Amiri purchase settles after it and re-opens a smaller deficit, which the gated Tanaka sale is sized to clear — that chain is tight and has no slack in it.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Attack, and it is unfixable this matchday. After the sale the side runs one attacker, and every attacker buyable before the lock is either already avoided on merit, flagged unfit, or priced far above market value by a manager who has been sitting on the ask for over a week. The gap is therefore accepted rather than closed: buying a weak body to fill a slot costs points and money at once. The genuine risk this creates is narrow - if the remaining attacker were to go down before the lock there would be no legal shape - and the fresh evidence that he was playing international football days ago makes that risk small enough to carry.",
+ "binding_gap": "The binding constraint is not a position, it is the balance. Until the Guirassy sale settles, the gap is cash and the penalty for leaving it open is the whole matchday. After it settles the formation is forced and there is no gap to fill before the lock — the squad is exactly eleven, the only legal shape is four-five-one, and the real weakness is a probable zero in Grüll's slot that no affordable purchase can sensibly cover.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 38956491,
@@ -51,7 +51,7 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 28,
+  "listings": 30,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
   "expiring_within_2h": 0
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "The leveraged position is STILL OPEN and nothing has been executed.",
-  "headline_short": "The leveraged position is STILL OPEN and nothing has been executed.",
-  "detail": "The leveraged position is STILL OPEN and nothing has been executed. The balance is negative, the standing sale has not fired, and the matchday lock is now inside the final day. A negative balance at matchday start scores ZERO for the entire matchday, so this one action outranks every other line on this page. Sell Guirassy to the Kickbase board and the problem is gone; leave it and the matchday is gone. Nothing found this run changes that conclusion, and one thing that looked like it might - Guirassy's improving fitness - explicitly does not."
+  "headline": "One thing matters this run and it has not been done: the balance is still negative and the matchday lock is a day away.",
+  "headline_short": "One thing matters this run and it has not been done: the balance is st",
+  "detail": "One thing matters this run and it has not been done: the balance is still negative and the matchday lock is a day away. Sell Guirassy to the Kickbase board now. A negative balance at matchday start scores ZERO for the entire matchday, so every point the eleven would earn is at stake on a single click. Guirassy carries an injury flag and is the benched twelfth man, so the sale costs nothing in points — it is pure unwind. Nothing else in this briefing comes close in value."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Guirassy, to the board, now rather than at the deadline. He is benched, so the points cost of selling him is exactly zero whether or not he recovers in time. Selling to the Kickbase board pays market value with no spread - re-confirmed repeatedly in the log - so there is no case for listing him to a manager and hoping. The deadline on the standing call is a backstop sited safely ahead of the lock, not a target; treating it as a target is how a matchday gets lost to a connectivity problem or a distracted evening. The Tanaka sale stays gated and must NOT fire: it is conditional on Amiri actually arriving in the squad, which cannot happen until after the lock, so Tanaka has to be fielded for this matchday.",
+  "reason": "Guirassy, and only Guirassy. Instant-sell to the board, not a manager listing — a manager ask is the seller's choice and may never clear, which is exactly how a previous leveraged position stayed open into a lock. He is flagged injured, he is the benched twelfth man, and selling him costs the fielded eleven nothing. Tanaka remains a recommended sale but is gated and must not be touched before the lock.",
   "standing": [
    {
     "name": "Serhou Guirassy",
@@ -210,7 +210,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Nothing to buy for this matchday. The midfield buy that is live expires after the lock, so it is next matchday's business and not a reason to delay or reshape the sale; it remains worth bidding when the time comes, at the premium already set rather than at market value, for a player starting every available league game. Of the attackers actually purchasable before the lock, every one is already on the avoid list or carries a status flag: the cheap bodies fail the starter test, the one manager ask fails badly on price, and the newest listing this run is both flagged unfit and has no points record at all. The honest answer is that no attacker on this market improves the side, so the single-attacker shape is accepted rather than patched with a body for its own sake. Do not let the negative balance be the reason a buy is refused - it never is; what constrains a buy is whether it can be unwound before the lock.",
+  "reason": "Nothing to buy before the lock. The standing Amiri call remains the right points buy and the right price — a board listing, uncontested, nine starts in nine matchdays, fit — but his listing expires after the lock, so he cannot help this matchday and nothing about him is urgent now. El-Faouzi was the one genuinely new idea this run: a Schalke midfielder on the board at exactly market value, fit, eight starts in nine, and the only body that could settle in time to cover a Grüll zero. He is rejected on arithmetic, not merit. His true per-matchday expectation is well below his headline average, benching Grüll for him gains little if Grüll sits and costs a lot if he plays, and the purchase breaks the Amiri-to-Tanaka unwind chain and forces an extra unplanned sale out of an eleven-man squad. Paying real money and a forced future sale for a handful of expected points is the same mistake the ledger already paid for once.",
   "standing": [
    {
     "name": "Nadiem Amiri — bid 28.000.000 (+3,88% over mv), NOT exactly mv; do not go above 28.240.671",
@@ -339,11 +339,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "No qualifying flip, for the eighth run in a row. The test is a board listing, rising flag, price exactly at market value, and expiry before tonight's value update - and every board listing that meets the first three expires after the update. Omari misses it by five minutes, the same five-minute miss already logged. There are no manager asks below market value at all. The drift itself was re-measured from the event log this run rather than inherited, and it has strengthened rather than decayed: the rising flag now predicts a clearly positive move on roughly four times the earlier sample, with the great majority of cases rising, while the falling flag predicts the mirror image. Rivals crowding in has not yet shown up in the numbers. Two questions remain open and unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the standing caveat that this edge is measured in one league over one period and will decay if the active traders converge on the same listings. Practically, the flip window for this matchday closes tomorrow morning in any case - a flip left open at the lock risks the whole matchday for a few percent.",
+  "reason": "No flip. Every board row was screened against the tick test and none qualifies — the ninth consecutive run with zero candidates. Omari remains the near miss and has narrowed to four minutes: his listing clears just after tonight's tick, so he would be bought at the post-tick value carrying an unknown next flag, which destroys the entire edge, and holding him to the following tick means carrying him through the lock. The filler rows fail on a flat flag whose measured drift is close to nothing. Worth stating plainly: the drift was re-measured from the log this run and is STRONGER than the original calibration on a sample four times the size, with rising values nine times out of ten. The no-trade verdict is an absence of qualifying listings, not a decaying mechanism. Two questions stay open — whether Kickbase caps squad size, which would cap flip throughput, and that this edge is measured in one league over one period and will fade if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Three squad rows carry a status flag. Grüll is the real problem and he got worse, not better: a dated read from yesterday has him still sidelined with the calf, absent from team training, and his availability for Sunday's derby explicitly uncertain. He is fielded and he is one of the two best scorers in the side, and there is still no action available for him - selling him would swap one doubt for another, raise materially less, and leave the midfield buy unfundable. Hold and accept it. Muheim stays green: the withdrawal from international duty was precautionary with no structural damage and he is expected back for the derby, which falls inside this matchday; the flag on his row is stale against the dated source. Guirassy has improved - the coach said yesterday lunchtime that a return is not ruled out, with a decision due today or tomorrow - and it is worth being explicit that this improves his resale value and not his contribution, because he is benched and scores nothing either way.",
+  "sweep": "Grüll is the exposure the squad cannot fix. A source published today, citing Bild, has him missing team training again on Wednesday with the calf problem and his Sunday appearance fading; this matches yesterday's RotoWire line that he has yet to resume team training, and the original report eleven days ago that called him doubtful with an MRI pending. No club has formally ruled him out. The bind is the calendar: Werder play on Sunday, after Friday's lineup lock, so Friday's press conference lands too late to inform the lineup, and with exactly eleven bodies there is no substitute. He is fielded fit or not. Muheim also carries a status flag but is the squad's highest scorer and is unchanged over several runs.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
