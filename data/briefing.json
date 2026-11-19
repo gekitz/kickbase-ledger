@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-18T22:45:00Z",
+ "run": "2026-11-19T00:45:00Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": -10030813,
   "floor": -48987304,
   "spending_power": 38956491,
-  "hours_to_lock": 44.57,
-  "exposure": "The position is leveraged and the lock is inside two days. It is unwound by a single instant sale that is available at any moment and pays exactly market value, so the risk is operational rather than mechanical — it only bites if the sale is forgotten. Place the bids freely: even if every bid recommended here wins, the sale plus the gated midfield exit clears the lot with room to spare and leaves the squad comfortably above the minimum. Any flip must additionally be unwound after tomorrow night's tick and before the lock.",
+  "hours_to_lock": 42.72,
+  "exposure": "The deficit is open and unchanged, and the MD10 lock has not moved. A negative balance at matchday start scores zero for the entire matchday, so this is the one item that outranks everything else on the page. The unwind leg is the Guirassy instant-sell to the Kickbase board, which pays exactly market value with no spread — that call stands and its deadline is a backstop, not a target. Execute it. The outage changes nothing about the risk except that no run can currently confirm it has been cleared: the next run will see the balance only when the login is working again. If Georg clears it manually before then, the ledger will not know until that happens.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no positional hole — the squad fills a legal shape before and after the sale. The binding constraint is the leveraged balance against the lock, and it is cleared in one trade. The second constraint, and the one that actually shapes the buy list, is that there is no bench: two doubtful players worth nearly three hundred points of average between them are fielded with nothing behind them. The buys are cover for that, not luxury upgrades.",
+ "binding_gap": "Unverifiable this run. The binding gap is derived from the squad's position counts against the legal formations, and the squad read failed, so the last measured gap is carried forward rather than recomputed. Treat it as stale until a run with a working login confirms it.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 38956491,
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Sell Guirassy to the Kickbase board now.",
-  "headline_short": "Sell Guirassy to the Kickbase board now.",
-  "detail": "Sell Guirassy to the Kickbase board now. It is an instant trade at exactly market value, it costs nothing in fielded points because he is the one squad member not in the eleven, and it closes the leveraged position outright with the matchday lock inside two days. Everything else this run is downstream of that one click. The second thing to know: the tick landed between the last run and this one, so every price the previous briefing gave you is dead. Three standing instructions all said 'bid exactly market value, never raise' at figures that are now below market value, which would have lost each auction for nothing. They have been re-priced."
+  "headline": "DEGRADED RUN — the Kickbase live data side is dark.",
+  "headline_short": "DEGRADED RUN — the Kickbase live data side is dark.",
+  "detail": "DEGRADED RUN — the Kickbase live data side is dark. Every API read (budget, squad, lineup, market, activity feed, single player, and a raw passthrough request) returned \"Login failed (500)\". Retried once; same error. The fault is at the MCP server's Kickbase login, so it is almost certainly an expired credential rather than a Kickbase outage. The ledger side is healthy — this page and the open calls are current. Nothing below is newly observed: it is the position as the ledger last measured it, carried forward. The leveraged position is still open and the unwind is still the only thing that matters."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Guirassy, instant-sell to the board, now rather than at the backstop. The one argument for waiting is that he is still rising and a later sale would fetch a little more after tomorrow night's tick; set against a matchday that scores zero for everything if the balance is negative when it locks, that extra is not worth tracking, and it buys no points for this matchday because every listing worth having expires before then. Today's Dortmund reporting is the same shape the ledger has now caught five times: a headline promising a return over a body that says individual training and 'remains to be seen'. His club plays after the lock, so you would be fielding him blind. Tanaka is the second sale and it is gated — he goes only once a midfielder is actually in the squad, never before, because he is one of the eleven until then.",
+  "reason": "The unwind sale is unchanged and should be executed now rather than at its deadline. The gated sale behind it remains gated: it fires only once a midfield buy is actually confirmed in the squad, not once a bid is placed — selling first drops the fielded eleven and then blocks the larger sale at ten bodies for the full penalty. No new sale was identified this run and none could be: the squad read is the only source for one and it is dark.",
   "standing": [
    {
     "name": "Serhou Guirassy",
@@ -210,7 +210,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Bornauw first. He is a board listing at exactly market value, he started the last matchday and scored well after returning from the cup injury, and today's dated club reporting calls him an undisputed starter. On paper he is only a small upgrade on ter Horst once you judge him per matchday rather than per appearance, which is the honest measure — but he is being bought as defensive cover, and that is what carries it. Lee second, as the midfield upgrade that Aouchiche was supposed to be before that listing expired unbought tonight. He is the largest marginal gain on the board over Tanaka, measured per matchday, and he covers the doubtful midfield slot. Be straight about the verification: Kickbase has him available and playing, his club's squad page from nine days ago carries him with no status icon, but no current dated lineup names him and his own profile page at the usual source is from last season. He is also falling in value, so he is a points buy and never a flip. Bid exactly market value on both and never raise. Neither needs to wait for the sale to settle — a negative balance costs nothing until the lock, and the instant-sell unwinds it whenever you choose. Everything on manager asks is priced far above the band where manager asks actually clear; none of it is worth a bid.",
+  "reason": "Two buy calls were already open when this run started, both board listings to be bid at exactly market value with no raise, and both expiring this morning. Neither could be verified: the market read is dark, so there is no way to confirm the listings are still live, still uncontested, or still at market value after the overnight tick. They are left open rather than reconciled. If Georg acts on either, the rule is unchanged — bid exactly market value, never raise; roughly half of measured board clears land at or below market value, and the ones that are lost cost nothing. No new candidate was shortlisted, because shortlisting requires the market listing feed.",
   "standing": [
    {
     "name": "Jae-Sung Lee — bid EXACTLY mv 6.402.547, never raise",
@@ -351,11 +351,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "Two board listings qualify, which is the first time in weeks there has been more than one. The reason is tick phase, not a change in the market: this run sits shortly after a tick with the next one nearly a day away, so listings have time to expire inside the window, and you must own the player when the tick lands. Wolfe ranks first on stake, Chiarodia second. Both are board listings at exactly market value with the rising flag, both expire well before tomorrow night's tick. Bid exactly market value and never raise — losing costs nothing, and a single contested clear in the high cluster erases ten good flips. Neither needs a fitness check, because fitness does not enter the market-value tick; the transfer check passes trivially with no window open before January. Both must be sold back after the tick and before the lock. Omari would have been the best-signalled flip on the board and misses by about five minutes: his listing expires just after the tick, so winning it captures nothing. The drift was re-measured this run and has not decayed. What has changed is visible competition — the feed shows the league's most active managers dumping twenty bodies back to the board within half an hour of tonight's tick, which is this exact trade being unwound at scale. Two things remain unresolved and should stay on the record: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals keep crowding in.",
+  "reason": "No flip was measured or re-measured this run. Two flip calls were already open, both board listings at exactly market value on a rising tick flag, and both expire this morning — the earlier of the two within two hours of this run. Neither could be confirmed live. The tick drift could not be re-measured either: that query runs against the event log through the Cloudflare D1 connector, whose sign-in has lapsed, so the standing figures in the ledger are carried forward unverified rather than refreshed. Two open questions remain unresolved and should be stated again: whether Kickbase caps squad size, which would cap flip throughput; and that the measured rising-tick edge comes from one league over one period and will decay if rivals crowd into it. Rivals in this league already flip the daily tick constantly, including on injured and unavailable players, which for a pure value flip is correct — fitness does not enter the market value tick.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Both of the two highest-scoring players in the squad are flagged. Muheim is on individual training with muscular problems, confirmed by the club status today and by dated reporting today that lists him among the derby question marks. Gruell is missing from team training with a calf problem, with the coach's update and an MRI behind it. This reverses what the last run concluded — it said Muheim was no longer the one to worry about, and that is wrong on today's data; both are doubtful. Both clubs play after the lock, so there will be no confirmed lineup before you have to commit. Guirassy remains flagged and the return talk is still speculation, not confirmation.",
+  "sweep": "No fitness sweep was possible against the squad, because the squad read is dark and there is nothing to sweep. Web checks were run on the two open buy targets only. The defender's November club reporting has him returning from the cup-match facial injury — partly training with the team, partly in rehab as of early November, with no promised comeback date — and the ledger's own read on the eighteenth already carried him with a clear status flag. The midfielder's club profile page is dominated by last-season injury items dating from April and May, which are the standard date trap and say nothing about now; his season participation looks like a regular starter's. Neither check is strong enough to add anything to the calls as written, and neither contradicts them.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
