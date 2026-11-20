@@ -1,12 +1,12 @@
 {
  "schema": 1,
- "run": "2026-11-20T18:50Z",
+ "run": "2026-11-20T20:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
-  "number": 10,
-  "locks": "2026-11-20T19:30:00Z",
-  "played": 9
+  "number": 11,
+  "locks": "2026-11-27T19:30:00Z",
+  "played": 10
  },
  "cash": 9545992,
  "squad_value": 139049467,
@@ -14,9 +14,9 @@
   "balance": 9545992,
   "floor": -49036501,
   "spending_power": 58582493,
-  "hours_to_lock": 0.65,
-  "exposure": "None. The balance is comfortably positive going into the lock, so there is no leveraged position to unwind and no risk of the zero-score penalty that a negative balance at matchday start would trigger. Spending power is large and entirely unused. The only exposure that matters is sporting rather than financial: a meaningful share of team value sits in a striker who may not start, and that cannot be hedged before the lock.",
-  "must_restore_by": "2026-11-20T19:30:00Z"
+  "hours_to_lock": 166.63,
+  "exposure": "No leverage is open and none is recommended. The balance is positive, nothing is bid, and no position needs unwinding before the next lock. The only exposure is the locked striker slot described above, which is a points risk rather than a balance risk and has no remedy now that the matchday has started. The reason the headline buy was rejected is precisely that it would have opened leverage the squad has no legal way to unwind — at exactly eleven players, every sale that could fund it either breaks the formation or sells a better player to buy a worse one.",
+  "must_restore_by": "2026-11-27T19:30:00Z"
  },
  "counts": {
   "gk": 1,
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Depth, not quality. Nothing in the eleven needs replacing on form; what is missing is a twelfth player of any kind. The side can field exactly one legal formation and no other, which means a single injury or suspension forces a scramble rather than a substitution. With the attack already carrying a doubt and only two strikers on the books, a forward is the natural first addition once the market reopens.",
+ "binding_gap": "A twelfth body, and specifically a third attacker. Attack is the thinnest position on the pitch and it is also the position carrying the fitness doubt, so the cover is needed exactly where there is none. The gap is not urgent tonight because the lock is a week away, but it is the precondition for everything else: until a twelfth player lands, no sale is legal, which means the weakest asset in the squad cannot be moved and the squad cannot be improved. Nothing on tonight's board fills the gap well — the attackers on offer are either low-average rotation players or floor-priced bodies with no minutes.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 58582493,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 26,
+  "listings": 23,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -169,21 +169,40 @@
   }
  ],
  "verdict": {
-  "action": "none",
-  "headline": "No action.",
-  "headline_short": "No action.",
-  "detail": "No action. The matchday is mechanically forced and this run confirms it independently: the squad is exactly eleven, all eleven are placed in a legal 4-4-2, and the balance is positive after the Grüll sale cleared the long-running deficit. A sale would drop the side below eleven and take the penalty; the only board listing that resolves before the lock is a floor-priced defender with no scoring record who cannot improve on any slot. Field as placed and accept the variance. The next run, after the lock and before the evening tick, is the one with decisions in it."
+  "action": "act",
+  "headline": "No action tonight, and that is the correct call rather than a quiet-market shrug.",
+  "headline_short": "No action tonight, and that is the correct call rather than a quiet-ma",
+  "detail": "No action tonight, and that is the correct call rather than a quiet-market shrug. MD10 is already locked and in play, so nothing about this weekend can be changed any more. MD11 does not lock for another week, so nothing needs deciding in a hurry either. The one thing that genuinely matters is structural and it carries into next week: the squad is at the bare minimum with no bench at all, and the striker who was left in the locked eleven is carrying a thigh strain. Hold, let the tick pass, and re-look on the next run."
  },
  "sell": {
-  "recommendation": "none",
-  "reason": "Nothing. With a squad of exactly eleven, every sale before the lock costs the penalty for fielding an incomplete side. There is no open sell call in the ledger and none is warranted. This was verified against the calls table directly, not against the truncated render, so the no-action verdict is not an artefact of a hidden standing sale.",
-  "standing": []
+  "recommendation": "act",
+  "reason": "One standing sell, correctly blocked for now. The weakest asset in the squad is the Schalke midfielder: lowest average of the eleven, the steepest seven-day value decline Georg owns, and a recent return line carried almost entirely by a single spike. He also has an Asian Cup absence projected against the mid-season matchdays, so he is a depreciating asset who will then be unavailable. He is the right funding leg and he must NOT be sold yet: at exactly eleven players, selling him leaves ten and concedes the under-eleven penalty at the next lock. The twelfth body has to land first. When the sale does happen it should go to the board at market value rather than as a manager ask, because the board pays market value with no spread and an ask would only sit unsold while the value keeps sliding.",
+  "standing": [
+   {
+    "name": "Tanaka",
+    "pos": "MID",
+    "club": "8",
+    "mv": 4659611,
+    "ap": 53,
+    "why": "TANAKA IS THE SQUAD'S WEAKEST ASSET AND THE CORRECT FUNDING LEG — BUT HE MUST NOT BE SOLD UNTIL A 12th BODY LANDS. Georg holds EXACTLY 11 (1 GK / 4 DEF / 4 MID / 2 ATT, legal 4-4-2, zero bench), so selling anyone right now leaves 10 and walks into the -100 penalty at the MD11 lock. NAMED PRECONDITION: a 12th outfield player — ideally a THIRD ATTACKER, since ATT is the thin position and Guirassy is the flagged one — must be bought BEFORE this sale is placed. Why Tanaka is the leg: lowest average in the squad at ap 53 (next worst is Wolf 82); mvt 2 falling with sdmvt -1.784.816 over seven days, the steepest decliner Georg owns; recent returns 21, -24, 113, 48, 4, i.e. one spike carrying the mean. Forward-looking kill: open call Wayzai1 has him at the Asian Cup, projected to miss MD15-20 (dated 18.09.2026) — he is a depreciating asset who will also be absent. Sell him at mv to the board (the board pays exactly mv, no spread) rather than asking a premium; the ask would only stall while the mv keeps falling. Deadline is the MD11 lock.",
+    "tag": "sell"
+   }
+  ]
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing before the lock. Of everything on the board, only one listing resolves in time, and he is a floor-priced defender with no scoring record — strictly worse than any player already placed. The attackers available are all far below the squad's existing strikers on season average, and in any case none of their listings expire before the lock. The one manager ask on a forward carries a premium far outside the band that manager-to-manager trades have historically cleared at, for a player with a weak average. After the lock, adding a twelfth body is the sensible use of idle capacity, and that is where the next run should shortlist properly with a fitness check behind it.",
+  "reason": "Nothing to buy tonight. The board is thin and mostly the wrong side of the market: the majority of listings are falling in value, and most of what is left is floor-priced players with no minutes. Two listings that look buyable on their averages are flagged unfit in the data and are excluded. The one genuine points asset is the Mainz number ten — his average is real, confirmed by news showing him starting every league game this season and his only injury note three weeks stale with no follow-up — and he is still not a buy. He is killed on the unwind ceiling, not on quality: at his price he opens a leveraged position that the squad cannot unwind without either breaking the eleven or selling the best scorer to buy a worse one. On top of that he sits in the high-average cohort where a bid at market value is measured to lose most of the time, so the disciplined bid probably does not even win, and chasing him into the contested range would make the unwind problem worse. Logged as a watch, not a buy. The cheap defender sitting at the price floor with a flattering average is the classic trap and has been logged as an avoid: dated news has him absent since early November with a thigh muscle problem and barely any minutes all season, so the average is cameo noise.",
   "standing": [],
   "killed_this_run": [
+   {
+    "name": "Finkgräfe",
+    "pos": "DEF",
+    "club": "43",
+    "ask": 500000,
+    "mv": 500000,
+    "premium_pct": 0,
+    "why": "THE 500k/ap-63 TRAP, CONFIRMED BY DATED NEWS. Finkgräfe sits on the board at the 500.000 floor with ap 63, which reads as free points for a bench body. It is not. LigaInsider (fetched 20.11.2026) carries an \"Angeschlagen / Muskuläre Probleme Oberschenkel – Fehlt seit 2 Wochen und 3 Tagen\" banner, i.e. out since roughly 03.11.2026, and the only November news item is 03.11.2026 17:50 \"Finkgräfe verpasst Duell mit Manchester City\". Season record 2026/27: 4 appearances, 1 start, 174 minutes played against 685 minutes on the bench. The ap 63 is a cameo average off almost no minutes — the exact reverse trap STEP 5 warns about. Everything else dated on his page (Startelfgarantie, Debüt, voll einsatzbereit) is Feb-May 2026 and therefore LAST SEASON. Note the other floor-priced bodies on tonight's board are no better: Michel ap 35, Bachmann ap 29, Lippmann ap 5, Stange ap 3."
+   },
    {
     "name": "SOURCE TRAP — the Ligainsider \"10. Spieltag last minute update\" article (id 404384) is LAST SEASON, byline 07.11.25. Do not use it for 26/27 MD10.",
     "pos": "",
@@ -282,26 +301,17 @@
     "mv": 539743,
     "premium_pct": 14.34,
     "why": "Listed to the Kickbase board at 2026-11-19T14:12:45Z, i.e. AFTER the 12:45Z run, so no previous run has seen him. He is the FIFTH instance of the cheap-attacker trap class after Pieringer (Axc17fh), Königsdörffer (Ann95oy), Moerstedt (Aiginon) and Ache (Ad44wxx), and he is logged because W0xqkkr correctly warns that a run reading \"Gregoritsch is the only attacker\" will go looking for an ATT body. He fails on all four tests at once, which is why this entry is short: (1) TIMING — exs 154.907 at the 14:45Z read, i.e. expiry 2026-11-21T09:46Z, more than FOURTEEN HOURS AFTER the 2026-11-20T19:30Z MD10 lock, so he cannot be fielded for MD10 under any circumstance; (2) POINTS — ap 9 on tp 60 across nine matchdays, the lowest ap of any priced row on the board, against Gregoritsch's 108; (3) VALUE — mvt 2 with tfhmvt -95.045, against a measured mvt-2 drift of -2,70% per tick with only 12,9% rising, so he is not a flip either; (4) STRUCTURE — buying him makes the squad twelve with him benched and scoring nothing, which is the Whbeonu non-trade. No news check was run on him and none is needed: no dated source could repair ap 9 on a post-lock expiry. Do not re-screen him."
-   },
-   {
-    "name": "Ransford Königsdörffer — the NEW cheap ATT body listed this run, and he cannot help MD10 at all",
-    "pos": "ATT",
-    "club": "18",
-    "ask": 2950161,
-    "mv": 2845639,
-    "premium_pct": 3.67,
-    "why": "Listed to the board at 2026-11-19T11:53:59Z, i.e. AFTER the 10:45Z run, so no previous run has seen him. He is the fourth instance of the same trap class as Moerstedt (Aiginon) and Ache (Ad44wxx): a cheap attacker that looks like the obvious answer to \"Gregoritsch is the only striker after the Guirassy sale\". He fails on three independent grounds, any one of which is sufficient. (1) TIMING, and this one is decisive: exs 139172 puts his expiry at 2026-11-21T03:24Z, which is AFTER the 2026-11-20T19:30Z MD10 lock, so he physically cannot be in the squad for this matchday and buying him does nothing about the thing he appears to fix. (2) POINTS: ap 28 against Gregoritsch's 108, so he would be a bench body scoring zero, and a bench body is NOT insurance in Kickbase — there is no auto-substitution, so an unused attacker prevents no penalty. (3) VALUE: mvt 2 with tfhmvt -174.577, so on the measured mvt-2 drift (n=1156, mean -2,70%, only 12,9% rose) he is expected to LOSE value at the next tick; he is not even a flip. Note separately that the formation is NOT at risk: after the Guirassy sale the squad is 1 GK / 4 DEF / 5 MID / 1 ATT, which fills 4-5-1 exactly, so there is no -100 exposure to buy insurance against while Gregoritsch is owned and placed."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
-  "window": "closed",
-  "reason": "Flip window closed — the matchday locks within the hour, and a flip left open across the lock risks the whole matchday. The drift was nevertheless re-measured from the event log this run rather than inherited, and it has not decayed: the rising-flag cohort still predicts a clear positive move at the next update on a large sample, essentially unchanged from the measurement logged earlier today and stronger than the original baseline. No crowding-in is visible yet. The window reopens once the lock passes and well before the evening tick, so the next run can act on it with the full board in front of it. The two open questions stand unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
+  "window": "open",
+  "reason": "The flip window is open — the next lock is a week away, so there is no matchday risk in holding a flip — but there is not a single qualifying candidate right now, for a purely mechanical reason worth stating plainly. A rising-value flag predicts the NEXT daily tick only, so a listing has to resolve BEFORE that tick to capture it. This run landed barely a quarter of an hour before tonight's tick, and every rising listing on the board expires after it — the closest misses by under twenty minutes. The one listing that did resolve before the tick was falling, which is the wrong side of the trade. So all of them are deferred rather than disqualified: they re-base at the tick and have to be re-judged on their fresh flag, at the new market value, which is also the bid. The next run is the first post-tick look and is where they get ranked. When they are ranked it should be by cohort win probability rather than by size — the low-average listings are where a bid at market value actually wins, the high-average ones are where it reliably loses. The edge itself was re-measured from the event log this run and it has NOT decayed; if anything it is the strongest and most consistent reading the ledger has taken. One correction belongs on the record: the measurement SQL in the standing instructions buckets the day around the old tick time, which has since moved an hour with the European clock change. Measured on the stale boundary the figure reproduces exactly what the context block prints, which means the context block is using the stale boundary too. Measured on the corrected boundary across all history it appears to collapse, but that is an artifact of mixing the two regimes. Measured on the corrected boundary over the period where the new tick time was actually in force, it is higher than ever and the hit rate is near total with a shallow worst case. Future runs should use the corrected boundary restricted to the current regime. The two open questions still stand and neither has been resolved: whether Kickbase caps squad size, which would cap how many flips can be run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in. Rivals here do flip the daily tick constantly, including on injured players, which for a pure value flip is correct — fitness does not enter the tick.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "One live concern, and it is a downgrade on what the last run reported. The senior striker is flagged angeschlagen with a named strain, not the clean toss-up he was previously described as. One current dated preview puts a different forward in the probable eleven with him only bracketed behind, and a club page updated after the previous run carries the doubtful marker alongside a headline saying his involvement will be decided at short notice. Crucially, his fixture is not tonight's game but the following afternoon, so the team news will not exist until roughly nineteen hours after the lock. No run can resolve this in time and none should try. Every other player in the side is clear of flags. A new and well-disguised date trap was logged: a major outlet's match page for this fixture carries today's date in its metadata while the body is last season's match report, in which the same striker started — it would read as confirmation of tonight's eleven and is worthless.",
+  "sweep": "The striker left in the locked eleven is the exposure, and it cannot be acted on. He picked up a thigh strain in early November, missed the following league game and did not travel with his national team. His coach, speaking two days ago, explicitly refused to call it either way — he said an appearance is not ruled out, but equally it is not ruled out that they cannot play. A newer read from yesterday evening is worse than that and has the club's probable eleven listing someone else in his place. His fixture is Saturday afternoon, not tonight. With the lineup locked and no bench, if he does not play that slot simply scores nothing and there is no remedy. Georg was already told this before the lock; this run confirms it rather than revealing it. Nobody else in the squad carries a fitness flag. Two players on the market board are flagged unfit and have been excluded from the buy list on that basis.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -555,10 +565,10 @@
    "reversal": "Do NOT buy him back before the 2026-11-20T19:30Z MD10 lock under any circumstances — a re-buy at ~33,5M re-opens the exact leveraged position the sale closes, and at squad 11 it is also the only body the eleven cannot spare. After that lock, reverse ONLY if ALL FOUR hold: (a) Kickbase row 1920 returns to st 0 with stl empty; (b) a DATED current-season source, 21.11.2026 or later, shows him in FULL team training or actually starting a Bundesliga match — not a \"nur eine Zerrung\" quote, not an individual session, and nothing from the known stale clusters (ligainsider 415057 is 14.07.2026, yahoo \"limps out of training\" is 14.04.2026, comunio Gladbach-BVB preview is 05.12.2024, fussballtransfers \"Guirassy erneut fraglich\" is 02.10.2025); (c) the ask is AT OR BELOW mv, since the board sale paid exactly mv and buying back above it is a guaranteed loss; (d) the balance is non-negative WITHOUT needing his re-sale, and his re-based ap still clears the marginal-points test against the attacker he would displace."
   },
   {
-   "name": "Marco Grüll",
+   "name": "Grüll",
    "status": "7721",
-   "why": "SOLD to the Kickbase board 2026-11-20T16:21:59Z for 19.566.805, which is EXACTLY mv (board-pays-mv re-confirmed, feed t=15/t=2). This was THE unwind: it cleared the -10.030.813 deficit that had stood unchanged to the euro across nine consecutive runs, and it did so 3h09 before the MD10 lock. The sale displaced the planned Guirassy leg (SELL Shv9ksp) and was the better leg on merit as well as on timing: Guirassy stays as the second striker and the squad holds a legal 4-4-2 at exactly eleven. THE SALE IS ALSO VINDICATED BY DATED NEWS, which no future run should re-litigate: ComunioMagazin 19.11.2026 lists him under \"Diese Spieler sind angeschlagen\" with \"muskuläre Probleme in der Wade\" and notes \"Sollte Grüll ausfallen, dürfte Njinmah starten\"; Deichstube carries a 20.11.2026 17:00 stamp with the headline \"Werder ohne Weiser und Grüll gegen HSV?\". He was sold AT FULL mv while carrying a live doubt for Sunday's Nordderby — the best possible execution. He is NOT blocked on merit and no future run may cite this entry as a permanent fitness objection.",
-   "reversal": "Re-buy only if ALL FOUR hold: (a) a dated source confirms he has STARTED a competitive match after the 22.11 Nordderby, not merely returned to training or come on as a substitute; (b) the ask is AT OR BELOW mv, since the board paid exactly mv on the way out and buying back above it is a guaranteed loss; (c) the squad is at TWELVE or more, or the purchase is a net addition that does not require a sale — at eleven a re-buy funded by a sale drops the fielded eleven to ten for the -100 penalty; and (d) the balance stays non-negative, or any deficit it opens can be unwound to non-negative AND >= 11 players before the next matchday lock (MD11 locks 2026-11-29T18:30:00Z per mdsum)."
+   "why": "Sold to the board by Georg 2026-11-20T16:21:59Z for 19.566.805 as the MD10 sale leg (call Wi3rc3b, now executed). The sale was deliberate: it funded the balance into MD10 and the squad was fielded at exactly 11. Do not re-buy him on a later run just because he shows a rising mv.",
+   "reversal": "Reverse only if (a) Georg's squad is back above 12 players so a Werder attacker is not a forced starter, AND (b) dated news in the current period confirms him starting, AND (c) he is available at or below mv on a Kickbase listing (not a manager ask)."
   }
  ],
  "arithmetic": [
