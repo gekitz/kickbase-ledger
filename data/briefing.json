@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-20T16:53Z",
+ "run": "2026-11-20T18:50Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 9545992,
   "floor": -49036501,
   "spending_power": 58582493,
-  "hours_to_lock": 2.61,
-  "exposure": "Cleared. The balance is positive for the first time in nine runs and there is no leveraged position open going into the lock. The sale that closed it landed with hours to spare rather than minutes, which is a better margin than the last several matchdays managed. Nothing this run recommends would re-open a deficit, and the one purchase that would have done so has been reversed and logged as an avoid. The next exposure risk is not tonight but MD11, and only if a large purchase is made without a confirmed unwind.",
+  "hours_to_lock": 0.65,
+  "exposure": "None. The balance is comfortably positive going into the lock, so there is no leveraged position to unwind and no risk of the zero-score penalty that a negative balance at matchday start would trigger. Spending power is large and entirely unused. The only exposure that matters is sporting rather than financial: a meaningful share of team value sits in a striker who may not start, and that cannot be hedged before the lock.",
   "must_restore_by": "2026-11-20T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no binding gap before the lock, because there is no gap that can be filled. The squad covers every slot its formation requires and has nothing spare. The gap that binds is a timing one rather than a positional one: no listing resolves early enough to change anything, so the striker risk cannot be hedged this matchday at any price. After the lock the real gap is depth - a twelfth body, bought as a net addition that needs no sale, which then unlocks the sale of the weakest midfielder without dropping below eleven. Several floor-priced bodies are available for that over the coming days and one of them carries a respectable average for the same money, so there is no reason to rush it tonight.",
+ "binding_gap": "Depth, not quality. Nothing in the eleven needs replacing on form; what is missing is a twelfth player of any kind. The side can field exactly one legal formation and no other, which means a single injury or suspension forces a scramble rather than a substitution. With the attack already carrying a doubt and only two strikers on the books, a forward is the natural first addition once the market reopens.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 58582493,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 31,
+  "listings": 26,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -170,18 +170,18 @@
  ],
  "verdict": {
   "action": "none",
-  "headline": "No action before the MD10 lock, and that is a conclusion rather than a shrug.",
-  "headline_short": "No action before the MD10 lock, and that is a conclusion rather than a",
-  "detail": "No action before the MD10 lock, and that is a conclusion rather than a shrug. The Gruell sale went through this afternoon and cleared the deficit that had stood unchanged across nine consecutive runs, so the leveraged position Georg has been carrying for days is closed. What is left is a squad of exactly eleven in the only legal shape it can take, which means the lineup has no degrees of freedom at all. Every board listing on the market expires after the lock except one, and that one is a floor-priced defender with no scoring appearances who could not enter the eleven on any reading. There is nothing to buy, nothing to sell, and nothing to rearrange. The next real decision point is after the lock, for MD11."
+  "headline": "No action.",
+  "headline_short": "No action.",
+  "detail": "No action. The matchday is mechanically forced and this run confirms it independently: the squad is exactly eleven, all eleven are placed in a legal 4-4-2, and the balance is positive after the Grüll sale cleared the long-running deficit. A sale would drop the side below eleven and take the penalty; the only board listing that resolves before the lock is a floor-priced defender with no scoring record who cannot improve on any slot. Field as placed and accept the variance. The next run, after the lock and before the evening tick, is the one with decisions in it."
  },
  "sell": {
   "recommendation": "none",
-  "reason": "No sale is recommended, and no sale is possible without cost. With the squad at exactly eleven, any sale at all drops the fielded side to ten and takes the flat penalty, which dwarfs anything a sale could recover. This holds regardless of merit: the usual candidate on points-per-euro grounds is unsellable today for purely structural reasons. Revisit after the lock, and only once a twelfth body is confirmed in the squad.",
+  "reason": "Nothing. With a squad of exactly eleven, every sale before the lock costs the penalty for fielding an incomplete side. There is no open sell call in the ledger and none is warranted. This was verified against the calls table directly, not against the truncated render, so the no-action verdict is not an artefact of a hidden standing sale.",
   "standing": []
  },
  "buy": {
   "recommendation": "none",
-  "reason": "Nothing to buy before the lock, and one previous recommendation is reversed. The standing chain that had Georg bidding on Amiri is closed and he is now logged as an avoid. The reversal is on value, not on merit: his points average is real and he is a genuine starter, but the price per point of average is the same figure the ledger itself calls the worst value in the squad, and he would displace the weakest midfielder rather than fill a hole. Worse, the purchase opens a deficit that no single sale unwinds without stripping out a midfielder of almost identical value, so the whole trade nets a handful of points for a large amount of destroyed capital. The contested-listing band makes it worse rather than better, since winning would require bidding well above the asking price. Do not bid. The attacking cover that would actually matter does not exist on this board: the available strikers are a cameo-trap average on a single appearance, a falling-value backup, and a manager ask at more than double market value for a player who barely plays.",
+  "reason": "Nothing before the lock. Of everything on the board, only one listing resolves in time, and he is a floor-priced defender with no scoring record — strictly worse than any player already placed. The attackers available are all far below the squad's existing strikers on season average, and in any case none of their listings expire before the lock. The one manager ask on a forward carries a premium far outside the band that manager-to-manager trades have historically cleared at, for a player with a weak average. After the lock, adding a twelfth body is the sensible use of idle capacity, and that is where the next run should shortlist properly with a fitness check behind it.",
   "standing": [],
   "killed_this_run": [
    {
@@ -297,11 +297,11 @@
  "movers": {
   "recommendation": "none",
   "window": "closed",
-  "reason": "Flip window closed - the matchday locks in under twelve hours, and a flip left open at the lock risks the whole matchday. The edge itself was re-measured from the event log this run and has not decayed; if anything it has strengthened, on a sample roughly four times larger than the September baseline, with the falling-value flag mirroring it almost exactly in the opposite direction. Two open questions stay open and are restated deliberately: whether Kickbase caps squad size, which would cap how many flips can be run at once, and the fact that this edge is measured in one league over one period and can still decay if rivals crowd in. On that second point, rivals are visibly already here. Four separate round trips were logged today in which managers bought from the board below market value and sold back at market value within minutes, one of them on a striker who is injured until December. That is riskless and it confirms the mechanism rather than threatening it, but it is worth watching.",
+  "reason": "Flip window closed — the matchday locks within the hour, and a flip left open across the lock risks the whole matchday. The drift was nevertheless re-measured from the event log this run rather than inherited, and it has not decayed: the rising-flag cohort still predicts a clear positive move at the next update on a large sample, essentially unchanged from the measurement logged earlier today and stronger than the original baseline. No crowding-in is visible yet. The window reopens once the lock passes and well before the evening tick, so the next run can act on it with the full board in front of it. The two open questions stand unresolved: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Two reversals and one genuine unknown. Muheim is cleared and is no longer a doubt: his coach stated outright on Friday that he is available with no restrictions, after muscular trouble withdrew him from international duty. That overrides the previous day's doubt flag and it matters, because he is comfortably the best scorer in the squad. Deman is also in the published probable eleven for the derby and appears on neither the absentee nor the knock list, which resolves the limited-training note carried against him earlier in the week. Guirassy is the unknown and stays unknown. Dortmund's own site counts him among four question marks for the Saturday afternoon trip to Gladbach; the coach declined to put a number on it and said only that nothing is ruled out either way. He picked up a thigh strain in Europe, missed the last league game and has been training on his own. He is fielded because there is no alternative and because even at even odds he is worth more than anything available to replace him. A separate point worth recording: a prominent lineup-preview page that reads as current is in fact twelve months old, and it has been logged as a trap so no future run wastes a check on it.",
+  "sweep": "One live concern, and it is a downgrade on what the last run reported. The senior striker is flagged angeschlagen with a named strain, not the clean toss-up he was previously described as. One current dated preview puts a different forward in the probable eleven with him only bracketed behind, and a club page updated after the previous run carries the doubtful marker alongside a headline saying his involvement will be decided at short notice. Crucially, his fixture is not tonight's game but the following afternoon, so the team news will not exist until roughly nineteen hours after the lock. No run can resolve this in time and none should try. Every other player in the side is clear of flags. A new and well-disguised date trap was logged: a major outlet's match page for this fixture carries today's date in its metadata while the body is last season's match report, in which the same striker started — it would read as confirmation of tonight's eleven and is worthless.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
