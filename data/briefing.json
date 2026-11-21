@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-21T14:54Z",
+ "run": "2026-11-21T16:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 4915992,
   "floor": -49153064,
   "spending_power": 54069056,
-  "hours_to_lock": 148.59,
-  "exposure": "Balance is positive going into this run and no leveraged position is open. The recommended flip would open one, deliberately, with six days of slack before the lock and a single sale back to the board sufficient to close it in full. That is the designed trade, not a risk being run. The rule that outranks everything else still binds: a negative balance when the matchday starts scores zero for the whole matchday, so whatever is open must be closed before the lock. Nothing currently threatens that.",
+  "hours_to_lock": 146.62,
+  "exposure": "No leveraged position. The balance is positive, spending power is ample, and the recommended buy would not open a deficit. The matchday lock is still many days out, so every position taken this run can be unwound without pressure. Squad size would stay well inside the apparent cap.",
   "must_restore_by": "2026-11-27T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no structural gap. All legal formations are fillable and the squad sits one above the eleven-man penalty floor. The gap that actually binds is availability rather than composition: one attacking slot is occupied by an injured player, and the only cover for it is the twelfth man.",
+ "binding_gap": "There is no formation hole. The gap that binds is a quality gap rather than a positional one — the weakest fielded midfielder is both the lowest scorer in the eleven and the only squad member on a falling value flag. The buy addresses that gap as an option rather than a commitment, deliberately leaving the swap itself for a later run once selection is confirmed.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 54069056,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 21,
+  "listings": 22,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 0
  },
  "squad": [
   {
@@ -88,16 +88,6 @@
    "tag": "keep"
   },
   {
-   "name": "Petkov",
-   "pos": "MID",
-   "club": "77",
-   "mv": 12798993,
-   "ap": 98,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
    "name": "Burger",
    "pos": "MID",
    "club": "14",
@@ -118,11 +108,21 @@
    "tag": "keep"
   },
   {
+   "name": "Petkov",
+   "pos": "MID",
+   "club": "77",
+   "mv": 12798993,
+   "ap": 94,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
    "name": "Hansen",
    "pos": "DEF",
    "club": "29",
    "mv": 9600133,
-   "ap": 88,
+   "ap": 85,
    "state": "clear",
    "note": "",
    "tag": "keep"
@@ -152,7 +152,7 @@
    "pos": "DEF",
    "club": "29",
    "mv": 5586403,
-   "ap": 77,
+   "ap": 70,
    "state": "clear",
    "note": "",
    "tag": "keep"
@@ -179,20 +179,33 @@
   }
  ],
  "verdict": {
-  "action": "none",
-  "headline": "Quiet on points, one clock running on value.",
-  "headline_short": "Quiet on points, one clock running on value.",
-  "detail": "Quiet on points, one clock running on value. No buy and no sale is worth making: the board's best outfield body is well below every player already in the fielded eleven, and the only squad member with a case for selling is also the one whose sale would cost fielded points with nothing to replace him. The single action with a deadline is the Schwäbe flip, which expires at 15:39Z — bid exactly his market value and never raise. Balance is positive and the matchday lock is six days out, so nothing is structurally at risk this run."
+  "action": "act",
+  "headline": "Quiet position, one real action.",
+  "headline_short": "Quiet position, one real action.",
+  "detail": "Quiet position, one real action. The ledger was wrongly blocking a buy candidate under another player's name — that block is reversed this run and Nathan Tella of Bayer Leverkusen is the first open BUY call since Adamu. No leverage, no fillable-formation risk, and the matchday lock is still almost a week away, so nothing is time-critical. The Schwäbe flip lost at auction by a hair's breadth and is reconciled as missed."
  },
  "sell": {
   "recommendation": "none",
-  "reason": "Nothing to sell. Tanaka is the weakest body in the fielded eleven and he is losing value on a falling flag, which is the usual case for a sale — but selling him drops the squad to eleven, promotes Adamu into the eleven at a materially lower average, and raises cash that this board cannot spend. Holding him is the cheaper of the two mistakes until something worth buying appears. Guirassy is the squad's most expensive asset and he is injured, which normally argues for selling before the market catches up; it does not here, because his value is flat rather than bleeding and selling would strip the attack for a board with no replacement above a mid-table defender. He is held, with a dated gate on the lineup rather than on the asset.",
+  "reason": "No sale is recommended. There is no body whose departure improves the fielded eleven, and at this squad size every sale except the benched man's own would promote him into it. The standing Tanaka gate is unchanged — a confirmed replacement must land and start before he goes, and the arrival of a buy does not by itself fire that sale.",
   "standing": []
  },
  "buy": {
-  "recommendation": "none",
-  "reason": "No buy clears the bar. The strongest average on the board belongs to a goalkeeper, a position already covered by a keeper whose own average is close behind — the upgrade would cost well over a million per marginal point, far outside anything this ledger has ever paid. Below him the board offers a defender who ranks under the weakest defender already owned, a midfielder carrying a status flag and a falling value, and a scatter of floor-priced bodies. Nothing displaces anyone. Do not pad a position already covered.",
-  "standing": [],
+  "recommendation": "act",
+  "reason": "Nathan Tella, Bayer Leverkusen, midfield. He started at home to Paderborn today and Kickbase scored him heavily in a comfortable win; he is flagged fit with no status marker. His ledger block was an identity error: that row carried Marco Grüll's name on Tella's player id, while the real Grüll sits under a different id with his own documented sale. Georg has never owned Tella. The honest caveat is that his season average is one game old — he was injured from late August to early October and has been a rotation option since, Leverkusen are deep, and the next fixture is away at Dortmund rather than at home to the bottom half. So this is bought as a cheap option on a starter, not as a confirmed one: the capital is a small fraction of headroom, the board pays back exactly what he is worth, the unwind window is wide, and he is simultaneously a qualifying rising-flag row. Do not sell Tanaka on the strength of it.",
+  "standing": [
+   {
+    "name": "Nathan Tella",
+    "pos": "MID",
+    "club": "7",
+    "ask": 4250000,
+    "mv": 3664263,
+    "premium_pct": 15.99,
+    "listing": "Kickbase listing",
+    "why": "FIRST OPEN BUY CALL IN THIS LEDGER SINCE ADAMU, AND IT REQUIRES REVERSING A BLOCKED ENTRY. The BLOCKED row \"Marco Gruell (7269)\" is an IDENTITY ERROR and is hereby reversed: pid 7269 is NATHAN TELLA of BAYER LEVERKUSEN (get_player this run: fn \"Nathan\", ln \"Tella\", tn \"Leverkusen\", tid 7, pos 3). The real Marco Gruell is pid 7721, whose own BLOCKED entry documents his sale to the board 2026-11-20T16:21:59Z for 19.566.805 under executed call Wi3rc3b — a price nowhere near Tella's mv 3.664.263. Georg has never owned 7269. No future run may cite the 7269 block as a reason not to buy Tella. EVIDENCE FOR THE BUY, dated 21.11.2026: Tella STARTED MD10 at home to Paderborn (yahoo sports \"Tella Starts As Leverkusen Welcome Paderborn With Maza And Diaby On The Bench\", 21.11.2026; Leverkusen won 4-0, mdsum day 10 mdst 2 confirms the fixture finished) and Kickbase scored him 247 — ph[0] hp true p 247, newest-first per W4a0wg7. st 0, stl [] = FIT. mv 3.664.263, mvt 1, tfhmvt +8.924. THE HONEST CASE AGAINST, which a later run must not lose: the sample is tiny and the ap is one game old. Pre-MD10 get_player (dt 17.11) gave tp 106, ap 35, smc 1 start of ismc 3 appearances over smdc 10 matchdays; the market row's ap 88 is simply 353/4 and exists ONLY because of today's 247. Ligainsider's profile is six weeks stale (newest item 10.10.2026 \"Tella feiert Pflichtspiel-Comeback\") and records 4 appearances, 1 start, 149 minutes — he was injured from late August to early October and has been a rotation option since. Leverkusen are deep (Maza and Diaby benched today). MD11 is AWAY AT DORTMUND 2026-11-29T18:30Z, a far harder fixture than Paderborn at home. SO THIS IS BOUGHT AS A CHEAP OPTION, NOT AS A CONFIRMED STARTER: at 3,66M against spending power 54.069.056 the capital is 6,8% of headroom, the board pays back EXACTLY mv on unwind (proven again this run by Henrichs 1689, sold by reafix at 7.137.605 = mv to the euro), the lock is 146h away so the unwind is unconstrained, and he is simultaneously a qualifying mvt-1 flip. The squad goes 12 to 13, which breaks nothing (mgc 11, mgm 18). DO NOT SELL TANAKA ON THE STRENGTH OF THIS — Wrigl2b's logic applies unchanged: Tanaka ap 53 is an established ever-present, Tella's start probability is not established, and the swap is only justified once Tella is confirmed in the MD11 XI. PRICE: 4.250.000 is +16,0% over today's mv and roughly +12,7% over the post-tick mv if the +2,87% drift lands tonight. This is deliberately NOT the bid-exactly-mv flip rule — Wraboso forbids carrying that rule into a points buy you actually want. The listing expires ~2026-11-22T16:52Z, AFTER tonight's 21:00Z tick, so the board prc will re-base upward before it resolves (Wz77kdf).",
+    "rank": 1,
+    "trigger": "2026-11-22T16:52:00Z"
+   }
+  ],
   "killed_this_run": [
    {
     "name": "Assan Ouédraogo — AVOID AS A POINTS BUY (shoulder, out to 10.01.2027); HE REMAINS A VALID FLIP",
@@ -214,11 +227,11 @@
    },
    {
     "name": "Marvin Schwäbe — AVOID AS A POINTS BUY; HE REMAINS A VALID FLIP",
-    "pos": "GK",
-    "club": "28",
+    "pos": "",
+    "club": null,
     "ask": 13781092,
-    "mv": 13781092,
-    "premium_pct": 0,
+    "mv": null,
+    "premium_pct": null,
     "why": "LOGGED SO A FUTURE RUN DOES NOT WALK INTO THE APPARENT GK UPGRADE. The trap reads well on the surface: Schwäbe ap 106 against Zentner ap 96, and Zentner has only FOUR appearances in ten matchdays (p 385 / ap 96 = 4,01) against Schwäbe's ten (p 1063 / ap 106 = 10,03). On participation alone that looks like +68 expected points per matchday and the biggest single upgrade on the board. IT IS NOT, AND THE REASON IS DATED. Zentner's missing six matchdays are a HAND INJURY from mid-September, not a lost job: sport1 26.10.2026 11:50 has him as Mainz's \"Stammtorwart\" absent \"wegen einer Handverletzung seit Mitte September\", covered by new signing Alexander Schwolow, with Urs Fischer saying the comeback starts on the bench. He has since returned and the Kickbase record proves it — ph newest-first gives MD9 129 and MD8 112, his two best scores of the season, and he is st 0 with stl [] now. So his 4-of-10 is behind him and his forward expectation is a fit first-choice keeper trending up, not a 40% rotation body. Schwäbe meanwhile is going the other way on form: rotowire 20.11.2026 has him conceding in the 1-1 with Bayern \"without making a save\", and \"four goals while combining for six saves over his last three league starts\". Paying 13.781.092 — nearly three times Georg's entire cash balance — for perhaps ten points of average and worse current form is not a points trade. TRANSFER CHECK, FOR THE FLIP: the \"Köln-Abschied\" stories are fussballtransfers 04.06.2026 and come-on-fc 09.06.2026, both STALE and both about a contract expiring in 2027 and English interest in a FREE transfer from summer 2027. No dated source describes an active January 2027 move. He therefore passes the never-flip-a-player-who-might-leave test comfortably, and FLIP Fnly2sk stands unaffected — this AVOID is about keeping him, not about bidding mv on him for the tick."
    },
    {
@@ -307,11 +320,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is wide open — the lock is six days away and tonight's value update is hours off. Exactly one listing qualifies on the full test: a Kickbase board row, no manager ask, priced at market value, on a rising flag, and expiring before tonight's update so the bid actually captures the tick. Bid exactly the listed price and never raise; losing the auction costs nothing, and chasing it into the contested band destroys the edge. Every other rising listing on the board fails the timing test because it resolves after tonight's update — and that test is now evidenced rather than assumed, because a listing posted before last night's update is today priced at exactly its post-update value, which proves board prices re-price at the tick and a late-resolving bid captures nothing.\n\nWinning this one opens a leveraged position. That is acceptable and not a reason to kill the buy: selling him back to the board after tonight's update clears the whole deficit on its own, with six days of slack before the lock, and the board pays exactly market value with no spread. Neither this flip nor the one already won touches the fielded eleven.\n\nThe edge is decaying, and it is decaying on the win-rate leg rather than the drift leg. Re-measured this run, the rising-flag drift to the next update has held and is slightly better than the figure this routine has been quoting. But the share of board purchases that clear at or below market value has fallen well below the rate flips have been sized on, and it is worst of all for expensive, high-average players — which is precisely what today's candidate is. The flip still pays, by roughly forty percent less than the old assumption implied. This is the crowding-in the doctrine predicted. If the win rate falls further or the drift drops materially, the mechanism stops paying for its risk and flips should stop.\n\nThe already-won flip is deliberately NOT being unwound tonight, which reverses what standing doctrine would do with it. He is the only cover for the injured striker; selling him leaves eleven players and forces an injured body into the eleven. He is on a rising flag, so holding him is profitable rather than costly, and the cash he would free cannot buy anything on this board.\n\nTwo questions remain open. Whether the game caps squad size is still unresolved, and a cap would cap flip throughput. And the drift edge is measured in one league over one period; the win-rate table above is the first hard evidence that it decays as rivals crowd in.",
+  "reason": "The mechanism is intact — the rising-flag drift re-measured this run on a large sample and came in above its September baseline, with no sign of crowding decay. But nothing on the board can be taken for tonight: all four qualifying rows expire after tonight's value update, so none of them captures it. They re-base to tomorrow's prices and are judged afresh on their post-update flags, which is what the next runs will do. Capital is not the constraint and neither is the lock. The constraint is execution: almost every flip this ledger has ever called went unplaced, and today's loss sharpens why — the largest flip ever sized lost by a margin so small that the forgone edge dwarfed it many times over. That asymmetry grows with the size of the row, and it is now recorded for measurement rather than acted on, because the one previous attempt to escalate bids failed.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "One squad player is flagged and it is the expensive one. The striker is out of the matchday now in progress — confirmed by a wire report published this afternoon saying he is not in the travelling squad — with a thigh strain picked up in a European tie early this month. The league-wide injury table, read today, carries him as seriously impaired and doubtful with no return date, and he has been missing for over two weeks. His club's own optimism earlier this week did not survive to the weekend, so discount club-adjacent hopefulness on this one. The matchday lineup locked on Friday with him placed, so that slot is a loss already taken and nothing can be done about it.\n\nThe gate for the next matchday: if he is not named in a dated squad list or probable eleven by the 26th, bench him for the twelfth man. That is a free, reversible lineup move, not a sale, and it is the whole reason the twelfth man is being kept rather than flipped. Only a dated multi-week or season-ending prognosis reopens the question of selling him.\n\nEvery other player in the squad was swept against the league injury and suspension tables this run and none of them appears. Two prior flip calls resolved as missed: one expired unsold, the other was taken by a rival at a large premium over market value, which was correctly not chased.",
+  "sweep": "One squad player carries a status flag: Guirassy, with a thigh injury picked up in European competition in early November. Today's reporting confirms he was left out again and, importantly, names no return date — the earlier estimate now has no live source behind it. This is not new and not a deterioration. His value is flat rather than bleeding, so there is no decay case for selling him. Note for later runs: his profile on the usual injury site is weeks stale and still shows him fit, so it must not be read as a clearance. Everyone else in the squad is clean.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -590,7 +603,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1293, -4,00% to +443,38%"
+   "v": "n=1294, -4,00% to +443,38%"
   }
  ]
 }
