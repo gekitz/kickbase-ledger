@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-21T16:52Z",
+ "run": "2026-11-21T18:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 4915992,
   "floor": -49153064,
   "spending_power": 54069056,
-  "hours_to_lock": 146.62,
-  "exposure": "No leveraged position. The balance is positive, spending power is ample, and the recommended buy would not open a deficit. The matchday lock is still many days out, so every position taken this run can be unwound without pressure. Squad size would stay well inside the apparent cap.",
+  "hours_to_lock": 144.62,
+  "exposure": "None. The balance is positive, the recommended buy is covered by cash outright, and no leveraged position is open or would be opened by anything here. There is nothing to unwind before the matchday locks, and the lock is most of a week away.",
   "must_restore_by": "2026-11-27T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "There is no formation hole. The gap that binds is a quality gap rather than a positional one — the weakest fielded midfielder is both the lowest scorer in the eleven and the only squad member on a falling value flag. The buy addresses that gap as an option rather than a commitment, deliberately leaving the swap itself for a later run once selection is confirmed.",
+ "binding_gap": "The gap is the weakest midfield slot, not a formation hole — the eleven fills without any transfer at all. That is why this is an upgrade rather than a rescue, and why it can wait for the right price instead of chasing the listing.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 54069056,
@@ -88,16 +88,6 @@
    "tag": "keep"
   },
   {
-   "name": "Burger",
-   "pos": "MID",
-   "club": "14",
-   "mv": 19020554,
-   "ap": 97,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
    "name": "Zentner",
    "pos": "GK",
    "club": "18",
@@ -112,6 +102,16 @@
    "pos": "MID",
    "club": "77",
    "mv": 12798993,
+   "ap": 94,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Burger",
+   "pos": "MID",
+   "club": "14",
+   "mv": 19020554,
    "ap": 94,
    "state": "clear",
    "note": "",
@@ -180,30 +180,40 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Quiet position, one real action.",
-  "headline_short": "Quiet position, one real action.",
-  "detail": "Quiet position, one real action. The ledger was wrongly blocking a buy candidate under another player's name — that block is reversed this run and Nathan Tella of Bayer Leverkusen is the first open BUY call since Adamu. No leverage, no fillable-formation risk, and the matchday lock is still almost a week away, so nothing is time-critical. The Schwäbe flip lost at auction by a hair's breadth and is reconciled as missed."
+  "headline": "Buy Tella, then sell Tanaka — in that order, never the reverse.",
+  "headline_short": "Buy Tella, then sell Tanaka — in that order, never the reverse.",
+  "detail": "Buy Tella, then sell Tanaka — in that order, never the reverse. The listing is a Kickbase board row that has never been bid on, it expires tomorrow afternoon, and it is covered by cash outright, so nothing has to be unwound before the lock. The bid is being raised from the price the last run gave you: the old number sat just under a premium that has been measured losing board rows, and three of today's own clears bracket it. Do not raise past the new number."
  },
  "sell": {
-  "recommendation": "none",
-  "reason": "No sale is recommended. There is no body whose departure improves the fielded eleven, and at this squad size every sale except the benched man's own would promote him into it. The standing Tanaka gate is unchanged — a confirmed replacement must land and start before he goes, and the arrival of a buy does not by itself fire that sale.",
-  "standing": []
+  "recommendation": "act",
+  "reason": "Tanaka only, and only once Tella is actually in the squad. He is the weakest of the four placed midfielders, his market value is falling harder than anyone else's in the squad, and the Asian Cup is projected to take him out across a block of matchdays where he cannot score at all. Selling back to the board pays exactly his market value with no spread. This also clears the blocker the ledger raised when Adamu arrived: that entry refused to let the sale fire because Tanaka outscores Adamu, which was correct. Tella outscores Tanaka, so the objection is satisfied — by a different player than the one it was written about.",
+  "standing": [
+   {
+    "name": "Satoshi Tanaka",
+    "pos": "MID",
+    "club": "8",
+    "mv": 4646112,
+    "ap": 53,
+    "why": "STRICTLY CONDITIONAL ON TELLA (Be4sgsh) LANDING FIRST. Never sell Tanaka before the replacement is in the squad. This RESOLVES the blocker in Wrigl2b, which correctly refused to let the Adamu buy auto-fire this sale because Tanaka ap 53 > Adamu ap 39. Tella ap 88 > Tanaka ap 53, so with Tella in hand the sale no longer weakens the fielded eleven — the precondition Wrigl2b demanded is finally met, by a DIFFERENT player than the one it was written about. CASE: ap 53, the weakest of the four placed MIDs; mvt 2 and falling hard (sdmvt -1.461.852 in a day, tfhmvt -13.499); and Wayzai1 projects him to miss MD15-20 for the Asian Cup, so his value decays into a stretch where he cannot score at all. Sell back to the board pays EXACTLY mv, no spread — 4.646.112 at the current tick. SQUAD MATH: buy Tella 12 -> 13, sell Tanaka 13 -> 12 (1GK/4DEF/4MID/3ATT), 4-4-2 still fills with a body spare, floor untouched, balance positive throughout. Sequence is buy-then-sell, never the reverse.",
+    "tag": "sell"
+   }
+  ]
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Nathan Tella, Bayer Leverkusen, midfield. He started at home to Paderborn today and Kickbase scored him heavily in a comfortable win; he is flagged fit with no status marker. His ledger block was an identity error: that row carried Marco Grüll's name on Tella's player id, while the real Grüll sits under a different id with his own documented sale. Georg has never owned Tella. The honest caveat is that his season average is one game old — he was injured from late August to early October and has been a rotation option since, Leverkusen are deep, and the next fixture is away at Dortmund rather than at home to the bottom half. So this is bought as a cheap option on a starter, not as a confirmed one: the capital is a small fraction of headroom, the board pays back exactly what he is worth, the unwind window is wide, and he is simultaneously a qualifying rising-flag row. Do not sell Tanaka on the strength of it.",
+  "reason": "Tella, the Leverkusen midfielder, is the whole buy list. He started for Leverkusen today against Paderborn, replacing Maza, and his coach cleared him on 20 November after a fitness concern. One search hit claims he is ruled out until December — that item is dated 31 October 2025 and is last season; it is logged as a date trap so no later run falls for it. The honest caveat: his season average rests on very few appearances, he has started only a minority of them, and he is competing with Diaby and Kofane, so treat him as a rotation starter rather than a locked one. He is still comfortably the best points-per-euro upgrade available to the slot Tanaka occupies. The price is pitched into the high cluster that contested board rows actually clear at, not the low cluster that manager asks clear at — bidding at market value is a flip rule and has no business in a points buy you want to win.",
   "standing": [
    {
     "name": "Nathan Tella",
     "pos": "MID",
     "club": "7",
-    "ask": 4250000,
+    "ask": 4400000,
     "mv": 3664263,
-    "premium_pct": 15.99,
+    "premium_pct": 20.08,
     "listing": "Kickbase listing",
-    "why": "FIRST OPEN BUY CALL IN THIS LEDGER SINCE ADAMU, AND IT REQUIRES REVERSING A BLOCKED ENTRY. The BLOCKED row \"Marco Gruell (7269)\" is an IDENTITY ERROR and is hereby reversed: pid 7269 is NATHAN TELLA of BAYER LEVERKUSEN (get_player this run: fn \"Nathan\", ln \"Tella\", tn \"Leverkusen\", tid 7, pos 3). The real Marco Gruell is pid 7721, whose own BLOCKED entry documents his sale to the board 2026-11-20T16:21:59Z for 19.566.805 under executed call Wi3rc3b — a price nowhere near Tella's mv 3.664.263. Georg has never owned 7269. No future run may cite the 7269 block as a reason not to buy Tella. EVIDENCE FOR THE BUY, dated 21.11.2026: Tella STARTED MD10 at home to Paderborn (yahoo sports \"Tella Starts As Leverkusen Welcome Paderborn With Maza And Diaby On The Bench\", 21.11.2026; Leverkusen won 4-0, mdsum day 10 mdst 2 confirms the fixture finished) and Kickbase scored him 247 — ph[0] hp true p 247, newest-first per W4a0wg7. st 0, stl [] = FIT. mv 3.664.263, mvt 1, tfhmvt +8.924. THE HONEST CASE AGAINST, which a later run must not lose: the sample is tiny and the ap is one game old. Pre-MD10 get_player (dt 17.11) gave tp 106, ap 35, smc 1 start of ismc 3 appearances over smdc 10 matchdays; the market row's ap 88 is simply 353/4 and exists ONLY because of today's 247. Ligainsider's profile is six weeks stale (newest item 10.10.2026 \"Tella feiert Pflichtspiel-Comeback\") and records 4 appearances, 1 start, 149 minutes — he was injured from late August to early October and has been a rotation option since. Leverkusen are deep (Maza and Diaby benched today). MD11 is AWAY AT DORTMUND 2026-11-29T18:30Z, a far harder fixture than Paderborn at home. SO THIS IS BOUGHT AS A CHEAP OPTION, NOT AS A CONFIRMED STARTER: at 3,66M against spending power 54.069.056 the capital is 6,8% of headroom, the board pays back EXACTLY mv on unwind (proven again this run by Henrichs 1689, sold by reafix at 7.137.605 = mv to the euro), the lock is 146h away so the unwind is unconstrained, and he is simultaneously a qualifying mvt-1 flip. The squad goes 12 to 13, which breaks nothing (mgc 11, mgm 18). DO NOT SELL TANAKA ON THE STRENGTH OF THIS — Wrigl2b's logic applies unchanged: Tanaka ap 53 is an established ever-present, Tella's start probability is not established, and the swap is only justified once Tella is confirmed in the MD11 XI. PRICE: 4.250.000 is +16,0% over today's mv and roughly +12,7% over the post-tick mv if the +2,87% drift lands tonight. This is deliberately NOT the bid-exactly-mv flip rule — Wraboso forbids carrying that rule into a points buy you actually want. The listing expires ~2026-11-22T16:52Z, AFTER tonight's 21:00Z tick, so the board prc will re-base upward before it resolves (Wz77kdf).",
+    "why": "SUPERSEDES Bxglcsq at a higher price. Tella (7269, Leverkusen tid 7, MID) ap 88, mv 3.664.263, mvt 1, st 0, ofc 0, expires 2026-11-22T16:51Z. POINTS CASE: he displaces Tanaka (ap 53) in the 4-4-2, a ~35 ap-per-matchday upgrade in the weakest placed slot, and costs 4,4M against 4.915.992 cash — NO leverage, balance stays positive, so nothing to unwind before the lock. NEWS (dated): 21.11.2026 Leverkusen XI v Paderborn includes Tella, replacing Maza; RotoWire 20.11.2026 has Martinez Novell clearing him after a fitness concern; RotoWire 17.11.2026 has him in full team training. CAVEAT recorded honestly: ap 88 rests on only ~4 appearances (2 starts in 5 apps per RotoWire) and he competes with Diaby and Kofane, so this is a rotation starter, not a locked one — the ap is thinner than the number looks. PRICE: 4.400.000 = +20,08% over mv, pitched into the measured HIGH cluster for CONTESTED Kickbase board rows, not the manager-ask low cluster. Wraboso binds: bid-at-mv is a FLIP rule and must NOT be carried into a points buy you actually want. Today's measured board clears: Nebel +16,06%, Amiri +18,25%, Weiser +18,86%; Wgp8h72 measured +15,96% LOSING. Do not raise above 4.400.000 — above that the points gain stops paying for itself.",
     "rank": 1,
-    "trigger": "2026-11-22T16:52:00Z"
+    "trigger": "2026-11-22T16:45:00Z"
    }
   ],
   "killed_this_run": [
@@ -320,11 +330,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The mechanism is intact — the rising-flag drift re-measured this run on a large sample and came in above its September baseline, with no sign of crowding decay. But nothing on the board can be taken for tonight: all four qualifying rows expire after tonight's value update, so none of them captures it. They re-base to tomorrow's prices and are judged afresh on their post-update flags, which is what the next runs will do. Capital is not the constraint and neither is the lock. The constraint is execution: almost every flip this ledger has ever called went unplaced, and today's loss sharpens why — the largest flip ever sized lost by a margin so small that the forgone edge dwarfed it many times over. That asymmetry grows with the size of the row, and it is now recorded for measurement rather than acted on, because the one previous attempt to escalate bids failed.",
+  "reason": "Nothing qualifies tonight. Four listings carry the rising flag, but every one of them resolves after tonight's tick, so none can capture it — Gyamerah misses the cut-off by about a quarter of an hour and the other three run into tomorrow. Per the standing rule they are deferred rather than dead: they re-base at the tick and are judged again on whatever flag they carry afterwards. More important than any of them: the drift figure this ledger has been quoting is overstated, and the cause is our own measurement rather than the market. The bucket boundary in the standing query still assumes the old tick time and straddles the new one, which inflates both the average move and the share that rise. Re-run aligned to the real tick and the edge is roughly a quarter smaller. It is still a real edge and still worth trading, but every flip sized off the old figure was sized optimistically — and this is specifically not evidence of rivals crowding in, because the falling flag shifted the same way, which is the signature of a bucket shift rather than of competition. On the two standing open questions: the squad-size cap now looks answered in the data rather than guessed, since the budget endpoint carries what appear to be minimum and maximum squad sizes, which would cap flip throughput well above anything run so far; and whether the edge decays as rivals crowd in remains genuinely open, because tonight's re-measurement does not speak to it either way.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "One squad player carries a status flag: Guirassy, with a thigh injury picked up in European competition in early November. Today's reporting confirms he was left out again and, importantly, names no return date — the earlier estimate now has no live source behind it. This is not new and not a deterioration. His value is flat rather than bleeding, so there is no decay case for selling him. Note for later runs: his profile on the usual injury site is weeks stale and still shows him fit, so it must not be read as a clearance. Everyone else in the squad is clean.",
+  "sweep": "Guirassy is the one to watch and he did not play again today — the Gladbach team sheet has him missing, which makes three matchdays in a row. The diagnosis has not changed, and the newest dated club reporting, from 18 November, says only that he is training on his own, that he is internally expected to be fully loadable within days, and that availability remains open. No source gives a return date. The single dated return estimate the ledger was carrying has been closed out as spent rather than refuted. He stays in the eleven for now: he is the highest-scoring player in the squad by a wide margin, his market value is still ticking upward, and there are six days before anything has to be decided. Adamu is the direct replacement the moment the news turns. Everyone else placed is fit and played.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -554,12 +564,6 @@
    "reversal": "Do NOT buy him back before the 2026-11-20T19:30:00Z MD10 lock under any circumstances: the sale exists to clear a deficit, and a re-buy re-opens the exact leveraged position it closes. After that lock, reverse ONLY if ALL FOUR hold: (a) the ask is AT OR BELOW mv, since the board sale pays exactly mv and buying back above it is a guaranteed loss; (b) his mvt has turned to 1 with positive sdmvt, i.e. the market has stopped marking him down; (c) a dated source at that time has him STARTING for Schalke, not merely fit — smc 2 of 9 is the objection, so being named in a squad is not enough; and (d) his re-based ap beats the player he would actually displace at that moment, which today means beating Burger 92, not Hwang's own 28."
   },
   {
-   "name": "Satoshi Tanaka",
-   "status": "12297",
-   "why": "INERT UNTIL THE GATED SELL Ssrk0dg ACTUALLY FIRES — he is OWNED and FIELDED at lo 5 as of 2026-11-14T14:45Z and is NOT to be sold today. This entry exists only so that a run reading the ledger after the sale cannot buy back the player it had just sold. HE IS NOT BLOCKED ON FITNESS OR SELECTION AND NO FUTURE RUN MAY CITE THIS ENTRY AS EITHER: ligainsider 14.11 has him FIT with 0 minutes missed in 2026/27 and 5 starts in 5 Bundesliga appearances for FC SCHALKE 04 (tid 8 — NOT Stuttgart), with a 03.09.2026 \"Startelfgarantie\" headline. He is sold on two grounds only: ap 53 on p 422 makes him the weakest body in the fielded eleven by 24 points, and he is mvt 2 with tfhmvt -336.463 and sdmvt -1.844.937 against a measured mvt-2 drift of -2,76% per tick, so holding him costs ~169k every 21:00Z. THE GATE IS BINDING AND IS THE WHOLE REASON THIS IS NOT A SELL-NOW: the squad is 12, so selling him first leaves 11 and then blocks the far more important Guirassy sale at 10 for -100. Sell only once a buy is CONFIRMED in the squad, and then immediately rather than at leisure.",
-   "reversal": "Only if ALL FOUR hold: (a) SELL Ssrk0dg has actually executed — until then this entry has no force and he is simply a squad member; (b) the ask is AT OR BELOW mv, since the instant sale paid exactly mv and buying back above it is a guaranteed loss; (c) his ap at that time beats the midfielder he would displace in the fielded eleven, measured on a re-based sample and not on the 53 recorded here; and (d) the balance is non-negative after the purchase with genuine room above the 33% floor, and the squad stays at 11 or more through the next lock."
-  },
-  {
    "name": "Fabio Gruber",
    "status": "10122",
    "why": "NOT BLOCKED AS A SALE AND NOT BLOCKED ON FITNESS — blocked as a POINTS BUY on measured rotation risk, superseding the old entry whose name and club were both wrong (identity settled by Woqyek1: pid 10122 is Fabio Gruber, centre-back, 1. FSV Mainz 05, Kickbase tid 18, signed from 1. FC Nuernberg). BUY Bcmylzu is closed and AVOID Aqr9x6v carries the full case. In short: ap 96 is a PER-APPEARANCE average over ismc 6 of smdc 9, so his per-matchday expectation is tp/smdc = 578/9 = 64. The three missing matchdays are MD6, MD7 and MD8, consecutive, with st 0 and stl [] — selection, not injury, confirmed by exitosanoticias.pe dated and updated 07.11.2026 (dropped after the 10.10 Leverkusen defeat, returned 07.11 for a full 90 and a 7.3 rating in a back three with Da Costa and Potulski). He would be the FIFTH defender in a squad that fields four, so he displaces ter Horst 7616 (tp 697, ismc 9 of 9, a 77-per-matchday certainty) rather than filling a hole, and he needs an 80% start probability merely to draw level. One start after three benchings does not support 80%. HE IS EXPLICITLY NOT BLOCKED AS A FLIP: on the measured tick mechanism he qualifies cleanly — Kickbase board listing, no manager u, prc = mv, ofc 0, mvt 1, tfhmvt +112.678 — and no run may cite this block against a pure value flip on him, because fitness and selection do not enter the market-value tick.",
@@ -582,6 +586,12 @@
    "status": "7721",
    "why": "Sold to the board by Georg 2026-11-20T16:21:59Z for 19.566.805 as the MD10 sale leg (call Wi3rc3b, now executed). The sale was deliberate: it funded the balance into MD10 and the squad was fielded at exactly 11. Do not re-buy him on a later run just because he shows a rising mv.",
    "reversal": "Reverse only if (a) Georg's squad is back above 12 players so a Werder attacker is not a forced starter, AND (b) dated news in the current period confirms him starting, AND (c) he is available at or below mv on a Kickbase listing (not a manager ask)."
+  },
+  {
+   "name": "Satoshi Tanaka",
+   "status": "12297",
+   "why": "Recommended for sale this run (SELL Smgr9xe), conditional on Tella landing. ap 53, weakest placed MID, mvt 2 with sdmvt -1.461.852 in a day, and Wayzai1 projects him out for the Asian Cup across MD15-20. Blocked so no later run buys back a falling asset it just told Georg to sell.",
+   "reversal": "VOID IF THE TELLA BUY (Be4sgsh) DOES NOT LAND — the sale is strictly conditional on that replacement, so if Tella is lost or the listing expires unbid, Tanaka stays in the XI and this block lapses immediately. Otherwise reverse only if BOTH: (a) dated news confirms he is not going to the Asian Cup or returns before MD15, and (b) his mvt turns back to 1 for two consecutive ticks."
   }
  ],
  "arithmetic": [
