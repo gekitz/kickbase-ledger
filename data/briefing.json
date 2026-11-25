@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-25T04:57Z",
+ "run": "2026-11-25T07:06Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -8,14 +8,14 @@
   "locks": "2026-11-27T19:30:00Z",
   "played": 10
  },
- "cash": 2856838,
+ "cash": 2916838,
  "squad_value": 149037164,
  "leverage": {
-  "balance": 2856838,
-  "floor": -50125021,
-  "spending_power": 52981859,
-  "hours_to_lock": 62.55,
-  "exposure": "No leverage is open. The balance is positive, nothing is owed at the lock, and there is no standing offer that would open a deficit if it landed unexpectedly. The constraint that actually binds any purchase is the unwind rather than the headline spending power: the only bodies that can be sold without taking a man out of the fielded eleven are the benched attacker and the midfielder a buy would displace, and selling a third would drop the squad below the eleven-man floor and trigger the penalty. That ceiling, not the floor-derived spending power, is why three otherwise attractive buys were rejected. The recommended buy sits comfortably inside it and unwinds to a positive balance with the squad intact. Any flip taken on top of that must be sold back to the board before the lock, and the balance must be non-negative at that moment or the entire matchday scores zero.",
+  "balance": 2916838,
+  "floor": -50144821,
+  "spending_power": 53061659,
+  "hours_to_lock": 60.4,
+  "exposure": "No leverage is open and the balance is positive, so nothing is at risk at the moment. The recommended sequence does open a brief deficit, but only after a sale has already been banked and only if the bid actually wins, and it is closed by the second sale immediately on landing, which leaves well over two days of margin before the lock. If the bid loses, no deficit ever opens and the position simply sits in cash with the eleven exactly as it stands today. The decision to stand down the flip programme also removes what would otherwise have been a far larger leveraged position carried across the lock, which on its own is a meaningful reduction in risk this week.",
   "must_restore_by": "2026-11-27T19:30:00Z"
  },
  "counts": {
@@ -25,7 +25,7 @@
   "att": 3,
   "total": 12
  },
- "placed": 10,
+ "placed": 11,
  "penalty_open": false,
  "formations": {
   "legal": [
@@ -43,17 +43,17 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "The binding gap is not a missing body, it is an unfilled slot. The squad already contains an eleventh man for the defensive line; he is simply not placed. Until that is fixed the gap costs a full defender's return every matchday, which is larger than any upgrade available for money this run. Once it is fixed, the next gap is positional and narrow: the weakest man in the fielded eleven is the midfielder Neuhaus would displace, and that is the only slot where an affordable purchase changes the scoreline. An extra attacker or an extra defender would add nothing, because no fillable formation has room for one without taking a better player out.",
+ "binding_gap": "Not a hole, a soft slot. With every formation fillable and a full eleven placed, nothing in the squad is structurally broken, so the gap is simply that one midfield place is occupied by much the weakest body in the side. His average understates how thin it is: a single big return is carrying most of it, and stripped of that the recent run is poor. That is the slot the buy targets and the only slot where a realistic purchase changes the matchday.",
  "surplus": "",
  "run_kind": "scheduled",
- "cash_ceiling_before_md1": 52981859,
+ "cash_ceiling_before_md1": 53061659,
  "daily_bonus": null,
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 25,
+  "listings": 26,
   "cheapest": 500000,
-  "cheapest_slot_filling": 500000,
+  "cheapest_slot_filling": 3435050,
   "expiring_within_2h": 1
  },
  "squad": [
@@ -180,45 +180,61 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "The cheapest action on the board is still the one that has not been taken.",
-  "headline_short": "The cheapest action on the board is still the one that has not been ta",
-  "detail": "The cheapest action on the board is still the one that has not been taken. One defensive lineup slot is empty, so only ten bodies are fielded and that slot scores nothing when the matchday locks on Friday. Ryerson is in the squad, unplaced, fit, and has started his last five. Placing him costs nothing, needs no cash, no sale and no auction, and it is now the fourth consecutive run carrying this call. Everything else on this page is secondary to it. Beyond that the position is calm: the balance is positive, no leverage is open, and the squad sits comfortably inside the minimum and the maximum."
+  "headline": "Two things changed this run.",
+  "headline_short": "Two things changed this run.",
+  "detail": "Two things changed this run. First, the standing lineup problem is fixed: Ryerson is placed and the fielded side is a full eleven again, so the cheapest and largest action on the board for the last several runs is finally done and closed. Second, and this is the one that matters beyond this matchday, the flip programme is being stood down. It is not losing money, but it has been spending recommendations for weeks on a trade that cannot pay, and the ledger now says so clearly enough that continuing would be wilful. The points plan is unchanged in target and changed in price: buy Neuhaus, sell Adamu to fund it, sell Tanaka once Neuhaus has actually landed. Nothing here is urgent in hours, but the Neuhaus listing expires tomorrow morning and the whole sequence wants to be finished well before the Friday lock."
  },
  "sell": {
-  "recommendation": "none",
-  "reason": "No sale is recommended this run, and that is a deliberate reversal of the direction the ledger was pointing in. The one large body whose sale would have funded anything is Guirassy, and he is available again rather than injured, so selling him would be a points loss dressed up as liquidity. The only sale that should happen before the lock is Tanaka, and only after the Neuhaus buy lands and makes him the thirteenth body. Until that buy clears, nothing in the squad should be sold at all.",
-  "standing": []
+  "recommendation": "act",
+  "reason": "Adamu goes first and the recommendation is unconditional, because it is the one move this run with no downside at all. He is not in the fielded eleven, so selling him cannot weaken the side; the squad stays at a legal fillable formation, so there is no under-eleven penalty; and he is the only player on the books whose value is currently falling, which means holding him costs a little more every tick. He is perfectly fit and this is not an injury sale, it is a surplus-and-depreciating sale, and it stands on its own even if the Neuhaus bid is never placed. Tanaka is the second sale and the ordering is the entire point: he is in the fielded eleven, so selling him before Neuhaus is actually in the squad would leave the side a body short and trigger the under-eleven penalty. Sell him at the moment Neuhaus lands, not before, and if the bid loses do not sell him at all.",
+  "standing": [
+   {
+    "name": "Tanaka — CONDITIONAL: only once Neuhaus has actually landed",
+    "pos": "MID",
+    "club": "8",
+    "mv": 5140574,
+    "ap": 47,
+    "why": "ORDERING IS THE WHOLE POINT OF THIS CALL — do NOT sell Tanaka before the Neuhaus (2261) bid is WON. He is fielded at lo 5, so selling him while the squad is already down to 11 (after the Adamu sale Sz3vvb6) would leave TEN bodies and trigger the -100 under-eleven penalty. The safe sequence is: sell Adamu, bid on Neuhaus, and sell Tanaka only at the moment Neuhaus is in the squad. If the Neuhaus bid LOSES, this call does not fire at all — Tanaka stays, keeps his slot, and the eleven is exactly as it is today. WHY HE IS THE ONE TO GO once there is a replacement: he is the weakest fielded body by a distance at ap 47, and his recent form is worse than the average suggests — last five 3/21/-24/113/48, mean 32,2, with a single 113 carrying the whole figure. Neuhaus's last five mean 74,8, so the swap is worth roughly +42 points per matchday. FITNESS CHECKED, NOT AN INJURY SALE: Ligainsider Schalke club page, Letzte Aktualisierung 23.11.2026 13:09, has him in the lineup list and NOT in the absence table; his profile reads Fit with nothing newer than 15.10.2026. Schalke play at Paderborn on 28.11. He is sold purely because a materially better body is available for the slot. UNWIND ROLE: his 5.140.574 is what clears the negative balance a winning 8.600.000 bid creates (-1.322.060 to +3.818.514), roughly 57h before the Friday 27.11 19:30Z lock, so the leveraged window is short and fully covered.",
+    "tag": "sell"
+   },
+   {
+    "name": "Junior Adamu",
+    "pos": "ATT",
+    "club": "8",
+    "mv": 4361102,
+    "ap": 41,
+    "why": "SELL FIRST, UNCONDITIONALLY — this is the one move with literally zero downside this run. Adamu is NOT in the fielded eleven (get_lineup 25.11 06:45Z returns him as the only squad row with NO lo key; the other eleven hold lo 0-10), so selling him cannot reduce the fielded side. Squad goes 12 to 11 = 1GK/4DEF/4MID/2ATT, which is exactly 4-4-2 and stays a legal fillable formation, so no -100 under-eleven penalty. He is also the ONLY squad player with mvt 2 (falling): tfhmvt -88.094, and the measured November mvt-2 drift is -4,029% mean with only 9,2% rising, so holding him costs value every tick. Weakest asset on the books at ap 41 (last five 53/113/-11/60/-7). FITNESS CHECKED, HE IS FINE — this is not an injury sale: Ligainsider Schalke club page, Letzte Aktualisierung 23.11.2026 13:09, does not list him in the absence table and shows him in the lineup list; his profile reads Fit with the latest item 09.11.2026 \"Adamu mit Erfolgserlebnis: Muslic macht Mut\". He is sold because he is surplus and depreciating, not because he is hurt. PURPOSE: raises 4.361.102 to 7.277.940 total, which is what makes a competitive 8.600.000 bid on Neuhaus (2261) possible. Sell him EVEN IF the Neuhaus bid is not placed — the mvt 2 bleed and the zero eleven-impact stand on their own.",
+    "tag": "sell"
+   }
+  ]
  },
  "buy": {
   "recommendation": "act",
-  "reason": "One buy, and it is the one already on the ledger: Neuhaus, a Kickbase listing priced at exactly market value with no manager premium to benchmark, rising, no status flag, expiring well inside the lock. He displaces Tanaka in the fielded midfield four. His starter status was re-verified today rather than inherited: the club profile shows every appearance this season as a start with no substitute outings and no injury or suspension minutes, and dated reporting from the middle of this month has the new coach restoring him to the regular side. The caveat carried forward is that he is starting while out of form, which is why his average sits where it does. Three apparently better candidates were examined and all three fail the same test, which is the unwind rather than spending power: Sano, El Mala and Sheraldo Becker each cost more than the squad can sell back without dropping below the eleven-man floor. Becker is the new one and the most tempting, because unlike the others he passes the fitness check cleanly, so he has been logged as an explicit avoid with the arithmetic attached. The two large manager asks on the board remain far outside the measured manager band and are not live.",
+  "reason": "Neuhaus, and the target is unchanged from the last run while the price is deliberately higher. The case for him got stronger on inspection rather than weaker. His average is not a stale early-season artefact, which is the usual trap with a cheap player who looks good: he missed the opening weeks, then started every match since without a break, playing full or near-full games each time, and his recent scoring is well ahead of the man he would replace. He is unflagged on his club's injury page and the local matchday preview predicts him in the starting midfield pair. There was one scare worth naming because a future run will hit it again: a kicker headline announcing a bitter setback and a thigh injury for him, which turns out to be from November 2024, two years old, and has nothing to do with this season. The reason for raising the price is the calibration record. This is a Kickbase listing rather than a manager ask, which is the contested kind, and bidding the market value exactly has now lost every single contested auction we have measured. Paying a real premium is justified here in a way it never is on a flip, because this is a body held for the rest of the season rather than a position unwound in a day. Sheraldo Becker was the better buy on paper and was rejected on arithmetic, not merit: he is the bigger upgrade and would allow a formation switch, but everything sellable without gutting the eleven still falls short of his ask, and the only way to close the gap drops the squad below eleven. That has been logged with its reversal condition so the next run does not have to rediscover it.",
   "standing": [
    {
     "name": "Florian Neuhaus",
     "pos": "MID",
     "club": "15",
-    "ask": 6662971,
+    "ask": 8600000,
     "mv": 6662971,
-    "premium_pct": 0,
+    "premium_pct": 29.07,
     "listing": "Kickbase listing",
-    "why": "The only points upgrade on the board that fits under the unwind ceiling. Row 2261, Borussia Moenchengladbach tid 15 (confirmed: ligainsider profile is a Gladbach profile), MID, mv 6.662.971, prc = mv EXACTLY, no u (Kickbase listing, not a manager ask), ofc 0, st 0, mvt 1, tfhmvt +264.937, exs 113.340s so expiry ~2026-11-26T10:14Z, comfortably inside the 27.11 19:30Z lock. UPGRADE: displaces Tanaka (12297) in the fielded MID four, ap 73 vs 47, so +26 ap per matchday at that slot. STARTER CONFIRMED, dated: ligainsider 2026/27 block shows 7 Startelf in 7 Einsaetze, 553 starting minutes, and a \"Verletzt/Gesperrt\" share of 0% (0 of 1.057 minutes, 0 of 963 Bundesliga minutes); buli-tipphilfe Datenstand 25.11.2026 03:00 does NOT list him (its Gladbach list is Hashioka, Leopold, Fleck, Honorat, Bolin, Leszczynski, Diks, Itakura, Ullrich, Nicolas, Kuhn, Kleindienst). Caveat worth carrying: ligainsider 23.10.2026 \"Neuhaus auf Form-Suche: Blessin gibt Rueckendeckung\" — he is starting but out of form, which is why ap sits at 73 and not higher. Transfer leg is dead per Wo4ztzv (window shut since 01.09.2026); the 24.06.2026 \"darf Gladbach ohne Abloese verlassen\" and \"Vertrag bis 2027\" items are SUMMER 2027 contract talk, not a January risk. FUNDING AND ORDER OF OPERATIONS, which matters: buy FIRST, then sell TANAKA (5.140.574), NOT Adamu. Cash 2.856.838 - 6.662.971 = -3.806.133, then +5.140.574 on the Tanaka sale = +1.334.441 POSITIVE, unwound the moment it lands and long before the lock. Adamu (6172) must be RETAINED: with Guirassy now unfit (Wq6chz6) Adamu is the only other ATT body, and selling him would leave a 4-4-2 that has to field Guirassy for a probable zero. Squad path 12 -> 13 -> 12; eleven stays 4-4-2 throughout. PRICING: per Wraboso the bid-at-mv rule is a FLIP rule and must not be carried blindly into a points buy, and the ap 40-89 cohort wins at mv only 43,6% (W5t9yom) — but the gain here is only +26 ap, so bid mv and let it go. Up to roughly +5% is defensible if Georg wants it; do NOT chase a contested Kickbase row into the high cluster, where Onyeka just cleared +53,63% this run.",
+    "why": "REPLACES Bo6jque, WHICH PRICED HIM AT mv EXACTLY (6.662.971) — closed this run ONLY to revise the price upward, not because the target changed. Neuhaus is still the right buy and the evidence got stronger. FITNESS/STARTER CONFIRMED DATED: Ligainsider Gladbach club page, Letzte Aktualisierung 23.11.2026 12:59, carries NO injury flag on him and places him in the lineup group (Gladbach out: Leopold, Ullrich, Hashioka, Bolin, Leszczynski; doubtful: Hack — Neuhaus on neither list). gladbachtotal Startelf-Prognose 23.11.2026 15:11 PREDICTS HIM TO START in the double pivot alongside Uno. DATE TRAP DEFUSED: the kicker headline \"Bitterer Rueckschlag fuer Gladbachs Neuhaus\" is dated 27.11.2024 15:56 — a thigh muscle injury from the St. Pauli game of 24.11.2024, TWO YEARS OLD. It is not a 2026 item and must not kill this buy on a future run. FORM IS LIVE, NOT A STALE AVERAGE: get_player_performance 26/27 shows he missed MD1-3 then STARTED MD4-10 unbroken at 70/73/62/99/79/96/93 minutes, points 118/22/92/95/62/80/45. Last five mean 74,8. ap 73 = 514/7 real appearances, so the average is built on current starts, not an August artefact. UPGRADE: displaces Tanaka (12297) in the fielded eleven — Tanaka last five 3/21/-24/113/48, mean 32,2 — so roughly +42 points per matchday. TIMING: MD11 is Werder Bremen v Gladbach Friday 27.11 19:30Z, which IS the lock fixture, so he returns points immediately rather than sitting a week. PRICE RAISED DELIBERATELY: this is a Kickbase listing (no u, prc = mv, ofc 0), so the HIGH cluster applies, and mv-exact has now lost every measured contested Kickbase auction (Njinmah +109,55%, Curda +33,01%, Onyeka +53,63%). Median FLIP-miss margin across 175 resolved misses is +12,4%. 8.600.000 is +29,07% over mv — justified ONLY because this is a points buy held for 24 remaining matchdays, NOT a flip; do not copy this premium into a flip. FUNDING AND UNWIND: sell Adamu FIRST (4.361.102, benched, zero eleven impact) giving 7.277.940; a winning 8.600.000 bid leaves -1.322.060, cleared by selling Tanaka on landing (+5.140.574) to +3.818.514, roughly 57h before the Friday lock. If the bid LOSES nothing is lost — balance simply sits at 7.277.940 with the eleven exactly as today.",
     "rank": 1,
-    "trigger": "2026-11-26T10:14:00Z"
-   },
-   {
-    "name": "Ryerson — PLACE HIM: the fielded eleven is only TEN, slot lo 3 is empty",
-    "pos": "",
-    "club": null,
-    "ask": null,
-    "mv": null,
-    "premium_pct": null,
-    "listing": "Kickbase listing",
-    "why": "THE SINGLE LARGEST AND CHEAPEST ACTION ON THE BOARD, AND IT IS STILL UNEXECUTED 7.8h AFTER Wu6yr9q SAID IT. get_lineup 24.11 04:45Z returns twelve rows with lo values 0,1,2,4,5,6,7,8,9,10 — lo 3 is MISSING, so only TEN bodies are fielded and one DEF slot scores nothing at the MD11 lock. kb_context line 3 independently prints \"placed 10\". Ryerson (2395, DEF, ap 86, p 773, st 0, stl [], ph newest-first [114, 46, 23, 102, 159] — every matchday played) and Adamu (6172, ATT, ap 41) are the two unplaced rows; Ryerson is the one that FITS, because lo 1-4 is the defensive band and Adamu is pos 4. Wu6yr9q already settled the merit question (4-4-2 with Ryerson sums 1005 fielded ap against 999 for the 4-3-3 that promotes Adamu) but it logged the finding as a WATCH and the slot was never filled; Georg bought Ryerson at 2026-11-23T20:57:05Z for 15.000.000 and has not placed him since. THE ARITHMETIC: fielded ap today is 919 across ten bodies; placing Ryerson makes it 1005. That is +86 expected points per matchday for ZERO euros, no sale, no unwind and no fitness risk — strictly larger than the +24 the Curda swap buys for 3,5M net. W3kzf8k already resolved his fitness (the 15.11 \"angeschlagen\" scare is dead, settled by his own MD10 line of 114). NO LATER RUN MAY DOWNGRADE THIS TO A WATCH AGAIN: it is a free points action with a hard deadline at the 2026-11-27T19:30:00Z lock, and it ranks ahead of every buy, sale and flip in this briefing. Georg executes set_lineup himself — this task never places trades or lineups.",
-    "rank": 2,
-    "trigger": "2026-11-27T19:30:00Z"
+    "trigger": "2026-11-26T10:14:59Z"
    }
   ],
   "killed_this_run": [
+   {
+    "name": "Sheraldo Becker — BLOCKED BY THE UNWIND CEILING, NOT BY MERIT",
+    "pos": "ATT",
+    "club": "18",
+    "ask": 16460932,
+    "mv": 16460932,
+    "premium_pct": 0,
+    "why": "LOGGED SO THE NEXT RUN DOES NOT RE-DERIVE THIS FROM SCRATCH AND TALK ITSELF INTO IT. On merit Becker is the BIGGEST points upgrade on the board this run and beats the Neuhaus buy outright: ATT, ap 98, mv 16.460.932, prc = mv exactly, Kickbase listing (no u), st 0, mvt 1, expiry 2026-11-26T21:18:41Z which is before the Friday lock. Buying him would let the side switch from 4-4-2 to 4-3-3 with Gregoritsch + Guirassy + Becker, pushing Tanaka (ap 47) out of the eleven for a nominal +51 ap — against Neuhaus's +26. HE IS STILL THE WRONG BUY, AND THE REASON IS ARITHMETIC, NOT FORM. Everything sellable without gutting the eleven is Adamu 4.361.102 + Tanaka 5.140.574 = 9.501.676, which on top of cash 2.916.838 gives 12.418.514 against a 16.460.932 ask — leaving -4.042.418 AT THE LOCK, and a negative balance at matchday start scores ZERO for the entire matchday. There is no third sale that fixes it: the next cheapest body is ter Horst (6.672.110) and selling him alongside the other two drops the squad to 1GK/3DEF/3MID/3ATT = TEN players, which is the -100 penalty. So the full slate of escape routes is exhausted and he fails the unwind ceiling by about 4,0M. REVERSAL CONDITION: he becomes buyable the moment spending capacity rises by roughly 4,1M without costing a fielded body — a market-value tick on the held squad, a sale of a player who has already been displaced from the eleven, or his own ask falling toward 12,4M. If a later run sees him and feels the pull of the ap 98, re-run the unwind arithmetic FIRST; do not buy him and plan to \"sort the balance out later\", because the lock is the hard edge."
+   },
    {
     "name": "Sheraldo Becker — ap 98 fit confirmed starter, and still UNBUYABLE on the unwind arithmetic",
     "pos": "ATT",
@@ -317,26 +333,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "LOGGED BECAUSE HE IS THE OBVIOUS CHEAP FALLBACK IF THE BURKARDT BID IS LOST, AND A LATER RUN WILL REACH FOR HIM. The surface case is genuinely better than most traps this ledger has caught: ap 74 on TEN appearances in ten matchdays, so unlike Querfeld or Tella the average is a true per-matchday figure, and 73,7/MD against Adamu's 32,9/MD is a real +41 in the dead ATT slot for only 7.044.552 — a quarter of Burkardt's price. WHAT KILLS IT IS THE TREND, MEASURED from get_player_performance 3471, season 2026/27: MD1 55' start 47p, MD2 76' start 19p, MD3 88' start 270p, MD4 63' start 77p, MD5 33' sub -13p, MD6 80' start 138p, MD7 65' start 69p, MD8 61' start 48p, MD9 30' SUB 47p, MD10 34' SUB 35p. He has been a SUBSTITUTE in each of the last two matchdays, his minutes have fallen 61 -> 30 -> 34, and his returns have fallen with them (48, 47, 35). The ap 74 is carried by one 270-point MD3 and by starts he is no longer getting. DATED NEWS AGREES AND IS THIN: rotowire 08.11.2026 \"Adam Hlozek News: Appears on bench\" has him benched against Schalke, fit enough only for a bench role after late testing, and expects him to \"work back into that role after the international break\" — an outlet's expectation, not a selection. Ligainsider's newest Hlozek item is 28.08.2026; its April/May 2026 cluster is LAST SEASON and was not used. No source dated 14-21.11.2026 was found, so the Kickbase appearance record above is the only current selection evidence, and it says substitute. CLUB-ID CORRECTION, LOAD-BEARING: he is TSG HOFFENHEIM (Kickbase tid 14), NOT Augsburg — confirmed by ligainsider and rotowire and by Baumann (524) and our own Burger (11631) sharing tid 14. Augsburg is tid 13 (Gregoritsch, Wolf, Seol). A search phrased \"Hlozek Augsburg\" returns Hoffenheim-v-Augsburg fixture material and will mislead. REVERSAL: a dated Hoffenheim XI from 2026-11-26 or later STARTING him, plus one start with 60+ minutes to show the bench spell is over. Until then he is a worse body than the Burkardt bid he would replace, not a cheaper one."
-   },
-   {
-    "name": "Leopold Querfeld — ap 129 on FOUR appearances in ten and NONE since MD7; the cheap-high-average trap, fourth instance",
-    "pos": "",
-    "club": null,
-    "ask": 5422105,
-    "mv": null,
-    "premium_pct": null,
-    "why": "LOGGED SO NO LATER RUN RE-DERIVES HIM OFF THE ap COLUMN. He is the most tempting row on this board by surface arithmetic: ap 129 against our weakest fielded defender ter Horst at ap 70, for an mv of only 5.422.105 — apparently a +59 ap/matchday upgrade for five million. IT IS NOT. MEASURED from get_player_performance 7723, season 2026/27: MD1 103' start 257p, MD2 did not play, MD3 105' start 112p, MD4 96' start 63p, MD5 did not play, MD6 did not play, MD7 74' 82p, MD8 did not play, MD9 did not play, MD10 did not play. FOUR appearances in TEN, and — the decisive fact — NONE IN THE LAST THREE MATCHDAYS. ap 129 is 514/4, a per-APPEARANCE figure for a man who no longer appears. Per matchday he is 514/10 = 51,4, which is BELOW ter Horst's 70 and would make him a DOWNGRADE in the slot he appears to upgrade. The single 257-point MD1 carries half his season. THE MARKET ALREADY KNOWS: mvt 2, tfhmvt -163.839, i.e. he is a falling asset, which is exactly the tell A6lbm9q named — a cheap market value next to a big average means the market has priced the lost place and the ap column has not caught up. NOT A FITNESS CASE: st 0, stl [], so a run that checks only the status flag will see a fit player and be wrong; this is a SELECTION case, and selection is what scores. HE IS ALSO NOT A FLIP: mvt 2 predicts the NEXT tick DOWN at a measured -3,23% (n=1239, only 8,5% rose), so buying him at mv to catch a rise is backwards. REVERSAL AS A POINTS BUY: require BOTH (a) a dated Union Berlin XI from 2026-11-26 or later actually starting him, and (b) two consecutive matchdays with real minutes to re-base the ap off the MD1 outlier. Being cheap is not a reversal; being fit is not a reversal."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open with comfortable margin, and the mechanism was re-measured this run from the event log rather than trusted. Using the bucket aligned to the real tick, rather than the one in the task prompt that straddles it, rising players still drift up and falling players still drift down, and the rising figure is flat against the last measurement on a larger sample. The edge has not decayed. The trade is unchanged: bid exactly market value on a rising Kickbase listing, never raise, and sell back to the board which pays exactly market value with no spread. Losing an auction costs nothing; chasing one into the contested band destroys the edge, which is what happened to the Andrich flip overnight when a rival took him at a small premium over our exact-value bid. El Mala is the pick and should be taken first: he expires this afternoon, well before tonight's tick, and leaves roughly two days to sell back before the lock. Sano ranks second on size but carries a materially tighter sell-back window, because he expires less than an hour before the following night's tick and leaves only about a day to unwind; given this ledger's documented record of flips going unplaced, he is worth taking only if Georg will be at the app on the evening of the twenty-sixth. A flip won and not sold back leaves a negative balance at the lock, which scores zero for the whole matchday. Becker, Jeltsch and Bakayoko also qualify and rank below those two. On the two questions these briefings have been closing with: the squad-cap question is now resolved and should stop being restated, while the decay question remains genuinely open, because the edge is measured in one league over one period and will compress if rivals crowd in. They already flip heavily here, including on injured players, which for a pure value trade is correct.",
+  "reason": "The flip programme is being stood down, and this reverses the standing posture rather than pausing it. The edge itself is real and is not decaying: the daily tick on rising players re-measures at least as strong in the recent window as when it was first found, and the great majority of such players do rise. The problem is that the edge cannot be reached. Across nearly two hundred flip recommendations, almost all were lost, and the typical loss was not narrow: the winning bid usually cleared far above market value, by a multiple of the drift being harvested. That exhausts every bid level. Bidding market value exactly almost never wins, so it earns nothing while costing nothing. Bidding up by the size of the edge gives away the entire profit and still loses most of the time. Bidding what it would actually take to win about half the time means paying several times more than the asset is about to rise, which is a reliable loss. There is no price at which this trade works in this league. The important lesson is about the tripwire: previous runs were told to watch for the drift decaying as rivals crowded in, and the drift never decayed. The crowding showed up instead as a collapsed win rate while the measurement stayed healthy, which is why it went unnoticed for so long. Watch the hit rate, not the drift. The two listings that qualified on the old rules have been closed unexecuted rather than carried forward. What would genuinely revive this is a manager asking below market value, which is a different and real mechanism, and there are none on the board at the moment. The separate open question of whether Kickbase caps squad size is still unanswered, though it now matters much less, since throughput is not the binding constraint when the win rate is this low.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "The material change this run is a reversal, and it is good news. The open call saying Guirassy is not fit is closed. He is available again: the coach confirmed before the midweek European tie that he was fit to play and would be in the squad, and he was then actually named and sat on the bench rather than merely being described as close to a return. That is behavioural evidence, which is the standard this ledger adopted after a correctly dated source was caught writing speculation as recovery. He did not start, and the coach said openly that he would rather rest him. The decisive point is a timing one: his side plays on the Sunday while the Kickbase lock falls on the Friday, so no source can confirm his start before the lock and no later run should wait for one. He stays fielded regardless, because even at a coin-flip chance of starting he beats the only alternative on the bench by a wide margin. Elsewhere the squad is clean. Ryerson was independently re-verified as fit. The Adamu suspension story was traced to an item two seasons old and is dead. Nothing in the squad carries a status flag.",
+  "sweep": "Nobody in the squad is newly injured or suspended, and the club pages were all checked at dated stamps from the last two days. One genuine flag, and it concerns the most valuable attacker in the side. He picked up a thigh strain earlier in the month, returned to training and was named in the squad for the midweek European tie, but then started that match on the bench with another striker preferred, and the only dated preview for this matchday still lists him as doubtful and does not have him starting. His club plays on Sunday while the lineup locks on Friday, so there is no way to resolve this before committing. He should still be fielded, because even a meaningful chance of him starting is worth more than the alternative on the bench, but it is the real risk in this eleven and worth a look at the team news shortly before the deadline if there is a chance to act. Two softer notes: one forward is listed behind the eleven named slots on his club page, suggesting a bench role rather than a start, and the goalkeeper's own profile still shows a knock, but that entry is weeks old and his club page names him first in the probable eleven, so it is stale rather than current. Both of the players flagged for sale were confirmed fit before being recommended, so neither sale is an injury sale.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -578,12 +585,6 @@
    "reversal": "Reverse only if (a) Georg's squad is back above 12 players so a Werder attacker is not a forced starter, AND (b) dated news in the current period confirms him starting, AND (c) he is available at or below mv on a Kickbase listing (not a manager ask)."
   },
   {
-   "name": "Satoshi Tanaka",
-   "status": "12297",
-   "why": "Recommended for sale this run (SELL Smgr9xe), conditional on Tella landing. ap 53, weakest placed MID, mvt 2 with sdmvt -1.461.852 in a day, and Wayzai1 projects him out for the Asian Cup across MD15-20. Blocked so no later run buys back a falling asset it just told Georg to sell.",
-   "reversal": "VOID IF THE TELLA BUY (Be4sgsh) DOES NOT LAND — the sale is strictly conditional on that replacement, so if Tella is lost or the listing expires unbid, Tanaka stays in the XI and this block lapses immediately. Otherwise reverse only if BOTH: (a) dated news confirms he is not going to the Asian Cup or returns before MD15, and (b) his mvt turns back to 1 for two consecutive ticks."
-  },
-  {
    "name": "Serhou Guirassy",
    "status": "1920",
    "why": "CONDITIONALLY recommended for sale 2026-11-22T18:55Z under SELL Shkphlg at mv 33.590.125 by instant sale to the Kickbase board, as the DEFERRED funding leg of BUY Bbzmc2t (Baku). HE IS NOT SOLD, AND THE SALE MAY WELL NOT HAPPEN — it fires only if Baku lands AND the 26.11 20:00Z availability gate (Whjcb0c / Wqwa5rx) still has him unfit; if he is declared fit the better unwind is Muheim plus Tanaka and he STAYS. This block exists purely so that a later run, seeing an ATT hole and a 33,6M mvt-1 asset, cannot buy him back and re-open the deficit it just closed. THE MERIT CASE IS NOT AGAINST HIM: ap 126, p 1009, mvt 1 and rising (sdmvt +75.284, tfhmvt +31.106), the second-best attacker in the squad behind nobody on form when fit. He is being sold, if at all, because he is INJURED AND HIS OWN RETURN ESTIMATE HAS EXPIRED: Zerrung in the right thigh sustained in the Real Betis match (~04.11.2026), Kovac confirming \"nur\" a strain (90min.de, 06.11.2026), the club saying the duration \"ist noch offen\" (wette.de, 07.11.2026), and the single dated estimate \"erwartete Rueckkehr: Mitte November\" (90min.de table, 06.11.2026) having come and gone with MD9 and MD10 both missed and st 2 still set on 22.11. No run may describe him as a bad player or a merit sale.",
@@ -596,22 +597,28 @@
    "reversal": "Re-open ONLY if ALL of: (a) a dated source from 24.11.2026 or later has him fit and in HSV's probable XI, or he actually starts a Bundesliga match; (b) his mvt has turned back to 1 with positive sdmvt AFTER the injury has been priced in, i.e. the market has stopped marking him down; (c) he is available at or below mv, since a manager ask above mv has never been a buy in this ledger's history; and (d) he beats whoever occupies the defensive slot AT THAT MOMENT on expected points, not on his stale ap 123. Having been sold while injured is not itself a reason to buy him back."
   },
   {
-   "name": "Junior Adamu",
-   "status": "6172",
-   "why": "RECOMMENDED FOR SALE 2026-11-24T00:45Z under SELL Ss3i5mo at mv 4.449.196 back to the Kickbase board, as the points-free funding leg behind BUY B1s23v9 (Curda) and/or BUY Bl3xy1r (Njinmah). HE IS NOT BLOCKED ON FITNESS IN ANY SENSE AND NO LATER RUN MAY CITE THIS ENTRY AS A FITNESS OBJECTION: st 0, stl [], and he has featured in every matchday of the season. He is blocked because he is the weakest body in the squad on every measure that matters — ap 41 and p 329, the lowest outfield figures; ph newest-first [53, 113, -11, 60, -7] with three of five returns at or near zero; UNPLACED in the fielded eleven (no lo field), so his sale costs nothing; and he is the squad's ONLY mvt-2 row, tfhmvt -106.561 against a re-measured mvt-2 drift of -4,043% per tick with only 9,4% of such rows rising, so holding him loses value as well as points. Wu6yr9q settles that Ryerson, not Adamu, is the correct eleventh body — 4-4-2 with Ryerson sums 1005 ap against 999 for the 4-3-3 that promotes Adamu — so he is surplus even before the funding case.",
-   "reversal": "Reverse ONLY if ALL of: (1) the sale actually fired — this entry is inert if Georg kept him, and in that case he must still be used as the attacking cover behind Gregoritsch and Guirassy; (2) his mvt is back to 0 or 1, since re-buying a falling row contradicts the measured tick mechanism outright; (3) the ask is AT OR BELOW mv on a Kickbase board row, never a manager premium — at ap 41 no premium is survivable; and (4) the squad has a genuine attacking hole, meaning fewer than the three fit ATT bodies a 4-3-3 or 3-4-3 needs, rather than merely a bench place to fill. He is EXPLICITLY NOT BLOCKED AS A FLIP once mvt turns to 1: fitness and selection do not enter the market-value tick, and no run may cite this entry against a pure value flip on him."
-  },
-  {
    "name": "Cole Campbell",
    "status": "7441",
    "why": "BLOCK PREMISE IS DEAD AND THE ENTRY IS REWRITTEN RATHER THAN INHERITED. The previous text read \"LOST to PhiL95 31.08 02:14Z at 9.296.600 (+20,97%). He is owned.\" He is NO LONGER owned: he sits on the Kickbase board as of 2026-11-22T12:13:49Z, a board row with no u, prc = mv 4.073.119 exactly, ofc 0, st 0, mvt 1, tfhmvt +24.535, expiring 2026-11-24T11:02:30Z. The old reversal condition (\"None - not on the market\") was written as a statement of fact about availability, not as a merit objection, and that fact has flipped. HE IS NOT BLOCKED ON MERIT AND NEVER WAS. Note the mv collapse: 9.296.600 paid in August against 4.073.119 today, a -56% re-rating, so the 2025 purchase price carries no information about today's value. He remains a POOR POINTS BUY on ordinary merits (ap 51 against a fielded eleven whose weakest outfield body is ter Horst at ap 70) and must never be fielded, but he is a VALID PURE VALUE FLIP and FLIP F0zthoa stands.",
    "reversal": "UNBLOCKED AS A FLIP with immediate effect — a mvt-1 board row at prc = mv may be bid at exactly mv and never above it. Still BLOCKED AS A POINTS BUY: reverse that leg only if ALL of (a) a dated St. Pauli XI at that time actually starts him, (b) his ap is re-based above the weakest fielded outfield body, and (c) the ask is at or below mv. Being cheap is not a reversal condition."
+  },
+  {
+   "name": "Junior Adamu",
+   "status": "6172",
+   "why": "Recommended for sale 25.11 06:45Z (call Sz3vvb6) as surplus and depreciating: benched (no lo key in get_lineup), weakest asset at ap 41, and the only squad player on mvt 2 with tfhmvt -88.094 against a measured November mvt-2 drift of -4,029%. Sold to fund the Neuhaus bid. Not an injury sale — Ligainsider Schalke page 23.11.2026 13:09 has him fit and in the lineup list.",
+   "reversal": "Buy back only if he reclaims a regular Schalke start AND flips to mvt 1, or if the squad falls to 11 bodies and a cheap legal ATT is needed to avoid the -100 under-eleven penalty. A low price alone is not a reason."
+  },
+  {
+   "name": "Satoshi Tanaka",
+   "status": "12297",
+   "why": "Recommended for sale 25.11 06:45Z (call S2qdxfr), CONDITIONAL on the Neuhaus buy landing first. Weakest fielded body at ap 47 with last five 3/21/-24/113/48 (mean 32,2, inflated by a single 113). Displaced by Neuhaus, whose last five mean 74,8. Not an injury sale — Ligainsider Schalke page 23.11.2026 13:09 has him fit and in the lineup list.",
+   "reversal": "Buy back only if his minutes and scoring recover to a last-five mean above roughly 60, or if the squad is short a MID and he is the cheapest legal body available to keep the eleven filled. Note the sale may never have happened: if the Neuhaus bid lost, Tanaka is still in the squad and this block should be lifted rather than treated as a past sale."
   }
  ],
  "arithmetic": [
   {
    "k": "Balance",
-   "v": "2.856.838"
+   "v": "2.916.838"
   },
   {
    "k": "Squad value",
@@ -619,15 +626,15 @@
   },
   {
    "k": "33% floor",
-   "v": "-0,33 x (149.037.164 + 2.856.838) = -50.125.021"
+   "v": "-0,33 x (149.037.164 + 2.916.838) = -50.144.821"
   },
   {
    "k": "Spending power",
-   "v": "2.856.838 + 50.125.021 = 52.981.859 — NOT 2.856.838"
+   "v": "2.916.838 + 50.144.821 = 53.061.659 — NOT 2.916.838"
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1337, -4,00% to +443,38%"
+   "v": "n=1338, -4,00% to +443,38%"
   }
  ]
 }
