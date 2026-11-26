@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-26T00:45:03Z",
+ "run": "2026-11-26T02:52Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 7277940,
   "floor": -50628626,
   "spending_power": 57906566,
-  "hours_to_lock": 42.59,
-  "exposure": "The balance is positive right now and no leveraged position is open. The recommended structure does open one briefly: the Neuhaus bid takes the balance negative until the Tanaka sale closes it, and if the Baum offer is left to land it goes further negative and needs two sales instead of one. A negative balance at matchday start scores zero for the entire matchday, so every leg must settle before the Friday evening lock. Removing the Baum offer halves the number of things that have to be remembered while asleep, which is most of why it is the first action.",
+  "hours_to_lock": 40.62,
+  "exposure": "No leveraged position is open as this run closes; the balance is positive and the squad is at eleven. The exposure risk is entirely forward-looking and comes from the two live offers colliding. If the standing Baum offer and the Neuhaus bid both land, the combined outlay runs well past available cash, and a single Tanaka sale does not clear the resulting deficit — it would take a second sale off an already-thin squad to get back to positive. A negative balance when the matchday locks scores zero for the entire matchday, which outranks every other consideration here. Removing the Baum offer eliminates that risk outright and is the cheapest insurance available. If instead the Neuhaus bid alone wins, the deficit is shallow and the Tanaka sale clears it to a comfortable positive with well over a day to spare before the lock. Any flip taken on top of that must be unwound to a non-negative balance and at least eleven bodies before the lock; flipped players never enter the fielded eleven, so selling them back cannot reduce it.",
   "must_restore_by": "2026-11-27T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-4-1 (needs 5 DEF)"
   ]
  },
- "binding_gap": "Positional, not a headcount. The eleven is exactly fillable and the gap is the weakest midfield slot, which Tanaka occupies and which the Neuhaus buy is designed to fill. There is no hole to plug and no formation that is unreachable; what binds is that with no twelfth man, any sale must be preceded by the arriving replacement.",
+ "binding_gap": "There is no formation hole to fix. The eleven fills the only legal shape exactly, with nothing spare. The binding constraint is therefore not a missing position but the floor under the weakest fielded slot: the midfield place currently held by the squad's lowest scorer. That is the slot the recommended buy upgrades, and it is the only slot where a comparable outlay buys a meaningful points gain. Because the squad sits at exactly eleven, the gap cannot be closed by selling first and buying after — the replacement has to land before the outgoing player leaves, and that ordering constraint is the single most important thing in this briefing after the expiring offer.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 57906566,
@@ -54,7 +54,7 @@
   "listings": 47,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 0
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -170,13 +170,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Nothing has executed and nothing has moved.",
-  "headline_short": "Nothing has executed and nothing has moved.",
-  "detail": "Nothing has executed and nothing has moved. The activity feed has been silent since before the last run, cash is unchanged, the squad is unchanged, and both actions from the previous run are still outstanding. The priority is the Baum offer: it must be REMOVED before it resolves in the small hours, because it buys a defender who cannot enter the eleven, at a premium over his market value, and — if it lands alongside the Neuhaus bid — forces two sales before the Friday lock instead of one. That reversal was decided last run and is re-confirmed here; the contradictory BUY call that the previous run could not close because of a database row-read limit has now been closed, so the ledger no longer carries a buy and an avoid on the same player. The second action is unchanged: bid for Neuhaus, then sell Tanaka the moment he lands, never before."
+  "headline": "Pull the Baum offer, then bid Neuhaus.",
+  "headline_short": "Pull the Baum offer, then bid Neuhaus.",
+  "detail": "Pull the Baum offer, then bid Neuhaus. Nothing has settled since the last run — the feed's newest event is still last night's Guiu listing — so the only thing that changed is the clock, and it changed the urgency. Georg's standing offer on Elias Baum resolves within the half hour, and the ledger's live call on him is AVOID, not BUY. Baum cannot enter the eleven, so he buys nothing; worse, if he lands he blocks the Neuhaus buy that is the whole point of the week. Remove the offer, let the Neuhaus listing come to its resolution later this morning, and sell Tanaka only once Neuhaus is actually in the squad."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Only one sale is live and it is conditional: Tanaka, the weakest body in the eleven by a wide margin, and ONLY once Neuhaus is actually in the squad. Selling him first drops the squad to ten and takes the under-eleven penalty. If the Neuhaus bid loses, this sale does not fire at all — Tanaka keeps his slot and the eleven is exactly as it is today. A sale back to the board pays market value in full with no spread, so there is no timing penalty on it beyond the lock itself.",
+  "reason": "One sale is recommended and it is strictly conditional: Tanaka, and only at the moment Neuhaus has actually landed. The ordering is the entire point. Selling him first, from a squad of exactly eleven, leaves ten bodies and concedes the under-eleven penalty for the whole matchday — a far larger loss than anything the sale recovers. If the Neuhaus bid loses, this sale does not fire at all: Tanaka keeps his slot and the eleven stands as it is today. No other squad member is a sale candidate; the remaining ten are all comfortably above him on season average and none carries an injury flag.",
   "standing": [
    {
     "name": "Tanaka — CONDITIONAL: only once Neuhaus has actually landed",
@@ -191,7 +191,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Neuhaus is the buy and the case is now verified twice over. The club-site prediction dated this week names him in the starting eleven for Friday, and he is absent from the league-wide injured and suspended table read this run. He replaces Tanaka in a fielded midfield slot for a clear points gain, and Gladbach kick off at the lock itself, so his points accrue in the opening match of the matchday. The bid sits below the measured clearing band for contested board listings; this is a points buy, not a flip, so losing it costs real points and the mv-exact discipline does not apply. Baum is NOT a buy — remove the standing offer. Becker remains the biggest upgrade on the board on merit and remains unbuyable: the arithmetic was re-run on today's figures and he still fails the unwind test, and tonight's tick widens the gap rather than closing it because his own value rises faster than the proceeds of the only body that can be sold. Vagnoman stays avoided — a high average carried by early-season starts, fit but not back in the eleven, and no dated team sheet since has changed that. Sano, Bolin and Jeltsch are unchanged avoids.",
+  "reason": "Florian Neuhaus is the buy, and he is the only one. He is a Kickbase board listing priced at market value, still completely unbid with several hours left to run, and he is a direct like-for-like replacement for Tanaka in midfield — the same slot in the same 4-4-2, at a materially higher season average. The recommended bid carries a premium over market value that sits inside the measured band for contested board listings, so it is a sane points price rather than an overpay. Starter status is confirmed on a properly dated source from this season: a Gladbach outlet published on 23 November names him in the predicted eleven for the Bremen fixture, and an independent current source lists Gladbach's unavailable players without him among them. His club's match kicks off exactly at the matchday lock, so he is in play for this matchday. Elias Baum is explicitly excluded: he sits below all four of Georg's defenders, cannot enter the eleven in the only legal formation, and would buy zero points. He is also worthless as a value flip, because the offer price is well above market value and the board buys back only at market value.",
   "standing": [
    {
     "name": "Florian Neuhaus",
@@ -320,11 +320,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "Stood down, and the stand-down is re-affirmed on a fresh count rather than inherited. The drift itself is healthy — re-measured two ways this run, flat against the last four readings, so no decay. What is broken is capture: bids placed at exactly market value have won a negligible fraction of resolved auctions, and the ones lost cleared far above the bid — many times the drift being harvested. There is no bid level that is profitable, because the premium needed to win a contested board auction is roughly four times the edge. Note for the record that there is no shortage of structurally qualifying rows on the board today; supply is not the constraint, capture rate is. The stand-down lifts only if the win rate recovers materially on a fresh sample, or a mechanism other than bidding at market value is found.",
+  "reason": "The flip window is open — the lock is comfortably beyond the twelve-hour cutoff — and the edge was re-measured from the event log this run rather than trusted from the prompt. It has not decayed; the rising-flag drift came in slightly above the baseline, with nine in ten rising names going up at the next update, so rivals crowding in has not yet eroded it. The mechanism is unchanged: bid exactly market value on a rising board listing and never raise. The new and reusable insight this run is a timing filter. A flip only pays if the player is owned when the daily update fires, so a listing has to resolve before tonight's update to capture it. Several otherwise-qualifying names fail that test purely on their clock — the largest of them would have ranked near the top of a naive screen and captured nothing. Two candidates clear both the flag test and the timing test and have been logged: the larger one carries the biggest expected move on the board and resolves comfortably before the update, the smaller one resolves soonest of all. A caution on ordering, though: the sooner of the two resolves before the Neuhaus listing does, so committing to it first eats the cash the Neuhaus bid needs. The points trade outranks the value trade. If only one can be taken, it is Neuhaus. Two questions remain unresolved and should stay on the record: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Clean sweep, no new flags. The league-wide injured and suspended table was read this run and not one of the eleven appears on it; all eleven carry a clear status flag in Kickbase. Worth recording that this table prints only relative durations with no absolute dates and no update stamp, so it is a presence-and-absence instrument and never a dated clearance for an individual. Two source traps were logged this run: a fixture preview for this exact pairing that is actually from last season and names Neuhaus in the eleven, so it reads as corroboration and is not; and the club's own aggregator page, whose stamp and squad list are a month stale.",
+  "sweep": "No current adverse news was found for any of the eleven, but that is an honest empty result rather than a clean bill of health, and it should be read that way. The squad-wide sweep hit four stale pages out of five and they are worth recording as traps, because each looks current at a glance: a last-minute lineup roundup from November of last season, a personal-news roundup from the same week last year carrying a plausible but year-old line on Neuhaus and a year-old thigh complaint for Guirassy, and a lineup-and-suspensions page from a season three years back that names several of Georg's defenders and flags Guirassy as doubtful. None of that is current. The injury-table source the routine normally leans on returned no lineup or injury content at all this run — it loads behind script or an overlay — so it is not a dependable fetch target this season. The two sources that did work were a club blog and a live-score match page. One data-quality flag worth carrying forward: a midfielder on the board shows a clean Kickbase status yet appears on an independent unavailable list, so the platform's own flag is not a complete fitness signal. It does not matter for a pure flip, where fitness never enters the daily tick, but it would matter for any points buy.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
