@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-27T02:55Z",
+ "run": "2026-11-27T04:55Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 1277940,
   "floor": -50872843,
   "spending_power": 52150783,
-  "hours_to_lock": 16.58,
-  "exposure": "None. The balance is positive, no offer is outstanding, nothing is leveraged, and the recommended action opens no position. The only path that would open one is the Scheller purchase, and it is being recommended against precisely because its unwind depends on a person being present rather than on arithmetic.",
+  "hours_to_lock": 14.58,
+  "exposure": "Any deficit opened by a winning bid must be closed before the lock, because a negative balance at matchday start scores nothing for the whole matchday. The sequence is fixed and the order matters: win the first listing in the early afternoon, sell Burger immediately, win the second in mid-afternoon, then sell Baum. Each leg closes the deficit the previous one opened, and at market value on both bids the balance finishes comfortably positive with the squad back to twelve and the hedging shape still legal. If only one bid is won, the Burger sale alone clears the balance and the second sale does not fire. If neither is won, nothing is sold, nothing is leveraged, and the free change of shape stands on its own.",
   "must_restore_by": "2026-11-27T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "There is no squad hole. Every legal shape is fillable and the side is comfortably clear of the eleven-player penalty. What binds instead is the bench: with exactly one spare body, Burger and Guirassy cannot both be hedged, and each trade option on the table would spend that spare body and foreclose the hedge entirely. That is the real constraint this run, and it is the reason the free lineup change beats every purchase.",
+ "binding_gap": "The weakest fielded body is the third midfielder, and that is where Doan lands. The second gap is the fifth defender, where Scheller lands. Neither is a hole in the sense of an unfillable slot, because the squad can already field a legal shape; both are upgrades to the eleven that the squad can now afford for the first time, because an injured and unplaced midfielder has become sellable at full value.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 52150783,
@@ -51,7 +51,7 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 38,
+  "listings": 39,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
   "expiring_within_2h": 1
@@ -179,20 +179,64 @@
   }
  ],
  "verdict": {
-  "action": "none",
-  "headline": "One free action, no trade.",
-  "headline_short": "One free action, no trade.",
-  "detail": "One free action, no trade. Switch to 5-3-2 so Baum comes in, and bench Burger for Tanaka — it costs nothing, needs no transaction, and is the whole of today's edge. Everything else this run argues for standing still: the balance is positive, no offer is live, no leveraged position is open, and the one genuine upgrade on the board cannot be funded without opening a deficit that a human has to close by hand before the lock."
+  "action": "act",
+  "headline": "The last run stood everything down and said no trade before the lock.",
+  "headline_short": "The last run stood everything down and said no trade before the lock.",
+  "detail": "The last run stood everything down and said no trade before the lock. That is reversed, and on one fact: Burger's rib injury turned him from a fielded midfielder into the squad's largest free sale, which more than doubles what the squad can actually spend. Two board listings that were stood down for want of funding are now affordable, both expire before the lock, and both men are confirmed starters on sources dated yesterday and this morning. Bid exactly market value on Doan first, then on Scheller; sell Burger back to the board only once a bid has been won, never on its own."
  },
  "sell": {
-  "recommendation": "none",
-  "reason": "No sale is recommended and none is needed. Burger is the only player with a case against him, and it is a one-matchday case, not a verdict on the asset: a rib knock taken on Thursday, with his market value still rising. Benching him costs nothing and keeps him; selling him would be permanent, would leave only three midfielders — one injury away from having no legal shape at all — and is only worth contemplating as the unwind leg of a Scheller purchase that is not being recommended. The standing sale that once cleared a negative balance is long settled; there is no deficit to clear.",
-  "standing": []
+  "recommendation": "act",
+  "reason": "Burger is the sale, and only as the unwind leg of a bid that has already been won. He costs nothing to lose: in 5-3-2 the fourth midfielder sits anyway, and he is carried as doubtful by his own club's absentee list this morning, as knocked by two sources yesterday, and by a live status flag on the Kickbase row. Selling back to the board pays market value exactly, with no auction risk and no spread, and the next market update falls after the lock, so a sale fired any time today pays the full figure while one deferred to tomorrow does not. His momentum has already stalled against every other rising body in the squad, which is the market starting to price the injury. Do not sell him unconditionally: that drops the squad to eleven and kills the only shape that can bench Guirassy. Baum is the second leg and fires only if both bids are won.",
+  "standing": [
+   {
+    "name": "Wouter Burger",
+    "pos": "MID",
+    "club": "14",
+    "mv": 19293450,
+    "ap": 95,
+    "why": "STRICTLY CONDITIONAL — FIRE ONLY ONCE A BUY HAS LANDED, AND NEVER ON ITS OWN. Unconditional sale drops the squad to ELEVEN, which kills the 5-4-1 shape that Whun06q identifies as the only hedge against Guirassy, and that hedge matters more today than it did yesterday (see this run's Guirassy WATCH). As the unwind leg of BUY Bs90r01 (Doan) or B0t8gwq (Scheller) the squad returns to TWELVE with the same 1GK/5DEF/4MID/2ATT shape and the hedge survives intact. WHY HE IS THE RIGHT BODY TO SELL AND NOT TANAKA OR BAUM: (1) ZERO FIELDED COST. Wpzf62v's 5-3-2 fields three midfielders — Wolf 86, Petkov 94 and the weakest of the rest — so the fourth MID sits regardless. Burger is that fourth MID the moment Doan lands, and he is already the correct man to bench on fitness. (2) HE IS THE DOUBT, NOT THE ASSET. buli-tipphilfe's injury page, Datenstand 27.11.2026 03:00 Uhr for the 11. Spieltag, lists him in \"TSG 1899 Hoffenheim muss zum naechsten Spieltag auf 6 Spieler verzichten: A. Hajdari, N. De Cat, O. Kabak, R. Hranac, V. Gendrey und W. Burger\", with the table row \"W. Burger | Verletzung (nicht naeher bezeichnet) | Fraglich\" and NO expected return date. That is a THIRD dated source on top of RotoWire 26.11 (rib knock, severity unclear) and LigaInsider 26.11 23:37 (Angeschlagen), and it is the first one that moves him from \"angeschlagen\" to a club absentee list. Kickbase agrees: st 2, stl [2]. (3) HE IS THE LARGEST SINGLE UNWIND IN THE SQUAD at mv 19.293.450, which is what makes both buys affordable at once; the next largest free body is Baum at 5.474.706. (4) THE TICK WILL PRICE THE INJURY AND HE IS CARRIED AT A PRE-INJURY VALUATION. He is still flagged mvt 1, but his tfhmvt is +28.114 against a squad where every other mvt-1 body runs +46k to +257k — the momentum has already stalled, which is the market beginning to re-rate him. The next update is mvud 2026-11-27T21:00:00Z, i.e. 90 MINUTES AFTER the lock, so a sale fired any time today still pays exactly 19.293.450 with no tick risk; a sale deferred to tomorrow does not. The Bornauw precedent is explicit that an mvt-1 flag set before an injury predicts the tick DOWN, not up. SELLING BACK TO THE BOARD PAYS EXACTLY mv, measured across the whole log with no spread, so there is no auction risk on this leg. DO NOT sell him before a buy clears, and do not sell him at all if neither bid wins — in that branch the squad stays at 12, the 5-4-1 hedge stays available, and Burger is simply benched in 5-3-2 at zero cost.",
+    "tag": "sell"
+   },
+   {
+    "name": "Elias Baum",
+    "pos": "DEF",
+    "club": "4",
+    "mv": 5474706,
+    "ap": 64,
+    "why": "SECOND UNWIND LEG, AND IT FIRES ONLY IN THE BOTH-BUYS-LAND BRANCH. Sequence: win Doan at 12:26Z, sell Burger, win Scheller at 14:27Z, then sell Baum — in that order, and only that order. Arithmetic at mv on both buys: 1.277.940 - 11.715.054 + 19.293.450 - 9.522.620 + 5.474.706 = +4.808.422, squad back to 12 (1GK/5DEF/4MID/2ATT), 5-3-2 eleven = 1033 ap against today's 974, and the 5-4-1 hedge still legal. IF ONLY DOAN LANDS, DO NOT SELL BAUM: the Burger sale alone already clears the balance to +8.856.336 and Baum keeps his place as the fifth defender. IF ONLY SCHELLER LANDS, sell Burger and NOT Baum — Scheller displaces Baum in the eleven but Baum is then the twelfth body and the 5-4-1 hedge needs him on the bench, not sold. WHY HE IS THE RIGHT SECOND LEG RATHER THAN TANAKA: Scheller is a defender, so the defender he displaces is the sellable one, and selling Tanaka instead would leave six defenders and only three midfielders, which makes 5-4-1 illegal and destroys the Guirassy hedge for no gain. HE IS NOT BLOCKED ON MERIT AND NO LATER RUN MAY CITE THIS AS A FITNESS OBJECTION: Baum (7325) is an EINTRACHT FRANKFURT left-back — tid 4 is Frankfurt, not Stuttgart, see the identity correction in BUY Bs90r01 — Kickbase st 0 with stl [], and Comunio's 26.11.2026 probable XI for Stuttgart v Frankfurt on 28.11 names him in the starting eleven with Kosugi as the alternative: \"Atubolu - Knauff, Koch, Brassier, Baum (Kosugi) - ...\". He is a confirmed starter. He is sold purely because ap 64 is the lowest of the five defenders and Scheller's ap 90 is a genuine ten-matchday mean, a +26 upgrade in the same slot. CAVEAT TO CARRY FORWARD: his ph newest-first reads [did not play, 8, 86, 102, 17], so ap 64 is itself carried by two mid scores and his floor is low — which cuts both ways and is another reason the Scheller upgrade is real rather than cosmetic.",
+    "tag": "sell"
+   }
+  ]
  },
  "buy": {
-  "recommendation": "none",
-  "reason": "Scheller is the best points upgrade available and nothing about the player has changed — he is fit, he starts, and he is a board listing at exactly market value with no manager behind it. The problem is entirely mechanical, and it corrects a standing error in the ledger: the previous run deferred him to after the lock on the reasoning that a deficit is harmless there, but his listing expires about five hours BEFORE the lock. There is no post-lock vehicle. Buying him now means going negative and then having to sell Burger back in the window between winning the auction and the lock — several hours in which someone has to be at his phone. A negative balance at matchday start scores zero for the entire matchday, so the downside is the whole weekend against an upgrade worth a couple of dozen points, on a listing this ledger has historically lost every time it was contested. Bid only if Georg is at his desk through the lock, only at exactly market value, never above, and with the Burger sale fired the instant he wins. Otherwise let it expire.",
-  "standing": [],
+  "recommendation": "act",
+  "reason": "Doan first. He is an Eintracht Frankfurt midfielder, not a Stuttgart one, and correcting that identity is what made this buy visible at all. He has started every league match this season with no injury note and is named in a probable eleven dated yesterday. He replaces the weakest body in the fielded side, and the upgrade persists all season rather than for one matchday. His listing resolves first, in the early afternoon, well clear of the lock. Scheller second. He is confirmed in Paderborn's probable back three on two dated sources, one from this morning, his earlier knock is resolved, and he upgrades the fifth defender slot. His listing dies five hours before the lock, so there is a vehicle for him today and there will not be one tomorrow. Bid exactly market value on both. The measured record says an exact bid wins a minority of contested board listings, so expect to lose at least one. These are points buys and not flips, so the never-raise rule does not bind; the disciplined ceiling on each is the measured mean premium for its own quality band, and the unwind still finishes positive at those figures.",
+  "standing": [
+   {
+    "name": "Tjark Scheller",
+    "pos": "DEF",
+    "club": "29",
+    "ask": 9522620,
+    "mv": 9522620,
+    "premium_pct": 0,
+    "listing": "Kickbase listing",
+    "why": "REVERSES W7ibc75, WHICH IS CLOSED, AND THE REVERSAL IS ON FUNDING, NOT ON MERIT OR ON A NEW LISTING. W7ibc75 said this listing dies at 14:27Z with no post-lock vehicle, and that no bid was recommended anyway because \"buying at 9.522.620 against cash 1.277.940 opens a deficit of -8.244.680\" that could not be unwound. BOTH HALVES ARE NOW WRONG IN THE WAY THAT MATTERS: the expiry is re-read live this run (exs 35009s at 04:45Z = 2026-11-27T14:27Z) and is FIVE HOURS BEFORE the lock, which is a vehicle, not the absence of one; and the deficit IS unwindable, because Burger has since become the odd man out of the 5-3-2 eleven and is Fraglich, so his instant sale at exactly mv 19.293.450 costs zero fielded points. W7ibc75's instruction to act only on a NEW listing was written to stop a run inheriting a stale exs; exs was re-read, so that guard is satisfied. STARTER STATUS IS NOW CONFIRMED ON TWO DATED CURRENT SOURCES, which it was not when the earlier call stood: Comunio 26.11.2026 (modified 10:31Z) names him in Paderborn's probable XI — \"Noll - ter Horst, Scheller, Hansen - Curda, Baack (Ulrich), Castaneda, Vidosic, Obermair - Marino, Mueller (Pieringer)\" — and buli-tipphilfe's Paderborn page at Stand 27.11. 03:00 Uhr lists \"25Scheller\" in a 3-5-2 back three for \"Sa. 28.11., 15:30 Uhr\" v FC Schalke 04. Neither page carries a status icon against him, and Paderborn's absentee lists (Hoffmeier, Awortwie-Grant, Gayret; fraglich Ulrich) do not include him. The 19.11.2026 LigaInsider \"Angeschlagen\" items and the RotoWire 19.11.2026 \"on track for Saturday return\" are both RESOLVED — he played, p 900 over the season, ap 90 is a genuine ten-matchday mean, Kickbase st 0 with stl []. CORRELATION NOTE, stated once so a later run prices it: Paderborn's back three is ter Horst, Scheller, Hansen and Georg ALREADY OWNS ter Horst (7616) and Hansen (6292). Buying Scheller puts all three centre-backs of one defence in the eleven — clean-sheet points arrive together and concede together. That is a real variance increase and it is the one genuine argument against this buy. THE SLOT: he replaces BAUM (ap 64) as the fifth defender for +26 ap. THE LISTING: board row, no `u`, prc = mv = 9.522.620, ofc 0, mvt 1, tfhmvt +131.245. BID: exactly mv. Measured ap90-129 cohort clears at or below mv only 24,4% of the time with a mean premium of +11,53%, so this is the weaker of the two auctions; disciplined ceiling 10.620.545. SEQUENCING: this is SECOND priority behind Doan, whose listing resolves first at 12:26Z. If both land, Baum's sale (5.474.706) is the second unwind leg and the balance still finishes positive at +4.808.422.",
+    "rank": 1,
+    "trigger": "2026-11-27T14:27:00Z"
+   },
+   {
+    "name": "Ritsu Doan",
+    "pos": "MID",
+    "club": "4",
+    "ask": 11715054,
+    "mv": 11715054,
+    "premium_pct": 0,
+    "listing": "Kickbase listing",
+    "why": "IDENTITY CORRECTION FIRST, because every previous run that touched tid 4 got the club wrong by reading `os` as the own club: `os` IS THE OPPONENT. tid 4 is EINTRACHT FRANKFURT, confirmed two ways — get_player 2199 (Vagnoman) gives tn \"Stuttgart\" for tid 9 and an MD11 fixture t1 9 v t2 4 at 2026-11-28T17:30:00Z, and Comunio's 26.11.2026 (modified 10:31Z) probable XI for that fixture names BOTH Doan AND Georg's own Baum in the FRANKFURT eleven: \"Atubolu - Knauff, Koch, Brassier, Baum (Kosugi) - Aseko, Onyedika - Doan, Chaibi - Uzun (Ebnoutalib) - Burkardt\". So Doan is a Frankfurt midfielder, NOT a Stuttgart one, and Baum is a Frankfurt left-back. THE MERIT: ap 80 on p 721 over 9 matchdays, and fotmob gives 9 Started / 9 Matches / 732 minutes in the Bundesliga this season with NO injury note and no status flag (Kickbase st 0). That is a nine-of-nine certainty, not a cameo artefact, and it is the cleanest starter verification available on this board. THE SLOT: in the 5-3-2 that Wpzf62v correctly prescribes, the three midfield slots are Wolf 86, Petkov 94 and Tanaka 47. Doan replaces TANAKA for +33 ap per matchday, and the upgrade persists for the rest of the season rather than one matchday. THE LISTING: Kickbase board row, no `u`, prc = mv = 11.715.054 exactly, ofc 0, mvt 1, tfhmvt +184.576, exs 27734s read at 04:45Z = expiry about 2026-11-27T12:26Z, which is SEVEN HOURS BEFORE the 19:30Z lock. THE FUNDING, AND THIS IS WHAT REVERSES THE STAND-DOWN: cash is only 1.277.940, but Burger is now BOTH out of the fielded eleven (5-3-2 benches the fourth MID) AND Fraglich on buli-tipphilfe's 27.11 03:00 Datenstand, so selling him back to the board at exactly mv 19.293.450 costs ZERO fielded points. Win Doan at mv, fire SELL Sburger, and the balance lands at +8.856.336 with the squad back at 12 and the identical 1GK/5DEF/4MID/2ATT shape — so the 5-4-1 Guirassy hedge that Whun06q insists on is PRESERVED, and improved, because the fourth MID becomes Doan 80 instead of a doubtful Burger. BID DISCIPLINE: bid exactly mv first. The measured point-in-time cohort (Weuje4e, re-run) gives ap40-89 a 36,1% chance of clearing at or below mv with a mean premium of +12,36%, so exact-mv is a coin-flip at best. This is a POINTS buy and not a flip, so the never-raise rule (which exists to protect the tick margin) does NOT bind: the maximum that still unwinds non-negative on the Burger leg alone is 20.571.390, and the disciplined ceiling is the band mean 13.163.235. Do not go past that without a new measurement.",
+    "rank": 2,
+    "trigger": "2026-11-27T12:26:00Z"
+   }
+  ],
   "killed_this_run": [
    {
     "name": "Hugo Bolin",
@@ -214,11 +258,11 @@
    },
    {
     "name": "Josha Vagnoman — the cheap-mv/high-ap trap CONFIRMED by dated news, not merely suspected",
-    "pos": "DEF",
-    "club": "9",
+    "pos": "",
+    "club": null,
     "ask": 9107651,
-    "mv": 9574606,
-    "premium_pct": -4.88,
+    "mv": null,
+    "premium_pct": null,
     "why": "THE MOST DANGEROUS ROW ON THE 25.11 14:45Z BOARD AND THE ONLY ONE THAT SURVIVED EVERY ARITHMETIC FILTER. Row 2199, VfB Stuttgart tid 9, DEF, mv 9.107.651, prc = mv EXACTLY, no u (Kickbase board), ofc 0, st 0, mvt 1, tfhmvt +263.685, exs 129.867 so expiry 2026-11-27T02:49Z, BEFORE the lock. WHY IT LOOKED LIKE THE BUY OF THE RUN: ap 106 against ter Horst's ap 47-adjacent 70 is +36 per matchday, the largest single-slot upgrade on the board, and it is affordable — the W6gqmgc ceiling for a DEF buy is cash 2.916.838 + Adamu 4.361.102 + ter Horst 6.672.110 = 13.950.050, and the residual eleven (1GK/4DEF/4MID/2ATT) is legal at 4-4-2. It beat the standing Neuhaus buy on raw points AND carried no premium. IT FAILS ON THE ONE TEST THE ap COLUMN CANNOT SEE, and STEP 5 names this exact shape: a cheap market value next to a big average usually means the market knows he lost his place. DATED CHAIN, verified 25.11.2026: hamstring strain off at 52' v Atletico 20.10.2026; LigaInsider 22.10 \"Vagnoman duerfte dem VfB laut Sky dennoch rund drei bis vier Wochen fehlen\"; 26.10 \"Hoeness bestaetigt wochenlangen Vagnoman-Ausfall\"; back in team training 16.11 but framed only as \"duerfte rechtzeitig wieder eine OPTION sein\"; 21.11 Rotowire \"available from the bench against Schalke\". MD10 21.11.2026 he did NOT start — 10 minutes as a substitute, rating 6.4. Season 26/27: 7 apps, 6 starts, 541 min, so the ap 106 is earned ENTIRELY from the pre-injury Sept-to-mid-Oct block when he was automatic, and the four missed matchdays are what made him cheap. THE RISING mvt IS THE MARKET PRICING IN A RETURN, NOT CONFIRMING A RESTORED PLACE — do not read tfhmvt +263.685 as a starter signal. POSITIONAL KILL: Hoeness plays a back three, so this is a right WING-BACK slot, and Jamie Leweling is the incumbent — MD10 XI (LigaInsider 21.11 17:28) started Leweling on the right with BOTH Vagnoman and Assignon on the bench, and goal.com's 25.11 Inter XI again has Leweling there with Vagnoman unmentioned. Lorenz Assignon is the second rival and started at right-back on 28.10 while Vagnoman was out. STALE TRAP REJECTED: kicker's stuttgart-gegen-frankfurt page looks current from its URL but is 2025/26 MD17, with Vagnoman starting and assisting twice — that single page would have produced exactly the false \"locked-in starter\" conclusion. REVERSAL: only on a source dated at that time placing him in a Stuttgart STARTING XI (not a squad graphic, not \"zurueck im Training\"), AND the purchase re-clearing the ceiling at that moment. Being fit is not the test; holding the wing-back slot against Leweling is."
    },
    {
@@ -307,11 +351,11 @@
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "Nothing qualifies, and for a tighter reason than the previous run gave. The tick falls after the lock, as already logged — but the live market field confirms the hour, and the ledger has been writing the wrong one, so later runs should read it rather than remember it. The stricter block is new: the cheapest rising board listing costs roughly double the available cash, and every other qualifying row is far dearer still. So even with a tick that landed before the lock, no flip could be funded without leverage carried through it. The cheap sub-floor rows are all flat-flagged and carry no edge at all. The edge itself is intact — re-measured from the log this run, the rising-flag drift is flat against the last run and above the baseline in the standing prompt, with close to nine in ten rising. Do not report decay. Two questions remain open and unanswered: whether Kickbase caps squad size, which would cap flip throughput, and the fact that this edge is measured in one league over one period and will decay if rivals crowd in.",
+  "reason": "Empty, and for three reasons rather than the usual one. The market update falls ninety minutes after the lock, so no flip bought today can be unwound before the lock and still capture the tick. Cash on its own is below the cheapest rising board listing. And every unit of unwind capacity the squad has is now committed to two verified points buys, which are worth an order of magnitude more than a single tick. The edge itself is intact: the rising flag re-measured from the log this run is flat against the last run, with no decay. One instrument question is still unresolved and should keep being stated until it is settled, because the two plausible alignments of the measurement give materially different answers and no run has yet shown which one actually predicts the next tick. The win rate, as opposed to the drift, has decayed across every quality band, which is what crowding looks like when it arrives through price rather than through drift.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "Burger is the live problem. Kickbase carries a status flag on him, and two dated sources from the twenty-sixth agree: RotoWire has him forced off in Thursday's Europa League tie with a knock to the rib cage, severity unclear, explicitly casting doubt on Sunday against Augsburg; LigaInsider's club page, last updated late on the twenty-sixth, carries him with an injured-doubtful tag but leaves him off the absence list. Doubtful, not ruled out — and in the three-midfielder shape he is only the better body if he is likelier than not to play, which a flagged player three days off a rib injury is not. Guirassy is the correction in the other direction, and it reverses a previous call: the last run read him as absent from the freshest probable eleven. He is not absent. Two dated sources from the twenty-sixth start him and note he came off the bench in midweek in the Champions League, and the freshest source names him as the explicit alternative rather than omitting him. He carries no status flag. Read him as a coin flip tilted his way, keep him in the side, and do not take the one-forward hedge. The official sheets land about an hour before kick-off, long after the lock, so neither man can be resolved on evidence before Georg has to commit.",
+  "sweep": "Guirassy has moved against us since the last run. Yesterday's reading had him starting; this morning's data stand lists him among six Dortmund absentees with a thigh injury and no return date. The Kickbase row still shows him clean, and no run should treat that as a clearance. The hard evidence points the same way: he started nothing for three weeks and came back only as a short substitute in midweek. Dortmund play Sunday, so the eleven is unknowable at a Friday lock, but their pre-match press conference falls before it and is the one thing that can settle this in time. If it rules him out or leaves him unconfirmed, bench him and play the four-midfield shape; if it names him fit, play him. Burger is doubtful on three dated sources and is the sale, not a selection problem. Baum and Doan are both confirmed Frankfurt starters, Scheller a confirmed Paderborn starter. Nobody else in the squad carries a flag.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -583,10 +627,16 @@
    "reversal": "Re-buyable only if his ap rises above 70 (i.e. above ter Horst, the next-weakest fielded body) over a sustained run of matchdays, OR if the squad falls below three fielded midfielders and no better MID is available within spending power. Price alone is never a reason: he was sold as a points upgrade, not as a value trade."
   },
   {
+   "name": "Wouter Burger",
+   "status": "11631",
+   "why": "Named as the CONDITIONAL unwind leg of BUY Bs90r01 (Doan) and B0t8gwq (Scheller) under SELL S5lxljh, 27.11 04:45Z, at mv 19.293.450 back to the Kickbase board. He is NOT blocked on merit in any sense and no future run may cite this entry as a selection objection: ap 95 on p 853, he was the fielded MID at lo 7, and his ph newest-first reads [79, 127, 119, 91, did not play] — a genuine starter having a good season. He is blocked on (a) a dated rib injury from Hoffenheim's Europa League tie v Sturm Graz on 26.11.2026, carried as \"Fraglich / Verletzung (nicht naeher bezeichnet)\" on buli-tipphilfe's 11.-Spieltag page at Datenstand 27.11.2026 03:00 Uhr, as \"Angeschlagen\" on LigaInsider 26.11 23:37, and as \"severity unclear\" on RotoWire 26.11, with Kickbase st 2 stl [2] agreeing; and (b) the structural fact that in the correct 5-3-2 he is the fourth midfielder and therefore unplaced, which makes him the only body in the squad whose sale costs ZERO fielded points. The block exists so that a later run, seeing an mvt-1 flag and ap 95 on a 19,3M midfielder, does not buy him straight back at a premium the day after selling him — his mvt 1 reading PREDATES the injury (tfhmvt has already stalled to +28.114 against +46k-257k for every other mvt-1 body in the squad) and the 21:00Z tick is the first one that can price it, exactly as the Bornauw entry predicts.",
+   "reversal": "THIS BLOCK IS INERT UNLESS THE SALE ACTUALLY FIRED — S5lxljh is conditional on a buy landing, and if neither Doan nor Scheller clears, Burger is simply benched in 5-3-2 and nothing here applies. Treat it as live only if Georg sold him. If he did, reverse only if ALL FOUR hold: (a) a dated source of 28.11.2026 or later confirms the rib injury resolved and him back in the Hoffenheim XI, or Kickbase row 11631 returns to st 0 with stl empty on a dt later than 2026-11-27T04:45Z — the 26.11 RotoWire and LigaInsider items and the 27.11 buli-tipphilfe row are all the INJURY and none of them is a clearance; (b) the ask is AT OR BELOW mv, since the instant board sale paid exactly mv and buying back above it is a guaranteed loss on a body we valued at mv ourselves; (c) his ap still beats the midfielder he would displace AT THAT MOMENT, which after the Doan buy means beating Doan 80 or Petkov 94 rather than Tanaka 47; and (d) the purchase fits inside spending power and unwinds to a non-negative balance with at least 11 players before the then-current lock. Being the midfielder we sold is not a reason to buy him back at any price."
+  },
+  {
    "name": "Elias Baum",
    "status": "7325",
-   "why": "Recommended for CONDITIONAL sale this run (SELL S143uq3) as the mandatory unwind leg if BUY B69s9b8 (Scheller) is won. Sold for funding shape, not on merit or news: he is fit, his 07.11 yellow-red ban is served, he is in Frankfurt's probable XI (ligainsider 23.11.2026) and Frankfurt are pursuing a contract extension (06.11.2026). Note he was bought only this morning at 6.000.000 against mv 5.299.561 (26.11.2026 03:14Z, mvgl -700.439), so a later run could easily be tempted back in at what looks like a discount. Selling him back to the board at ~5.450.000 after tonight's tick realises a loss of ~550.000 against the purchase price; that loss is the price of the Scheller upgrade and is already accounted for in the plan.",
-   "reversal": "BLOCK IS VOID IF THE SCHELLER BID IS LOST - in that case he is never sold, stays in the squad and is fielded at DEF in 5-3-2, and nothing here applies. If he IS sold, do not re-buy him at any price before MD12 purely because he is cheap or because the purchase price was higher; re-buyable only if the squad falls below five fielded defenders with no better DEF available within spending power, or if his ap rises above 85 (i.e. above Hansen and Deman)."
+   "why": "SUPERSEDES THE EARLIER ENTRY. Named as the SECOND conditional unwind leg under SELL Scvttu8, 27.11 04:45Z, at mv 5.474.706, and it fires ONLY in the branch where BOTH Doan (Bs90r01) and Scheller (B0t8gwq) clear. IDENTITY CORRECTION, because the ledger has had tid 4 wrong by reading `os` as the own club when `os` is the OPPONENT: Elias Baum (7325) plays for EINTRACHT FRANKFURT, not Stuttgart. Comunio's 26.11.2026 probable XI for Stuttgart v Frankfurt (28.11, 17:30Z per get_player mdsum) names him in the Frankfurt back four — \"Atubolu - Knauff, Koch, Brassier, Baum (Kosugi) - ...\" — with Kosugi as the alternative. HE IS NOT BLOCKED ON FITNESS OR SELECTION AND NO FUTURE RUN MAY CITE THIS ENTRY AS EITHER: Kickbase row 7325 is st 0 with stl [], he is a confirmed dated starter, and mvt 1 with tfhmvt +175.145 is among the healthiest momentum readings in the squad. He is sold, if at all, purely because ap 64 is the lowest of the five defenders and Scheller's ap 90 is a genuine ten-matchday mean in the same slot, a +26 upgrade. Note the shape of his ap: ph newest-first [did not play, 8, 86, 102, 17], so 64 is carried by two mid scores and his floor is genuinely low.",
+   "reversal": "INERT UNLESS BOTH BUYS LANDED AND THE SALE ACTUALLY FIRED. If only one of Doan or Scheller clears, Baum is NOT sold and nothing here applies — in the Scheller-only branch he is specifically KEPT as the twelfth body, because 5-4-1 needs five defenders plus a bench and selling him would drop the squad to eleven and kill the Guirassy hedge. Treat as live only if Georg sold him. If he did, reverse and re-buy only if ALL THREE hold: (a) the ask is AT OR BELOW mv, since the instant board sale paid exactly mv; (b) his ap at that moment beats the defender he would displace, which after the Scheller buy means beating Scheller 90 or ter Horst 70, not the 64 that made him the sale; and (c) the purchase unwinds to a non-negative balance with at least 11 players before the then-current lock. He is a legitimate points buy on merit at the right price and must not be treated as damaged goods."
   }
  ],
  "arithmetic": [
@@ -608,7 +658,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1363, -4,00% to +443,38%"
+   "v": "n=1364, -4,00% to +443,38%"
   }
  ]
 }
