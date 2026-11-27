@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-27T14:53Z",
+ "run": "2026-11-27T17:02Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -8,53 +8,53 @@
   "locks": "2026-11-27T19:30:00Z",
   "played": 10
  },
- "cash": -24412060,
- "squad_value": 174119863,
+ "cash": 356096,
+ "squad_value": 149351707,
  "leverage": {
-  "balance": -24412060,
+  "balance": 356096,
   "floor": -49403575,
-  "spending_power": 24991515,
-  "hours_to_lock": 4.61,
-  "exposure": "This is the whole run. The leverage is real and the deadline is the lock, not the evening market-value tick, which falls after it. Because the tick falls after the lock, both sale prices are frozen between now and the deadline, so the unwind arithmetic cannot drift and the buffer that remains is the buffer Georg gets. One execution risk outweighs the arithmetic: Burger currently sits on the board as Georg's OWN manager ask, priced at exactly market value, with no offers on it since it was listed. A manager ask is the buyer's choice and may never clear. This is the same shape as the Conte episode in September, where a correctly priced ask sat unsold while a deficit stayed open. Pull the listing and sell to the board instead, which pays exactly market value every time with no spread. Do not wait on the ask.",
+  "spending_power": 49759671,
+  "hours_to_lock": 2.46,
+  "exposure": "None. The leveraged position that dominated the last several runs is closed — the balance is positive and no offer is outstanding. Because a live offer does not reserve cash, which this ledger proved directly earlier today, the recommended offer can be placed now without putting the matchday at risk; the row it sits on resolves well after the lock, so there is no path by which a negative balance exists when scoring starts. The unwind for that purchase is not due until the following matchday lock, a full week out.",
   "must_restore_by": "2026-11-27T19:30:00Z"
  },
  "counts": {
   "gk": 1,
-  "def": 6,
-  "mid": 5,
+  "def": 5,
+  "mid": 4,
   "att": 2,
-  "total": 14
+  "total": 12
  },
  "placed": 11,
  "penalty_open": false,
  "formations": {
   "legal": [
-   "3-5-2",
    "4-4-2",
-   "4-5-1",
    "5-3-2",
    "5-4-1"
   ],
   "blocked": [
    "3-4-3 (needs 3 ATT)",
+   "3-5-2 (needs 5 MID)",
    "3-6-1 (needs 6 MID)",
    "4-2-4 (needs 4 ATT)",
    "4-3-3 (needs 3 ATT)",
+   "4-5-1 (needs 5 MID)",
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "There is no positional gap. The squad covers every slot a legal formation needs, and after the two sales it still does, with one body spare on the bench. What binds this run is the unwind deadline, not a hole in the eleven.",
+ "binding_gap": "There is no positional hole. Every outfield line is covered, the eleven is full and fit, and the squad sits one body above the penalty threshold. The binding constraint is therefore not a gap but a timing one: every single row on the market resolves after the lock, so no purchase can reach this matchday at all, and equally no purchase can open a deficit before it. That cuts both ways and it is why this run recommends setting up a buy rather than making one.",
  "surplus": "",
  "run_kind": "scheduled",
- "cash_ceiling_before_md1": 24991515,
+ "cash_ceiling_before_md1": 49759671,
  "daily_bonus": null,
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 36,
+  "listings": 22,
   "cheapest": 500000,
-  "cheapest_slot_filling": 13183428,
-  "expiring_within_2h": 2
+  "cheapest_slot_filling": 500000,
+  "expiring_within_2h": 1
  },
  "squad": [
   {
@@ -83,16 +83,6 @@
    "club": "18",
    "mv": 10538328,
    "ap": 107,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
-   "name": "Burger",
-   "pos": "MID",
-   "club": "14",
-   "mv": 19293450,
-   "ap": 95,
    "state": "clear",
    "note": "",
    "tag": "keep"
@@ -158,7 +148,7 @@
    "tag": "keep"
   },
   {
-   "name": "Dōan",
+   "name": "Doan",
    "pos": "MID",
    "club": "4",
    "mv": 11715054,
@@ -178,16 +168,6 @@
    "tag": "keep"
   },
   {
-   "name": "Baum",
-   "pos": "DEF",
-   "club": "4",
-   "mv": 5474706,
-   "ap": 64,
-   "state": "clear",
-   "note": "",
-   "tag": "keep"
-  },
-  {
    "name": "Tanaka",
    "pos": "MID",
    "club": "8",
@@ -200,39 +180,51 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Act now, not later.",
-  "headline_short": "Act now, not later.",
-  "detail": "Act now, not later. Both legs of the Doan/Scheller package cleared, the balance is leveraged, and the matchday locks this evening. A negative balance at matchday start scores zero for the whole matchday, so closing it is worth more than every other consideration on this page combined. Two sales close it exactly, and both are points-free: the first is an injured player who would contribute nothing anyway, the second is the lowest-rated defender, who stopped being a fielded body the moment Scheller landed. Then re-set the eleven. No buys, no flips."
+  "headline": "Quiet run, clean position, one time-boxed thing to check.",
+  "headline_short": "Quiet run, clean position, one time-boxed thing to check.",
+  "detail": "Quiet run, clean position, one time-boxed thing to check. Georg executed the full unwind at around 15:04Z — both sale legs fired and the balance came back positive, exactly as the standing SELL calls predicted. He also fixed the lineup himself: Doan is placed and Tanaka is the unplaced body, so the outstanding RAISE is executed too. There are now zero open SELL, BUY, RAISE or FLIP calls inherited from earlier runs. Nothing should move before the matchday lock. The single action between now and then is a look at Werder's confirmed eleven about an hour before kickoff, because Deman's start is the one thing two good sources disagree about and his match kicks off at the same moment the matchday locks."
  },
  "sell": {
-  "recommendation": "act",
-  "reason": "Two sales, in this order, and both back to the board rather than to the market. Burger first: he is the larger leg and he is injured, so the sale is a merit sale and a funding sale at once. His market value is still rising because the board has not yet absorbed yesterday's news, which means today is also the best price he will see for a while. Baum second: he is sold purely because Scheller now occupies his slot at a far better average, so the sale costs nothing in fielded points. Tanaka was checked as the alternative second leg and rejected: he produces the identical eleven, but selling him leaves only three midfielders, which makes 4-4-2 illegal and removes all cover, and it banks slightly less. A third sale was also checked and rejected: it raises cash Georg cannot spend before the lock and drops the squad to the bare eleven with no bench.",
-  "standing": [
-   {
-    "name": "Wouter Burger",
-    "pos": "MID",
-    "club": "14",
-    "mv": 19293450,
-    "ap": 95,
-    "why": "REPLACES S0ftxbz, WHOSE 21:00Z DEADLINE IS NOW WRONG AND DANGEROUS. WHAT CHANGED SINCE 10:45Z: BUY B81s46y executed — Dōan (2887) cleared the Kickbase board at 12:27:58Z for exactly 14.000.000 (feed t:15 byr Georg Kitz; confirmed independently by get_squad mvgl -2.284.946 against mv 11.715.054, which reconstructs the purchase price to the euro). Cash went 1.287.940 -> -12.712.060. S0ftxbz was written while the balance was POSITIVE, when the Burger sale was a pure merit sale and could legitimately wait for the 21:00Z tick to collect ~+2,8% on 19,29M (~540k). THAT OPTION IS GONE: a negative balance at matchday start scores ZERO for the entire matchday, so the sale is now the UNWIND and its deadline is the 19:30Z LOCK, not the 21:00Z tick. The ~540k of forfeited tick gain is the price of the Dōan buy and is not recoverable. SUFFICIENCY: -12.712.060 + 19.293.450 = +6.581.390, so Burger ALONE clears the deficit with room, in a single action, in the branch where Scheller does not land. mv is frozen until mvud 21:00:00Z, so 19.293.450 is exact and timing inside the window does not change the price — sell EARLY, there is no reason to wait and every reason not to. MERIT IS UNCHANGED AND UNCONTESTED: get_squad row 11631 is st 1, stl [1], mdst 1 — he does not play MD11 at all, so he is a guaranteed zero in the XI. RotoWire's \"Facing extended spell on sidelines\" (headline 549250) supersedes its own earlier \"rib problem\" item (549211), and rheinpfalz.de \"Happy End fuer TSG: Aber Burger vergroessert die Abwehrsorgen\" confirms a Hoffenheim abdominal problem, not a knock. IDENTITY, settled this run: Burger plays for HOFFENHEIM (tid 14); the Kickbase `os` field \"FCA\" is the OPPONENT (Augsburg), per the standing os-is-opponent rule. ORDER OF OPERATIONS MATTERS: he sits at lo 7 in the placed XI, so fix the lineup FIRST (Dōan in for Burger) or the sale leaves a hole in the eleven.",
-    "tag": "sell"
-   },
-   {
-    "name": "Elias Baum",
-    "pos": "DEF",
-    "club": "4",
-    "mv": 5474706,
-    "ap": 64,
-    "why": "REPLACES Scvttu8, CLOSED THIS RUN BECAUSE ITS ARITHMETIC WAS WRONG BY A FACTOR OF 13. Scvttu8 computed the both-buys branch at mv on both buys (11.715.054 + 9.522.620) and from cash 1.277.940, giving a post-unwind balance of +4.808.422. Georg's offers are NOT at mv: list_market 10:45Z shows uop 14.000.000 on Doan (2887) and uop 11.700.000 on Scheller (7320), both uoid 3667000, ofs[0] unm \"Georg Kitz\". That is 4.462.326 more spend than Scvttu8 assumed. TRUE ARITHMETIC from live cash 1.287.940: 1.287.940 - 14.000.000 + 19.293.450 - 11.700.000 + 5.474.706 = +356.096. The branch still clears, but by 356k, not 4,8M. CONDITION UNCHANGED: this leg fires ONLY if BOTH buys land. Sequence: sell Burger now (unconditional, S0ftxbz), Doan resolves 12:27Z, Scheller resolves 14:28Z, then sell Baum before the 19:30Z lock. IF ONLY ONE BUY LANDS, DO NOT SELL BAUM: Doan-only leaves +6.581.390, Scheller-only leaves +8.881.390, and Baum keeps the fifth DEF slot. THE EXPOSURE THIS CREATES IS THE RUN'S HEADLINE RISK: between 14:28Z and the sale, a both-buys squad sits at -5.118.610, and a negative balance at 19:30Z scores ZERO for all of MD11. Baum is ALSO a confirmed Frankfurt starter (Comunio 26.11.2026, \"Brassier, Baum (Kosugi)\"), so this sale costs a real 64 ap body; it is funded only by Scheller (ap 90) taking his place. If Georg cannot be at the app between 14:28Z and 19:30Z, the safe play is to pull the Scheller offer rather than risk the zero. FALLBACK IF BAUM CANNOT BE SOLD: ter Horst (7616, mv 7.036.861) clears the deficit too and leaves 11 players, no -100 penalty, but he is a confirmed Paderborn starter at ap 70 and Baum is the cheaper loss.",
-    "tag": "sell"
-   }
-  ]
+  "recommendation": "none",
+  "reason": "No sale is recommended before the lock, and that is a deliberate call rather than an absence of candidates. Two players are earmarked as funding legs for the buy below, but selling either one now would be a mistake: one of them is in the fielded eleven, and selling him drops the squad under the penalty threshold, while the other is the insurance body for a Deman scratch. Both sales belong strictly after the lock and after the purchase has actually cleared. The weakest fielded body remains the defender the incoming buy is designed to replace.",
+  "standing": []
  },
  "buy": {
-  "recommendation": "none",
-  "reason": "Nothing this run, and the reason is not the negative balance, which costs nothing until the lock. The reason is that nothing purchasable can be unwound in time. Every board listing with a genuine points case expires well after the lock, so a bid placed now cannot resolve before it. The only two listings expiring inside the next couple of hours are both falling assets with averages far below anything in the fielded eleven. The squad also covers every position, so there is no hole a buy would fix.",
-  "standing": [],
+  "recommendation": "act",
+  "reason": "One recommendation: Kurucay, the Schalke centre-back, from the Kickbase board. He is a straight upgrade on the weakest defender in the fielded five and the gain is worth roughly the difference between a replaceable body and a nailed-on starter, every matchday for the rest of the season. He was verified hard today: today-dated probable eleven on two independent sources, every league appearance this season a start, almost all available minutes played, no suspension risk, and his main competition at centre-back is out indefinitely. The bid is deliberately NOT at market value. That rule belongs to flips, where losing costs nothing; Georg overruled it for points buys earlier today and the log agrees with him, because a player in this quality band clears at or below market value barely a third of the time. The bid is set at the measured mean clearing premium for his band instead. Katic, the other Schalke centre-back on the board, is the better player and the bigger upgrade, and he was verified just as thoroughly — but he is rejected on arithmetic alone: a bid that would actually win him exceeds everything that can be raised without selling a third body and dropping the squad below eleven. The fundable upgrade beats the unfundable one. Two market rows were logged as AVOID rather than passed over silently: the only manager ask on the board fails both on a non-zero fitness flag and on an asking price well above market value, and a relisted Augsburg defender is out with a current training injury — noting separately that the widely-carried tendon story about him is from January and is last season, a trap this ledger has lost time to before.",
+  "standing": [
+   {
+    "name": "Hasan Kurucay",
+    "pos": "DEF",
+    "club": "8",
+    "ask": 11050000,
+    "mv": 9951402,
+    "premium_pct": 11.04,
+    "listing": "Kickbase listing",
+    "why": "THE POINTS UPGRADE, AND IT IS A POST-LOCK ACTION THAT CAN BE SET UP NOW. Kurucay (4606), Schalke CB, ap 87, mv 9.951.402, Kickbase BOARD row (prc = mv, no u), mvt 1, exs 65976s from 16:45Z = resolves ~2026-11-28T11:05Z. He replaces ter Horst (7616, ap 70) in the fielded five: +17 ap per matchday for the rest of the season. VERIFIED 27.11: LigaInsider S04 page Stand 27.11.2026 17:31 has him in the probable XI slot 5 and bundesliga.com's MD11 expected XI agrees; 10/10 Bundesliga apps all Startelf, 97% of possible minutes, not on the absence list, 2 yellows so no Gelbsperre risk. Wober (his main CB competition) is out indefinitely, which hardens the start. BID: 11.050.000 = mv +11,10%, NOT exact mv. This follows W27aawq (Georg overruled exact-mv for POINTS buys live 27.11 ~05:00Z: \"MV buy will never work\") and Wycpjbr/Weuje4e's point-in-time cohort table: ap40-89 clears at or below mv only 36,1% of the time, mean premium +11,10%. Exact mv here is a 36% coin flip; +11,10% sits at the measured mean clear. TIMING IS LOAD-BEARING: the offer may be placed NOW because a live offer does NOT reserve cash (proved 27.11 — Georg carried uop 14.000.000 + 11.700.000 against cash 1.287.940) and the row resolves ~15,6h AFTER the 19:30Z MD11 lock, so it cannot open a deficit before the lock. FUNDING, which must happen only AFTER it clears: sell ter Horst (mv 7.036.861) and Tanaka (mv 5.402.417) back to the board at mv. 356.096 - 11.050.000 + 7.036.861 + 5.402.417 = +1.745.374, squad 12 -> 13 -> 11, XI 5-3-2 intact (Zentner; Deman, Hansen, Ryerson, Scheller, Kurucay; Wolf, Petkov, Doan; Gregoritsch, Guirassy). Unwind deadline is the MD12 lock 2026-12-05T14:30Z, a full week of slack. DO NOT sell either funding leg before the 19:30Z MD11 lock: ter Horst is in the fielded eleven and Tanaka is the 4-4-2 insurance body for a Deman scratch tonight.",
+    "rank": 1,
+    "trigger": "2026-11-28T11:05:00Z"
+   }
+  ],
   "killed_this_run": [
+   {
+    "name": "Chrislain Matsima",
+    "pos": "DEF",
+    "club": "13",
+    "ask": 9079673,
+    "mv": 9079673,
+    "premium_pct": 0,
+    "why": "AVOIDED ON CURRENT EVIDENCE, AND THE OLD TRAP IS SEPARATELY DEAD — BOTH FACTS MATTER. Matsima (9642), Augsburg DEF, board row at prc = mv 9.079.673, ap 100, relisted 2026-11-27T10:35:00Z with iposl true. REJECTED because his row carries st 4 and mvt 2 (falling, tfhmvt -131.030), and an independent check of Augsburg's absence list on 27.11.2026 has him OUT with a training injury of roughly 2,5 weeks. That is a current, dated reason, not an inherited one. THE SEPARATE POINT, recorded so the ledger stops re-fighting it: the \"Sehnenabriss\" cluster carried by five outlets is dated 09.01.2026 and is LAST SEASON — the task prompt lists it as a known date trap, and W6j2zhy/Wngbzu1 show how much time this ledger has lost to exactly this class of stale hit. The 09.01.2026 story is NOT the reason to avoid him. The 27.11.2026 training injury is. Reverse when ALL of: st returns to 0, mvt is no longer 2, and a dated Augsburg source from 2026-12-10 or later puts him back in the probable XI — and even then only if the squad has a defensive slot the Kurucay buy has not already filled."
+   },
+   {
+    "name": "Noahkai Banks",
+    "pos": "DEF",
+    "club": "13",
+    "ask": 5500000,
+    "mv": 4428498,
+    "premium_pct": 24.2,
+    "why": "THE ONLY MANAGER ASK ON THE BOARD AND IT FAILS ON TWO INDEPENDENT GROUNDS, EITHER OF WHICH IS SUFFICIENT. Banks (8355), Augsburg DEF, listed by Borussia Rumpelfuss (uid 3678454) at prc 5.500.000 against mv 4.428.498 = +24,21% over mv. (1) FITNESS: his list_market row carries st 2, a non-zero status flag, which per the task prompt's own warning means NOT FIT whatever the season average says — and his ap 100 is exactly the trap that warning describes, a big average sitting next to a flag. (2) PRICE: +24,21% is far above anything a defender of his profile should cost, and the ledger has repeatedly measured that an unsold manager ask is an invitation to offer at mv rather than at the ask — this row has sat since dt 2026-11-25T22:29:40Z, over 42 hours. Even at mv he is not wanted: the squad already carries five fit defenders plus the Kurucay upgrade in flight (BUY Bs8bb2o), so he would not displace anyone. Logged as AVOID rather than passed over in silence so a later run does not re-price him off the ap 100 alone. Reverse only if st returns to 0, a dated Augsburg XI actually starts him, AND the ask drops to mv or below."
+   },
    {
     "name": "Hugo Bolin",
     "pos": "",
@@ -322,35 +314,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "LOGGED BECAUSE HE IS THE OBVIOUS CHEAP FALLBACK IF THE BURKARDT BID IS LOST, AND A LATER RUN WILL REACH FOR HIM. The surface case is genuinely better than most traps this ledger has caught: ap 74 on TEN appearances in ten matchdays, so unlike Querfeld or Tella the average is a true per-matchday figure, and 73,7/MD against Adamu's 32,9/MD is a real +41 in the dead ATT slot for only 7.044.552 — a quarter of Burkardt's price. WHAT KILLS IT IS THE TREND, MEASURED from get_player_performance 3471, season 2026/27: MD1 55' start 47p, MD2 76' start 19p, MD3 88' start 270p, MD4 63' start 77p, MD5 33' sub -13p, MD6 80' start 138p, MD7 65' start 69p, MD8 61' start 48p, MD9 30' SUB 47p, MD10 34' SUB 35p. He has been a SUBSTITUTE in each of the last two matchdays, his minutes have fallen 61 -> 30 -> 34, and his returns have fallen with them (48, 47, 35). The ap 74 is carried by one 270-point MD3 and by starts he is no longer getting. DATED NEWS AGREES AND IS THIN: rotowire 08.11.2026 \"Adam Hlozek News: Appears on bench\" has him benched against Schalke, fit enough only for a bench role after late testing, and expects him to \"work back into that role after the international break\" — an outlet's expectation, not a selection. Ligainsider's newest Hlozek item is 28.08.2026; its April/May 2026 cluster is LAST SEASON and was not used. No source dated 14-21.11.2026 was found, so the Kickbase appearance record above is the only current selection evidence, and it says substitute. CLUB-ID CORRECTION, LOAD-BEARING: he is TSG HOFFENHEIM (Kickbase tid 14), NOT Augsburg — confirmed by ligainsider and rotowire and by Baumann (524) and our own Burger (11631) sharing tid 14. Augsburg is tid 13 (Gregoritsch, Wolf, Seol). A search phrased \"Hlozek Augsburg\" returns Hoffenheim-v-Augsburg fixture material and will mislead. REVERSAL: a dated Hoffenheim XI from 2026-11-26 or later STARTING him, plus one start with 60+ minutes to show the bench spell is over. Until then he is a worse body than the Burkardt bid he would replace, not a cheaper one."
-   },
-   {
-    "name": "Leopold Querfeld — ap 129 on FOUR appearances in ten and NONE since MD7; the cheap-high-average trap, fourth instance",
-    "pos": "",
-    "club": null,
-    "ask": 5422105,
-    "mv": null,
-    "premium_pct": null,
-    "why": "LOGGED SO NO LATER RUN RE-DERIVES HIM OFF THE ap COLUMN. He is the most tempting row on this board by surface arithmetic: ap 129 against our weakest fielded defender ter Horst at ap 70, for an mv of only 5.422.105 — apparently a +59 ap/matchday upgrade for five million. IT IS NOT. MEASURED from get_player_performance 7723, season 2026/27: MD1 103' start 257p, MD2 did not play, MD3 105' start 112p, MD4 96' start 63p, MD5 did not play, MD6 did not play, MD7 74' 82p, MD8 did not play, MD9 did not play, MD10 did not play. FOUR appearances in TEN, and — the decisive fact — NONE IN THE LAST THREE MATCHDAYS. ap 129 is 514/4, a per-APPEARANCE figure for a man who no longer appears. Per matchday he is 514/10 = 51,4, which is BELOW ter Horst's 70 and would make him a DOWNGRADE in the slot he appears to upgrade. The single 257-point MD1 carries half his season. THE MARKET ALREADY KNOWS: mvt 2, tfhmvt -163.839, i.e. he is a falling asset, which is exactly the tell A6lbm9q named — a cheap market value next to a big average means the market has priced the lost place and the ap column has not caught up. NOT A FITNESS CASE: st 0, stl [], so a run that checks only the status flag will see a fit player and be wrong; this is a SELECTION case, and selection is what scores. HE IS ALSO NOT A FLIP: mvt 2 predicts the NEXT tick DOWN at a measured -3,23% (n=1239, only 8,5% rose), so buying him at mv to catch a rise is backwards. REVERSAL AS A POINTS BUY: require BOTH (a) a dated Union Berlin XI from 2026-11-26 or later actually starting him, and (b) two consecutive matchdays with real minutes to re-base the ap off the MD1 outlier. Being cheap is not a reversal; being fit is not a reversal."
-   },
-   {
-    "name": "David's two manager asks — Suzuki @ 30.000.000 (+47,1%) and Leweling @ 20.000.000 (+37,3%); both far outside the measured manager band",
-    "pos": "",
-    "club": null,
-    "ask": 30000000,
-    "mv": null,
-    "premium_pct": null,
-    "why": "ONE ENTRY SO NO FUTURE RUN RE-DERIVES EITHER OFF THE ap COLUMN. Both rows carry a u (manager David, uid 1880059) and have sat since 2026-11-21T19:25Z. Suzuki (11006): prc 30.000.000 against mv 20.397.967 = +47,09%, ap 111, mvt 1. Leweling (2988): prc 20.000.000 against mv 14.563.089 = +37,33%, ap 57, mvt 1. THE MEASURED MANAGER-ASK CLEARING BAND IS +3,06% TO +4,35%, with the highest outlier this ledger has ever recorded at +11,49% (Khedira, Wtku0zi). These are four to eleven times the band. The task prompt's own rule applies directly: benchmark a MANAGER ask against the LOW cluster, never the high Kickbase-board cluster, and an ask that has gone unsold for days is an invitation to offer at mv rather than at the ask. NEITHER IS A FLIP EITHER: a manager ask is seller's choice, so there is no auction to win at mv and no mechanism to capture the tick. Suzuki additionally carries history — he was a forced MVP sale (Sp54bpy, 04.09) and Aiwlj2e/Ahio516/Aftggqh have all rejected re-buying him; Ahio516 records Volte_28 parking him at 99.999.999, so inflated asks on this pid are a pattern, not a one-off. REVERSAL: either ask dropping to at or below mv, AND a squad slot the player would genuinely improve on a PER-MATCHDAY basis (not ap, per the Tella lesson in A6lbm9q) — Leweling's ap 57 would not currently displace any placed body."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "closed",
-  "reason": "Flip window closed. The lock is under twelve hours away, and a flip left open across the lock risks the entire matchday for a gain measured in a single market-value tick. The drift was re-measured from the event log anyway, and it has not decayed: rising listings still predict a clear positive move at the next tick on a sample several times larger than the original measurement, and falling listings still predict the opposite. The two open questions stand, unchanged and unresolved. First, it is still unknown whether Kickbase caps squad size, which would cap how many flips can run at once. Second, the edge is measured in one league over one period, and it will decay if rivals crowd in. The four most active traders in this league were last season's top four finishers.",
+  "reason": "Flip window closed — the matchday locks in well under twelve hours, and a flip left open across the lock risks the whole matchday for a gain measured in low single-digit percent. The edge itself was still re-measured this run rather than taken on trust, aligned to the actual tick hour rather than the hour named in the task prompt. It has not decayed: the rising-flag cohort sits essentially where it sat two days ago, on a large sample, so there is no crowding signal and nothing to flag. The task prompt's standing headline figures remain optimistic against the tick-aligned truth, as several previous runs have now found independently; the measured numbers, not the prompt's, are the ones to use. Of the two standing open questions, the squad-size cap is resolved — the budget endpoint exposes both a current and a maximum squad count, so throughput is capped. The second stands: the edge is measured in one league over one period and would decay if rivals crowded in, which is why it is re-measured every run rather than assumed.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "One flag, and it is the player already being sold. A dated item published today reports Burger carrying an abdominal strain, with his head coach saying he will probably be out for a prolonged period and no return timeline set. That supersedes yesterday's reading of the same incident as a rib knock of unclear severity; the two sources conflict on the body part, and the later one both wins on recency and carries the prognosis. Kickbase independently flags him. Two caveats worth stating plainly rather than burying: the league-wide injured-and-suspended table does not list him, and one matchday preview still prints him in the predicted Hoffenheim eleven. Both are simply stale against news this fresh, and neither should ever be cited by a later run as clearing him. Separately, and deliberately: the alarming Burger injury headlines from January to April are LAST SEASON and were not used here. The rest of the squad is clean on both a league-wide sweep and a matchday preview.",
+  "sweep": "All eleven fielded players check out fit and in their club's probable starting eleven on sources dated today, and the squad-wide injured-and-suspended sweep lists none of them. Kickbase agrees — every squad row is carrying a clean status flag. Two things short of a problem: Deman is named at left-back by bundesliga.com and by the local Bremen paper, but LigaInsider's Werder page leaves him out of its eleven, and that page looks stale against every other club page, so the two-source majority starts him. Guirassy is fit and back in training since the twenty-third, but today's wording makes him a starting-eleven option rather than a certainty, and Dortmund play Sunday, so no later confirmation is possible before the lock. Both stay in. One instrument note worth keeping: LigaInsider club pages serve badly cached snapshots unless a query string is appended to the URL, which is very likely why previous runs struggled to date its evidence.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -637,23 +611,23 @@
  "arithmetic": [
   {
    "k": "Balance",
-   "v": "-24.412.060"
+   "v": "356.096"
   },
   {
    "k": "Squad value",
-   "v": "174.119.863"
+   "v": "149.351.707"
   },
   {
    "k": "33% floor",
-   "v": "-0,33 x (174.119.863 + -24.412.060) = -49.403.575"
+   "v": "-0,33 x (149.351.707 + 356.096) = -49.403.575"
   },
   {
    "k": "Spending power",
-   "v": "-24.412.060 + 49.403.575 = 24.991.515 — NOT -24.412.060"
+   "v": "356.096 + 49.403.575 = 49.759.671 — NOT 356.096"
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1374, -4,00% to +443,38%"
+   "v": "n=1377, -4,00% to +443,38%"
   }
  ]
 }
