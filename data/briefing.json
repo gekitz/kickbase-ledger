@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-27T12:53Z",
+ "run": "2026-11-27T14:53Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -8,22 +8,22 @@
   "locks": "2026-11-27T19:30:00Z",
   "played": 10
  },
- "cash": -12712060,
- "squad_value": 164597243,
+ "cash": -24412060,
+ "squad_value": 174119863,
  "leverage": {
-  "balance": -12712060,
-  "floor": -50122110,
-  "spending_power": 37410050,
-  "hours_to_lock": 6.61,
-  "exposure": "A leveraged position is open right now and it is the only thing on this page that can cost the entire matchday. One instant sale closes it with room to spare, and it must be done before the lock, not before the evening tick — this is a change from the plan given earlier today, when the balance was still positive and the later deadline was correct. If the Scheller offer clears this afternoon the position deepens and then needs two sales rather than one, with a margin thin enough that missing either sale is as bad as doing nothing. The safe sequence is fixed and short: set the lineup, sell Burger immediately, and if Scheller lands, sell Baum as well. Done in that order there is no branch in which the matchday scores zero.",
+  "balance": -24412060,
+  "floor": -49403575,
+  "spending_power": 24991515,
+  "hours_to_lock": 4.61,
+  "exposure": "This is the whole run. The leverage is real and the deadline is the lock, not the evening market-value tick, which falls after it. Because the tick falls after the lock, both sale prices are frozen between now and the deadline, so the unwind arithmetic cannot drift and the buffer that remains is the buffer Georg gets. One execution risk outweighs the arithmetic: Burger currently sits on the board as Georg's OWN manager ask, priced at exactly market value, with no offers on it since it was listed. A manager ask is the buyer's choice and may never clear. This is the same shape as the Conte episode in September, where a correctly priced ask sat unsold while a deficit stayed open. Pull the listing and sell to the board instead, which pays exactly market value every time with no spread. Do not wait on the ask.",
   "must_restore_by": "2026-11-27T19:30:00Z"
  },
  "counts": {
   "gk": 1,
-  "def": 5,
+  "def": 6,
   "mid": 5,
   "att": 2,
-  "total": 13
+  "total": 14
  },
  "placed": 11,
  "penalty_open": false,
@@ -43,18 +43,18 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "There is no positional hole — the squad fills a legal eleven comfortably in several shapes, and will still do so after both sales. The binding constraint today is not a gap in the squad, it is the clock: a negative balance that must be closed before the lock, and a placed eleven containing a player who does not play. Neither is a shortage of bodies and both are fixed by actions already on the table.",
+ "binding_gap": "There is no positional gap. The squad covers every slot a legal formation needs, and after the two sales it still does, with one body spare on the bench. What binds this run is the unwind deadline, not a hole in the eleven.",
  "surplus": "",
  "run_kind": "scheduled",
- "cash_ceiling_before_md1": 37410050,
+ "cash_ceiling_before_md1": 24991515,
  "daily_bonus": null,
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 35,
+  "listings": 36,
   "cheapest": 500000,
   "cheapest_slot_filling": 13183428,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -103,6 +103,16 @@
    "club": "77",
    "mv": 13477678,
    "ap": 94,
+   "state": "clear",
+   "note": "",
+   "tag": "keep"
+  },
+  {
+   "name": "Scheller",
+   "pos": "DEF",
+   "club": "29",
+   "mv": 9522620,
+   "ap": 90,
    "state": "clear",
    "note": "",
    "tag": "keep"
@@ -190,13 +200,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Doan cleared the board at midday and the balance went negative.",
-  "headline_short": "Doan cleared the board at midday and the balance went negative.",
-  "detail": "Doan cleared the board at midday and the balance went negative. That converts today from a quiet run into a hard-deadline run: a negative balance at matchday start scores ZERO for the whole matchday, so the Burger sale that was optional this morning is now mandatory, and its deadline has moved forward from the market tick to the lock. Burger alone clears it, in one action, with room. Do the lineup first, then sell. Both are reversible mistakes until the lock and neither is after it."
+  "headline": "Act now, not later.",
+  "headline_short": "Act now, not later.",
+  "detail": "Act now, not later. Both legs of the Doan/Scheller package cleared, the balance is leveraged, and the matchday locks this evening. A negative balance at matchday start scores zero for the whole matchday, so closing it is worth more than every other consideration on this page combined. Two sales close it exactly, and both are points-free: the first is an injured player who would contribute nothing anyway, the second is the lowest-rated defender, who stopped being a fielded body the moment Scheller landed. Then re-set the eleven. No buys, no flips."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Burger is the unwind and the case is unusually clean, because merit and necessity point the same way for once. He is flagged out for this matchday, so holding him fields a guaranteed zero; and his value alone covers the deficit in a single instant sale back to Kickbase, which pays market value with no spread. RotoWire has reclassified the injury from a rib knock to an extended absence, and the Hoffenheim press confirms an abdominal problem rather than a knock. Sell him early rather than late: market values are frozen until the evening tick, so waiting cannot improve the price and can only run the clock down. Note what the timing costs — his value is rising, and selling before the lock forfeits a tick gain he would have collected under this morning's plan. That forfeit is the real price of the Doan buy, and it should not be misread later as a badly timed sale. Baum is the second sale, but only in the branch where Scheller lands; he is otherwise kept and fielded.",
+  "reason": "Two sales, in this order, and both back to the board rather than to the market. Burger first: he is the larger leg and he is injured, so the sale is a merit sale and a funding sale at once. His market value is still rising because the board has not yet absorbed yesterday's news, which means today is also the best price he will see for a while. Baum second: he is sold purely because Scheller now occupies his slot at a far better average, so the sale costs nothing in fielded points. Tanaka was checked as the alternative second leg and rejected: he produces the identical eleven, but selling him leaves only three midfielders, which makes 4-4-2 illegal and removes all cover, and it banks slightly less. A third sale was also checked and rejected: it raises cash Georg cannot spend before the lock and drops the squad to the bare eleven with no bench.",
   "standing": [
    {
     "name": "Wouter Burger",
@@ -219,22 +229,9 @@
   ]
  },
  "buy": {
-  "recommendation": "act",
-  "reason": "Scheller is the only live decision and it resolves early this afternoon, well before the lock. The offer is already placed, it is Georg's own price rather than this ledger's, and it sits above market value in the range where contested Kickbase listings have actually been clearing — so the premium is defensible on the measured band rather than on the median, which mixes two different games and would badly understate it. On merit he is confirmed: today's dated probable eleven starts him in the Paderborn back three, alongside two defenders already in the squad. He is a real upgrade in a slot that gets filled every week, and the body he funds himself out of is one that does not make the eleven either way, so the swap costs nothing on the pitch. The honest caveat is execution, not arithmetic. If he lands, clearing the deficit takes two sales instead of one and the margin at the lock is thin enough that missing either leaves the matchday at zero. If Georg will not reliably be at a screen before the lock, pulling the offer before it resolves is the safe play and costs only the upgrade. If he will be, let it stand.",
-  "standing": [
-   {
-    "name": "Tjark Scheller",
-    "pos": "DEF",
-    "club": "29",
-    "ask": 11700000,
-    "mv": 9522620,
-    "premium_pct": 22.87,
-    "listing": "Kickbase listing",
-    "why": "SUPERSEDES AND CLOSES Bom02pl, WHICH PRICED THIS AT 11.200.000. THE OFFER IS ALREADY LIVE AND THE PRICE IS GEORG'S, NOT THIS LEDGER'S: list_market row 7320 carries uop 11.700.000, uoid 3667000, ofs[0] unm \"Georg Kitz\", ofc 1. He placed it himself after the 04:45Z run, above the 11.200.000 the ledger named, which is consistent with W27aawq (percentile, not mv). At mv 9.522.620 that is +22,86%, inside the measured contested-Kickbase cluster (Ebnoutalib +16,71%, Campbell +20,96%, Keidel +25,77%) and well above the manager-ask cluster, which is the right band for a Kickbase listing. NOTHING TO DO BUT WAIT: the offer resolves at 14:27Z on its own. MERIT RE-VERIFIED THIS RUN AND THE LEDGER'S PADERBORN CLAIM IS CORRECT — an earlier draft of this run doubted it because tid 29 looked like Schalke. It is not: the `os` field in get_squad/get_lineup is the OPPONENT, not the club. ter Horst and Hansen (both tid 29) show os S04 because PADERBORN PLAY SCHALKE, and Tanaka (tid 8, os SCP) is the Schalke side of the same fixture. So tid 29 = SC Paderborn, tid 8 = Schalke. Comunio 26.11.2026 (published 09:27Z, modified 10:31Z) puts Scheller in Paderborn's back three verbatim: \"Noll - ter Horst, Scheller, Hansen - Curda, Baack (Ulrich), Castaneda, Vidosic, Obermair - Marino, Mueller (Pieringer)\" - i.e. the SAME probable XI also starts ter Horst and Hansen, both already owned. Paderborn absences: Gayret (Aufbautraining), Awortwie-Grant; angeschlagen Baack, Ulrich. Scheller is in none of those lists. st 0, mvt 1, ap 90. IF HE LANDS HE IS THE BEST DEFENDER IN THE SQUAD (90 vs Ryerson 86, Deman 85, Hansen 85, ter Horst 70, Baum 64) and the 5-3-2 eleven goes to 1033 ap. UNWIND IS MANDATORY, NOT OPTIONAL: if Scheller lands on top of Doan, cash is -5.118.610 and the Baum sale (Scvttu8) MUST fire before 19:30Z or the whole matchday scores zero.",
-    "rank": 1,
-    "trigger": "2026-11-27T14:27:00Z"
-   }
-  ],
+  "recommendation": "none",
+  "reason": "Nothing this run, and the reason is not the negative balance, which costs nothing until the lock. The reason is that nothing purchasable can be unwound in time. Every board listing with a genuine points case expires well after the lock, so a bid placed now cannot resolve before it. The only two listings expiring inside the next couple of hours are both falling assets with averages far below anything in the fielded eleven. The squad also covers every position, so there is no hole a buy would fix.",
+  "standing": [],
   "killed_this_run": [
    {
     "name": "Hugo Bolin",
@@ -349,11 +346,11 @@
  "movers": {
   "recommendation": "none",
   "window": "closed",
-  "reason": "Flip window closed — the matchday locks in well under twelve hours, so no flip is opened today; a position still open at the lock would risk the entire matchday for a single tick. Worth recording anyway: the tick edge was re-measured from the log this run and it has not decayed, it has strengthened, on a sample several times larger than the one the standing figure was built on. Falling-flag listings continue to predict the opposite move just as reliably. Separately, the board happens to be barren for this purpose today regardless of the lock — of the rising-flag Kickbase listings on the market, only Scheller resolves before the evening tick at all, and he is a points buy with an over-market offer already on him rather than a flip. Everything else expires after the tick and is deferred rather than disqualified; it re-bases to the new value and gets judged again on its fresh flag. The two open questions are unchanged and neither has been answered: whether Kickbase caps squad size, which would cap how many flips can run at once, and the fact that this edge is measured in one league over one period and will decay if enough rivals crowd into it.",
+  "reason": "Flip window closed. The lock is under twelve hours away, and a flip left open across the lock risks the entire matchday for a gain measured in a single market-value tick. The drift was re-measured from the event log anyway, and it has not decayed: rising listings still predict a clear positive move at the next tick on a sample several times larger than the original measurement, and falling listings still predict the opposite. The two open questions stand, unchanged and unresolved. First, it is still unknown whether Kickbase caps squad size, which would cap how many flips can run at once. Second, the edge is measured in one league over one period, and it will decay if rivals crowd in. The four most active traders in this league were last season's top four finishers.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "The squad came through today's dated check clean apart from Burger, and better than the ledger feared. Guirassy is the headline: he is explicitly named for a starting-eleven comeback in today's league-wide preview and is absent from Dortmund's injury list, which supersedes both the thigh-strain report from early this month and the midweek Champions League item that had him benched. The earlier watch calling him fit is vindicated and no run should re-raise it. Doan and Baum are both confirmed in the same Frankfurt starting eleven, Scheller, ter Horst and Hansen all start together in the Paderborn back three, and Zentner, Petkov, Deman and Gregoritsch are each named as starters in today's previews. Gregoritsch in particular is now a confirmed starter with a re-based average, which kills the premise of the old October sale note on him. One genuine loose end: the two preview sources disagree about Ryerson — the league's own preview leaves him out of the Dortmund back four, the other starts him. He is on no injury list and there is no defender available to replace him with today, so it is not actionable now, but his average should not be trusted blindly next run.",
+  "sweep": "One flag, and it is the player already being sold. A dated item published today reports Burger carrying an abdominal strain, with his head coach saying he will probably be out for a prolonged period and no return timeline set. That supersedes yesterday's reading of the same incident as a rib knock of unclear severity; the two sources conflict on the body part, and the later one both wins on recency and carries the prognosis. Kickbase independently flags him. Two caveats worth stating plainly rather than burying: the league-wide injured-and-suspended table does not list him, and one matchday preview still prints him in the predicted Hoffenheim eleven. Both are simply stale against news this fresh, and neither should ever be cited by a later run as clearing him. Separately, and deliberately: the alarming Burger injury headlines from January to April are LAST SEASON and were not used here. The rest of the squad is clean on both a league-wide sweep and a matchday preview.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -625,38 +622,38 @@
    "reversal": "Re-buyable only if his ap rises above 70 (i.e. above ter Horst, the next-weakest fielded body) over a sustained run of matchdays, OR if the squad falls below three fielded midfielders and no better MID is available within spending power. Price alone is never a reason: he was sold as a points upgrade, not as a value trade."
   },
   {
-   "name": "Elias Baum",
-   "status": "7325",
-   "why": "SUPERSEDES THE EARLIER ENTRY. Named as the SECOND conditional unwind leg under SELL Scvttu8, 27.11 04:45Z, at mv 5.474.706, and it fires ONLY in the branch where BOTH Doan (Bs90r01) and Scheller (B0t8gwq) clear. IDENTITY CORRECTION, because the ledger has had tid 4 wrong by reading `os` as the own club when `os` is the OPPONENT: Elias Baum (7325) plays for EINTRACHT FRANKFURT, not Stuttgart. Comunio's 26.11.2026 probable XI for Stuttgart v Frankfurt (28.11, 17:30Z per get_player mdsum) names him in the Frankfurt back four — \"Atubolu - Knauff, Koch, Brassier, Baum (Kosugi) - ...\" — with Kosugi as the alternative. HE IS NOT BLOCKED ON FITNESS OR SELECTION AND NO FUTURE RUN MAY CITE THIS ENTRY AS EITHER: Kickbase row 7325 is st 0 with stl [], he is a confirmed dated starter, and mvt 1 with tfhmvt +175.145 is among the healthiest momentum readings in the squad. He is sold, if at all, purely because ap 64 is the lowest of the five defenders and Scheller's ap 90 is a genuine ten-matchday mean in the same slot, a +26 upgrade. Note the shape of his ap: ph newest-first [did not play, 8, 86, 102, 17], so 64 is carried by two mid scores and his floor is genuinely low.",
-   "reversal": "INERT UNLESS BOTH BUYS LANDED AND THE SALE ACTUALLY FIRED. If only one of Doan or Scheller clears, Baum is NOT sold and nothing here applies — in the Scheller-only branch he is specifically KEPT as the twelfth body, because 5-4-1 needs five defenders plus a bench and selling him would drop the squad to eleven and kill the Guirassy hedge. Treat as live only if Georg sold him. If he did, reverse and re-buy only if ALL THREE hold: (a) the ask is AT OR BELOW mv, since the instant board sale paid exactly mv; (b) his ap at that moment beats the defender he would displace, which after the Scheller buy means beating Scheller 90 or ter Horst 70, not the 64 that made him the sale; and (c) the purchase unwinds to a non-negative balance with at least 11 players before the then-current lock. He is a legitimate points buy on merit at the right price and must not be treated as damaged goods."
-  },
-  {
    "name": "Wouter Burger",
    "status": "11631",
-   "why": "RECOMMENDED FOR SALE 2026-11-27T12:45Z under SELL Sptl8gw at mv 19.293.450 by instant sale to Kickbase, as the SOLE and SUFFICIENT unwind leg clearing the -12.712.060 leveraged position opened by the Dōan buy at 12:27:58Z. He is sold on MERIT AND ON NECESSITY TOGETHER, which is rare and makes this the cleanest sale on the ledger in weeks. MERIT: get_squad row 11631 is st 1, stl [1], mdst 1 — he does not play MD11, so holding him fields a guaranteed ZERO at lo 7. RotoWire headline 549250 \"Facing extended spell on sidelines\" supersedes its own 549211 \"Forced off with rib problem\" and reclassifies the injury; rheinpfalz.de \"Happy End fuer TSG: Aber Burger vergroessert die Abwehrsorgen\" independently confirms a Hoffenheim abdominal problem rather than a knock. NECESSITY: -12.712.060 + 19.293.450 = +6.581.390 in one action. IDENTITY SETTLED THIS RUN, correcting a recurring ledger error: he plays for HOFFENHEIM (tid 14) and the `os` value \"FCA\" is his OPPONENT, Augsburg — the same os-is-opponent rule that moved Baum to Frankfurt and Scheller to Paderborn. NOTE WHAT THE SALE COSTS: he is mvt 1 with tfhmvt +28.114, so selling before the 19:30Z lock forfeits roughly 540k of 21:00Z tick gain on 19,29M. That forfeit is the true price of the Dōan buy and no future run should mistake it for a bad sale.",
-   "reversal": "Do NOT buy him back while st is non-zero or mdst is 1 — an extended-absence player is a guaranteed zero in the eleven and this ledger has never profited from holding one. After he is cleared, reverse ONLY if ALL FOUR hold: (a) a dated source published 2026-11-28 or later returns him to Hoffenheim team training AND a dated probable XI actually STARTS him — \"back in the squad\" or a bench appearance is not enough; (b) the ask is AT OR BELOW mv, because the instant sale pays exactly mv with no spread and buying back above it is a guaranteed loss; (c) his ap 95 still beats the midfielder he would displace AT THAT MOMENT, re-based on matchdays actually played rather than on the pre-injury figure; and (d) the purchase fits inside spending power from a NON-NEGATIVE balance with the squad at twelve or more, so the re-buy is not funded by a sale that drops the eleven. He is NOT blocked on quality and no future run may cite this entry as a verdict on his ability — ap 95 on ph [79, 127, 119, 91, did not play] is a genuine starter's mean and he was correctly bought."
+   "why": "SUPERSEDES THE 27.11 12:45Z ENTRY AND THE 14:45Z FIRST WRITE OF THIS ONE, WHICH CONTAINED A GARBLED WORD AND IS REPLACED VERBATIM HERE. Still recommended for sale under SELL Sptl8gw at mv 19.293.450, and the case is now TWOFOLD. (1) FUNDING — Scheller cleared at 14:29:14Z for 11.700.000, cash is -24.412.060 against a 19:30:00Z lock, and a negative balance at matchday start scores ZERO for the entire matchday, so his 19.293.450 is the larger of the only two legs that close it. (2) MERIT, WHICH IS NEW — rotowire 549250 of 27.11.2026 reports an abdominal muscle strain with head coach Christian Ilzer saying he \"will probably be out for a prolonged period\", no timeline given. Kickbase agrees: st 1, stl [1], mdst 1, and his ph is newest-first \"did not play\". He was fielded at lo7 in the stale 4-4-2, which is why the corrected eleven (WATCH Wy2t4ob) is worth +123 fielded ap rather than +28. EXECUTION: he sits on the board as Georg's own manager ask at exactly mv with ofc 0 since 14:32:57Z. Pull it and sell to Kickbase; do not wait on a manager ask with a deficit open — that is the Conté shape from 11.09. HIS ap 95 IS A TRAILING AVERAGE AND MUST NOT BE USED FORWARD: any lineup solver that keeps him because of it (one such branch scores 1036 on paper and 941 once he is correctly valued at zero) is reading a dead number.",
+   "reversal": "Do NOT buy him back before the 2026-11-27T19:30:00Z MD11 lock under any circumstances: after the sale the squad is 12 and the balance is +356.096, so a re-buy is fundable only by re-opening the very leverage this sale exists to close. After the lock, reverse ONLY if ALL FOUR hold: (a) a source dated 2026-11-28 or later clears him for a specific fixture — returned to team training or named in a matchday squad — because against a prolonged-absence prognosis the ABSENCE of bad news is not clearance, and neither is ligainsider omitting him from its Verletzte-und-Gesperrte table nor flashscore printing him in a predicted XI, both of which were already stale on 27.11; (b) the ask is AT OR BELOW mv, since the instant board sale pays exactly mv and buying back above it is a guaranteed loss; (c) a positive matchday return to re-base the ap 95, which is a trailing figure over a body that has stopped playing; and (d) the purchase unwinds to a non-negative balance with at least 11 players before the then-current lock. SEPARATELY, AS A FLIP: he does not qualify and must not be flipped while the news is undigested — his mvt 1 is a board reading taken before the 27.11 prognosis, and the measured tick edge is estimated on ordinary rows, not on one about to absorb a prolonged-injury markdown."
+  },
+  {
+   "name": "Elias Baum",
+   "status": "7325",
+   "why": "SUPERSEDES THE PREVIOUS ENTRY ON ONE POINT ONLY: ITS CONDITION HAS FIRED AND THE BLOCK IS NOW LIVE RATHER THAN INERT. The old text read \"INERT UNLESS BOTH BUYS LANDED AND THE SALE ACTUALLY FIRED. If only one of Dōan or Scheller clears, Baum is NOT sold.\" BOTH LANDED: Dōan at 12:27:58Z for 14.000.000 and Scheller at 14:29:14Z for 11.700.000, both confirmed in the feed and reconstructed to the euro from get_squad mvgl. So SELL Scyi2zn fires at mv 5.474.706 as the second unwind leg, taking -24.412.060 to +356.096. EVERYTHING ELSE IN THE OLD ENTRY STANDS AND IS RE-ASSERTED, because it is the part a later run is most likely to misread: HE IS NOT BLOCKED ON FITNESS OR SELECTION AND NO FUTURE RUN MAY CITE THIS ENTRY AS EITHER. Kickbase row 7325 is st 0 with stl [], mvt 1 with tfhmvt +175.145 among the healthiest momentum in the squad, he is absent from ligainsider's Verletzte-und-Gesperrte table read 27.11, and flashscore's MD11 preview names him in the predicted Eintracht Frankfurt XI. IDENTITY, RE-STATED: Elias Baum (7325) plays for EINTRACHT FRANKFURT, not Stuttgart — tid 4 is Frankfurt and the `os` field is the OPPONENT. Do not confuse him with Augsburg's Trainer Manuel Baum, who appears on flashscore's MD11 suspension list and is a different person. HE IS SOLD PURELY ON ap: 64 is the lowest of the six defenders and Scheller's 90 is a ten-matchday mean in the same slot, so after Scheller landed Baum stopped being a fielded body at all — the sale costs ZERO fielded points. His ph is newest-first [did not play, 8, 86, 102, 17], so 64 rests on two mid scores over a genuinely low floor. Selling him rather than Tanaka (5.402.417, also a zero-cost sale at the same 1033 eleven) is deliberate: it leaves 5 DEF / 4 MID, which keeps BOTH 5-3-2 and 4-4-2 legal, where selling Tanaka leaves three midfielders and only 5-3-2, and it banks 72.289 more.",
+   "reversal": "He is a legitimate points buy on merit at the right price and must not be treated as damaged goods. Reverse and re-buy only if ALL THREE hold: (a) the ask is AT OR BELOW mv, since the instant board sale paid exactly mv; (b) his ap at that moment beats the defender he would actually displace, which after the Scheller buy means beating Scheller 90 or ter Horst 70, not the 64 that made him the sale; and (c) the purchase unwinds to a non-negative balance with at least 11 players before the then-current lock. Being cheap, being a confirmed starter, or being rising on mvt are each NOT reversal conditions on their own — all three were already true when he was sold."
   }
  ],
  "arithmetic": [
   {
    "k": "Balance",
-   "v": "-12.712.060"
+   "v": "-24.412.060"
   },
   {
    "k": "Squad value",
-   "v": "164.597.243"
+   "v": "174.119.863"
   },
   {
    "k": "33% floor",
-   "v": "-0,33 x (164.597.243 + -12.712.060) = -50.122.110"
+   "v": "-0,33 x (174.119.863 + -24.412.060) = -49.403.575"
   },
   {
    "k": "Spending power",
-   "v": "-12.712.060 + 50.122.110 = 37.410.050 — NOT -12.712.060"
+   "v": "-24.412.060 + 49.403.575 = 24.991.515 — NOT -24.412.060"
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1372, -4,00% to +443,38%"
+   "v": "n=1374, -4,00% to +443,38%"
   }
  ]
 }
