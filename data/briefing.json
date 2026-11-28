@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "run": "2026-11-28T02:45:04Z",
+ "run": "2026-11-28T04:59Z",
  "league": "Bundesliga 26/27",
  "manager": "Georg",
  "matchday": {
@@ -14,8 +14,8 @@
   "balance": 356096,
   "floor": -49793083,
   "spending_power": 50149179,
-  "hours_to_lock": 160.6,
-  "exposure": "No leveraged position is open right now and the balance is positive. The plan opens one deliberately, and this is the part to watch: the Kurucay bid puts the balance well into the negative until both sales clear. That is fine in itself — a deficit costs nothing until the instant the matchday locks — but it has to be unwound before the lock, and the window to unwind it is shorter than it looks, because the two assets being sold to clear it are both losing value every night. The sequencing exists to keep that window wide: selling Tanaka before the bid rather than after means the money is banked at today's value instead of decaying while the auction runs. If the auction is lost, there is no exposure at all and the Tanaka sale simply leaves more cash in hand.",
+  "hours_to_lock": 158.5,
+  "exposure": "The recommended move deliberately opens a leveraged position, and that is the part of this run that can go wrong. Both unwind levers carry falling market values, so the deficit does not sit still — it grows against a shrinking pool of money to clear it. Sold the same day as the buy, the position closes with a real if thin cushion. One tick later it still closes. Two ticks later it does not, and a negative balance when the matchday starts scores zero for the entire matchday. So the unwind budget is a single tick, not the six days to the lock, and that is why the ter Horst deadline moved. The generalisation worth keeping: when the unwind levers are themselves falling, the unwind deadline is never the lock — it is however many ticks the cushion survives, and that has to be computed rather than assumed. If the Kuruçay bid does not land by 11:05Z, no leverage opens at all and the ter Horst sale is void rather than deferred; Tanaka still sells either way.",
   "must_restore_by": "2026-12-04T19:30:00Z"
  },
  "counts": {
@@ -43,7 +43,7 @@
    "5-2-3 (needs 3 ATT)"
   ]
  },
- "binding_gap": "The gap is quality at the back, not a hole in the formation. A legal eleven can be fielded now and will still be fieldable after both sales, so the understrength penalty is not in play at any point in the plan. The weakest fielded man is ter Horst, and he plays in the one position where there is depth to spare, which is exactly why he is the man the incoming defender replaces rather than an addition to the squad.",
+ "binding_gap": "The binding gap is the weakest defender in the fielded five, and Kuruçay is the player who closes it. There is no positional hole: every legal formation can be filled and the squad sits one body above the minimum. The constraint is not the floor and not the cash — it is the clearing ceiling, the sum of the only two bodies that can be sold without costing points, and that ceiling is what rules out every better defender and keeper on the board.",
  "surplus": "",
  "run_kind": "scheduled",
  "cash_ceiling_before_md1": 50149179,
@@ -51,10 +51,10 @@
  "bonuses_left": null,
  "ledger_doc": "D1 kickbase-ledger (events / calls / blocks)",
  "board": {
-  "listings": 20,
+  "listings": 21,
   "cheapest": 500000,
   "cheapest_slot_filling": 500000,
-  "expiring_within_2h": 1
+  "expiring_within_2h": 2
  },
  "squad": [
   {
@@ -180,13 +180,13 @@
  ],
  "verdict": {
   "action": "act",
-  "headline": "Three actions, and the order matters more than it did yesterday.",
-  "headline_short": "Three actions, and the order matters more than it did yesterday.",
-  "detail": "Three actions, and the order matters more than it did yesterday. Sell Tanaka to the board now, before tonight's tick, unconditionally. Bid on Kurucay before the listing expires this morning. Sell ter Horst only once Kurucay has actually landed. The change from the last briefing is the Tanaka leg: the standing instruction was to sell him as late as the matchday lock permits, and that was wrong. Both unwind legs are falling in value every night, so the capacity that funds the Kurucay bid has a shelf life measured in ticks, not days. Held to the lock, the unwind no longer clears and the balance is negative when the matchday starts, which scores nothing at all for the whole matchday. Selling Tanaka tonight also stands on its own: he is not in the fielded eleven, so it costs zero points either way."
+  "headline": "Place the Kuruçay bid today, then unwind both levers the same day.",
+  "headline_short": "Place the Kuruçay bid today, then unwind both levers the same day.",
+  "detail": "Place the Kuruçay bid today, then unwind both levers the same day. The board row still shows no offer registered on it and it resolves at 11:05Z, so the buy either happens this morning or the chance is gone until a comparable defender appears. Nothing in this run reverses the plan the 02:45Z run set out — it tightens it. The one real change: the deadline on the ter Horst sale moves forward five days, from the matchday lock to tomorrow's tick."
  },
  "sell": {
   "recommendation": "act",
-  "reason": "Tanaka first, independently, and tonight. He is flagged falling, he contributes nothing to the fielded eleven, and the one reason he was being kept — holding a formation open as insurance against Guirassy being unavailable — died when Guirassy was confirmed fit on three dated sources. Holding him to the lock burns a meaningful slice of the money that funds the Kurucay bid, in exchange for insurance against something that is not going to happen. ter Horst is the second sale and it is strictly conditional: he is currently in the fielded eleven, so selling him before his replacement arrives drops the eleven to ten and takes the understrength penalty at the lock. Sell him the moment Kurucay lands, and in any case well before the lock rather than at it, because he is falling too. Both sales go to the board, which pays exactly market value with no spread, rather than being listed as manager asks.",
+  "reason": "Tanaka sells today, before tonight's tick, unconditionally — that call stands and this run hardens it. New dated evidence: he is fit, but he came off the bench in the 86th minute against Stuttgart on 21.11 and is left out of every projected eleven for this weekend, listed by Comunio only as an option behind Hwang. He was already unfielded, so the benching costs no points; what it does is put a football reason behind a falling market value and remove any case for holding him. ter Horst is the second lever and the conditional one. He is fit and in Paderborn's projected back three today, so this is a merit-and-funding sale rather than an availability one: he is the weakest body in the fielded eleven and the furthest below the man replacing him. Sell both to the board rather than listing them as manager asks — the board pays market value on the spot and has done so every time in this log, whereas an ask may simply never clear, and the deficit has to be gone by the lock.",
   "standing": [
    {
     "name": "ter Horst",
@@ -194,7 +194,7 @@
     "club": "29",
     "mv": 7026840,
     "ap": 70,
-    "why": "CONDITIONAL LEG 1 OF THE KURUCAY BUY (Bwdkvd1) — DO NOT SELL HIM UNTIL KURUCAY HAS ACTUALLY LANDED. He is the man Kurucay replaces (ap 70, the weakest body in the fielded eleven) and he is currently FIELDED, so selling him before the replacement arrives drops the eleven to ten and costs -100 at the MD12 lock. This supersedes HOLD Ha14bgm, whose do-not-sell protection was scoped to the 2026-11-27T19:30Z MD11 lock and expired with it. Sell to the Kickbase board at exactly mv 7.026.840 (the board pays exactly mv, now 9 for 9 in this log); do NOT list him as a manager ask, because an ask may never clear and the deficit must be gone by 2026-12-04T19:30Z. He is also the right body to shed on merit independent of funding: mvt 2, tfhmvt -10.021, and at ap 70 he is 17 below Kurucay and 24 below the next-weakest fielded outfielder. No fitness objection and none is claimed — he is absent from LigaInsider's and buli-tipphilfe's 27.11 injury tables; this is a merit-and-funding sale, not an availability sale.",
+    "why": "SUPERSEDES Shz3uxr (CLOSED THIS RUN) ON DEADLINE ONLY — same player, same price, same conditionality, but the deadline moves FORWARD FIVE DAYS from 2026-12-04T19:30Z to 2026-11-29T21:00Z. Shz3uxr's conditional logic was right and is preserved verbatim: DO NOT sell him until Kuruçay (4606) has actually landed, because he is currently FIELDED and selling him before the replacement arrives drops the eleven to ten and costs -100 at the MD12 lock. What Shz3uxr got WRONG was giving the sale until the lock itself. THE DECAY ARITHMETIC, computed this run so no later run re-derives it. The Kuruçay buy at 12.000.000 opens a leveraged position of -11.643.904 against cash 356.096, and the ONLY two unwind levers are ter Horst 7.026.840 and Tanaka 5.346.604 — every other body is in the fielded eleven. BOTH LEVERS ARE mvt 2. Re-measured this run, 21h-aligned, all-time: mvt 2 n=1278, mean -3,257% per tick, only 8,6% rose. So ter Horst sheds ~228.864 and Tanaka ~174.139 at EVERY 21:00Z tick, ~403.003 combined. Residual at the MD12 lock, by how many ticks the pair is held past the buy: 0 ticks (both sold today before 21:00Z) = +729.540; 1 tick (sold 29.11 before 21:00Z) = +326.537; 2 ticks (sold 30.11) = -49.318, NEGATIVE; 3 ticks = -428.453. A negative balance at matchday start scores ZERO for the entire matchday, so the unwind has a ONE-TICK BUDGET, not a six-day one. Sell to the Kickbase board at exactly mv (the board pays exactly mv, 9 for 9 in this log); do NOT list him as a manager ask, because an ask may never clear and the deficit must be gone by 2026-12-04T19:30Z. THE MERIT CASE IS UNCHANGED AND INDEPENDENT OF FUNDING: mvt 2, tfhmvt -10.021, and at ap 70 he is 17 below Kuruçay and 14 below the next-weakest fielded outfielder (Dōan 80). FITNESS 28.11, re-checked this run and NOT an objection: he is in Paderborn's projected back three for the 28.11 Schalke home match (Comunio 26.11.2026, bundesliga.com 27.11.2026 and its 28.11.2026 match page); Paderborn's only absentees are Gayret and Awortwie-Grant, with Ulrich and Baack doubtful. He is absent from LigaInsider's Verletzte-und-Gesperrte table fetched fresh 28.11. This is a merit-and-funding sale, not an availability sale. IF KURUÇAY DOES NOT LAND BY 11:05Z, THIS CALL IS VOID, NOT DEFERRED — do not sell him at all, because without the replacement the eleven loses 70 ap and gains nothing.",
     "tag": "sell"
    },
    {
@@ -210,7 +210,7 @@
  },
  "buy": {
   "recommendation": "act",
-  "reason": "Kurucay is the buy and he is the only one. He is a clear upgrade on ter Horst, the weakest body in the fielded eleven, and the gap between them is large enough to be worth paying a premium for. His news gate is clear: LigaInsider's Schalke page, updated yesterday afternoon, carries a full injury and suspension table and he is not in it, and he appears in the probable eleven; a lineup article earlier this month has him starting at centre-back. Kickbase agrees, with no status flag and a rising value. The listing is a Kickbase board row rather than a manager ask, so it is benchmarked against the contested band, not the low one, and the bid level already recorded stands. Katic is the better player on paper and he remains unfundable at any winning bid, which three separate runs have now confirmed; his listing expires this morning and the question dies with it. Tapsoba and Seimen are both out of reach alongside Kurucay. Matsima carries a live not-fit flag and is excluded whatever his average says.",
+  "reason": "Kuruçay is the buy and the bid is unchanged at the figure already on record — it must not be raised further, because it is the funding ceiling less a thin cushion. The points case: he replaces the weakest defender in the fielded five and is seventeen average points better, every matchday for the rest of the season. Fitness re-checked this morning and it is as clean as this board gets — every available minute started, no injury time missed all season, two yellows against a five-card threshold, and a place in all three projected elevens for today's match at Paderborn. His contract does expire at season end and he has said publicly he is unhappy, but every current source describes a free transfer in summer 2027, not a January sale, and no club is named — that is not a reason to decline a player who only has to last this season. Two other fit, genuinely better players were on the board and both were measured and rejected: Katic and Seimen are each above the clearing ceiling, so a bare bid on either leaves the balance negative at the lock and scores zero for the matchday. Buying Kuruçay and either of them together is arithmetically impossible even at bare bids. Both are logged as avoided so the next run does not re-derive them.",
   "standing": [
    {
     "name": "Hasan Kurucay",
@@ -226,6 +226,15 @@
    }
   ],
   "killed_this_run": [
+   {
+    "name": "AVOID Seimen (6085) and Katic (11255) — both FIT, both genuine upgrades, both killed by the same unwind ceiling, measured in one entry",
+    "pos": "GK",
+    "club": "9",
+    "ask": 13254769,
+    "mv": 13254769,
+    "premium_pct": 0,
+    "why": "LOGGED BECAUSE BOTH PASS THE FITNESS TEST THAT KILLS MOST CANDIDATES, WHICH IS WHAT MAKES THEM WASTED CALLS RATHER THAN OBVIOUS ONES — a future run WILL re-derive them from the board unless this entry stops it. DENNIS SEIMEN (6085), VfB Stuttgart GK, board row prc = mv 13.254.769, no u, ofc 0, st 0, mvt 1, tfhmvt +71.341, exs 35.675 => resolves 2026-11-28T14:40Z. ap 119 against Zentner's 107, so nominally +12 ap on the fielded eleven. FITNESS CONFIRMED, NOT ASSUMED: he started in goal in the 0:0 at Schalke on 21.11.2026 (bundesliga.com MD10 liveticker) and is in the MD11 projected XI at home to Frankfurt per bundesliga.com 27.11.2026 and Flashscore, which lists NO Stuttgart injuries and NO Stuttgart suspensions. STALE TRAP FLAGGED AND DISCARDED so no later run re-reads it: the t-online piece \"Neuer Stamm-Torwart Seimen faellt monatelang aus\" is LAST SEASON and is contradicted by him playing on 21.11.2026. NIKOLA KATIC (11255), Schalke DEF, board row prc = mv 13.378.960, no u, ofc 0, st 0, mvt 1, tfhmvt +195.809, exs 9.458 => resolves 2026-11-28T07:22Z. ap 102 against ter Horst's 70. FITNESS CONFIRMED: started the full MD10 vs Stuttgart 21.11.2026 alongside Kuruçay, no card, and is in the MD11 projected XI at Paderborn in all three previews. STALE TRAP FLAGGED AND DISCARDED: the \"Katic droht Saisonaus\" knee cluster (Sky, kicker.at, weltfussball, Flashscore) is from Schalke's 2025/26 SECOND-DIVISION season — the Flashscore URL is itself tagged fu-ball-2-bundesliga — and is contradicted by him starting on 21.11.2026. THE ARITHMETIC THAT KILLS BOTH, AND IT IS THE SAME ONE. Total clearing capacity is cash 356.096 plus the only two sellable bodies, ter Horst 7.026.840 and Tanaka 5.346.604, = 12.729.540. Katic at a BARE-mv bid of 13.378.960 leaves -649.420 at the lock; Seimen at a bare-mv 13.254.769 leaves -525.229. A negative balance at matchday start scores ZERO for the entire matchday, so both are unfundable AT ANY BID, which also re-confirms Wgmr26g and Bwdkvd1 on Katic. The Seimen route via a DIFFERENT unwind (sell Zentner 10.560.766 + Tanaka instead of ter Horst + Tanaka) IS fundable — capacity 16.263.466, residual +3.008.697, squad 11, legal 5-3-2 — but it buys only +12 ap against Kuruçay's +17 for less money, so it is dominated. BUYING BOTH Kuruçay AND either one is arithmetically impossible: the three-lever capacity including Zentner is 23.290.306 against a combined cost of 25.254.769, short by 1.964.463, and even a bare-mv bid on Kuruçay leaves it short by 159.480. ONE FURTHER REASON NOT TO CHASE EITHER AS A FLIP: both sit in the ap90+ cohort where a bid at exactly mv wins only ~16% of the time (Wycpjbr), so the capital is tied up at a low hit rate. REVERSAL: either becomes live only if the unwind ceiling rises above his mv — which needs a fielded body to become sellable without a points loss, not merely a tick — AND a dated source at that time still has him starting."
+   },
    {
     "name": "Chrislain Matsima",
     "pos": "DEF",
@@ -324,26 +333,17 @@
     "mv": null,
     "premium_pct": null,
     "why": "SAME CONSTRUCTION AS A88q7nj, applied to the listings that appeared since the 21.11 board was last cleared. All four carry mvt 2, and the re-measured tick-aligned drift for mvt 2 is -3,23% mean over n=1239 with only 8,5% rising (recent 7-day window: -3,126%, 12,2% rose). A flip bid on an mvt-2 listing is a bid on a near-certain markdown, so NONE of these is a flip at any price. Read live 22.11 10:44Z: Senne Lynen (7167) BMG mv 4.717.243, tfhmvt -692.853, the heaviest twelve-hour fall on the board, ap 20 on p 59 — nothing as a points buy either; Tiago Tomas (3193) VfB mv 5.625.977, tfhmvt -394.609, ap 28; Abdoul Kone (14896) RBL mv 2.274.837, tfhmvt -105.574, ap 71 on p 141, the cheap-high-average shape again; Oliver Baumann (524) FCA GK mv 11.125.330, tfhmvt -85.646, ap 102 — and Georg already has Zentner (1590, ap 96, mvt 1) as his only GK with no second keeper needed, so Baumann would be an 11.1M purchase for a slot that is already filled. Also on the board and already covered elsewhere, not re-examined: Hlozek (Aztvuyk), Querfeld (Atvsumo), Ulrich/Uno/Kuehn (A88q7nj), Suzuki and Leweling as David's manager asks (Aawzcip), Tella (A6lbm9q)."
-   },
-   {
-    "name": "Adam Hlozek — the cheap ATT alternative to Burkardt, and he is a substitute, not a starter",
-    "pos": "",
-    "club": null,
-    "ask": 7044552,
-    "mv": null,
-    "premium_pct": null,
-    "why": "LOGGED BECAUSE HE IS THE OBVIOUS CHEAP FALLBACK IF THE BURKARDT BID IS LOST, AND A LATER RUN WILL REACH FOR HIM. The surface case is genuinely better than most traps this ledger has caught: ap 74 on TEN appearances in ten matchdays, so unlike Querfeld or Tella the average is a true per-matchday figure, and 73,7/MD against Adamu's 32,9/MD is a real +41 in the dead ATT slot for only 7.044.552 — a quarter of Burkardt's price. WHAT KILLS IT IS THE TREND, MEASURED from get_player_performance 3471, season 2026/27: MD1 55' start 47p, MD2 76' start 19p, MD3 88' start 270p, MD4 63' start 77p, MD5 33' sub -13p, MD6 80' start 138p, MD7 65' start 69p, MD8 61' start 48p, MD9 30' SUB 47p, MD10 34' SUB 35p. He has been a SUBSTITUTE in each of the last two matchdays, his minutes have fallen 61 -> 30 -> 34, and his returns have fallen with them (48, 47, 35). The ap 74 is carried by one 270-point MD3 and by starts he is no longer getting. DATED NEWS AGREES AND IS THIN: rotowire 08.11.2026 \"Adam Hlozek News: Appears on bench\" has him benched against Schalke, fit enough only for a bench role after late testing, and expects him to \"work back into that role after the international break\" — an outlet's expectation, not a selection. Ligainsider's newest Hlozek item is 28.08.2026; its April/May 2026 cluster is LAST SEASON and was not used. No source dated 14-21.11.2026 was found, so the Kickbase appearance record above is the only current selection evidence, and it says substitute. CLUB-ID CORRECTION, LOAD-BEARING: he is TSG HOFFENHEIM (Kickbase tid 14), NOT Augsburg — confirmed by ligainsider and rotowire and by Baumann (524) and our own Burger (11631) sharing tid 14. Augsburg is tid 13 (Gregoritsch, Wolf, Seol). A search phrased \"Hlozek Augsburg\" returns Hoffenheim-v-Augsburg fixture material and will mislead. REVERSAL: a dated Hoffenheim XI from 2026-11-26 or later STARTING him, plus one start with 60+ minutes to show the bench spell is over. Until then he is a worse body than the Burkardt bid he would replace, not a cheaper one."
    }
   ]
  },
  "movers": {
   "recommendation": "none",
   "window": "open",
-  "reason": "The flip window is open on the calendar — the lock is a long way off and there is room for several ticks — but the programme stays stood down, and this run did not reopen it. The drift itself re-measures healthy and shows no decay at all, so the mechanism is real. Capture is the problem, not the window: the record is two executed against nearly two hundred missed, and the premium needed to win a contested board auction is several times the drift being harvested. There is no bid level at which it pays. What the overnight feed does show is where the rivals' real edge lies, and it is not the tick: three uncontested board rows cleared below market value, and one rival ran a complete risk-free round-trip, buying a board row under value and selling it straight back at value inside two minutes. That is a cheaper edge than the tick and it is worth watching for, though none is available right now.",
+  "reason": "The flip window is open — the lock is more than six days out — and the mechanism is intact rather than decaying: the rising-flag drift re-measured this run is flat against the figure taken six days ago, and the falling flag is unchanged. Read the tick-aligned figure, not the one the context block prints; the gap between them is the clock change, not decay, and a run comparing the two will report a fall that is not there. The qualifying cohort is thin this morning. Every listing on the board is a Kickbase row — there is not a single manager ask live — and only a handful carry a rising flag and also resolve before tonight's tick, which is the condition for the flag to pay. Of those, the two largest sit in the high-average band where a bid at market value wins barely one time in six, and both are the same rows already rejected above on funding. The one row that clears both the mechanism and the win-rate cohort is Amoako, and he is on the blocked list with his reversal condition unmet. No flip is recommended this run, and the reason is capital rather than the edge: any flip would compete with the Kuruçay unwind for the same money inside the same one-tick window, and the expected gain on the only eligible row is noise against the size of the position being unwound. Two questions remain open and neither has been resolved: whether Kickbase caps squad size, which would cap how many flips can run at once; and the fact that this edge is measured in one league over one period and will decay if rivals crowd into it. A third is Georg's to settle — the standing rule that a bid at market value never wins still contradicts the flip rule that says bid exactly market value and never raise.",
   "candidates": []
  },
  "fitness": {
-  "sweep": "No squad player carries an injury flag and none is newly injured, suspended or benched. Guirassy is the one worth stating plainly, because the ledger has flipped on him twice and must not flip again: he is fit. He came off the bench for about half an hour in the midweek European tie, and his head coach said at yesterday's press conference that he had trained and was an option for Sunday. The honest limit is that an option is not a confirmed starting place, and neither source speaks to the matchday after next at all — but that matchday is still a week away and he is already in the locked eleven for this one. Kurucay's fitness and starting place are confirmed as far as any dated source allows. A caution on the method: the probable-eleven graphic on the club page encodes starter versus bench in colour only, so it can confirm that a player is in the squad but never that he is starting.",
+  "sweep": "No squad player is newly injured, suspended or flagged. Two soft notes, neither actionable. Tanaka has lost his starting place at Schalke — covered under the sale, where it helps rather than hurts. Guirassy trained with the Dortmund squad and his coach called him an option for Sunday rather than naming him in the eleven; that concerns the matchday now in progress, which is already locked, and a further week of recovery makes him likelier rather than less likely to start the one that matters. Ryerson is in one projected eleven and out of another, which is ordinary rotation noise for a matchday already locked. A warning for later runs: the bundesliga.com injury-and-suspension pages with short article ids are 2019 articles that render with a current sidebar, and one of them lists Gregoritsch as suspended — a direct false positive against this squad.",
   "all_clear": true,
   "newly_flagged": [],
   "caveat": "",
@@ -646,7 +646,7 @@
   },
   {
    "k": "Clearing premium band (measured)",
-   "v": "n=1381, -4,00% to +443,38%"
+   "v": "n=1382, -4,00% to +443,38%"
   }
  ]
 }
